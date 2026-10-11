@@ -34,9 +34,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -91,9 +89,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -148,9 +144,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -205,9 +199,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -263,18 +255,11 @@ class QualityControlForMachining(aas.Submodel):
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
                             aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO933#003",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO933#003"),),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -331,17 +316,12 @@ class QualityControlForMachining(aas.Submodel):
                         supplemental_semantic_id: Iterable[aas.Reference] = (
                             aas.ExternalReference(
                                 key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0112/2///61360_4#AAA235#001",
-                                    ),
+                                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAA235#001"),
                                 ),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -396,9 +376,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -453,9 +431,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -510,9 +486,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -567,17 +541,12 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Physical unit of feature",
-                                    r"de": r"Physikalische Einheit des Merkmals",
-                                }
+                                dict_={r"en": r"Physical unit of feature", r"de": r"Physikalische Einheit des Merkmals"}
                             )
 
                         if qualifier is None:
@@ -612,9 +581,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -626,9 +593,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -683,9 +648,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -704,18 +667,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(geometryreferencelist_items, str):
-                            raise TypeError(
-                                "geometryreferencelist_items takes several elements, got a str"
-                            )
+                            raise TypeError("geometryreferencelist_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if geometryreferencelist_items:
                             geometryreferencelist_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Geometryreferencelist_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Geometryreferencelist_item(i)
                                 for i in geometryreferencelist_items
                             ]
 
@@ -729,9 +686,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -798,15 +753,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -831,9 +780,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -845,9 +792,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -881,9 +826,7 @@ class QualityControlForMachining(aas.Submodel):
 
                     def __init__(
                         self,
-                        idlist3dmodel_items: Optional[
-                            Iterable[Union[str, Idlist3dmodel_item]]
-                        ] = None,
+                        idlist3dmodel_items: Optional[Iterable[Union[str, Idlist3dmodel_item]]] = None,
                         id_short: Optional[str] = r"IDList3DModel",
                         type_value_list_element: aas.SubmodelElement = aas.Property,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -904,9 +847,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -925,18 +866,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(idlist3dmodel_items, str):
-                            raise TypeError(
-                                "idlist3dmodel_items takes several elements, got a str"
-                            )
+                            raise TypeError("idlist3dmodel_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if idlist3dmodel_items:
                             idlist3dmodel_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Idlist3dmodel_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Idlist3dmodel_item(i)
                                 for i in idlist3dmodel_items
                             ]
 
@@ -950,9 +885,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1019,15 +952,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -1051,14 +978,10 @@ class QualityControlForMachining(aas.Submodel):
                                 id_short: Optional[str] = r"Page",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1070,9 +993,7 @@ class QualityControlForMachining(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -1112,14 +1033,10 @@ class QualityControlForMachining(aas.Submodel):
                                 id_short: Optional[str] = r"Coordinate",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1131,9 +1048,7 @@ class QualityControlForMachining(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -1173,9 +1088,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1187,9 +1100,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -1208,16 +1119,12 @@ class QualityControlForMachining(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if page is not None and not isinstance(
-                                page, aas.SubmodelElement
-                            ):
+                            if page is not None and not isinstance(page, aas.SubmodelElement):
                                 page = self.Page(page)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if coordinate is not None and not isinstance(
-                                coordinate, aas.SubmodelElement
-                            ):
+                            if coordinate is not None and not isinstance(coordinate, aas.SubmodelElement):
                                 coordinate = self.Coordinate(coordinate)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -1252,9 +1159,7 @@ class QualityControlForMachining(aas.Submodel):
 
                     def __init__(
                         self,
-                        reference2dlist_items: Optional[
-                            Iterable[Reference2dlist_item]
-                        ] = None,
+                        reference2dlist_items: Optional[Iterable[Reference2dlist_item]] = None,
                         id_short: Optional[str] = r"Reference2DList",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1275,9 +1180,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1296,9 +1199,7 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(reference2dlist_items, str):
-                            raise TypeError(
-                                "reference2dlist_items takes several elements, got a str"
-                            )
+                            raise TypeError("reference2dlist_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -1310,9 +1211,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1379,15 +1278,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -1406,35 +1299,22 @@ class QualityControlForMachining(aas.Submodel):
                     inspectionRelevant: Union[bool, InspectionRelevant],
                     nominalValue: Union[float, NominalValue],
                     engineeringUnit: Union[str, EngineeringUnit],
-                    dimensionDescription: Optional[
-                        Union[str, DimensionDescription]
-                    ] = None,
+                    dimensionDescription: Optional[Union[str, DimensionDescription]] = None,
                     toleranceNorm: Optional[Iterable[Union[str, ToleranceNorm]]] = None,
                     upperTolerance: Optional[Union[float, UpperTolerance]] = None,
                     lowerTolerance: Optional[Union[float, LowerTolerance]] = None,
                     oneSided: Optional[Union[bool, OneSided]] = None,
                     geometryReferenceList: Optional[
                         Union[
-                            Iterable[
-                                Union[
-                                    aas.Reference,
-                                    GeometryReferenceList.Geometryreferencelist_item,
-                                ]
-                            ],
+                            Iterable[Union[aas.Reference, GeometryReferenceList.Geometryreferencelist_item]],
                             GeometryReferenceList,
                         ]
                     ] = None,
                     iDList3DModel: Optional[
-                        Union[
-                            Iterable[Union[str, IDList3DModel.Idlist3dmodel_item]],
-                            IDList3DModel,
-                        ]
+                        Union[Iterable[Union[str, IDList3DModel.Idlist3dmodel_item]], IDList3DModel]
                     ] = None,
                     reference2DList: Optional[
-                        Union[
-                            Iterable[Reference2DList.Reference2dlist_item],
-                            Reference2DList,
-                        ]
+                        Union[Iterable[Reference2DList.Reference2dlist_item], Reference2DList]
                     ] = None,
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -1452,9 +1332,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1473,127 +1351,84 @@ class QualityControlForMachining(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if linearFeatureName is not None and not isinstance(
-                        linearFeatureName, aas.SubmodelElement
-                    ):
+                    if linearFeatureName is not None and not isinstance(linearFeatureName, aas.SubmodelElement):
                         linearFeatureName = self.LinearFeatureName(linearFeatureName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if dimensionDescription is not None and not isinstance(
-                        dimensionDescription, aas.SubmodelElement
-                    ):
-                        dimensionDescription = self.DimensionDescription(
-                            dimensionDescription
-                        )
+                    if dimensionDescription is not None and not isinstance(dimensionDescription, aas.SubmodelElement):
+                        dimensionDescription = self.DimensionDescription(dimensionDescription)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if measurementProcedure is not None and not isinstance(
-                        measurementProcedure, aas.SubmodelElement
-                    ):
-                        measurementProcedure = self.MeasurementProcedure(
-                            measurementProcedure
-                        )
+                    if measurementProcedure is not None and not isinstance(measurementProcedure, aas.SubmodelElement):
+                        measurementProcedure = self.MeasurementProcedure(measurementProcedure)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if inspectionRelevant is not None and not isinstance(
-                        inspectionRelevant, aas.SubmodelElement
-                    ):
+                    if inspectionRelevant is not None and not isinstance(inspectionRelevant, aas.SubmodelElement):
                         inspectionRelevant = self.InspectionRelevant(inspectionRelevant)
 
                     # A str would be split into its characters
                     if isinstance(toleranceNorm, str):
-                        raise TypeError(
-                            "toleranceNorm takes several elements, got a str"
-                        )
+                        raise TypeError("toleranceNorm takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if toleranceNorm:
                         toleranceNorm = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ToleranceNorm(i)
-                            )
-                            for i in toleranceNorm
+                            i if isinstance(i, aas.SubmodelElement) else self.ToleranceNorm(i) for i in toleranceNorm
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if nominalValue is not None and not isinstance(
-                        nominalValue, aas.SubmodelElement
-                    ):
+                    if nominalValue is not None and not isinstance(nominalValue, aas.SubmodelElement):
                         nominalValue = self.NominalValue(nominalValue)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if upperTolerance is not None and not isinstance(
-                        upperTolerance, aas.SubmodelElement
-                    ):
+                    if upperTolerance is not None and not isinstance(upperTolerance, aas.SubmodelElement):
                         upperTolerance = self.UpperTolerance(upperTolerance)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if lowerTolerance is not None and not isinstance(
-                        lowerTolerance, aas.SubmodelElement
-                    ):
+                    if lowerTolerance is not None and not isinstance(lowerTolerance, aas.SubmodelElement):
                         lowerTolerance = self.LowerTolerance(lowerTolerance)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if oneSided is not None and not isinstance(
-                        oneSided, aas.SubmodelElement
-                    ):
+                    if oneSided is not None and not isinstance(oneSided, aas.SubmodelElement):
                         oneSided = self.OneSided(oneSided)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if engineeringUnit is not None and not isinstance(
-                        engineeringUnit, aas.SubmodelElement
-                    ):
+                    if engineeringUnit is not None and not isinstance(engineeringUnit, aas.SubmodelElement):
                         engineeringUnit = self.EngineeringUnit(engineeringUnit)
 
                     # A str would be split into its characters
                     if isinstance(geometryReferenceList, str):
-                        raise TypeError(
-                            "geometryReferenceList takes several elements, got a str"
-                        )
+                        raise TypeError("geometryReferenceList takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if geometryReferenceList is not None and not isinstance(
-                        geometryReferenceList, aas.SubmodelElement
-                    ):
-                        geometryReferenceList = self.GeometryReferenceList(
-                            geometryReferenceList
-                        )
+                    if geometryReferenceList is not None and not isinstance(geometryReferenceList, aas.SubmodelElement):
+                        geometryReferenceList = self.GeometryReferenceList(geometryReferenceList)
 
                     # A str would be split into its characters
                     if isinstance(iDList3DModel, str):
-                        raise TypeError(
-                            "iDList3DModel takes several elements, got a str"
-                        )
+                        raise TypeError("iDList3DModel takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if iDList3DModel is not None and not isinstance(
-                        iDList3DModel, aas.SubmodelElement
-                    ):
+                    if iDList3DModel is not None and not isinstance(iDList3DModel, aas.SubmodelElement):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
 
                     # A str would be split into its characters
                     if isinstance(reference2DList, str):
-                        raise TypeError(
-                            "reference2DList takes several elements, got a str"
-                        )
+                        raise TypeError("reference2DList takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if reference2DList is not None and not isinstance(
-                        reference2DList, aas.SubmodelElement
-                    ):
+                    if reference2DList is not None and not isinstance(reference2DList, aas.SubmodelElement):
                         reference2DList = self.Reference2DList(reference2DList)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1623,9 +1458,7 @@ class QualityControlForMachining(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1642,9 +1475,7 @@ class QualityControlForMachining(aas.Submodel):
 
             def __init__(
                 self,
-                linearfeatureslist_items: Optional[
-                    Iterable[Linearfeatureslist_item]
-                ] = None,
+                linearfeatureslist_items: Optional[Iterable[Linearfeatureslist_item]] = None,
                 id_short: Optional[str] = r"LinearFeaturesList",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1665,9 +1496,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1686,9 +1515,7 @@ class QualityControlForMachining(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(linearfeatureslist_items, str):
-                    raise TypeError(
-                        "linearfeatureslist_items takes several elements, got a str"
-                    )
+                    raise TypeError("linearfeatureslist_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1700,9 +1527,7 @@ class QualityControlForMachining(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1769,15 +1594,9 @@ class QualityControlForMachining(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -1816,9 +1635,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1873,9 +1690,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1930,9 +1745,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1988,18 +1801,11 @@ class QualityControlForMachining(aas.Submodel):
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
                             aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO933#003",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO933#003"),),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2054,9 +1860,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2099,9 +1903,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2113,9 +1915,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -2170,9 +1970,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2191,18 +1989,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(geometryreferencelist_items, str):
-                            raise TypeError(
-                                "geometryreferencelist_items takes several elements, got a str"
-                            )
+                            raise TypeError("geometryreferencelist_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if geometryreferencelist_items:
                             geometryreferencelist_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Geometryreferencelist_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Geometryreferencelist_item(i)
                                 for i in geometryreferencelist_items
                             ]
 
@@ -2216,9 +2008,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2285,15 +2075,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -2318,9 +2102,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2332,9 +2114,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -2368,9 +2148,7 @@ class QualityControlForMachining(aas.Submodel):
 
                     def __init__(
                         self,
-                        idlist3dmodel_items: Optional[
-                            Iterable[Union[str, Idlist3dmodel_item]]
-                        ] = None,
+                        idlist3dmodel_items: Optional[Iterable[Union[str, Idlist3dmodel_item]]] = None,
                         id_short: Optional[str] = r"IDList3DModel",
                         type_value_list_element: aas.SubmodelElement = aas.Property,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -2391,9 +2169,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2412,18 +2188,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(idlist3dmodel_items, str):
-                            raise TypeError(
-                                "idlist3dmodel_items takes several elements, got a str"
-                            )
+                            raise TypeError("idlist3dmodel_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if idlist3dmodel_items:
                             idlist3dmodel_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Idlist3dmodel_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Idlist3dmodel_item(i)
                                 for i in idlist3dmodel_items
                             ]
 
@@ -2437,9 +2207,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2506,15 +2274,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -2538,14 +2300,10 @@ class QualityControlForMachining(aas.Submodel):
                                 id_short: Optional[str] = r"Page",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2557,9 +2315,7 @@ class QualityControlForMachining(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -2599,14 +2355,10 @@ class QualityControlForMachining(aas.Submodel):
                                 id_short: Optional[str] = r"Coordinate",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2618,9 +2370,7 @@ class QualityControlForMachining(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -2660,9 +2410,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2674,9 +2422,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -2695,16 +2441,12 @@ class QualityControlForMachining(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if page is not None and not isinstance(
-                                page, aas.SubmodelElement
-                            ):
+                            if page is not None and not isinstance(page, aas.SubmodelElement):
                                 page = self.Page(page)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if coordinate is not None and not isinstance(
-                                coordinate, aas.SubmodelElement
-                            ):
+                            if coordinate is not None and not isinstance(coordinate, aas.SubmodelElement):
                                 coordinate = self.Coordinate(coordinate)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -2739,9 +2481,7 @@ class QualityControlForMachining(aas.Submodel):
 
                     def __init__(
                         self,
-                        reference2dlist_items: Optional[
-                            Iterable[Reference2dlist_item]
-                        ] = None,
+                        reference2dlist_items: Optional[Iterable[Reference2dlist_item]] = None,
                         id_short: Optional[str] = r"Reference2DList",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -2762,9 +2502,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2783,9 +2521,7 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(reference2dlist_items, str):
-                            raise TypeError(
-                                "reference2dlist_items takes several elements, got a str"
-                            )
+                            raise TypeError("reference2dlist_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -2797,9 +2533,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2866,15 +2600,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -2899,9 +2627,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2913,9 +2639,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -2949,9 +2673,7 @@ class QualityControlForMachining(aas.Submodel):
 
                     def __init__(
                         self,
-                        okattributeslist_items: Optional[
-                            Iterable[Union[str, Okattributeslist_item]]
-                        ] = None,
+                        okattributeslist_items: Optional[Iterable[Union[str, Okattributeslist_item]]] = None,
                         id_short: Optional[str] = r"OKAttributesList",
                         type_value_list_element: aas.SubmodelElement = aas.Property,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -2972,9 +2694,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2993,18 +2713,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(okattributeslist_items, str):
-                            raise TypeError(
-                                "okattributeslist_items takes several elements, got a str"
-                            )
+                            raise TypeError("okattributeslist_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if okattributeslist_items:
                             okattributeslist_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Okattributeslist_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Okattributeslist_item(i)
                                 for i in okattributeslist_items
                             ]
 
@@ -3018,9 +2732,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -3087,15 +2799,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -3120,9 +2826,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3134,9 +2838,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -3170,9 +2872,7 @@ class QualityControlForMachining(aas.Submodel):
 
                     def __init__(
                         self,
-                        nokattributeslist_items: Optional[
-                            Iterable[Union[str, Nokattributeslist_item]]
-                        ] = None,
+                        nokattributeslist_items: Optional[Iterable[Union[str, Nokattributeslist_item]]] = None,
                         id_short: Optional[str] = r"NOKAttributesList",
                         type_value_list_element: aas.SubmodelElement = aas.Property,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -3193,9 +2893,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3214,18 +2912,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(nokattributeslist_items, str):
-                            raise TypeError(
-                                "nokattributeslist_items takes several elements, got a str"
-                            )
+                            raise TypeError("nokattributeslist_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if nokattributeslist_items:
                             nokattributeslist_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Nokattributeslist_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Nokattributeslist_item(i)
                                 for i in nokattributeslist_items
                             ]
 
@@ -3239,9 +2931,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -3308,15 +2998,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -3331,42 +3015,27 @@ class QualityControlForMachining(aas.Submodel):
                 def __init__(
                     self,
                     attributiveFeatureName: Union[str, AttributiveFeatureName],
-                    attibutiveFeatureDescription: Union[
-                        str, AttibutiveFeatureDescription
-                    ],
+                    attibutiveFeatureDescription: Union[str, AttibutiveFeatureDescription],
                     measurementProcedure: Union[str, MeasurementProcedure],
                     inspectionRelevant: Union[bool, InspectionRelevant],
                     oKAttributesList: Union[
-                        Iterable[Union[str, OKAttributesList.Okattributeslist_item]],
-                        OKAttributesList,
+                        Iterable[Union[str, OKAttributesList.Okattributeslist_item]], OKAttributesList
                     ],
                     nOKAttributesList: Union[
-                        Iterable[Union[str, NOKAttributesList.Nokattributeslist_item]],
-                        NOKAttributesList,
+                        Iterable[Union[str, NOKAttributesList.Nokattributeslist_item]], NOKAttributesList
                     ],
                     toleranceNorm: Optional[Iterable[Union[str, ToleranceNorm]]] = None,
                     geometryReferenceList: Optional[
                         Union[
-                            Iterable[
-                                Union[
-                                    aas.Reference,
-                                    GeometryReferenceList.Geometryreferencelist_item,
-                                ]
-                            ],
+                            Iterable[Union[aas.Reference, GeometryReferenceList.Geometryreferencelist_item]],
                             GeometryReferenceList,
                         ]
                     ] = None,
                     iDList3DModel: Optional[
-                        Union[
-                            Iterable[Union[str, IDList3DModel.Idlist3dmodel_item]],
-                            IDList3DModel,
-                        ]
+                        Union[Iterable[Union[str, IDList3DModel.Idlist3dmodel_item]], IDList3DModel]
                     ] = None,
                     reference2DList: Optional[
-                        Union[
-                            Iterable[Reference2DList.Reference2dlist_item],
-                            Reference2DList,
-                        ]
+                        Union[Iterable[Reference2DList.Reference2dlist_item], Reference2DList]
                     ] = None,
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3384,9 +3053,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -3408,119 +3075,78 @@ class QualityControlForMachining(aas.Submodel):
                     if attributiveFeatureName is not None and not isinstance(
                         attributiveFeatureName, aas.SubmodelElement
                     ):
-                        attributiveFeatureName = self.AttributiveFeatureName(
-                            attributiveFeatureName
-                        )
+                        attributiveFeatureName = self.AttributiveFeatureName(attributiveFeatureName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if attibutiveFeatureDescription is not None and not isinstance(
                         attibutiveFeatureDescription, aas.SubmodelElement
                     ):
-                        attibutiveFeatureDescription = (
-                            self.AttibutiveFeatureDescription(
-                                attibutiveFeatureDescription
-                            )
-                        )
+                        attibutiveFeatureDescription = self.AttibutiveFeatureDescription(attibutiveFeatureDescription)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if measurementProcedure is not None and not isinstance(
-                        measurementProcedure, aas.SubmodelElement
-                    ):
-                        measurementProcedure = self.MeasurementProcedure(
-                            measurementProcedure
-                        )
+                    if measurementProcedure is not None and not isinstance(measurementProcedure, aas.SubmodelElement):
+                        measurementProcedure = self.MeasurementProcedure(measurementProcedure)
 
                     # A str would be split into its characters
                     if isinstance(toleranceNorm, str):
-                        raise TypeError(
-                            "toleranceNorm takes several elements, got a str"
-                        )
+                        raise TypeError("toleranceNorm takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if toleranceNorm:
                         toleranceNorm = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ToleranceNorm(i)
-                            )
-                            for i in toleranceNorm
+                            i if isinstance(i, aas.SubmodelElement) else self.ToleranceNorm(i) for i in toleranceNorm
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if inspectionRelevant is not None and not isinstance(
-                        inspectionRelevant, aas.SubmodelElement
-                    ):
+                    if inspectionRelevant is not None and not isinstance(inspectionRelevant, aas.SubmodelElement):
                         inspectionRelevant = self.InspectionRelevant(inspectionRelevant)
 
                     # A str would be split into its characters
                     if isinstance(geometryReferenceList, str):
-                        raise TypeError(
-                            "geometryReferenceList takes several elements, got a str"
-                        )
+                        raise TypeError("geometryReferenceList takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if geometryReferenceList is not None and not isinstance(
-                        geometryReferenceList, aas.SubmodelElement
-                    ):
-                        geometryReferenceList = self.GeometryReferenceList(
-                            geometryReferenceList
-                        )
+                    if geometryReferenceList is not None and not isinstance(geometryReferenceList, aas.SubmodelElement):
+                        geometryReferenceList = self.GeometryReferenceList(geometryReferenceList)
 
                     # A str would be split into its characters
                     if isinstance(iDList3DModel, str):
-                        raise TypeError(
-                            "iDList3DModel takes several elements, got a str"
-                        )
+                        raise TypeError("iDList3DModel takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if iDList3DModel is not None and not isinstance(
-                        iDList3DModel, aas.SubmodelElement
-                    ):
+                    if iDList3DModel is not None and not isinstance(iDList3DModel, aas.SubmodelElement):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
 
                     # A str would be split into its characters
                     if isinstance(reference2DList, str):
-                        raise TypeError(
-                            "reference2DList takes several elements, got a str"
-                        )
+                        raise TypeError("reference2DList takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if reference2DList is not None and not isinstance(
-                        reference2DList, aas.SubmodelElement
-                    ):
+                    if reference2DList is not None and not isinstance(reference2DList, aas.SubmodelElement):
                         reference2DList = self.Reference2DList(reference2DList)
 
                     # A str would be split into its characters
                     if isinstance(oKAttributesList, str):
-                        raise TypeError(
-                            "oKAttributesList takes several elements, got a str"
-                        )
+                        raise TypeError("oKAttributesList takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if oKAttributesList is not None and not isinstance(
-                        oKAttributesList, aas.SubmodelElement
-                    ):
+                    if oKAttributesList is not None and not isinstance(oKAttributesList, aas.SubmodelElement):
                         oKAttributesList = self.OKAttributesList(oKAttributesList)
 
                     # A str would be split into its characters
                     if isinstance(nOKAttributesList, str):
-                        raise TypeError(
-                            "nOKAttributesList takes several elements, got a str"
-                        )
+                        raise TypeError("nOKAttributesList takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if nOKAttributesList is not None and not isinstance(
-                        nOKAttributesList, aas.SubmodelElement
-                    ):
+                    if nOKAttributesList is not None and not isinstance(nOKAttributesList, aas.SubmodelElement):
                         nOKAttributesList = self.NOKAttributesList(nOKAttributesList)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3547,9 +3173,7 @@ class QualityControlForMachining(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3566,9 +3190,7 @@ class QualityControlForMachining(aas.Submodel):
 
             def __init__(
                 self,
-                attributivefeatureslist_items: Optional[
-                    Iterable[Attributivefeatureslist_item]
-                ] = None,
+                attributivefeatureslist_items: Optional[Iterable[Attributivefeatureslist_item]] = None,
                 id_short: Optional[str] = r"AttributiveFeaturesList",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -3589,9 +3211,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -3610,9 +3230,7 @@ class QualityControlForMachining(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(attributivefeatureslist_items, str):
-                    raise TypeError(
-                        "attributivefeatureslist_items takes several elements, got a str"
-                    )
+                    raise TypeError("attributivefeatureslist_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -3624,9 +3242,7 @@ class QualityControlForMachining(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3693,15 +3309,9 @@ class QualityControlForMachining(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -3740,9 +3350,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3797,9 +3405,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3854,9 +3460,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3912,18 +3516,11 @@ class QualityControlForMachining(aas.Submodel):
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
                             aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO933#003",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO933#003"),),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3978,9 +3575,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4035,9 +3630,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4092,9 +3685,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4139,9 +3730,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4153,9 +3742,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -4198,9 +3785,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4213,18 +3798,11 @@ class QualityControlForMachining(aas.Submodel):
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
                                 aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAH964#005",
-                                        ),
-                                    ),
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAH964#005"),),
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -4267,9 +3845,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4281,9 +3857,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -4326,9 +3900,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4340,9 +3912,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -4385,9 +3955,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4399,17 +3967,12 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Tolerated deviation",
-                                        r"de": r"TolerierteAbweichung",
-                                    }
+                                    dict_={r"en": r"Tolerated deviation", r"de": r"TolerierteAbweichung"}
                                 )
 
                             if qualifier is None:
@@ -4444,9 +4007,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4458,9 +4019,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -4503,9 +4062,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4517,17 +4074,12 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Tolerated deviation",
-                                        r"de": r"TolerierteAbweichung",
-                                    }
+                                    dict_={r"en": r"Tolerated deviation", r"de": r"TolerierteAbweichung"}
                                 )
 
                             if qualifier is None:
@@ -4562,9 +4114,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4576,9 +4126,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -4621,9 +4169,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4635,9 +4181,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -4675,18 +4219,10 @@ class QualityControlForMachining(aas.Submodel):
                         widthExtendTolerance1: Union[float, WidthExtendTolerance1],
                         widthExtendSign1: Union[str, WidthExtendSign1],
                         engineeringUnit: Union[str, EngineeringUnit],
-                        toleranceZoneDescription: Optional[
-                            Union[str, ToleranceZoneDescription]
-                        ] = None,
-                        specificationModificator: Optional[
-                            Iterable[Union[str, SpecificationModificator]]
-                        ] = None,
-                        widthExtendValue: Optional[
-                            Iterable[Union[float, WidthExtendValue]]
-                        ] = None,
-                        widthExtendTolerance2: Optional[
-                            Union[float, WidthExtendTolerance2]
-                        ] = None,
+                        toleranceZoneDescription: Optional[Union[str, ToleranceZoneDescription]] = None,
+                        specificationModificator: Optional[Iterable[Union[str, SpecificationModificator]]] = None,
+                        widthExtendValue: Optional[Iterable[Union[float, WidthExtendValue]]] = None,
+                        widthExtendTolerance2: Optional[Union[float, WidthExtendTolerance2]] = None,
                         widthExtendSign2: Optional[Union[str, WidthExtendSign2]] = None,
                         id_short: Optional[str] = r"GPS_ToleranceZone",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -4704,9 +4240,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4725,9 +4259,7 @@ class QualityControlForMachining(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if shape is not None and not isinstance(
-                            shape, aas.SubmodelElement
-                        ):
+                        if shape is not None and not isinstance(shape, aas.SubmodelElement):
                             shape = self.Shape(shape)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -4735,41 +4267,27 @@ class QualityControlForMachining(aas.Submodel):
                         if toleranceZoneDescription is not None and not isinstance(
                             toleranceZoneDescription, aas.SubmodelElement
                         ):
-                            toleranceZoneDescription = self.ToleranceZoneDescription(
-                                toleranceZoneDescription
-                            )
+                            toleranceZoneDescription = self.ToleranceZoneDescription(toleranceZoneDescription)
 
                         # A str would be split into its characters
                         if isinstance(specificationModificator, str):
-                            raise TypeError(
-                                "specificationModificator takes several elements, got a str"
-                            )
+                            raise TypeError("specificationModificator takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if specificationModificator:
                             specificationModificator = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.SpecificationModificator(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.SpecificationModificator(i)
                                 for i in specificationModificator
                             ]
 
                         # A str would be split into its characters
                         if isinstance(widthExtendValue, str):
-                            raise TypeError(
-                                "widthExtendValue takes several elements, got a str"
-                            )
+                            raise TypeError("widthExtendValue takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if widthExtendValue:
                             widthExtendValue = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.WidthExtendValue(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.WidthExtendValue(i)
                                 for i in widthExtendValue
                             ]
 
@@ -4778,15 +4296,11 @@ class QualityControlForMachining(aas.Submodel):
                         if widthExtendTolerance1 is not None and not isinstance(
                             widthExtendTolerance1, aas.SubmodelElement
                         ):
-                            widthExtendTolerance1 = self.WidthExtendTolerance1(
-                                widthExtendTolerance1
-                            )
+                            widthExtendTolerance1 = self.WidthExtendTolerance1(widthExtendTolerance1)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if widthExtendSign1 is not None and not isinstance(
-                            widthExtendSign1, aas.SubmodelElement
-                        ):
+                        if widthExtendSign1 is not None and not isinstance(widthExtendSign1, aas.SubmodelElement):
                             widthExtendSign1 = self.WidthExtendSign1(widthExtendSign1)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -4794,22 +4308,16 @@ class QualityControlForMachining(aas.Submodel):
                         if widthExtendTolerance2 is not None and not isinstance(
                             widthExtendTolerance2, aas.SubmodelElement
                         ):
-                            widthExtendTolerance2 = self.WidthExtendTolerance2(
-                                widthExtendTolerance2
-                            )
+                            widthExtendTolerance2 = self.WidthExtendTolerance2(widthExtendTolerance2)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if widthExtendSign2 is not None and not isinstance(
-                            widthExtendSign2, aas.SubmodelElement
-                        ):
+                        if widthExtendSign2 is not None and not isinstance(widthExtendSign2, aas.SubmodelElement):
                             widthExtendSign2 = self.WidthExtendSign2(widthExtendSign2)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if engineeringUnit is not None and not isinstance(
-                            engineeringUnit, aas.SubmodelElement
-                        ):
+                        if engineeringUnit is not None and not isinstance(engineeringUnit, aas.SubmodelElement):
                             engineeringUnit = self.EngineeringUnit(engineeringUnit)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -4835,9 +4343,7 @@ class QualityControlForMachining(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -4863,9 +4369,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4877,9 +4381,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -4934,9 +4436,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4955,18 +4455,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(geometryreferencelist_items, str):
-                            raise TypeError(
-                                "geometryreferencelist_items takes several elements, got a str"
-                            )
+                            raise TypeError("geometryreferencelist_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if geometryreferencelist_items:
                             geometryreferencelist_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Geometryreferencelist_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Geometryreferencelist_item(i)
                                 for i in geometryreferencelist_items
                             ]
 
@@ -4980,9 +4474,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -5049,15 +4541,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -5082,9 +4568,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5096,9 +4580,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -5132,9 +4614,7 @@ class QualityControlForMachining(aas.Submodel):
 
                     def __init__(
                         self,
-                        idlist3dmodel_items: Optional[
-                            Iterable[Union[str, Idlist3dmodel_item]]
-                        ] = None,
+                        idlist3dmodel_items: Optional[Iterable[Union[str, Idlist3dmodel_item]]] = None,
                         id_short: Optional[str] = r"IDList3DModel",
                         type_value_list_element: aas.SubmodelElement = aas.Property,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -5155,9 +4635,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -5176,18 +4654,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(idlist3dmodel_items, str):
-                            raise TypeError(
-                                "idlist3dmodel_items takes several elements, got a str"
-                            )
+                            raise TypeError("idlist3dmodel_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if idlist3dmodel_items:
                             idlist3dmodel_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Idlist3dmodel_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Idlist3dmodel_item(i)
                                 for i in idlist3dmodel_items
                             ]
 
@@ -5201,9 +4673,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -5270,15 +4740,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -5302,14 +4766,10 @@ class QualityControlForMachining(aas.Submodel):
                                 id_short: Optional[str] = r"Page",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5321,9 +4781,7 @@ class QualityControlForMachining(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -5363,14 +4821,10 @@ class QualityControlForMachining(aas.Submodel):
                                 id_short: Optional[str] = r"Coordinate",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5382,9 +4836,7 @@ class QualityControlForMachining(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -5424,9 +4876,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5438,9 +4888,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -5459,16 +4907,12 @@ class QualityControlForMachining(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if page is not None and not isinstance(
-                                page, aas.SubmodelElement
-                            ):
+                            if page is not None and not isinstance(page, aas.SubmodelElement):
                                 page = self.Page(page)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if coordinate is not None and not isinstance(
-                                coordinate, aas.SubmodelElement
-                            ):
+                            if coordinate is not None and not isinstance(coordinate, aas.SubmodelElement):
                                 coordinate = self.Coordinate(coordinate)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -5503,9 +4947,7 @@ class QualityControlForMachining(aas.Submodel):
 
                     def __init__(
                         self,
-                        reference2dlist_items: Optional[
-                            Iterable[Reference2dlist_item]
-                        ] = None,
+                        reference2dlist_items: Optional[Iterable[Reference2dlist_item]] = None,
                         id_short: Optional[str] = r"Reference2DList",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -5526,9 +4968,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -5547,9 +4987,7 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(reference2dlist_items, str):
-                            raise TypeError(
-                                "reference2dlist_items takes several elements, got a str"
-                            )
+                            raise TypeError("reference2dlist_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -5561,9 +4999,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -5630,15 +5066,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -5673,9 +5103,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -5730,9 +5158,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -5787,9 +5213,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -5833,14 +5257,10 @@ class QualityControlForMachining(aas.Submodel):
                                 id_short: Optional[str] = r"GPS_Identifier",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5852,9 +5272,7 @@ class QualityControlForMachining(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -5894,14 +5312,10 @@ class QualityControlForMachining(aas.Submodel):
                                 id_short: Optional[str] = r"GPS_Value",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5913,9 +5327,7 @@ class QualityControlForMachining(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -5949,17 +5361,13 @@ class QualityControlForMachining(aas.Submodel):
 
                         def __init__(
                             self,
-                            gPS_Identifier: Optional[
-                                Iterable[Union[str, GPS_Identifier]]
-                            ] = None,
+                            gPS_Identifier: Optional[Iterable[Union[str, GPS_Identifier]]] = None,
                             gPS_Value: Optional[Iterable[Union[str, GPS_Value]]] = None,
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5971,9 +5379,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -5992,36 +5398,23 @@ class QualityControlForMachining(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(gPS_Identifier, str):
-                                raise TypeError(
-                                    "gPS_Identifier takes several elements, got a str"
-                                )
+                                raise TypeError("gPS_Identifier takes several elements, got a str")
 
                             # Build submodel elements from raw values passed in the argument
                             if gPS_Identifier:
                                 gPS_Identifier = [
-                                    (
-                                        i
-                                        if isinstance(i, aas.SubmodelElement)
-                                        else self.GPS_Identifier(i)
-                                    )
+                                    i if isinstance(i, aas.SubmodelElement) else self.GPS_Identifier(i)
                                     for i in gPS_Identifier
                                 ]
 
                             # A str would be split into its characters
                             if isinstance(gPS_Value, str):
-                                raise TypeError(
-                                    "gPS_Value takes several elements, got a str"
-                                )
+                                raise TypeError("gPS_Value takes several elements, got a str")
 
                             # Build submodel elements from raw values passed in the argument
                             if gPS_Value:
                                 gPS_Value = [
-                                    (
-                                        i
-                                        if isinstance(i, aas.SubmodelElement)
-                                        else self.GPS_Value(i)
-                                    )
-                                    for i in gPS_Value
+                                    i if isinstance(i, aas.SubmodelElement) else self.GPS_Value(i) for i in gPS_Value
                                 ]
 
                             # Add all passed/initialized submodel elements to a single list
@@ -6056,9 +5449,7 @@ class QualityControlForMachining(aas.Submodel):
 
                     def __init__(
                         self,
-                        additionalinformationlist_items: Optional[
-                            Iterable[Additionalinformationlist_item]
-                        ] = None,
+                        additionalinformationlist_items: Optional[Iterable[Additionalinformationlist_item]] = None,
                         id_short: Optional[str] = r"AdditionalInformationList",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -6079,9 +5470,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -6100,9 +5489,7 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(additionalinformationlist_items, str):
-                            raise TypeError(
-                                "additionalinformationlist_items takes several elements, got a str"
-                            )
+                            raise TypeError("additionalinformationlist_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -6114,9 +5501,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -6183,15 +5568,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -6215,35 +5594,22 @@ class QualityControlForMachining(aas.Submodel):
                     gPS_ToleranceZone: Optional[Iterable[GPS_ToleranceZone]] = None,
                     geometryReferenceList: Optional[
                         Union[
-                            Iterable[
-                                Union[
-                                    aas.Reference,
-                                    GeometryReferenceList.Geometryreferencelist_item,
-                                ]
-                            ],
+                            Iterable[Union[aas.Reference, GeometryReferenceList.Geometryreferencelist_item]],
                             GeometryReferenceList,
                         ]
                     ] = None,
                     iDList3DModel: Optional[
-                        Union[
-                            Iterable[Union[str, IDList3DModel.Idlist3dmodel_item]],
-                            IDList3DModel,
-                        ]
+                        Union[Iterable[Union[str, IDList3DModel.Idlist3dmodel_item]], IDList3DModel]
                     ] = None,
                     reference2DList: Optional[
-                        Union[
-                            Iterable[Reference2DList.Reference2dlist_item],
-                            Reference2DList,
-                        ]
+                        Union[Iterable[Reference2DList.Reference2dlist_item], Reference2DList]
                     ] = None,
                     datumField1: Optional[Union[str, DatumField1]] = None,
                     datumField2: Optional[Union[str, DatumField2]] = None,
                     datumField3: Optional[Union[str, DatumField3]] = None,
                     additionalInformationList: Optional[
                         Union[
-                            Iterable[
-                                AdditionalInformationList.Additionalinformationlist_item
-                            ],
+                            Iterable[AdditionalInformationList.Additionalinformationlist_item],
                             AdditionalInformationList,
                         ]
                     ] = None,
@@ -6263,9 +5629,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -6284,149 +5648,100 @@ class QualityControlForMachining(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if gPS_FeatureName is not None and not isinstance(
-                        gPS_FeatureName, aas.SubmodelElement
-                    ):
+                    if gPS_FeatureName is not None and not isinstance(gPS_FeatureName, aas.SubmodelElement):
                         gPS_FeatureName = self.GPS_FeatureName(gPS_FeatureName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if gPS_Description is not None and not isinstance(
-                        gPS_Description, aas.SubmodelElement
-                    ):
+                    if gPS_Description is not None and not isinstance(gPS_Description, aas.SubmodelElement):
                         gPS_Description = self.GPS_Description(gPS_Description)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if measurementProcedure is not None and not isinstance(
-                        measurementProcedure, aas.SubmodelElement
-                    ):
-                        measurementProcedure = self.MeasurementProcedure(
-                            measurementProcedure
-                        )
+                    if measurementProcedure is not None and not isinstance(measurementProcedure, aas.SubmodelElement):
+                        measurementProcedure = self.MeasurementProcedure(measurementProcedure)
 
                     # A str would be split into its characters
                     if isinstance(toleranceNorm, str):
-                        raise TypeError(
-                            "toleranceNorm takes several elements, got a str"
-                        )
+                        raise TypeError("toleranceNorm takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if toleranceNorm:
                         toleranceNorm = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ToleranceNorm(i)
-                            )
-                            for i in toleranceNorm
+                            i if isinstance(i, aas.SubmodelElement) else self.ToleranceNorm(i) for i in toleranceNorm
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if inspectionRelevant is not None and not isinstance(
-                        inspectionRelevant, aas.SubmodelElement
-                    ):
+                    if inspectionRelevant is not None and not isinstance(inspectionRelevant, aas.SubmodelElement):
                         inspectionRelevant = self.InspectionRelevant(inspectionRelevant)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if gPS_Type is not None and not isinstance(
-                        gPS_Type, aas.SubmodelElement
-                    ):
+                    if gPS_Type is not None and not isinstance(gPS_Type, aas.SubmodelElement):
                         gPS_Type = self.GPS_Type(gPS_Type)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if gPS_ReferenceRequired is not None and not isinstance(
-                        gPS_ReferenceRequired, aas.SubmodelElement
-                    ):
-                        gPS_ReferenceRequired = self.GPS_ReferenceRequired(
-                            gPS_ReferenceRequired
-                        )
+                    if gPS_ReferenceRequired is not None and not isinstance(gPS_ReferenceRequired, aas.SubmodelElement):
+                        gPS_ReferenceRequired = self.GPS_ReferenceRequired(gPS_ReferenceRequired)
 
                     # A str would be split into its characters
                     if isinstance(gPS_ToleranceZone, str):
-                        raise TypeError(
-                            "gPS_ToleranceZone takes several elements, got a str"
-                        )
+                        raise TypeError("gPS_ToleranceZone takes several elements, got a str")
 
                     # A str would be split into its characters
                     if isinstance(geometryReferenceList, str):
-                        raise TypeError(
-                            "geometryReferenceList takes several elements, got a str"
-                        )
+                        raise TypeError("geometryReferenceList takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if geometryReferenceList is not None and not isinstance(
-                        geometryReferenceList, aas.SubmodelElement
-                    ):
-                        geometryReferenceList = self.GeometryReferenceList(
-                            geometryReferenceList
-                        )
+                    if geometryReferenceList is not None and not isinstance(geometryReferenceList, aas.SubmodelElement):
+                        geometryReferenceList = self.GeometryReferenceList(geometryReferenceList)
 
                     # A str would be split into its characters
                     if isinstance(iDList3DModel, str):
-                        raise TypeError(
-                            "iDList3DModel takes several elements, got a str"
-                        )
+                        raise TypeError("iDList3DModel takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if iDList3DModel is not None and not isinstance(
-                        iDList3DModel, aas.SubmodelElement
-                    ):
+                    if iDList3DModel is not None and not isinstance(iDList3DModel, aas.SubmodelElement):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
 
                     # A str would be split into its characters
                     if isinstance(reference2DList, str):
-                        raise TypeError(
-                            "reference2DList takes several elements, got a str"
-                        )
+                        raise TypeError("reference2DList takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if reference2DList is not None and not isinstance(
-                        reference2DList, aas.SubmodelElement
-                    ):
+                    if reference2DList is not None and not isinstance(reference2DList, aas.SubmodelElement):
                         reference2DList = self.Reference2DList(reference2DList)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if datumField1 is not None and not isinstance(
-                        datumField1, aas.SubmodelElement
-                    ):
+                    if datumField1 is not None and not isinstance(datumField1, aas.SubmodelElement):
                         datumField1 = self.DatumField1(datumField1)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if datumField2 is not None and not isinstance(
-                        datumField2, aas.SubmodelElement
-                    ):
+                    if datumField2 is not None and not isinstance(datumField2, aas.SubmodelElement):
                         datumField2 = self.DatumField2(datumField2)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if datumField3 is not None and not isinstance(
-                        datumField3, aas.SubmodelElement
-                    ):
+                    if datumField3 is not None and not isinstance(datumField3, aas.SubmodelElement):
                         datumField3 = self.DatumField3(datumField3)
 
                     # A str would be split into its characters
                     if isinstance(additionalInformationList, str):
-                        raise TypeError(
-                            "additionalInformationList takes several elements, got a str"
-                        )
+                        raise TypeError("additionalInformationList takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if additionalInformationList is not None and not isinstance(
                         additionalInformationList, aas.SubmodelElement
                     ):
-                        additionalInformationList = self.AdditionalInformationList(
-                            additionalInformationList
-                        )
+                        additionalInformationList = self.AdditionalInformationList(additionalInformationList)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -6457,9 +5772,7 @@ class QualityControlForMachining(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6476,9 +5789,7 @@ class QualityControlForMachining(aas.Submodel):
 
             def __init__(
                 self,
-                geometricfeatureslist_items: Optional[
-                    Iterable[Geometricfeatureslist_item]
-                ] = None,
+                geometricfeatureslist_items: Optional[Iterable[Geometricfeatureslist_item]] = None,
                 id_short: Optional[str] = r"GeometricFeaturesList",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -6499,9 +5810,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -6520,9 +5829,7 @@ class QualityControlForMachining(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(geometricfeatureslist_items, str):
-                    raise TypeError(
-                        "geometricfeatureslist_items takes several elements, got a str"
-                    )
+                    raise TypeError("geometricfeatureslist_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -6534,9 +5841,7 @@ class QualityControlForMachining(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -6603,15 +5908,9 @@ class QualityControlForMachining(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -6650,9 +5949,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -6707,9 +6004,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -6764,9 +6059,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -6822,18 +6115,11 @@ class QualityControlForMachining(aas.Submodel):
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
                             aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO933#003",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO933#003"),),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -6888,9 +6174,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -6945,9 +6229,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -6990,9 +6272,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7004,9 +6284,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -7061,9 +6339,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -7082,18 +6358,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(geometryreferencelist_items, str):
-                            raise TypeError(
-                                "geometryreferencelist_items takes several elements, got a str"
-                            )
+                            raise TypeError("geometryreferencelist_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if geometryreferencelist_items:
                             geometryreferencelist_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Geometryreferencelist_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Geometryreferencelist_item(i)
                                 for i in geometryreferencelist_items
                             ]
 
@@ -7107,9 +6377,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -7176,15 +6444,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -7209,9 +6471,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7223,9 +6483,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -7259,9 +6517,7 @@ class QualityControlForMachining(aas.Submodel):
 
                     def __init__(
                         self,
-                        idlist3dmodel_items: Optional[
-                            Iterable[Union[str, Idlist3dmodel_item]]
-                        ] = None,
+                        idlist3dmodel_items: Optional[Iterable[Union[str, Idlist3dmodel_item]]] = None,
                         id_short: Optional[str] = r"IDList3DModel",
                         type_value_list_element: aas.SubmodelElement = aas.Property,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -7282,9 +6538,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -7303,18 +6557,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(idlist3dmodel_items, str):
-                            raise TypeError(
-                                "idlist3dmodel_items takes several elements, got a str"
-                            )
+                            raise TypeError("idlist3dmodel_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if idlist3dmodel_items:
                             idlist3dmodel_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Idlist3dmodel_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Idlist3dmodel_item(i)
                                 for i in idlist3dmodel_items
                             ]
 
@@ -7328,9 +6576,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -7397,15 +6643,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -7429,14 +6669,10 @@ class QualityControlForMachining(aas.Submodel):
                                 id_short: Optional[str] = r"Page",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7448,9 +6684,7 @@ class QualityControlForMachining(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -7490,14 +6724,10 @@ class QualityControlForMachining(aas.Submodel):
                                 id_short: Optional[str] = r"Coordinate",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7509,9 +6739,7 @@ class QualityControlForMachining(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -7551,9 +6779,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7565,9 +6791,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -7586,16 +6810,12 @@ class QualityControlForMachining(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if page is not None and not isinstance(
-                                page, aas.SubmodelElement
-                            ):
+                            if page is not None and not isinstance(page, aas.SubmodelElement):
                                 page = self.Page(page)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if coordinate is not None and not isinstance(
-                                coordinate, aas.SubmodelElement
-                            ):
+                            if coordinate is not None and not isinstance(coordinate, aas.SubmodelElement):
                                 coordinate = self.Coordinate(coordinate)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -7630,9 +6850,7 @@ class QualityControlForMachining(aas.Submodel):
 
                     def __init__(
                         self,
-                        reference2dlist_items: Optional[
-                            Iterable[Reference2dlist_item]
-                        ] = None,
+                        reference2dlist_items: Optional[Iterable[Reference2dlist_item]] = None,
                         id_short: Optional[str] = r"Reference2DList",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -7653,9 +6871,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -7674,9 +6890,7 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(reference2dlist_items, str):
-                            raise TypeError(
-                                "reference2dlist_items takes several elements, got a str"
-                            )
+                            raise TypeError("reference2dlist_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -7688,9 +6902,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -7757,15 +6969,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -7790,9 +6996,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7804,9 +7008,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -7849,9 +7051,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7863,17 +7063,12 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Filter type of S-filter",
-                                        r"de": r"Filtertyp des S-Filters",
-                                    }
+                                    dict_={r"en": r"Filter type of S-filter", r"de": r"Filtertyp des S-Filters"}
                                 )
 
                             if qualifier is None:
@@ -7908,9 +7103,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7922,9 +7115,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -7967,9 +7158,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7981,17 +7170,12 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Filter type of L-filter",
-                                        r"de": r"Filtertyp des L-Filters",
-                                    }
+                                    dict_={r"en": r"Filter type of L-filter", r"de": r"Filtertyp des L-Filters"}
                                 )
 
                             if qualifier is None:
@@ -8026,9 +7210,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8040,9 +7222,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -8085,9 +7265,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8099,9 +7277,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -8144,9 +7320,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8158,9 +7332,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -8203,9 +7375,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8217,9 +7387,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -8262,9 +7430,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8276,9 +7442,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -8321,9 +7485,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8335,9 +7497,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -8373,13 +7533,9 @@ class QualityControlForMachining(aas.Submodel):
                         self,
                         sL_ASP_Limit: Union[str, SL_ASP_Limit],
                         sL_ASP_S_FilterType: Union[str, SL_ASP_S_FilterType],
-                        sL_ASP_S_FilterNestingIndex: Union[
-                            str, SL_ASP_S_FilterNestingIndex
-                        ],
+                        sL_ASP_S_FilterNestingIndex: Union[str, SL_ASP_S_FilterNestingIndex],
                         sL_ASP_L_FilterType: Union[str, SL_ASP_L_FilterType],
-                        sL_ASP_L_FilterNestingIndex: Union[
-                            str, SL_ASP_L_FilterNestingIndex
-                        ],
+                        sL_ASP_L_FilterNestingIndex: Union[str, SL_ASP_L_FilterNestingIndex],
                         sL_ASP_F_Operator: Union[str, SL_ASP_F_Operator],
                         sL_ASP_Indicator: Union[str, SL_ASP_Indicator],
                         sL_ASP_Value: Union[float, SL_ASP_Value],
@@ -8401,9 +7557,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -8422,86 +7576,56 @@ class QualityControlForMachining(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sL_ASP_Limit is not None and not isinstance(
-                            sL_ASP_Limit, aas.SubmodelElement
-                        ):
+                        if sL_ASP_Limit is not None and not isinstance(sL_ASP_Limit, aas.SubmodelElement):
                             sL_ASP_Limit = self.SL_ASP_Limit(sL_ASP_Limit)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sL_ASP_S_FilterType is not None and not isinstance(
-                            sL_ASP_S_FilterType, aas.SubmodelElement
-                        ):
-                            sL_ASP_S_FilterType = self.SL_ASP_S_FilterType(
-                                sL_ASP_S_FilterType
-                            )
+                        if sL_ASP_S_FilterType is not None and not isinstance(sL_ASP_S_FilterType, aas.SubmodelElement):
+                            sL_ASP_S_FilterType = self.SL_ASP_S_FilterType(sL_ASP_S_FilterType)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if sL_ASP_S_FilterNestingIndex is not None and not isinstance(
                             sL_ASP_S_FilterNestingIndex, aas.SubmodelElement
                         ):
-                            sL_ASP_S_FilterNestingIndex = (
-                                self.SL_ASP_S_FilterNestingIndex(
-                                    sL_ASP_S_FilterNestingIndex
-                                )
-                            )
+                            sL_ASP_S_FilterNestingIndex = self.SL_ASP_S_FilterNestingIndex(sL_ASP_S_FilterNestingIndex)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sL_ASP_L_FilterType is not None and not isinstance(
-                            sL_ASP_L_FilterType, aas.SubmodelElement
-                        ):
-                            sL_ASP_L_FilterType = self.SL_ASP_L_FilterType(
-                                sL_ASP_L_FilterType
-                            )
+                        if sL_ASP_L_FilterType is not None and not isinstance(sL_ASP_L_FilterType, aas.SubmodelElement):
+                            sL_ASP_L_FilterType = self.SL_ASP_L_FilterType(sL_ASP_L_FilterType)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if sL_ASP_L_FilterNestingIndex is not None and not isinstance(
                             sL_ASP_L_FilterNestingIndex, aas.SubmodelElement
                         ):
-                            sL_ASP_L_FilterNestingIndex = (
-                                self.SL_ASP_L_FilterNestingIndex(
-                                    sL_ASP_L_FilterNestingIndex
-                                )
-                            )
+                            sL_ASP_L_FilterNestingIndex = self.SL_ASP_L_FilterNestingIndex(sL_ASP_L_FilterNestingIndex)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sL_ASP_F_Operator is not None and not isinstance(
-                            sL_ASP_F_Operator, aas.SubmodelElement
-                        ):
-                            sL_ASP_F_Operator = self.SL_ASP_F_Operator(
-                                sL_ASP_F_Operator
-                            )
+                        if sL_ASP_F_Operator is not None and not isinstance(sL_ASP_F_Operator, aas.SubmodelElement):
+                            sL_ASP_F_Operator = self.SL_ASP_F_Operator(sL_ASP_F_Operator)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sL_ASP_Indicator is not None and not isinstance(
-                            sL_ASP_Indicator, aas.SubmodelElement
-                        ):
+                        if sL_ASP_Indicator is not None and not isinstance(sL_ASP_Indicator, aas.SubmodelElement):
                             sL_ASP_Indicator = self.SL_ASP_Indicator(sL_ASP_Indicator)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sL_ASP_Value is not None and not isinstance(
-                            sL_ASP_Value, aas.SubmodelElement
-                        ):
+                        if sL_ASP_Value is not None and not isinstance(sL_ASP_Value, aas.SubmodelElement):
                             sL_ASP_Value = self.SL_ASP_Value(sL_ASP_Value)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sL_ASP_Unit is not None and not isinstance(
-                            sL_ASP_Unit, aas.SubmodelElement
-                        ):
+                        if sL_ASP_Unit is not None and not isinstance(sL_ASP_Unit, aas.SubmodelElement):
                             sL_ASP_Unit = self.SL_ASP_Unit(sL_ASP_Unit)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sL_ASP_Or is not None and not isinstance(
-                            sL_ASP_Or, aas.SubmodelElement
-                        ):
+                        if sL_ASP_Or is not None and not isinstance(sL_ASP_Or, aas.SubmodelElement):
                             sL_ASP_Or = self.SL_ASP_Or(sL_ASP_Or)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -8528,9 +7652,7 @@ class QualityControlForMachining(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -8558,9 +7680,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8572,9 +7692,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -8617,9 +7735,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8631,17 +7747,12 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Filter type of S-filter",
-                                        r"de": r"Filtertyp des S-Filters",
-                                    }
+                                    dict_={r"en": r"Filter type of S-filter", r"de": r"Filtertyp des S-Filters"}
                                 )
 
                             if qualifier is None:
@@ -8676,9 +7787,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8690,9 +7799,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -8735,9 +7842,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8749,9 +7854,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -8794,9 +7897,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8808,9 +7909,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -8853,9 +7952,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8867,9 +7964,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -8912,9 +8007,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8926,9 +8019,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -8971,9 +8062,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8985,9 +8074,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -9030,9 +8117,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9044,9 +8129,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -9082,9 +8165,7 @@ class QualityControlForMachining(aas.Submodel):
                         self,
                         sF_ASP_Limit: Union[str, SF_ASP_Limit],
                         sF_ASP_S_FilterType: Union[str, SF_ASP_S_FilterType],
-                        sF_ASP_S_FilterNestingIndex: Union[
-                            str, SF_ASP_S_FilterNestingIndex
-                        ],
+                        sF_ASP_S_FilterNestingIndex: Union[str, SF_ASP_S_FilterNestingIndex],
                         sF_ASP_F_Operator: Union[str, SF_ASP_F_Operator],
                         sF_ASP_Indicator: Union[str, SF_ASP_Indicator],
                         sF_ASP_Value: Union[float, SF_ASP_Value],
@@ -9107,9 +8188,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -9128,73 +8207,49 @@ class QualityControlForMachining(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sF_ASP_Limit is not None and not isinstance(
-                            sF_ASP_Limit, aas.SubmodelElement
-                        ):
+                        if sF_ASP_Limit is not None and not isinstance(sF_ASP_Limit, aas.SubmodelElement):
                             sF_ASP_Limit = self.SF_ASP_Limit(sF_ASP_Limit)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sF_ASP_S_FilterType is not None and not isinstance(
-                            sF_ASP_S_FilterType, aas.SubmodelElement
-                        ):
-                            sF_ASP_S_FilterType = self.SF_ASP_S_FilterType(
-                                sF_ASP_S_FilterType
-                            )
+                        if sF_ASP_S_FilterType is not None and not isinstance(sF_ASP_S_FilterType, aas.SubmodelElement):
+                            sF_ASP_S_FilterType = self.SF_ASP_S_FilterType(sF_ASP_S_FilterType)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if sF_ASP_S_FilterNestingIndex is not None and not isinstance(
                             sF_ASP_S_FilterNestingIndex, aas.SubmodelElement
                         ):
-                            sF_ASP_S_FilterNestingIndex = (
-                                self.SF_ASP_S_FilterNestingIndex(
-                                    sF_ASP_S_FilterNestingIndex
-                                )
-                            )
+                            sF_ASP_S_FilterNestingIndex = self.SF_ASP_S_FilterNestingIndex(sF_ASP_S_FilterNestingIndex)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sF_ASP_F_Operator is not None and not isinstance(
-                            sF_ASP_F_Operator, aas.SubmodelElement
-                        ):
-                            sF_ASP_F_Operator = self.SF_ASP_F_Operator(
-                                sF_ASP_F_Operator
-                            )
+                        if sF_ASP_F_Operator is not None and not isinstance(sF_ASP_F_Operator, aas.SubmodelElement):
+                            sF_ASP_F_Operator = self.SF_ASP_F_Operator(sF_ASP_F_Operator)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sF_ASP_Indicator is not None and not isinstance(
-                            sF_ASP_Indicator, aas.SubmodelElement
-                        ):
+                        if sF_ASP_Indicator is not None and not isinstance(sF_ASP_Indicator, aas.SubmodelElement):
                             sF_ASP_Indicator = self.SF_ASP_Indicator(sF_ASP_Indicator)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sF_ASP_Value is not None and not isinstance(
-                            sF_ASP_Value, aas.SubmodelElement
-                        ):
+                        if sF_ASP_Value is not None and not isinstance(sF_ASP_Value, aas.SubmodelElement):
                             sF_ASP_Value = self.SF_ASP_Value(sF_ASP_Value)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sF_ASP_Unit is not None and not isinstance(
-                            sF_ASP_Unit, aas.SubmodelElement
-                        ):
+                        if sF_ASP_Unit is not None and not isinstance(sF_ASP_Unit, aas.SubmodelElement):
                             sF_ASP_Unit = self.SF_ASP_Unit(sF_ASP_Unit)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sF_ASP_ES is not None and not isinstance(
-                            sF_ASP_ES, aas.SubmodelElement
-                        ):
+                        if sF_ASP_ES is not None and not isinstance(sF_ASP_ES, aas.SubmodelElement):
                             sF_ASP_ES = self.SF_ASP_ES(sF_ASP_ES)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sF_ASP_Or is not None and not isinstance(
-                            sF_ASP_Or, aas.SubmodelElement
-                        ):
+                        if sF_ASP_Or is not None and not isinstance(sF_ASP_Or, aas.SubmodelElement):
                             sF_ASP_Or = self.SF_ASP_Or(sF_ASP_Or)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -9220,9 +8275,7 @@ class QualityControlForMachining(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -9250,9 +8303,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9264,9 +8315,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -9309,9 +8358,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9323,9 +8370,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -9368,9 +8413,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9382,9 +8425,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -9427,9 +8468,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9441,9 +8480,7 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -9497,9 +8534,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -9518,30 +8553,22 @@ class QualityControlForMachining(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if smr_RefCValue is not None and not isinstance(
-                            smr_RefCValue, aas.SubmodelElement
-                        ):
+                        if smr_RefCValue is not None and not isinstance(smr_RefCValue, aas.SubmodelElement):
                             smr_RefCValue = self.Smr_RefCValue(smr_RefCValue)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if smr_CValue is not None and not isinstance(
-                            smr_CValue, aas.SubmodelElement
-                        ):
+                        if smr_CValue is not None and not isinstance(smr_CValue, aas.SubmodelElement):
                             smr_CValue = self.Smr_CValue(smr_CValue)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if smr_Value is not None and not isinstance(
-                            smr_Value, aas.SubmodelElement
-                        ):
+                        if smr_Value is not None and not isinstance(smr_Value, aas.SubmodelElement):
                             smr_Value = self.Smr_Value(smr_Value)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if smr_Unit is not None and not isinstance(
-                            smr_Unit, aas.SubmodelElement
-                        ):
+                        if smr_Unit is not None and not isinstance(smr_Unit, aas.SubmodelElement):
                             smr_Unit = self.Smr_Unit(smr_Unit)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -9557,9 +8584,7 @@ class QualityControlForMachining(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -9584,26 +8609,15 @@ class QualityControlForMachining(aas.Submodel):
                     toleranceNorm: Optional[Iterable[Union[str, ToleranceNorm]]] = None,
                     geometryReferenceList: Optional[
                         Union[
-                            Iterable[
-                                Union[
-                                    aas.Reference,
-                                    GeometryReferenceList.Geometryreferencelist_item,
-                                ]
-                            ],
+                            Iterable[Union[aas.Reference, GeometryReferenceList.Geometryreferencelist_item]],
                             GeometryReferenceList,
                         ]
                     ] = None,
                     iDList3DModel: Optional[
-                        Union[
-                            Iterable[Union[str, IDList3DModel.Idlist3dmodel_item]],
-                            IDList3DModel,
-                        ]
+                        Union[Iterable[Union[str, IDList3DModel.Idlist3dmodel_item]], IDList3DModel]
                     ] = None,
                     reference2DList: Optional[
-                        Union[
-                            Iterable[Reference2DList.Reference2dlist_item],
-                            Reference2DList,
-                        ]
+                        Union[Iterable[Reference2DList.Reference2dlist_item], Reference2DList]
                     ] = None,
                     sL_Parameters: Optional[Iterable[SL_Parameters]] = None,
                     sF_Parameters: Optional[Iterable[SF_Parameters]] = None,
@@ -9624,9 +8638,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -9645,49 +8657,32 @@ class QualityControlForMachining(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if aSF_FeatureName is not None and not isinstance(
-                        aSF_FeatureName, aas.SubmodelElement
-                    ):
+                    if aSF_FeatureName is not None and not isinstance(aSF_FeatureName, aas.SubmodelElement):
                         aSF_FeatureName = self.ASF_FeatureName(aSF_FeatureName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if aSF_Description is not None and not isinstance(
-                        aSF_Description, aas.SubmodelElement
-                    ):
+                    if aSF_Description is not None and not isinstance(aSF_Description, aas.SubmodelElement):
                         aSF_Description = self.ASF_Description(aSF_Description)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if measurementProcedure is not None and not isinstance(
-                        measurementProcedure, aas.SubmodelElement
-                    ):
-                        measurementProcedure = self.MeasurementProcedure(
-                            measurementProcedure
-                        )
+                    if measurementProcedure is not None and not isinstance(measurementProcedure, aas.SubmodelElement):
+                        measurementProcedure = self.MeasurementProcedure(measurementProcedure)
 
                     # A str would be split into its characters
                     if isinstance(toleranceNorm, str):
-                        raise TypeError(
-                            "toleranceNorm takes several elements, got a str"
-                        )
+                        raise TypeError("toleranceNorm takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if toleranceNorm:
                         toleranceNorm = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ToleranceNorm(i)
-                            )
-                            for i in toleranceNorm
+                            i if isinstance(i, aas.SubmodelElement) else self.ToleranceNorm(i) for i in toleranceNorm
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if inspectionRelevant is not None and not isinstance(
-                        inspectionRelevant, aas.SubmodelElement
-                    ):
+                    if inspectionRelevant is not None and not isinstance(inspectionRelevant, aas.SubmodelElement):
                         inspectionRelevant = self.InspectionRelevant(inspectionRelevant)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -9695,62 +8690,42 @@ class QualityControlForMachining(aas.Submodel):
                     if arealSurfaceFeatureType is not None and not isinstance(
                         arealSurfaceFeatureType, aas.SubmodelElement
                     ):
-                        arealSurfaceFeatureType = self.ArealSurfaceFeatureType(
-                            arealSurfaceFeatureType
-                        )
+                        arealSurfaceFeatureType = self.ArealSurfaceFeatureType(arealSurfaceFeatureType)
 
                     # A str would be split into its characters
                     if isinstance(geometryReferenceList, str):
-                        raise TypeError(
-                            "geometryReferenceList takes several elements, got a str"
-                        )
+                        raise TypeError("geometryReferenceList takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if geometryReferenceList is not None and not isinstance(
-                        geometryReferenceList, aas.SubmodelElement
-                    ):
-                        geometryReferenceList = self.GeometryReferenceList(
-                            geometryReferenceList
-                        )
+                    if geometryReferenceList is not None and not isinstance(geometryReferenceList, aas.SubmodelElement):
+                        geometryReferenceList = self.GeometryReferenceList(geometryReferenceList)
 
                     # A str would be split into its characters
                     if isinstance(iDList3DModel, str):
-                        raise TypeError(
-                            "iDList3DModel takes several elements, got a str"
-                        )
+                        raise TypeError("iDList3DModel takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if iDList3DModel is not None and not isinstance(
-                        iDList3DModel, aas.SubmodelElement
-                    ):
+                    if iDList3DModel is not None and not isinstance(iDList3DModel, aas.SubmodelElement):
                         iDList3DModel = self.IDList3DModel(iDList3DModel)
 
                     # A str would be split into its characters
                     if isinstance(reference2DList, str):
-                        raise TypeError(
-                            "reference2DList takes several elements, got a str"
-                        )
+                        raise TypeError("reference2DList takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if reference2DList is not None and not isinstance(
-                        reference2DList, aas.SubmodelElement
-                    ):
+                    if reference2DList is not None and not isinstance(reference2DList, aas.SubmodelElement):
                         reference2DList = self.Reference2DList(reference2DList)
 
                     # A str would be split into its characters
                     if isinstance(sL_Parameters, str):
-                        raise TypeError(
-                            "sL_Parameters takes several elements, got a str"
-                        )
+                        raise TypeError("sL_Parameters takes several elements, got a str")
 
                     # A str would be split into its characters
                     if isinstance(sF_Parameters, str):
-                        raise TypeError(
-                            "sF_Parameters takes several elements, got a str"
-                        )
+                        raise TypeError("sF_Parameters takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -9778,9 +8753,7 @@ class QualityControlForMachining(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -9797,9 +8770,7 @@ class QualityControlForMachining(aas.Submodel):
 
             def __init__(
                 self,
-                arealsurfacefeatureslist_items: Optional[
-                    Iterable[Arealsurfacefeatureslist_item]
-                ] = None,
+                arealsurfacefeatureslist_items: Optional[Iterable[Arealsurfacefeatureslist_item]] = None,
                 id_short: Optional[str] = r"ArealSurfaceFeaturesList",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -9820,9 +8791,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -9841,9 +8810,7 @@ class QualityControlForMachining(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(arealsurfacefeatureslist_items, str):
-                    raise TypeError(
-                        "arealsurfacefeatureslist_items takes several elements, got a str"
-                    )
+                    raise TypeError("arealsurfacefeatureslist_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -9855,9 +8822,7 @@ class QualityControlForMachining(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -9924,15 +8889,9 @@ class QualityControlForMachining(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -9947,28 +8906,16 @@ class QualityControlForMachining(aas.Submodel):
         def __init__(
             self,
             linearFeaturesList: Optional[
-                Union[
-                    Iterable[LinearFeaturesList.Linearfeatureslist_item],
-                    LinearFeaturesList,
-                ]
+                Union[Iterable[LinearFeaturesList.Linearfeatureslist_item], LinearFeaturesList]
             ] = None,
             attributiveFeaturesList: Optional[
-                Union[
-                    Iterable[AttributiveFeaturesList.Attributivefeatureslist_item],
-                    AttributiveFeaturesList,
-                ]
+                Union[Iterable[AttributiveFeaturesList.Attributivefeatureslist_item], AttributiveFeaturesList]
             ] = None,
             geometricFeaturesList: Optional[
-                Union[
-                    Iterable[GeometricFeaturesList.Geometricfeatureslist_item],
-                    GeometricFeaturesList,
-                ]
+                Union[Iterable[GeometricFeaturesList.Geometricfeatureslist_item], GeometricFeaturesList]
             ] = None,
             arealSurfaceFeaturesList: Optional[
-                Union[
-                    Iterable[ArealSurfaceFeaturesList.Arealsurfacefeatureslist_item],
-                    ArealSurfaceFeaturesList,
-                ]
+                Union[Iterable[ArealSurfaceFeaturesList.Arealsurfacefeatureslist_item], ArealSurfaceFeaturesList]
             ] = None,
             id_short: Optional[str] = r"QualityFeatures",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -9986,9 +8933,7 @@ class QualityControlForMachining(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -10011,55 +8956,35 @@ class QualityControlForMachining(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if linearFeaturesList is not None and not isinstance(
-                linearFeaturesList, aas.SubmodelElement
-            ):
+            if linearFeaturesList is not None and not isinstance(linearFeaturesList, aas.SubmodelElement):
                 linearFeaturesList = self.LinearFeaturesList(linearFeaturesList)
 
             # A str would be split into its characters
             if isinstance(attributiveFeaturesList, str):
-                raise TypeError(
-                    "attributiveFeaturesList takes several elements, got a str"
-                )
+                raise TypeError("attributiveFeaturesList takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if attributiveFeaturesList is not None and not isinstance(
-                attributiveFeaturesList, aas.SubmodelElement
-            ):
-                attributiveFeaturesList = self.AttributiveFeaturesList(
-                    attributiveFeaturesList
-                )
+            if attributiveFeaturesList is not None and not isinstance(attributiveFeaturesList, aas.SubmodelElement):
+                attributiveFeaturesList = self.AttributiveFeaturesList(attributiveFeaturesList)
 
             # A str would be split into its characters
             if isinstance(geometricFeaturesList, str):
-                raise TypeError(
-                    "geometricFeaturesList takes several elements, got a str"
-                )
+                raise TypeError("geometricFeaturesList takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if geometricFeaturesList is not None and not isinstance(
-                geometricFeaturesList, aas.SubmodelElement
-            ):
-                geometricFeaturesList = self.GeometricFeaturesList(
-                    geometricFeaturesList
-                )
+            if geometricFeaturesList is not None and not isinstance(geometricFeaturesList, aas.SubmodelElement):
+                geometricFeaturesList = self.GeometricFeaturesList(geometricFeaturesList)
 
             # A str would be split into its characters
             if isinstance(arealSurfaceFeaturesList, str):
-                raise TypeError(
-                    "arealSurfaceFeaturesList takes several elements, got a str"
-                )
+                raise TypeError("arealSurfaceFeaturesList takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if arealSurfaceFeaturesList is not None and not isinstance(
-                arealSurfaceFeaturesList, aas.SubmodelElement
-            ):
-                arealSurfaceFeaturesList = self.ArealSurfaceFeaturesList(
-                    arealSurfaceFeaturesList
-                )
+            if arealSurfaceFeaturesList is not None and not isinstance(arealSurfaceFeaturesList, aas.SubmodelElement):
+                arealSurfaceFeaturesList = self.ArealSurfaceFeaturesList(arealSurfaceFeaturesList)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -10079,9 +9004,7 @@ class QualityControlForMachining(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -10119,9 +9042,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -10177,18 +9098,11 @@ class QualityControlForMachining(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///61360_4#ADA031#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#ADA031#001"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -10244,18 +9158,11 @@ class QualityControlForMachining(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///61360_4#ADA031#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#ADA031#001"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -10310,9 +9217,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -10367,9 +9272,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -10424,9 +9327,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -10481,9 +9382,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -10538,9 +9437,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -10595,9 +9492,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -10655,17 +9550,12 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Production order information",
-                            r"de": r"Informationen zum Produktionsauftrag",
-                        }
+                        dict_={r"en": r"Production order information", r"de": r"Informationen zum Produktionsauftrag"}
                     )
 
                 if qualifier is None:
@@ -10676,16 +9566,12 @@ class QualityControlForMachining(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if productionStart is not None and not isinstance(
-                    productionStart, aas.SubmodelElement
-                ):
+                if productionStart is not None and not isinstance(productionStart, aas.SubmodelElement):
                     productionStart = self.ProductionStart(productionStart)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if productionEnd is not None and not isinstance(
-                    productionEnd, aas.SubmodelElement
-                ):
+                if productionEnd is not None and not isinstance(productionEnd, aas.SubmodelElement):
                     productionEnd = self.ProductionEnd(productionEnd)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -10700,42 +9586,27 @@ class QualityControlForMachining(aas.Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if jobOrderNumber:
                     jobOrderNumber = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.JobOrderNumber(i)
-                        )
-                        for i in jobOrderNumber
+                        i if isinstance(i, aas.SubmodelElement) else self.JobOrderNumber(i) for i in jobOrderNumber
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if plannedPartsPerRun is not None and not isinstance(
-                    plannedPartsPerRun, aas.SubmodelElement
-                ):
+                if plannedPartsPerRun is not None and not isinstance(plannedPartsPerRun, aas.SubmodelElement):
                     plannedPartsPerRun = self.PlannedPartsPerRun(plannedPartsPerRun)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if plannedOrderQuantity is not None and not isinstance(
-                    plannedOrderQuantity, aas.SubmodelElement
-                ):
-                    plannedOrderQuantity = self.PlannedOrderQuantity(
-                        plannedOrderQuantity
-                    )
+                if plannedOrderQuantity is not None and not isinstance(plannedOrderQuantity, aas.SubmodelElement):
+                    plannedOrderQuantity = self.PlannedOrderQuantity(plannedOrderQuantity)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if actualPartsInRun is not None and not isinstance(
-                    actualPartsInRun, aas.SubmodelElement
-                ):
+                if actualPartsInRun is not None and not isinstance(actualPartsInRun, aas.SubmodelElement):
                     actualPartsInRun = self.ActualPartsInRun(actualPartsInRun)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if jobFinished is not None and not isinstance(
-                    jobFinished, aas.SubmodelElement
-                ):
+                if jobFinished is not None and not isinstance(jobFinished, aas.SubmodelElement):
                     jobFinished = self.JobFinished(jobFinished)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -10760,9 +9631,7 @@ class QualityControlForMachining(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -10797,9 +9666,7 @@ class QualityControlForMachining(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -10818,9 +9685,7 @@ class QualityControlForMachining(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if technicalData is not None and not isinstance(
-                technicalData, aas.SubmodelElement
-            ):
+            if technicalData is not None and not isinstance(technicalData, aas.SubmodelElement):
                 technicalData = self.TechnicalData(technicalData)
 
             # Add all passed/initialized submodel elements to a single list
@@ -10836,9 +9701,7 @@ class QualityControlForMachining(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -10876,9 +9739,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -10931,9 +9792,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -10989,18 +9848,11 @@ class QualityControlForMachining(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61360_4#ADA029#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#ADA029#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -11055,9 +9907,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -11112,9 +9962,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -11167,9 +10015,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -11222,9 +10068,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -11279,9 +10123,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -11320,9 +10162,7 @@ class QualityControlForMachining(aas.Submodel):
             partNumber: Optional[Union[int, PartNumber]] = None,
             orderNumber: Optional[Union[str, OrderNumber]] = None,
             lotNumber: Optional[Union[str, LotNumber]] = None,
-            submodelReference3D: Optional[
-                Union[aas.Reference, SubmodelReference3D]
-            ] = None,
+            submodelReference3D: Optional[Union[aas.Reference, SubmodelReference3D]] = None,
             drawingReference2D: Optional[Union[str, DrawingReference2D]] = None,
             cADFileReference3D: Optional[Union[str, CADFileReference3D]] = None,
             id_short: Optional[str] = r"PartInformation",
@@ -11341,9 +10181,7 @@ class QualityControlForMachining(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -11362,30 +10200,22 @@ class QualityControlForMachining(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if digitalNameplate is not None and not isinstance(
-                digitalNameplate, aas.SubmodelElement
-            ):
+            if digitalNameplate is not None and not isinstance(digitalNameplate, aas.SubmodelElement):
                 digitalNameplate = self.DigitalNameplate(digitalNameplate)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if partIdentifier is not None and not isinstance(
-                partIdentifier, aas.SubmodelElement
-            ):
+            if partIdentifier is not None and not isinstance(partIdentifier, aas.SubmodelElement):
                 partIdentifier = self.PartIdentifier(partIdentifier)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if partNumber is not None and not isinstance(
-                partNumber, aas.SubmodelElement
-            ):
+            if partNumber is not None and not isinstance(partNumber, aas.SubmodelElement):
                 partNumber = self.PartNumber(partNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if orderNumber is not None and not isinstance(
-                orderNumber, aas.SubmodelElement
-            ):
+            if orderNumber is not None and not isinstance(orderNumber, aas.SubmodelElement):
                 orderNumber = self.OrderNumber(orderNumber)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -11395,23 +10225,17 @@ class QualityControlForMachining(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if submodelReference3D is not None and not isinstance(
-                submodelReference3D, aas.SubmodelElement
-            ):
+            if submodelReference3D is not None and not isinstance(submodelReference3D, aas.SubmodelElement):
                 submodelReference3D = self.SubmodelReference3D(submodelReference3D)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if drawingReference2D is not None and not isinstance(
-                drawingReference2D, aas.SubmodelElement
-            ):
+            if drawingReference2D is not None and not isinstance(drawingReference2D, aas.SubmodelElement):
                 drawingReference2D = self.DrawingReference2D(drawingReference2D)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if cADFileReference3D is not None and not isinstance(
-                cADFileReference3D, aas.SubmodelElement
-            ):
+            if cADFileReference3D is not None and not isinstance(cADFileReference3D, aas.SubmodelElement):
                 cADFileReference3D = self.CADFileReference3D(cADFileReference3D)
 
             # Add all passed/initialized submodel elements to a single list
@@ -11436,9 +10260,7 @@ class QualityControlForMachining(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -11480,9 +10302,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -11537,9 +10357,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -11592,9 +10410,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -11628,9 +10444,7 @@ class QualityControlForMachining(aas.Submodel):
                 self,
                 departmentName: Union[str, DepartmentName],
                 role: Union[str, Role],
-                contactInformation: Optional[
-                    Union[aas.Reference, ContactInformation]
-                ] = None,
+                contactInformation: Optional[Union[aas.Reference, ContactInformation]] = None,
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -11647,9 +10461,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -11668,9 +10480,7 @@ class QualityControlForMachining(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if departmentName is not None and not isinstance(
-                    departmentName, aas.SubmodelElement
-                ):
+                if departmentName is not None and not isinstance(departmentName, aas.SubmodelElement):
                     departmentName = self.DepartmentName(departmentName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -11680,9 +10490,7 @@ class QualityControlForMachining(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if contactInformation is not None and not isinstance(
-                    contactInformation, aas.SubmodelElement
-                ):
+                if contactInformation is not None and not isinstance(contactInformation, aas.SubmodelElement):
                     contactInformation = self.ContactInformation(contactInformation)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -11698,9 +10506,7 @@ class QualityControlForMachining(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -11717,9 +10523,7 @@ class QualityControlForMachining(aas.Submodel):
 
         def __init__(
             self,
-            qualityresponsibilitylist_items: Optional[
-                Iterable[Qualityresponsibilitylist_item]
-            ] = None,
+            qualityresponsibilitylist_items: Optional[Iterable[Qualityresponsibilitylist_item]] = None,
             id_short: Optional[str] = r"QualityResponsibilityList",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -11740,9 +10544,7 @@ class QualityControlForMachining(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -11761,9 +10563,7 @@ class QualityControlForMachining(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(qualityresponsibilitylist_items, str):
-                raise TypeError(
-                    "qualityresponsibilitylist_items takes several elements, got a str"
-                )
+                raise TypeError("qualityresponsibilitylist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -11775,9 +10575,7 @@ class QualityControlForMachining(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -11846,10 +10644,7 @@ class QualityControlForMachining(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -11886,9 +10681,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -11939,9 +10732,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -11994,17 +10785,12 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Name of the test device",
-                                r"de": r"Bezeichnung des Prüfgeräts",
-                            }
+                            dict_={r"en": r"Name of the test device", r"de": r"Bezeichnung des Prüfgeräts"}
                         )
 
                     if qualifier is None:
@@ -12051,9 +10837,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -12108,9 +10892,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -12166,18 +10948,11 @@ class QualityControlForMachining(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAN807#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAN807#002"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -12232,9 +11007,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -12290,18 +11063,11 @@ class QualityControlForMachining(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAQ616#009",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ616#009"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -12356,9 +11122,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -12411,9 +11175,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -12450,15 +11212,11 @@ class QualityControlForMachining(aas.Submodel):
                 measuringUnit: Union[str, MeasuringUnit],
                 measuringRange: Union[Tuple[float, float], MeasuringRange],
                 responsibility: Optional[Union[aas.Reference, Responsibility]] = None,
-                digitalNameplateTestingDevice: Optional[
-                    Union[aas.Reference, DigitalNameplateTestingDevice]
-                ] = None,
+                digitalNameplateTestingDevice: Optional[Union[aas.Reference, DigitalNameplateTestingDevice]] = None,
                 resolution: Optional[Union[float, Resolution]] = None,
                 accuracy: Optional[Union[float, Accuracy]] = None,
                 norm: Optional[Union[str, Norm]] = None,
-                calibrationCertificate: Optional[
-                    Iterable[Union[aas.Reference, CalibrationCertificate]]
-                ] = None,
+                calibrationCertificate: Optional[Iterable[Union[aas.Reference, CalibrationCertificate]]] = None,
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -12475,9 +11233,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -12496,9 +11252,7 @@ class QualityControlForMachining(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if responsibility is not None and not isinstance(
-                    responsibility, aas.SubmodelElement
-                ):
+                if responsibility is not None and not isinstance(responsibility, aas.SubmodelElement):
                     responsibility = self.Responsibility(responsibility)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12506,52 +11260,36 @@ class QualityControlForMachining(aas.Submodel):
                 if digitalNameplateTestingDevice is not None and not isinstance(
                     digitalNameplateTestingDevice, aas.SubmodelElement
                 ):
-                    digitalNameplateTestingDevice = self.DigitalNameplateTestingDevice(
-                        digitalNameplateTestingDevice
-                    )
+                    digitalNameplateTestingDevice = self.DigitalNameplateTestingDevice(digitalNameplateTestingDevice)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if deviceName is not None and not isinstance(
-                    deviceName, aas.SubmodelElement
-                ):
+                if deviceName is not None and not isinstance(deviceName, aas.SubmodelElement):
                     deviceName = self.DeviceName(deviceName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if measuringType is not None and not isinstance(
-                    measuringType, aas.SubmodelElement
-                ):
+                if measuringType is not None and not isinstance(measuringType, aas.SubmodelElement):
                     measuringType = self.MeasuringType(measuringType)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if measuringUnit is not None and not isinstance(
-                    measuringUnit, aas.SubmodelElement
-                ):
+                if measuringUnit is not None and not isinstance(measuringUnit, aas.SubmodelElement):
                     measuringUnit = self.MeasuringUnit(measuringUnit)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if measuringRange is not None and not isinstance(
-                    measuringRange, aas.SubmodelElement
-                ):
-                    measuringRange = self.MeasuringRange(
-                        min=measuringRange[0], max=measuringRange[1]
-                    )
+                if measuringRange is not None and not isinstance(measuringRange, aas.SubmodelElement):
+                    measuringRange = self.MeasuringRange(min=measuringRange[0], max=measuringRange[1])
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if resolution is not None and not isinstance(
-                    resolution, aas.SubmodelElement
-                ):
+                if resolution is not None and not isinstance(resolution, aas.SubmodelElement):
                     resolution = self.Resolution(resolution)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if accuracy is not None and not isinstance(
-                    accuracy, aas.SubmodelElement
-                ):
+                if accuracy is not None and not isinstance(accuracy, aas.SubmodelElement):
                     accuracy = self.Accuracy(accuracy)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12561,18 +11299,12 @@ class QualityControlForMachining(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(calibrationCertificate, str):
-                    raise TypeError(
-                        "calibrationCertificate takes several elements, got a str"
-                    )
+                    raise TypeError("calibrationCertificate takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if calibrationCertificate:
                     calibrationCertificate = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.CalibrationCertificate(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.CalibrationCertificate(i)
                         for i in calibrationCertificate
                     ]
 
@@ -12600,9 +11332,7 @@ class QualityControlForMachining(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -12640,17 +11370,12 @@ class QualityControlForMachining(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"List of testing devices used",
-                        r"de": r"Liste der verwendeten Prüfgeräte",
-                    }
+                    dict_={r"en": r"List of testing devices used", r"de": r"Liste der verwendeten Prüfgeräte"}
                 )
 
             if qualifier is None:
@@ -12661,9 +11386,7 @@ class QualityControlForMachining(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(testingdeviceslist_items, str):
-                raise TypeError(
-                    "testingdeviceslist_items takes several elements, got a str"
-                )
+                raise TypeError("testingdeviceslist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -12675,9 +11398,7 @@ class QualityControlForMachining(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -12746,10 +11467,7 @@ class QualityControlForMachining(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -12786,17 +11504,12 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Date time of job start",
-                            r"de": r"Datum und Zeit des Starts des Auftrags",
-                        }
+                        dict_={r"en": r"Date time of job start", r"de": r"Datum und Zeit des Starts des Auftrags"}
                     )
 
                 if qualifier is None:
@@ -12843,17 +11556,12 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Date time of job end",
-                            r"de": r"Datum und Zeit des Endes des Auftrags",
-                        }
+                        dict_={r"en": r"Date time of job end", r"de": r"Datum und Zeit des Endes des Auftrags"}
                     )
 
                 if qualifier is None:
@@ -12900,9 +11608,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -12957,9 +11663,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -13014,9 +11718,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -13071,9 +11773,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -13128,9 +11828,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -13187,9 +11885,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -13240,9 +11936,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -13293,9 +11987,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -13348,9 +12040,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -13405,9 +12095,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -13462,17 +12150,12 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Physical unit of feature",
-                                    r"de": r"Physikalische Einheit des Merkmals",
-                                }
+                                dict_={r"en": r"Physical unit of feature", r"de": r"Physikalische Einheit des Merkmals"}
                             )
 
                         if qualifier is None:
@@ -13519,9 +12202,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -13576,9 +12257,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -13633,9 +12312,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -13690,17 +12367,12 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Deviation from nominal value",
-                                    r"de": r"Abweichung vom Sollwert",
-                                }
+                                dict_={r"en": r"Deviation from nominal value", r"de": r"Abweichung vom Sollwert"}
                             )
 
                         if qualifier is None:
@@ -13747,9 +12419,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -13804,9 +12474,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -13861,9 +12529,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -13918,9 +12584,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -13975,9 +12639,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -14022,9 +12684,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14036,17 +12696,12 @@ class QualityControlForMachining(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Measured value",
-                                        r"de": r"Gemessener Wert",
-                                    }
+                                    dict_={r"en": r"Measured value", r"de": r"Gemessener Wert"}
                                 )
 
                             if qualifier is None:
@@ -14072,9 +12727,7 @@ class QualityControlForMachining(aas.Submodel):
 
                     def __init__(
                         self,
-                        measuredvalueslist_items: Optional[
-                            Iterable[Union[float, Measuredvalueslist_item]]
-                        ] = None,
+                        measuredvalueslist_items: Optional[Iterable[Union[float, Measuredvalueslist_item]]] = None,
                         id_short: Optional[str] = r"MeasuredValuesList",
                         type_value_list_element: aas.SubmodelElement = aas.Property,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -14095,9 +12748,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -14116,18 +12767,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(measuredvalueslist_items, str):
-                            raise TypeError(
-                                "measuredvalueslist_items takes several elements, got a str"
-                            )
+                            raise TypeError("measuredvalueslist_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if measuredvalueslist_items:
                             measuredvalueslist_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Measuredvalueslist_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Measuredvalueslist_item(i)
                                 for i in measuredvalueslist_items
                             ]
 
@@ -14141,9 +12786,7 @@ class QualityControlForMachining(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -14210,15 +12853,9 @@ class QualityControlForMachining(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -14243,9 +12880,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14258,26 +12893,16 @@ class QualityControlForMachining(aas.Submodel):
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
                                 aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-ABK126#001",
-                                        ),
-                                    ),
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK126#001"),),
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Link to the file",
-                                        r"de": r"Link zu der Datei",
-                                    }
+                                    dict_={r"en": r"Link to the file", r"de": r"Link zu der Datei"}
                                 )
 
                             if qualifier is None:
@@ -14312,9 +12937,7 @@ class QualityControlForMachining(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14329,24 +12952,18 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.ExternalReference(
                                     key=(
                                         aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0112/2///61360_4#ACB113#001",
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#ACB113#001"
                                         ),
                                     ),
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"MIME type of the file",
-                                        r"de": r"MIME-typ der Datei",
-                                    }
+                                    dict_={r"en": r"MIME type of the file", r"de": r"MIME-typ der Datei"}
                                 )
 
                             if qualifier is None:
@@ -14390,9 +13007,7 @@ class QualityControlForMachining(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -14411,16 +13026,12 @@ class QualityControlForMachining(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if fileLink is not None and not isinstance(
-                            fileLink, aas.SubmodelElement
-                        ):
+                        if fileLink is not None and not isinstance(fileLink, aas.SubmodelElement):
                             fileLink = self.FileLink(fileLink)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if mimeType is not None and not isinstance(
-                            mimeType, aas.SubmodelElement
-                        ):
+                        if mimeType is not None and not isinstance(mimeType, aas.SubmodelElement):
                             mimeType = self.MimeType(mimeType)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -14436,9 +13047,7 @@ class QualityControlForMachining(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -14455,36 +13064,23 @@ class QualityControlForMachining(aas.Submodel):
 
                 def __init__(
                     self,
-                    qualityFeatureReference: Union[
-                        aas.Reference, QualityFeatureReference
-                    ],
-                    testingDeviceReference: Union[
-                        aas.Reference, TestingDeviceReference
-                    ],
+                    qualityFeatureReference: Union[aas.Reference, QualityFeatureReference],
+                    testingDeviceReference: Union[aas.Reference, TestingDeviceReference],
                     partReference: Union[aas.Reference, PartReference],
                     qualityInSpec: Union[bool, QualityInSpec],
                     dataAggregatedFromSeries: Union[bool, DataAggregatedFromSeries],
                     iD: Optional[Union[str, ID]] = None,
                     description_: Optional[Union[str, Description]] = None,
                     engineeringUnit: Optional[Union[str, EngineeringUnit]] = None,
-                    qualityActualValue: Optional[
-                        Iterable[Union[float, QualityActualValue]]
-                    ] = None,
-                    qualityActualAttribute: Optional[
-                        Iterable[Union[str, QualityActualAttribute]]
-                    ] = None,
+                    qualityActualValue: Optional[Iterable[Union[float, QualityActualValue]]] = None,
+                    qualityActualAttribute: Optional[Iterable[Union[str, QualityActualAttribute]]] = None,
                     deviation: Optional[Union[float, Deviation]] = None,
                     averageValue: Optional[Union[float, AverageValue]] = None,
                     minValue: Optional[Union[float, MinValue]] = None,
                     maxValue: Optional[Union[float, MaxValue]] = None,
                     standarddeviation: Optional[Union[float, Standarddeviation]] = None,
                     measuredValuesList: Optional[
-                        Union[
-                            Iterable[
-                                Union[float, MeasuredValuesList.Measuredvalueslist_item]
-                            ],
-                            MeasuredValuesList,
-                        ]
+                        Union[Iterable[Union[float, MeasuredValuesList.Measuredvalueslist_item]], MeasuredValuesList]
                     ] = None,
                     metrologyDataFile: Optional[MetrologyDataFile] = None,
                     id_short: Optional[str] = None,
@@ -14503,9 +13099,7 @@ class QualityControlForMachining(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -14527,24 +13121,18 @@ class QualityControlForMachining(aas.Submodel):
                     if qualityFeatureReference is not None and not isinstance(
                         qualityFeatureReference, aas.SubmodelElement
                     ):
-                        qualityFeatureReference = self.QualityFeatureReference(
-                            qualityFeatureReference
-                        )
+                        qualityFeatureReference = self.QualityFeatureReference(qualityFeatureReference)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if testingDeviceReference is not None and not isinstance(
                         testingDeviceReference, aas.SubmodelElement
                     ):
-                        testingDeviceReference = self.TestingDeviceReference(
-                            testingDeviceReference
-                        )
+                        testingDeviceReference = self.TestingDeviceReference(testingDeviceReference)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if partReference is not None and not isinstance(
-                        partReference, aas.SubmodelElement
-                    ):
+                    if partReference is not None and not isinstance(partReference, aas.SubmodelElement):
                         partReference = self.PartReference(partReference)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -14554,92 +13142,64 @@ class QualityControlForMachining(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if description_ is not None and not isinstance(
-                        description_, aas.SubmodelElement
-                    ):
+                    if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                         description_ = self.Description(description_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if engineeringUnit is not None and not isinstance(
-                        engineeringUnit, aas.SubmodelElement
-                    ):
+                    if engineeringUnit is not None and not isinstance(engineeringUnit, aas.SubmodelElement):
                         engineeringUnit = self.EngineeringUnit(engineeringUnit)
 
                     # A str would be split into its characters
                     if isinstance(qualityActualValue, str):
-                        raise TypeError(
-                            "qualityActualValue takes several elements, got a str"
-                        )
+                        raise TypeError("qualityActualValue takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if qualityActualValue:
                         qualityActualValue = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.QualityActualValue(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.QualityActualValue(i)
                             for i in qualityActualValue
                         ]
 
                     # A str would be split into its characters
                     if isinstance(qualityActualAttribute, str):
-                        raise TypeError(
-                            "qualityActualAttribute takes several elements, got a str"
-                        )
+                        raise TypeError("qualityActualAttribute takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if qualityActualAttribute:
                         qualityActualAttribute = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.QualityActualAttribute(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.QualityActualAttribute(i)
                             for i in qualityActualAttribute
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if qualityInSpec is not None and not isinstance(
-                        qualityInSpec, aas.SubmodelElement
-                    ):
+                    if qualityInSpec is not None and not isinstance(qualityInSpec, aas.SubmodelElement):
                         qualityInSpec = self.QualityInSpec(qualityInSpec)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if deviation is not None and not isinstance(
-                        deviation, aas.SubmodelElement
-                    ):
+                    if deviation is not None and not isinstance(deviation, aas.SubmodelElement):
                         deviation = self.Deviation(deviation)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if averageValue is not None and not isinstance(
-                        averageValue, aas.SubmodelElement
-                    ):
+                    if averageValue is not None and not isinstance(averageValue, aas.SubmodelElement):
                         averageValue = self.AverageValue(averageValue)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if minValue is not None and not isinstance(
-                        minValue, aas.SubmodelElement
-                    ):
+                    if minValue is not None and not isinstance(minValue, aas.SubmodelElement):
                         minValue = self.MinValue(minValue)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if maxValue is not None and not isinstance(
-                        maxValue, aas.SubmodelElement
-                    ):
+                    if maxValue is not None and not isinstance(maxValue, aas.SubmodelElement):
                         maxValue = self.MaxValue(maxValue)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if standarddeviation is not None and not isinstance(
-                        standarddeviation, aas.SubmodelElement
-                    ):
+                    if standarddeviation is not None and not isinstance(standarddeviation, aas.SubmodelElement):
                         standarddeviation = self.Standarddeviation(standarddeviation)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -14647,21 +13207,15 @@ class QualityControlForMachining(aas.Submodel):
                     if dataAggregatedFromSeries is not None and not isinstance(
                         dataAggregatedFromSeries, aas.SubmodelElement
                     ):
-                        dataAggregatedFromSeries = self.DataAggregatedFromSeries(
-                            dataAggregatedFromSeries
-                        )
+                        dataAggregatedFromSeries = self.DataAggregatedFromSeries(dataAggregatedFromSeries)
 
                     # A str would be split into its characters
                     if isinstance(measuredValuesList, str):
-                        raise TypeError(
-                            "measuredValuesList takes several elements, got a str"
-                        )
+                        raise TypeError("measuredValuesList takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if measuredValuesList is not None and not isinstance(
-                        measuredValuesList, aas.SubmodelElement
-                    ):
+                    if measuredValuesList is not None and not isinstance(measuredValuesList, aas.SubmodelElement):
                         measuredValuesList = self.MeasuredValuesList(measuredValuesList)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -14695,9 +13249,7 @@ class QualityControlForMachining(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -14735,9 +13287,7 @@ class QualityControlForMachining(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -14756,9 +13306,7 @@ class QualityControlForMachining(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(metrologyresultslist_items, str):
-                    raise TypeError(
-                        "metrologyresultslist_items takes several elements, got a str"
-                    )
+                    raise TypeError("metrologyresultslist_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -14770,9 +13318,7 @@ class QualityControlForMachining(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -14839,15 +13385,9 @@ class QualityControlForMachining(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -14863,10 +13403,7 @@ class QualityControlForMachining(aas.Submodel):
             self,
             jobStart: Union[xsd.DateTime, JobStart],
             jobOrderNumber: Iterable[Union[str, JobOrderNumber]],
-            metrologyResultsList: Union[
-                Iterable[MetrologyResultsList.Metrologyresultslist_item],
-                MetrologyResultsList,
-            ],
+            metrologyResultsList: Union[Iterable[MetrologyResultsList.Metrologyresultslist_item], MetrologyResultsList],
             jobEnd: Optional[Union[xsd.DateTime, JobEnd]] = None,
             jobName: Optional[Union[str, JobName]] = None,
             plannedPartsPerRun: Optional[Union[int, PlannedPartsPerRun]] = None,
@@ -14888,9 +13425,7 @@ class QualityControlForMachining(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -14929,42 +13464,31 @@ class QualityControlForMachining(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if jobOrderNumber:
                 jobOrderNumber = [
-                    i if isinstance(i, aas.SubmodelElement) else self.JobOrderNumber(i)
-                    for i in jobOrderNumber
+                    i if isinstance(i, aas.SubmodelElement) else self.JobOrderNumber(i) for i in jobOrderNumber
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if plannedPartsPerRun is not None and not isinstance(
-                plannedPartsPerRun, aas.SubmodelElement
-            ):
+            if plannedPartsPerRun is not None and not isinstance(plannedPartsPerRun, aas.SubmodelElement):
                 plannedPartsPerRun = self.PlannedPartsPerRun(plannedPartsPerRun)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if actualPartsInRun is not None and not isinstance(
-                actualPartsInRun, aas.SubmodelElement
-            ):
+            if actualPartsInRun is not None and not isinstance(actualPartsInRun, aas.SubmodelElement):
                 actualPartsInRun = self.ActualPartsInRun(actualPartsInRun)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if jobFinished is not None and not isinstance(
-                jobFinished, aas.SubmodelElement
-            ):
+            if jobFinished is not None and not isinstance(jobFinished, aas.SubmodelElement):
                 jobFinished = self.JobFinished(jobFinished)
 
             # A str would be split into its characters
             if isinstance(metrologyResultsList, str):
-                raise TypeError(
-                    "metrologyResultsList takes several elements, got a str"
-                )
+                raise TypeError("metrologyResultsList takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if metrologyResultsList is not None and not isinstance(
-                metrologyResultsList, aas.SubmodelElement
-            ):
+            if metrologyResultsList is not None and not isinstance(metrologyResultsList, aas.SubmodelElement):
                 metrologyResultsList = self.MetrologyResultsList(metrologyResultsList)
 
             # Add all passed/initialized submodel elements to a single list
@@ -14989,9 +13513,7 @@ class QualityControlForMachining(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -15011,16 +13533,11 @@ class QualityControlForMachining(aas.Submodel):
         id_: str,
         qualityFeatures: QualityFeatures,
         partInformation: PartInformation,
-        testingDevicesList: Union[
-            Iterable[TestingDevicesList.Testingdeviceslist_item], TestingDevicesList
-        ],
+        testingDevicesList: Union[Iterable[TestingDevicesList.Testingdeviceslist_item], TestingDevicesList],
         metrologyJobResults: Iterable[MetrologyJobResults],
         productionCriteria: Optional[ProductionCriteria] = None,
         qualityResponsibilityList: Optional[
-            Union[
-                Iterable[QualityResponsibilityList.Qualityresponsibilitylist_item],
-                QualityResponsibilityList,
-            ]
+            Union[Iterable[QualityResponsibilityList.Qualityresponsibilitylist_item], QualityResponsibilityList]
         ] = None,
         id_short: Optional[str] = r"QualityControlForMachining",
         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -15060,18 +13577,12 @@ class QualityControlForMachining(aas.Submodel):
 
         # A str would be split into its characters
         if isinstance(qualityResponsibilityList, str):
-            raise TypeError(
-                "qualityResponsibilityList takes several elements, got a str"
-            )
+            raise TypeError("qualityResponsibilityList takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if qualityResponsibilityList is not None and not isinstance(
-            qualityResponsibilityList, aas.SubmodelElement
-        ):
-            qualityResponsibilityList = self.QualityResponsibilityList(
-                qualityResponsibilityList
-            )
+        if qualityResponsibilityList is not None and not isinstance(qualityResponsibilityList, aas.SubmodelElement):
+            qualityResponsibilityList = self.QualityResponsibilityList(qualityResponsibilityList)
 
         # A str would be split into its characters
         if isinstance(testingDevicesList, str):
@@ -15079,9 +13590,7 @@ class QualityControlForMachining(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if testingDevicesList is not None and not isinstance(
-            testingDevicesList, aas.SubmodelElement
-        ):
+        if testingDevicesList is not None and not isinstance(testingDevicesList, aas.SubmodelElement):
             testingDevicesList = self.TestingDevicesList(testingDevicesList)
 
         # A str would be split into its characters
@@ -15108,9 +13617,7 @@ class QualityControlForMachining(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

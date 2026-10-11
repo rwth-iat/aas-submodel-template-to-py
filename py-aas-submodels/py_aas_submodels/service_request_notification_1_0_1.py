@@ -17,28 +17,18 @@ class ServiceRequestNotification(aas.Submodel):
             category: Optional[str] = r"PARAMETER",
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABI761#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI761#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Anzahl Servicebedarfsmeldungen",
-                        r"en": r"Number Service Request Notification  ",
-                    }
+                    dict_={r"de": r"Anzahl Servicebedarfsmeldungen", r"en": r"Number Service Request Notification  "}
                 )
 
             if qualifier is None:
@@ -78,20 +68,13 @@ class ServiceRequestNotification(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABI769#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI769#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -125,29 +108,20 @@ class ServiceRequestNotification(aas.Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"SenderSystem",
-                    entity_type: Optional[
-                        aas.EntityType
-                    ] = aas.EntityType.CO_MANAGED_ENTITY,
+                    entity_type: Optional[aas.EntityType] = aas.EntityType.CO_MANAGED_ENTITY,
                     global_asset_id: Optional[str] = None,
                     specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABI770#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI770#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -174,9 +148,7 @@ class ServiceRequestNotification(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         statement=embedded_submodel_elements,
@@ -206,28 +178,18 @@ class ServiceRequestNotification(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO203#004",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO203#004"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Anzahl der Kontakte",
-                                r"en": r"Number of contacts",
-                            }
+                            dict_={r"de": r"Anzahl der Kontakte", r"en": r"Number of contacts"}
                         )
 
                     if qualifier is None:
@@ -262,8 +224,7 @@ class ServiceRequestNotification(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAQ837#007/0173-1#01-ADR448#007",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ837#007/0173-1#01-ADR448#007"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -271,17 +232,12 @@ class ServiceRequestNotification(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Kontaktinformationen",
-                                r"en": r"Contact information",
-                            }
+                            dict_={r"de": r"Kontaktinformationen", r"en": r"Contact information"}
                         )
 
                     if description is None:
@@ -310,9 +266,7 @@ class ServiceRequestNotification(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -339,25 +293,18 @@ class ServiceRequestNotification(aas.Submodel):
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI792#00/0173-1#01-AHX448#001",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI792#00/0173-1#01-AHX448#001"),
                     ),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Gemeldet von", r"en": r"Reported by"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Gemeldet von", r"en": r"Reported by"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -367,32 +314,21 @@ class ServiceRequestNotification(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if customerNumber is not None and not isinstance(
-                    customerNumber, aas.SubmodelElement
-                ):
+                if customerNumber is not None and not isinstance(customerNumber, aas.SubmodelElement):
                     customerNumber = self.CustomerNumber(customerNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if numberOfContacs is not None and not isinstance(
-                    numberOfContacs, aas.SubmodelElement
-                ):
+                if numberOfContacs is not None and not isinstance(numberOfContacs, aas.SubmodelElement):
                     numberOfContacs = self.NumberOfContacs(numberOfContacs)
 
                 # A str would be split into its characters
                 if isinstance(contactInformation, str):
-                    raise TypeError(
-                        "contactInformation takes several elements, got a str"
-                    )
+                    raise TypeError("contactInformation takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    customerNumber,
-                    senderSystem,
-                    numberOfContacs,
-                    contactInformation,
-                ]:
+                for se_arg in [customerNumber, senderSystem, numberOfContacs, contactInformation]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -403,9 +339,7 @@ class ServiceRequestNotification(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -432,28 +366,18 @@ class ServiceRequestNotification(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI772#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI772#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"ID der Bedarfsmeldung",
-                            r"en": r"ID of Service Request Notification",
-                        }
+                        dict_={r"de": r"ID der Bedarfsmeldung", r"en": r"ID of Service Request Notification"}
                     )
 
                 if qualifier is None:
@@ -489,20 +413,13 @@ class ServiceRequestNotification(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABH938#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH938#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -538,28 +455,18 @@ class ServiceRequestNotification(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI773#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI773#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Priorität der Meldung",
-                            r"en": r"Priority of notification",
-                        }
+                        dict_={r"de": r"Priorität der Meldung", r"en": r"Priority of notification"}
                     )
 
                 if qualifier is None:
@@ -588,29 +495,20 @@ class ServiceRequestNotification(aas.Submodel):
             def __init__(
                 self,
                 id_short: Optional[str] = r"RelatedAsset",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.CO_MANAGED_ENTITY,
+                entity_type: Optional[aas.EntityType] = aas.EntityType.CO_MANAGED_ENTITY,
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI774#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI774#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -637,9 +535,7 @@ class ServiceRequestNotification(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -668,28 +564,18 @@ class ServiceRequestNotification(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI762#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI762#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Kurztext zur Servicebedarfsmeldung",
-                            r"en": r"Short text of Service Request",
-                        }
+                        dict_={r"de": r"Kurztext zur Servicebedarfsmeldung", r"en": r"Short text of Service Request"}
                     )
 
                 if qualifier is None:
@@ -724,28 +610,18 @@ class ServiceRequestNotification(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI763#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI763#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Typ des notwendigen Service",
-                            r"en": r"Type of requested service",
-                        }
+                        dict_={r"de": r"Typ des notwendigen Service", r"en": r"Type of requested service"}
                     )
 
                 if qualifier is None:
@@ -782,20 +658,13 @@ class ServiceRequestNotification(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABI764#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI764#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -838,28 +707,18 @@ class ServiceRequestNotification(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABI765#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI765#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Beginn der Störung",
-                                r"en": r"Start of fault",
-                            }
+                            dict_={r"de": r"Beginn der Störung", r"en": r"Start of fault"}
                         )
 
                     if qualifier is None:
@@ -895,26 +754,17 @@ class ServiceRequestNotification(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABI766#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI766#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Fehlercode", r"en": r"Error code"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"de": r"Fehlercode", r"en": r"Error code"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -951,28 +801,18 @@ class ServiceRequestNotification(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABI767#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI767#001"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Anzahl der Anhänge",
-                                    r"en": r"Number of Media",
-                                }
+                                dict_={r"de": r"Anzahl der Anhänge", r"en": r"Number of Media"}
                             )
 
                         if qualifier is None:
@@ -1008,31 +848,19 @@ class ServiceRequestNotification(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-ABK126#001",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK126#001"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"de": r"Digitale Datei",
-                                        r"en": r"Digital File",
-                                    }
+                                    dict_={r"de": r"Digitale Datei", r"en": r"Digital File"}
                                 )
 
                             if qualifier is None:
@@ -1065,31 +893,19 @@ class ServiceRequestNotification(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-ABI768#001",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI768#001"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"de": r"Anmerkdung zur Datei",
-                                        r"en": r"Comment to File",
-                                    }
+                                    dict_={r"de": r"Anmerkdung zur Datei", r"en": r"Comment to File"}
                                 )
 
                             if qualifier is None:
@@ -1132,15 +948,11 @@ class ServiceRequestNotification(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Anhang", r"en": r"Media"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Anhang", r"en": r"Media"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1150,9 +962,7 @@ class ServiceRequestNotification(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if comment is not None and not isinstance(
-                            comment, aas.SubmodelElement
-                        ):
+                        if comment is not None and not isinstance(comment, aas.SubmodelElement):
                             comment = self.Comment(comment)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1168,9 +978,7 @@ class ServiceRequestNotification(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1196,8 +1004,7 @@ class ServiceRequestNotification(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABI790#001/0173-1#01-AHX446#001",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI790#001/0173-1#01-AHX446#001"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -1205,17 +1012,12 @@ class ServiceRequestNotification(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Angehängte Dateien",
-                                r"en": r"Attached media",
-                            }
+                            dict_={r"de": r"Angehängte Dateien", r"en": r"Attached media"}
                         )
 
                     if qualifier is None:
@@ -1226,9 +1028,7 @@ class ServiceRequestNotification(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if numberOfMedias is not None and not isinstance(
-                        numberOfMedias, aas.SubmodelElement
-                    ):
+                    if numberOfMedias is not None and not isinstance(numberOfMedias, aas.SubmodelElement):
                         numberOfMedias = self.NumberOfMedias(numberOfMedias)
 
                     # A str would be split into its characters
@@ -1248,9 +1048,7 @@ class ServiceRequestNotification(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1278,8 +1076,7 @@ class ServiceRequestNotification(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI789#001/0173-1#01-AHX445#001",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI789#001/0173-1#01-AHX445#001"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -1287,9 +1084,7 @@ class ServiceRequestNotification(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1308,23 +1103,17 @@ class ServiceRequestNotification(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if longText is not None and not isinstance(
-                    longText, aas.SubmodelElement
-                ):
+                if longText is not None and not isinstance(longText, aas.SubmodelElement):
                     longText = self.LongText(longText)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if startOfFault is not None and not isinstance(
-                    startOfFault, aas.SubmodelElement
-                ):
+                if startOfFault is not None and not isinstance(startOfFault, aas.SubmodelElement):
                     startOfFault = self.StartOfFault(startOfFault)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if errorCode is not None and not isinstance(
-                    errorCode, aas.SubmodelElement
-                ):
+                if errorCode is not None and not isinstance(errorCode, aas.SubmodelElement):
                     errorCode = self.ErrorCode(errorCode)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1340,9 +1129,7 @@ class ServiceRequestNotification(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1371,20 +1158,13 @@ class ServiceRequestNotification(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABI771#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI771#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -1425,28 +1205,18 @@ class ServiceRequestNotification(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO203#004",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO203#004"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Anzahl der Kontakte",
-                                r"en": r"Number of contacts ",
-                            }
+                            dict_={r"de": r"Anzahl der Kontakte", r"en": r"Number of contacts "}
                         )
 
                     if qualifier is None:
@@ -1481,8 +1251,7 @@ class ServiceRequestNotification(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAQ837#007/0173-1#01-ADR448#007",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ837#007/0173-1#01-ADR448#007"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -1490,17 +1259,12 @@ class ServiceRequestNotification(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Kontaktinformationen",
-                                r"en": r"Contact information",
-                            }
+                            dict_={r"de": r"Kontaktinformationen", r"en": r"Contact information"}
                         )
 
                     if description is None:
@@ -1529,9 +1293,7 @@ class ServiceRequestNotification(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1558,8 +1320,7 @@ class ServiceRequestNotification(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI793#001/0173-1#01-AHX449#001",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI793#001/0173-1#01-AHX449#001"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -1567,17 +1328,12 @@ class ServiceRequestNotification(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Ansprechpartner vor Ort",
-                            r"en": r"Onsite contact",
-                        }
+                        dict_={r"de": r"Ansprechpartner vor Ort", r"en": r"Onsite contact"}
                     )
 
                 if qualifier is None:
@@ -1588,23 +1344,17 @@ class ServiceRequestNotification(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if partnerNumber is not None and not isinstance(
-                    partnerNumber, aas.SubmodelElement
-                ):
+                if partnerNumber is not None and not isinstance(partnerNumber, aas.SubmodelElement):
                     partnerNumber = self.PartnerNumber(partnerNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if numberOfContacts is not None and not isinstance(
-                    numberOfContacts, aas.SubmodelElement
-                ):
+                if numberOfContacts is not None and not isinstance(numberOfContacts, aas.SubmodelElement):
                     numberOfContacts = self.NumberOfContacts(numberOfContacts)
 
                 # A str would be split into its characters
                 if isinstance(contactInformation, str):
-                    raise TypeError(
-                        "contactInformation takes several elements, got a str"
-                    )
+                    raise TypeError("contactInformation takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1619,9 +1369,7 @@ class ServiceRequestNotification(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1644,9 +1392,7 @@ class ServiceRequestNotification(aas.Submodel):
             relatedAsset: RelatedAsset,
             shortText: Union[aas.LangStringSet, ShortText],
             serviceType: Union[str, ServiceType],
-            serviceRequestNotificationId: Optional[
-                Union[str, ServiceRequestNotificationId]
-            ] = None,
+            serviceRequestNotificationId: Optional[Union[str, ServiceRequestNotificationId]] = None,
             detailedInformation: Optional[DetailedInformation] = None,
             onsiteContact: Optional[OnsiteContact] = None,
             id_short: Optional[str] = r"ServiceRequestNotification",
@@ -1654,28 +1400,18 @@ class ServiceRequestNotification(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABI788#001/0173-1#01-AHX444#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI788#001/0173-1#01-AHX444#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Servicebedarfsmeldung",
-                        r"en": r"Service request notification",
-                    }
+                    dict_={r"de": r"Servicebedarfsmeldung", r"en": r"Service request notification"}
                 )
 
             if qualifier is None:
@@ -1689,9 +1425,7 @@ class ServiceRequestNotification(aas.Submodel):
             if serviceRequestNotificationId is not None and not isinstance(
                 serviceRequestNotificationId, aas.SubmodelElement
             ):
-                serviceRequestNotificationId = self.ServiceRequestNotificationId(
-                    serviceRequestNotificationId
-                )
+                serviceRequestNotificationId = self.ServiceRequestNotificationId(serviceRequestNotificationId)
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -1710,9 +1444,7 @@ class ServiceRequestNotification(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if serviceType is not None and not isinstance(
-                serviceType, aas.SubmodelElement
-            ):
+            if serviceType is not None and not isinstance(serviceType, aas.SubmodelElement):
                 serviceType = self.ServiceType(serviceType)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1738,9 +1470,7 @@ class ServiceRequestNotification(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1758,12 +1488,8 @@ class ServiceRequestNotification(aas.Submodel):
     def __init__(
         self,
         id_: str,
-        numberOfServiceRequestNotifications: Optional[
-            Union[int, NumberOfServiceRequestNotifications]
-        ] = None,
-        serviceRequestNotification: Optional[
-            Iterable[ServiceRequestNotification]
-        ] = None,
+        numberOfServiceRequestNotifications: Optional[Union[int, NumberOfServiceRequestNotifications]] = None,
+        serviceRequestNotification: Optional[Iterable[ServiceRequestNotification]] = None,
         id_short: Optional[str] = r"ServiceRequestNotification",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -1790,11 +1516,7 @@ class ServiceRequestNotification(aas.Submodel):
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -1808,17 +1530,13 @@ class ServiceRequestNotification(aas.Submodel):
         if numberOfServiceRequestNotifications is not None and not isinstance(
             numberOfServiceRequestNotifications, aas.SubmodelElement
         ):
-            numberOfServiceRequestNotifications = (
-                self.NumberOfServiceRequestNotifications(
-                    numberOfServiceRequestNotifications
-                )
+            numberOfServiceRequestNotifications = self.NumberOfServiceRequestNotifications(
+                numberOfServiceRequestNotifications
             )
 
         # A str would be split into its characters
         if isinstance(serviceRequestNotification, str):
-            raise TypeError(
-                "serviceRequestNotification takes several elements, got a str"
-            )
+            raise TypeError("serviceRequestNotification takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
@@ -1833,9 +1551,7 @@ class ServiceRequestNotification(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

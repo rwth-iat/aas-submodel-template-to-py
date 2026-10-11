@@ -29,9 +29,12 @@ class NoSubmodelError(ValueError):
 
 
 class SubmodelCodegen:
-    def __init__(self, templates_dir=CODE_TEMPLATES):
+    def __init__(self, templates_dir=CODE_TEMPLATES, line_length: int = 120):
         # Set the directory containing the Jinja templates
         self.env = Environment(loader=FileSystemLoader(templates_dir))
+        # Line length of the generated code: longer than Black's default (88), as deeply nested
+        # classes would otherwise be wrapped into many lines, each repeating the indentation
+        self.line_length = line_length
 
     def generate_from(self, input_file: Union[str, pathlib.Path],
                       output_file: Union[str, pathlib.Path] = "output.py"):
@@ -74,7 +77,7 @@ class SubmodelCodegen:
 
         try:
             # Format the rendered class using Black
-            result = black.format_str(result, mode=black.Mode())
+            result = black.format_str(result, mode=black.Mode(line_length=self.line_length))
         except Exception as e:
             print(e)
 

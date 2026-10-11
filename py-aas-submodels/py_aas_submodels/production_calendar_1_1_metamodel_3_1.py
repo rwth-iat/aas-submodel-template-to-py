@@ -27,9 +27,7 @@ class ProductionCalendar(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -80,16 +78,12 @@ class ProductionCalendar(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Reference to a superordinate calendar from which this Submodel inherits."
-                    }
+                    dict_={r"en": r"Reference to a superordinate calendar from which this Submodel inherits."}
                 )
 
             if qualifier is None:
@@ -138,16 +132,12 @@ class ProductionCalendar(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Variable which is used to define time slots in a calendar that are breaks."
-                            }
+                            dict_={r"en": r"Variable which is used to define time slots in a calendar that are breaks."}
                         )
 
                     if qualifier is None:
@@ -193,9 +183,7 @@ class ProductionCalendar(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -245,16 +233,12 @@ class ProductionCalendar(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Groups the specification details for every variable extension."
-                        }
+                        dict_={r"en": r"Groups the specification details for every variable extension."}
                     )
 
                 if qualifier is None:
@@ -265,9 +249,7 @@ class ProductionCalendar(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if variableName is not None and not isinstance(
-                    variableName, aas.SubmodelElement
-                ):
+                if variableName is not None and not isinstance(variableName, aas.SubmodelElement):
                     variableName = self.VariableName(variableName)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -283,9 +265,7 @@ class ProductionCalendar(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -302,9 +282,7 @@ class ProductionCalendar(aas.Submodel):
 
         def __init__(
             self,
-            specificationextensionvariables_items: Iterable[
-                Specificationextensionvariables_item
-            ],
+            specificationextensionvariables_items: Iterable[Specificationextensionvariables_item],
             id_short: Optional[str] = r"specificationExtensionVariables",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -325,16 +303,12 @@ class ProductionCalendar(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"List of additional variables which extends the iCalendar file format."
-                    }
+                    dict_={r"en": r"List of additional variables which extends the iCalendar file format."}
                 )
 
             if qualifier is None:
@@ -345,9 +319,7 @@ class ProductionCalendar(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(specificationextensionvariables_items, str):
-                raise TypeError(
-                    "specificationextensionvariables_items takes several elements, got a str"
-                )
+                raise TypeError("specificationextensionvariables_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -359,9 +331,7 @@ class ProductionCalendar(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -430,10 +400,7 @@ class ProductionCalendar(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -449,9 +416,7 @@ class ProductionCalendar(aas.Submodel):
         self,
         id_: str,
         specificationExtensionVariables: Union[
-            Iterable[
-                SpecificationExtensionVariables.Specificationextensionvariables_item
-            ],
+            Iterable[SpecificationExtensionVariables.Specificationextensionvariables_item],
             SpecificationExtensionVariables,
         ],
         calendar: Optional[Calendar] = None,
@@ -487,11 +452,7 @@ class ProductionCalendar(aas.Submodel):
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -502,25 +463,19 @@ class ProductionCalendar(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if inheritedFrom is not None and not isinstance(
-            inheritedFrom, aas.SubmodelElement
-        ):
+        if inheritedFrom is not None and not isinstance(inheritedFrom, aas.SubmodelElement):
             inheritedFrom = self.InheritedFrom(inheritedFrom)
 
         # A str would be split into its characters
         if isinstance(specificationExtensionVariables, str):
-            raise TypeError(
-                "specificationExtensionVariables takes several elements, got a str"
-            )
+            raise TypeError("specificationExtensionVariables takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
         if specificationExtensionVariables is not None and not isinstance(
             specificationExtensionVariables, aas.SubmodelElement
         ):
-            specificationExtensionVariables = self.SpecificationExtensionVariables(
-                specificationExtensionVariables
-            )
+            specificationExtensionVariables = self.SpecificationExtensionVariables(specificationExtensionVariables)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
@@ -535,9 +490,7 @@ class ProductionCalendar(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

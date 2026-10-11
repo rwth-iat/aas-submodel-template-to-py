@@ -30,15 +30,11 @@ class Circularity(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"document identifier"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -63,9 +59,7 @@ class Circularity(aas.Submodel):
 
         def __init__(
             self,
-            dismantlingandremovalinformation_items: Iterable[
-                Union[str, Dismantlingandremovalinformation_item]
-            ],
+            dismantlingandremovalinformation_items: Iterable[Union[str, Dismantlingandremovalinformation_item]],
             id_short: Optional[str] = r"DismantlingAndRemovalInformation",
             type_value_list_element: aas.SubmodelElement = aas.Property,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -86,15 +80,11 @@ class Circularity(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"dismantling and removal information"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"dismantling and removal information"})
 
             if qualifier is None:
                 qualifier = ()
@@ -104,18 +94,12 @@ class Circularity(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(dismantlingandremovalinformation_items, str):
-                raise TypeError(
-                    "dismantlingandremovalinformation_items takes several elements, got a str"
-                )
+                raise TypeError("dismantlingandremovalinformation_items takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if dismantlingandremovalinformation_items:
                 dismantlingandremovalinformation_items = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.Dismantlingandremovalinformation_item(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.Dismantlingandremovalinformation_item(i)
                     for i in dismantlingandremovalinformation_items
                 ]
 
@@ -129,9 +113,7 @@ class Circularity(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -200,10 +182,7 @@ class Circularity(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -242,24 +221,15 @@ class Circularity(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:irdi:0173-1#02-AAW001#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAW001#001"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"name of supplier"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"name of supplier"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -308,16 +278,13 @@ class Circularity(aas.Submodel):
                             aas.ExternalReference(
                                 key=(
                                     aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:irdi:0173-1#02-AAO134#002",
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO134#002"
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -370,8 +337,7 @@ class Circularity(aas.Submodel):
                             aas.ExternalReference(
                                 key=(
                                     aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://schema.org/postalCode",
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/postalCode"
                                     ),
                                 ),
                                 referred_semantic_id=None,
@@ -379,22 +345,17 @@ class Circularity(aas.Submodel):
                             aas.ExternalReference(
                                 key=(
                                     aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:irdi:0173-1#02-AAO129#002",
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO129#002"
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"postal code"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"postal code"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -441,8 +402,7 @@ class Circularity(aas.Submodel):
                             aas.ExternalReference(
                                 key=(
                                     aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://schema.org/streetAddress",
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/streetAddress"
                                     ),
                                 ),
                                 referred_semantic_id=None,
@@ -450,22 +410,17 @@ class Circularity(aas.Submodel):
                             aas.ExternalReference(
                                 key=(
                                     aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:irdi:0173-1#02-AAO128#002",
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO128#002"
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"street", r"de": r"Straße"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"street", r"de": r"Straße"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -510,23 +465,16 @@ class Circularity(aas.Submodel):
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://schema.org/PostalAddress",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/PostalAddress"),
                             ),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"address of supplier"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"address of supplier"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -536,23 +484,17 @@ class Circularity(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if nationalCode is not None and not isinstance(
-                        nationalCode, aas.SubmodelElement
-                    ):
+                    if nationalCode is not None and not isinstance(nationalCode, aas.SubmodelElement):
                         nationalCode = self.NationalCode(nationalCode)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if postalCode is not None and not isinstance(
-                        postalCode, aas.SubmodelElement
-                    ):
+                    if postalCode is not None and not isinstance(postalCode, aas.SubmodelElement):
                         postalCode = self.PostalCode(postalCode)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if street is not None and not isinstance(
-                        street, aas.SubmodelElement
-                    ):
+                    if street is not None and not isinstance(street, aas.SubmodelElement):
                         street = self.Street(street)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -568,9 +510,7 @@ class Circularity(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -613,22 +553,17 @@ class Circularity(aas.Submodel):
                             aas.ExternalReference(
                                 key=(
                                     aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:irdi:0173-1#02-AAO198#002",
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO198#002"
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"email address"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"email address"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -676,22 +611,17 @@ class Circularity(aas.Submodel):
                             aas.ExternalReference(
                                 key=(
                                     aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:irdi:0173-1#02-AAO200#002",
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO200#002"
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"public key"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"public key"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -746,22 +676,17 @@ class Circularity(aas.Submodel):
                             aas.ExternalReference(
                                 key=(
                                     aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:irdi:0173-1#02-AAO199#003",
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO199#003"
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"type of email address"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"type of email address"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -809,22 +734,17 @@ class Circularity(aas.Submodel):
                             aas.ExternalReference(
                                 key=(
                                     aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:irdi:0173-1#02-AAO201#002",
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO201#002"
                                     ),
                                 ),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"type of public key"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"type of public key"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -851,9 +771,7 @@ class Circularity(aas.Submodel):
                     emailAddress: Union[str, EmailAddress],
                     publicKey: Optional[Union[aas.LangStringSet, PublicKey]] = None,
                     typeOfEmailAddress: Optional[Union[str, TypeOfEmailAddress]] = None,
-                    typeOfPublicKey: Optional[
-                        Union[aas.LangStringSet, TypeOfPublicKey]
-                    ] = None,
+                    typeOfPublicKey: Optional[Union[aas.LangStringSet, TypeOfPublicKey]] = None,
                     id_short: Optional[str] = r"EmailAddressOfSupplier",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -871,18 +789,11 @@ class Circularity(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:irdi:0173-1#02-AAQ836#005",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAQ836#005"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -898,40 +809,27 @@ class Circularity(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if emailAddress is not None and not isinstance(
-                        emailAddress, aas.SubmodelElement
-                    ):
+                    if emailAddress is not None and not isinstance(emailAddress, aas.SubmodelElement):
                         emailAddress = self.EmailAddress(emailAddress)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if publicKey is not None and not isinstance(
-                        publicKey, aas.SubmodelElement
-                    ):
+                    if publicKey is not None and not isinstance(publicKey, aas.SubmodelElement):
                         publicKey = self.PublicKey(publicKey)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if typeOfEmailAddress is not None and not isinstance(
-                        typeOfEmailAddress, aas.SubmodelElement
-                    ):
+                    if typeOfEmailAddress is not None and not isinstance(typeOfEmailAddress, aas.SubmodelElement):
                         typeOfEmailAddress = self.TypeOfEmailAddress(typeOfEmailAddress)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if typeOfPublicKey is not None and not isinstance(
-                        typeOfPublicKey, aas.SubmodelElement
-                    ):
+                    if typeOfPublicKey is not None and not isinstance(typeOfPublicKey, aas.SubmodelElement):
                         typeOfPublicKey = self.TypeOfPublicKey(typeOfPublicKey)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        emailAddress,
-                        publicKey,
-                        typeOfEmailAddress,
-                        typeOfPublicKey,
-                    ]:
+                    for se_arg in [emailAddress, publicKey, typeOfEmailAddress, typeOfPublicKey]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -942,9 +840,7 @@ class Circularity(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -983,24 +879,15 @@ class Circularity(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:irdi:0173-1#02-AAQ326#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAQ326#002"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"supplier web address"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"supplier web address"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1038,9 +925,7 @@ class Circularity(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1052,15 +937,11 @@ class Circularity(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"part name"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"part name"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -1094,9 +975,7 @@ class Circularity(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1108,15 +987,11 @@ class Circularity(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"part number"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"part number"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -1159,20 +1034,14 @@ class Circularity(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Component"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Component"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Components available at supplier"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Components available at supplier"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1182,16 +1051,12 @@ class Circularity(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if partName is not None and not isinstance(
-                            partName, aas.SubmodelElement
-                        ):
+                        if partName is not None and not isinstance(partName, aas.SubmodelElement):
                             partName = self.PartName(partName)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if partNumber is not None and not isinstance(
-                            partNumber, aas.SubmodelElement
-                        ):
+                        if partNumber is not None and not isinstance(partNumber, aas.SubmodelElement):
                             partNumber = self.PartNumber(partNumber)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1207,9 +1072,7 @@ class Circularity(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1247,15 +1110,11 @@ class Circularity(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"components"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"components"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1265,9 +1124,7 @@ class Circularity(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(components_items, str):
-                        raise TypeError(
-                            "components_items takes several elements, got a str"
-                        )
+                        raise TypeError("components_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1279,9 +1136,7 @@ class Circularity(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1348,15 +1203,9 @@ class Circularity(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -1391,15 +1240,11 @@ class Circularity(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"spare part supplier"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"spare part supplier"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1409,16 +1254,12 @@ class Circularity(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if nameOfSupplier is not None and not isinstance(
-                    nameOfSupplier, aas.SubmodelElement
-                ):
+                if nameOfSupplier is not None and not isinstance(nameOfSupplier, aas.SubmodelElement):
                     nameOfSupplier = self.NameOfSupplier(nameOfSupplier)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if supplierWebAddress is not None and not isinstance(
-                    supplierWebAddress, aas.SubmodelElement
-                ):
+                if supplierWebAddress is not None and not isinstance(supplierWebAddress, aas.SubmodelElement):
                     supplierWebAddress = self.SupplierWebAddress(supplierWebAddress)
 
                 # A str would be split into its characters
@@ -1427,9 +1268,7 @@ class Circularity(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if components is not None and not isinstance(
-                    components, aas.SubmodelElement
-                ):
+                if components is not None and not isinstance(components, aas.SubmodelElement):
                     components = self.Components(components)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1451,9 +1290,7 @@ class Circularity(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1491,15 +1328,11 @@ class Circularity(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"spare part sources"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"spare part sources"})
 
             if qualifier is None:
                 qualifier = ()
@@ -1509,9 +1342,7 @@ class Circularity(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(sparepartsources_items, str):
-                raise TypeError(
-                    "sparepartsources_items takes several elements, got a str"
-                )
+                raise TypeError("sparepartsources_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1523,9 +1354,7 @@ class Circularity(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1594,10 +1423,7 @@ class Circularity(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -1636,15 +1462,11 @@ class Circularity(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"pre consumer share"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"pre consumer share"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1690,15 +1512,11 @@ class Circularity(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"recycled material"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"recycled material"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1744,15 +1562,11 @@ class Circularity(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"post consumer share"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"post consumer share"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1796,15 +1610,11 @@ class Circularity(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"recycled content"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"recycled content"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1814,23 +1624,17 @@ class Circularity(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if preConsumerShare is not None and not isinstance(
-                    preConsumerShare, aas.SubmodelElement
-                ):
+                if preConsumerShare is not None and not isinstance(preConsumerShare, aas.SubmodelElement):
                     preConsumerShare = self.PreConsumerShare(preConsumerShare)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if recycledMaterial is not None and not isinstance(
-                    recycledMaterial, aas.SubmodelElement
-                ):
+                if recycledMaterial is not None and not isinstance(recycledMaterial, aas.SubmodelElement):
                     recycledMaterial = self.RecycledMaterial(recycledMaterial)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if postConsumerShare is not None and not isinstance(
-                    postConsumerShare, aas.SubmodelElement
-                ):
+                if postConsumerShare is not None and not isinstance(postConsumerShare, aas.SubmodelElement):
                     postConsumerShare = self.PostConsumerShare(postConsumerShare)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1846,9 +1650,7 @@ class Circularity(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1886,15 +1688,11 @@ class Circularity(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"recycled content information"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"recycled content information"})
 
             if qualifier is None:
                 qualifier = ()
@@ -1904,9 +1702,7 @@ class Circularity(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(recycledcontentinformation_items, str):
-                raise TypeError(
-                    "recycledcontentinformation_items takes several elements, got a str"
-                )
+                raise TypeError("recycledcontentinformation_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1918,9 +1714,7 @@ class Circularity(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1989,10 +1783,7 @@ class Circularity(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -2031,15 +1822,11 @@ class Circularity(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"document identifier"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2085,15 +1872,11 @@ class Circularity(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"safety instructions"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"safety instructions"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2103,18 +1886,12 @@ class Circularity(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(safetyinstructions_items, str):
-                    raise TypeError(
-                        "safetyinstructions_items takes several elements, got a str"
-                    )
+                    raise TypeError("safetyinstructions_items takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if safetyinstructions_items:
                     safetyinstructions_items = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.Safetyinstructions_item(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.Safetyinstructions_item(i)
                         for i in safetyinstructions_items
                     ]
 
@@ -2128,9 +1905,7 @@ class Circularity(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2197,15 +1972,9 @@ class Circularity(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -2242,15 +2011,11 @@ class Circularity(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"extinguishing agent"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"extinguishing agent"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2275,9 +2040,7 @@ class Circularity(aas.Submodel):
 
             def __init__(
                 self,
-                extinguishingagents_items: Iterable[
-                    Union[str, Extinguishingagents_item]
-                ],
+                extinguishingagents_items: Iterable[Union[str, Extinguishingagents_item]],
                 id_short: Optional[str] = r"ExtinguishingAgents",
                 type_value_list_element: aas.SubmodelElement = aas.Property,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -2298,15 +2061,11 @@ class Circularity(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"extinguishing agents"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"extinguishing agents"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2316,18 +2075,12 @@ class Circularity(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(extinguishingagents_items, str):
-                    raise TypeError(
-                        "extinguishingagents_items takes several elements, got a str"
-                    )
+                    raise TypeError("extinguishingagents_items takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if extinguishingagents_items:
                     extinguishingagents_items = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.Extinguishingagents_item(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.Extinguishingagents_item(i)
                         for i in extinguishingagents_items
                     ]
 
@@ -2341,9 +2094,7 @@ class Circularity(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2410,15 +2161,9 @@ class Circularity(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -2433,12 +2178,10 @@ class Circularity(aas.Submodel):
         def __init__(
             self,
             safetyInstructions: Union[
-                Iterable[Union[str, SafetyInstructions.Safetyinstructions_item]],
-                SafetyInstructions,
+                Iterable[Union[str, SafetyInstructions.Safetyinstructions_item]], SafetyInstructions
             ],
             extinguishingAgents: Union[
-                Iterable[Union[str, ExtinguishingAgents.Extinguishingagents_item]],
-                ExtinguishingAgents,
+                Iterable[Union[str, ExtinguishingAgents.Extinguishingagents_item]], ExtinguishingAgents
             ],
             id_short: Optional[str] = r"SafetyMeasures",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2456,15 +2199,11 @@ class Circularity(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"safety measures"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"safety measures"})
 
             if qualifier is None:
                 qualifier = ()
@@ -2478,9 +2217,7 @@ class Circularity(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if safetyInstructions is not None and not isinstance(
-                safetyInstructions, aas.SubmodelElement
-            ):
+            if safetyInstructions is not None and not isinstance(safetyInstructions, aas.SubmodelElement):
                 safetyInstructions = self.SafetyInstructions(safetyInstructions)
 
             # A str would be split into its characters
@@ -2489,9 +2226,7 @@ class Circularity(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if extinguishingAgents is not None and not isinstance(
-                extinguishingAgents, aas.SubmodelElement
-            ):
+            if extinguishingAgents is not None and not isinstance(extinguishingAgents, aas.SubmodelElement):
                 extinguishingAgents = self.ExtinguishingAgents(extinguishingAgents)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2507,9 +2242,7 @@ class Circularity(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2551,15 +2284,11 @@ class Circularity(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"document identifier"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2606,24 +2335,15 @@ class Circularity(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL855#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL855#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"waste prevention"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"waste prevention"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2633,18 +2353,12 @@ class Circularity(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(wasteprevention_items, str):
-                    raise TypeError(
-                        "wasteprevention_items takes several elements, got a str"
-                    )
+                    raise TypeError("wasteprevention_items takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if wasteprevention_items:
                     wasteprevention_items = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.Wasteprevention_item(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.Wasteprevention_item(i)
                         for i in wasteprevention_items
                     ]
 
@@ -2658,9 +2372,7 @@ class Circularity(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2727,15 +2439,9 @@ class Circularity(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -2772,15 +2478,11 @@ class Circularity(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"document identifier"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2827,24 +2529,15 @@ class Circularity(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL854#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL854#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"separate collection"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"separate collection"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2854,18 +2547,12 @@ class Circularity(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(separatecollection_items, str):
-                    raise TypeError(
-                        "separatecollection_items takes several elements, got a str"
-                    )
+                    raise TypeError("separatecollection_items takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if separatecollection_items:
                     separatecollection_items = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.Separatecollection_item(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.Separatecollection_item(i)
                         for i in separatecollection_items
                     ]
 
@@ -2879,9 +2566,7 @@ class Circularity(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2948,15 +2633,9 @@ class Circularity(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -2993,15 +2672,11 @@ class Circularity(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"document identifier"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3026,9 +2701,7 @@ class Circularity(aas.Submodel):
 
             def __init__(
                 self,
-                informationoncollection_items: Iterable[
-                    Union[str, Informationoncollection_item]
-                ],
+                informationoncollection_items: Iterable[Union[str, Informationoncollection_item]],
                 id_short: Optional[str] = r"InformationOnCollection",
                 type_value_list_element: aas.SubmodelElement = aas.Property,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -3050,24 +2723,15 @@ class Circularity(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL856#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL856#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"information on collection"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"information on collection"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3077,18 +2741,12 @@ class Circularity(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(informationoncollection_items, str):
-                    raise TypeError(
-                        "informationoncollection_items takes several elements, got a str"
-                    )
+                    raise TypeError("informationoncollection_items takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if informationoncollection_items:
                     informationoncollection_items = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.Informationoncollection_item(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.Informationoncollection_item(i)
                         for i in informationoncollection_items
                     ]
 
@@ -3102,9 +2760,7 @@ class Circularity(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3171,15 +2827,9 @@ class Circularity(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -3193,19 +2843,12 @@ class Circularity(aas.Submodel):
 
         def __init__(
             self,
-            wastePrevention: Union[
-                Iterable[Union[str, WastePrevention.Wasteprevention_item]],
-                WastePrevention,
-            ],
+            wastePrevention: Union[Iterable[Union[str, WastePrevention.Wasteprevention_item]], WastePrevention],
             separateCollection: Union[
-                Iterable[Union[str, SeparateCollection.Separatecollection_item]],
-                SeparateCollection,
+                Iterable[Union[str, SeparateCollection.Separatecollection_item]], SeparateCollection
             ],
             informationOnCollection: Union[
-                Iterable[
-                    Union[str, InformationOnCollection.Informationoncollection_item]
-                ],
-                InformationOnCollection,
+                Iterable[Union[str, InformationOnCollection.Informationoncollection_item]], InformationOnCollection
             ],
             id_short: Optional[str] = r"EndOfLifeInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3223,15 +2866,11 @@ class Circularity(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"end of life information"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"end of life information"})
 
             if qualifier is None:
                 qualifier = ()
@@ -3245,9 +2884,7 @@ class Circularity(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if wastePrevention is not None and not isinstance(
-                wastePrevention, aas.SubmodelElement
-            ):
+            if wastePrevention is not None and not isinstance(wastePrevention, aas.SubmodelElement):
                 wastePrevention = self.WastePrevention(wastePrevention)
 
             # A str would be split into its characters
@@ -3256,33 +2893,21 @@ class Circularity(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if separateCollection is not None and not isinstance(
-                separateCollection, aas.SubmodelElement
-            ):
+            if separateCollection is not None and not isinstance(separateCollection, aas.SubmodelElement):
                 separateCollection = self.SeparateCollection(separateCollection)
 
             # A str would be split into its characters
             if isinstance(informationOnCollection, str):
-                raise TypeError(
-                    "informationOnCollection takes several elements, got a str"
-                )
+                raise TypeError("informationOnCollection takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if informationOnCollection is not None and not isinstance(
-                informationOnCollection, aas.SubmodelElement
-            ):
-                informationOnCollection = self.InformationOnCollection(
-                    informationOnCollection
-                )
+            if informationOnCollection is not None and not isinstance(informationOnCollection, aas.SubmodelElement):
+                informationOnCollection = self.InformationOnCollection(informationOnCollection)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                wastePrevention,
-                separateCollection,
-                informationOnCollection,
-            ]:
+            for se_arg in [wastePrevention, separateCollection, informationOnCollection]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -3293,9 +2918,7 @@ class Circularity(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3334,24 +2957,15 @@ class Circularity(aas.Submodel):
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:irdi:0173-1#02-ABL867#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL867#001"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"renewable content"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"renewable content"})
 
             if qualifier is None:
                 qualifier = ()
@@ -3378,20 +2992,12 @@ class Circularity(aas.Submodel):
         self,
         id_: str,
         dismantlingAndRemovalInformation: Union[
-            Iterable[
-                Union[
-                    str,
-                    DismantlingAndRemovalInformation.Dismantlingandremovalinformation_item,
-                ]
-            ],
+            Iterable[Union[str, DismantlingAndRemovalInformation.Dismantlingandremovalinformation_item]],
             DismantlingAndRemovalInformation,
         ],
-        sparePartSources: Union[
-            Iterable[SparePartSources.Sparepartsources_item], SparePartSources
-        ],
+        sparePartSources: Union[Iterable[SparePartSources.Sparepartsources_item], SparePartSources],
         recycledContentInformation: Union[
-            Iterable[RecycledContentInformation.Recycledcontentinformation_item],
-            RecycledContentInformation,
+            Iterable[RecycledContentInformation.Recycledcontentinformation_item], RecycledContentInformation
         ],
         safetyMeasures: SafetyMeasures,
         endOfLifeInformation: EndOfLifeInformation,
@@ -3444,18 +3050,14 @@ class Circularity(aas.Submodel):
 
         # A str would be split into its characters
         if isinstance(dismantlingAndRemovalInformation, str):
-            raise TypeError(
-                "dismantlingAndRemovalInformation takes several elements, got a str"
-            )
+            raise TypeError("dismantlingAndRemovalInformation takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
         if dismantlingAndRemovalInformation is not None and not isinstance(
             dismantlingAndRemovalInformation, aas.SubmodelElement
         ):
-            dismantlingAndRemovalInformation = self.DismantlingAndRemovalInformation(
-                dismantlingAndRemovalInformation
-            )
+            dismantlingAndRemovalInformation = self.DismantlingAndRemovalInformation(dismantlingAndRemovalInformation)
 
         # A str would be split into its characters
         if isinstance(sparePartSources, str):
@@ -3463,31 +3065,21 @@ class Circularity(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if sparePartSources is not None and not isinstance(
-            sparePartSources, aas.SubmodelElement
-        ):
+        if sparePartSources is not None and not isinstance(sparePartSources, aas.SubmodelElement):
             sparePartSources = self.SparePartSources(sparePartSources)
 
         # A str would be split into its characters
         if isinstance(recycledContentInformation, str):
-            raise TypeError(
-                "recycledContentInformation takes several elements, got a str"
-            )
+            raise TypeError("recycledContentInformation takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if recycledContentInformation is not None and not isinstance(
-            recycledContentInformation, aas.SubmodelElement
-        ):
-            recycledContentInformation = self.RecycledContentInformation(
-                recycledContentInformation
-            )
+        if recycledContentInformation is not None and not isinstance(recycledContentInformation, aas.SubmodelElement):
+            recycledContentInformation = self.RecycledContentInformation(recycledContentInformation)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if renewableContent is not None and not isinstance(
-            renewableContent, aas.SubmodelElement
-        ):
+        if renewableContent is not None and not isinstance(renewableContent, aas.SubmodelElement):
             renewableContent = self.RenewableContent(renewableContent)
 
         # Add all passed/initialized submodel elements to a single list
@@ -3510,9 +3102,7 @@ class Circularity(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

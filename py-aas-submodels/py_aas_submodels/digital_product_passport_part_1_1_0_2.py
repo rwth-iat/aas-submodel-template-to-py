@@ -28,21 +28,15 @@ class DppMetadata(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Unique Product Passport Identifier (DPP ID)"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Unique Product Passport Identifier (DPP ID)"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Unique identifier of an instance of the digital product"
-                    }
+                    dict_={r"en": r"Unique identifier of an instance of the digital product"}
                 )
 
             if qualifier is None:
@@ -89,15 +83,11 @@ class DppMetadata(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Unique Product Identifier"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Unique Product Identifier"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -141,8 +131,7 @@ class DppMetadata(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/granularity/1",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/granularity/1"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -152,17 +141,12 @@ class DppMetadata(aas.Submodel):
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
                     key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/aas/3/2/AssetKind",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/aas/3/2/AssetKind"),
                     ),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -210,8 +194,7 @@ class DppMetadata(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/dppSchemaVersion/1",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/dppSchemaVersion/1"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -219,21 +202,15 @@ class DppMetadata(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"DPP Schema Version"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"DPP Schema Version"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Reference standard the DPP instance schema refers to."
-                    }
+                    dict_={r"en": r"Reference standard the DPP instance schema refers to."}
                 )
 
             if qualifier is None:
@@ -270,19 +247,14 @@ class DppMetadata(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/dppStatus/1",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/dppStatus/1"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -327,10 +299,7 @@ class DppMetadata(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/lastUpdate/1",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/lastUpdate/1"),
                 ),
                 referred_semantic_id=None,
             ),
@@ -347,9 +316,7 @@ class DppMetadata(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -357,9 +324,7 @@ class DppMetadata(aas.Submodel):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Date and time of the latest update to the DPP instance."
-                    }
+                    dict_={r"en": r"Date and time of the latest update to the DPP instance."}
                 )
 
             if qualifier is None:
@@ -406,15 +371,11 @@ class DppMetadata(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Economic Operator ID"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Economic Operator ID"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -457,19 +418,14 @@ class DppMetadata(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/facilityId/1",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/facilityId/1"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -528,15 +484,11 @@ class DppMetadata(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Content Specification ID"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Content Specification ID"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -561,9 +513,7 @@ class DppMetadata(aas.Submodel):
 
         def __init__(
             self,
-            contentspecificationids_items: Iterable[
-                Union[str, Contentspecificationids_item]
-            ],
+            contentspecificationids_items: Iterable[Union[str, Contentspecificationids_item]],
             id_short: Optional[str] = r"contentSpecificationIds",
             type_value_list_element: aas.SubmodelElement = aas.Property,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -584,15 +534,11 @@ class DppMetadata(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Content Specification IDs"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Content Specification IDs"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -609,18 +555,12 @@ class DppMetadata(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(contentspecificationids_items, str):
-                raise TypeError(
-                    "contentspecificationids_items takes several elements, got a str"
-                )
+                raise TypeError("contentspecificationids_items takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if contentspecificationids_items:
                 contentspecificationids_items = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.Contentspecificationids_item(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.Contentspecificationids_item(i)
                     for i in contentspecificationids_items
                 ]
 
@@ -634,9 +574,7 @@ class DppMetadata(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -705,10 +643,7 @@ class DppMetadata(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -732,12 +667,7 @@ class DppMetadata(aas.Submodel):
         economicOperatorId: Union[str, EconomicOperatorId],
         facilityId: Optional[Union[str, FacilityId]] = None,
         contentSpecificationIds: Optional[
-            Union[
-                Iterable[
-                    Union[str, ContentSpecificationIds.Contentspecificationids_item]
-                ],
-                ContentSpecificationIds,
-            ]
+            Union[Iterable[Union[str, ContentSpecificationIds.Contentspecificationids_item]], ContentSpecificationIds]
         ] = None,
         id_short: Optional[str] = r"DppMetadata",
         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -745,12 +675,7 @@ class DppMetadata(aas.Submodel):
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"https://admin-shell.io/idta/cds/dppMetadata/1",
-                ),
-            ),
+            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/cds/dppMetadata/1"),),
             type_=aas.Submodel,
             referred_semantic_id=None,
         ),
@@ -770,11 +695,7 @@ class DppMetadata(aas.Submodel):
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -785,21 +706,13 @@ class DppMetadata(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if digitalProductPassportId is not None and not isinstance(
-            digitalProductPassportId, aas.SubmodelElement
-        ):
-            digitalProductPassportId = self.DigitalProductPassportId(
-                digitalProductPassportId
-            )
+        if digitalProductPassportId is not None and not isinstance(digitalProductPassportId, aas.SubmodelElement):
+            digitalProductPassportId = self.DigitalProductPassportId(digitalProductPassportId)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if uniqueProductIdentifier is not None and not isinstance(
-            uniqueProductIdentifier, aas.SubmodelElement
-        ):
-            uniqueProductIdentifier = self.UniqueProductIdentifier(
-                uniqueProductIdentifier
-            )
+        if uniqueProductIdentifier is not None and not isinstance(uniqueProductIdentifier, aas.SubmodelElement):
+            uniqueProductIdentifier = self.UniqueProductIdentifier(uniqueProductIdentifier)
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -808,9 +721,7 @@ class DppMetadata(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if dppSchemaVersion is not None and not isinstance(
-            dppSchemaVersion, aas.SubmodelElement
-        ):
+        if dppSchemaVersion is not None and not isinstance(dppSchemaVersion, aas.SubmodelElement):
             dppSchemaVersion = self.DppSchemaVersion(dppSchemaVersion)
 
         # Build a submodel element if a raw value was passed in the argument
@@ -825,9 +736,7 @@ class DppMetadata(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if economicOperatorId is not None and not isinstance(
-            economicOperatorId, aas.SubmodelElement
-        ):
+        if economicOperatorId is not None and not isinstance(economicOperatorId, aas.SubmodelElement):
             economicOperatorId = self.EconomicOperatorId(economicOperatorId)
 
         # Build a submodel element if a raw value was passed in the argument
@@ -841,12 +750,8 @@ class DppMetadata(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if contentSpecificationIds is not None and not isinstance(
-            contentSpecificationIds, aas.SubmodelElement
-        ):
-            contentSpecificationIds = self.ContentSpecificationIds(
-                contentSpecificationIds
-            )
+        if contentSpecificationIds is not None and not isinstance(contentSpecificationIds, aas.SubmodelElement):
+            contentSpecificationIds = self.ContentSpecificationIds(contentSpecificationIds)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
@@ -871,9 +776,7 @@ class DppMetadata(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

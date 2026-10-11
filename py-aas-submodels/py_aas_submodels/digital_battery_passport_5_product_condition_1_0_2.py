@@ -31,24 +31,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL850#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL850#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"energy throughput value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"energy throughput value"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -95,24 +86,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABG740#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABG740#003"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"last update"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -156,24 +138,15 @@ class ProductCondition(aas.Submodel):
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:irdi:0173-1#02-ABL850#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL850#001"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"energy throughput"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"energy throughput"})
 
             if qualifier is None:
                 qualifier = ()
@@ -183,18 +156,12 @@ class ProductCondition(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if energyThroughputValue is not None and not isinstance(
-                energyThroughputValue, aas.SubmodelElement
-            ):
-                energyThroughputValue = self.EnergyThroughputValue(
-                    energyThroughputValue
-                )
+            if energyThroughputValue is not None and not isinstance(energyThroughputValue, aas.SubmodelElement):
+                energyThroughputValue = self.EnergyThroughputValue(energyThroughputValue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lastUpdate is not None and not isinstance(
-                lastUpdate, aas.SubmodelElement
-            ):
+            if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -210,9 +177,7 @@ class ProductCondition(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -253,24 +218,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL821#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL821#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"state of charge value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"state of charge value"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -317,24 +273,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABG740#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABG740#003"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"last update"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -377,15 +324,11 @@ class ProductCondition(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"state of charge"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"state of charge"})
 
             if qualifier is None:
                 qualifier = ()
@@ -395,16 +338,12 @@ class ProductCondition(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if stateOfChargeValue is not None and not isinstance(
-                stateOfChargeValue, aas.SubmodelElement
-            ):
+            if stateOfChargeValue is not None and not isinstance(stateOfChargeValue, aas.SubmodelElement):
                 stateOfChargeValue = self.StateOfChargeValue(stateOfChargeValue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lastUpdate is not None and not isinstance(
-                lastUpdate, aas.SubmodelElement
-            ):
+            if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -420,9 +359,7 @@ class ProductCondition(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -463,24 +400,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL849#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL849#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"capacity throughput value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"capacity throughput value"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -527,24 +455,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABG740#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABG740#003"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"last update"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -588,24 +507,15 @@ class ProductCondition(aas.Submodel):
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:irdi:0173-1#02-ABL849#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL849#001"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"capacity throughput"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"capacity throughput"})
 
             if qualifier is None:
                 qualifier = ()
@@ -615,18 +525,12 @@ class ProductCondition(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if capacityThroughputValue is not None and not isinstance(
-                capacityThroughputValue, aas.SubmodelElement
-            ):
-                capacityThroughputValue = self.CapacityThroughputValue(
-                    capacityThroughputValue
-                )
+            if capacityThroughputValue is not None and not isinstance(capacityThroughputValue, aas.SubmodelElement):
+                capacityThroughputValue = self.CapacityThroughputValue(capacityThroughputValue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lastUpdate is not None and not isinstance(
-                lastUpdate, aas.SubmodelElement
-            ):
+            if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -642,9 +546,7 @@ class ProductCondition(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -685,24 +587,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL868#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL868#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"number of full cycles value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"number of full cycles value"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -749,24 +642,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABG740#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABG740#003"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"last update"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -810,24 +694,15 @@ class ProductCondition(aas.Submodel):
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:irdi:0173-1#02-ABL868#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL868#001"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"number of full cycles"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"number of full cycles"})
 
             if qualifier is None:
                 qualifier = ()
@@ -837,18 +712,12 @@ class ProductCondition(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if numberOfFullCyclesValue is not None and not isinstance(
-                numberOfFullCyclesValue, aas.SubmodelElement
-            ):
-                numberOfFullCyclesValue = self.NumberOfFullCyclesValue(
-                    numberOfFullCyclesValue
-                )
+            if numberOfFullCyclesValue is not None and not isinstance(numberOfFullCyclesValue, aas.SubmodelElement):
+                numberOfFullCyclesValue = self.NumberOfFullCyclesValue(numberOfFullCyclesValue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lastUpdate is not None and not isinstance(
-                lastUpdate, aas.SubmodelElement
-            ):
+            if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -864,9 +733,7 @@ class ProductCondition(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -907,24 +774,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL847#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL847#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"state of certified energy value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"state of certified energy value"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -971,24 +829,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABG740#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABG740#003"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"last update"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1032,24 +881,15 @@ class ProductCondition(aas.Submodel):
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:irdi:0173-1#02-ABL847#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL847#001"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"state of certified energy"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"state of certified energy"})
 
             if qualifier is None:
                 qualifier = ()
@@ -1062,15 +902,11 @@ class ProductCondition(aas.Submodel):
             if stateOfCertifiedEnergyValue is not None and not isinstance(
                 stateOfCertifiedEnergyValue, aas.SubmodelElement
             ):
-                stateOfCertifiedEnergyValue = self.StateOfCertifiedEnergyValue(
-                    stateOfCertifiedEnergyValue
-                )
+                stateOfCertifiedEnergyValue = self.StateOfCertifiedEnergyValue(stateOfCertifiedEnergyValue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lastUpdate is not None and not isinstance(
-                lastUpdate, aas.SubmodelElement
-            ):
+            if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1086,9 +922,7 @@ class ProductCondition(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1129,24 +963,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL870#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL870#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"remaining energy value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining energy value"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1193,24 +1018,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABG740#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABG740#003"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"last update"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1254,24 +1070,15 @@ class ProductCondition(aas.Submodel):
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:irdi:0173-1#02-ABL870#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL870#001"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"remaining energy"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining energy"})
 
             if qualifier is None:
                 qualifier = ()
@@ -1281,16 +1088,12 @@ class ProductCondition(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if remainingEnergyValue is not None and not isinstance(
-                remainingEnergyValue, aas.SubmodelElement
-            ):
+            if remainingEnergyValue is not None and not isinstance(remainingEnergyValue, aas.SubmodelElement):
                 remainingEnergyValue = self.RemainingEnergyValue(remainingEnergyValue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lastUpdate is not None and not isinstance(
-                lastUpdate, aas.SubmodelElement
-            ):
+            if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1306,9 +1109,7 @@ class ProductCondition(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1349,24 +1150,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL840#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL840#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"remaining capacity value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining capacity value"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1413,24 +1205,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABG740#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABG740#003"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"last update"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1474,24 +1257,15 @@ class ProductCondition(aas.Submodel):
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:irdi:0173-1#02-ABL840#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL840#001"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"remaining capacity"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining capacity"})
 
             if qualifier is None:
                 qualifier = ()
@@ -1501,18 +1275,12 @@ class ProductCondition(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if remainingCapacityValue is not None and not isinstance(
-                remainingCapacityValue, aas.SubmodelElement
-            ):
-                remainingCapacityValue = self.RemainingCapacityValue(
-                    remainingCapacityValue
-                )
+            if remainingCapacityValue is not None and not isinstance(remainingCapacityValue, aas.SubmodelElement):
+                remainingCapacityValue = self.RemainingCapacityValue(remainingCapacityValue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lastUpdate is not None and not isinstance(
-                lastUpdate, aas.SubmodelElement
-            ):
+            if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1528,9 +1296,7 @@ class ProductCondition(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1572,15 +1338,11 @@ class ProductCondition(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"negative event value"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"negative event value"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1627,24 +1389,15 @@ class ProductCondition(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:irdi:0173-1#02-ABG740#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABG740#003"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"last update"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1687,15 +1440,11 @@ class ProductCondition(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"negative event"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"negative event"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -1712,16 +1461,12 @@ class ProductCondition(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if negativeEventValue is not None and not isinstance(
-                    negativeEventValue, aas.SubmodelElement
-                ):
+                if negativeEventValue is not None and not isinstance(negativeEventValue, aas.SubmodelElement):
                     negativeEventValue = self.NegativeEventValue(negativeEventValue)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if lastUpdate is not None and not isinstance(
-                    lastUpdate, aas.SubmodelElement
-                ):
+                if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                     lastUpdate = self.LastUpdate(lastUpdate)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1737,9 +1482,7 @@ class ProductCondition(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1777,15 +1520,11 @@ class ProductCondition(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"negative events"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"negative events"})
 
             if qualifier is None:
                 qualifier = ()
@@ -1795,9 +1534,7 @@ class ProductCondition(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(negativeevents_items, str):
-                raise TypeError(
-                    "negativeevents_items takes several elements, got a str"
-                )
+                raise TypeError("negativeevents_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1809,9 +1546,7 @@ class ProductCondition(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1880,10 +1615,7 @@ class ProductCondition(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -1920,15 +1652,11 @@ class ProductCondition(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"document identifier"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1953,9 +1681,7 @@ class ProductCondition(aas.Submodel):
 
         def __init__(
             self,
-            informationonaccidents_items: Optional[
-                Iterable[Union[str, Informationonaccidents_item]]
-            ] = None,
+            informationonaccidents_items: Optional[Iterable[Union[str, Informationonaccidents_item]]] = None,
             id_short: Optional[str] = r"InformationOnAccidents",
             type_value_list_element: aas.SubmodelElement = aas.Property,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1986,24 +1712,15 @@ class ProductCondition(aas.Submodel):
                     referred_semantic_id=None,
                 ),
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:irdi:0173-1#02-ABL848#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL848#001"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"information on accidents"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"information on accidents"})
 
             if qualifier is None:
                 qualifier = ()
@@ -2013,18 +1730,12 @@ class ProductCondition(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(informationonaccidents_items, str):
-                raise TypeError(
-                    "informationonaccidents_items takes several elements, got a str"
-                )
+                raise TypeError("informationonaccidents_items takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if informationonaccidents_items:
                 informationonaccidents_items = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.Informationonaccidents_item(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.Informationonaccidents_item(i)
                     for i in informationonaccidents_items
                 ]
 
@@ -2038,9 +1749,7 @@ class ProductCondition(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2109,10 +1818,7 @@ class ProductCondition(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -2149,15 +1855,11 @@ class ProductCondition(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"measured temp"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"measured temp"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2204,24 +1906,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL816#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL816#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"time extreme high temp"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"time extreme high temp"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2268,24 +1961,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL817#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL817#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"time extreme low temp"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"time extreme low temp"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2332,24 +2016,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL818#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL818#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"time extreme high temp charging"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"time extreme high temp charging"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2396,24 +2071,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL819#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL819#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"time extreme low temp charging"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"time extreme low temp charging"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2460,24 +2126,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABG740#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABG740#003"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"last update"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2506,12 +2163,8 @@ class ProductCondition(aas.Submodel):
             measuredTemp: Optional[Union[xsd.Float, MeasuredTemp]] = None,
             timeExtremeHighTemp: Optional[Union[xsd.Float, TimeExtremeHighTemp]] = None,
             timeExtremeLowTemp: Optional[Union[xsd.Float, TimeExtremeLowTemp]] = None,
-            timeExtremeHighTempCharging: Optional[
-                Union[xsd.Float, TimeExtremeHighTempCharging]
-            ] = None,
-            timeExtremeLowTempCharging: Optional[
-                Union[xsd.Float, TimeExtremeLowTempCharging]
-            ] = None,
+            timeExtremeHighTempCharging: Optional[Union[xsd.Float, TimeExtremeHighTempCharging]] = None,
+            timeExtremeLowTempCharging: Optional[Union[xsd.Float, TimeExtremeLowTempCharging]] = None,
             id_short: Optional[str] = r"TemperatureInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -2528,15 +2181,11 @@ class ProductCondition(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"temperature information"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"temperature information"})
 
             if qualifier is None:
                 qualifier = ()
@@ -2546,23 +2195,17 @@ class ProductCondition(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if measuredTemp is not None and not isinstance(
-                measuredTemp, aas.SubmodelElement
-            ):
+            if measuredTemp is not None and not isinstance(measuredTemp, aas.SubmodelElement):
                 measuredTemp = self.MeasuredTemp(measuredTemp)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if timeExtremeHighTemp is not None and not isinstance(
-                timeExtremeHighTemp, aas.SubmodelElement
-            ):
+            if timeExtremeHighTemp is not None and not isinstance(timeExtremeHighTemp, aas.SubmodelElement):
                 timeExtremeHighTemp = self.TimeExtremeHighTemp(timeExtremeHighTemp)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if timeExtremeLowTemp is not None and not isinstance(
-                timeExtremeLowTemp, aas.SubmodelElement
-            ):
+            if timeExtremeLowTemp is not None and not isinstance(timeExtremeLowTemp, aas.SubmodelElement):
                 timeExtremeLowTemp = self.TimeExtremeLowTemp(timeExtremeLowTemp)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2570,24 +2213,18 @@ class ProductCondition(aas.Submodel):
             if timeExtremeHighTempCharging is not None and not isinstance(
                 timeExtremeHighTempCharging, aas.SubmodelElement
             ):
-                timeExtremeHighTempCharging = self.TimeExtremeHighTempCharging(
-                    timeExtremeHighTempCharging
-                )
+                timeExtremeHighTempCharging = self.TimeExtremeHighTempCharging(timeExtremeHighTempCharging)
 
             # Build a submodel element if a raw value was passed in the argument
 
             if timeExtremeLowTempCharging is not None and not isinstance(
                 timeExtremeLowTempCharging, aas.SubmodelElement
             ):
-                timeExtremeLowTempCharging = self.TimeExtremeLowTempCharging(
-                    timeExtremeLowTempCharging
-                )
+                timeExtremeLowTempCharging = self.TimeExtremeLowTempCharging(timeExtremeLowTempCharging)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lastUpdate is not None and not isinstance(
-                lastUpdate, aas.SubmodelElement
-            ):
+            if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2610,9 +2247,7 @@ class ProductCondition(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2654,15 +2289,11 @@ class ProductCondition(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"RPC last updated"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"RPC last updated"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2709,24 +2340,15 @@ class ProductCondition(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:irdi:0173-1#02-ABL821#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL821#001"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"at so c"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"at so c"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2772,15 +2394,11 @@ class ProductCondition(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"power capability at"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"power capability at"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2825,24 +2443,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL853#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL853#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"remaining power capability dynamic at"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining power capability dynamic at"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2852,9 +2461,7 @@ class ProductCondition(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if rPCLastUpdated is not None and not isinstance(
-                    rPCLastUpdated, aas.SubmodelElement
-                ):
+                if rPCLastUpdated is not None and not isinstance(rPCLastUpdated, aas.SubmodelElement):
                     rPCLastUpdated = self.RPCLastUpdated(rPCLastUpdated)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -2864,9 +2471,7 @@ class ProductCondition(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if powerCapabilityAt is not None and not isinstance(
-                    powerCapabilityAt, aas.SubmodelElement
-                ):
+                if powerCapabilityAt is not None and not isinstance(powerCapabilityAt, aas.SubmodelElement):
                     powerCapabilityAt = self.PowerCapabilityAt(powerCapabilityAt)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2882,9 +2487,7 @@ class ProductCondition(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2923,24 +2526,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABG740#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABG740#003"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"last update"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2984,24 +2578,15 @@ class ProductCondition(aas.Submodel):
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:irdi:0173-1#02-ABL820#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL820#001"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"remaining power capability"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining power capability"})
 
             if qualifier is None:
                 qualifier = ()
@@ -3011,9 +2596,7 @@ class ProductCondition(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lastUpdate is not None and not isinstance(
-                lastUpdate, aas.SubmodelElement
-            ):
+            if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3029,9 +2612,7 @@ class ProductCondition(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3072,24 +2653,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL834#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL834#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"evolution of self discharge value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"evolution of self discharge value"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3136,24 +2708,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABG740#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABG740#003"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"last update"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3178,9 +2741,7 @@ class ProductCondition(aas.Submodel):
 
         def __init__(
             self,
-            evolutionOfSelfDischargeValue: Union[
-                xsd.Float, EvolutionOfSelfDischargeValue
-            ],
+            evolutionOfSelfDischargeValue: Union[xsd.Float, EvolutionOfSelfDischargeValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"EvolutionOfSelfDischarge",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3198,15 +2759,11 @@ class ProductCondition(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"evolution of self discharge"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"evolution of self discharge"})
 
             if qualifier is None:
                 qualifier = ()
@@ -3219,15 +2776,11 @@ class ProductCondition(aas.Submodel):
             if evolutionOfSelfDischargeValue is not None and not isinstance(
                 evolutionOfSelfDischargeValue, aas.SubmodelElement
             ):
-                evolutionOfSelfDischargeValue = self.EvolutionOfSelfDischargeValue(
-                    evolutionOfSelfDischargeValue
-                )
+                evolutionOfSelfDischargeValue = self.EvolutionOfSelfDischargeValue(evolutionOfSelfDischargeValue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lastUpdate is not None and not isinstance(
-                lastUpdate, aas.SubmodelElement
-            ):
+            if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3243,9 +2796,7 @@ class ProductCondition(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3286,24 +2837,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABL825#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL825#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"current self discharging rate value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"current self discharging rate value"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3350,24 +2892,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABG740#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABG740#003"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"last update"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3392,9 +2925,7 @@ class ProductCondition(aas.Submodel):
 
         def __init__(
             self,
-            currentSelfDischargingRateValue: Union[
-                xsd.Float, CurrentSelfDischargingRateValue
-            ],
+            currentSelfDischargingRateValue: Union[xsd.Float, CurrentSelfDischargingRateValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"CurrentSelfDischargingRate",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3412,15 +2943,11 @@ class ProductCondition(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"current self discharging rate"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"current self discharging rate"})
 
             if qualifier is None:
                 qualifier = ()
@@ -3433,15 +2960,11 @@ class ProductCondition(aas.Submodel):
             if currentSelfDischargingRateValue is not None and not isinstance(
                 currentSelfDischargingRateValue, aas.SubmodelElement
             ):
-                currentSelfDischargingRateValue = self.CurrentSelfDischargingRateValue(
-                    currentSelfDischargingRateValue
-                )
+                currentSelfDischargingRateValue = self.CurrentSelfDischargingRateValue(currentSelfDischargingRateValue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lastUpdate is not None and not isinstance(
-                lastUpdate, aas.SubmodelElement
-            ):
+            if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3457,9 +2980,7 @@ class ProductCondition(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3500,18 +3021,11 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:iridi:0173-1#02-ABL851#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:iridi:0173-1#02-ABL851#001"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -3564,24 +3078,15 @@ class ProductCondition(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:irdi:0173-1#02-ABG740#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABG740#003"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"last update"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3606,9 +3111,7 @@ class ProductCondition(aas.Submodel):
 
         def __init__(
             self,
-            remainingRoundTripEnergyEfficiencyValue: Union[
-                xsd.Float, RemainingRoundTripEnergyEfficiencyValue
-            ],
+            remainingRoundTripEnergyEfficiencyValue: Union[xsd.Float, RemainingRoundTripEnergyEfficiencyValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"RemainingRoundTripEnergyEfficiency",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3626,15 +3129,11 @@ class ProductCondition(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"remaining round trip energy efficiency"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining round trip energy efficiency"})
 
             if qualifier is None:
                 qualifier = ()
@@ -3647,17 +3146,13 @@ class ProductCondition(aas.Submodel):
             if remainingRoundTripEnergyEfficiencyValue is not None and not isinstance(
                 remainingRoundTripEnergyEfficiencyValue, aas.SubmodelElement
             ):
-                remainingRoundTripEnergyEfficiencyValue = (
-                    self.RemainingRoundTripEnergyEfficiencyValue(
-                        remainingRoundTripEnergyEfficiencyValue
-                    )
+                remainingRoundTripEnergyEfficiencyValue = self.RemainingRoundTripEnergyEfficiencyValue(
+                    remainingRoundTripEnergyEfficiencyValue
                 )
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lastUpdate is not None and not isinstance(
-                lastUpdate, aas.SubmodelElement
-            ):
+            if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                 lastUpdate = self.LastUpdate(lastUpdate)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3673,9 +3168,7 @@ class ProductCondition(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3696,8 +3189,7 @@ class ProductCondition(aas.Submodel):
         stateOfCharge: StateOfCharge,
         numberOfFullCycles: NumberOfFullCycles,
         informationOnAccidents: Union[
-            Iterable[Union[str, InformationOnAccidents.Informationonaccidents_item]],
-            InformationOnAccidents,
+            Iterable[Union[str, InformationOnAccidents.Informationonaccidents_item]], InformationOnAccidents
         ],
         temperatureInformation: TemperatureInformation,
         energyThroughput: Optional[EnergyThroughput] = None,
@@ -3705,15 +3197,11 @@ class ProductCondition(aas.Submodel):
         stateOfCertifiedEnergy: Optional[StateOfCertifiedEnergy] = None,
         remainingEnergy: Optional[RemainingEnergy] = None,
         remainingCapacity: Optional[RemainingCapacity] = None,
-        negativeEvents: Optional[
-            Union[Iterable[NegativeEvents.Negativeevents_item], NegativeEvents]
-        ] = None,
+        negativeEvents: Optional[Union[Iterable[NegativeEvents.Negativeevents_item], NegativeEvents]] = None,
         remainingPowerCapability: Optional[RemainingPowerCapability] = None,
         evolutionOfSelfDischarge: Optional[EvolutionOfSelfDischarge] = None,
         currentSelfDischargingRate: Optional[CurrentSelfDischargingRate] = None,
-        remainingRoundTripEnergyEfficiency: Optional[
-            RemainingRoundTripEnergyEfficiency
-        ] = None,
+        remainingRoundTripEnergyEfficiency: Optional[RemainingRoundTripEnergyEfficiency] = None,
         id_short: Optional[str] = r"ProductCondition",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -3736,9 +3224,7 @@ class ProductCondition(aas.Submodel):
     ):
 
         if display_name is None:
-            display_name = aas.MultiLanguageNameType(
-                dict_={r"en": r"product condition"}
-            )
+            display_name = aas.MultiLanguageNameType(dict_={r"en": r"product condition"})
 
         if administration is None:
             administration = aas.AdministrativeInformation(
@@ -3761,9 +3247,7 @@ class ProductCondition(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if negativeEvents is not None and not isinstance(
-            negativeEvents, aas.SubmodelElement
-        ):
+        if negativeEvents is not None and not isinstance(negativeEvents, aas.SubmodelElement):
             negativeEvents = self.NegativeEvents(negativeEvents)
 
         # A str would be split into its characters
@@ -3772,9 +3256,7 @@ class ProductCondition(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if informationOnAccidents is not None and not isinstance(
-            informationOnAccidents, aas.SubmodelElement
-        ):
+        if informationOnAccidents is not None and not isinstance(informationOnAccidents, aas.SubmodelElement):
             informationOnAccidents = self.InformationOnAccidents(informationOnAccidents)
 
         # Add all passed/initialized submodel elements to a single list
@@ -3805,9 +3287,7 @@ class ProductCondition(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

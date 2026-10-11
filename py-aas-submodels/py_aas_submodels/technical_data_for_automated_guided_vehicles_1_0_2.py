@@ -19,12 +19,7 @@ class TechnicalDataAGV(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO677#004",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#004"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -40,9 +35,7 @@ class TechnicalDataAGV(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -84,12 +77,7 @@ class TechnicalDataAGV(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI776#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI776#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -105,16 +93,12 @@ class TechnicalDataAGV(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Imagefile for logo of manufacturer provided in common format (.png, .jpg)."
-                        }
+                        dict_={r"en": r"Imagefile for logo of manufacturer provided in common format (.png, .jpg)."}
                     )
 
                 if qualifier is None:
@@ -148,12 +132,7 @@ class TechnicalDataAGV(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAW338#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW338#003"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -169,9 +148,7 @@ class TechnicalDataAGV(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -213,12 +190,7 @@ class TechnicalDataAGV(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO054#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO054#003"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -234,9 +206,7 @@ class TechnicalDataAGV(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -277,12 +247,7 @@ class TechnicalDataAGV(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO227#004",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO227#004"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -298,9 +263,7 @@ class TechnicalDataAGV(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -346,20 +309,13 @@ class TechnicalDataAGV(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABK291#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK291#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -393,12 +349,7 @@ class TechnicalDataAGV(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABL423#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL423#001"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
@@ -414,9 +365,7 @@ class TechnicalDataAGV(aas.Submodel):
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -450,8 +399,7 @@ class TechnicalDataAGV(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -473,15 +421,11 @@ class TechnicalDataAGV(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Product image", r"de": r"Produktbild"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Product image", r"de": r"Produktbild"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -491,9 +435,7 @@ class TechnicalDataAGV(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if imageNote is not None and not isinstance(
-                        imageNote, aas.SubmodelElement
-                    ):
+                    if imageNote is not None and not isinstance(imageNote, aas.SubmodelElement):
                         imageNote = self.ImageNote(imageNote)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -509,9 +451,7 @@ class TechnicalDataAGV(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -531,13 +471,10 @@ class TechnicalDataAGV(aas.Submodel):
                 productimages_items: Iterable[Productimages_item],
                 id_short: Optional[str] = r"ProductImages",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                semantic_id_list_element: Optional[
-                    aas.Reference
-                ] = aas.ExternalReference(
+                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -548,12 +485,7 @@ class TechnicalDataAGV(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABM220#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM220#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -569,21 +501,15 @@ class TechnicalDataAGV(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Product images", r"de": r"Produktbilder"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Product images", r"de": r"Produktbilder"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Image file for associated product provided in common format (.png, .jpg)"
-                        }
+                        dict_={r"en": r"Image file for associated product provided in common format (.png, .jpg)"}
                     )
 
                 if qualifier is None:
@@ -594,9 +520,7 @@ class TechnicalDataAGV(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(productimages_items, str):
-                    raise TypeError(
-                        "productimages_items takes several elements, got a str"
-                    )
+                    raise TypeError("productimages_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -608,9 +532,7 @@ class TechnicalDataAGV(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -677,15 +599,9 @@ class TechnicalDataAGV(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -700,28 +616,17 @@ class TechnicalDataAGV(aas.Submodel):
         def __init__(
             self,
             manufacturerName: Union[str, ManufacturerName],
-            manufacturerProductDesignation: Union[
-                aas.LangStringSet, ManufacturerProductDesignation
-            ],
-            productArticleNumberOfManufacturer: Union[
-                str, ProductArticleNumberOfManufacturer
-            ],
+            manufacturerProductDesignation: Union[aas.LangStringSet, ManufacturerProductDesignation],
+            productArticleNumberOfManufacturer: Union[str, ProductArticleNumberOfManufacturer],
             manufacturerOrderCode: Union[str, ManufacturerOrderCode],
             companyLogo: Optional[CompanyLogo] = None,
-            productImages: Optional[
-                Union[Iterable[ProductImages.Productimages_item], ProductImages]
-            ] = None,
+            productImages: Optional[Union[Iterable[ProductImages.Productimages_item], ProductImages]] = None,
             id_short: Optional[str] = r"GeneralInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABK161#002/0173-1#01-AHX838#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK161#002/0173-1#01-AHX838#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -737,24 +642,17 @@ class TechnicalDataAGV(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"General information",
-                        r"de": r"Allgemeine Informationen",
-                    }
+                    dict_={r"en": r"General information", r"de": r"Allgemeine Informationen"}
                 )
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"General information, for example ordering and manufacturer information."
-                    }
+                    dict_={r"en": r"General information, for example ordering and manufacturer information."}
                 )
 
             if qualifier is None:
@@ -765,9 +663,7 @@ class TechnicalDataAGV(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerName is not None and not isinstance(
-                manufacturerName, aas.SubmodelElement
-            ):
+            if manufacturerName is not None and not isinstance(manufacturerName, aas.SubmodelElement):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -775,29 +671,21 @@ class TechnicalDataAGV(aas.Submodel):
             if manufacturerProductDesignation is not None and not isinstance(
                 manufacturerProductDesignation, aas.SubmodelElement
             ):
-                manufacturerProductDesignation = self.ManufacturerProductDesignation(
-                    manufacturerProductDesignation
-                )
+                manufacturerProductDesignation = self.ManufacturerProductDesignation(manufacturerProductDesignation)
 
             # Build a submodel element if a raw value was passed in the argument
 
             if productArticleNumberOfManufacturer is not None and not isinstance(
                 productArticleNumberOfManufacturer, aas.SubmodelElement
             ):
-                productArticleNumberOfManufacturer = (
-                    self.ProductArticleNumberOfManufacturer(
-                        productArticleNumberOfManufacturer
-                    )
+                productArticleNumberOfManufacturer = self.ProductArticleNumberOfManufacturer(
+                    productArticleNumberOfManufacturer
                 )
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerOrderCode is not None and not isinstance(
-                manufacturerOrderCode, aas.SubmodelElement
-            ):
-                manufacturerOrderCode = self.ManufacturerOrderCode(
-                    manufacturerOrderCode
-                )
+            if manufacturerOrderCode is not None and not isinstance(manufacturerOrderCode, aas.SubmodelElement):
+                manufacturerOrderCode = self.ManufacturerOrderCode(manufacturerOrderCode)
 
             # A str would be split into its characters
             if isinstance(productImages, str):
@@ -805,9 +693,7 @@ class TechnicalDataAGV(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if productImages is not None and not isinstance(
-                productImages, aas.SubmodelElement
-            ):
+            if productImages is not None and not isinstance(productImages, aas.SubmodelElement):
                 productImages = self.ProductImages(productImages)
 
             # Add all passed/initialized submodel elements to a single list
@@ -830,9 +716,7 @@ class TechnicalDataAGV(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -873,17 +757,12 @@ class TechnicalDataAGV(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Product datasheet",
-                                r"de": r"Produktdatenblatt",
-                            }
+                            dict_={r"en": r"Product datasheet", r"de": r"Produktdatenblatt"}
                         )
 
                     if description is None:
@@ -939,17 +818,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Kinematic of the AGV",
-                                    r"de": r"Kinematik des AGV",
-                                }
+                                dict_={r"en": r"Kinematic of the AGV", r"de": r"Kinematik des AGV"}
                             )
 
                         if description is None:
@@ -1003,17 +877,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Class of the AGV",
-                                    r"de": r"Klasse des AGV",
-                                }
+                                dict_={r"en": r"Class of the AGV", r"de": r"Klasse des AGV"}
                             )
 
                         if description is None:
@@ -1067,17 +936,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Travel direction",
-                                    r"de": r"Fahrtrichtung",
-                                }
+                                dict_={r"en": r"Travel direction", r"de": r"Fahrtrichtung"}
                             )
 
                         if description is None:
@@ -1131,17 +995,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Transportation principle",
-                                    r"de": r"Transportprinzip",
-                                }
+                                dict_={r"en": r"Transportation principle", r"de": r"Transportprinzip"}
                             )
 
                         if description is None:
@@ -1195,17 +1054,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Type of localization",
-                                    r"de": r"Lokalisierungsart",
-                                }
+                                dict_={r"en": r"Type of localization", r"de": r"Lokalisierungsart"}
                             )
 
                         if description is None:
@@ -1259,17 +1113,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Type of navigation",
-                                    r"de": r"Navigationsart",
-                                }
+                                dict_={r"en": r"Type of navigation", r"de": r"Navigationsart"}
                             )
 
                         if description is None:
@@ -1322,17 +1171,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Special applications",
-                                    r"de": r"Besondere Anwendungsbereiche",
-                                }
+                                dict_={r"en": r"Special applications", r"de": r"Besondere Anwendungsbereiche"}
                             )
 
                         if description is None:
@@ -1384,24 +1228,17 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Special capabilities",
-                                    r"de": r"Besondere Fähigkeiten",
-                                }
+                                dict_={r"en": r"Special capabilities", r"de": r"Besondere Fähigkeiten"}
                             )
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Special capabilities and functions of the AGV"
-                                }
+                                dict_={r"en": r"Special capabilities and functions of the AGV"}
                             )
 
                         if qualifier is None:
@@ -1436,28 +1273,18 @@ class TechnicalDataAGV(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAV695#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV695#003"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"IP Protection Class",
-                                    r"de": r"IP Schutzklasse",
-                                }
+                                dict_={r"en": r"IP Protection Class", r"de": r"IP Schutzklasse"}
                             )
 
                         if description is None:
@@ -1500,20 +1327,13 @@ class TechnicalDataAGV(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAD676#009",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAD676#009"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1567,9 +1387,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -1629,9 +1447,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -1644,9 +1460,7 @@ class TechnicalDataAGV(aas.Submodel):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Demand for the special qualification required"
-                                }
+                                dict_={r"en": r"Demand for the special qualification required"}
                             )
 
                         if qualifier is None:
@@ -1677,22 +1491,14 @@ class TechnicalDataAGV(aas.Submodel):
                     transportPrinciple: Optional[Union[str, TransportPrinciple]] = None,
                     localizationType: Optional[Union[str, LocalizationType]] = None,
                     navigationType: Optional[Union[str, NavigationType]] = None,
-                    specialApplications: Optional[
-                        Union[aas.LangStringSet, SpecialApplications]
-                    ] = None,
-                    specialCapabilities: Optional[
-                        Union[aas.LangStringSet, SpecialCapabilities]
-                    ] = None,
+                    specialApplications: Optional[Union[aas.LangStringSet, SpecialApplications]] = None,
+                    specialCapabilities: Optional[Union[aas.LangStringSet, SpecialCapabilities]] = None,
                     protectionClassIP: Optional[Union[str, ProtectionClassIP]] = None,
-                    suitableForOutdoorUse: Optional[
-                        Union[bool, SuitableForOutdoorUse]
-                    ] = None,
+                    suitableForOutdoorUse: Optional[Union[bool, SuitableForOutdoorUse]] = None,
                     requiredEnvironmentalConditions: Optional[
                         Union[aas.LangStringSet, RequiredEnvironmentalConditions]
                     ] = None,
-                    specialQualificationDemand: Optional[
-                        Union[aas.LangStringSet, SpecialQualificationDemand]
-                    ] = None,
+                    specialQualificationDemand: Optional[Union[aas.LangStringSet, SpecialQualificationDemand]] = None,
                     id_short: Optional[str] = r"TypeAndApplicationInformation",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -1709,9 +1515,7 @@ class TechnicalDataAGV(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -1724,9 +1528,7 @@ class TechnicalDataAGV(aas.Submodel):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "Information about the AGV type and the vehicle's applications"
-                            }
+                            dict_={r"en": "Information about the AGV type and the vehicle's applications"}
                         )
 
                     if qualifier is None:
@@ -1737,89 +1539,61 @@ class TechnicalDataAGV(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if agvKinematic is not None and not isinstance(
-                        agvKinematic, aas.SubmodelElement
-                    ):
+                    if agvKinematic is not None and not isinstance(agvKinematic, aas.SubmodelElement):
                         agvKinematic = self.AgvKinematic(agvKinematic)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if agvClass is not None and not isinstance(
-                        agvClass, aas.SubmodelElement
-                    ):
+                    if agvClass is not None and not isinstance(agvClass, aas.SubmodelElement):
                         agvClass = self.AgvClass(agvClass)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if travelDirection is not None and not isinstance(
-                        travelDirection, aas.SubmodelElement
-                    ):
+                    if travelDirection is not None and not isinstance(travelDirection, aas.SubmodelElement):
                         travelDirection = self.TravelDirection(travelDirection)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if transportPrinciple is not None and not isinstance(
-                        transportPrinciple, aas.SubmodelElement
-                    ):
+                    if transportPrinciple is not None and not isinstance(transportPrinciple, aas.SubmodelElement):
                         transportPrinciple = self.TransportPrinciple(transportPrinciple)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localizationType is not None and not isinstance(
-                        localizationType, aas.SubmodelElement
-                    ):
+                    if localizationType is not None and not isinstance(localizationType, aas.SubmodelElement):
                         localizationType = self.LocalizationType(localizationType)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if navigationType is not None and not isinstance(
-                        navigationType, aas.SubmodelElement
-                    ):
+                    if navigationType is not None and not isinstance(navigationType, aas.SubmodelElement):
                         navigationType = self.NavigationType(navigationType)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if specialApplications is not None and not isinstance(
-                        specialApplications, aas.SubmodelElement
-                    ):
-                        specialApplications = self.SpecialApplications(
-                            specialApplications
-                        )
+                    if specialApplications is not None and not isinstance(specialApplications, aas.SubmodelElement):
+                        specialApplications = self.SpecialApplications(specialApplications)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if specialCapabilities is not None and not isinstance(
-                        specialCapabilities, aas.SubmodelElement
-                    ):
-                        specialCapabilities = self.SpecialCapabilities(
-                            specialCapabilities
-                        )
+                    if specialCapabilities is not None and not isinstance(specialCapabilities, aas.SubmodelElement):
+                        specialCapabilities = self.SpecialCapabilities(specialCapabilities)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if protectionClassIP is not None and not isinstance(
-                        protectionClassIP, aas.SubmodelElement
-                    ):
+                    if protectionClassIP is not None and not isinstance(protectionClassIP, aas.SubmodelElement):
                         protectionClassIP = self.ProtectionClassIP(protectionClassIP)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if suitableForOutdoorUse is not None and not isinstance(
-                        suitableForOutdoorUse, aas.SubmodelElement
-                    ):
-                        suitableForOutdoorUse = self.SuitableForOutdoorUse(
-                            suitableForOutdoorUse
-                        )
+                    if suitableForOutdoorUse is not None and not isinstance(suitableForOutdoorUse, aas.SubmodelElement):
+                        suitableForOutdoorUse = self.SuitableForOutdoorUse(suitableForOutdoorUse)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if requiredEnvironmentalConditions is not None and not isinstance(
                         requiredEnvironmentalConditions, aas.SubmodelElement
                     ):
-                        requiredEnvironmentalConditions = (
-                            self.RequiredEnvironmentalConditions(
-                                requiredEnvironmentalConditions
-                            )
+                        requiredEnvironmentalConditions = self.RequiredEnvironmentalConditions(
+                            requiredEnvironmentalConditions
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -1827,9 +1601,7 @@ class TechnicalDataAGV(aas.Submodel):
                     if specialQualificationDemand is not None and not isinstance(
                         specialQualificationDemand, aas.SubmodelElement
                     ):
-                        specialQualificationDemand = self.SpecialQualificationDemand(
-                            specialQualificationDemand
-                        )
+                        specialQualificationDemand = self.SpecialQualificationDemand(specialQualificationDemand)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1857,9 +1629,7 @@ class TechnicalDataAGV(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1899,17 +1669,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Lateral inclination (max.)",
-                                    r"de": r"Querneigung (max.)",
-                                }
+                                dict_={r"en": r"Lateral inclination (max.)", r"de": r"Querneigung (max.)"}
                             )
 
                         if description is None:
@@ -1974,17 +1739,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Lateral inclination (max.)",
-                                    r"de": r"Querneigung (max.)",
-                                }
+                                dict_={r"en": r"Lateral inclination (max.)", r"de": r"Querneigung (max.)"}
                             )
 
                         if description is None:
@@ -2049,17 +1809,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Climbing inclination (max.)",
-                                    r"de": r"Längsneigung (max.)",
-                                }
+                                dict_={r"en": r"Climbing inclination (max.)", r"de": r"Längsneigung (max.)"}
                             )
 
                         if description is None:
@@ -2124,17 +1879,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Climbing inclination (max.)",
-                                    r"de": r"Längsneigung (max.)",
-                                }
+                                dict_={r"en": r"Climbing inclination (max.)", r"de": r"Längsneigung (max.)"}
                             )
 
                         if description is None:
@@ -2198,9 +1948,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -2213,9 +1961,7 @@ class TechnicalDataAGV(aas.Submodel):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Information about used localization sensors by the AGV"
-                                }
+                                dict_={r"en": r"Information about used localization sensors by the AGV"}
                             )
 
                         if qualifier is None:
@@ -2261,24 +2007,17 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Localization accuracy",
-                                    r"de": r"Lokalisierungsgenauigkeit",
-                                }
+                                dict_={r"en": r"Localization accuracy", r"de": r"Lokalisierungsgenauigkeit"}
                             )
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Accuracy of the determination of the current location of the AGV"
-                                }
+                                dict_={r"en": r"Accuracy of the determination of the current location of the AGV"}
                             )
 
                         if qualifier is None:
@@ -2325,23 +2064,16 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Positioning accuracy",
-                                    r"de": r"Positionierungsgenauigkeit",
-                                }
+                                dict_={r"en": r"Positioning accuracy", r"de": r"Positionierungsgenauigkeit"}
                             )
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Positioning accuracy of the AGV"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Positioning accuracy of the AGV"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2376,27 +2108,18 @@ class TechnicalDataAGV(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABJ258#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABJ258#001"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Maximal load on the AGV including attachments and load"
-                                }
+                                dict_={r"en": r"Maximal load on the AGV including attachments and load"}
                             )
 
                         if qualifier is None:
@@ -2442,17 +2165,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Interfaces for attachments",
-                                    r"de": r"Schnittstellen für Anbauten",
-                                }
+                                dict_={r"en": r"Interfaces for attachments", r"de": r"Schnittstellen für Anbauten"}
                             )
 
                         if description is None:
@@ -2494,28 +2212,18 @@ class TechnicalDataAGV(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABA730#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABA730#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"System availability",
-                                    r"de": r"Systemverfügbarkeit",
-                                }
+                                dict_={r"en": r"System availability", r"de": r"Systemverfügbarkeit"}
                             )
 
                         if description is None:
@@ -2559,28 +2267,18 @@ class TechnicalDataAGV(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAJ479#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAJ479#004"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Run time (max.)",
-                                    r"de": r"Run time (max.)",
-                                }
+                                dict_={r"en": r"Run time (max.)", r"de": r"Run time (max.)"}
                             )
 
                         if description is None:
@@ -2600,8 +2298,7 @@ class TechnicalDataAGV(aas.Submodel):
                                     value_id=aas.ExternalReference(
                                         key=(
                                             aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0112/2///61360_4#AAF579",
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF579"
                                             ),
                                         ),
                                         referred_semantic_id=None,
@@ -2610,8 +2307,7 @@ class TechnicalDataAGV(aas.Submodel):
                                     semantic_id=aas.ExternalReference(
                                         key=(
                                             aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0112/2///61360_4#AAF575",
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF575"
                                             ),
                                         ),
                                         referred_semantic_id=None,
@@ -2650,28 +2346,18 @@ class TechnicalDataAGV(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAJ479#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAJ479#004"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Run time (max.)",
-                                    r"de": r"Laufzeit (max.)",
-                                }
+                                dict_={r"en": r"Run time (max.)", r"de": r"Laufzeit (max.)"}
                             )
 
                         if description is None:
@@ -2691,8 +2377,7 @@ class TechnicalDataAGV(aas.Submodel):
                                     value_id=aas.ExternalReference(
                                         key=(
                                             aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0112/2///61360_4#AAF578",
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF578"
                                             ),
                                         ),
                                         referred_semantic_id=None,
@@ -2701,8 +2386,7 @@ class TechnicalDataAGV(aas.Submodel):
                                     semantic_id=aas.ExternalReference(
                                         key=(
                                             aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0112/2///61360_4#AAF575",
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF575"
                                             ),
                                         ),
                                         referred_semantic_id=None,
@@ -2752,17 +2436,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Speed (min.)",
-                                    r"de": r"Geschwindigkeit (min.)",
-                                }
+                                dict_={r"en": r"Speed (min.)", r"de": r"Geschwindigkeit (min.)"}
                             )
 
                         if description is None:
@@ -2814,9 +2493,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -2844,8 +2521,7 @@ class TechnicalDataAGV(aas.Submodel):
                                     value_id=aas.ExternalReference(
                                         key=(
                                             aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0112/2///61360_4#AAF573",
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF573"
                                             ),
                                         ),
                                         referred_semantic_id=None,
@@ -2854,8 +2530,7 @@ class TechnicalDataAGV(aas.Submodel):
                                     semantic_id=aas.ExternalReference(
                                         key=(
                                             aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0112/2///61360_4#AAF575",
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF575"
                                             ),
                                         ),
                                         referred_semantic_id=None,
@@ -2905,9 +2580,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2927,8 +2600,7 @@ class TechnicalDataAGV(aas.Submodel):
                                     value_id=aas.ExternalReference(
                                         key=(
                                             aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0112/2///61360_4#AAF578",
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF578"
                                             ),
                                         ),
                                         referred_semantic_id=None,
@@ -2937,8 +2609,7 @@ class TechnicalDataAGV(aas.Submodel):
                                     semantic_id=aas.ExternalReference(
                                         key=(
                                             aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0112/2///61360_4#AAF575",
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF575"
                                             ),
                                         ),
                                         referred_semantic_id=None,
@@ -2988,9 +2659,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -3018,8 +2687,7 @@ class TechnicalDataAGV(aas.Submodel):
                                     value_id=aas.ExternalReference(
                                         key=(
                                             aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0112/2///61360_4#AAF579",
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF579"
                                             ),
                                         ),
                                         referred_semantic_id=None,
@@ -3028,8 +2696,7 @@ class TechnicalDataAGV(aas.Submodel):
                                     semantic_id=aas.ExternalReference(
                                         key=(
                                             aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0112/2///61360_4#AAF575",
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF575"
                                             ),
                                         ),
                                         referred_semantic_id=None,
@@ -3079,9 +2746,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -3109,8 +2774,7 @@ class TechnicalDataAGV(aas.Submodel):
                                     value_id=aas.ExternalReference(
                                         key=(
                                             aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0112/2///61360_4#AAF579",
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF579"
                                             ),
                                         ),
                                         referred_semantic_id=None,
@@ -3119,8 +2783,7 @@ class TechnicalDataAGV(aas.Submodel):
                                     semantic_id=aas.ExternalReference(
                                         key=(
                                             aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0112/2///61360_4#AAF575",
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF575"
                                             ),
                                         ),
                                         referred_semantic_id=None,
@@ -3159,28 +2822,18 @@ class TechnicalDataAGV(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABG746#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG746#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Acceleration (max.)",
-                                    r"de": r"Beschleuniging (max.)",
-                                }
+                                dict_={r"en": r"Acceleration (max.)", r"de": r"Beschleuniging (max.)"}
                             )
 
                         if description is None:
@@ -3235,17 +2888,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Maximum deceleration",
-                                    r"de": r"Maximale Verzögerung",
-                                }
+                                dict_={r"en": r"Maximum deceleration", r"de": r"Maximale Verzögerung"}
                             )
 
                         if description is None:
@@ -3289,28 +2937,18 @@ class TechnicalDataAGV(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAE355#006",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAE355#006"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Vehicle height (max.)",
-                                    r"de": r"Fahrzeughöhe (max.)",
-                                }
+                                dict_={r"en": r"Vehicle height (max.)", r"de": r"Fahrzeughöhe (max.)"}
                             )
 
                         if description is None:
@@ -3354,36 +2992,23 @@ class TechnicalDataAGV(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAG933#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAG933#004"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Vehicle width (max.)",
-                                    r"de": r"Fahrzeugbreite (max.)",
-                                }
+                                dict_={r"en": r"Vehicle width (max.)", r"de": r"Fahrzeugbreite (max.)"}
                             )
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Maximum vehicle width",
-                                    r"de": r"Maximale Fahrzeugbreite",
-                                }
+                                dict_={r"en": r"Maximum vehicle width", r"de": r"Maximale Fahrzeugbreite"}
                             )
 
                         if qualifier is None:
@@ -3419,28 +3044,18 @@ class TechnicalDataAGV(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABE774#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABE774#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Vehicle length (max.)",
-                                    r"de": r"Fahrzeuglänge (max.)",
-                                }
+                                dict_={r"en": r"Vehicle length (max.)", r"de": r"Fahrzeuglänge (max.)"}
                             )
 
                         if description is None:
@@ -3484,28 +3099,18 @@ class TechnicalDataAGV(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABD800#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABD800#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Vehicle weight (max.)",
-                                    r"de": r"Fahrzeuggewicht (max.)",
-                                }
+                                dict_={r"en": r"Vehicle weight (max.)", r"de": r"Fahrzeuggewicht (max.)"}
                             )
 
                         if description is None:
@@ -3559,15 +3164,11 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"emissions", r"de": r"Emissionen"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"emissions", r"de": r"Emissionen"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -3618,9 +3219,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -3680,9 +3279,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -3695,9 +3292,7 @@ class TechnicalDataAGV(aas.Submodel):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Information about the manual controllers of the AGV"
-                                }
+                                dict_={r"en": r"Information about the manual controllers of the AGV"}
                             )
 
                         if qualifier is None:
@@ -3742,9 +3337,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -3757,9 +3350,7 @@ class TechnicalDataAGV(aas.Submodel):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Information about digital and analog interfaces of the AGV"
-                                }
+                                dict_={r"en": r"Information about digital and analog interfaces of the AGV"}
                             )
 
                         if qualifier is None:
@@ -3784,71 +3375,33 @@ class TechnicalDataAGV(aas.Submodel):
 
                 def __init__(
                     self,
-                    maxLateralInclinationMaxLoad: Optional[
-                        Union[int, MaxLateralInclinationMaxLoad]
-                    ] = None,
-                    maxLateralInclinationWithoutLoad: Optional[
-                        Union[int, MaxLateralInclinationWithoutLoad]
-                    ] = None,
-                    maxClimbingInclinationMaxLoad: Optional[
-                        Union[int, MaxClimbingInclinationMaxLoad]
-                    ] = None,
-                    maxClimbingInclinationWithoutLoad: Optional[
-                        Union[int, MaxClimbingInclinationWithoutLoad]
-                    ] = None,
-                    localizationSensorDetails: Optional[
-                        Union[aas.LangStringSet, LocalizationSensorDetails]
-                    ] = None,
-                    localizationAccuracy: Optional[
-                        Union[xsd.Float, LocalizationAccuracy]
-                    ] = None,
-                    positioningAccuracy: Optional[
-                        Union[xsd.Float, PositioningAccuracy]
-                    ] = None,
+                    maxLateralInclinationMaxLoad: Optional[Union[int, MaxLateralInclinationMaxLoad]] = None,
+                    maxLateralInclinationWithoutLoad: Optional[Union[int, MaxLateralInclinationWithoutLoad]] = None,
+                    maxClimbingInclinationMaxLoad: Optional[Union[int, MaxClimbingInclinationMaxLoad]] = None,
+                    maxClimbingInclinationWithoutLoad: Optional[Union[int, MaxClimbingInclinationWithoutLoad]] = None,
+                    localizationSensorDetails: Optional[Union[aas.LangStringSet, LocalizationSensorDetails]] = None,
+                    localizationAccuracy: Optional[Union[xsd.Float, LocalizationAccuracy]] = None,
+                    positioningAccuracy: Optional[Union[xsd.Float, PositioningAccuracy]] = None,
                     maxLoadMass: Optional[Union[xsd.Float, MaxLoadMass]] = None,
-                    interfacesForAttachments: Optional[
-                        Union[aas.LangStringSet, InterfacesForAttachments]
-                    ] = None,
-                    systemAvailability: Optional[
-                        Union[xsd.Float, SystemAvailability]
-                    ] = None,
-                    maxRunTimeAsSpecified: Optional[
-                        Union[int, MaxRunTimeAsSpecified]
-                    ] = None,
-                    maxRunTimeAsOperated: Optional[
-                        Union[int, MaxRunTimeAsOperated]
-                    ] = None,
+                    interfacesForAttachments: Optional[Union[aas.LangStringSet, InterfacesForAttachments]] = None,
+                    systemAvailability: Optional[Union[xsd.Float, SystemAvailability]] = None,
+                    maxRunTimeAsSpecified: Optional[Union[int, MaxRunTimeAsSpecified]] = None,
+                    maxRunTimeAsOperated: Optional[Union[int, MaxRunTimeAsOperated]] = None,
                     speedMin: Optional[Union[xsd.Float, SpeedMin]] = None,
-                    speedMaxEmptyAsSpecified: Optional[
-                        Union[xsd.Float, SpeedMaxEmptyAsSpecified]
-                    ] = None,
-                    speedMaxEmptyAsOperated: Optional[
-                        Union[xsd.Float, SpeedMaxEmptyAsOperated]
-                    ] = None,
-                    speedMaxWithMaxLoadAsSpecified: Optional[
-                        Union[xsd.Float, SpeedMaxWithMaxLoadAsSpecified]
-                    ] = None,
-                    speedMaxWithMaxLoadAsOperated: Optional[
-                        Union[xsd.Float, SpeedMaxWithMaxLoadAsOperated]
-                    ] = None,
+                    speedMaxEmptyAsSpecified: Optional[Union[xsd.Float, SpeedMaxEmptyAsSpecified]] = None,
+                    speedMaxEmptyAsOperated: Optional[Union[xsd.Float, SpeedMaxEmptyAsOperated]] = None,
+                    speedMaxWithMaxLoadAsSpecified: Optional[Union[xsd.Float, SpeedMaxWithMaxLoadAsSpecified]] = None,
+                    speedMaxWithMaxLoadAsOperated: Optional[Union[xsd.Float, SpeedMaxWithMaxLoadAsOperated]] = None,
                     accelerationMax: Optional[Union[xsd.Float, AccelerationMax]] = None,
                     decelerationMax: Optional[Union[xsd.Float, DecelerationMax]] = None,
-                    vehicleHeightMax: Optional[
-                        Union[xsd.Float, VehicleHeightMax]
-                    ] = None,
+                    vehicleHeightMax: Optional[Union[xsd.Float, VehicleHeightMax]] = None,
                     vehicleWidth: Optional[Union[str, VehicleWidth]] = None,
                     vehicleLength: Optional[Union[str, VehicleLength]] = None,
                     vehicleWeight: Optional[Union[str, VehicleWeight]] = None,
                     emissions: Optional[Union[aas.LangStringSet, Emissions]] = None,
-                    mapProcessingInformation: Optional[
-                        Union[aas.LangStringSet, MapProcessingInformation]
-                    ] = None,
-                    manualControllerInformation: Optional[
-                        Union[aas.LangStringSet, ManualControllerInformation]
-                    ] = None,
-                    digitalAnalogInterfaces: Optional[
-                        Union[aas.LangStringSet, DigitalAnalogInterfaces]
-                    ] = None,
+                    mapProcessingInformation: Optional[Union[aas.LangStringSet, MapProcessingInformation]] = None,
+                    manualControllerInformation: Optional[Union[aas.LangStringSet, ManualControllerInformation]] = None,
+                    digitalAnalogInterfaces: Optional[Union[aas.LangStringSet, DigitalAnalogInterfaces]] = None,
                     id_short: Optional[str] = r"TechnicalParameters",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -3865,17 +3418,12 @@ class TechnicalDataAGV(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Technical parameters",
-                                r"de": r"Technische Parameter",
-                            }
+                            dict_={r"en": r"Technical parameters", r"de": r"Technische Parameter"}
                         )
 
                     if description is None:
@@ -3894,21 +3442,15 @@ class TechnicalDataAGV(aas.Submodel):
                     if maxLateralInclinationMaxLoad is not None and not isinstance(
                         maxLateralInclinationMaxLoad, aas.SubmodelElement
                     ):
-                        maxLateralInclinationMaxLoad = (
-                            self.MaxLateralInclinationMaxLoad(
-                                maxLateralInclinationMaxLoad
-                            )
-                        )
+                        maxLateralInclinationMaxLoad = self.MaxLateralInclinationMaxLoad(maxLateralInclinationMaxLoad)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if maxLateralInclinationWithoutLoad is not None and not isinstance(
                         maxLateralInclinationWithoutLoad, aas.SubmodelElement
                     ):
-                        maxLateralInclinationWithoutLoad = (
-                            self.MaxLateralInclinationWithoutLoad(
-                                maxLateralInclinationWithoutLoad
-                            )
+                        maxLateralInclinationWithoutLoad = self.MaxLateralInclinationWithoutLoad(
+                            maxLateralInclinationWithoutLoad
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -3916,24 +3458,17 @@ class TechnicalDataAGV(aas.Submodel):
                     if maxClimbingInclinationMaxLoad is not None and not isinstance(
                         maxClimbingInclinationMaxLoad, aas.SubmodelElement
                     ):
-                        maxClimbingInclinationMaxLoad = (
-                            self.MaxClimbingInclinationMaxLoad(
-                                maxClimbingInclinationMaxLoad
-                            )
+                        maxClimbingInclinationMaxLoad = self.MaxClimbingInclinationMaxLoad(
+                            maxClimbingInclinationMaxLoad
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if (
-                        maxClimbingInclinationWithoutLoad is not None
-                        and not isinstance(
-                            maxClimbingInclinationWithoutLoad, aas.SubmodelElement
-                        )
+                    if maxClimbingInclinationWithoutLoad is not None and not isinstance(
+                        maxClimbingInclinationWithoutLoad, aas.SubmodelElement
                     ):
-                        maxClimbingInclinationWithoutLoad = (
-                            self.MaxClimbingInclinationWithoutLoad(
-                                maxClimbingInclinationWithoutLoad
-                            )
+                        maxClimbingInclinationWithoutLoad = self.MaxClimbingInclinationWithoutLoad(
+                            maxClimbingInclinationWithoutLoad
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -3941,33 +3476,21 @@ class TechnicalDataAGV(aas.Submodel):
                     if localizationSensorDetails is not None and not isinstance(
                         localizationSensorDetails, aas.SubmodelElement
                     ):
-                        localizationSensorDetails = self.LocalizationSensorDetails(
-                            localizationSensorDetails
-                        )
+                        localizationSensorDetails = self.LocalizationSensorDetails(localizationSensorDetails)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localizationAccuracy is not None and not isinstance(
-                        localizationAccuracy, aas.SubmodelElement
-                    ):
-                        localizationAccuracy = self.LocalizationAccuracy(
-                            localizationAccuracy
-                        )
+                    if localizationAccuracy is not None and not isinstance(localizationAccuracy, aas.SubmodelElement):
+                        localizationAccuracy = self.LocalizationAccuracy(localizationAccuracy)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if positioningAccuracy is not None and not isinstance(
-                        positioningAccuracy, aas.SubmodelElement
-                    ):
-                        positioningAccuracy = self.PositioningAccuracy(
-                            positioningAccuracy
-                        )
+                    if positioningAccuracy is not None and not isinstance(positioningAccuracy, aas.SubmodelElement):
+                        positioningAccuracy = self.PositioningAccuracy(positioningAccuracy)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if maxLoadMass is not None and not isinstance(
-                        maxLoadMass, aas.SubmodelElement
-                    ):
+                    if maxLoadMass is not None and not isinstance(maxLoadMass, aas.SubmodelElement):
                         maxLoadMass = self.MaxLoadMass(maxLoadMass)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -3975,40 +3498,26 @@ class TechnicalDataAGV(aas.Submodel):
                     if interfacesForAttachments is not None and not isinstance(
                         interfacesForAttachments, aas.SubmodelElement
                     ):
-                        interfacesForAttachments = self.InterfacesForAttachments(
-                            interfacesForAttachments
-                        )
+                        interfacesForAttachments = self.InterfacesForAttachments(interfacesForAttachments)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if systemAvailability is not None and not isinstance(
-                        systemAvailability, aas.SubmodelElement
-                    ):
+                    if systemAvailability is not None and not isinstance(systemAvailability, aas.SubmodelElement):
                         systemAvailability = self.SystemAvailability(systemAvailability)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if maxRunTimeAsSpecified is not None and not isinstance(
-                        maxRunTimeAsSpecified, aas.SubmodelElement
-                    ):
-                        maxRunTimeAsSpecified = self.MaxRunTimeAsSpecified(
-                            maxRunTimeAsSpecified
-                        )
+                    if maxRunTimeAsSpecified is not None and not isinstance(maxRunTimeAsSpecified, aas.SubmodelElement):
+                        maxRunTimeAsSpecified = self.MaxRunTimeAsSpecified(maxRunTimeAsSpecified)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if maxRunTimeAsOperated is not None and not isinstance(
-                        maxRunTimeAsOperated, aas.SubmodelElement
-                    ):
-                        maxRunTimeAsOperated = self.MaxRunTimeAsOperated(
-                            maxRunTimeAsOperated
-                        )
+                    if maxRunTimeAsOperated is not None and not isinstance(maxRunTimeAsOperated, aas.SubmodelElement):
+                        maxRunTimeAsOperated = self.MaxRunTimeAsOperated(maxRunTimeAsOperated)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if speedMin is not None and not isinstance(
-                        speedMin, aas.SubmodelElement
-                    ):
+                    if speedMin is not None and not isinstance(speedMin, aas.SubmodelElement):
                         speedMin = self.SpeedMin(speedMin)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -4016,28 +3525,22 @@ class TechnicalDataAGV(aas.Submodel):
                     if speedMaxEmptyAsSpecified is not None and not isinstance(
                         speedMaxEmptyAsSpecified, aas.SubmodelElement
                     ):
-                        speedMaxEmptyAsSpecified = self.SpeedMaxEmptyAsSpecified(
-                            speedMaxEmptyAsSpecified
-                        )
+                        speedMaxEmptyAsSpecified = self.SpeedMaxEmptyAsSpecified(speedMaxEmptyAsSpecified)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if speedMaxEmptyAsOperated is not None and not isinstance(
                         speedMaxEmptyAsOperated, aas.SubmodelElement
                     ):
-                        speedMaxEmptyAsOperated = self.SpeedMaxEmptyAsOperated(
-                            speedMaxEmptyAsOperated
-                        )
+                        speedMaxEmptyAsOperated = self.SpeedMaxEmptyAsOperated(speedMaxEmptyAsOperated)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if speedMaxWithMaxLoadAsSpecified is not None and not isinstance(
                         speedMaxWithMaxLoadAsSpecified, aas.SubmodelElement
                     ):
-                        speedMaxWithMaxLoadAsSpecified = (
-                            self.SpeedMaxWithMaxLoadAsSpecified(
-                                speedMaxWithMaxLoadAsSpecified
-                            )
+                        speedMaxWithMaxLoadAsSpecified = self.SpeedMaxWithMaxLoadAsSpecified(
+                            speedMaxWithMaxLoadAsSpecified
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -4045,59 +3548,43 @@ class TechnicalDataAGV(aas.Submodel):
                     if speedMaxWithMaxLoadAsOperated is not None and not isinstance(
                         speedMaxWithMaxLoadAsOperated, aas.SubmodelElement
                     ):
-                        speedMaxWithMaxLoadAsOperated = (
-                            self.SpeedMaxWithMaxLoadAsOperated(
-                                speedMaxWithMaxLoadAsOperated
-                            )
+                        speedMaxWithMaxLoadAsOperated = self.SpeedMaxWithMaxLoadAsOperated(
+                            speedMaxWithMaxLoadAsOperated
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if accelerationMax is not None and not isinstance(
-                        accelerationMax, aas.SubmodelElement
-                    ):
+                    if accelerationMax is not None and not isinstance(accelerationMax, aas.SubmodelElement):
                         accelerationMax = self.AccelerationMax(accelerationMax)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if decelerationMax is not None and not isinstance(
-                        decelerationMax, aas.SubmodelElement
-                    ):
+                    if decelerationMax is not None and not isinstance(decelerationMax, aas.SubmodelElement):
                         decelerationMax = self.DecelerationMax(decelerationMax)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if vehicleHeightMax is not None and not isinstance(
-                        vehicleHeightMax, aas.SubmodelElement
-                    ):
+                    if vehicleHeightMax is not None and not isinstance(vehicleHeightMax, aas.SubmodelElement):
                         vehicleHeightMax = self.VehicleHeightMax(vehicleHeightMax)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if vehicleWidth is not None and not isinstance(
-                        vehicleWidth, aas.SubmodelElement
-                    ):
+                    if vehicleWidth is not None and not isinstance(vehicleWidth, aas.SubmodelElement):
                         vehicleWidth = self.VehicleWidth(vehicleWidth)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if vehicleLength is not None and not isinstance(
-                        vehicleLength, aas.SubmodelElement
-                    ):
+                    if vehicleLength is not None and not isinstance(vehicleLength, aas.SubmodelElement):
                         vehicleLength = self.VehicleLength(vehicleLength)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if vehicleWeight is not None and not isinstance(
-                        vehicleWeight, aas.SubmodelElement
-                    ):
+                    if vehicleWeight is not None and not isinstance(vehicleWeight, aas.SubmodelElement):
                         vehicleWeight = self.VehicleWeight(vehicleWeight)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if emissions is not None and not isinstance(
-                        emissions, aas.SubmodelElement
-                    ):
+                    if emissions is not None and not isinstance(emissions, aas.SubmodelElement):
                         emissions = self.Emissions(emissions)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -4105,27 +3592,21 @@ class TechnicalDataAGV(aas.Submodel):
                     if mapProcessingInformation is not None and not isinstance(
                         mapProcessingInformation, aas.SubmodelElement
                     ):
-                        mapProcessingInformation = self.MapProcessingInformation(
-                            mapProcessingInformation
-                        )
+                        mapProcessingInformation = self.MapProcessingInformation(mapProcessingInformation)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if manualControllerInformation is not None and not isinstance(
                         manualControllerInformation, aas.SubmodelElement
                     ):
-                        manualControllerInformation = self.ManualControllerInformation(
-                            manualControllerInformation
-                        )
+                        manualControllerInformation = self.ManualControllerInformation(manualControllerInformation)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if digitalAnalogInterfaces is not None and not isinstance(
                         digitalAnalogInterfaces, aas.SubmodelElement
                     ):
-                        digitalAnalogInterfaces = self.DigitalAnalogInterfaces(
-                            digitalAnalogInterfaces
-                        )
+                        digitalAnalogInterfaces = self.DigitalAnalogInterfaces(digitalAnalogInterfaces)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -4168,9 +3649,7 @@ class TechnicalDataAGV(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4209,9 +3688,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -4272,9 +3749,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -4335,17 +3810,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"protocolLimits (JSON-object)",
-                                    r"de": r"protocolLimits (JSON-Objekt)",
-                                }
+                                dict_={r"en": r"protocolLimits (JSON-object)", r"de": r"protocolLimits (JSON-Objekt)"}
                             )
 
                         if description is None:
@@ -4398,9 +3868,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -4461,17 +3929,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"agvGeometry (JSON-object)",
-                                    r"de": r"agvGeometry (JSON-Objekt)",
-                                }
+                                dict_={r"en": r"agvGeometry (JSON-object)", r"de": r"agvGeometry (JSON-Objekt)"}
                             )
 
                         if description is None:
@@ -4524,9 +3987,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -4587,9 +4048,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -4653,16 +4112,12 @@ class TechnicalDataAGV(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Factsheet data according VDA 5050 MQTT communication protocol"
-                            }
+                            dict_={r"en": r"Factsheet data according VDA 5050 MQTT communication protocol"}
                         )
 
                     if qualifier is None:
@@ -4692,9 +4147,7 @@ class TechnicalDataAGV(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4734,9 +4187,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -4795,17 +4246,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Energy absorption",
-                                    r"de": r"Energieaufnahme",
-                                }
+                                dict_={r"en": r"Energy absorption", r"de": r"Energieaufnahme"}
                             )
 
                         if description is None:
@@ -4859,17 +4305,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Energy storage",
-                                    r"de": r"Energiespeicher",
-                                }
+                                dict_={r"en": r"Energy storage", r"de": r"Energiespeicher"}
                             )
 
                         if description is None:
@@ -4912,9 +4353,7 @@ class TechnicalDataAGV(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4926,9 +4365,7 @@ class TechnicalDataAGV(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
@@ -4976,9 +4413,7 @@ class TechnicalDataAGV(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4990,17 +4425,12 @@ class TechnicalDataAGV(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Battery information",
-                                        r"de": r"Informationen zur Batterie",
-                                    }
+                                    dict_={r"en": r"Battery information", r"de": r"Informationen zur Batterie"}
                                 )
 
                             if description is None:
@@ -5041,23 +4471,14 @@ class TechnicalDataAGV(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAF391#006",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAF391#006"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
@@ -5131,23 +4552,14 @@ class TechnicalDataAGV(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAF391#006",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAF391#006"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
@@ -5221,9 +4633,7 @@ class TechnicalDataAGV(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5235,24 +4645,17 @@ class TechnicalDataAGV(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Remaining charge cycles",
-                                        r"de": r"Verbleibende Ladezyklen",
-                                    }
+                                    dict_={r"en": r"Remaining charge cycles", r"de": r"Verbleibende Ladezyklen"}
                                 )
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Assumed remaining charge cycles of the battery"
-                                    }
+                                    dict_={r"en": r"Assumed remaining charge cycles of the battery"}
                                 )
 
                             if qualifier is None:
@@ -5281,18 +4684,10 @@ class TechnicalDataAGV(aas.Submodel):
                         chargingDeviceRequirements: Optional[
                             Union[aas.LangStringSet, ChargingDeviceRequirements]
                         ] = None,
-                        batteryInformation: Optional[
-                            Union[aas.LangStringSet, BatteryInformation]
-                        ] = None,
-                        chargingTimeAsSpecified: Optional[
-                            Union[xsd.Float, ChargingTimeAsSpecified]
-                        ] = None,
-                        chargingTimeAsOperated: Optional[
-                            Union[xsd.Float, ChargingTimeAsOperated]
-                        ] = None,
-                        remainingChargeCycles: Optional[
-                            Union[int, RemainingChargeCycles]
-                        ] = None,
+                        batteryInformation: Optional[Union[aas.LangStringSet, BatteryInformation]] = None,
+                        chargingTimeAsSpecified: Optional[Union[xsd.Float, ChargingTimeAsSpecified]] = None,
+                        chargingTimeAsOperated: Optional[Union[xsd.Float, ChargingTimeAsOperated]] = None,
+                        remainingChargeCycles: Optional[Union[int, RemainingChargeCycles]] = None,
                         id_short: Optional[str] = r"Battery",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -5309,16 +4704,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Information about the battery of the AGV"
-                                }
+                                dict_={r"en": r"Information about the battery of the AGV"}
                             )
 
                         if qualifier is None:
@@ -5332,47 +4723,33 @@ class TechnicalDataAGV(aas.Submodel):
                         if chargingDeviceRequirements is not None and not isinstance(
                             chargingDeviceRequirements, aas.SubmodelElement
                         ):
-                            chargingDeviceRequirements = (
-                                self.ChargingDeviceRequirements(
-                                    chargingDeviceRequirements
-                                )
-                            )
+                            chargingDeviceRequirements = self.ChargingDeviceRequirements(chargingDeviceRequirements)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if batteryInformation is not None and not isinstance(
-                            batteryInformation, aas.SubmodelElement
-                        ):
-                            batteryInformation = self.BatteryInformation(
-                                batteryInformation
-                            )
+                        if batteryInformation is not None and not isinstance(batteryInformation, aas.SubmodelElement):
+                            batteryInformation = self.BatteryInformation(batteryInformation)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if chargingTimeAsSpecified is not None and not isinstance(
                             chargingTimeAsSpecified, aas.SubmodelElement
                         ):
-                            chargingTimeAsSpecified = self.ChargingTimeAsSpecified(
-                                chargingTimeAsSpecified
-                            )
+                            chargingTimeAsSpecified = self.ChargingTimeAsSpecified(chargingTimeAsSpecified)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if chargingTimeAsOperated is not None and not isinstance(
                             chargingTimeAsOperated, aas.SubmodelElement
                         ):
-                            chargingTimeAsOperated = self.ChargingTimeAsOperated(
-                                chargingTimeAsOperated
-                            )
+                            chargingTimeAsOperated = self.ChargingTimeAsOperated(chargingTimeAsOperated)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if remainingChargeCycles is not None and not isinstance(
                             remainingChargeCycles, aas.SubmodelElement
                         ):
-                            remainingChargeCycles = self.RemainingChargeCycles(
-                                remainingChargeCycles
-                            )
+                            remainingChargeCycles = self.RemainingChargeCycles(remainingChargeCycles)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -5393,9 +4770,7 @@ class TechnicalDataAGV(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -5432,9 +4807,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -5478,9 +4851,7 @@ class TechnicalDataAGV(aas.Submodel):
                     energySource: Optional[Union[str, EnergySource]] = None,
                     energyAbsorption: Optional[Union[str, EnergyAbsorption]] = None,
                     energyStorage: Optional[Union[str, EnergyStorage]] = None,
-                    powerTransmissionToExternal: Optional[
-                        Union[aas.LangStringSet, PowerTransmissionToExternal]
-                    ] = None,
+                    powerTransmissionToExternal: Optional[Union[aas.LangStringSet, PowerTransmissionToExternal]] = None,
                     id_short: Optional[str] = r"Energy",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -5497,16 +4868,12 @@ class TechnicalDataAGV(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Technical properties related to the energy supply of the AGV"
-                            }
+                            dict_={r"en": r"Technical properties related to the energy supply of the AGV"}
                         )
 
                     if qualifier is None:
@@ -5517,23 +4884,17 @@ class TechnicalDataAGV(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if energySource is not None and not isinstance(
-                        energySource, aas.SubmodelElement
-                    ):
+                    if energySource is not None and not isinstance(energySource, aas.SubmodelElement):
                         energySource = self.EnergySource(energySource)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if energyAbsorption is not None and not isinstance(
-                        energyAbsorption, aas.SubmodelElement
-                    ):
+                    if energyAbsorption is not None and not isinstance(energyAbsorption, aas.SubmodelElement):
                         energyAbsorption = self.EnergyAbsorption(energyAbsorption)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if energyStorage is not None and not isinstance(
-                        energyStorage, aas.SubmodelElement
-                    ):
+                    if energyStorage is not None and not isinstance(energyStorage, aas.SubmodelElement):
                         energyStorage = self.EnergyStorage(energyStorage)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -5541,19 +4902,11 @@ class TechnicalDataAGV(aas.Submodel):
                     if powerTransmissionToExternal is not None and not isinstance(
                         powerTransmissionToExternal, aas.SubmodelElement
                     ):
-                        powerTransmissionToExternal = self.PowerTransmissionToExternal(
-                            powerTransmissionToExternal
-                        )
+                        powerTransmissionToExternal = self.PowerTransmissionToExternal(powerTransmissionToExternal)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        energySource,
-                        energyAbsorption,
-                        energyStorage,
-                        battery,
-                        powerTransmissionToExternal,
-                    ]:
+                    for se_arg in [energySource, energyAbsorption, energyStorage, battery, powerTransmissionToExternal]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -5564,9 +4917,7 @@ class TechnicalDataAGV(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5605,17 +4956,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Communication protocol",
-                                    r"de": r"Kommunikationsprotokoll",
-                                }
+                                dict_={r"en": r"Communication protocol", r"de": r"Kommunikationsprotokoll"}
                             )
 
                         if description is None:
@@ -5667,17 +5013,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Communication network",
-                                    r"de": r"Kommunikationsnetzwerk",
-                                }
+                                dict_={r"en": r"Communication network", r"de": r"Kommunikationsnetzwerk"}
                             )
 
                         if description is None:
@@ -5729,9 +5070,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -5744,9 +5083,7 @@ class TechnicalDataAGV(aas.Submodel):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Information about the MQTT communication according VDA 5050"
-                                }
+                                dict_={r"en": r"Information about the MQTT communication according VDA 5050"}
                             )
 
                         if qualifier is None:
@@ -5791,17 +5128,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Automation interface",
-                                    r"de": r"Automatisierungsschnittstellen",
-                                }
+                                dict_={r"en": r"Automation interface", r"de": r"Automatisierungsschnittstellen"}
                             )
 
                         if description is None:
@@ -5853,17 +5185,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Control system information",
-                                    r"de": r"Informationen zur Steuerung",
-                                }
+                                dict_={r"en": r"Control system information", r"de": r"Informationen zur Steuerung"}
                             )
 
                         if description is None:
@@ -5895,21 +5222,11 @@ class TechnicalDataAGV(aas.Submodel):
 
                 def __init__(
                     self,
-                    communicationProtocol: Optional[
-                        Union[aas.LangStringSet, CommunicationProtocol]
-                    ] = None,
-                    communicationNetwork: Optional[
-                        Union[aas.LangStringSet, CommunicationNetwork]
-                    ] = None,
-                    vDA5050InterfaceDescription: Optional[
-                        Union[aas.LangStringSet, VDA5050InterfaceDescription]
-                    ] = None,
-                    automationInterface: Optional[
-                        Union[aas.LangStringSet, AutomationInterface]
-                    ] = None,
-                    controlSystemInformation: Optional[
-                        Union[aas.LangStringSet, ControlSystemInformation]
-                    ] = None,
+                    communicationProtocol: Optional[Union[aas.LangStringSet, CommunicationProtocol]] = None,
+                    communicationNetwork: Optional[Union[aas.LangStringSet, CommunicationNetwork]] = None,
+                    vDA5050InterfaceDescription: Optional[Union[aas.LangStringSet, VDA5050InterfaceDescription]] = None,
+                    automationInterface: Optional[Union[aas.LangStringSet, AutomationInterface]] = None,
+                    controlSystemInformation: Optional[Union[aas.LangStringSet, ControlSystemInformation]] = None,
                     id_short: Optional[str] = r"CommunicationAndControl",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -5926,16 +5243,12 @@ class TechnicalDataAGV(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Technical properties related to the communication and control of the AGV"
-                            }
+                            dict_={r"en": r"Technical properties related to the communication and control of the AGV"}
                         )
 
                     if qualifier is None:
@@ -5946,48 +5259,32 @@ class TechnicalDataAGV(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if communicationProtocol is not None and not isinstance(
-                        communicationProtocol, aas.SubmodelElement
-                    ):
-                        communicationProtocol = self.CommunicationProtocol(
-                            communicationProtocol
-                        )
+                    if communicationProtocol is not None and not isinstance(communicationProtocol, aas.SubmodelElement):
+                        communicationProtocol = self.CommunicationProtocol(communicationProtocol)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if communicationNetwork is not None and not isinstance(
-                        communicationNetwork, aas.SubmodelElement
-                    ):
-                        communicationNetwork = self.CommunicationNetwork(
-                            communicationNetwork
-                        )
+                    if communicationNetwork is not None and not isinstance(communicationNetwork, aas.SubmodelElement):
+                        communicationNetwork = self.CommunicationNetwork(communicationNetwork)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if vDA5050InterfaceDescription is not None and not isinstance(
                         vDA5050InterfaceDescription, aas.SubmodelElement
                     ):
-                        vDA5050InterfaceDescription = self.VDA5050InterfaceDescription(
-                            vDA5050InterfaceDescription
-                        )
+                        vDA5050InterfaceDescription = self.VDA5050InterfaceDescription(vDA5050InterfaceDescription)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if automationInterface is not None and not isinstance(
-                        automationInterface, aas.SubmodelElement
-                    ):
-                        automationInterface = self.AutomationInterface(
-                            automationInterface
-                        )
+                    if automationInterface is not None and not isinstance(automationInterface, aas.SubmodelElement):
+                        automationInterface = self.AutomationInterface(automationInterface)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if controlSystemInformation is not None and not isinstance(
                         controlSystemInformation, aas.SubmodelElement
                     ):
-                        controlSystemInformation = self.ControlSystemInformation(
-                            controlSystemInformation
-                        )
+                        controlSystemInformation = self.ControlSystemInformation(controlSystemInformation)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -6008,9 +5305,7 @@ class TechnicalDataAGV(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6049,9 +5344,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -6111,9 +5404,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -6126,9 +5417,7 @@ class TechnicalDataAGV(aas.Submodel):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Safety information for manual control of the vehicle"
-                                }
+                                dict_={r"en": r"Safety information for manual control of the vehicle"}
                             )
 
                         if qualifier is None:
@@ -6173,17 +5462,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Safety sensor technology",
-                                    r"de": r"Sicherheitssensorik",
-                                }
+                                dict_={r"en": r"Safety sensor technology", r"de": r"Sicherheitssensorik"}
                             )
 
                         if description is None:
@@ -6235,24 +5519,17 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Safety mechanics",
-                                    r"de": r"Mechanische Sicherheitseinrichtungen",
-                                }
+                                dict_={r"en": r"Safety mechanics", r"de": r"Mechanische Sicherheitseinrichtungen"}
                             )
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Information regarding implemented mechanical measures to ensure safety"
-                                }
+                                dict_={r"en": r"Information regarding implemented mechanical measures to ensure safety"}
                             )
 
                         if qualifier is None:
@@ -6277,18 +5554,10 @@ class TechnicalDataAGV(aas.Submodel):
 
                 def __init__(
                     self,
-                    conformityToSafetyStandards: Optional[
-                        Union[aas.LangStringSet, ConformityToSafetyStandards]
-                    ] = None,
-                    manualControlInformation: Optional[
-                        Union[aas.LangStringSet, ManualControlInformation]
-                    ] = None,
-                    safetySensorTechnology: Optional[
-                        Union[aas.LangStringSet, SafetySensorTechnology]
-                    ] = None,
-                    safetyMechanics: Optional[
-                        Union[aas.LangStringSet, SafetyMechanics]
-                    ] = None,
+                    conformityToSafetyStandards: Optional[Union[aas.LangStringSet, ConformityToSafetyStandards]] = None,
+                    manualControlInformation: Optional[Union[aas.LangStringSet, ManualControlInformation]] = None,
+                    safetySensorTechnology: Optional[Union[aas.LangStringSet, SafetySensorTechnology]] = None,
+                    safetyMechanics: Optional[Union[aas.LangStringSet, SafetyMechanics]] = None,
                     id_short: Optional[str] = r"Safety",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -6305,16 +5574,12 @@ class TechnicalDataAGV(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Technical properties related to the safety of the AGV"
-                            }
+                            dict_={r"en": r"Technical properties related to the safety of the AGV"}
                         )
 
                     if qualifier is None:
@@ -6328,33 +5593,25 @@ class TechnicalDataAGV(aas.Submodel):
                     if conformityToSafetyStandards is not None and not isinstance(
                         conformityToSafetyStandards, aas.SubmodelElement
                     ):
-                        conformityToSafetyStandards = self.ConformityToSafetyStandards(
-                            conformityToSafetyStandards
-                        )
+                        conformityToSafetyStandards = self.ConformityToSafetyStandards(conformityToSafetyStandards)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if manualControlInformation is not None and not isinstance(
                         manualControlInformation, aas.SubmodelElement
                     ):
-                        manualControlInformation = self.ManualControlInformation(
-                            manualControlInformation
-                        )
+                        manualControlInformation = self.ManualControlInformation(manualControlInformation)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if safetySensorTechnology is not None and not isinstance(
                         safetySensorTechnology, aas.SubmodelElement
                     ):
-                        safetySensorTechnology = self.SafetySensorTechnology(
-                            safetySensorTechnology
-                        )
+                        safetySensorTechnology = self.SafetySensorTechnology(safetySensorTechnology)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if safetyMechanics is not None and not isinstance(
-                        safetyMechanics, aas.SubmodelElement
-                    ):
+                    if safetyMechanics is not None and not isinstance(safetyMechanics, aas.SubmodelElement):
                         safetyMechanics = self.SafetyMechanics(safetyMechanics)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -6375,9 +5632,7 @@ class TechnicalDataAGV(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6417,23 +5672,16 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Current working setup ",
-                                    r"de": r"Aktuelle Arbeitskonfiguration",
-                                }
+                                dict_={r"en": r"Current working setup ", r"de": r"Aktuelle Arbeitskonfiguration"}
                             )
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Name of the current working setup"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Name of the current working setup"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -6479,24 +5727,17 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Active loading",
-                                    r"de": r"Aktive Beladung",
-                                }
+                                dict_={r"en": r"Active loading", r"de": r"Aktive Beladung"}
                             )
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Describes whether the AGV is currently able to load itself (true)"
-                                }
+                                dict_={r"en": r"Describes whether the AGV is currently able to load itself (true)"}
                             )
 
                         if qualifier is None:
@@ -6543,9 +5784,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -6555,9 +5794,7 @@ class TechnicalDataAGV(aas.Submodel):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Way of loading of the AGV, the enumeration acc. VDI 2510 can be used"
-                                }
+                                dict_={r"en": r"Way of loading of the AGV, the enumeration acc. VDI 2510 can be used"}
                             )
 
                         if qualifier is None:
@@ -6603,17 +5840,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Loading requirements",
-                                    r"de": r"Beladungsanforderungen",
-                                }
+                                dict_={r"en": r"Loading requirements", r"de": r"Beladungsanforderungen"}
                             )
 
                         if description is None:
@@ -6656,9 +5888,7 @@ class TechnicalDataAGV(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6670,23 +5900,16 @@ class TechnicalDataAGV(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Attachment (ID)",
-                                        r"de": r"Anbau (ID)",
-                                    }
+                                    dict_={r"en": r"Attachment (ID)", r"de": r"Anbau (ID)"}
                                 )
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Order not relevant"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Order not relevant"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -6711,14 +5934,10 @@ class TechnicalDataAGV(aas.Submodel):
 
                     def __init__(
                         self,
-                        currentattachments_items: Optional[
-                            Iterable[Union[str, Currentattachments_item]]
-                        ] = None,
+                        currentattachments_items: Optional[Iterable[Union[str, Currentattachments_item]]] = None,
                         id_short: Optional[str] = r"CurrentAttachments",
                         type_value_list_element: aas.SubmodelElement = aas.Property,
-                        semantic_id_list_element: Optional[
-                            aas.Reference
-                        ] = aas.ExternalReference(
+                        semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6744,17 +5963,12 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Current attachments",
-                                    r"de": r"Aktuelle Anbauten ",
-                                }
+                                dict_={r"en": r"Current attachments", r"de": r"Aktuelle Anbauten "}
                             )
 
                         if description is None:
@@ -6773,18 +5987,12 @@ class TechnicalDataAGV(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(currentattachments_items, str):
-                            raise TypeError(
-                                "currentattachments_items takes several elements, got a str"
-                            )
+                            raise TypeError("currentattachments_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if currentattachments_items:
                             currentattachments_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Currentattachments_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Currentattachments_item(i)
                                 for i in currentattachments_items
                             ]
 
@@ -6798,9 +6006,7 @@ class TechnicalDataAGV(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -6867,15 +6073,9 @@ class TechnicalDataAGV(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -6889,9 +6089,7 @@ class TechnicalDataAGV(aas.Submodel):
 
                 class ProprietaryConfigurationOptions(aas.SubmodelElementList):
 
-                    class Proprietaryconfigurationoptions_item(
-                        aas.SubmodelElementCollection
-                    ):
+                    class Proprietaryconfigurationoptions_item(aas.SubmodelElementCollection):
 
                         class OptionName(aas.Property):
 
@@ -6901,14 +6099,10 @@ class TechnicalDataAGV(aas.Submodel):
                                 id_short: Optional[str] = r"OptionName",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6920,24 +6114,17 @@ class TechnicalDataAGV(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
                                     display_name = aas.MultiLanguageNameType(
-                                        dict_={
-                                            r"en": r"Option name",
-                                            r"de": r"Optionsname",
-                                        }
+                                        dict_={r"en": r"Option name", r"de": r"Optionsname"}
                                     )
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Name of the proprietary configuration option"
-                                        }
+                                        dict_={r"en": r"Name of the proprietary configuration option"}
                                     )
 
                                 if qualifier is None:
@@ -6969,14 +6156,10 @@ class TechnicalDataAGV(aas.Submodel):
                                 id_short: Optional[str] = r"OptionValue",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6988,24 +6171,17 @@ class TechnicalDataAGV(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
                                     display_name = aas.MultiLanguageNameType(
-                                        dict_={
-                                            r"en": r"Option value",
-                                            r"de": r"Optionswert",
-                                        }
+                                        dict_={r"en": r"Option value", r"de": r"Optionswert"}
                                     )
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Value of the proprietary option"
-                                        }
+                                        dict_={r"en": r"Value of the proprietary option"}
                                     )
 
                                 if qualifier is None:
@@ -7037,9 +6213,7 @@ class TechnicalDataAGV(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7051,24 +6225,17 @@ class TechnicalDataAGV(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Configuration option",
-                                        r"de": r"Konfigurationsoption",
-                                    }
+                                    dict_={r"en": r"Configuration option", r"de": r"Konfigurationsoption"}
                                 )
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Proprietary vehicle configuration setting"
-                                    }
+                                    dict_={r"en": r"Proprietary vehicle configuration setting"}
                                 )
 
                             if qualifier is None:
@@ -7079,16 +6246,12 @@ class TechnicalDataAGV(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if optionName is not None and not isinstance(
-                                optionName, aas.SubmodelElement
-                            ):
+                            if optionName is not None and not isinstance(optionName, aas.SubmodelElement):
                                 optionName = self.OptionName(optionName)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if optionValue is not None and not isinstance(
-                                optionValue, aas.SubmodelElement
-                            ):
+                            if optionValue is not None and not isinstance(optionValue, aas.SubmodelElement):
                                 optionValue = self.OptionValue(optionValue)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -7128,9 +6291,7 @@ class TechnicalDataAGV(aas.Submodel):
                         ] = None,
                         id_short: Optional[str] = r"ProprietaryConfigurationOptions",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                        semantic_id_list_element: Optional[
-                            aas.Reference
-                        ] = aas.ExternalReference(
+                        semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7156,9 +6317,7 @@ class TechnicalDataAGV(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -7185,9 +6344,7 @@ class TechnicalDataAGV(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(proprietaryconfigurationoptions_items, str):
-                            raise TypeError(
-                                "proprietaryconfigurationoptions_items takes several elements, got a str"
-                            )
+                            raise TypeError("proprietaryconfigurationoptions_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -7199,9 +6356,7 @@ class TechnicalDataAGV(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -7268,15 +6423,9 @@ class TechnicalDataAGV(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -7290,27 +6439,16 @@ class TechnicalDataAGV(aas.Submodel):
 
                 def __init__(
                     self,
-                    currentWorkingSetupName: Optional[
-                        Union[str, CurrentWorkingSetupName]
-                    ] = None,
+                    currentWorkingSetupName: Optional[Union[str, CurrentWorkingSetupName]] = None,
                     activeLoading: Optional[Union[bool, ActiveLoading]] = None,
                     loadingType: Optional[Union[str, LoadingType]] = None,
-                    loadingRequirements: Optional[
-                        Union[aas.LangStringSet, LoadingRequirements]
-                    ] = None,
+                    loadingRequirements: Optional[Union[aas.LangStringSet, LoadingRequirements]] = None,
                     currentAttachments: Optional[
-                        Union[
-                            Iterable[
-                                Union[str, CurrentAttachments.Currentattachments_item]
-                            ],
-                            CurrentAttachments,
-                        ]
+                        Union[Iterable[Union[str, CurrentAttachments.Currentattachments_item]], CurrentAttachments]
                     ] = None,
                     proprietaryConfigurationOptions: Optional[
                         Union[
-                            Iterable[
-                                ProprietaryConfigurationOptions.Proprietaryconfigurationoptions_item
-                            ],
+                            Iterable[ProprietaryConfigurationOptions.Proprietaryconfigurationoptions_item],
                             ProprietaryConfigurationOptions,
                         ]
                     ] = None,
@@ -7330,9 +6468,7 @@ class TechnicalDataAGV(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -7353,61 +6489,43 @@ class TechnicalDataAGV(aas.Submodel):
                     if currentWorkingSetupName is not None and not isinstance(
                         currentWorkingSetupName, aas.SubmodelElement
                     ):
-                        currentWorkingSetupName = self.CurrentWorkingSetupName(
-                            currentWorkingSetupName
-                        )
+                        currentWorkingSetupName = self.CurrentWorkingSetupName(currentWorkingSetupName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if activeLoading is not None and not isinstance(
-                        activeLoading, aas.SubmodelElement
-                    ):
+                    if activeLoading is not None and not isinstance(activeLoading, aas.SubmodelElement):
                         activeLoading = self.ActiveLoading(activeLoading)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if loadingType is not None and not isinstance(
-                        loadingType, aas.SubmodelElement
-                    ):
+                    if loadingType is not None and not isinstance(loadingType, aas.SubmodelElement):
                         loadingType = self.LoadingType(loadingType)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if loadingRequirements is not None and not isinstance(
-                        loadingRequirements, aas.SubmodelElement
-                    ):
-                        loadingRequirements = self.LoadingRequirements(
-                            loadingRequirements
-                        )
+                    if loadingRequirements is not None and not isinstance(loadingRequirements, aas.SubmodelElement):
+                        loadingRequirements = self.LoadingRequirements(loadingRequirements)
 
                     # A str would be split into its characters
                     if isinstance(currentAttachments, str):
-                        raise TypeError(
-                            "currentAttachments takes several elements, got a str"
-                        )
+                        raise TypeError("currentAttachments takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if currentAttachments is not None and not isinstance(
-                        currentAttachments, aas.SubmodelElement
-                    ):
+                    if currentAttachments is not None and not isinstance(currentAttachments, aas.SubmodelElement):
                         currentAttachments = self.CurrentAttachments(currentAttachments)
 
                     # A str would be split into its characters
                     if isinstance(proprietaryConfigurationOptions, str):
-                        raise TypeError(
-                            "proprietaryConfigurationOptions takes several elements, got a str"
-                        )
+                        raise TypeError("proprietaryConfigurationOptions takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if proprietaryConfigurationOptions is not None and not isinstance(
                         proprietaryConfigurationOptions, aas.SubmodelElement
                     ):
-                        proprietaryConfigurationOptions = (
-                            self.ProprietaryConfigurationOptions(
-                                proprietaryConfigurationOptions
-                            )
+                        proprietaryConfigurationOptions = self.ProprietaryConfigurationOptions(
+                            proprietaryConfigurationOptions
                         )
 
                     # Add all passed/initialized submodel elements to a single list
@@ -7430,9 +6548,7 @@ class TechnicalDataAGV(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -7450,9 +6566,7 @@ class TechnicalDataAGV(aas.Submodel):
             def __init__(
                 self,
                 dataSheet: Optional[DataSheet] = None,
-                typeAndApplicationInformation: Optional[
-                    TypeAndApplicationInformation
-                ] = None,
+                typeAndApplicationInformation: Optional[TypeAndApplicationInformation] = None,
                 technicalParameters: Optional[TechnicalParameters] = None,
                 vDA5050Factsheet: Optional[VDA5050Factsheet] = None,
                 energy: Optional[Energy] = None,
@@ -7466,8 +6580,7 @@ class TechnicalDataAGV(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABM221#001/0173-1#01-AHY912#001",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM221#001/0173-1#01-AHY912#001"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -7489,9 +6602,7 @@ class TechnicalDataAGV(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -7548,9 +6659,7 @@ class TechnicalDataAGV(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -7571,12 +6680,7 @@ class TechnicalDataAGV(aas.Submodel):
             id_short: Optional[str] = r"SpecificDescriptions",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABM221#001/0173-1#01-AHY912#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM221#001/0173-1#01-AHY912#001"),),
                 referred_semantic_id=None,
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
@@ -7585,12 +6689,7 @@ class TechnicalDataAGV(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABM221#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM221#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -7606,16 +6705,12 @@ class TechnicalDataAGV(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Specific description for a use case or area of application"
-                    }
+                    dict_={r"en": r"Specific description for a use case or area of application"}
                 )
 
             if qualifier is None:
@@ -7626,9 +6721,7 @@ class TechnicalDataAGV(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(specificdescriptions_items, str):
-                raise TypeError(
-                    "specificdescriptions_items takes several elements, got a str"
-                )
+                raise TypeError("specificdescriptions_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -7640,9 +6733,7 @@ class TechnicalDataAGV(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -7711,10 +6802,7 @@ class TechnicalDataAGV(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -7731,10 +6819,7 @@ class TechnicalDataAGV(aas.Submodel):
         id_: str,
         generalInformation: GeneralInformation,
         specificDescriptions: Optional[
-            Union[
-                Iterable[SpecificDescriptions.Specificdescriptions_item],
-                SpecificDescriptions,
-            ]
+            Union[Iterable[SpecificDescriptions.Specificdescriptions_item], SpecificDescriptions]
         ] = None,
         id_short: Optional[str] = r"TechnicalDataAGV",
         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -7795,9 +6880,7 @@ class TechnicalDataAGV(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if specificDescriptions is not None and not isinstance(
-            specificDescriptions, aas.SubmodelElement
-        ):
+        if specificDescriptions is not None and not isinstance(specificDescriptions, aas.SubmodelElement):
             specificDescriptions = self.SpecificDescriptions(specificDescriptions)
 
         # Add all passed/initialized submodel elements to a single list
@@ -7813,9 +6896,7 @@ class TechnicalDataAGV(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

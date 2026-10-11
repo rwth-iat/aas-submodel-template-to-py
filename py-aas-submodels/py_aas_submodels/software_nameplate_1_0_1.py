@@ -19,20 +19,13 @@ class SoftwareNameplate(aas.Submodel):
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAY811#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAY811#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -67,20 +60,13 @@ class SoftwareNameplate(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO677#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -114,20 +100,13 @@ class SoftwareNameplate(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAW338#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW338#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -172,9 +151,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -208,20 +185,13 @@ class SoftwareNameplate(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAU731#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAU731#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -255,20 +225,13 @@ class SoftwareNameplate(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO057#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO057#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -314,9 +277,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -363,9 +324,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -411,17 +370,12 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Name der Version",
-                            r"en": r"the name this particular version is given",
-                        }
+                        dict_={r"de": r"Name der Version", r"en": r"the name this particular version is given"}
                     )
 
                 if qualifier is None:
@@ -474,9 +428,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -529,9 +481,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -577,9 +527,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -632,15 +580,11 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"EMPTY", r"de": r"EMPTY"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"EMPTY", r"de": r"EMPTY"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -686,9 +630,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -735,9 +677,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -791,15 +731,11 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"EMPTY", r"de": r"EMPTY"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"EMPTY", r"de": r"EMPTY"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -845,9 +781,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -899,9 +833,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -937,21 +869,13 @@ class SoftwareNameplate(aas.Submodel):
             self,
             uRIOfTheProduct: Union[str, URIOfTheProduct],
             manufacturerName: Union[aas.LangStringSet, ManufacturerName],
-            manufacturerProductDesignation: Union[
-                aas.LangStringSet, ManufacturerProductDesignation
-            ],
+            manufacturerProductDesignation: Union[aas.LangStringSet, ManufacturerProductDesignation],
             version: Union[str, Version],
             releaseDate: Union[xsd.Date, ReleaseDate],
             buildDate: Union[xsd.Date, BuildDate],
-            manufacturerProductDescription: Optional[
-                Union[aas.LangStringSet, ManufacturerProductDescription]
-            ] = None,
-            manufacturerProductFamily: Optional[
-                Union[aas.LangStringSet, ManufacturerProductFamily]
-            ] = None,
-            manufacturerProductType: Optional[
-                Union[aas.LangStringSet, ManufacturerProductType]
-            ] = None,
+            manufacturerProductDescription: Optional[Union[aas.LangStringSet, ManufacturerProductDescription]] = None,
+            manufacturerProductFamily: Optional[Union[aas.LangStringSet, ManufacturerProductFamily]] = None,
+            manufacturerProductType: Optional[Union[aas.LangStringSet, ManufacturerProductType]] = None,
             softwareType: Optional[Union[str, SoftwareType]] = None,
             versionName: Optional[Union[aas.LangStringSet, VersionName]] = None,
             versionInfo: Optional[Union[aas.LangStringSet, VersionInfo]] = None,
@@ -977,9 +901,7 @@ class SoftwareNameplate(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -990,16 +912,12 @@ class SoftwareNameplate(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if uRIOfTheProduct is not None and not isinstance(
-                uRIOfTheProduct, aas.SubmodelElement
-            ):
+            if uRIOfTheProduct is not None and not isinstance(uRIOfTheProduct, aas.SubmodelElement):
                 uRIOfTheProduct = self.URIOfTheProduct(uRIOfTheProduct)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerName is not None and not isinstance(
-                manufacturerName, aas.SubmodelElement
-            ):
+            if manufacturerName is not None and not isinstance(manufacturerName, aas.SubmodelElement):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1007,42 +925,28 @@ class SoftwareNameplate(aas.Submodel):
             if manufacturerProductDesignation is not None and not isinstance(
                 manufacturerProductDesignation, aas.SubmodelElement
             ):
-                manufacturerProductDesignation = self.ManufacturerProductDesignation(
-                    manufacturerProductDesignation
-                )
+                manufacturerProductDesignation = self.ManufacturerProductDesignation(manufacturerProductDesignation)
 
             # Build a submodel element if a raw value was passed in the argument
 
             if manufacturerProductDescription is not None and not isinstance(
                 manufacturerProductDescription, aas.SubmodelElement
             ):
-                manufacturerProductDescription = self.ManufacturerProductDescription(
-                    manufacturerProductDescription
-                )
+                manufacturerProductDescription = self.ManufacturerProductDescription(manufacturerProductDescription)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerProductFamily is not None and not isinstance(
-                manufacturerProductFamily, aas.SubmodelElement
-            ):
-                manufacturerProductFamily = self.ManufacturerProductFamily(
-                    manufacturerProductFamily
-                )
+            if manufacturerProductFamily is not None and not isinstance(manufacturerProductFamily, aas.SubmodelElement):
+                manufacturerProductFamily = self.ManufacturerProductFamily(manufacturerProductFamily)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerProductType is not None and not isinstance(
-                manufacturerProductType, aas.SubmodelElement
-            ):
-                manufacturerProductType = self.ManufacturerProductType(
-                    manufacturerProductType
-                )
+            if manufacturerProductType is not None and not isinstance(manufacturerProductType, aas.SubmodelElement):
+                manufacturerProductType = self.ManufacturerProductType(manufacturerProductType)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if softwareType is not None and not isinstance(
-                softwareType, aas.SubmodelElement
-            ):
+            if softwareType is not None and not isinstance(softwareType, aas.SubmodelElement):
                 softwareType = self.SoftwareType(softwareType)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1052,37 +956,27 @@ class SoftwareNameplate(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if versionName is not None and not isinstance(
-                versionName, aas.SubmodelElement
-            ):
+            if versionName is not None and not isinstance(versionName, aas.SubmodelElement):
                 versionName = self.VersionName(versionName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if versionInfo is not None and not isinstance(
-                versionInfo, aas.SubmodelElement
-            ):
+            if versionInfo is not None and not isinstance(versionInfo, aas.SubmodelElement):
                 versionInfo = self.VersionInfo(versionInfo)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if releaseDate is not None and not isinstance(
-                releaseDate, aas.SubmodelElement
-            ):
+            if releaseDate is not None and not isinstance(releaseDate, aas.SubmodelElement):
                 releaseDate = self.ReleaseDate(releaseDate)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if releaseNotes is not None and not isinstance(
-                releaseNotes, aas.SubmodelElement
-            ):
+            if releaseNotes is not None and not isinstance(releaseNotes, aas.SubmodelElement):
                 releaseNotes = self.ReleaseNotes(releaseNotes)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if releaseInformation is not None and not isinstance(
-                releaseInformation, aas.SubmodelElement
-            ):
+            if releaseInformation is not None and not isinstance(releaseInformation, aas.SubmodelElement):
                 releaseInformation = self.ReleaseInformation(releaseInformation)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1092,30 +986,22 @@ class SoftwareNameplate(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if installationURI is not None and not isinstance(
-                installationURI, aas.SubmodelElement
-            ):
+            if installationURI is not None and not isinstance(installationURI, aas.SubmodelElement):
                 installationURI = self.InstallationURI(installationURI)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if installationFile is not None and not isinstance(
-                installationFile, aas.SubmodelElement
-            ):
+            if installationFile is not None and not isinstance(installationFile, aas.SubmodelElement):
                 installationFile = self.InstallationFile(installationFile)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if installerType is not None and not isinstance(
-                installerType, aas.SubmodelElement
-            ):
+            if installerType is not None and not isinstance(installerType, aas.SubmodelElement):
                 installerType = self.InstallerType(installerType)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if installationChecksum is not None and not isinstance(
-                installationChecksum, aas.SubmodelElement
-            ):
+            if installationChecksum is not None and not isinstance(installationChecksum, aas.SubmodelElement):
                 installationChecksum = self.InstallationChecksum(installationChecksum)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1150,9 +1036,7 @@ class SoftwareNameplate(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1181,20 +1065,13 @@ class SoftwareNameplate(aas.Submodel):
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAM556#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAM556#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1241,9 +1118,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1295,15 +1170,11 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"de": r"Der Name der konkreten Instanz"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"de": r"Der Name der konkreten Instanz"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1349,9 +1220,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1403,16 +1272,12 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"containes the time of installation of this instance"
-                        }
+                        dict_={r"en": r"containes the time of installation of this instance"}
                     )
 
                 if qualifier is None:
@@ -1459,9 +1324,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1516,9 +1379,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1565,9 +1426,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1614,9 +1473,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1663,9 +1520,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1714,9 +1569,7 @@ class SoftwareNameplate(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1759,9 +1612,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1777,12 +1628,7 @@ class SoftwareNameplate(aas.Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if installedModule:
                     installedModule = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.InstalledModule(i)
-                        )
-                        for i in installedModule
+                        i if isinstance(i, aas.SubmodelElement) else self.InstalledModule(i) for i in installedModule
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1798,9 +1644,7 @@ class SoftwareNameplate(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1842,9 +1686,7 @@ class SoftwareNameplate(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1891,9 +1733,7 @@ class SoftwareNameplate(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1937,9 +1777,7 @@ class SoftwareNameplate(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1950,16 +1788,12 @@ class SoftwareNameplate(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if configurationURI is not None and not isinstance(
-                        configurationURI, aas.SubmodelElement
-                    ):
+                    if configurationURI is not None and not isinstance(configurationURI, aas.SubmodelElement):
                         configurationURI = self.ConfigurationURI(configurationURI)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if configurationType is not None and not isinstance(
-                        configurationType, aas.SubmodelElement
-                    ):
+                    if configurationType is not None and not isinstance(configurationType, aas.SubmodelElement):
                         configurationType = self.ConfigurationType(configurationType)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1975,9 +1809,7 @@ class SoftwareNameplate(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2011,9 +1843,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2024,9 +1854,7 @@ class SoftwareNameplate(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(configurationPath, str):
-                    raise TypeError(
-                        "configurationPath takes several elements, got a str"
-                    )
+                    raise TypeError("configurationPath takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2041,9 +1869,7 @@ class SoftwareNameplate(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2081,9 +1907,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2121,20 +1945,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO204#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO204#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2176,20 +1993,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO134#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO134#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2242,9 +2052,7 @@ class SoftwareNameplate(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2298,9 +2106,7 @@ class SoftwareNameplate(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2342,20 +2148,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO132#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO132#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2389,20 +2188,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAW001#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW001#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2436,20 +2228,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO127#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO127#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2485,20 +2270,13 @@ class SoftwareNameplate(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO136#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO136#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2540,20 +2318,13 @@ class SoftwareNameplate(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO137#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO137#003"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2606,9 +2377,7 @@ class SoftwareNameplate(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2635,9 +2404,7 @@ class SoftwareNameplate(aas.Submodel):
                     self,
                     telephoneNumber: Union[aas.LangStringSet, TelephoneNumber],
                     typeOfTelephone: Optional[Union[str, TypeOfTelephone]] = None,
-                    availableTime: Optional[
-                        Union[aas.LangStringSet, AvailableTime]
-                    ] = None,
+                    availableTime: Optional[Union[aas.LangStringSet, AvailableTime]] = None,
                     id_short: Optional[str] = r"Phone",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -2654,9 +2421,7 @@ class SoftwareNameplate(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2667,23 +2432,17 @@ class SoftwareNameplate(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if telephoneNumber is not None and not isinstance(
-                        telephoneNumber, aas.SubmodelElement
-                    ):
+                    if telephoneNumber is not None and not isinstance(telephoneNumber, aas.SubmodelElement):
                         telephoneNumber = self.TelephoneNumber(telephoneNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if typeOfTelephone is not None and not isinstance(
-                        typeOfTelephone, aas.SubmodelElement
-                    ):
+                    if typeOfTelephone is not None and not isinstance(typeOfTelephone, aas.SubmodelElement):
                         typeOfTelephone = self.TypeOfTelephone(typeOfTelephone)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if availableTime is not None and not isinstance(
-                        availableTime, aas.SubmodelElement
-                    ):
+                    if availableTime is not None and not isinstance(availableTime, aas.SubmodelElement):
                         availableTime = self.AvailableTime(availableTime)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2699,9 +2458,7 @@ class SoftwareNameplate(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2729,20 +2486,13 @@ class SoftwareNameplate(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO195#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO195#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2784,20 +2534,13 @@ class SoftwareNameplate(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO196#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO196#003"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2837,20 +2580,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAQ834#005",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ834#005"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2861,16 +2597,12 @@ class SoftwareNameplate(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if faxNumber is not None and not isinstance(
-                        faxNumber, aas.SubmodelElement
-                    ):
+                    if faxNumber is not None and not isinstance(faxNumber, aas.SubmodelElement):
                         faxNumber = self.FaxNumber(faxNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if typeOfFaxNumber is not None and not isinstance(
-                        typeOfFaxNumber, aas.SubmodelElement
-                    ):
+                    if typeOfFaxNumber is not None and not isinstance(typeOfFaxNumber, aas.SubmodelElement):
                         typeOfFaxNumber = self.TypeOfFaxNumber(typeOfFaxNumber)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2886,9 +2618,7 @@ class SoftwareNameplate(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2917,20 +2647,13 @@ class SoftwareNameplate(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO198#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO198#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2965,20 +2688,13 @@ class SoftwareNameplate(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO200#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO200#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3020,20 +2736,13 @@ class SoftwareNameplate(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO199#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO199#003"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3075,20 +2784,13 @@ class SoftwareNameplate(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO201#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO201#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3116,28 +2818,19 @@ class SoftwareNameplate(aas.Submodel):
                     emailAddress: Union[str, EmailAddress],
                     publicKey: Optional[Union[aas.LangStringSet, PublicKey]] = None,
                     typeOfEmailAddress: Optional[Union[str, TypeOfEmailAddress]] = None,
-                    typeOfPublicKey: Optional[
-                        Union[aas.LangStringSet, TypeOfPublicKey]
-                    ] = None,
+                    typeOfPublicKey: Optional[Union[aas.LangStringSet, TypeOfPublicKey]] = None,
                     id_short: Optional[str] = r"Email",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAQ836#005",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ836#005"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3148,40 +2841,27 @@ class SoftwareNameplate(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if emailAddress is not None and not isinstance(
-                        emailAddress, aas.SubmodelElement
-                    ):
+                    if emailAddress is not None and not isinstance(emailAddress, aas.SubmodelElement):
                         emailAddress = self.EmailAddress(emailAddress)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if publicKey is not None and not isinstance(
-                        publicKey, aas.SubmodelElement
-                    ):
+                    if publicKey is not None and not isinstance(publicKey, aas.SubmodelElement):
                         publicKey = self.PublicKey(publicKey)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if typeOfEmailAddress is not None and not isinstance(
-                        typeOfEmailAddress, aas.SubmodelElement
-                    ):
+                    if typeOfEmailAddress is not None and not isinstance(typeOfEmailAddress, aas.SubmodelElement):
                         typeOfEmailAddress = self.TypeOfEmailAddress(typeOfEmailAddress)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if typeOfPublicKey is not None and not isinstance(
-                        typeOfPublicKey, aas.SubmodelElement
-                    ):
+                    if typeOfPublicKey is not None and not isinstance(typeOfPublicKey, aas.SubmodelElement):
                         typeOfPublicKey = self.TypeOfPublicKey(typeOfPublicKey)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        emailAddress,
-                        publicKey,
-                        typeOfEmailAddress,
-                        typeOfPublicKey,
-                    ]:
+                    for se_arg in [emailAddress, publicKey, typeOfEmailAddress, typeOfPublicKey]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -3192,9 +2872,7 @@ class SoftwareNameplate(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3223,20 +2901,13 @@ class SoftwareNameplate(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAQ326#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ326#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3283,9 +2954,7 @@ class SoftwareNameplate(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3331,9 +3000,7 @@ class SoftwareNameplate(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3359,12 +3026,8 @@ class SoftwareNameplate(aas.Submodel):
                 def __init__(
                     self,
                     addressOfAdditionalLink: Union[str, AddressOfAdditionalLink],
-                    typeOfCommunication: Optional[
-                        Union[str, TypeOfCommunication]
-                    ] = None,
-                    availableTime: Optional[
-                        Union[aas.LangStringSet, AvailableTime]
-                    ] = None,
+                    typeOfCommunication: Optional[Union[str, TypeOfCommunication]] = None,
+                    availableTime: Optional[Union[aas.LangStringSet, AvailableTime]] = None,
                     id_short: Optional[str] = r"IPCommunication",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -3381,9 +3044,7 @@ class SoftwareNameplate(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3397,33 +3058,21 @@ class SoftwareNameplate(aas.Submodel):
                     if addressOfAdditionalLink is not None and not isinstance(
                         addressOfAdditionalLink, aas.SubmodelElement
                     ):
-                        addressOfAdditionalLink = self.AddressOfAdditionalLink(
-                            addressOfAdditionalLink
-                        )
+                        addressOfAdditionalLink = self.AddressOfAdditionalLink(addressOfAdditionalLink)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if typeOfCommunication is not None and not isinstance(
-                        typeOfCommunication, aas.SubmodelElement
-                    ):
-                        typeOfCommunication = self.TypeOfCommunication(
-                            typeOfCommunication
-                        )
+                    if typeOfCommunication is not None and not isinstance(typeOfCommunication, aas.SubmodelElement):
+                        typeOfCommunication = self.TypeOfCommunication(typeOfCommunication)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if availableTime is not None and not isinstance(
-                        availableTime, aas.SubmodelElement
-                    ):
+                    if availableTime is not None and not isinstance(availableTime, aas.SubmodelElement):
                         availableTime = self.AvailableTime(availableTime)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        addressOfAdditionalLink,
-                        typeOfCommunication,
-                        availableTime,
-                    ]:
+                    for se_arg in [addressOfAdditionalLink, typeOfCommunication, availableTime]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -3434,9 +3083,7 @@ class SoftwareNameplate(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3462,20 +3109,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO128#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO128#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3509,20 +3149,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO129#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO129#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -3563,20 +3196,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO130#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO130#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3610,20 +3236,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO131#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO131#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -3664,20 +3283,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO133#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO133#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3711,20 +3323,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO205#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO205#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3758,20 +3363,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO206#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO206#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3805,20 +3403,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO207#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO207#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3852,20 +3443,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO208#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO208#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3899,20 +3483,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO209#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO209#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3946,20 +3523,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO210#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO210#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3994,20 +3564,13 @@ class SoftwareNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAQ326#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ326#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4047,21 +3610,15 @@ class SoftwareNameplate(aas.Submodel):
                 street: Optional[Union[aas.LangStringSet, Street]] = None,
                 zipcode: Optional[Union[aas.LangStringSet, Zipcode]] = None,
                 pOBox: Optional[Union[aas.LangStringSet, POBox]] = None,
-                zipCodeOfPOBox: Optional[
-                    Union[aas.LangStringSet, ZipCodeOfPOBox]
-                ] = None,
+                zipCodeOfPOBox: Optional[Union[aas.LangStringSet, ZipCodeOfPOBox]] = None,
                 stateCounty: Optional[Union[aas.LangStringSet, StateCounty]] = None,
                 nameOfContact: Optional[Union[aas.LangStringSet, NameOfContact]] = None,
                 firstName: Optional[Union[aas.LangStringSet, FirstName]] = None,
                 middleNames: Optional[Union[aas.LangStringSet, MiddleNames]] = None,
                 title: Optional[Union[aas.LangStringSet, Title]] = None,
                 academicTitle: Optional[Union[aas.LangStringSet, AcademicTitle]] = None,
-                furtherDetailsOfContact: Optional[
-                    Union[aas.LangStringSet, FurtherDetailsOfContact]
-                ] = None,
-                addressOfAdditionalLink: Optional[
-                    Union[str, AddressOfAdditionalLink]
-                ] = None,
+                furtherDetailsOfContact: Optional[Union[aas.LangStringSet, FurtherDetailsOfContact]] = None,
+                addressOfAdditionalLink: Optional[Union[str, AddressOfAdditionalLink]] = None,
                 id_short: Optional[str] = r"Contact",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
@@ -4078,9 +3635,7 @@ class SoftwareNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -4098,16 +3653,12 @@ class SoftwareNameplate(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if roleOfContactPerson is not None and not isinstance(
-                    roleOfContactPerson, aas.SubmodelElement
-                ):
+                if roleOfContactPerson is not None and not isinstance(roleOfContactPerson, aas.SubmodelElement):
                     roleOfContactPerson = self.RoleOfContactPerson(roleOfContactPerson)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if nationalCode is not None and not isinstance(
-                    nationalCode, aas.SubmodelElement
-                ):
+                if nationalCode is not None and not isinstance(nationalCode, aas.SubmodelElement):
                     nationalCode = self.NationalCode(nationalCode)
 
                 # A str would be split into its characters
@@ -4116,23 +3667,16 @@ class SoftwareNameplate(aas.Submodel):
 
                 # Build submodel elements from raw values passed in the argument
                 if language:
-                    language = [
-                        i if isinstance(i, aas.SubmodelElement) else self.Language(i)
-                        for i in language
-                    ]
+                    language = [i if isinstance(i, aas.SubmodelElement) else self.Language(i) for i in language]
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if timeZone is not None and not isinstance(
-                    timeZone, aas.SubmodelElement
-                ):
+                if timeZone is not None and not isinstance(timeZone, aas.SubmodelElement):
                     timeZone = self.TimeZone(timeZone)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if cityTown is not None and not isinstance(
-                    cityTown, aas.SubmodelElement
-                ):
+                if cityTown is not None and not isinstance(cityTown, aas.SubmodelElement):
                     cityTown = self.CityTown(cityTown)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -4142,9 +3686,7 @@ class SoftwareNameplate(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if department is not None and not isinstance(
-                    department, aas.SubmodelElement
-                ):
+                if department is not None and not isinstance(department, aas.SubmodelElement):
                     department = self.Department(department)
 
                 # A str would be split into its characters
@@ -4168,37 +3710,27 @@ class SoftwareNameplate(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if zipCodeOfPOBox is not None and not isinstance(
-                    zipCodeOfPOBox, aas.SubmodelElement
-                ):
+                if zipCodeOfPOBox is not None and not isinstance(zipCodeOfPOBox, aas.SubmodelElement):
                     zipCodeOfPOBox = self.ZipCodeOfPOBox(zipCodeOfPOBox)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if stateCounty is not None and not isinstance(
-                    stateCounty, aas.SubmodelElement
-                ):
+                if stateCounty is not None and not isinstance(stateCounty, aas.SubmodelElement):
                     stateCounty = self.StateCounty(stateCounty)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if nameOfContact is not None and not isinstance(
-                    nameOfContact, aas.SubmodelElement
-                ):
+                if nameOfContact is not None and not isinstance(nameOfContact, aas.SubmodelElement):
                     nameOfContact = self.NameOfContact(nameOfContact)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if firstName is not None and not isinstance(
-                    firstName, aas.SubmodelElement
-                ):
+                if firstName is not None and not isinstance(firstName, aas.SubmodelElement):
                     firstName = self.FirstName(firstName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if middleNames is not None and not isinstance(
-                    middleNames, aas.SubmodelElement
-                ):
+                if middleNames is not None and not isinstance(middleNames, aas.SubmodelElement):
                     middleNames = self.MiddleNames(middleNames)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -4208,28 +3740,18 @@ class SoftwareNameplate(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if academicTitle is not None and not isinstance(
-                    academicTitle, aas.SubmodelElement
-                ):
+                if academicTitle is not None and not isinstance(academicTitle, aas.SubmodelElement):
                     academicTitle = self.AcademicTitle(academicTitle)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if furtherDetailsOfContact is not None and not isinstance(
-                    furtherDetailsOfContact, aas.SubmodelElement
-                ):
-                    furtherDetailsOfContact = self.FurtherDetailsOfContact(
-                        furtherDetailsOfContact
-                    )
+                if furtherDetailsOfContact is not None and not isinstance(furtherDetailsOfContact, aas.SubmodelElement):
+                    furtherDetailsOfContact = self.FurtherDetailsOfContact(furtherDetailsOfContact)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if addressOfAdditionalLink is not None and not isinstance(
-                    addressOfAdditionalLink, aas.SubmodelElement
-                ):
-                    addressOfAdditionalLink = self.AddressOfAdditionalLink(
-                        addressOfAdditionalLink
-                    )
+                if addressOfAdditionalLink is not None and not isinstance(addressOfAdditionalLink, aas.SubmodelElement):
+                    addressOfAdditionalLink = self.AddressOfAdditionalLink(addressOfAdditionalLink)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -4268,9 +3790,7 @@ class SoftwareNameplate(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4294,9 +3814,7 @@ class SoftwareNameplate(aas.Submodel):
             installedVersion: Optional[Union[str, InstalledVersion]] = None,
             installationPath: Optional[Union[xsd.AnyURI, InstallationPath]] = None,
             installationSource: Optional[Union[xsd.AnyURI, InstallationSource]] = None,
-            installedOnArchitecture: Optional[
-                Union[str, InstalledOnArchitecture]
-            ] = None,
+            installedOnArchitecture: Optional[Union[str, InstalledOnArchitecture]] = None,
             installedOnOS: Optional[Union[str, InstalledOnOS]] = None,
             installedOnHost: Optional[Union[str, InstalledOnHost]] = None,
             installedModules: Optional[InstalledModules] = None,
@@ -4319,9 +3837,7 @@ class SoftwareNameplate(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -4332,81 +3848,57 @@ class SoftwareNameplate(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if serialNumber is not None and not isinstance(
-                serialNumber, aas.SubmodelElement
-            ):
+            if serialNumber is not None and not isinstance(serialNumber, aas.SubmodelElement):
                 serialNumber = self.SerialNumber(serialNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if inventoryTag is not None and not isinstance(
-                inventoryTag, aas.SubmodelElement
-            ):
+            if inventoryTag is not None and not isinstance(inventoryTag, aas.SubmodelElement):
                 inventoryTag = self.InventoryTag(inventoryTag)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if instanceName is not None and not isinstance(
-                instanceName, aas.SubmodelElement
-            ):
+            if instanceName is not None and not isinstance(instanceName, aas.SubmodelElement):
                 instanceName = self.InstanceName(instanceName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if installedVersion is not None and not isinstance(
-                installedVersion, aas.SubmodelElement
-            ):
+            if installedVersion is not None and not isinstance(installedVersion, aas.SubmodelElement):
                 installedVersion = self.InstalledVersion(installedVersion)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if installationDate is not None and not isinstance(
-                installationDate, aas.SubmodelElement
-            ):
+            if installationDate is not None and not isinstance(installationDate, aas.SubmodelElement):
                 installationDate = self.InstallationDate(installationDate)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if installationPath is not None and not isinstance(
-                installationPath, aas.SubmodelElement
-            ):
+            if installationPath is not None and not isinstance(installationPath, aas.SubmodelElement):
                 installationPath = self.InstallationPath(installationPath)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if installationSource is not None and not isinstance(
-                installationSource, aas.SubmodelElement
-            ):
+            if installationSource is not None and not isinstance(installationSource, aas.SubmodelElement):
                 installationSource = self.InstallationSource(installationSource)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if installedOnArchitecture is not None and not isinstance(
-                installedOnArchitecture, aas.SubmodelElement
-            ):
-                installedOnArchitecture = self.InstalledOnArchitecture(
-                    installedOnArchitecture
-                )
+            if installedOnArchitecture is not None and not isinstance(installedOnArchitecture, aas.SubmodelElement):
+                installedOnArchitecture = self.InstalledOnArchitecture(installedOnArchitecture)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if installedOnOS is not None and not isinstance(
-                installedOnOS, aas.SubmodelElement
-            ):
+            if installedOnOS is not None and not isinstance(installedOnOS, aas.SubmodelElement):
                 installedOnOS = self.InstalledOnOS(installedOnOS)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if installedOnHost is not None and not isinstance(
-                installedOnHost, aas.SubmodelElement
-            ):
+            if installedOnHost is not None and not isinstance(installedOnHost, aas.SubmodelElement):
                 installedOnHost = self.InstalledOnHost(installedOnHost)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if sLAInformation is not None and not isinstance(
-                sLAInformation, aas.SubmodelElement
-            ):
+            if sLAInformation is not None and not isinstance(sLAInformation, aas.SubmodelElement):
                 sLAInformation = self.SLAInformation(sLAInformation)
 
             # A str would be split into its characters
@@ -4441,9 +3933,7 @@ class SoftwareNameplate(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4469,12 +3959,7 @@ class SoftwareNameplate(aas.Submodel):
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"https://admin-shell.io/idta/SoftwareNameplate/1/0",
-                ),
-            ),
+            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/SoftwareNameplate/1/0"),),
             type_=aas.Submodel,
             referred_semantic_id=None,
         ),
@@ -4487,18 +3972,12 @@ class SoftwareNameplate(aas.Submodel):
 
         if description is None:
             description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Contains the nameplate information attached to the software product"
-                }
+                dict_={r"en": r"Contains the nameplate information attached to the software product"}
             )
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"0",
-                revision=r"15",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"0", revision=r"15", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -4520,9 +3999,7 @@ class SoftwareNameplate(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

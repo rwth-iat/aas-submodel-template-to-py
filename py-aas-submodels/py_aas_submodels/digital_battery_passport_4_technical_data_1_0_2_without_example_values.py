@@ -19,12 +19,7 @@ class TechnicalData(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO677#004",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#004"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -49,9 +44,7 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -93,12 +86,7 @@ class TechnicalData(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI776#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI776#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -123,16 +111,12 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Imagefile for logo of manufacturer provided in common format (.png, .jpg)."
-                        }
+                        dict_={r"en": r"Imagefile for logo of manufacturer provided in common format (.png, .jpg)."}
                     )
 
                 if qualifier is None:
@@ -178,9 +162,7 @@ class TechnicalData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -228,18 +210,11 @@ class TechnicalData(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAR724#007",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAR724#007"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -295,18 +270,11 @@ class TechnicalData(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAF040#010",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAF040#010"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -345,8 +313,7 @@ class TechnicalData(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -364,16 +331,12 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Image file for associated product provided in common format (.png, .jpg)."
-                            }
+                            dict_={r"en": r"Image file for associated product provided in common format (.png, .jpg)."}
                         )
 
                     if qualifier is None:
@@ -401,13 +364,10 @@ class TechnicalData(aas.Submodel):
                 productimages_items: Iterable[Productimages_item],
                 id_short: Optional[str] = r"ProductImages",
                 type_value_list_element: aas.SubmodelElement = aas.File,
-                semantic_id_list_element: Optional[
-                    aas.Reference
-                ] = aas.ExternalReference(
+                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -418,12 +378,7 @@ class TechnicalData(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABM220#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM220#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -448,9 +403,7 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -468,9 +421,7 @@ class TechnicalData(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(productimages_items, str):
-                    raise TypeError(
-                        "productimages_items takes several elements, got a str"
-                    )
+                    raise TypeError("productimages_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -482,9 +433,7 @@ class TechnicalData(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -551,15 +500,9 @@ class TechnicalData(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -597,24 +540,15 @@ class TechnicalData(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAX540#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAX540#004"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"warranty period"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"warranty period"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -657,24 +591,15 @@ class TechnicalData(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO677#004",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#004"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"warranty information"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"warranty information"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -684,9 +609,7 @@ class TechnicalData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if warrantyPeriod is not None and not isinstance(
-                    warrantyPeriod, aas.SubmodelElement
-                ):
+                if warrantyPeriod is not None and not isinstance(warrantyPeriod, aas.SubmodelElement):
                     warrantyPeriod = self.WarrantyPeriod(warrantyPeriod)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -702,9 +625,7 @@ class TechnicalData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -727,20 +648,13 @@ class TechnicalData(aas.Submodel):
             batteryMass: Union[xsd.Float, BatteryMass],
             warrantyInformation: WarrantyInformation,
             companyLogo: Optional[CompanyLogo] = None,
-            productImages: Optional[
-                Union[Iterable[ProductImages.Productimages_item], ProductImages]
-            ] = None,
+            productImages: Optional[Union[Iterable[ProductImages.Productimages_item], ProductImages]] = None,
             id_short: Optional[str] = r"GeneralInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABK161#002/0173-1#01-AHX838#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK161#002/0173-1#01-AHX838#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -756,9 +670,7 @@ class TechnicalData(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -769,32 +681,22 @@ class TechnicalData(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerName is not None and not isinstance(
-                manufacturerName, aas.SubmodelElement
-            ):
+            if manufacturerName is not None and not isinstance(manufacturerName, aas.SubmodelElement):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerIdentifier is not None and not isinstance(
-                manufacturerIdentifier, aas.SubmodelElement
-            ):
-                manufacturerIdentifier = self.ManufacturerIdentifier(
-                    manufacturerIdentifier
-                )
+            if manufacturerIdentifier is not None and not isinstance(manufacturerIdentifier, aas.SubmodelElement):
+                manufacturerIdentifier = self.ManufacturerIdentifier(manufacturerIdentifier)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if batteryCategory is not None and not isinstance(
-                batteryCategory, aas.SubmodelElement
-            ):
+            if batteryCategory is not None and not isinstance(batteryCategory, aas.SubmodelElement):
                 batteryCategory = self.BatteryCategory(batteryCategory)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if batteryMass is not None and not isinstance(
-                batteryMass, aas.SubmodelElement
-            ):
+            if batteryMass is not None and not isinstance(batteryMass, aas.SubmodelElement):
                 batteryMass = self.BatteryMass(batteryMass)
 
             # A str would be split into its characters
@@ -803,9 +705,7 @@ class TechnicalData(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if productImages is not None and not isinstance(
-                productImages, aas.SubmodelElement
-            ):
+            if productImages is not None and not isinstance(productImages, aas.SubmodelElement):
                 productImages = self.ProductImages(productImages)
 
             # Add all passed/initialized submodel elements to a single list
@@ -829,9 +729,7 @@ class TechnicalData(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -862,12 +760,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL588#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL588#001"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -884,16 +777,12 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "voltage - NOM\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.11"
-                            }
+                            dict_={r"en": "voltage - NOM\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.11"}
                         )
 
                     if qualifier is None:
@@ -929,12 +818,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL587#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL587#001"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -951,16 +835,12 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "voltage - MIN\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.9"
-                            }
+                            dict_={r"en": "voltage - MIN\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.9"}
                         )
 
                     if qualifier is None:
@@ -996,12 +876,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL589#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL589#001"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -1018,16 +893,12 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "voltage - MAX\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.10"
-                            }
+                            dict_={r"en": "voltage - MAX\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.10"}
                         )
 
                     if qualifier is None:
@@ -1063,12 +934,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL869#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL869#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -1085,16 +951,12 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "rated capacity\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.2"
-                            }
+                            dict_={r"en": "rated capacity\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.2"}
                         )
 
                     if qualifier is None:
@@ -1130,12 +992,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL828#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL828#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -1152,16 +1009,12 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "capacity fade\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.4"
-                            }
+                            dict_={r"en": "capacity fade\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.4"}
                         )
 
                     if qualifier is None:
@@ -1197,12 +1050,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL829#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL829#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -1219,9 +1067,7 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1259,9 +1105,7 @@ class TechnicalData(aas.Submodel):
                 maxVoltage: Union[xsd.Float, MaxVoltage],
                 ratedCapacity: Union[xsd.Float, RatedCapacity],
                 capacityFade: Optional[Union[xsd.Float, CapacityFade]] = None,
-                certifiedUsableBatteryEnergy: Optional[
-                    Union[xsd.Float, CertifiedUsableBatteryEnergy]
-                ] = None,
+                certifiedUsableBatteryEnergy: Optional[Union[xsd.Float, CertifiedUsableBatteryEnergy]] = None,
                 id_short: Optional[str] = r"CapacityEnergyVoltage",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -1281,16 +1125,13 @@ class TechnicalData(aas.Submodel):
                     aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1308,37 +1149,27 @@ class TechnicalData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if nominalVoltage is not None and not isinstance(
-                    nominalVoltage, aas.SubmodelElement
-                ):
+                if nominalVoltage is not None and not isinstance(nominalVoltage, aas.SubmodelElement):
                     nominalVoltage = self.NominalVoltage(nominalVoltage)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if minVoltage is not None and not isinstance(
-                    minVoltage, aas.SubmodelElement
-                ):
+                if minVoltage is not None and not isinstance(minVoltage, aas.SubmodelElement):
                     minVoltage = self.MinVoltage(minVoltage)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if maxVoltage is not None and not isinstance(
-                    maxVoltage, aas.SubmodelElement
-                ):
+                if maxVoltage is not None and not isinstance(maxVoltage, aas.SubmodelElement):
                     maxVoltage = self.MaxVoltage(maxVoltage)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if ratedCapacity is not None and not isinstance(
-                    ratedCapacity, aas.SubmodelElement
-                ):
+                if ratedCapacity is not None and not isinstance(ratedCapacity, aas.SubmodelElement):
                     ratedCapacity = self.RatedCapacity(ratedCapacity)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if capacityFade is not None and not isinstance(
-                    capacityFade, aas.SubmodelElement
-                ):
+                if capacityFade is not None and not isinstance(capacityFade, aas.SubmodelElement):
                     capacityFade = self.CapacityFade(capacityFade)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1346,9 +1177,7 @@ class TechnicalData(aas.Submodel):
                 if certifiedUsableBatteryEnergy is not None and not isinstance(
                     certifiedUsableBatteryEnergy, aas.SubmodelElement
                 ):
-                    certifiedUsableBatteryEnergy = self.CertifiedUsableBatteryEnergy(
-                        certifiedUsableBatteryEnergy
-                    )
+                    certifiedUsableBatteryEnergy = self.CertifiedUsableBatteryEnergy(certifiedUsableBatteryEnergy)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1370,9 +1199,7 @@ class TechnicalData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1401,12 +1228,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL833#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL833#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -1423,9 +1245,7 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1461,21 +1281,14 @@ class TechnicalData(aas.Submodel):
                 def __init__(
                     self,
                     value: int,
-                    id_short: Optional[
-                        str
-                    ] = r"RoundTripEnergyEfficiencyAt50PercentOfCycleLife",
+                    id_short: Optional[str] = r"RoundTripEnergyEfficiencyAt50PercentOfCycleLife",
                     value_type: aas.DataTypeDefXsd = int,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL866#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL866#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -1492,9 +1305,7 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1537,12 +1348,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL827#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL827#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -1559,9 +1365,7 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1604,12 +1408,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL834#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL834#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -1626,9 +1425,7 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1661,18 +1458,12 @@ class TechnicalData(aas.Submodel):
 
             def __init__(
                 self,
-                initialRoundTripEnergyEfficiency: Union[
-                    int, InitialRoundTripEnergyEfficiency
-                ],
+                initialRoundTripEnergyEfficiency: Union[int, InitialRoundTripEnergyEfficiency],
                 roundTripEnergyEfficiencyAt50PercentOfCycleLife: Union[
                     int, RoundTripEnergyEfficiencyAt50PercentOfCycleLife
                 ],
-                energyRoundTripEfficiencyFade: Optional[
-                    Union[xsd.Float, EnergyRoundTripEfficiencyFade]
-                ] = None,
-                initialSelfDischargingRate: Optional[
-                    Union[int, InitialSelfDischargingRate]
-                ] = None,
+                energyRoundTripEfficiencyFade: Optional[Union[xsd.Float, EnergyRoundTripEfficiencyFade]] = None,
+                initialSelfDischargingRate: Optional[Union[int, InitialSelfDischargingRate]] = None,
                 id_short: Optional[str] = r"RoundTripEnergyEfficiency",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -1692,16 +1483,13 @@ class TechnicalData(aas.Submodel):
                     aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1722,20 +1510,14 @@ class TechnicalData(aas.Submodel):
                 if initialRoundTripEnergyEfficiency is not None and not isinstance(
                     initialRoundTripEnergyEfficiency, aas.SubmodelElement
                 ):
-                    initialRoundTripEnergyEfficiency = (
-                        self.InitialRoundTripEnergyEfficiency(
-                            initialRoundTripEnergyEfficiency
-                        )
+                    initialRoundTripEnergyEfficiency = self.InitialRoundTripEnergyEfficiency(
+                        initialRoundTripEnergyEfficiency
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    roundTripEnergyEfficiencyAt50PercentOfCycleLife is not None
-                    and not isinstance(
-                        roundTripEnergyEfficiencyAt50PercentOfCycleLife,
-                        aas.SubmodelElement,
-                    )
+                if roundTripEnergyEfficiencyAt50PercentOfCycleLife is not None and not isinstance(
+                    roundTripEnergyEfficiencyAt50PercentOfCycleLife, aas.SubmodelElement
                 ):
                     roundTripEnergyEfficiencyAt50PercentOfCycleLife = (
                         self.RoundTripEnergyEfficiencyAt50PercentOfCycleLife(
@@ -1748,18 +1530,14 @@ class TechnicalData(aas.Submodel):
                 if energyRoundTripEfficiencyFade is not None and not isinstance(
                     energyRoundTripEfficiencyFade, aas.SubmodelElement
                 ):
-                    energyRoundTripEfficiencyFade = self.EnergyRoundTripEfficiencyFade(
-                        energyRoundTripEfficiencyFade
-                    )
+                    energyRoundTripEfficiencyFade = self.EnergyRoundTripEfficiencyFade(energyRoundTripEfficiencyFade)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if initialSelfDischargingRate is not None and not isinstance(
                     initialSelfDischargingRate, aas.SubmodelElement
                 ):
-                    initialSelfDischargingRate = self.InitialSelfDischargingRate(
-                        initialSelfDischargingRate
-                    )
+                    initialSelfDischargingRate = self.InitialSelfDischargingRate(initialSelfDischargingRate)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1779,9 +1557,7 @@ class TechnicalData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1803,21 +1579,14 @@ class TechnicalData(aas.Submodel):
                 def __init__(
                     self,
                     value: xsd.Float,
-                    id_short: Optional[
-                        str
-                    ] = r"InitialInternalResistanceOnBatteryCellLevel",
+                    id_short: Optional[str] = r"InitialInternalResistanceOnBatteryCellLevel",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL844#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL844#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -1834,9 +1603,7 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1872,21 +1639,14 @@ class TechnicalData(aas.Submodel):
                 def __init__(
                     self,
                     value: xsd.Float,
-                    id_short: Optional[
-                        str
-                    ] = r"InitialInternalResistanceOnBatteryPackLevel",
+                    id_short: Optional[str] = r"InitialInternalResistanceOnBatteryPackLevel",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL846#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL846#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -1903,9 +1663,7 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1941,21 +1699,14 @@ class TechnicalData(aas.Submodel):
                 def __init__(
                     self,
                     value: xsd.Float,
-                    id_short: Optional[
-                        str
-                    ] = r"InitialInternalResistanceOnBatteryModuleLevel",
+                    id_short: Optional[str] = r"InitialInternalResistanceOnBatteryModuleLevel",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL832#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL832#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -1972,9 +1723,7 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2010,9 +1759,7 @@ class TechnicalData(aas.Submodel):
                 def __init__(
                     self,
                     value: xsd.Float,
-                    id_short: Optional[
-                        str
-                    ] = r"InternalResistanceIncreaseOfBatteryCellLevel",
+                    id_short: Optional[str] = r"InternalResistanceIncreaseOfBatteryCellLevel",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2032,18 +1779,11 @@ class TechnicalData(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABL831#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL831#002"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2079,9 +1819,7 @@ class TechnicalData(aas.Submodel):
                 def __init__(
                     self,
                     value: xsd.Float,
-                    id_short: Optional[
-                        str
-                    ] = r"InternalResistanceIncreaseOfBatteryPackLevel",
+                    id_short: Optional[str] = r"InternalResistanceIncreaseOfBatteryPackLevel",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2100,18 +1838,11 @@ class TechnicalData(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABL831#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL831#001"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2147,9 +1878,7 @@ class TechnicalData(aas.Submodel):
                 def __init__(
                     self,
                     value: xsd.Float,
-                    id_short: Optional[
-                        str
-                    ] = r"InternalResistanceIncreaseOfBatteryModuleLevel",
+                    id_short: Optional[str] = r"InternalResistanceIncreaseOfBatteryModuleLevel",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2168,18 +1897,11 @@ class TechnicalData(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABL836#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL836#001"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2242,16 +1964,13 @@ class TechnicalData(aas.Submodel):
                     aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -2269,85 +1988,53 @@ class TechnicalData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    initialInternalResistanceOnBatteryCellLevel is not None
-                    and not isinstance(
-                        initialInternalResistanceOnBatteryCellLevel, aas.SubmodelElement
-                    )
+                if initialInternalResistanceOnBatteryCellLevel is not None and not isinstance(
+                    initialInternalResistanceOnBatteryCellLevel, aas.SubmodelElement
                 ):
-                    initialInternalResistanceOnBatteryCellLevel = (
-                        self.InitialInternalResistanceOnBatteryCellLevel(
-                            initialInternalResistanceOnBatteryCellLevel
-                        )
+                    initialInternalResistanceOnBatteryCellLevel = self.InitialInternalResistanceOnBatteryCellLevel(
+                        initialInternalResistanceOnBatteryCellLevel
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    initialInternalResistanceOnBatteryPackLevel is not None
-                    and not isinstance(
-                        initialInternalResistanceOnBatteryPackLevel, aas.SubmodelElement
-                    )
+                if initialInternalResistanceOnBatteryPackLevel is not None and not isinstance(
+                    initialInternalResistanceOnBatteryPackLevel, aas.SubmodelElement
                 ):
-                    initialInternalResistanceOnBatteryPackLevel = (
-                        self.InitialInternalResistanceOnBatteryPackLevel(
-                            initialInternalResistanceOnBatteryPackLevel
-                        )
+                    initialInternalResistanceOnBatteryPackLevel = self.InitialInternalResistanceOnBatteryPackLevel(
+                        initialInternalResistanceOnBatteryPackLevel
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    initialInternalResistanceOnBatteryModuleLevel is not None
-                    and not isinstance(
-                        initialInternalResistanceOnBatteryModuleLevel,
-                        aas.SubmodelElement,
-                    )
+                if initialInternalResistanceOnBatteryModuleLevel is not None and not isinstance(
+                    initialInternalResistanceOnBatteryModuleLevel, aas.SubmodelElement
                 ):
-                    initialInternalResistanceOnBatteryModuleLevel = (
-                        self.InitialInternalResistanceOnBatteryModuleLevel(
-                            initialInternalResistanceOnBatteryModuleLevel
-                        )
+                    initialInternalResistanceOnBatteryModuleLevel = self.InitialInternalResistanceOnBatteryModuleLevel(
+                        initialInternalResistanceOnBatteryModuleLevel
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    internalResistanceIncreaseOfBatteryCellLevel is not None
-                    and not isinstance(
-                        internalResistanceIncreaseOfBatteryCellLevel,
-                        aas.SubmodelElement,
-                    )
+                if internalResistanceIncreaseOfBatteryCellLevel is not None and not isinstance(
+                    internalResistanceIncreaseOfBatteryCellLevel, aas.SubmodelElement
                 ):
-                    internalResistanceIncreaseOfBatteryCellLevel = (
-                        self.InternalResistanceIncreaseOfBatteryCellLevel(
-                            internalResistanceIncreaseOfBatteryCellLevel
-                        )
+                    internalResistanceIncreaseOfBatteryCellLevel = self.InternalResistanceIncreaseOfBatteryCellLevel(
+                        internalResistanceIncreaseOfBatteryCellLevel
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    internalResistanceIncreaseOfBatteryPackLevel is not None
-                    and not isinstance(
-                        internalResistanceIncreaseOfBatteryPackLevel,
-                        aas.SubmodelElement,
-                    )
+                if internalResistanceIncreaseOfBatteryPackLevel is not None and not isinstance(
+                    internalResistanceIncreaseOfBatteryPackLevel, aas.SubmodelElement
                 ):
-                    internalResistanceIncreaseOfBatteryPackLevel = (
-                        self.InternalResistanceIncreaseOfBatteryPackLevel(
-                            internalResistanceIncreaseOfBatteryPackLevel
-                        )
+                    internalResistanceIncreaseOfBatteryPackLevel = self.InternalResistanceIncreaseOfBatteryPackLevel(
+                        internalResistanceIncreaseOfBatteryPackLevel
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    internalResistanceIncreaseOfBatteryModuleLevel is not None
-                    and not isinstance(
-                        internalResistanceIncreaseOfBatteryModuleLevel,
-                        aas.SubmodelElement,
-                    )
+                if internalResistanceIncreaseOfBatteryModuleLevel is not None and not isinstance(
+                    internalResistanceIncreaseOfBatteryModuleLevel, aas.SubmodelElement
                 ):
                     internalResistanceIncreaseOfBatteryModuleLevel = (
                         self.InternalResistanceIncreaseOfBatteryModuleLevel(
@@ -2375,9 +2062,7 @@ class TechnicalData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2406,12 +2091,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL843#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL843#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -2428,9 +2108,7 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2473,12 +2151,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL852#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL852#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -2495,16 +2168,12 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "Power fade\n\nDIN DKE Spec 99100 chapter reference: 6.7.3.4"
-                            }
+                            dict_={r"en": "Power fade\n\nDIN DKE Spec 99100 chapter reference: 6.7.3.4"}
                         )
 
                     if qualifier is None:
@@ -2533,9 +2202,7 @@ class TechnicalData(aas.Submodel):
                 def __init__(
                     self,
                     value: xsd.Float,
-                    id_short: Optional[
-                        str
-                    ] = r"RatioNominalBatteryPowerAndBatteryEnergy",
+                    id_short: Optional[str] = r"RatioNominalBatteryPowerAndBatteryEnergy",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2553,9 +2220,7 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2594,9 +2259,7 @@ class TechnicalData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2609,18 +2272,11 @@ class TechnicalData(aas.Submodel):
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
                                 aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-ABL821#001",
-                                        ),
-                                    ),
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL821#001"),),
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2655,9 +2311,7 @@ class TechnicalData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2670,18 +2324,11 @@ class TechnicalData(aas.Submodel):
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
                                 aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-ABL853#001",
-                                        ),
-                                    ),
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL853#001"),),
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2725,9 +2372,7 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2745,19 +2390,13 @@ class TechnicalData(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if atSoc is not None and not isinstance(
-                            atSoc, aas.SubmodelElement
-                        ):
+                        if atSoc is not None and not isinstance(atSoc, aas.SubmodelElement):
                             atSoc = self.AtSoc(atSoc)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if powerCapabilityAt is not None and not isinstance(
-                            powerCapabilityAt, aas.SubmodelElement
-                        ):
-                            powerCapabilityAt = self.PowerCapabilityAt(
-                                powerCapabilityAt
-                            )
+                        if powerCapabilityAt is not None and not isinstance(powerCapabilityAt, aas.SubmodelElement):
+                            powerCapabilityAt = self.PowerCapabilityAt(powerCapabilityAt)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -2772,9 +2411,7 @@ class TechnicalData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2791,14 +2428,10 @@ class TechnicalData(aas.Submodel):
 
                 def __init__(
                     self,
-                    originalpowercapability_items: Iterable[
-                        Originalpowercapability_item
-                    ],
+                    originalpowercapability_items: Iterable[Originalpowercapability_item],
                     id_short: Optional[str] = r"OriginalPowerCapability",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2813,12 +2446,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABL853#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL853#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -2834,9 +2462,7 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2847,9 +2473,7 @@ class TechnicalData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(originalpowercapability_items, str):
-                        raise TypeError(
-                            "originalpowercapability_items takes several elements, got a str"
-                        )
+                        raise TypeError("originalpowercapability_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -2861,9 +2485,7 @@ class TechnicalData(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2930,15 +2552,9 @@ class TechnicalData(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -2952,13 +2568,10 @@ class TechnicalData(aas.Submodel):
 
             def __init__(
                 self,
-                maximumPermittedBatteryPower: Union[
-                    xsd.Float, MaximumPermittedBatteryPower
-                ],
+                maximumPermittedBatteryPower: Union[xsd.Float, MaximumPermittedBatteryPower],
                 powerFade: Union[xsd.Float, PowerFade],
                 originalPowerCapability: Union[
-                    Iterable[OriginalPowerCapability.Originalpowercapability_item],
-                    OriginalPowerCapability,
+                    Iterable[OriginalPowerCapability.Originalpowercapability_item], OriginalPowerCapability
                 ],
                 ratioNominalBatteryPowerAndBatteryEnergy: Optional[
                     Union[xsd.Float, RatioNominalBatteryPowerAndBatteryEnergy]
@@ -2982,16 +2595,13 @@ class TechnicalData(aas.Submodel):
                     aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -3012,45 +2622,30 @@ class TechnicalData(aas.Submodel):
                 if maximumPermittedBatteryPower is not None and not isinstance(
                     maximumPermittedBatteryPower, aas.SubmodelElement
                 ):
-                    maximumPermittedBatteryPower = self.MaximumPermittedBatteryPower(
-                        maximumPermittedBatteryPower
-                    )
+                    maximumPermittedBatteryPower = self.MaximumPermittedBatteryPower(maximumPermittedBatteryPower)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if powerFade is not None and not isinstance(
-                    powerFade, aas.SubmodelElement
-                ):
+                if powerFade is not None and not isinstance(powerFade, aas.SubmodelElement):
                     powerFade = self.PowerFade(powerFade)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    ratioNominalBatteryPowerAndBatteryEnergy is not None
-                    and not isinstance(
-                        ratioNominalBatteryPowerAndBatteryEnergy, aas.SubmodelElement
-                    )
+                if ratioNominalBatteryPowerAndBatteryEnergy is not None and not isinstance(
+                    ratioNominalBatteryPowerAndBatteryEnergy, aas.SubmodelElement
                 ):
-                    ratioNominalBatteryPowerAndBatteryEnergy = (
-                        self.RatioNominalBatteryPowerAndBatteryEnergy(
-                            ratioNominalBatteryPowerAndBatteryEnergy
-                        )
+                    ratioNominalBatteryPowerAndBatteryEnergy = self.RatioNominalBatteryPowerAndBatteryEnergy(
+                        ratioNominalBatteryPowerAndBatteryEnergy
                     )
 
                 # A str would be split into its characters
                 if isinstance(originalPowerCapability, str):
-                    raise TypeError(
-                        "originalPowerCapability takes several elements, got a str"
-                    )
+                    raise TypeError("originalPowerCapability takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if originalPowerCapability is not None and not isinstance(
-                    originalPowerCapability, aas.SubmodelElement
-                ):
-                    originalPowerCapability = self.OriginalPowerCapability(
-                        originalPowerCapability
-                    )
+                if originalPowerCapability is not None and not isinstance(originalPowerCapability, aas.SubmodelElement):
+                    originalPowerCapability = self.OriginalPowerCapability(originalPowerCapability)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -3070,9 +2665,7 @@ class TechnicalData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3094,21 +2687,14 @@ class TechnicalData(aas.Submodel):
                 def __init__(
                     self,
                     value: xsd.Float,
-                    id_short: Optional[
-                        str
-                    ] = r"TemperatureRangeIdleState_LowerBoundary",
+                    id_short: Optional[str] = r"TemperatureRangeIdleState_LowerBoundary",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL842#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL842#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -3125,9 +2711,7 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -3163,21 +2747,14 @@ class TechnicalData(aas.Submodel):
                 def __init__(
                     self,
                     value: xsd.Float,
-                    id_short: Optional[
-                        str
-                    ] = r"TemperatureRangeIdleState_UpperBoundary",
+                    id_short: Optional[str] = r"TemperatureRangeIdleState_UpperBoundary",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL871#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL871#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -3194,9 +2771,7 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -3229,12 +2804,8 @@ class TechnicalData(aas.Submodel):
 
             def __init__(
                 self,
-                temperatureRangeIdleState_LowerBoundary: Union[
-                    xsd.Float, TemperatureRangeIdleState_LowerBoundary
-                ],
-                temperatureRangeIdleState_UpperBoundary: Union[
-                    xsd.Float, TemperatureRangeIdleState_UpperBoundary
-                ],
+                temperatureRangeIdleState_LowerBoundary: Union[xsd.Float, TemperatureRangeIdleState_LowerBoundary],
+                temperatureRangeIdleState_UpperBoundary: Union[xsd.Float, TemperatureRangeIdleState_UpperBoundary],
                 id_short: Optional[str] = r"Temperature",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -3254,16 +2825,13 @@ class TechnicalData(aas.Submodel):
                     aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -3281,38 +2849,25 @@ class TechnicalData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    temperatureRangeIdleState_LowerBoundary is not None
-                    and not isinstance(
-                        temperatureRangeIdleState_LowerBoundary, aas.SubmodelElement
-                    )
+                if temperatureRangeIdleState_LowerBoundary is not None and not isinstance(
+                    temperatureRangeIdleState_LowerBoundary, aas.SubmodelElement
                 ):
-                    temperatureRangeIdleState_LowerBoundary = (
-                        self.TemperatureRangeIdleState_LowerBoundary(
-                            temperatureRangeIdleState_LowerBoundary
-                        )
+                    temperatureRangeIdleState_LowerBoundary = self.TemperatureRangeIdleState_LowerBoundary(
+                        temperatureRangeIdleState_LowerBoundary
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    temperatureRangeIdleState_UpperBoundary is not None
-                    and not isinstance(
-                        temperatureRangeIdleState_UpperBoundary, aas.SubmodelElement
-                    )
+                if temperatureRangeIdleState_UpperBoundary is not None and not isinstance(
+                    temperatureRangeIdleState_UpperBoundary, aas.SubmodelElement
                 ):
-                    temperatureRangeIdleState_UpperBoundary = (
-                        self.TemperatureRangeIdleState_UpperBoundary(
-                            temperatureRangeIdleState_UpperBoundary
-                        )
+                    temperatureRangeIdleState_UpperBoundary = self.TemperatureRangeIdleState_UpperBoundary(
+                        temperatureRangeIdleState_UpperBoundary
                     )
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    temperatureRangeIdleState_LowerBoundary,
-                    temperatureRangeIdleState_UpperBoundary,
-                ]:
+                for se_arg in [temperatureRangeIdleState_LowerBoundary, temperatureRangeIdleState_UpperBoundary]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -3323,9 +2878,7 @@ class TechnicalData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3365,9 +2918,7 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3415,18 +2966,11 @@ class TechnicalData(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABL830#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL830#001"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3462,12 +3006,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"0173-1#02-ABL838#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABL838#002"),),
                         type_=aas.ConceptDescription,
                         referred_semantic_id=None,
                     ),
@@ -3484,15 +3023,11 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"capacity threshold for exhaustion"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"capacity threshold for exhaustion"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -3545,9 +3080,7 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -3580,16 +3113,10 @@ class TechnicalData(aas.Submodel):
 
             def __init__(
                 self,
-                expectedLifetimeInCalendarYears: Union[
-                    xsd.UnsignedInt, ExpectedLifetimeInCalendarYears
-                ],
+                expectedLifetimeInCalendarYears: Union[xsd.UnsignedInt, ExpectedLifetimeInCalendarYears],
                 expectedNumberOfCycles: Union[xsd.UnsignedInt, ExpectedNumberOfCycles],
-                cRateOfRelevantCycleLifeTest: Union[
-                    xsd.Decimal, CRateOfRelevantCycleLifeTest
-                ],
-                capacityThresholdExhaustion: Optional[
-                    Union[xsd.Float, CapacityThresholdExhaustion]
-                ] = None,
+                cRateOfRelevantCycleLifeTest: Union[xsd.Decimal, CRateOfRelevantCycleLifeTest],
+                capacityThresholdExhaustion: Optional[Union[xsd.Float, CapacityThresholdExhaustion]] = None,
                 id_short: Optional[str] = r"Lifetime",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -3609,16 +3136,13 @@ class TechnicalData(aas.Submodel):
                     aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -3639,38 +3163,28 @@ class TechnicalData(aas.Submodel):
                 if expectedLifetimeInCalendarYears is not None and not isinstance(
                     expectedLifetimeInCalendarYears, aas.SubmodelElement
                 ):
-                    expectedLifetimeInCalendarYears = (
-                        self.ExpectedLifetimeInCalendarYears(
-                            expectedLifetimeInCalendarYears
-                        )
+                    expectedLifetimeInCalendarYears = self.ExpectedLifetimeInCalendarYears(
+                        expectedLifetimeInCalendarYears
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if expectedNumberOfCycles is not None and not isinstance(
-                    expectedNumberOfCycles, aas.SubmodelElement
-                ):
-                    expectedNumberOfCycles = self.ExpectedNumberOfCycles(
-                        expectedNumberOfCycles
-                    )
+                if expectedNumberOfCycles is not None and not isinstance(expectedNumberOfCycles, aas.SubmodelElement):
+                    expectedNumberOfCycles = self.ExpectedNumberOfCycles(expectedNumberOfCycles)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if capacityThresholdExhaustion is not None and not isinstance(
                     capacityThresholdExhaustion, aas.SubmodelElement
                 ):
-                    capacityThresholdExhaustion = self.CapacityThresholdExhaustion(
-                        capacityThresholdExhaustion
-                    )
+                    capacityThresholdExhaustion = self.CapacityThresholdExhaustion(capacityThresholdExhaustion)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if cRateOfRelevantCycleLifeTest is not None and not isinstance(
                     cRateOfRelevantCycleLifeTest, aas.SubmodelElement
                 ):
-                    cRateOfRelevantCycleLifeTest = self.CRateOfRelevantCycleLifeTest(
-                        cRateOfRelevantCycleLifeTest
-                    )
+                    cRateOfRelevantCycleLifeTest = self.CRateOfRelevantCycleLifeTest(cRateOfRelevantCycleLifeTest)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -3690,9 +3204,7 @@ class TechnicalData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3720,12 +3232,7 @@ class TechnicalData(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABK163#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK163#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -3750,9 +3257,7 @@ class TechnicalData(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -3781,9 +3286,7 @@ class TechnicalData(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3822,12 +3325,7 @@ class TechnicalData(aas.Submodel):
         extension: Iterable[aas.Extension] = (),
         supplemental_semantic_id: Iterable[aas.Reference] = (
             aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#01-AHX837#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AHX837#002"),),
                 referred_semantic_id=None,
             ),
             aas.ExternalReference(
@@ -3847,9 +3345,7 @@ class TechnicalData(aas.Submodel):
             display_name = aas.MultiLanguageNameType(dict_={r"en": r"technical data"})
 
         if description is None:
-            description = aas.MultiLanguageTextType(
-                dict_={r"en": r"Technical data of the battery."}
-            )
+            description = aas.MultiLanguageTextType(dict_={r"en": r"Technical data of the battery."})
 
         if administration is None:
             administration = aas.AdministrativeInformation(
@@ -3879,9 +3375,7 @@ class TechnicalData(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

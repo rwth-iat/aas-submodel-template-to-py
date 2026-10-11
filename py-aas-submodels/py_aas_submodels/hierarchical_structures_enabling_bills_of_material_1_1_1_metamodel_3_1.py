@@ -14,9 +14,7 @@ class HierarchicalStructures(aas.Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"Node",
-                    entity_type: Optional[
-                        aas.EntityType
-                    ] = aas.EntityType.SELF_MANAGED_ENTITY,
+                    entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
                     global_asset_id: Optional[
                         str
                     ] = r"https://admin-shell.io/idta/HierarchicalStructures/EntryNode/1/0",
@@ -36,9 +34,7 @@ class HierarchicalStructures(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -67,9 +63,7 @@ class HierarchicalStructures(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         statement=embedded_submodel_elements,
@@ -125,16 +119,12 @@ class HierarchicalStructures(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference between two Entities in the same Submodel or across Submodels."
-                            }
+                            dict_={r"en": r"Reference between two Entities in the same Submodel or across Submodels."}
                         )
 
                     if qualifier is None:
@@ -195,9 +185,7 @@ class HierarchicalStructures(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -265,9 +253,7 @@ class HierarchicalStructures(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -320,16 +306,12 @@ class HierarchicalStructures(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"To be used if bulk components are referenced, e.g., a 10x M4x30 screw."
-                            }
+                            dict_={r"en": r"To be used if bulk components are referenced, e.g., a 10x M4x30 screw."}
                         )
 
                     if qualifier is None:
@@ -361,12 +343,8 @@ class HierarchicalStructures(aas.Submodel):
                 hasPart: Optional[Iterable[HasPart]] = None,
                 bulkCount: Optional[Union[xsd.UnsignedLong, BulkCount]] = None,
                 id_short: Optional[str] = r"Node",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[
-                    str
-                ] = r"https://admin-shell.io/idta/HierarchicalStructures/EntryNode/1/0",
+                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
+                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/HierarchicalStructures/EntryNode/1/0",
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -383,9 +361,7 @@ class HierarchicalStructures(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -419,9 +395,7 @@ class HierarchicalStructures(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if bulkCount is not None and not isinstance(
-                    bulkCount, aas.SubmodelElement
-                ):
+                if bulkCount is not None and not isinstance(bulkCount, aas.SubmodelElement):
                     bulkCount = self.BulkCount(bulkCount)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -437,9 +411,7 @@ class HierarchicalStructures(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -495,16 +467,12 @@ class HierarchicalStructures(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Reference between two Entities in the same Submodel or across Submodels."
-                        }
+                        dict_={r"en": r"Reference between two Entities in the same Submodel or across Submodels."}
                     )
 
                 if qualifier is None:
@@ -565,9 +533,7 @@ class HierarchicalStructures(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -635,9 +601,7 @@ class HierarchicalStructures(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -675,9 +639,7 @@ class HierarchicalStructures(aas.Submodel):
             hasPart: Optional[Iterable[HasPart]] = None,
             id_short: Optional[str] = r"EntryNode",
             entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
-            global_asset_id: Optional[
-                str
-            ] = r"https://admin-shell.io/idta/HierarchicalStructures/EntryNode/1/0",
+            global_asset_id: Optional[str] = r"https://admin-shell.io/idta/HierarchicalStructures/EntryNode/1/0",
             specific_asset_id: Iterable[aas.SpecificAssetId] = (),
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -694,9 +656,7 @@ class HierarchicalStructures(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -741,9 +701,7 @@ class HierarchicalStructures(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 statement=embedded_submodel_elements,
@@ -786,9 +744,7 @@ class HierarchicalStructures(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -882,9 +838,7 @@ class HierarchicalStructures(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

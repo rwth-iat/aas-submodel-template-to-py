@@ -33,15 +33,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Instance ID"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Instance ID"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -93,20 +89,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Comment"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Free text to comment the EFDM object."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Free text to comment the EFDM object."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -153,20 +143,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Version Number"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Version Number"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"the EFDM version (e.g. 0.3)"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"the EFDM version (e.g. 0.3)"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -212,15 +196,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Schema Link"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Schema Link"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -268,15 +248,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"EFDM Version"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"EFDM Version"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -293,16 +269,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if versionNumber is not None and not isinstance(
-                        versionNumber, aas.SubmodelElement
-                    ):
+                    if versionNumber is not None and not isinstance(versionNumber, aas.SubmodelElement):
                         versionNumber = self.VersionNumber(versionNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if schemaLink is not None and not isinstance(
-                        schemaLink, aas.SubmodelElement
-                    ):
+                    if schemaLink is not None and not isinstance(schemaLink, aas.SubmodelElement):
                         schemaLink = self.SchemaLink(schemaLink)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -318,9 +290,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -360,21 +330,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Origin ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Origin ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"UUID of the creating service and point in time of creation"
-                                }
+                                dict_={r"en": r"UUID of the creating service and point in time of creation"}
                             )
 
                         if qualifier is None:
@@ -410,32 +374,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                    value=r"0173-1#02-ABF198#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),),
                             type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Timestamp"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"timestamp of the creating service"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"timestamp of the creating service"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -478,15 +431,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Origin"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Origin"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -503,16 +452,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if originId is not None and not isinstance(
-                        originId, aas.SubmodelElement
-                    ):
+                    if originId is not None and not isinstance(originId, aas.SubmodelElement):
                         originId = self.OriginId(originId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if timestamp is not None and not isinstance(
-                        timestamp, aas.SubmodelElement
-                    ):
+                    if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -528,9 +473,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -570,21 +513,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Modification ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modification ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"UUID of the service instance that last processed this object "
-                                }
+                                dict_={r"en": r"UUID of the service instance that last processed this object "}
                             )
 
                         if qualifier is None:
@@ -620,27 +557,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                    value=r"0173-1#02-ABF198#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),),
                             type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Timestamp"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -690,15 +618,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modification"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modification"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -715,16 +639,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if modificationId is not None and not isinstance(
-                        modificationId, aas.SubmodelElement
-                    ):
+                    if modificationId is not None and not isinstance(modificationId, aas.SubmodelElement):
                         modificationId = self.ModificationId(modificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if timestamp is not None and not isinstance(
-                        timestamp, aas.SubmodelElement
-                    ):
+                    if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -740,9 +660,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -781,9 +699,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -804,9 +720,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if instanceId is not None and not isinstance(
-                    instanceId, aas.SubmodelElement
-                ):
+                if instanceId is not None and not isinstance(instanceId, aas.SubmodelElement):
                     instanceId = self.InstanceId(instanceId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -827,9 +741,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -871,15 +783,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Flexible Load Measure ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load Measure ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -933,15 +841,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Status"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Status"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -994,15 +898,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Flexible Load ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -1055,15 +955,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Reward"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Reward"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -1105,19 +1001,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"power",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ModelReference(
+                                semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                            value=r"0173-1#02-AAZ820#001",
-                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-AAZ820#001"),
                                     ),
                                     type_=aas.ConceptDescription,
                                     referred_semantic_id=None,
@@ -1125,15 +1014,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Power"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -1171,19 +1056,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"timestamp",
                                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ModelReference(
+                                semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                            value=r"0173-1#02-ABF198#001",
-                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),
                                     ),
                                     type_=aas.ConceptDescription,
                                     referred_semantic_id=None,
@@ -1191,15 +1069,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Timestamp"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -1235,9 +1109,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1249,15 +1121,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Load Change Profile"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Load Change Profile"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -1274,16 +1142,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if power is not None and not isinstance(
-                                power, aas.SubmodelElement
-                            ):
+                            if power is not None and not isinstance(power, aas.SubmodelElement):
                                 power = self.Power(power)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if timestamp is not None and not isinstance(
-                                timestamp, aas.SubmodelElement
-                            ):
+                            if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                                 timestamp = self.Timestamp(timestamp)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -1339,21 +1203,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Load Change Profiles"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Load Change Profiles"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"loadChangeProfiles may contain multiple loadChangeProfile. "
-                                }
+                                dict_={r"en": r"loadChangeProfiles may contain multiple loadChangeProfile. "}
                             )
 
                         if qualifier is None:
@@ -1364,9 +1222,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(loadchangeprofiles_items, str):
-                            raise TypeError(
-                                "loadchangeprofiles_items takes several elements, got a str"
-                            )
+                            raise TypeError("loadchangeprofiles_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -1378,9 +1234,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1447,15 +1301,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -1472,10 +1320,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     flexibleLoadMeasureId: Union[str, FlexibleLoadMeasureId],
                     status: Union[str, Status],
                     flexibleLoadId: Union[str, FlexibleLoadId],
-                    loadChangeProfiles: Union[
-                        Iterable[LoadChangeProfiles.Loadchangeprofiles_item],
-                        LoadChangeProfiles,
-                    ],
+                    loadChangeProfiles: Union[Iterable[LoadChangeProfiles.Loadchangeprofiles_item], LoadChangeProfiles],
                     reward: Optional[Union[str, Reward]] = None,
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -1493,15 +1338,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Flexible Load Measure"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load Measure"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1518,56 +1359,36 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if flexibleLoadMeasureId is not None and not isinstance(
-                        flexibleLoadMeasureId, aas.SubmodelElement
-                    ):
-                        flexibleLoadMeasureId = self.FlexibleLoadMeasureId(
-                            flexibleLoadMeasureId
-                        )
+                    if flexibleLoadMeasureId is not None and not isinstance(flexibleLoadMeasureId, aas.SubmodelElement):
+                        flexibleLoadMeasureId = self.FlexibleLoadMeasureId(flexibleLoadMeasureId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if status is not None and not isinstance(
-                        status, aas.SubmodelElement
-                    ):
+                    if status is not None and not isinstance(status, aas.SubmodelElement):
                         status = self.Status(status)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if flexibleLoadId is not None and not isinstance(
-                        flexibleLoadId, aas.SubmodelElement
-                    ):
+                    if flexibleLoadId is not None and not isinstance(flexibleLoadId, aas.SubmodelElement):
                         flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if reward is not None and not isinstance(
-                        reward, aas.SubmodelElement
-                    ):
+                    if reward is not None and not isinstance(reward, aas.SubmodelElement):
                         reward = self.Reward(reward)
 
                     # A str would be split into its characters
                     if isinstance(loadChangeProfiles, str):
-                        raise TypeError(
-                            "loadChangeProfiles takes several elements, got a str"
-                        )
+                        raise TypeError("loadChangeProfiles takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if loadChangeProfiles is not None and not isinstance(
-                        loadChangeProfiles, aas.SubmodelElement
-                    ):
+                    if loadChangeProfiles is not None and not isinstance(loadChangeProfiles, aas.SubmodelElement):
                         loadChangeProfiles = self.LoadChangeProfiles(loadChangeProfiles)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        flexibleLoadMeasureId,
-                        status,
-                        flexibleLoadId,
-                        reward,
-                        loadChangeProfiles,
-                    ]:
+                    for se_arg in [flexibleLoadMeasureId, status, flexibleLoadId, reward, loadChangeProfiles]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -1578,9 +1399,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1618,21 +1437,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Flexible Load Measures"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load Measures"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"flexibleLoadMeasuresmay contain multiple flexibleLoadMeasure. "
-                        }
+                        dict_={r"en": r"flexibleLoadMeasuresmay contain multiple flexibleLoadMeasure. "}
                     )
 
                 if qualifier is None:
@@ -1643,9 +1456,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(flexibleloadmeasures_items, str):
-                    raise TypeError(
-                        "flexibleloadmeasures_items takes several elements, got a str"
-                    )
+                    raise TypeError("flexibleloadmeasures_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1657,9 +1468,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1726,15 +1535,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -1749,10 +1552,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
         def __init__(
             self,
             metadata: Metadata,
-            flexibleLoadMeasures: Union[
-                Iterable[FlexibleLoadMeasures.Flexibleloadmeasures_item],
-                FlexibleLoadMeasures,
-            ],
+            flexibleLoadMeasures: Union[Iterable[FlexibleLoadMeasures.Flexibleloadmeasures_item], FlexibleLoadMeasures],
             id_short: Optional[str] = r"flexibleLoadMeasuresPackage",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -1769,15 +1569,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Flexible Load Measures Package"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load Measures Package"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -1794,15 +1590,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(flexibleLoadMeasures, str):
-                raise TypeError(
-                    "flexibleLoadMeasures takes several elements, got a str"
-                )
+                raise TypeError("flexibleLoadMeasures takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if flexibleLoadMeasures is not None and not isinstance(
-                flexibleLoadMeasures, aas.SubmodelElement
-            ):
+            if flexibleLoadMeasures is not None and not isinstance(flexibleLoadMeasures, aas.SubmodelElement):
                 flexibleLoadMeasures = self.FlexibleLoadMeasures(flexibleLoadMeasures)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1818,9 +1610,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1863,15 +1653,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Instance ID"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Instance ID"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1923,20 +1709,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Comment"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Free text to comment the EFDM object."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Free text to comment the EFDM object."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1983,20 +1763,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Version Number"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Version Number"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"the EFDM version (e.g. 0.3)"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"the EFDM version (e.g. 0.3)"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2042,15 +1816,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Schema Link"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Schema Link"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -2098,15 +1868,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"EFDM Version"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"EFDM Version"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -2123,16 +1889,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if versionNumber is not None and not isinstance(
-                        versionNumber, aas.SubmodelElement
-                    ):
+                    if versionNumber is not None and not isinstance(versionNumber, aas.SubmodelElement):
                         versionNumber = self.VersionNumber(versionNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if schemaLink is not None and not isinstance(
-                        schemaLink, aas.SubmodelElement
-                    ):
+                    if schemaLink is not None and not isinstance(schemaLink, aas.SubmodelElement):
                         schemaLink = self.SchemaLink(schemaLink)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2148,9 +1910,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2190,21 +1950,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Origin ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Origin ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"UUID of the creating service and point in time of creation"
-                                }
+                                dict_={r"en": r"UUID of the creating service and point in time of creation"}
                             )
 
                         if qualifier is None:
@@ -2240,32 +1994,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                    value=r"0173-1#02-ABF198#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),),
                             type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Timestamp"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"timestamp of the creating service"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"timestamp of the creating service"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2308,15 +2051,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Origin"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Origin"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -2333,16 +2072,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if originId is not None and not isinstance(
-                        originId, aas.SubmodelElement
-                    ):
+                    if originId is not None and not isinstance(originId, aas.SubmodelElement):
                         originId = self.OriginId(originId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if timestamp is not None and not isinstance(
-                        timestamp, aas.SubmodelElement
-                    ):
+                    if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2358,9 +2093,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2400,21 +2133,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Modification ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modification ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"UUID of the service instance that last processed this object "
-                                }
+                                dict_={r"en": r"UUID of the service instance that last processed this object "}
                             )
 
                         if qualifier is None:
@@ -2450,32 +2177,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                    value=r"0173-1#02-ABF198#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),),
                             type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Timestamp"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"timestamp of of last processing"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"timestamp of of last processing"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2518,15 +2234,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modification"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modification"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -2543,16 +2255,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if modificationId is not None and not isinstance(
-                        modificationId, aas.SubmodelElement
-                    ):
+                    if modificationId is not None and not isinstance(modificationId, aas.SubmodelElement):
                         modificationId = self.ModificationId(modificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if timestamp is not None and not isinstance(
-                        timestamp, aas.SubmodelElement
-                    ):
+                    if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2568,9 +2276,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2609,9 +2315,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2632,9 +2336,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if instanceId is not None and not isinstance(
-                    instanceId, aas.SubmodelElement
-                ):
+                if instanceId is not None and not isinstance(instanceId, aas.SubmodelElement):
                     instanceId = self.InstanceId(instanceId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -2655,9 +2357,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2698,15 +2398,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Status"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Status"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -2759,15 +2455,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modelling Scope"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modelling Scope"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -2822,15 +2514,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Externally Tradeable"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Externally Tradeable"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -2883,15 +2571,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Auto Tradeable"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Auto Tradeable"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -2941,15 +2625,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Trading"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Trading"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -2966,18 +2646,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if externallyTradeable is not None and not isinstance(
-                        externallyTradeable, aas.SubmodelElement
-                    ):
-                        externallyTradeable = self.ExternallyTradeable(
-                            externallyTradeable
-                        )
+                    if externallyTradeable is not None and not isinstance(externallyTradeable, aas.SubmodelElement):
+                        externallyTradeable = self.ExternallyTradeable(externallyTradeable)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if autoTradeable is not None and not isinstance(
-                        autoTradeable, aas.SubmodelElement
-                    ):
+                    if autoTradeable is not None and not isinstance(autoTradeable, aas.SubmodelElement):
                         autoTradeable = self.AutoTradeable(autoTradeable)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2993,9 +2667,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3031,21 +2703,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Utilization Context"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Utilization Context"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Containing metainformation, describing the model status and scope"
-                        }
+                        dict_={r"en": r"Containing metainformation, describing the model status and scope"}
                     )
 
                 if qualifier is None:
@@ -3061,9 +2727,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if modellingScope is not None and not isinstance(
-                    modellingScope, aas.SubmodelElement
-                ):
+                if modellingScope is not None and not isinstance(modellingScope, aas.SubmodelElement):
                     modellingScope = self.ModellingScope(modellingScope)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3079,9 +2743,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3123,15 +2785,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Flexible Load ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -3173,26 +2831,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAV535#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV535#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Reaction Duration"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Reaction Duration"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -3235,29 +2884,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-ABF198#001",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABF198#001"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"From"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"From"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -3298,29 +2936,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-ABF198#001",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABF198#001"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Until"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Until"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -3361,9 +2988,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3375,15 +3000,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Temporal Type"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Temporal Type"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -3434,15 +3055,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Validity"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Validity"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -3459,23 +3076,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if from_ is not None and not isinstance(
-                            from_, aas.SubmodelElement
-                        ):
+                        if from_ is not None and not isinstance(from_, aas.SubmodelElement):
                             from_ = self.From(from_)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if until is not None and not isinstance(
-                            until, aas.SubmodelElement
-                        ):
+                        if until is not None and not isinstance(until, aas.SubmodelElement):
                             until = self.Until(until)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if temporalType is not None and not isinstance(
-                            temporalType, aas.SubmodelElement
-                        ):
+                        if temporalType is not None and not isinstance(temporalType, aas.SubmodelElement):
                             temporalType = self.TemporalType(temporalType)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -3491,9 +3102,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -3520,34 +3129,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 max: xsd.Float,
                                 id_short: Optional[str] = r"power",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAZ820#001",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ820#001"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Power"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -3585,34 +3181,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 max: xsd.Float,
                                 id_short: Optional[str] = r"duration",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAQ203#001",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ203#001"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Duration"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Duration"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -3650,34 +3233,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"referencePoint",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAZ820#001",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ820#001"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Reference Point"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Reference Point"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -3713,14 +3283,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"durationType",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ModelReference(
+                                semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
@@ -3733,15 +3299,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Duration Type"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Duration Type"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -3774,12 +3336,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         def __init__(
                             self,
                             power: Union[Tuple[xsd.Float, xsd.Float], Power],
-                            duration: Optional[
-                                Union[Tuple[xsd.Float, xsd.Float], Duration]
-                            ] = None,
-                            referencePoint: Optional[
-                                Union[xsd.Float, ReferencePoint]
-                            ] = None,
+                            duration: Optional[Union[Tuple[xsd.Float, xsd.Float], Duration]] = None,
+                            referencePoint: Optional[Union[xsd.Float, ReferencePoint]] = None,
                             durationType: Optional[Union[str, DurationType]] = None,
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3798,15 +3356,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Power State"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power State"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -3823,42 +3377,27 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if power is not None and not isinstance(
-                                power, aas.SubmodelElement
-                            ):
+                            if power is not None and not isinstance(power, aas.SubmodelElement):
                                 power = self.Power(min=power[0], max=power[1])
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if duration is not None and not isinstance(
-                                duration, aas.SubmodelElement
-                            ):
-                                duration = self.Duration(
-                                    min=duration[0], max=duration[1]
-                                )
+                            if duration is not None and not isinstance(duration, aas.SubmodelElement):
+                                duration = self.Duration(min=duration[0], max=duration[1])
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if referencePoint is not None and not isinstance(
-                                referencePoint, aas.SubmodelElement
-                            ):
+                            if referencePoint is not None and not isinstance(referencePoint, aas.SubmodelElement):
                                 referencePoint = self.ReferencePoint(referencePoint)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if durationType is not None and not isinstance(
-                                durationType, aas.SubmodelElement
-                            ):
+                            if durationType is not None and not isinstance(durationType, aas.SubmodelElement):
                                 durationType = self.DurationType(durationType)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in [
-                                power,
-                                duration,
-                                referencePoint,
-                                durationType,
-                            ]:
+                            for se_arg in [power, duration, referencePoint, durationType]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -3910,15 +3449,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Power States"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power States"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -3935,9 +3470,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(powerstates_items, str):
-                            raise TypeError(
-                                "powerstates_items takes several elements, got a str"
-                            )
+                            raise TypeError("powerstates_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -3949,9 +3482,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -4018,15 +3549,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -4061,15 +3586,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Usage Number"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Usage Number"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -4122,15 +3643,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Modulation Number"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modulation Number"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -4186,15 +3703,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Activation Gradient"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Activation Gradient"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -4248,15 +3761,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Modulation Gradient"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modulation Gradient"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -4310,15 +3819,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Deactivation Gradient"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Deactivation Gradient"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -4350,15 +3855,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     def __init__(
                         self,
-                        activationGradient: Optional[
-                            Union[Tuple[xsd.Float, xsd.Float], ActivationGradient]
-                        ] = None,
-                        modulationGradient: Optional[
-                            Union[Tuple[xsd.Float, xsd.Float], ModulationGradient]
-                        ] = None,
-                        deactivationGradient: Optional[
-                            Union[Tuple[xsd.Float, xsd.Float], DeactivationGradient]
-                        ] = None,
+                        activationGradient: Optional[Union[Tuple[xsd.Float, xsd.Float], ActivationGradient]] = None,
+                        modulationGradient: Optional[Union[Tuple[xsd.Float, xsd.Float], ModulationGradient]] = None,
+                        deactivationGradient: Optional[Union[Tuple[xsd.Float, xsd.Float], DeactivationGradient]] = None,
                         id_short: Optional[str] = r"powerGradients",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -4375,15 +3874,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Power Gradients"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power Gradients"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -4400,18 +3895,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if activationGradient is not None and not isinstance(
-                            activationGradient, aas.SubmodelElement
-                        ):
+                        if activationGradient is not None and not isinstance(activationGradient, aas.SubmodelElement):
                             activationGradient = self.ActivationGradient(
                                 min=activationGradient[0], max=activationGradient[1]
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if modulationGradient is not None and not isinstance(
-                            modulationGradient, aas.SubmodelElement
-                        ):
+                        if modulationGradient is not None and not isinstance(modulationGradient, aas.SubmodelElement):
                             modulationGradient = self.ModulationGradient(
                                 min=modulationGradient[0], max=modulationGradient[1]
                             )
@@ -4427,11 +3918,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            activationGradient,
-                            modulationGradient,
-                            deactivationGradient,
-                        ]:
+                        for se_arg in [activationGradient, modulationGradient, deactivationGradient]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -4442,9 +3929,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -4473,26 +3958,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAV535#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV535#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Regeneration Duration"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Regeneration Duration"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -4544,9 +4020,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4558,21 +4032,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Variable Cost"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Variable Cost"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Variable costs refer to the total amount of energy converted. "
-                                    }
+                                    dict_={r"en": r"Variable costs refer to the total amount of energy converted. "}
                                 )
 
                             if qualifier is None:
@@ -4607,9 +4075,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4621,21 +4087,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Cost Per Usage"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Cost Per Usage"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Usage costs are incurred per use of a Flexible-Load."
-                                    }
+                                    dict_={r"en": r"Usage costs are incurred per use of a Flexible-Load."}
                                 )
 
                             if qualifier is None:
@@ -4670,9 +4130,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4684,15 +4142,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Fixed Cost"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Fixed Cost"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -4743,15 +4197,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Flexible Load Costs"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load Costs"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -4768,23 +4218,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if variableCost is not None and not isinstance(
-                            variableCost, aas.SubmodelElement
-                        ):
+                        if variableCost is not None and not isinstance(variableCost, aas.SubmodelElement):
                             variableCost = self.VariableCost(variableCost)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if costPerUsage is not None and not isinstance(
-                            costPerUsage, aas.SubmodelElement
-                        ):
+                        if costPerUsage is not None and not isinstance(costPerUsage, aas.SubmodelElement):
                             costPerUsage = self.CostPerUsage(costPerUsage)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if fixedCost is not None and not isinstance(
-                            fixedCost, aas.SubmodelElement
-                        ):
+                        if fixedCost is not None and not isinstance(fixedCost, aas.SubmodelElement):
                             fixedCost = self.FixedCost(fixedCost)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -4800,9 +4244,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -4824,43 +4266,30 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         def __init__(
                             self,
                             value: xsd.DateTime,
-                            id_short: Optional[
-                                str
-                            ] = r"orderConfirmationDeadlineAbsolute",
+                            id_short: Optional[str] = r"orderConfirmationDeadlineAbsolute",
                             value_type: aas.DataTypeDefXsd = xsd.DateTime,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                        value=r"0173-1#02-ABF198#001",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),),
                                 type_=aas.ConceptDescription,
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Order Confirmation Deadline Absolute"
-                                    }
+                                    dict_={r"en": r"Order Confirmation Deadline Absolute"}
                                 )
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"absolute deadline"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"absolute deadline"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -4888,37 +4317,26 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[
-                                str
-                            ] = r"orderConfirmationDeadlineRelative",
+                            id_short: Optional[str] = r"orderConfirmationDeadlineRelative",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                        value=r"0173-1#02-AAQ203#001",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-AAQ203#001"),),
                                 type_=aas.ConceptDescription,
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Order Confirmation Deadline Relative"
-                                    }
+                                    dict_={r"en": r"Order Confirmation Deadline Relative"}
                                 )
 
                             if description is None:
@@ -4973,15 +4391,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Order Confirmation Deadline"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Order Confirmation Deadline"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -4998,38 +4412,25 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if (
-                            orderConfirmationDeadlineAbsolute is not None
-                            and not isinstance(
-                                orderConfirmationDeadlineAbsolute, aas.SubmodelElement
-                            )
+                        if orderConfirmationDeadlineAbsolute is not None and not isinstance(
+                            orderConfirmationDeadlineAbsolute, aas.SubmodelElement
                         ):
-                            orderConfirmationDeadlineAbsolute = (
-                                self.OrderConfirmationDeadlineAbsolute(
-                                    orderConfirmationDeadlineAbsolute
-                                )
+                            orderConfirmationDeadlineAbsolute = self.OrderConfirmationDeadlineAbsolute(
+                                orderConfirmationDeadlineAbsolute
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if (
-                            orderConfirmationDeadlineRelative is not None
-                            and not isinstance(
-                                orderConfirmationDeadlineRelative, aas.SubmodelElement
-                            )
+                        if orderConfirmationDeadlineRelative is not None and not isinstance(
+                            orderConfirmationDeadlineRelative, aas.SubmodelElement
                         ):
-                            orderConfirmationDeadlineRelative = (
-                                self.OrderConfirmationDeadlineRelative(
-                                    orderConfirmationDeadlineRelative
-                                )
+                            orderConfirmationDeadlineRelative = self.OrderConfirmationDeadlineRelative(
+                                orderConfirmationDeadlineRelative
                             )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            orderConfirmationDeadlineAbsolute,
-                            orderConfirmationDeadlineRelative,
-                        ]:
+                        for se_arg in [orderConfirmationDeadlineAbsolute, orderConfirmationDeadlineRelative]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -5040,9 +4441,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -5070,9 +4469,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5084,21 +4481,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Variable Price"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Variable Price"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Variable price refer to the total amount of energy converted. "
-                                    }
+                                    dict_={r"en": r"Variable price refer to the total amount of energy converted. "}
                                 )
 
                             if qualifier is None:
@@ -5133,9 +4524,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5147,21 +4536,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Price Per Usage"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Price Per Usage"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Usage price are incurred per use of a Flexible-Load."
-                                    }
+                                    dict_={r"en": r"Usage price are incurred per use of a Flexible-Load."}
                                 )
 
                             if qualifier is None:
@@ -5196,9 +4579,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5210,20 +4591,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Fixed Price"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Fixed Price"})
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Fixed price"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Fixed price"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -5267,15 +4642,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Prices"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Prices"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -5292,23 +4663,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if variablePrice is not None and not isinstance(
-                            variablePrice, aas.SubmodelElement
-                        ):
+                        if variablePrice is not None and not isinstance(variablePrice, aas.SubmodelElement):
                             variablePrice = self.VariablePrice(variablePrice)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if pricePerUsage is not None and not isinstance(
-                            pricePerUsage, aas.SubmodelElement
-                        ):
+                        if pricePerUsage is not None and not isinstance(pricePerUsage, aas.SubmodelElement):
                             pricePerUsage = self.PricePerUsage(pricePerUsage)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if fixedPrice is not None and not isinstance(
-                            fixedPrice, aas.SubmodelElement
-                        ):
+                        if fixedPrice is not None and not isinstance(fixedPrice, aas.SubmodelElement):
                             fixedPrice = self.FixedPrice(fixedPrice)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -5324,9 +4689,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -5354,9 +4717,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5368,15 +4729,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Meter Location"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Meter Location"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -5417,9 +4774,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5431,15 +4786,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Voltage Level"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Voltage Level"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -5489,15 +4840,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Location"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Location"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -5514,16 +4861,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if meterLocation is not None and not isinstance(
-                            meterLocation, aas.SubmodelElement
-                        ):
+                        if meterLocation is not None and not isinstance(meterLocation, aas.SubmodelElement):
                             meterLocation = self.MeterLocation(meterLocation)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if voltageLevel is not None and not isinstance(
-                            voltageLevel, aas.SubmodelElement
-                        ):
+                        if voltageLevel is not None and not isinstance(voltageLevel, aas.SubmodelElement):
                             voltageLevel = self.VoltageLevel(voltageLevel)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -5539,9 +4882,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -5559,32 +4900,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 def __init__(
                     self,
                     flexibleLoadId: Union[str, FlexibleLoadId],
-                    powerStates: Union[
-                        Iterable[PowerStates.Powerstates_item], PowerStates
-                    ],
-                    reactionDuration: Optional[
-                        Union[Tuple[xsd.Float, xsd.Float], ReactionDuration]
-                    ] = None,
+                    powerStates: Union[Iterable[PowerStates.Powerstates_item], PowerStates],
+                    reactionDuration: Optional[Union[Tuple[xsd.Float, xsd.Float], ReactionDuration]] = None,
                     validity: Optional[Validity] = None,
-                    usageNumber: Optional[
-                        Union[
-                            Tuple[xsd.PositiveInteger, xsd.PositiveInteger], UsageNumber
-                        ]
-                    ] = None,
+                    usageNumber: Optional[Union[Tuple[xsd.PositiveInteger, xsd.PositiveInteger], UsageNumber]] = None,
                     modulationNumber: Optional[
-                        Union[
-                            Tuple[xsd.NonNegativeInteger, xsd.NonNegativeInteger],
-                            ModulationNumber,
-                        ]
+                        Union[Tuple[xsd.NonNegativeInteger, xsd.NonNegativeInteger], ModulationNumber]
                     ] = None,
                     powerGradients: Optional[PowerGradients] = None,
-                    regenerationDuration: Optional[
-                        Union[xsd.Float, RegenerationDuration]
-                    ] = None,
+                    regenerationDuration: Optional[Union[xsd.Float, RegenerationDuration]] = None,
                     flexibleLoadCosts: Optional[FlexibleLoadCosts] = None,
-                    orderConfirmationDeadline: Optional[
-                        OrderConfirmationDeadline
-                    ] = None,
+                    orderConfirmationDeadline: Optional[OrderConfirmationDeadline] = None,
                     prices: Optional[Prices] = None,
                     location: Optional[Location] = None,
                     id_short: Optional[str] = None,
@@ -5604,15 +4930,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Flexible Load"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -5629,19 +4951,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if flexibleLoadId is not None and not isinstance(
-                        flexibleLoadId, aas.SubmodelElement
-                    ):
+                    if flexibleLoadId is not None and not isinstance(flexibleLoadId, aas.SubmodelElement):
                         flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if reactionDuration is not None and not isinstance(
-                        reactionDuration, aas.SubmodelElement
-                    ):
-                        reactionDuration = self.ReactionDuration(
-                            min=reactionDuration[0], max=reactionDuration[1]
-                        )
+                    if reactionDuration is not None and not isinstance(reactionDuration, aas.SubmodelElement):
+                        reactionDuration = self.ReactionDuration(min=reactionDuration[0], max=reactionDuration[1])
 
                     # A str would be split into its characters
                     if isinstance(powerStates, str):
@@ -5649,37 +4965,23 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if powerStates is not None and not isinstance(
-                        powerStates, aas.SubmodelElement
-                    ):
+                    if powerStates is not None and not isinstance(powerStates, aas.SubmodelElement):
                         powerStates = self.PowerStates(powerStates)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if usageNumber is not None and not isinstance(
-                        usageNumber, aas.SubmodelElement
-                    ):
-                        usageNumber = self.UsageNumber(
-                            min=usageNumber[0], max=usageNumber[1]
-                        )
+                    if usageNumber is not None and not isinstance(usageNumber, aas.SubmodelElement):
+                        usageNumber = self.UsageNumber(min=usageNumber[0], max=usageNumber[1])
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if modulationNumber is not None and not isinstance(
-                        modulationNumber, aas.SubmodelElement
-                    ):
-                        modulationNumber = self.ModulationNumber(
-                            min=modulationNumber[0], max=modulationNumber[1]
-                        )
+                    if modulationNumber is not None and not isinstance(modulationNumber, aas.SubmodelElement):
+                        modulationNumber = self.ModulationNumber(min=modulationNumber[0], max=modulationNumber[1])
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if regenerationDuration is not None and not isinstance(
-                        regenerationDuration, aas.SubmodelElement
-                    ):
-                        regenerationDuration = self.RegenerationDuration(
-                            regenerationDuration
-                        )
+                    if regenerationDuration is not None and not isinstance(regenerationDuration, aas.SubmodelElement):
+                        regenerationDuration = self.RegenerationDuration(regenerationDuration)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -5707,9 +5009,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5747,21 +5047,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Flexible Loads"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Loads"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"flexibleLoads may contain multiple flexibleLoad."
-                        }
+                        dict_={r"en": r"flexibleLoads may contain multiple flexibleLoad."}
                     )
 
                 if qualifier is None:
@@ -5772,9 +5066,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(flexibleloads_items, str):
-                    raise TypeError(
-                        "flexibleloads_items takes several elements, got a str"
-                    )
+                    raise TypeError("flexibleloads_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -5786,9 +5078,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5855,15 +5145,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -5902,15 +5186,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Storage ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Storage ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -5966,21 +5246,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Variable Cost"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Variable Cost"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Variable costs refer to the total amount of energy converted."
-                                    }
+                                    dict_={r"en": r"Variable costs refer to the total amount of energy converted."}
                                 )
 
                             if qualifier is None:
@@ -6028,21 +5302,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Cost Per Usage"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Cost Per Usage"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Usage costs arise per use of a storage tank."
-                                    }
+                                    dict_={r"en": r"Usage costs arise per use of a storage tank."}
                                 )
 
                             if qualifier is None:
@@ -6090,21 +5358,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Fixed Cost"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Fixed Cost"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Fixed costs arise from keeping a storage facility on standby."
-                                    }
+                                    dict_={r"en": r"Fixed costs arise from keeping a storage facility on standby."}
                                 )
 
                             if qualifier is None:
@@ -6149,15 +5411,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Storage Costs"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Storage Costs"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -6174,23 +5432,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if variableCost is not None and not isinstance(
-                            variableCost, aas.SubmodelElement
-                        ):
+                        if variableCost is not None and not isinstance(variableCost, aas.SubmodelElement):
                             variableCost = self.VariableCost(variableCost)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if costPerUsage is not None and not isinstance(
-                            costPerUsage, aas.SubmodelElement
-                        ):
+                        if costPerUsage is not None and not isinstance(costPerUsage, aas.SubmodelElement):
                             costPerUsage = self.CostPerUsage(costPerUsage)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if fixedCost is not None and not isinstance(
-                            fixedCost, aas.SubmodelElement
-                        ):
+                        if fixedCost is not None and not isinstance(fixedCost, aas.SubmodelElement):
                             fixedCost = self.FixedCost(fixedCost)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -6206,9 +5458,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -6246,15 +5496,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Usable Capacity"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Usable Capacity"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -6307,15 +5553,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Initial Energy Content"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Initial Energy Content"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -6368,15 +5610,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Target Energy Content"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Target Energy Content"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -6408,10 +5646,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class EnergyLoss(aas.Property):
 
-                    ALLOWED_RANGE = (
-                        xsd.from_xsd(r"0", xsd.UnsignedShort),
-                        xsd.from_xsd(r"100", xsd.UnsignedShort),
-                    )
+                    ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.UnsignedShort), xsd.from_xsd(r"100", xsd.UnsignedShort))
 
                     def __init__(
                         self,
@@ -6434,15 +5669,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Energy Loss"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Energy Loss"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -6493,14 +5724,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"flexibleLoadId",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6512,15 +5739,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Flexible Load ID"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load ID"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -6558,14 +5781,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"conversionEfficiency",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6577,21 +5796,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Conversion Efficiency"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Conversion Efficiency"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Energy conversion efficiency of the suppiler"
-                                        }
+                                        dict_={r"en": r"Energy conversion efficiency of the suppiler"}
                                     )
 
                                 if qualifier is None:
@@ -6618,16 +5831,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         def __init__(
                             self,
                             flexibleLoadId: Union[str, FlexibleLoadId],
-                            conversionEfficiency: Optional[
-                                Union[xsd.Float, ConversionEfficiency]
-                            ] = None,
+                            conversionEfficiency: Optional[Union[xsd.Float, ConversionEfficiency]] = None,
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6639,20 +5848,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Supplier"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Supplier"})
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Indicating a single supply"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Indicating a single supply"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -6662,9 +5865,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if flexibleLoadId is not None and not isinstance(
-                                flexibleLoadId, aas.SubmodelElement
-                            ):
+                            if flexibleLoadId is not None and not isinstance(flexibleLoadId, aas.SubmodelElement):
                                 flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                             # Build a submodel element if a raw value was passed in the argument
@@ -6672,9 +5873,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             if conversionEfficiency is not None and not isinstance(
                                 conversionEfficiency, aas.SubmodelElement
                             ):
-                                conversionEfficiency = self.ConversionEfficiency(
-                                    conversionEfficiency
-                                )
+                                conversionEfficiency = self.ConversionEfficiency(conversionEfficiency)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -6729,15 +5928,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Suppliers"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Suppliers"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -6754,9 +5949,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(suppliers_items, str):
-                            raise TypeError(
-                                "suppliers_items takes several elements, got a str"
-                            )
+                            raise TypeError("suppliers_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -6768,9 +5961,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -6837,15 +6028,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -6869,19 +6054,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"power",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ModelReference(
+                                semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                            value=r"0173-1#02-AAZ820#001",
-                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-AAZ820#001"),
                                     ),
                                     type_=aas.ConceptDescription,
                                     referred_semantic_id=None,
@@ -6889,20 +6067,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Power"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power"})
 
                                 if description is None:
-                                    description = aas.MultiLanguageTextType(
-                                        dict_={r"en": r"power drained"}
-                                    )
+                                    description = aas.MultiLanguageTextType(dict_={r"en": r"power drained"})
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -6933,19 +6105,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"timestamp",
                                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ModelReference(
+                                semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                            value=r"0173-1#02-ABF198#001",
-                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),
                                     ),
                                     type_=aas.ConceptDescription,
                                     referred_semantic_id=None,
@@ -6953,20 +6118,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Timestamp"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                                 if description is None:
-                                    description = aas.MultiLanguageTextType(
-                                        dict_={r"en": r"timestamp of power drain"}
-                                    )
+                                    description = aas.MultiLanguageTextType(dict_={r"en": r"timestamp of power drain"})
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -6997,9 +6156,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7011,21 +6168,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Drain"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Drain"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Indicating a single non-influenceable energy demand"
-                                    }
+                                    dict_={r"en": r"Indicating a single non-influenceable energy demand"}
                                 )
 
                             if qualifier is None:
@@ -7036,16 +6187,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if power is not None and not isinstance(
-                                power, aas.SubmodelElement
-                            ):
+                            if power is not None and not isinstance(power, aas.SubmodelElement):
                                 power = self.Power(power)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if timestamp is not None and not isinstance(
-                                timestamp, aas.SubmodelElement
-                            ):
+                            if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                                 timestamp = self.Timestamp(timestamp)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -7101,15 +6248,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Drains"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Drains"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -7126,9 +6269,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(drains_items, str):
-                            raise TypeError(
-                                "drains_items takes several elements, got a str"
-                            )
+                            raise TypeError("drains_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -7140,9 +6281,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -7209,15 +6348,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -7233,20 +6366,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     self,
                     storageId: Union[str, StorageId],
                     usableCapacity: Union[Tuple[xsd.Float, xsd.Float], UsableCapacity],
-                    initialEnergyContent: Union[
-                        Tuple[xsd.Float, xsd.Float], InitialEnergyContent
-                    ],
+                    initialEnergyContent: Union[Tuple[xsd.Float, xsd.Float], InitialEnergyContent],
                     storageCosts: Optional[StorageCosts] = None,
-                    targetEnergyContent: Optional[
-                        Union[Tuple[xsd.Float, xsd.Float], TargetEnergyContent]
-                    ] = None,
+                    targetEnergyContent: Optional[Union[Tuple[xsd.Float, xsd.Float], TargetEnergyContent]] = None,
                     energyLoss: Optional[Union[xsd.UnsignedShort, EnergyLoss]] = None,
-                    suppliers: Optional[
-                        Union[Iterable[Suppliers.Suppliers_item], Suppliers]
-                    ] = None,
-                    drains: Optional[
-                        Union[Iterable[Drains.Drains_item], Drains]
-                    ] = None,
+                    suppliers: Optional[Union[Iterable[Suppliers.Suppliers_item], Suppliers]] = None,
+                    drains: Optional[Union[Iterable[Drains.Drains_item], Drains]] = None,
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -7264,15 +6389,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Storage"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Storage"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -7289,43 +6410,31 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if storageId is not None and not isinstance(
-                        storageId, aas.SubmodelElement
-                    ):
+                    if storageId is not None and not isinstance(storageId, aas.SubmodelElement):
                         storageId = self.StorageId(storageId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if usableCapacity is not None and not isinstance(
-                        usableCapacity, aas.SubmodelElement
-                    ):
-                        usableCapacity = self.UsableCapacity(
-                            min=usableCapacity[0], max=usableCapacity[1]
-                        )
+                    if usableCapacity is not None and not isinstance(usableCapacity, aas.SubmodelElement):
+                        usableCapacity = self.UsableCapacity(min=usableCapacity[0], max=usableCapacity[1])
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if initialEnergyContent is not None and not isinstance(
-                        initialEnergyContent, aas.SubmodelElement
-                    ):
+                    if initialEnergyContent is not None and not isinstance(initialEnergyContent, aas.SubmodelElement):
                         initialEnergyContent = self.InitialEnergyContent(
                             min=initialEnergyContent[0], max=initialEnergyContent[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if targetEnergyContent is not None and not isinstance(
-                        targetEnergyContent, aas.SubmodelElement
-                    ):
+                    if targetEnergyContent is not None and not isinstance(targetEnergyContent, aas.SubmodelElement):
                         targetEnergyContent = self.TargetEnergyContent(
                             min=targetEnergyContent[0], max=targetEnergyContent[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if energyLoss is not None and not isinstance(
-                        energyLoss, aas.SubmodelElement
-                    ):
+                    if energyLoss is not None and not isinstance(energyLoss, aas.SubmodelElement):
                         energyLoss = self.EnergyLoss(energyLoss)
 
                     # A str would be split into its characters
@@ -7334,9 +6443,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if suppliers is not None and not isinstance(
-                        suppliers, aas.SubmodelElement
-                    ):
+                    if suppliers is not None and not isinstance(suppliers, aas.SubmodelElement):
                         suppliers = self.Suppliers(suppliers)
 
                     # A str would be split into its characters
@@ -7345,9 +6452,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if drains is not None and not isinstance(
-                        drains, aas.SubmodelElement
-                    ):
+                    if drains is not None and not isinstance(drains, aas.SubmodelElement):
                         drains = self.Drains(drains)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -7372,9 +6477,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -7413,9 +6516,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -7448,9 +6549,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -7517,15 +6616,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -7564,21 +6657,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Dependency ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Dependency ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The ID of a dependency for unique identification. "
-                                }
+                                dict_={r"en": r"The ID of a dependency for unique identification. "}
                             )
 
                         if qualifier is None:
@@ -7614,26 +6701,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAQ203#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ203#001"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Applicability Duration"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Applicability Duration"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -7675,14 +6753,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"comparator",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7694,21 +6768,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Comparator"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comparator"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"enum: equals, less, lessEqual, greater, greaterEqual."
-                                        }
+                                        dict_={r"en": r"enum: equals, less, lessEqual, greater, greaterEqual."}
                                     )
 
                                 if qualifier is None:
@@ -7740,14 +6808,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"formulaRight",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7759,15 +6823,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Formula Right"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Formula Right"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -7805,14 +6865,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"formulaLeft",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7824,15 +6880,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Formula Left"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Formula Left"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -7871,9 +6923,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7885,20 +6935,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Applicability Condition"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Applicability Condition"})
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Indicating a single condition"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Indicating a single condition"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -7908,23 +6952,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if comparator is not None and not isinstance(
-                                comparator, aas.SubmodelElement
-                            ):
+                            if comparator is not None and not isinstance(comparator, aas.SubmodelElement):
                                 comparator = self.Comparator(comparator)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if formulaRight is not None and not isinstance(
-                                formulaRight, aas.SubmodelElement
-                            ):
+                            if formulaRight is not None and not isinstance(formulaRight, aas.SubmodelElement):
                                 formulaRight = self.FormulaRight(formulaRight)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if formulaLeft is not None and not isinstance(
-                                formulaLeft, aas.SubmodelElement
-                            ):
+                            if formulaLeft is not None and not isinstance(formulaLeft, aas.SubmodelElement):
                                 formulaLeft = self.FormulaLeft(formulaLeft)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -7959,9 +6997,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     def __init__(
                         self,
-                        applicabilityconditions_items: Iterable[
-                            Applicabilityconditions_item
-                        ],
+                        applicabilityconditions_items: Iterable[Applicabilityconditions_item],
                         id_short: Optional[str] = r"applicabilityConditions",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -7982,15 +7018,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Applicability Conditions"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Applicability Conditions"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -8007,9 +7039,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(applicabilityconditions_items, str):
-                            raise TypeError(
-                                "applicabilityconditions_items takes several elements, got a str"
-                            )
+                            raise TypeError("applicabilityconditions_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -8021,9 +7051,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -8090,15 +7118,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -8136,15 +7158,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Temporal Type"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Temporal Type"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -8185,9 +7203,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8199,15 +7215,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Triggering Flexible Load ID"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Triggering Flexible Load ID"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -8257,15 +7269,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Triggering Flexible Load"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Triggering Flexible Load"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -8282,9 +7290,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if temporalType is not None and not isinstance(
-                            temporalType, aas.SubmodelElement
-                        ):
+                        if temporalType is not None and not isinstance(temporalType, aas.SubmodelElement):
                             temporalType = self.TemporalType(temporalType)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -8292,9 +7298,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if triggeringFlexibleLoadId is not None and not isinstance(
                             triggeringFlexibleLoadId, aas.SubmodelElement
                         ):
-                            triggeringFlexibleLoadId = self.TriggeringFlexibleLoadId(
-                                triggeringFlexibleLoadId
-                            )
+                            triggeringFlexibleLoadId = self.TriggeringFlexibleLoadId(triggeringFlexibleLoadId)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -8309,9 +7313,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -8352,15 +7354,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Temporal Type"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Temporal Type"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -8414,15 +7412,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Target Flexible Load ID"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Target Flexible Load ID"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -8464,20 +7458,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Target Flexible Load"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Target Flexible Load"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"target flexible load"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"target flexible load"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -8487,9 +7475,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if temporalType is not None and not isinstance(
-                            temporalType, aas.SubmodelElement
-                        ):
+                        if temporalType is not None and not isinstance(temporalType, aas.SubmodelElement):
                             temporalType = self.TemporalType(temporalType)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -8497,9 +7483,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if targetFlexibleLoadId is not None and not isinstance(
                             targetFlexibleLoadId, aas.SubmodelElement
                         ):
-                            targetFlexibleLoadId = self.TargetFlexibleLoadId(
-                                targetFlexibleLoadId
-                            )
+                            targetFlexibleLoadId = self.TargetFlexibleLoadId(targetFlexibleLoadId)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -8514,9 +7498,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -8554,15 +7536,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Logical Type"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Logical Type"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -8598,16 +7576,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     triggeringFlexibleLoad: TriggeringFlexibleLoad,
                     targetFlexibleLoad: TargetFlexibleLoad,
                     logicalType: Union[str, LogicalType],
-                    applicabilityDuration: Optional[
-                        Union[Tuple[xsd.Float, xsd.Float], ApplicabilityDuration]
-                    ] = None,
+                    applicabilityDuration: Optional[Union[Tuple[xsd.Float, xsd.Float], ApplicabilityDuration]] = None,
                     applicabilityConditions: Optional[
-                        Union[
-                            Iterable[
-                                ApplicabilityConditions.Applicabilityconditions_item
-                            ],
-                            ApplicabilityConditions,
-                        ]
+                        Union[Iterable[ApplicabilityConditions.Applicabilityconditions_item], ApplicabilityConditions]
                     ] = None,
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -8626,15 +7597,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Dependency"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Dependency"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -8651,40 +7618,30 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if dependencyId is not None and not isinstance(
-                        dependencyId, aas.SubmodelElement
-                    ):
+                    if dependencyId is not None and not isinstance(dependencyId, aas.SubmodelElement):
                         dependencyId = self.DependencyId(dependencyId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if applicabilityDuration is not None and not isinstance(
-                        applicabilityDuration, aas.SubmodelElement
-                    ):
+                    if applicabilityDuration is not None and not isinstance(applicabilityDuration, aas.SubmodelElement):
                         applicabilityDuration = self.ApplicabilityDuration(
                             min=applicabilityDuration[0], max=applicabilityDuration[1]
                         )
 
                     # A str would be split into its characters
                     if isinstance(applicabilityConditions, str):
-                        raise TypeError(
-                            "applicabilityConditions takes several elements, got a str"
-                        )
+                        raise TypeError("applicabilityConditions takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if applicabilityConditions is not None and not isinstance(
                         applicabilityConditions, aas.SubmodelElement
                     ):
-                        applicabilityConditions = self.ApplicabilityConditions(
-                            applicabilityConditions
-                        )
+                        applicabilityConditions = self.ApplicabilityConditions(applicabilityConditions)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if logicalType is not None and not isinstance(
-                        logicalType, aas.SubmodelElement
-                    ):
+                    if logicalType is not None and not isinstance(logicalType, aas.SubmodelElement):
                         logicalType = self.LogicalType(logicalType)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -8707,9 +7664,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -8748,15 +7703,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Dependencies"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Dependencies"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -8773,9 +7724,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(dependencies_items, str):
-                    raise TypeError(
-                        "dependencies_items takes several elements, got a str"
-                    )
+                    raise TypeError("dependencies_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -8787,9 +7736,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -8856,15 +7803,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -8880,15 +7821,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             self,
             metadata: Metadata,
             utilizationContext: UtilizationContext,
-            flexibleLoads: Union[
-                Iterable[FlexibleLoads.Flexibleloads_item], FlexibleLoads
-            ],
-            storages: Optional[
-                Union[Iterable[Storages.Storages_item], Storages]
-            ] = None,
-            dependencies: Optional[
-                Union[Iterable[Dependencies.Dependencies_item], Dependencies]
-            ] = None,
+            flexibleLoads: Union[Iterable[FlexibleLoads.Flexibleloads_item], FlexibleLoads],
+            storages: Optional[Union[Iterable[Storages.Storages_item], Storages]] = None,
+            dependencies: Optional[Union[Iterable[Dependencies.Dependencies_item], Dependencies]] = None,
             id_short: Optional[str] = r"flexibilitySpace_operationalPotential",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -8905,15 +7840,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Flexibility Space Operational Potential"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexibility Space Operational Potential"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -8934,9 +7865,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if flexibleLoads is not None and not isinstance(
-                flexibleLoads, aas.SubmodelElement
-            ):
+            if flexibleLoads is not None and not isinstance(flexibleLoads, aas.SubmodelElement):
                 flexibleLoads = self.FlexibleLoads(flexibleLoads)
 
             # A str would be split into its characters
@@ -8954,20 +7883,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if dependencies is not None and not isinstance(
-                dependencies, aas.SubmodelElement
-            ):
+            if dependencies is not None and not isinstance(dependencies, aas.SubmodelElement):
                 dependencies = self.Dependencies(dependencies)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                metadata,
-                utilizationContext,
-                flexibleLoads,
-                storages,
-                dependencies,
-            ]:
+            for se_arg in [metadata, utilizationContext, flexibleLoads, storages, dependencies]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -8978,9 +7899,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -9023,15 +7942,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Instance ID"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Instance ID"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -9083,20 +7998,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Comment"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Free text to comment the EFDM object."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Free text to comment the EFDM object."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -9143,20 +8052,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Version Number"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Version Number"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"the EFDM version (e.g. 0.3)"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"the EFDM version (e.g. 0.3)"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -9202,15 +8105,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Schema Link"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Schema Link"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -9258,15 +8157,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"EFDM Version"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"EFDM Version"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -9283,16 +8178,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if versionNumber is not None and not isinstance(
-                        versionNumber, aas.SubmodelElement
-                    ):
+                    if versionNumber is not None and not isinstance(versionNumber, aas.SubmodelElement):
                         versionNumber = self.VersionNumber(versionNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if schemaLink is not None and not isinstance(
-                        schemaLink, aas.SubmodelElement
-                    ):
+                    if schemaLink is not None and not isinstance(schemaLink, aas.SubmodelElement):
                         schemaLink = self.SchemaLink(schemaLink)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -9308,9 +8199,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -9350,21 +8239,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Origin ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Origin ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"UUID of the creating service and point in time of creation"
-                                }
+                                dict_={r"en": r"UUID of the creating service and point in time of creation"}
                             )
 
                         if qualifier is None:
@@ -9400,32 +8283,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                    value=r"0173-1#02-ABF198#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),),
                             type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Timestamp"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"timestamp of the creating service"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"timestamp of the creating service"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -9468,15 +8340,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Origin"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Origin"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -9493,16 +8361,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if originId is not None and not isinstance(
-                        originId, aas.SubmodelElement
-                    ):
+                    if originId is not None and not isinstance(originId, aas.SubmodelElement):
                         originId = self.OriginId(originId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if timestamp is not None and not isinstance(
-                        timestamp, aas.SubmodelElement
-                    ):
+                    if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -9518,9 +8382,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -9560,21 +8422,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Modification ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modification ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"UUID of the service instance that last processed this object "
-                                }
+                                dict_={r"en": r"UUID of the service instance that last processed this object "}
                             )
 
                         if qualifier is None:
@@ -9610,27 +8466,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                    value=r"0173-1#02-ABF198#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),),
                             type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Timestamp"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -9680,15 +8527,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modification"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modification"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -9705,16 +8548,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if modificationId is not None and not isinstance(
-                        modificationId, aas.SubmodelElement
-                    ):
+                    if modificationId is not None and not isinstance(modificationId, aas.SubmodelElement):
                         modificationId = self.ModificationId(modificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if timestamp is not None and not isinstance(
-                        timestamp, aas.SubmodelElement
-                    ):
+                    if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -9730,9 +8569,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -9771,9 +8608,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -9794,9 +8629,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if instanceId is not None and not isinstance(
-                    instanceId, aas.SubmodelElement
-                ):
+                if instanceId is not None and not isinstance(instanceId, aas.SubmodelElement):
                     instanceId = self.InstanceId(instanceId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -9817,9 +8650,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -9860,15 +8691,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Status"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Status"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -9921,15 +8748,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modelling Scope"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modelling Scope"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -9984,15 +8807,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Externally Tradeable"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Externally Tradeable"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -10045,15 +8864,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Auto Tradeable"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Auto Tradeable"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -10103,15 +8918,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Trading"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Trading"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -10128,18 +8939,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if externallyTradeable is not None and not isinstance(
-                        externallyTradeable, aas.SubmodelElement
-                    ):
-                        externallyTradeable = self.ExternallyTradeable(
-                            externallyTradeable
-                        )
+                    if externallyTradeable is not None and not isinstance(externallyTradeable, aas.SubmodelElement):
+                        externallyTradeable = self.ExternallyTradeable(externallyTradeable)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if autoTradeable is not None and not isinstance(
-                        autoTradeable, aas.SubmodelElement
-                    ):
+                    if autoTradeable is not None and not isinstance(autoTradeable, aas.SubmodelElement):
                         autoTradeable = self.AutoTradeable(autoTradeable)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -10155,9 +8960,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -10193,21 +8996,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Utilization Context"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Utilization Context"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Containing metainformation, describing the model status and scope"
-                        }
+                        dict_={r"en": r"Containing metainformation, describing the model status and scope"}
                     )
 
                 if qualifier is None:
@@ -10223,9 +9020,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if modellingScope is not None and not isinstance(
-                    modellingScope, aas.SubmodelElement
-                ):
+                if modellingScope is not None and not isinstance(modellingScope, aas.SubmodelElement):
                     modellingScope = self.ModellingScope(modellingScope)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -10241,9 +9036,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -10285,15 +9078,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Flexible Load ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -10335,26 +9124,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAV535#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV535#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Reaction Duration"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Reaction Duration"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -10397,29 +9177,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-ABF198#001",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABF198#001"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"From"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"From"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -10460,29 +9229,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-ABF198#001",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABF198#001"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Until"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Until"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -10523,9 +9281,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10537,15 +9293,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Temporal Type"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Temporal Type"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -10596,15 +9348,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Validity"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Validity"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -10621,23 +9369,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if from_ is not None and not isinstance(
-                            from_, aas.SubmodelElement
-                        ):
+                        if from_ is not None and not isinstance(from_, aas.SubmodelElement):
                             from_ = self.From(from_)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if until is not None and not isinstance(
-                            until, aas.SubmodelElement
-                        ):
+                        if until is not None and not isinstance(until, aas.SubmodelElement):
                             until = self.Until(until)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if temporalType is not None and not isinstance(
-                            temporalType, aas.SubmodelElement
-                        ):
+                        if temporalType is not None and not isinstance(temporalType, aas.SubmodelElement):
                             temporalType = self.TemporalType(temporalType)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -10653,9 +9395,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -10682,34 +9422,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 max: xsd.Float,
                                 id_short: Optional[str] = r"power",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAZ820#001",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ820#001"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Power"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -10747,34 +9474,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 max: xsd.Float,
                                 id_short: Optional[str] = r"duration",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAQ203#001",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ203#001"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Duration"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Duration"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -10812,14 +9526,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"durationType",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ModelReference(
+                                semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
@@ -10832,15 +9542,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Duration Type"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Duration Type"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -10878,34 +9584,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"referencePoint",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAZ820#001",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ820#001"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Reference Point"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Reference Point"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -10936,13 +9629,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         def __init__(
                             self,
                             power: Union[Tuple[xsd.Float, xsd.Float], Power],
-                            duration: Optional[
-                                Union[Tuple[xsd.Float, xsd.Float], Duration]
-                            ] = None,
+                            duration: Optional[Union[Tuple[xsd.Float, xsd.Float], Duration]] = None,
                             durationType: Optional[Union[str, DurationType]] = None,
-                            referencePoint: Optional[
-                                Union[xsd.Float, ReferencePoint]
-                            ] = None,
+                            referencePoint: Optional[Union[xsd.Float, ReferencePoint]] = None,
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
@@ -10960,15 +9649,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Power State"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power State"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -10985,42 +9670,27 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if power is not None and not isinstance(
-                                power, aas.SubmodelElement
-                            ):
+                            if power is not None and not isinstance(power, aas.SubmodelElement):
                                 power = self.Power(min=power[0], max=power[1])
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if duration is not None and not isinstance(
-                                duration, aas.SubmodelElement
-                            ):
-                                duration = self.Duration(
-                                    min=duration[0], max=duration[1]
-                                )
+                            if duration is not None and not isinstance(duration, aas.SubmodelElement):
+                                duration = self.Duration(min=duration[0], max=duration[1])
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if durationType is not None and not isinstance(
-                                durationType, aas.SubmodelElement
-                            ):
+                            if durationType is not None and not isinstance(durationType, aas.SubmodelElement):
                                 durationType = self.DurationType(durationType)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if referencePoint is not None and not isinstance(
-                                referencePoint, aas.SubmodelElement
-                            ):
+                            if referencePoint is not None and not isinstance(referencePoint, aas.SubmodelElement):
                                 referencePoint = self.ReferencePoint(referencePoint)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in [
-                                power,
-                                duration,
-                                durationType,
-                                referencePoint,
-                            ]:
+                            for se_arg in [power, duration, durationType, referencePoint]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -11072,15 +9742,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Power States"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power States"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -11097,9 +9763,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(powerstates_items, str):
-                            raise TypeError(
-                                "powerstates_items takes several elements, got a str"
-                            )
+                            raise TypeError("powerstates_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -11111,9 +9775,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -11180,15 +9842,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -11223,15 +9879,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Usage Number"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Usage Number"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -11284,15 +9936,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Modulation Number"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modulation Number"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -11348,15 +9996,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Activation Gradient"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Activation Gradient"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -11410,15 +10054,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Modulation Gradient"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modulation Gradient"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -11472,15 +10112,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Deactivation Gradient"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Deactivation Gradient"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -11512,15 +10148,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     def __init__(
                         self,
-                        activationGradient: Optional[
-                            Union[Tuple[xsd.Float, xsd.Float], ActivationGradient]
-                        ] = None,
-                        modulationGradient: Optional[
-                            Union[Tuple[xsd.Float, xsd.Float], ModulationGradient]
-                        ] = None,
-                        deactivationGradient: Optional[
-                            Union[Tuple[xsd.Float, xsd.Float], DeactivationGradient]
-                        ] = None,
+                        activationGradient: Optional[Union[Tuple[xsd.Float, xsd.Float], ActivationGradient]] = None,
+                        modulationGradient: Optional[Union[Tuple[xsd.Float, xsd.Float], ModulationGradient]] = None,
+                        deactivationGradient: Optional[Union[Tuple[xsd.Float, xsd.Float], DeactivationGradient]] = None,
                         id_short: Optional[str] = r"powerGradients",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -11537,15 +10167,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Power Gradients"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power Gradients"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -11562,18 +10188,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if activationGradient is not None and not isinstance(
-                            activationGradient, aas.SubmodelElement
-                        ):
+                        if activationGradient is not None and not isinstance(activationGradient, aas.SubmodelElement):
                             activationGradient = self.ActivationGradient(
                                 min=activationGradient[0], max=activationGradient[1]
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if modulationGradient is not None and not isinstance(
-                            modulationGradient, aas.SubmodelElement
-                        ):
+                        if modulationGradient is not None and not isinstance(modulationGradient, aas.SubmodelElement):
                             modulationGradient = self.ModulationGradient(
                                 min=modulationGradient[0], max=modulationGradient[1]
                             )
@@ -11589,11 +10211,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            activationGradient,
-                            modulationGradient,
-                            deactivationGradient,
-                        ]:
+                        for se_arg in [activationGradient, modulationGradient, deactivationGradient]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -11604,9 +10222,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -11635,26 +10251,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAV535#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV535#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Regeneration Duration"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Regeneration Duration"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -11706,9 +10313,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11720,21 +10325,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Variable Cost"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Variable Cost"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Variable costs refer to the total amount of energy converted. "
-                                    }
+                                    dict_={r"en": r"Variable costs refer to the total amount of energy converted. "}
                                 )
 
                             if qualifier is None:
@@ -11769,9 +10368,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11783,21 +10380,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Cost Per Usage"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Cost Per Usage"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Usage costs are incurred per use of a Flexible-Load."
-                                    }
+                                    dict_={r"en": r"Usage costs are incurred per use of a Flexible-Load."}
                                 )
 
                             if qualifier is None:
@@ -11832,9 +10423,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11846,15 +10435,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Fixed Cost"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Fixed Cost"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -11905,15 +10490,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Flexible Load Costs"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load Costs"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -11930,23 +10511,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if variableCost is not None and not isinstance(
-                            variableCost, aas.SubmodelElement
-                        ):
+                        if variableCost is not None and not isinstance(variableCost, aas.SubmodelElement):
                             variableCost = self.VariableCost(variableCost)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if costPerUsage is not None and not isinstance(
-                            costPerUsage, aas.SubmodelElement
-                        ):
+                        if costPerUsage is not None and not isinstance(costPerUsage, aas.SubmodelElement):
                             costPerUsage = self.CostPerUsage(costPerUsage)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if fixedCost is not None and not isinstance(
-                            fixedCost, aas.SubmodelElement
-                        ):
+                        if fixedCost is not None and not isinstance(fixedCost, aas.SubmodelElement):
                             fixedCost = self.FixedCost(fixedCost)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -11962,9 +10537,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -11986,43 +10559,30 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         def __init__(
                             self,
                             value: xsd.DateTime,
-                            id_short: Optional[
-                                str
-                            ] = r"orderConfirmationDeadlineAbsolute",
+                            id_short: Optional[str] = r"orderConfirmationDeadlineAbsolute",
                             value_type: aas.DataTypeDefXsd = xsd.DateTime,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                        value=r"0173-1#02-ABF198#001",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),),
                                 type_=aas.ConceptDescription,
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Order Confirmation Deadline Absolute"
-                                    }
+                                    dict_={r"en": r"Order Confirmation Deadline Absolute"}
                                 )
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"absolute deadline"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"absolute deadline"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -12050,37 +10610,26 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[
-                                str
-                            ] = r"orderConfirmationDeadlineRelative",
+                            id_short: Optional[str] = r"orderConfirmationDeadlineRelative",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                        value=r"0173-1#02-AAQ203#001",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-AAQ203#001"),),
                                 type_=aas.ConceptDescription,
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Order Confirmation Deadline Relative"
-                                    }
+                                    dict_={r"en": r"Order Confirmation Deadline Relative"}
                                 )
 
                             if description is None:
@@ -12135,15 +10684,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Order Confirmation Deadline"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Order Confirmation Deadline"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -12160,38 +10705,25 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if (
-                            orderConfirmationDeadlineAbsolute is not None
-                            and not isinstance(
-                                orderConfirmationDeadlineAbsolute, aas.SubmodelElement
-                            )
+                        if orderConfirmationDeadlineAbsolute is not None and not isinstance(
+                            orderConfirmationDeadlineAbsolute, aas.SubmodelElement
                         ):
-                            orderConfirmationDeadlineAbsolute = (
-                                self.OrderConfirmationDeadlineAbsolute(
-                                    orderConfirmationDeadlineAbsolute
-                                )
+                            orderConfirmationDeadlineAbsolute = self.OrderConfirmationDeadlineAbsolute(
+                                orderConfirmationDeadlineAbsolute
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if (
-                            orderConfirmationDeadlineRelative is not None
-                            and not isinstance(
-                                orderConfirmationDeadlineRelative, aas.SubmodelElement
-                            )
+                        if orderConfirmationDeadlineRelative is not None and not isinstance(
+                            orderConfirmationDeadlineRelative, aas.SubmodelElement
                         ):
-                            orderConfirmationDeadlineRelative = (
-                                self.OrderConfirmationDeadlineRelative(
-                                    orderConfirmationDeadlineRelative
-                                )
+                            orderConfirmationDeadlineRelative = self.OrderConfirmationDeadlineRelative(
+                                orderConfirmationDeadlineRelative
                             )
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            orderConfirmationDeadlineAbsolute,
-                            orderConfirmationDeadlineRelative,
-                        ]:
+                        for se_arg in [orderConfirmationDeadlineAbsolute, orderConfirmationDeadlineRelative]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -12202,9 +10734,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -12232,9 +10762,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12246,21 +10774,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Variable Price"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Variable Price"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Variable price refer to the total amount of energy converted. "
-                                    }
+                                    dict_={r"en": r"Variable price refer to the total amount of energy converted. "}
                                 )
 
                             if qualifier is None:
@@ -12295,9 +10817,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12309,21 +10829,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Price Per Usage"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Price Per Usage"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Usage price are incurred per use of a Flexible-Load."
-                                    }
+                                    dict_={r"en": r"Usage price are incurred per use of a Flexible-Load."}
                                 )
 
                             if qualifier is None:
@@ -12358,9 +10872,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12372,20 +10884,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Fixed Price"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Fixed Price"})
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Fixed price"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Fixed price"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -12429,15 +10935,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Prices"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Prices"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -12454,23 +10956,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if variablePrice is not None and not isinstance(
-                            variablePrice, aas.SubmodelElement
-                        ):
+                        if variablePrice is not None and not isinstance(variablePrice, aas.SubmodelElement):
                             variablePrice = self.VariablePrice(variablePrice)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if pricePerUsage is not None and not isinstance(
-                            pricePerUsage, aas.SubmodelElement
-                        ):
+                        if pricePerUsage is not None and not isinstance(pricePerUsage, aas.SubmodelElement):
                             pricePerUsage = self.PricePerUsage(pricePerUsage)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if fixedPrice is not None and not isinstance(
-                            fixedPrice, aas.SubmodelElement
-                        ):
+                        if fixedPrice is not None and not isinstance(fixedPrice, aas.SubmodelElement):
                             fixedPrice = self.FixedPrice(fixedPrice)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -12486,9 +10982,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -12516,9 +11010,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12530,15 +11022,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Meter Location"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Meter Location"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -12581,9 +11069,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12595,15 +11081,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Voltage Level"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Voltage Level"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -12662,15 +11144,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Location"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Location"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -12687,16 +11165,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if meterLocation is not None and not isinstance(
-                            meterLocation, aas.SubmodelElement
-                        ):
+                        if meterLocation is not None and not isinstance(meterLocation, aas.SubmodelElement):
                             meterLocation = self.MeterLocation(meterLocation)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if voltageLevel is not None and not isinstance(
-                            voltageLevel, aas.SubmodelElement
-                        ):
+                        if voltageLevel is not None and not isinstance(voltageLevel, aas.SubmodelElement):
                             voltageLevel = self.VoltageLevel(voltageLevel)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -12712,9 +11186,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -12732,32 +11204,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 def __init__(
                     self,
                     flexibleLoadId: Union[str, FlexibleLoadId],
-                    powerStates: Union[
-                        Iterable[PowerStates.Powerstates_item], PowerStates
-                    ],
-                    reactionDuration: Optional[
-                        Union[Tuple[xsd.Float, xsd.Float], ReactionDuration]
-                    ] = None,
+                    powerStates: Union[Iterable[PowerStates.Powerstates_item], PowerStates],
+                    reactionDuration: Optional[Union[Tuple[xsd.Float, xsd.Float], ReactionDuration]] = None,
                     validity: Optional[Validity] = None,
-                    usageNumber: Optional[
-                        Union[
-                            Tuple[xsd.PositiveInteger, xsd.PositiveInteger], UsageNumber
-                        ]
-                    ] = None,
+                    usageNumber: Optional[Union[Tuple[xsd.PositiveInteger, xsd.PositiveInteger], UsageNumber]] = None,
                     modulationNumber: Optional[
-                        Union[
-                            Tuple[xsd.NonNegativeInteger, xsd.NonNegativeInteger],
-                            ModulationNumber,
-                        ]
+                        Union[Tuple[xsd.NonNegativeInteger, xsd.NonNegativeInteger], ModulationNumber]
                     ] = None,
                     powerGradients: Optional[PowerGradients] = None,
-                    regenerationDuration: Optional[
-                        Union[xsd.Float, RegenerationDuration]
-                    ] = None,
+                    regenerationDuration: Optional[Union[xsd.Float, RegenerationDuration]] = None,
                     flexibleLoadCosts: Optional[FlexibleLoadCosts] = None,
-                    orderConfirmationDeadline: Optional[
-                        OrderConfirmationDeadline
-                    ] = None,
+                    orderConfirmationDeadline: Optional[OrderConfirmationDeadline] = None,
                     prices: Optional[Prices] = None,
                     location: Optional[Location] = None,
                     id_short: Optional[str] = None,
@@ -12777,15 +11234,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Flexible Load"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -12802,19 +11255,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if flexibleLoadId is not None and not isinstance(
-                        flexibleLoadId, aas.SubmodelElement
-                    ):
+                    if flexibleLoadId is not None and not isinstance(flexibleLoadId, aas.SubmodelElement):
                         flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if reactionDuration is not None and not isinstance(
-                        reactionDuration, aas.SubmodelElement
-                    ):
-                        reactionDuration = self.ReactionDuration(
-                            min=reactionDuration[0], max=reactionDuration[1]
-                        )
+                    if reactionDuration is not None and not isinstance(reactionDuration, aas.SubmodelElement):
+                        reactionDuration = self.ReactionDuration(min=reactionDuration[0], max=reactionDuration[1])
 
                     # A str would be split into its characters
                     if isinstance(powerStates, str):
@@ -12822,37 +11269,23 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if powerStates is not None and not isinstance(
-                        powerStates, aas.SubmodelElement
-                    ):
+                    if powerStates is not None and not isinstance(powerStates, aas.SubmodelElement):
                         powerStates = self.PowerStates(powerStates)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if usageNumber is not None and not isinstance(
-                        usageNumber, aas.SubmodelElement
-                    ):
-                        usageNumber = self.UsageNumber(
-                            min=usageNumber[0], max=usageNumber[1]
-                        )
+                    if usageNumber is not None and not isinstance(usageNumber, aas.SubmodelElement):
+                        usageNumber = self.UsageNumber(min=usageNumber[0], max=usageNumber[1])
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if modulationNumber is not None and not isinstance(
-                        modulationNumber, aas.SubmodelElement
-                    ):
-                        modulationNumber = self.ModulationNumber(
-                            min=modulationNumber[0], max=modulationNumber[1]
-                        )
+                    if modulationNumber is not None and not isinstance(modulationNumber, aas.SubmodelElement):
+                        modulationNumber = self.ModulationNumber(min=modulationNumber[0], max=modulationNumber[1])
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if regenerationDuration is not None and not isinstance(
-                        regenerationDuration, aas.SubmodelElement
-                    ):
-                        regenerationDuration = self.RegenerationDuration(
-                            regenerationDuration
-                        )
+                    if regenerationDuration is not None and not isinstance(regenerationDuration, aas.SubmodelElement):
+                        regenerationDuration = self.RegenerationDuration(regenerationDuration)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -12880,9 +11313,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -12920,21 +11351,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Flexible Loads"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Loads"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"flexibleLoads may contain multiple flexibleLoad."
-                        }
+                        dict_={r"en": r"flexibleLoads may contain multiple flexibleLoad."}
                     )
 
                 if qualifier is None:
@@ -12945,9 +11370,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(flexibleloads_items, str):
-                    raise TypeError(
-                        "flexibleloads_items takes several elements, got a str"
-                    )
+                    raise TypeError("flexibleloads_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -12959,9 +11382,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -13028,15 +11449,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -13075,15 +11490,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Storage ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Storage ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -13139,21 +11550,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Variable Cost"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Variable Cost"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Variable costs refer to the total amount of energy converted."
-                                    }
+                                    dict_={r"en": r"Variable costs refer to the total amount of energy converted."}
                                 )
 
                             if qualifier is None:
@@ -13201,21 +11606,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Cost Per Usage"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Cost Per Usage"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Usage costs arise per use of a storage tank."
-                                    }
+                                    dict_={r"en": r"Usage costs arise per use of a storage tank."}
                                 )
 
                             if qualifier is None:
@@ -13263,21 +11662,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Fixed Cost"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Fixed Cost"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Fixed costs arise from keeping a storage facility on standby."
-                                    }
+                                    dict_={r"en": r"Fixed costs arise from keeping a storage facility on standby."}
                                 )
 
                             if qualifier is None:
@@ -13322,15 +11715,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Storage Costs"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Storage Costs"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -13347,23 +11736,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if variableCost is not None and not isinstance(
-                            variableCost, aas.SubmodelElement
-                        ):
+                        if variableCost is not None and not isinstance(variableCost, aas.SubmodelElement):
                             variableCost = self.VariableCost(variableCost)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if costPerUsage is not None and not isinstance(
-                            costPerUsage, aas.SubmodelElement
-                        ):
+                        if costPerUsage is not None and not isinstance(costPerUsage, aas.SubmodelElement):
                             costPerUsage = self.CostPerUsage(costPerUsage)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if fixedCost is not None and not isinstance(
-                            fixedCost, aas.SubmodelElement
-                        ):
+                        if fixedCost is not None and not isinstance(fixedCost, aas.SubmodelElement):
                             fixedCost = self.FixedCost(fixedCost)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -13379,9 +11762,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -13419,15 +11800,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Usable Capacity"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Usable Capacity"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -13480,15 +11857,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Initial Energy Content"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Initial Energy Content"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -13541,15 +11914,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Target Energy Content"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Target Energy Content"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -13581,10 +11950,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class EnergyLoss(aas.Property):
 
-                    ALLOWED_RANGE = (
-                        xsd.from_xsd(r"0", xsd.UnsignedShort),
-                        xsd.from_xsd(r"100", xsd.UnsignedShort),
-                    )
+                    ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.UnsignedShort), xsd.from_xsd(r"100", xsd.UnsignedShort))
 
                     def __init__(
                         self,
@@ -13607,15 +11973,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Energy Loss"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Energy Loss"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -13666,14 +12028,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"flexibleLoadId",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13685,15 +12043,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Flexible Load ID"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load ID"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -13731,14 +12085,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"conversionEfficiency",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13750,21 +12100,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Conversion Efficiency"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Conversion Efficiency"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Energy conversion efficiency of the suppiler"
-                                        }
+                                        dict_={r"en": r"Energy conversion efficiency of the suppiler"}
                                     )
 
                                 if qualifier is None:
@@ -13791,16 +12135,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         def __init__(
                             self,
                             flexibleLoadId: Union[str, FlexibleLoadId],
-                            conversionEfficiency: Optional[
-                                Union[xsd.Float, ConversionEfficiency]
-                            ] = None,
+                            conversionEfficiency: Optional[Union[xsd.Float, ConversionEfficiency]] = None,
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13812,20 +12152,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Supplier"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Supplier"})
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Indicating a single supply"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Indicating a single supply"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -13835,9 +12169,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if flexibleLoadId is not None and not isinstance(
-                                flexibleLoadId, aas.SubmodelElement
-                            ):
+                            if flexibleLoadId is not None and not isinstance(flexibleLoadId, aas.SubmodelElement):
                                 flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                             # Build a submodel element if a raw value was passed in the argument
@@ -13845,9 +12177,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             if conversionEfficiency is not None and not isinstance(
                                 conversionEfficiency, aas.SubmodelElement
                             ):
-                                conversionEfficiency = self.ConversionEfficiency(
-                                    conversionEfficiency
-                                )
+                                conversionEfficiency = self.ConversionEfficiency(conversionEfficiency)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -13902,15 +12232,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Suppliers"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Suppliers"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -13927,9 +12253,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(suppliers_items, str):
-                            raise TypeError(
-                                "suppliers_items takes several elements, got a str"
-                            )
+                            raise TypeError("suppliers_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -13941,9 +12265,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -14010,15 +12332,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -14042,19 +12358,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"power",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ModelReference(
+                                semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                            value=r"0173-1#02-AAZ820#001",
-                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-AAZ820#001"),
                                     ),
                                     type_=aas.ConceptDescription,
                                     referred_semantic_id=None,
@@ -14062,20 +12371,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Power"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power"})
 
                                 if description is None:
-                                    description = aas.MultiLanguageTextType(
-                                        dict_={r"en": r"power drained"}
-                                    )
+                                    description = aas.MultiLanguageTextType(dict_={r"en": r"power drained"})
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -14106,19 +12409,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"timestamp",
                                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ModelReference(
+                                semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                            value=r"0173-1#02-ABF198#001",
-                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),
                                     ),
                                     type_=aas.ConceptDescription,
                                     referred_semantic_id=None,
@@ -14126,20 +12422,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Timestamp"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                                 if description is None:
-                                    description = aas.MultiLanguageTextType(
-                                        dict_={r"en": r"timestamp of power drain"}
-                                    )
+                                    description = aas.MultiLanguageTextType(dict_={r"en": r"timestamp of power drain"})
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -14170,9 +12460,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14184,21 +12472,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Drain"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Drain"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Indicating a single non-influenceable energy demand"
-                                    }
+                                    dict_={r"en": r"Indicating a single non-influenceable energy demand"}
                                 )
 
                             if qualifier is None:
@@ -14209,16 +12491,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if power is not None and not isinstance(
-                                power, aas.SubmodelElement
-                            ):
+                            if power is not None and not isinstance(power, aas.SubmodelElement):
                                 power = self.Power(power)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if timestamp is not None and not isinstance(
-                                timestamp, aas.SubmodelElement
-                            ):
+                            if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                                 timestamp = self.Timestamp(timestamp)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -14274,15 +12552,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Drains"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Drains"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -14299,9 +12573,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(drains_items, str):
-                            raise TypeError(
-                                "drains_items takes several elements, got a str"
-                            )
+                            raise TypeError("drains_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -14313,9 +12585,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -14382,15 +12652,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -14406,20 +12670,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     self,
                     storageId: Union[str, StorageId],
                     usableCapacity: Union[Tuple[xsd.Float, xsd.Float], UsableCapacity],
-                    initialEnergyContent: Union[
-                        Tuple[xsd.Float, xsd.Float], InitialEnergyContent
-                    ],
+                    initialEnergyContent: Union[Tuple[xsd.Float, xsd.Float], InitialEnergyContent],
                     storageCosts: Optional[StorageCosts] = None,
-                    targetEnergyContent: Optional[
-                        Union[Tuple[xsd.Float, xsd.Float], TargetEnergyContent]
-                    ] = None,
+                    targetEnergyContent: Optional[Union[Tuple[xsd.Float, xsd.Float], TargetEnergyContent]] = None,
                     energyLoss: Optional[Union[xsd.UnsignedShort, EnergyLoss]] = None,
-                    suppliers: Optional[
-                        Union[Iterable[Suppliers.Suppliers_item], Suppliers]
-                    ] = None,
-                    drains: Optional[
-                        Union[Iterable[Drains.Drains_item], Drains]
-                    ] = None,
+                    suppliers: Optional[Union[Iterable[Suppliers.Suppliers_item], Suppliers]] = None,
+                    drains: Optional[Union[Iterable[Drains.Drains_item], Drains]] = None,
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -14437,15 +12693,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Storage"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Storage"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -14462,43 +12714,31 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if storageId is not None and not isinstance(
-                        storageId, aas.SubmodelElement
-                    ):
+                    if storageId is not None and not isinstance(storageId, aas.SubmodelElement):
                         storageId = self.StorageId(storageId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if usableCapacity is not None and not isinstance(
-                        usableCapacity, aas.SubmodelElement
-                    ):
-                        usableCapacity = self.UsableCapacity(
-                            min=usableCapacity[0], max=usableCapacity[1]
-                        )
+                    if usableCapacity is not None and not isinstance(usableCapacity, aas.SubmodelElement):
+                        usableCapacity = self.UsableCapacity(min=usableCapacity[0], max=usableCapacity[1])
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if initialEnergyContent is not None and not isinstance(
-                        initialEnergyContent, aas.SubmodelElement
-                    ):
+                    if initialEnergyContent is not None and not isinstance(initialEnergyContent, aas.SubmodelElement):
                         initialEnergyContent = self.InitialEnergyContent(
                             min=initialEnergyContent[0], max=initialEnergyContent[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if targetEnergyContent is not None and not isinstance(
-                        targetEnergyContent, aas.SubmodelElement
-                    ):
+                    if targetEnergyContent is not None and not isinstance(targetEnergyContent, aas.SubmodelElement):
                         targetEnergyContent = self.TargetEnergyContent(
                             min=targetEnergyContent[0], max=targetEnergyContent[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if energyLoss is not None and not isinstance(
-                        energyLoss, aas.SubmodelElement
-                    ):
+                    if energyLoss is not None and not isinstance(energyLoss, aas.SubmodelElement):
                         energyLoss = self.EnergyLoss(energyLoss)
 
                     # A str would be split into its characters
@@ -14507,9 +12747,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if suppliers is not None and not isinstance(
-                        suppliers, aas.SubmodelElement
-                    ):
+                    if suppliers is not None and not isinstance(suppliers, aas.SubmodelElement):
                         suppliers = self.Suppliers(suppliers)
 
                     # A str would be split into its characters
@@ -14518,9 +12756,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if drains is not None and not isinstance(
-                        drains, aas.SubmodelElement
-                    ):
+                    if drains is not None and not isinstance(drains, aas.SubmodelElement):
                         drains = self.Drains(drains)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -14545,9 +12781,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -14586,9 +12820,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -14621,9 +12853,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -14690,15 +12920,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -14737,21 +12961,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Dependency ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Dependency ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The ID of a dependency for unique identification. "
-                                }
+                                dict_={r"en": r"The ID of a dependency for unique identification. "}
                             )
 
                         if qualifier is None:
@@ -14787,26 +13005,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAQ203#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ203#001"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Applicability Duration"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Applicability Duration"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -14848,14 +13057,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"comparator",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14867,21 +13072,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Comparator"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comparator"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"enum: equals, less, lessEqual, greater, greaterEqual."
-                                        }
+                                        dict_={r"en": r"enum: equals, less, lessEqual, greater, greaterEqual."}
                                     )
 
                                 if qualifier is None:
@@ -14913,14 +13112,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"formulaRight",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14932,15 +13127,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Formula Right"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Formula Right"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -14978,14 +13169,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"formulaLeft",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14997,15 +13184,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Formula Left"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Formula Left"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -15044,9 +13227,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15058,20 +13239,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Applicability Condition"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Applicability Condition"})
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Indicating a single condition"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Indicating a single condition"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -15081,23 +13256,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if comparator is not None and not isinstance(
-                                comparator, aas.SubmodelElement
-                            ):
+                            if comparator is not None and not isinstance(comparator, aas.SubmodelElement):
                                 comparator = self.Comparator(comparator)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if formulaRight is not None and not isinstance(
-                                formulaRight, aas.SubmodelElement
-                            ):
+                            if formulaRight is not None and not isinstance(formulaRight, aas.SubmodelElement):
                                 formulaRight = self.FormulaRight(formulaRight)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if formulaLeft is not None and not isinstance(
-                                formulaLeft, aas.SubmodelElement
-                            ):
+                            if formulaLeft is not None and not isinstance(formulaLeft, aas.SubmodelElement):
                                 formulaLeft = self.FormulaLeft(formulaLeft)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -15132,9 +13301,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     def __init__(
                         self,
-                        applicabilityconditions_items: Iterable[
-                            Applicabilityconditions_item
-                        ],
+                        applicabilityconditions_items: Iterable[Applicabilityconditions_item],
                         id_short: Optional[str] = r"applicabilityConditions",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -15155,15 +13322,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Applicability Conditions"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Applicability Conditions"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -15180,9 +13343,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(applicabilityconditions_items, str):
-                            raise TypeError(
-                                "applicabilityconditions_items takes several elements, got a str"
-                            )
+                            raise TypeError("applicabilityconditions_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -15194,9 +13355,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -15263,15 +13422,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -15309,15 +13462,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Temporal Type"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Temporal Type"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -15358,9 +13507,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15372,15 +13519,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Triggering Flexible Load ID"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Triggering Flexible Load ID"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -15430,15 +13573,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Triggering Flexible Load"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Triggering Flexible Load"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -15455,9 +13594,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if temporalType is not None and not isinstance(
-                            temporalType, aas.SubmodelElement
-                        ):
+                        if temporalType is not None and not isinstance(temporalType, aas.SubmodelElement):
                             temporalType = self.TemporalType(temporalType)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -15465,9 +13602,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if triggeringFlexibleLoadId is not None and not isinstance(
                             triggeringFlexibleLoadId, aas.SubmodelElement
                         ):
-                            triggeringFlexibleLoadId = self.TriggeringFlexibleLoadId(
-                                triggeringFlexibleLoadId
-                            )
+                            triggeringFlexibleLoadId = self.TriggeringFlexibleLoadId(triggeringFlexibleLoadId)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -15482,9 +13617,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -15525,15 +13658,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Temporal Type"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Temporal Type"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -15587,15 +13716,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Target Flexible Load ID"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Target Flexible Load ID"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -15637,20 +13762,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Target Flexible Load"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Target Flexible Load"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"target flexible load"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"target flexible load"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -15660,9 +13779,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if temporalType is not None and not isinstance(
-                            temporalType, aas.SubmodelElement
-                        ):
+                        if temporalType is not None and not isinstance(temporalType, aas.SubmodelElement):
                             temporalType = self.TemporalType(temporalType)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -15670,9 +13787,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         if targetFlexibleLoadId is not None and not isinstance(
                             targetFlexibleLoadId, aas.SubmodelElement
                         ):
-                            targetFlexibleLoadId = self.TargetFlexibleLoadId(
-                                targetFlexibleLoadId
-                            )
+                            targetFlexibleLoadId = self.TargetFlexibleLoadId(targetFlexibleLoadId)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -15687,9 +13802,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -15727,15 +13840,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Logical Type"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Logical Type"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -15771,16 +13880,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     triggeringFlexibleLoad: TriggeringFlexibleLoad,
                     targetFlexibleLoad: TargetFlexibleLoad,
                     logicalType: Union[str, LogicalType],
-                    applicabilityDuration: Optional[
-                        Union[Tuple[xsd.Float, xsd.Float], ApplicabilityDuration]
-                    ] = None,
+                    applicabilityDuration: Optional[Union[Tuple[xsd.Float, xsd.Float], ApplicabilityDuration]] = None,
                     applicabilityConditions: Optional[
-                        Union[
-                            Iterable[
-                                ApplicabilityConditions.Applicabilityconditions_item
-                            ],
-                            ApplicabilityConditions,
-                        ]
+                        Union[Iterable[ApplicabilityConditions.Applicabilityconditions_item], ApplicabilityConditions]
                     ] = None,
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -15799,15 +13901,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Dependency"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Dependency"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -15824,40 +13922,30 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if dependencyId is not None and not isinstance(
-                        dependencyId, aas.SubmodelElement
-                    ):
+                    if dependencyId is not None and not isinstance(dependencyId, aas.SubmodelElement):
                         dependencyId = self.DependencyId(dependencyId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if applicabilityDuration is not None and not isinstance(
-                        applicabilityDuration, aas.SubmodelElement
-                    ):
+                    if applicabilityDuration is not None and not isinstance(applicabilityDuration, aas.SubmodelElement):
                         applicabilityDuration = self.ApplicabilityDuration(
                             min=applicabilityDuration[0], max=applicabilityDuration[1]
                         )
 
                     # A str would be split into its characters
                     if isinstance(applicabilityConditions, str):
-                        raise TypeError(
-                            "applicabilityConditions takes several elements, got a str"
-                        )
+                        raise TypeError("applicabilityConditions takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if applicabilityConditions is not None and not isinstance(
                         applicabilityConditions, aas.SubmodelElement
                     ):
-                        applicabilityConditions = self.ApplicabilityConditions(
-                            applicabilityConditions
-                        )
+                        applicabilityConditions = self.ApplicabilityConditions(applicabilityConditions)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if logicalType is not None and not isinstance(
-                        logicalType, aas.SubmodelElement
-                    ):
+                    if logicalType is not None and not isinstance(logicalType, aas.SubmodelElement):
                         logicalType = self.LogicalType(logicalType)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -15880,9 +13968,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -15921,15 +14007,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Dependencies"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Dependencies"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -15946,9 +14028,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(dependencies_items, str):
-                    raise TypeError(
-                        "dependencies_items takes several elements, got a str"
-                    )
+                    raise TypeError("dependencies_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -15960,9 +14040,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -16029,15 +14107,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -16053,15 +14125,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             self,
             metadata: Metadata,
             utilizationContext: UtilizationContext,
-            flexibleLoads: Union[
-                Iterable[FlexibleLoads.Flexibleloads_item], FlexibleLoads
-            ],
-            storages: Optional[
-                Union[Iterable[Storages.Storages_item], Storages]
-            ] = None,
-            dependencies: Optional[
-                Union[Iterable[Dependencies.Dependencies_item], Dependencies]
-            ] = None,
+            flexibleLoads: Union[Iterable[FlexibleLoads.Flexibleloads_item], FlexibleLoads],
+            storages: Optional[Union[Iterable[Storages.Storages_item], Storages]] = None,
+            dependencies: Optional[Union[Iterable[Dependencies.Dependencies_item], Dependencies]] = None,
             id_short: Optional[str] = r"flexibilitySpace_applicationTailoredPotential",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -16078,9 +14144,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -16107,9 +14171,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if flexibleLoads is not None and not isinstance(
-                flexibleLoads, aas.SubmodelElement
-            ):
+            if flexibleLoads is not None and not isinstance(flexibleLoads, aas.SubmodelElement):
                 flexibleLoads = self.FlexibleLoads(flexibleLoads)
 
             # A str would be split into its characters
@@ -16127,20 +14189,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if dependencies is not None and not isinstance(
-                dependencies, aas.SubmodelElement
-            ):
+            if dependencies is not None and not isinstance(dependencies, aas.SubmodelElement):
                 dependencies = self.Dependencies(dependencies)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                metadata,
-                utilizationContext,
-                flexibleLoads,
-                storages,
-                dependencies,
-            ]:
+            for se_arg in [metadata, utilizationContext, flexibleLoads, storages, dependencies]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -16151,9 +14205,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -16196,15 +14248,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Instance ID"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Instance ID"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -16256,20 +14304,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Comment"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Free text to comment the EFDM object."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Free text to comment the EFDM object."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -16316,20 +14358,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Version Number"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Version Number"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"the EFDM version (e.g. 0.3)"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"the EFDM version (e.g. 0.3)"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -16375,15 +14411,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Schema Link"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Schema Link"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -16431,15 +14463,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"EFDM Version"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"EFDM Version"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -16456,16 +14484,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if versionNumber is not None and not isinstance(
-                        versionNumber, aas.SubmodelElement
-                    ):
+                    if versionNumber is not None and not isinstance(versionNumber, aas.SubmodelElement):
                         versionNumber = self.VersionNumber(versionNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if schemaLink is not None and not isinstance(
-                        schemaLink, aas.SubmodelElement
-                    ):
+                    if schemaLink is not None and not isinstance(schemaLink, aas.SubmodelElement):
                         schemaLink = self.SchemaLink(schemaLink)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -16481,9 +14505,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -16523,21 +14545,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Origin ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Origin ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"UUID of the creating service and point in time of creation"
-                                }
+                                dict_={r"en": r"UUID of the creating service and point in time of creation"}
                             )
 
                         if qualifier is None:
@@ -16573,32 +14589,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                    value=r"0173-1#02-ABF198#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),),
                             type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Timestamp"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"timestamp of the creating service"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"timestamp of the creating service"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -16641,15 +14646,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Origin"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Origin"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -16666,16 +14667,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if originId is not None and not isinstance(
-                        originId, aas.SubmodelElement
-                    ):
+                    if originId is not None and not isinstance(originId, aas.SubmodelElement):
                         originId = self.OriginId(originId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if timestamp is not None and not isinstance(
-                        timestamp, aas.SubmodelElement
-                    ):
+                    if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -16691,9 +14688,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -16733,21 +14728,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Modification ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modification ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"UUID of the service instance that last processed this object "
-                                }
+                                dict_={r"en": r"UUID of the service instance that last processed this object "}
                             )
 
                         if qualifier is None:
@@ -16783,32 +14772,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                    value=r"0173-1#02-ABF198#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),),
                             type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Timestamp"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"timestamp of of last processing"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"timestamp of of last processing"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -16851,15 +14829,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modification"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modification"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -16876,16 +14850,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if modificationId is not None and not isinstance(
-                        modificationId, aas.SubmodelElement
-                    ):
+                    if modificationId is not None and not isinstance(modificationId, aas.SubmodelElement):
                         modificationId = self.ModificationId(modificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if timestamp is not None and not isinstance(
-                        timestamp, aas.SubmodelElement
-                    ):
+                    if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -16901,9 +14871,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -16942,9 +14910,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -16965,9 +14931,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if instanceId is not None and not isinstance(
-                    instanceId, aas.SubmodelElement
-                ):
+                if instanceId is not None and not isinstance(instanceId, aas.SubmodelElement):
                     instanceId = self.InstanceId(instanceId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -16988,9 +14952,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -17031,15 +14993,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Status"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Status"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -17092,15 +15050,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modelling Scope"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modelling Scope"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -17150,21 +15104,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Utilization Context"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Utilization Context"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Containing metainformation, describing the model status and scope"
-                        }
+                        dict_={r"en": r"Containing metainformation, describing the model status and scope"}
                     )
 
                 if qualifier is None:
@@ -17180,9 +15128,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if modellingScope is not None and not isinstance(
-                    modellingScope, aas.SubmodelElement
-                ):
+                if modellingScope is not None and not isinstance(modellingScope, aas.SubmodelElement):
                     modellingScope = self.ModellingScope(modellingScope)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -17198,9 +15144,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -17242,15 +15186,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Flexible Load ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -17292,26 +15232,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAV535#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV535#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Reaction Duration"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Reaction Duration"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -17355,26 +15286,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAV535#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV535#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Regeneration Duration"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Regeneration Duration"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -17439,15 +15361,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Activation Gradient"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Activation Gradient"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -17501,15 +15419,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Modulation Gradient"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modulation Gradient"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -17563,15 +15477,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Deactivation Gradient"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Deactivation Gradient"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -17603,15 +15513,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     def __init__(
                         self,
-                        activationGradient: Optional[
-                            Union[Tuple[xsd.Float, xsd.Float], ActivationGradient]
-                        ] = None,
-                        modulationGradient: Optional[
-                            Union[Tuple[xsd.Float, xsd.Float], ModulationGradient]
-                        ] = None,
-                        deactivationGradient: Optional[
-                            Union[Tuple[xsd.Float, xsd.Float], DeactivationGradient]
-                        ] = None,
+                        activationGradient: Optional[Union[Tuple[xsd.Float, xsd.Float], ActivationGradient]] = None,
+                        modulationGradient: Optional[Union[Tuple[xsd.Float, xsd.Float], ModulationGradient]] = None,
+                        deactivationGradient: Optional[Union[Tuple[xsd.Float, xsd.Float], DeactivationGradient]] = None,
                         id_short: Optional[str] = r"powerGradients",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -17628,15 +15532,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Power Gradients"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power Gradients"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -17653,18 +15553,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if activationGradient is not None and not isinstance(
-                            activationGradient, aas.SubmodelElement
-                        ):
+                        if activationGradient is not None and not isinstance(activationGradient, aas.SubmodelElement):
                             activationGradient = self.ActivationGradient(
                                 min=activationGradient[0], max=activationGradient[1]
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if modulationGradient is not None and not isinstance(
-                            modulationGradient, aas.SubmodelElement
-                        ):
+                        if modulationGradient is not None and not isinstance(modulationGradient, aas.SubmodelElement):
                             modulationGradient = self.ModulationGradient(
                                 min=modulationGradient[0], max=modulationGradient[1]
                             )
@@ -17680,11 +15576,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            activationGradient,
-                            modulationGradient,
-                            deactivationGradient,
-                        ]:
+                        for se_arg in [activationGradient, modulationGradient, deactivationGradient]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -17695,9 +15587,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -17735,15 +15625,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Modulation Number"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modulation Number"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -17785,34 +15671,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 max: xsd.Float,
                                 id_short: Optional[str] = r"power",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAZ820#001",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ820#001"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Power"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -17862,15 +15735,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Power State"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power State"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -17887,9 +15756,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if power is not None and not isinstance(
-                                power, aas.SubmodelElement
-                            ):
+                            if power is not None and not isinstance(power, aas.SubmodelElement):
                                 power = self.Power(min=power[0], max=power[1])
 
                             # Add all passed/initialized submodel elements to a single list
@@ -17946,15 +15813,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Power States"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power States"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -17971,9 +15834,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(powerstates_items, str):
-                            raise TypeError(
-                                "powerstates_items takes several elements, got a str"
-                            )
+                            raise TypeError("powerstates_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -17985,9 +15846,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -18054,15 +15913,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -18077,19 +15930,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 def __init__(
                     self,
                     flexibleLoadId: Union[str, FlexibleLoadId],
-                    reactionDuration: Union[
-                        Tuple[xsd.Float, xsd.Float], ReactionDuration
-                    ],
+                    reactionDuration: Union[Tuple[xsd.Float, xsd.Float], ReactionDuration],
                     regenerationDuration: Union[xsd.Float, RegenerationDuration],
-                    powerStates: Union[
-                        Iterable[PowerStates.Powerstates_item], PowerStates
-                    ],
+                    powerStates: Union[Iterable[PowerStates.Powerstates_item], PowerStates],
                     powerGradients: Optional[PowerGradients] = None,
                     modulationNumber: Optional[
-                        Union[
-                            Tuple[xsd.NonNegativeInteger, xsd.NonNegativeInteger],
-                            ModulationNumber,
-                        ]
+                        Union[Tuple[xsd.NonNegativeInteger, xsd.NonNegativeInteger], ModulationNumber]
                     ] = None,
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -18108,15 +15954,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Flexible Load"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -18133,37 +15975,23 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if flexibleLoadId is not None and not isinstance(
-                        flexibleLoadId, aas.SubmodelElement
-                    ):
+                    if flexibleLoadId is not None and not isinstance(flexibleLoadId, aas.SubmodelElement):
                         flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if reactionDuration is not None and not isinstance(
-                        reactionDuration, aas.SubmodelElement
-                    ):
-                        reactionDuration = self.ReactionDuration(
-                            min=reactionDuration[0], max=reactionDuration[1]
-                        )
+                    if reactionDuration is not None and not isinstance(reactionDuration, aas.SubmodelElement):
+                        reactionDuration = self.ReactionDuration(min=reactionDuration[0], max=reactionDuration[1])
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if regenerationDuration is not None and not isinstance(
-                        regenerationDuration, aas.SubmodelElement
-                    ):
-                        regenerationDuration = self.RegenerationDuration(
-                            regenerationDuration
-                        )
+                    if regenerationDuration is not None and not isinstance(regenerationDuration, aas.SubmodelElement):
+                        regenerationDuration = self.RegenerationDuration(regenerationDuration)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if modulationNumber is not None and not isinstance(
-                        modulationNumber, aas.SubmodelElement
-                    ):
-                        modulationNumber = self.ModulationNumber(
-                            min=modulationNumber[0], max=modulationNumber[1]
-                        )
+                    if modulationNumber is not None and not isinstance(modulationNumber, aas.SubmodelElement):
+                        modulationNumber = self.ModulationNumber(min=modulationNumber[0], max=modulationNumber[1])
 
                     # A str would be split into its characters
                     if isinstance(powerStates, str):
@@ -18171,9 +15999,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if powerStates is not None and not isinstance(
-                        powerStates, aas.SubmodelElement
-                    ):
+                    if powerStates is not None and not isinstance(powerStates, aas.SubmodelElement):
                         powerStates = self.PowerStates(powerStates)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -18196,9 +16022,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -18236,21 +16060,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Flexible Loads"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Loads"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"flexibleLoads may contain multiple flexibleLoad."
-                        }
+                        dict_={r"en": r"flexibleLoads may contain multiple flexibleLoad."}
                     )
 
                 if qualifier is None:
@@ -18261,9 +16079,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(flexibleloads_items, str):
-                    raise TypeError(
-                        "flexibleloads_items takes several elements, got a str"
-                    )
+                    raise TypeError("flexibleloads_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -18275,9 +16091,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -18344,15 +16158,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -18391,15 +16199,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Storage ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Storage ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -18452,15 +16256,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Usable Capacity"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Usable Capacity"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -18513,15 +16313,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Initial Energy Content"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Initial Energy Content"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -18553,10 +16349,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class EnergyLoss(aas.Property):
 
-                    ALLOWED_RANGE = (
-                        xsd.from_xsd(r"0", xsd.UnsignedShort),
-                        xsd.from_xsd(r"100", xsd.UnsignedShort),
-                    )
+                    ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.UnsignedShort), xsd.from_xsd(r"100", xsd.UnsignedShort))
 
                     def __init__(
                         self,
@@ -18579,15 +16372,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Energy Loss"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Energy Loss"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -18638,14 +16427,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"flexibleLoadId",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18657,15 +16442,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Flexible Load ID"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load ID"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -18703,14 +16484,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"conversionEfficiency",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18722,21 +16499,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Conversion Efficiency"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Conversion Efficiency"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Energy conversion efficiency of the suppiler"
-                                        }
+                                        dict_={r"en": r"Energy conversion efficiency of the suppiler"}
                                     )
 
                                 if qualifier is None:
@@ -18763,16 +16534,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         def __init__(
                             self,
                             flexibleLoadId: Union[str, FlexibleLoadId],
-                            conversionEfficiency: Optional[
-                                Union[xsd.Float, ConversionEfficiency]
-                            ] = None,
+                            conversionEfficiency: Optional[Union[xsd.Float, ConversionEfficiency]] = None,
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18784,20 +16551,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Supplier"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Supplier"})
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Indicating a single supply"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Indicating a single supply"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -18807,9 +16568,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if flexibleLoadId is not None and not isinstance(
-                                flexibleLoadId, aas.SubmodelElement
-                            ):
+                            if flexibleLoadId is not None and not isinstance(flexibleLoadId, aas.SubmodelElement):
                                 flexibleLoadId = self.FlexibleLoadId(flexibleLoadId)
 
                             # Build a submodel element if a raw value was passed in the argument
@@ -18817,9 +16576,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             if conversionEfficiency is not None and not isinstance(
                                 conversionEfficiency, aas.SubmodelElement
                             ):
-                                conversionEfficiency = self.ConversionEfficiency(
-                                    conversionEfficiency
-                                )
+                                conversionEfficiency = self.ConversionEfficiency(conversionEfficiency)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -18874,15 +16631,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Suppliers"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Suppliers"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -18899,9 +16652,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(suppliers_items, str):
-                            raise TypeError(
-                                "suppliers_items takes several elements, got a str"
-                            )
+                            raise TypeError("suppliers_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -18913,9 +16664,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -18982,15 +16731,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -19006,13 +16749,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     self,
                     storageId: Union[str, StorageId],
                     usableCapacity: Union[Tuple[xsd.Float, xsd.Float], UsableCapacity],
-                    initialEnergyContent: Optional[
-                        Union[Tuple[xsd.Float, xsd.Float], InitialEnergyContent]
-                    ] = None,
+                    initialEnergyContent: Optional[Union[Tuple[xsd.Float, xsd.Float], InitialEnergyContent]] = None,
                     energyLoss: Optional[Union[xsd.UnsignedShort, EnergyLoss]] = None,
-                    suppliers: Optional[
-                        Union[Iterable[Suppliers.Suppliers_item], Suppliers]
-                    ] = None,
+                    suppliers: Optional[Union[Iterable[Suppliers.Suppliers_item], Suppliers]] = None,
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -19030,15 +16769,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Storage"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Storage"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -19055,34 +16790,24 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if storageId is not None and not isinstance(
-                        storageId, aas.SubmodelElement
-                    ):
+                    if storageId is not None and not isinstance(storageId, aas.SubmodelElement):
                         storageId = self.StorageId(storageId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if usableCapacity is not None and not isinstance(
-                        usableCapacity, aas.SubmodelElement
-                    ):
-                        usableCapacity = self.UsableCapacity(
-                            min=usableCapacity[0], max=usableCapacity[1]
-                        )
+                    if usableCapacity is not None and not isinstance(usableCapacity, aas.SubmodelElement):
+                        usableCapacity = self.UsableCapacity(min=usableCapacity[0], max=usableCapacity[1])
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if initialEnergyContent is not None and not isinstance(
-                        initialEnergyContent, aas.SubmodelElement
-                    ):
+                    if initialEnergyContent is not None and not isinstance(initialEnergyContent, aas.SubmodelElement):
                         initialEnergyContent = self.InitialEnergyContent(
                             min=initialEnergyContent[0], max=initialEnergyContent[1]
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if energyLoss is not None and not isinstance(
-                        energyLoss, aas.SubmodelElement
-                    ):
+                    if energyLoss is not None and not isinstance(energyLoss, aas.SubmodelElement):
                         energyLoss = self.EnergyLoss(energyLoss)
 
                     # A str would be split into its characters
@@ -19091,20 +16816,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if suppliers is not None and not isinstance(
-                        suppliers, aas.SubmodelElement
-                    ):
+                    if suppliers is not None and not isinstance(suppliers, aas.SubmodelElement):
                         suppliers = self.Suppliers(suppliers)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        storageId,
-                        usableCapacity,
-                        initialEnergyContent,
-                        energyLoss,
-                        suppliers,
-                    ]:
+                    for se_arg in [storageId, usableCapacity, initialEnergyContent, energyLoss, suppliers]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -19115,9 +16832,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -19156,9 +16871,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -19191,9 +16904,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -19260,15 +16971,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -19284,12 +16989,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             self,
             metadata: Metadata,
             utilizationContext: UtilizationContext,
-            flexibleLoads: Union[
-                Iterable[FlexibleLoads.Flexibleloads_item], FlexibleLoads
-            ],
-            storages: Optional[
-                Union[Iterable[Storages.Storages_item], Storages]
-            ] = None,
+            flexibleLoads: Union[Iterable[FlexibleLoads.Flexibleloads_item], FlexibleLoads],
+            storages: Optional[Union[Iterable[Storages.Storages_item], Storages]] = None,
             id_short: Optional[str] = r"flexibilitySpace_generalTechnicalPotential",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -19306,9 +17007,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -19335,9 +17034,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if flexibleLoads is not None and not isinstance(
-                flexibleLoads, aas.SubmodelElement
-            ):
+            if flexibleLoads is not None and not isinstance(flexibleLoads, aas.SubmodelElement):
                 flexibleLoads = self.FlexibleLoads(flexibleLoads)
 
             # A str would be split into its characters
@@ -19362,9 +17059,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -19407,15 +17102,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Instance ID"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Instance ID"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -19467,20 +17158,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Comment"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Free text to comment the EFDM object."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Free text to comment the EFDM object."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -19527,20 +17212,14 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Version Number"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Version Number"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"the EFDM version (e.g. 0.3)"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"the EFDM version (e.g. 0.3)"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -19586,15 +17265,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Schema Link"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Schema Link"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -19642,15 +17317,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"EFDM Version"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"EFDM Version"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -19667,16 +17338,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if versionNumber is not None and not isinstance(
-                        versionNumber, aas.SubmodelElement
-                    ):
+                    if versionNumber is not None and not isinstance(versionNumber, aas.SubmodelElement):
                         versionNumber = self.VersionNumber(versionNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if schemaLink is not None and not isinstance(
-                        schemaLink, aas.SubmodelElement
-                    ):
+                    if schemaLink is not None and not isinstance(schemaLink, aas.SubmodelElement):
                         schemaLink = self.SchemaLink(schemaLink)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -19692,9 +17359,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -19734,21 +17399,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Origin ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Origin ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"UUID of the creating service and point in time of creation"
-                                }
+                                dict_={r"en": r"UUID of the creating service and point in time of creation"}
                             )
 
                         if qualifier is None:
@@ -19784,32 +17443,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                    value=r"0173-1#02-ABF198#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),),
                             type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Timestamp"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"timestamp of the creating service"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"timestamp of the creating service"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -19852,15 +17500,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Origin"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Origin"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -19877,16 +17521,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if originId is not None and not isinstance(
-                        originId, aas.SubmodelElement
-                    ):
+                    if originId is not None and not isinstance(originId, aas.SubmodelElement):
                         originId = self.OriginId(originId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if timestamp is not None and not isinstance(
-                        timestamp, aas.SubmodelElement
-                    ):
+                    if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -19902,9 +17542,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -19944,21 +17582,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Modification ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modification ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"UUID of the service instance that last processed this object "
-                                }
+                                dict_={r"en": r"UUID of the service instance that last processed this object "}
                             )
 
                         if qualifier is None:
@@ -19994,32 +17626,21 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                    value=r"0173-1#02-ABF198#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),),
                             type_=aas.ConceptDescription,
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Timestamp"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"timestamp of of last processing"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"timestamp of of last processing"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -20062,15 +17683,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modification"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modification"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -20087,16 +17704,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if modificationId is not None and not isinstance(
-                        modificationId, aas.SubmodelElement
-                    ):
+                    if modificationId is not None and not isinstance(modificationId, aas.SubmodelElement):
                         modificationId = self.ModificationId(modificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if timestamp is not None and not isinstance(
-                        timestamp, aas.SubmodelElement
-                    ):
+                    if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                         timestamp = self.Timestamp(timestamp)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -20112,9 +17725,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -20153,9 +17764,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -20176,9 +17785,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if instanceId is not None and not isinstance(
-                    instanceId, aas.SubmodelElement
-                ):
+                if instanceId is not None and not isinstance(instanceId, aas.SubmodelElement):
                     instanceId = self.InstanceId(instanceId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -20199,9 +17806,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -20243,15 +17848,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Flexible Load Measure ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load Measure ID"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -20304,15 +17905,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Reward"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Reward"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -20365,15 +17962,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Exceptions"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Exceptions"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -20415,19 +18008,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"power",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ModelReference(
+                                semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                            value=r"0173-1#02-AAZ820#001",
-                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-AAZ820#001"),
                                     ),
                                     type_=aas.ConceptDescription,
                                     referred_semantic_id=None,
@@ -20435,15 +18021,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Power"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Power"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -20481,19 +18063,12 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"timestamp",
                                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ModelReference(
+                                semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                     key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                            value=r"0173-1#02-ABF198#001",
-                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"0173-1#02-ABF198#001"),
                                     ),
                                     type_=aas.ConceptDescription,
                                     referred_semantic_id=None,
@@ -20501,15 +18076,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Timestamp"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -20543,14 +18114,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 self,
                                 value: aas.Reference,
                                 id_short: Optional[str] = r"referencePoint",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20562,21 +18129,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Reference Point"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Reference Point"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Refers to the associated Flexible-Load Measure as planed value"
-                                        }
+                                        dict_={r"en": r"Refers to the associated Flexible-Load Measure as planed value"}
                                     )
 
                                 if qualifier is None:
@@ -20607,9 +18168,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20621,15 +18180,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Load Change Profile"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Load Change Profile"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -20646,23 +18201,17 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if power is not None and not isinstance(
-                                power, aas.SubmodelElement
-                            ):
+                            if power is not None and not isinstance(power, aas.SubmodelElement):
                                 power = self.Power(power)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if timestamp is not None and not isinstance(
-                                timestamp, aas.SubmodelElement
-                            ):
+                            if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                                 timestamp = self.Timestamp(timestamp)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if referencePoint is not None and not isinstance(
-                                referencePoint, aas.SubmodelElement
-                            ):
+                            if referencePoint is not None and not isinstance(referencePoint, aas.SubmodelElement):
                                 referencePoint = self.ReferencePoint(referencePoint)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -20718,15 +18267,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Load Change Profiles"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Load Change Profiles"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -20743,9 +18288,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(loadchangeprofiles_items, str):
-                            raise TypeError(
-                                "loadchangeprofiles_items takes several elements, got a str"
-                            )
+                            raise TypeError("loadchangeprofiles_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -20757,9 +18300,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -20826,15 +18367,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -20849,10 +18384,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 def __init__(
                     self,
                     flexibleLoadMeasureId: Union[str, FlexibleLoadMeasureId],
-                    loadChangeProfiles: Union[
-                        Iterable[LoadChangeProfiles.Loadchangeprofiles_item],
-                        LoadChangeProfiles,
-                    ],
+                    loadChangeProfiles: Union[Iterable[LoadChangeProfiles.Loadchangeprofiles_item], LoadChangeProfiles],
                     reward: Optional[Union[str, Reward]] = None,
                     exceptions: Optional[Union[str, Exceptions]] = None,
                     id_short: Optional[str] = None,
@@ -20871,21 +18403,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Execution Log Entry"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Execution Log Entry"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Each executionLogEntry describes an implemented flexibleLoadMeasure."
-                            }
+                            dict_={r"en": r"Each executionLogEntry describes an implemented flexibleLoadMeasure."}
                         )
 
                     if qualifier is None:
@@ -20896,48 +18422,31 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if flexibleLoadMeasureId is not None and not isinstance(
-                        flexibleLoadMeasureId, aas.SubmodelElement
-                    ):
-                        flexibleLoadMeasureId = self.FlexibleLoadMeasureId(
-                            flexibleLoadMeasureId
-                        )
+                    if flexibleLoadMeasureId is not None and not isinstance(flexibleLoadMeasureId, aas.SubmodelElement):
+                        flexibleLoadMeasureId = self.FlexibleLoadMeasureId(flexibleLoadMeasureId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if reward is not None and not isinstance(
-                        reward, aas.SubmodelElement
-                    ):
+                    if reward is not None and not isinstance(reward, aas.SubmodelElement):
                         reward = self.Reward(reward)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if exceptions is not None and not isinstance(
-                        exceptions, aas.SubmodelElement
-                    ):
+                    if exceptions is not None and not isinstance(exceptions, aas.SubmodelElement):
                         exceptions = self.Exceptions(exceptions)
 
                     # A str would be split into its characters
                     if isinstance(loadChangeProfiles, str):
-                        raise TypeError(
-                            "loadChangeProfiles takes several elements, got a str"
-                        )
+                        raise TypeError("loadChangeProfiles takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if loadChangeProfiles is not None and not isinstance(
-                        loadChangeProfiles, aas.SubmodelElement
-                    ):
+                    if loadChangeProfiles is not None and not isinstance(loadChangeProfiles, aas.SubmodelElement):
                         loadChangeProfiles = self.LoadChangeProfiles(loadChangeProfiles)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        flexibleLoadMeasureId,
-                        reward,
-                        exceptions,
-                        loadChangeProfiles,
-                    ]:
+                    for se_arg in [flexibleLoadMeasureId, reward, exceptions, loadChangeProfiles]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -20948,9 +18457,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -20988,15 +18495,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Execution Log Entries"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Execution Log Entries"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -21013,9 +18516,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(executionlogentries_items, str):
-                    raise TypeError(
-                        "executionlogentries_items takes several elements, got a str"
-                    )
+                    raise TypeError("executionlogentries_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -21027,9 +18528,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -21096,15 +18595,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -21119,10 +18612,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
         def __init__(
             self,
             metadata: Metadata,
-            executionLogEntries: Union[
-                Iterable[ExecutionLogEntries.Executionlogentries_item],
-                ExecutionLogEntries,
-            ],
+            executionLogEntries: Union[Iterable[ExecutionLogEntries.Executionlogentries_item], ExecutionLogEntries],
             id_short: Optional[str] = r"flexibleLoadMeasureExecutionLog",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -21139,15 +18629,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Flexible Load Measure Execution Log"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load Measure Execution Log"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -21168,9 +18654,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if executionLogEntries is not None and not isinstance(
-                executionLogEntries, aas.SubmodelElement
-            ):
+            if executionLogEntries is not None and not isinstance(executionLogEntries, aas.SubmodelElement):
                 executionLogEntries = self.ExecutionLogEntries(executionLogEntries)
 
             # Add all passed/initialized submodel elements to a single list
@@ -21186,9 +18670,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -21207,18 +18689,10 @@ class EnergyFlexibilityDataModel(aas.Submodel):
         self,
         id_: str,
         flexibleLoadMeasuresPackage: Optional[FlexibleLoadMeasuresPackage] = None,
-        flexibilitySpace_operationalPotential: Optional[
-            FlexibilitySpace_operationalPotential
-        ] = None,
-        flexibilitySpace_applicationTailoredPotential: Optional[
-            FlexibilitySpace_applicationTailoredPotential
-        ] = None,
-        flexibilitySpace_generalTechnicalPotential: Optional[
-            FlexibilitySpace_generalTechnicalPotential
-        ] = None,
-        flexibleLoadMeasureExecutionLog: Optional[
-            FlexibleLoadMeasureExecutionLog
-        ] = None,
+        flexibilitySpace_operationalPotential: Optional[FlexibilitySpace_operationalPotential] = None,
+        flexibilitySpace_applicationTailoredPotential: Optional[FlexibilitySpace_applicationTailoredPotential] = None,
+        flexibilitySpace_generalTechnicalPotential: Optional[FlexibilitySpace_generalTechnicalPotential] = None,
+        flexibleLoadMeasureExecutionLog: Optional[FlexibleLoadMeasureExecutionLog] = None,
         id_short: Optional[str] = r"EnergyFlexibilityDataModel",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -21264,9 +18738,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

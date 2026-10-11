@@ -26,9 +26,7 @@ class DataRetentionPolicies(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -84,16 +82,12 @@ class DataRetentionPolicies(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Specifies how long an element must be retained before it can be deleted."
-                            }
+                            dict_={r"en": r"Specifies how long an element must be retained before it can be deleted."}
                         )
 
                     if qualifier is None:
@@ -140,9 +134,7 @@ class DataRetentionPolicies(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -176,9 +168,7 @@ class DataRetentionPolicies(aas.Submodel):
                     semanticids_items: Iterable[Union[aas.Reference, Semanticids_item]],
                     id_short: Optional[str] = r"SemanticIds",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -204,9 +194,7 @@ class DataRetentionPolicies(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -224,18 +212,12 @@ class DataRetentionPolicies(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(semanticids_items, str):
-                        raise TypeError(
-                            "semanticids_items takes several elements, got a str"
-                        )
+                        raise TypeError("semanticids_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if semanticids_items:
                         semanticids_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Semanticids_item(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.Semanticids_item(i)
                             for i in semanticids_items
                         ]
 
@@ -249,9 +231,7 @@ class DataRetentionPolicies(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -318,15 +298,9 @@ class DataRetentionPolicies(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -392,9 +366,7 @@ class DataRetentionPolicies(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -447,9 +419,7 @@ class DataRetentionPolicies(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -501,16 +471,12 @@ class DataRetentionPolicies(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Legal name of the entity who created the policy."
-                            }
+                            dict_={r"en": r"Legal name of the entity who created the policy."}
                         )
 
                     if qualifier is None:
@@ -557,9 +523,7 @@ class DataRetentionPolicies(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -611,16 +575,12 @@ class DataRetentionPolicies(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Legal name of the entity that issued the policy."
-                            }
+                            dict_={r"en": r"Legal name of the entity that issued the policy."}
                         )
 
                     if qualifier is None:
@@ -669,15 +629,11 @@ class DataRetentionPolicies(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Identifier of the source."}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Identifier of the source."})
 
                         if qualifier is None:
                             qualifier = ()
@@ -722,16 +678,12 @@ class DataRetentionPolicies(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Reference to an external file representing the policy source."
-                                }
+                                dict_={r"en": r"Reference to an external file representing the policy source."}
                             )
 
                         if qualifier is None:
@@ -777,15 +729,11 @@ class DataRetentionPolicies(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Link to an external source."}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Link to an external source."})
 
                         if qualifier is None:
                             qualifier = ()
@@ -829,9 +777,7 @@ class DataRetentionPolicies(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -882,15 +828,11 @@ class DataRetentionPolicies(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Describes the source of a policy."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Describes the source of a policy."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -900,9 +842,7 @@ class DataRetentionPolicies(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if identifier is not None and not isinstance(
-                        identifier, aas.SubmodelElement
-                    ):
+                    if identifier is not None and not isinstance(identifier, aas.SubmodelElement):
                         identifier = self.Identifier(identifier)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -912,9 +852,7 @@ class DataRetentionPolicies(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if reference is not None and not isinstance(
-                        reference, aas.SubmodelElement
-                    ):
+                    if reference is not None and not isinstance(reference, aas.SubmodelElement):
                         reference = self.Reference(reference)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -930,9 +868,7 @@ class DataRetentionPolicies(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -970,16 +906,12 @@ class DataRetentionPolicies(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Date and time that the policy is valid from."
-                            }
+                            dict_={r"en": r"Date and time that the policy is valid from."}
                         )
 
                     if qualifier is None:
@@ -1026,16 +958,12 @@ class DataRetentionPolicies(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Date and time until when the policy is valid."
-                            }
+                            dict_={r"en": r"Date and time until when the policy is valid."}
                         )
 
                     if qualifier is None:
@@ -1074,9 +1002,7 @@ class DataRetentionPolicies(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1088,9 +1014,7 @@ class DataRetentionPolicies(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -1129,9 +1053,7 @@ class DataRetentionPolicies(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1143,16 +1065,12 @@ class DataRetentionPolicies(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Username or legal name of the entity that made the change."
-                                    }
+                                    dict_={r"en": r"Username or legal name of the entity that made the change."}
                                 )
 
                             if qualifier is None:
@@ -1185,9 +1103,7 @@ class DataRetentionPolicies(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1199,9 +1115,7 @@ class DataRetentionPolicies(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -1239,9 +1153,7 @@ class DataRetentionPolicies(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1253,15 +1165,11 @@ class DataRetentionPolicies(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Reason for the change."}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Reason for the change."})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -1294,9 +1202,7 @@ class DataRetentionPolicies(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1308,16 +1214,12 @@ class DataRetentionPolicies(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Signature of the Policy after the change was made."
-                                    }
+                                    dict_={r"en": r"Signature of the Policy after the change was made."}
                                 )
 
                             if qualifier is None:
@@ -1364,9 +1266,7 @@ class DataRetentionPolicies(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1382,48 +1282,32 @@ class DataRetentionPolicies(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if timestamp is not None and not isinstance(
-                            timestamp, aas.SubmodelElement
-                        ):
+                        if timestamp is not None and not isinstance(timestamp, aas.SubmodelElement):
                             timestamp = self.Timestamp(timestamp)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if identity is not None and not isinstance(
-                            identity, aas.SubmodelElement
-                        ):
+                        if identity is not None and not isinstance(identity, aas.SubmodelElement):
                             identity = self.Identity(identity)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if operation is not None and not isinstance(
-                            operation, aas.SubmodelElement
-                        ):
+                        if operation is not None and not isinstance(operation, aas.SubmodelElement):
                             operation = self.Operation(operation)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if reason is not None and not isinstance(
-                            reason, aas.SubmodelElement
-                        ):
+                        if reason is not None and not isinstance(reason, aas.SubmodelElement):
                             reason = self.Reason(reason)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if signature is not None and not isinstance(
-                            signature, aas.SubmodelElement
-                        ):
+                        if signature is not None and not isinstance(signature, aas.SubmodelElement):
                             signature = self.Signature(signature)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            timestamp,
-                            identity,
-                            operation,
-                            reason,
-                            signature,
-                        ]:
+                        for se_arg in [timestamp, identity, operation, reason, signature]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -1434,9 +1318,7 @@ class DataRetentionPolicies(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1456,9 +1338,7 @@ class DataRetentionPolicies(aas.Submodel):
                     auditlog_items: Iterable[Auditlog_item],
                     id_short: Optional[str] = r"AuditLog",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1484,9 +1364,7 @@ class DataRetentionPolicies(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1502,9 +1380,7 @@ class DataRetentionPolicies(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(auditlog_items, str):
-                        raise TypeError(
-                            "auditlog_items takes several elements, got a str"
-                        )
+                        raise TypeError("auditlog_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1516,9 +1392,7 @@ class DataRetentionPolicies(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1585,15 +1459,9 @@ class DataRetentionPolicies(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -1608,10 +1476,7 @@ class DataRetentionPolicies(aas.Submodel):
             def __init__(
                 self,
                 retentionTime: Union[xsd.Duration, RetentionTime],
-                semanticIds: Union[
-                    Iterable[Union[aas.Reference, SemanticIds.Semanticids_item]],
-                    SemanticIds,
-                ],
+                semanticIds: Union[Iterable[Union[aas.Reference, SemanticIds.Semanticids_item]], SemanticIds],
                 immutable: Union[bool, Immutable],
                 createdBy: Union[str, CreatedBy],
                 creationTime: Union[xsd.DateTime, CreationTime],
@@ -1637,15 +1502,11 @@ class DataRetentionPolicies(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Describes a single data retention policy."}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Describes a single data retention policy."})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1655,9 +1516,7 @@ class DataRetentionPolicies(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if retentionTime is not None and not isinstance(
-                    retentionTime, aas.SubmodelElement
-                ):
+                if retentionTime is not None and not isinstance(retentionTime, aas.SubmodelElement):
                     retentionTime = self.RetentionTime(retentionTime)
 
                 # A str would be split into its characters
@@ -1666,30 +1525,22 @@ class DataRetentionPolicies(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if semanticIds is not None and not isinstance(
-                    semanticIds, aas.SubmodelElement
-                ):
+                if semanticIds is not None and not isinstance(semanticIds, aas.SubmodelElement):
                     semanticIds = self.SemanticIds(semanticIds)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if immutable is not None and not isinstance(
-                    immutable, aas.SubmodelElement
-                ):
+                if immutable is not None and not isinstance(immutable, aas.SubmodelElement):
                     immutable = self.Immutable(immutable)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if createdBy is not None and not isinstance(
-                    createdBy, aas.SubmodelElement
-                ):
+                if createdBy is not None and not isinstance(createdBy, aas.SubmodelElement):
                     createdBy = self.CreatedBy(createdBy)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if creationTime is not None and not isinstance(
-                    creationTime, aas.SubmodelElement
-                ):
+                if creationTime is not None and not isinstance(creationTime, aas.SubmodelElement):
                     creationTime = self.CreationTime(creationTime)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1699,16 +1550,12 @@ class DataRetentionPolicies(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if effectiveFrom is not None and not isinstance(
-                    effectiveFrom, aas.SubmodelElement
-                ):
+                if effectiveFrom is not None and not isinstance(effectiveFrom, aas.SubmodelElement):
                     effectiveFrom = self.EffectiveFrom(effectiveFrom)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if effectiveUntil is not None and not isinstance(
-                    effectiveUntil, aas.SubmodelElement
-                ):
+                if effectiveUntil is not None and not isinstance(effectiveUntil, aas.SubmodelElement):
                     effectiveUntil = self.EffectiveUntil(effectiveUntil)
 
                 # A str would be split into its characters
@@ -1717,9 +1564,7 @@ class DataRetentionPolicies(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if auditLog is not None and not isinstance(
-                    auditLog, aas.SubmodelElement
-                ):
+                if auditLog is not None and not isinstance(auditLog, aas.SubmodelElement):
                     auditLog = self.AuditLog(auditLog)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1747,9 +1592,7 @@ class DataRetentionPolicies(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1783,15 +1626,11 @@ class DataRetentionPolicies(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Defines the set of policies."}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Defines the set of policies."})
 
             if qualifier is None:
                 qualifier = ()
@@ -1816,9 +1655,7 @@ class DataRetentionPolicies(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1844,12 +1681,7 @@ class DataRetentionPolicies(aas.Submodel):
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"https://admin-shell.io/idta/DataRetentionPolicies/1/0",
-                ),
-            ),
+            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/DataRetentionPolicies/1/0"),),
             type_=aas.Submodel,
             referred_semantic_id=None,
         ),
@@ -1869,11 +1701,7 @@ class DataRetentionPolicies(aas.Submodel):
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -1884,9 +1712,7 @@ class DataRetentionPolicies(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if inheritedFrom is not None and not isinstance(
-            inheritedFrom, aas.SubmodelElement
-        ):
+        if inheritedFrom is not None and not isinstance(inheritedFrom, aas.SubmodelElement):
             inheritedFrom = self.InheritedFrom(inheritedFrom)
 
         # Add all passed/initialized submodel elements to a single list
@@ -1902,9 +1728,7 @@ class DataRetentionPolicies(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

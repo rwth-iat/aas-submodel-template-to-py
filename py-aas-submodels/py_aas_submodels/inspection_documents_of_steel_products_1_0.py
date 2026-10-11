@@ -19,26 +19,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO677#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#003"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Firmenname", r"en": r"Company Name"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Firmenname", r"en": r"Company Name"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -73,26 +64,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#07-ABL858#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#07-ABL858#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Straße", r"en": r"Street"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Straße", r"en": r"Street"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -127,26 +109,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#07-ABL861#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#07-ABL861#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Postleitzahl", r"en": r"ZIP Code"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Postleitzahl", r"en": r"ZIP Code"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -181,26 +154,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#07-ABL860#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#07-ABL860#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Stadt", r"en": r"City"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Stadt", r"en": r"City"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -235,26 +199,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#07-ABL863#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#07-ABL863#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Ländercode", r"en": r"National Code"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Ländercode", r"en": r"National Code"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -289,26 +244,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#07-ABA042#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#07-ABA042#003"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Mailadresse", r"en": r"Mail Address"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Mailadresse", r"en": r"Mail Address"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -355,15 +301,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Hersteller", r"en": r"Manufacturer"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"de": r"Hersteller", r"en": r"Manufacturer"})
 
             if qualifier is None:
                 qualifier = ()
@@ -373,9 +315,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if companyName is not None and not isinstance(
-                companyName, aas.SubmodelElement
-            ):
+            if companyName is not None and not isinstance(companyName, aas.SubmodelElement):
                 companyName = self.CompanyName(companyName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -395,9 +335,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if nationalCode is not None and not isinstance(
-                nationalCode, aas.SubmodelElement
-            ):
+            if nationalCode is not None and not isinstance(nationalCode, aas.SubmodelElement):
                 nationalCode = self.NationalCode(nationalCode)
 
             # A str would be split into its characters
@@ -406,21 +344,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if mailAddress:
-                mailAddress = [
-                    i if isinstance(i, aas.SubmodelElement) else self.MailAddress(i)
-                    for i in mailAddress
-                ]
+                mailAddress = [i if isinstance(i, aas.SubmodelElement) else self.MailAddress(i) for i in mailAddress]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                companyName,
-                street,
-                zIPCode,
-                city,
-                nationalCode,
-                mailAddress,
-            ]:
+            for se_arg in [companyName, street, zIPCode, city, nationalCode, mailAddress]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -431,9 +359,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -462,26 +388,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO677#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#003"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Firmenname", r"en": r"Company Name"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Firmenname", r"en": r"Company Name"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -529,15 +446,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Kundenrolle", r"en": r"Customer Role"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Kundenrolle", r"en": r"Customer Role"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -577,26 +490,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#07-ABL858#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#07-ABL858#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Straße", r"en": r"Street"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Straße", r"en": r"Street"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -631,26 +535,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#07-ABL861#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#07-ABL861#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Postleitzahl", r"en": r"ZIP Code"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Postleitzahl", r"en": r"ZIP Code"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -685,26 +580,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#07-ABL860#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#07-ABL860#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Stadt", r"en": r"City"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Stadt", r"en": r"City"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -739,26 +625,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#07-ABL863#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#07-ABL863#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Ländercode", r"en": r"National Code"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Ländercode", r"en": r"National Code"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -793,26 +670,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#07-ABA042#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#07-ABA042#003"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Mailadresse", r"en": r"Mail Address"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Mailadresse", r"en": r"Mail Address"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -860,15 +728,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Kunde", r"en": r"Customer"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"de": r"Kunde", r"en": r"Customer"})
 
             if qualifier is None:
                 qualifier = ()
@@ -878,9 +742,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if companyName is not None and not isinstance(
-                companyName, aas.SubmodelElement
-            ):
+            if companyName is not None and not isinstance(companyName, aas.SubmodelElement):
                 companyName = self.CompanyName(companyName)
 
             # A str would be split into its characters
@@ -889,10 +751,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if customerRole:
-                customerRole = [
-                    i if isinstance(i, aas.SubmodelElement) else self.CustomerRole(i)
-                    for i in customerRole
-                ]
+                customerRole = [i if isinstance(i, aas.SubmodelElement) else self.CustomerRole(i) for i in customerRole]
 
             # A str would be split into its characters
             if isinstance(street, str):
@@ -900,10 +759,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if street:
-                street = [
-                    i if isinstance(i, aas.SubmodelElement) else self.Street(i)
-                    for i in street
-                ]
+                street = [i if isinstance(i, aas.SubmodelElement) else self.Street(i) for i in street]
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -917,9 +773,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if nationalCode is not None and not isinstance(
-                nationalCode, aas.SubmodelElement
-            ):
+            if nationalCode is not None and not isinstance(nationalCode, aas.SubmodelElement):
                 nationalCode = self.NationalCode(nationalCode)
 
             # A str would be split into its characters
@@ -928,22 +782,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if mailAddress:
-                mailAddress = [
-                    i if isinstance(i, aas.SubmodelElement) else self.MailAddress(i)
-                    for i in mailAddress
-                ]
+                mailAddress = [i if isinstance(i, aas.SubmodelElement) else self.MailAddress(i) for i in mailAddress]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                companyName,
-                customerRole,
-                street,
-                zIPCode,
-                city,
-                nationalCode,
-                mailAddress,
-            ]:
+            for se_arg in [companyName, customerRole, street, zIPCode, city, nationalCode, mailAddress]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -954,9 +797,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -997,18 +838,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
                     aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAZ530#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ530#003"),),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1063,15 +897,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Auftragsdatum", r"en": r"Order Date"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Auftragsdatum", r"en": r"Order Date"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1117,17 +947,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Werkauftragsnummer",
-                            r"en": r"Manufacturer Order Number",
-                        }
+                        dict_={r"de": r"Werkauftragsnummer", r"en": r"Manufacturer Order Number"}
                     )
 
                 if qualifier is None:
@@ -1163,28 +988,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABF517#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABF517#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Kundenbestellnummer",
-                            r"en": r"Purchaser Order Number",
-                        }
+                        dict_={r"de": r"Kundenbestellnummer", r"en": r"Purchaser Order Number"}
                     )
 
                 if qualifier is None:
@@ -1231,17 +1046,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Lieferscheinnummer",
-                            r"en": r"Delivery Note Number",
-                        }
+                        dict_={r"de": r"Lieferscheinnummer", r"en": r"Delivery Note Number"}
                     )
 
                 if qualifier is None:
@@ -1269,9 +1079,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             self,
             typeOfInspectionDocument: Union[str, TypeOfInspectionDocument],
             orderDate: Union[xsd.Date, OrderDate],
-            manufacturerOrderNumber: Optional[
-                Union[str, ManufacturerOrderNumber]
-            ] = None,
+            manufacturerOrderNumber: Optional[Union[str, ManufacturerOrderNumber]] = None,
             purchaserOrderNumber: Optional[Union[str, PurchaserOrderNumber]] = None,
             deliveryNoteNumber: Optional[Union[str, DeliveryNoteNumber]] = None,
             id_short: Optional[str] = r"OrderData",
@@ -1290,15 +1098,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Auftragsdaten", r"en": r"Order Data"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"de": r"Auftragsdaten", r"en": r"Order Data"})
 
             if qualifier is None:
                 qualifier = ()
@@ -1308,12 +1112,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if typeOfInspectionDocument is not None and not isinstance(
-                typeOfInspectionDocument, aas.SubmodelElement
-            ):
-                typeOfInspectionDocument = self.TypeOfInspectionDocument(
-                    typeOfInspectionDocument
-                )
+            if typeOfInspectionDocument is not None and not isinstance(typeOfInspectionDocument, aas.SubmodelElement):
+                typeOfInspectionDocument = self.TypeOfInspectionDocument(typeOfInspectionDocument)
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -1322,25 +1122,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerOrderNumber is not None and not isinstance(
-                manufacturerOrderNumber, aas.SubmodelElement
-            ):
-                manufacturerOrderNumber = self.ManufacturerOrderNumber(
-                    manufacturerOrderNumber
-                )
+            if manufacturerOrderNumber is not None and not isinstance(manufacturerOrderNumber, aas.SubmodelElement):
+                manufacturerOrderNumber = self.ManufacturerOrderNumber(manufacturerOrderNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if purchaserOrderNumber is not None and not isinstance(
-                purchaserOrderNumber, aas.SubmodelElement
-            ):
+            if purchaserOrderNumber is not None and not isinstance(purchaserOrderNumber, aas.SubmodelElement):
                 purchaserOrderNumber = self.PurchaserOrderNumber(purchaserOrderNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if deliveryNoteNumber is not None and not isinstance(
-                deliveryNoteNumber, aas.SubmodelElement
-            ):
+            if deliveryNoteNumber is not None and not isinstance(deliveryNoteNumber, aas.SubmodelElement):
                 deliveryNoteNumber = self.DeliveryNoteNumber(deliveryNoteNumber)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1362,9 +1154,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1393,28 +1183,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO689#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO689#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Produktnummer des Herstellers",
-                            r"en": r"Manufacturer Product Number",
-                        }
+                        dict_={r"de": r"Produktnummer des Herstellers", r"en": r"Manufacturer Product Number"}
                     )
 
                 if qualifier is None:
@@ -1461,17 +1241,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Artikelnummer des Kunden",
-                            r"en": r"Purchaser Article Number",
-                        }
+                        dict_={r"de": r"Artikelnummer des Kunden", r"en": r"Purchaser Article Number"}
                     )
 
                 if qualifier is None:
@@ -1506,28 +1281,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAU734#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAU734#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Erzeugnisbeschreibung",
-                            r"en": r"Product Description",
-                        }
+                        dict_={r"de": r"Erzeugnisbeschreibung", r"en": r"Product Description"}
                     )
 
                 if qualifier is None:
@@ -1572,17 +1337,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Zusätzliche Produktanforderungen",
-                            r"en": r"Additional Product Requirements",
-                        }
+                        dict_={r"de": r"Zusätzliche Produktanforderungen", r"en": r"Additional Product Requirements"}
                     )
 
                 if qualifier is None:
@@ -1617,26 +1377,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAQ196#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ196#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Chargennummer", r"en": r"Batch Number"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Chargennummer", r"en": r"Batch Number"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1671,20 +1422,13 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAZ538#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ538#003"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1725,28 +1469,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAZ536#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ536#003"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Materialkurzname",
-                            r"en": r"Material Short Name",
-                        }
+                        dict_={r"de": r"Materialkurzname", r"en": r"Material Short Name"}
                     )
 
                 if qualifier is None:
@@ -1792,9 +1526,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1848,15 +1580,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Stückzahl", r"en": r"Number of Pieces"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Stückzahl", r"en": r"Number of Pieces"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1902,9 +1630,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1945,26 +1671,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAZ533#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ533#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Ist-Masse", r"en": r"Actual Mass"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Ist-Masse", r"en": r"Actual Mass"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2003,20 +1720,13 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAG269#006",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAG269#006"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -2057,28 +1767,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABG720#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG720#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Außendurchmesser",
-                                    r"en": r"Outer Diameter",
-                                }
+                                dict_={r"de": r"Außendurchmesser", r"en": r"Outer Diameter"}
                             )
 
                         if qualifier is None:
@@ -2114,26 +1814,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAA018#008",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAA018#008"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Länge", r"en": r"Length"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Länge", r"en": r"Length"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2168,28 +1859,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAZ523#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ523#004"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Normreferenz",
-                                    r"en": r"Standard Reference",
-                                }
+                                dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
                             )
 
                         if qualifier is None:
@@ -2218,34 +1899,23 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     wallThickness: Union[xsd.Float, WallThickness],
                     outerDiameter: Union[xsd.Float, OuterDiameter],
                     length: Union[xsd.Float, Length],
-                    standardReference: Optional[
-                        Iterable[Union[str, StandardReference]]
-                    ] = None,
+                    standardReference: Optional[Iterable[Union[str, StandardReference]]] = None,
                     id_short: Optional[str] = r"Tube",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#01-AGU746#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGU746#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Rohr", r"en": r"Tube"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"de": r"Rohr", r"en": r"Tube"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2255,50 +1925,33 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if wallThickness is not None and not isinstance(
-                        wallThickness, aas.SubmodelElement
-                    ):
+                    if wallThickness is not None and not isinstance(wallThickness, aas.SubmodelElement):
                         wallThickness = self.WallThickness(wallThickness)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if outerDiameter is not None and not isinstance(
-                        outerDiameter, aas.SubmodelElement
-                    ):
+                    if outerDiameter is not None and not isinstance(outerDiameter, aas.SubmodelElement):
                         outerDiameter = self.OuterDiameter(outerDiameter)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if length is not None and not isinstance(
-                        length, aas.SubmodelElement
-                    ):
+                    if length is not None and not isinstance(length, aas.SubmodelElement):
                         length = self.Length(length)
 
                     # A str would be split into its characters
                     if isinstance(standardReference, str):
-                        raise TypeError(
-                            "standardReference takes several elements, got a str"
-                        )
+                        raise TypeError("standardReference takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
                         standardReference = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.StandardReference(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.StandardReference(i)
                             for i in standardReference
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        wallThickness,
-                        outerDiameter,
-                        length,
-                        standardReference,
-                    ]:
+                    for se_arg in [wallThickness, outerDiameter, length, standardReference]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -2309,9 +1962,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2340,20 +1991,13 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAG269#006",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAG269#006"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -2394,26 +2038,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAA020#011",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAA020#011"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Höhe", r"en": r"Height"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Höhe", r"en": r"Height"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2448,26 +2083,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAF016#007",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAF016#007"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Breite", r"en": r"Width"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Breite", r"en": r"Width"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2502,26 +2128,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAA018#008",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAA018#008"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Länge", r"en": r"Length"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Länge", r"en": r"Length"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2556,28 +2173,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAZ523#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ523#004"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Normreferenz",
-                                    r"en": r"Standard Reference",
-                                }
+                                dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
                             )
 
                         if qualifier is None:
@@ -2607,28 +2214,19 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     height: Union[xsd.Float, Height],
                     width: Union[xsd.Float, Width],
                     length: Union[xsd.Float, Length],
-                    standardReference: Optional[
-                        Iterable[Union[str, StandardReference]]
-                    ] = None,
+                    standardReference: Optional[Iterable[Union[str, StandardReference]]] = None,
                     id_short: Optional[str] = r"RectangularTube",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#01-AGV504#005",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGV504#005"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -2644,16 +2242,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if wallThickness is not None and not isinstance(
-                        wallThickness, aas.SubmodelElement
-                    ):
+                    if wallThickness is not None and not isinstance(wallThickness, aas.SubmodelElement):
                         wallThickness = self.WallThickness(wallThickness)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if height is not None and not isinstance(
-                        height, aas.SubmodelElement
-                    ):
+                    if height is not None and not isinstance(height, aas.SubmodelElement):
                         height = self.Height(height)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -2663,37 +2257,23 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if length is not None and not isinstance(
-                        length, aas.SubmodelElement
-                    ):
+                    if length is not None and not isinstance(length, aas.SubmodelElement):
                         length = self.Length(length)
 
                     # A str would be split into its characters
                     if isinstance(standardReference, str):
-                        raise TypeError(
-                            "standardReference takes several elements, got a str"
-                        )
+                        raise TypeError("standardReference takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
                         standardReference = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.StandardReference(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.StandardReference(i)
                             for i in standardReference
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        wallThickness,
-                        height,
-                        width,
-                        length,
-                        standardReference,
-                    ]:
+                    for se_arg in [wallThickness, height, width, length, standardReference]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -2704,9 +2284,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2735,28 +2313,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABG720#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG720#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Außendurchmesser",
-                                    r"en": r"Outer Diameter",
-                                }
+                                dict_={r"de": r"Außendurchmesser", r"en": r"Outer Diameter"}
                             )
 
                         if qualifier is None:
@@ -2792,26 +2360,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAA018#008",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAA018#008"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Länge", r"en": r"Length"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Länge", r"en": r"Length"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2846,28 +2405,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAZ523#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ523#004"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Normreferenz",
-                                    r"en": r"Standard Reference",
-                                }
+                                dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
                             )
 
                         if qualifier is None:
@@ -2895,34 +2444,23 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     self,
                     outerDiameter: Union[xsd.Float, OuterDiameter],
                     length: Union[xsd.Float, Length],
-                    standardReference: Optional[
-                        Iterable[Union[str, StandardReference]]
-                    ] = None,
+                    standardReference: Optional[Iterable[Union[str, StandardReference]]] = None,
                     id_short: Optional[str] = r"RoundBar",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#01-AGV490#005",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGV490#005"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Rundstahl", r"en": r"Round Bar"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"de": r"Rundstahl", r"en": r"Round Bar"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2932,32 +2470,22 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if outerDiameter is not None and not isinstance(
-                        outerDiameter, aas.SubmodelElement
-                    ):
+                    if outerDiameter is not None and not isinstance(outerDiameter, aas.SubmodelElement):
                         outerDiameter = self.OuterDiameter(outerDiameter)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if length is not None and not isinstance(
-                        length, aas.SubmodelElement
-                    ):
+                    if length is not None and not isinstance(length, aas.SubmodelElement):
                         length = self.Length(length)
 
                     # A str would be split into its characters
                     if isinstance(standardReference, str):
-                        raise TypeError(
-                            "standardReference takes several elements, got a str"
-                        )
+                        raise TypeError("standardReference takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
                         standardReference = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.StandardReference(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.StandardReference(i)
                             for i in standardReference
                         ]
 
@@ -2974,9 +2502,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3005,28 +2531,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAA103#008",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAA103#008"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Schlüsselweite",
-                                    r"en": r"Width Across Flats",
-                                }
+                                dict_={r"de": r"Schlüsselweite", r"en": r"Width Across Flats"}
                             )
 
                         if qualifier is None:
@@ -3062,26 +2578,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAA018#008",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAA018#008"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Länge", r"en": r"Length"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Länge", r"en": r"Length"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -3116,28 +2623,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAZ523#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ523#004"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Normreferenz",
-                                    r"en": r"Standard Reference",
-                                }
+                                dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
                             )
 
                         if qualifier is None:
@@ -3165,28 +2662,19 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     self,
                     widthAcrossFlats: Union[xsd.Float, WidthAcrossFlats],
                     length: Union[xsd.Float, Length],
-                    standardReference: Optional[
-                        Iterable[Union[str, StandardReference]]
-                    ] = None,
+                    standardReference: Optional[Iterable[Union[str, StandardReference]]] = None,
                     id_short: Optional[str] = r"HexagonalBar",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#01-AGV493#005",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGV493#005"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -3202,32 +2690,22 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if widthAcrossFlats is not None and not isinstance(
-                        widthAcrossFlats, aas.SubmodelElement
-                    ):
+                    if widthAcrossFlats is not None and not isinstance(widthAcrossFlats, aas.SubmodelElement):
                         widthAcrossFlats = self.WidthAcrossFlats(widthAcrossFlats)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if length is not None and not isinstance(
-                        length, aas.SubmodelElement
-                    ):
+                    if length is not None and not isinstance(length, aas.SubmodelElement):
                         length = self.Length(length)
 
                     # A str would be split into its characters
                     if isinstance(standardReference, str):
-                        raise TypeError(
-                            "standardReference takes several elements, got a str"
-                        )
+                        raise TypeError("standardReference takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
                         standardReference = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.StandardReference(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.StandardReference(i)
                             for i in standardReference
                         ]
 
@@ -3244,9 +2722,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3275,26 +2751,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAA020#011",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAA020#011"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Höhe", r"en": r"Height"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Höhe", r"en": r"Height"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -3329,26 +2796,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAF016#007",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAF016#007"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Breite", r"en": r"Width"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Breite", r"en": r"Width"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -3383,26 +2841,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAA018#008",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAA018#008"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Länge", r"en": r"Length"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Länge", r"en": r"Length"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -3437,28 +2886,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAZ523#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ523#004"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Normreferenz",
-                                    r"en": r"Standard Reference",
-                                }
+                                dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
                             )
 
                         if qualifier is None:
@@ -3487,28 +2926,19 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     height: Union[xsd.Float, Height],
                     width: Union[xsd.Float, Width],
                     length: Union[xsd.Float, Length],
-                    standardReference: Optional[
-                        Iterable[Union[str, StandardReference]]
-                    ] = None,
+                    standardReference: Optional[Iterable[Union[str, StandardReference]]] = None,
                     id_short: Optional[str] = r"RectangularBar",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#01-AGV492#005",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGV492#005"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -3524,9 +2954,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if height is not None and not isinstance(
-                        height, aas.SubmodelElement
-                    ):
+                    if height is not None and not isinstance(height, aas.SubmodelElement):
                         height = self.Height(height)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -3536,25 +2964,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if length is not None and not isinstance(
-                        length, aas.SubmodelElement
-                    ):
+                    if length is not None and not isinstance(length, aas.SubmodelElement):
                         length = self.Length(length)
 
                     # A str would be split into its characters
                     if isinstance(standardReference, str):
-                        raise TypeError(
-                            "standardReference takes several elements, got a str"
-                        )
+                        raise TypeError("standardReference takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
                         standardReference = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.StandardReference(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.StandardReference(i)
                             for i in standardReference
                         ]
 
@@ -3571,9 +2991,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3602,26 +3020,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAV127#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV127#003"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Dicke", r"en": r"Thickness"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Dicke", r"en": r"Thickness"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -3656,26 +3065,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAF016#007",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAF016#007"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Breite", r"en": r"Width"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Breite", r"en": r"Width"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -3710,26 +3110,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAA018#008",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAA018#008"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Länge", r"en": r"Length"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Länge", r"en": r"Length"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -3764,28 +3155,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAZ523#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ523#004"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Normreferenz",
-                                    r"en": r"Standard Reference",
-                                }
+                                dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
                             )
 
                         if qualifier is None:
@@ -3814,34 +3195,23 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     thickness: Union[xsd.Float, Thickness],
                     width: Union[xsd.Float, Width],
                     length: Union[xsd.Float, Length],
-                    standardReference: Optional[
-                        Iterable[Union[str, StandardReference]]
-                    ] = None,
+                    standardReference: Optional[Iterable[Union[str, StandardReference]]] = None,
                     id_short: Optional[str] = r"SheetMetal",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#01-AGU743#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGU743#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Metallblech", r"en": r"Sheet Metal"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"de": r"Metallblech", r"en": r"Sheet Metal"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3851,9 +3221,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if thickness is not None and not isinstance(
-                        thickness, aas.SubmodelElement
-                    ):
+                    if thickness is not None and not isinstance(thickness, aas.SubmodelElement):
                         thickness = self.Thickness(thickness)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -3863,25 +3231,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if length is not None and not isinstance(
-                        length, aas.SubmodelElement
-                    ):
+                    if length is not None and not isinstance(length, aas.SubmodelElement):
                         length = self.Length(length)
 
                     # A str would be split into its characters
                     if isinstance(standardReference, str):
-                        raise TypeError(
-                            "standardReference takes several elements, got a str"
-                        )
+                        raise TypeError("standardReference takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
                         standardReference = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.StandardReference(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.StandardReference(i)
                             for i in standardReference
                         ]
 
@@ -3898,9 +3258,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3929,28 +3287,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAZ528#005",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ528#005"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Profilbezeichnung",
-                                    r"en": r"Profile Specification",
-                                }
+                                dict_={r"de": r"Profilbezeichnung", r"en": r"Profile Specification"}
                             )
 
                         if qualifier is None:
@@ -3986,26 +3334,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAA020#011",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAA020#011"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Höhe", r"en": r"Height"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Höhe", r"en": r"Height"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -4040,26 +3379,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAF016#007",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAF016#007"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Breite", r"en": r"Width"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Breite", r"en": r"Width"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -4094,26 +3424,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-BAA018#008",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAA018#008"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Länge", r"en": r"Length"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"de": r"Länge", r"en": r"Length"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -4148,28 +3469,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAZ523#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ523#004"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Normreferenz",
-                                    r"en": r"Standard Reference",
-                                }
+                                dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
                             )
 
                         if qualifier is None:
@@ -4199,34 +3510,23 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     height: Optional[Union[xsd.Float, Height]] = None,
                     width: Optional[Union[xsd.Float, Width]] = None,
                     length: Optional[Union[xsd.Float, Length]] = None,
-                    standardReference: Optional[
-                        Iterable[Union[str, StandardReference]]
-                    ] = None,
+                    standardReference: Optional[Iterable[Union[str, StandardReference]]] = None,
                     id_short: Optional[str] = r"Profile",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#01-AGU744#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGU744#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Profil", r"en": r"Profile"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"de": r"Profil", r"en": r"Profile"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4236,18 +3536,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if profileSpecification is not None and not isinstance(
-                        profileSpecification, aas.SubmodelElement
-                    ):
-                        profileSpecification = self.ProfileSpecification(
-                            profileSpecification
-                        )
+                    if profileSpecification is not None and not isinstance(profileSpecification, aas.SubmodelElement):
+                        profileSpecification = self.ProfileSpecification(profileSpecification)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if height is not None and not isinstance(
-                        height, aas.SubmodelElement
-                    ):
+                    if height is not None and not isinstance(height, aas.SubmodelElement):
                         height = self.Height(height)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -4257,37 +3551,23 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if length is not None and not isinstance(
-                        length, aas.SubmodelElement
-                    ):
+                    if length is not None and not isinstance(length, aas.SubmodelElement):
                         length = self.Length(length)
 
                     # A str would be split into its characters
                     if isinstance(standardReference, str):
-                        raise TypeError(
-                            "standardReference takes several elements, got a str"
-                        )
+                        raise TypeError("standardReference takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if standardReference:
                         standardReference = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.StandardReference(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.StandardReference(i)
                             for i in standardReference
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        profileSpecification,
-                        height,
-                        width,
-                        length,
-                        standardReference,
-                    ]:
+                    for se_arg in [profileSpecification, height, width, length, standardReference]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -4298,9 +3578,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4329,28 +3607,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#01-AGO030#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGO030#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Halbzeugspezifikation",
-                            r"en": r"Specification of semi-finished Product",
-                        }
+                        dict_={r"de": r"Halbzeugspezifikation", r"en": r"Specification of semi-finished Product"}
                     )
 
                 if qualifier is None:
@@ -4362,15 +3630,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 if (
                     sum(
                         arg is not None
-                        for arg in (
-                            tube,
-                            rectangularTube,
-                            roundBar,
-                            hexagonalBar,
-                            rectangularBar,
-                            sheetMetal,
-                            profile,
-                        )
+                        for arg in (tube, rectangularTube, roundBar, hexagonalBar, rectangularBar, sheetMetal, profile)
                     )
                     > 1
                 ):
@@ -4380,15 +3640,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    tube,
-                    rectangularTube,
-                    roundBar,
-                    hexagonalBar,
-                    rectangularBar,
-                    sheetMetal,
-                    profile,
-                ]:
+                for se_arg in [tube, rectangularTube, roundBar, hexagonalBar, rectangularBar, sheetMetal, profile]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -4399,9 +3651,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4427,26 +3677,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAQ318#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ318#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Zeichnung", r"en": r"Drawing"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Zeichnung", r"en": r"Drawing"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -4470,28 +3711,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
         def __init__(
             self,
-            manufacturerProductNumber: Optional[
-                Union[str, ManufacturerProductNumber]
-            ] = None,
+            manufacturerProductNumber: Optional[Union[str, ManufacturerProductNumber]] = None,
             purchaserArticleNumber: Optional[Union[str, PurchaserArticleNumber]] = None,
-            productDescription: Optional[
-                Union[aas.LangStringSet, ProductDescription]
-            ] = None,
-            additionalProductRequirements: Optional[
-                Union[aas.LangStringSet, AdditionalProductRequirements]
-            ] = None,
+            productDescription: Optional[Union[aas.LangStringSet, ProductDescription]] = None,
+            additionalProductRequirements: Optional[Union[aas.LangStringSet, AdditionalProductRequirements]] = None,
             batchNumber: Optional[Union[str, BatchNumber]] = None,
             materialNumber: Optional[Union[str, MaterialNumber]] = None,
             materialShortName: Optional[Union[str, MaterialShortName]] = None,
-            materialAdditionalInformation: Optional[
-                Union[aas.LangStringSet, MaterialAdditionalInformation]
-            ] = None,
+            materialAdditionalInformation: Optional[Union[aas.LangStringSet, MaterialAdditionalInformation]] = None,
             numberOfPieces: Optional[Union[xsd.PositiveInteger, NumberOfPieces]] = None,
             theoreticalMass: Optional[Union[xsd.Float, TheoreticalMass]] = None,
             actualMass: Optional[Union[xsd.Float, ActualMass]] = None,
-            semiFinishedProductSpecification: Optional[
-                SemiFinishedProductSpecification
-            ] = None,
+            semiFinishedProductSpecification: Optional[SemiFinishedProductSpecification] = None,
             drawing: Optional[Iterable[Drawing]] = None,
             id_short: Optional[str] = r"ProductData",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -4509,15 +3740,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Produktdaten", r"en": r"Product Data"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"de": r"Produktdaten", r"en": r"Product Data"})
 
             if qualifier is None:
                 qualifier = ()
@@ -4527,27 +3754,17 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerProductNumber is not None and not isinstance(
-                manufacturerProductNumber, aas.SubmodelElement
-            ):
-                manufacturerProductNumber = self.ManufacturerProductNumber(
-                    manufacturerProductNumber
-                )
+            if manufacturerProductNumber is not None and not isinstance(manufacturerProductNumber, aas.SubmodelElement):
+                manufacturerProductNumber = self.ManufacturerProductNumber(manufacturerProductNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if purchaserArticleNumber is not None and not isinstance(
-                purchaserArticleNumber, aas.SubmodelElement
-            ):
-                purchaserArticleNumber = self.PurchaserArticleNumber(
-                    purchaserArticleNumber
-                )
+            if purchaserArticleNumber is not None and not isinstance(purchaserArticleNumber, aas.SubmodelElement):
+                purchaserArticleNumber = self.PurchaserArticleNumber(purchaserArticleNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if productDescription is not None and not isinstance(
-                productDescription, aas.SubmodelElement
-            ):
+            if productDescription is not None and not isinstance(productDescription, aas.SubmodelElement):
                 productDescription = self.ProductDescription(productDescription)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -4555,29 +3772,21 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             if additionalProductRequirements is not None and not isinstance(
                 additionalProductRequirements, aas.SubmodelElement
             ):
-                additionalProductRequirements = self.AdditionalProductRequirements(
-                    additionalProductRequirements
-                )
+                additionalProductRequirements = self.AdditionalProductRequirements(additionalProductRequirements)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if batchNumber is not None and not isinstance(
-                batchNumber, aas.SubmodelElement
-            ):
+            if batchNumber is not None and not isinstance(batchNumber, aas.SubmodelElement):
                 batchNumber = self.BatchNumber(batchNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if materialNumber is not None and not isinstance(
-                materialNumber, aas.SubmodelElement
-            ):
+            if materialNumber is not None and not isinstance(materialNumber, aas.SubmodelElement):
                 materialNumber = self.MaterialNumber(materialNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if materialShortName is not None and not isinstance(
-                materialShortName, aas.SubmodelElement
-            ):
+            if materialShortName is not None and not isinstance(materialShortName, aas.SubmodelElement):
                 materialShortName = self.MaterialShortName(materialShortName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -4585,29 +3794,21 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             if materialAdditionalInformation is not None and not isinstance(
                 materialAdditionalInformation, aas.SubmodelElement
             ):
-                materialAdditionalInformation = self.MaterialAdditionalInformation(
-                    materialAdditionalInformation
-                )
+                materialAdditionalInformation = self.MaterialAdditionalInformation(materialAdditionalInformation)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if numberOfPieces is not None and not isinstance(
-                numberOfPieces, aas.SubmodelElement
-            ):
+            if numberOfPieces is not None and not isinstance(numberOfPieces, aas.SubmodelElement):
                 numberOfPieces = self.NumberOfPieces(numberOfPieces)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if theoreticalMass is not None and not isinstance(
-                theoreticalMass, aas.SubmodelElement
-            ):
+            if theoreticalMass is not None and not isinstance(theoreticalMass, aas.SubmodelElement):
                 theoreticalMass = self.TheoreticalMass(theoreticalMass)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if actualMass is not None and not isinstance(
-                actualMass, aas.SubmodelElement
-            ):
+            if actualMass is not None and not isinstance(actualMass, aas.SubmodelElement):
                 actualMass = self.ActualMass(actualMass)
 
             # A str would be split into its characters
@@ -4641,9 +3842,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4685,17 +3884,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Streck- oder Dehngrenze Mittelwert",
-                                r"en": r"Yield or Proof Strength Mean",
-                            }
+                            dict_={r"de": r"Streck- oder Dehngrenze Mittelwert", r"en": r"Yield or Proof Strength Mean"}
                         )
 
                     if qualifier is None:
@@ -4742,17 +3936,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Zugfestigkeit Mittelwert",
-                                r"en": r"Tensile Strength Mean",
-                            }
+                            dict_={r"de": r"Zugfestigkeit Mittelwert", r"en": r"Tensile Strength Mean"}
                         )
 
                     if qualifier is None:
@@ -4799,17 +3988,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Bruchdehnung Mittelwert",
-                                r"en": r"Elongation after Fracture Mean",
-                            }
+                            dict_={r"de": r"Bruchdehnung Mittelwert", r"en": r"Elongation after Fracture Mean"}
                         )
 
                     if qualifier is None:
@@ -4842,9 +4026,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ] = None,
                     id_short: Optional[str] = r"YieldOrProofStrengthIndividualValues",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4870,9 +4052,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -4891,18 +4071,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(yieldorproofstrengthindividualvalues_items, str):
-                        raise TypeError(
-                            "yieldorproofstrengthindividualvalues_items takes several elements, got a str"
-                        )
+                        raise TypeError("yieldorproofstrengthindividualvalues_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if yieldorproofstrengthindividualvalues_items:
                         yieldorproofstrengthindividualvalues_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else aas.Property(None, value_type_list_element, i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else aas.Property(None, value_type_list_element, i)
                             for i in yieldorproofstrengthindividualvalues_items
                         ]
 
@@ -4916,9 +4090,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4985,15 +4157,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -5009,14 +4175,10 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 def __init__(
                     self,
-                    tensilestrengthindividualvalues_items: Optional[
-                        Iterable[Union[xsd.Float, aas.Property]]
-                    ] = None,
+                    tensilestrengthindividualvalues_items: Optional[Iterable[Union[xsd.Float, aas.Property]]] = None,
                     id_short: Optional[str] = r"TensileStrengthIndividualValues",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5042,17 +4204,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Zugfestigkeit Einzelwerte",
-                                r"en": r"Tensile Strength Individual Values",
-                            }
+                            dict_={r"de": r"Zugfestigkeit Einzelwerte", r"en": r"Tensile Strength Individual Values"}
                         )
 
                     if qualifier is None:
@@ -5063,18 +4220,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(tensilestrengthindividualvalues_items, str):
-                        raise TypeError(
-                            "tensilestrengthindividualvalues_items takes several elements, got a str"
-                        )
+                        raise TypeError("tensilestrengthindividualvalues_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if tensilestrengthindividualvalues_items:
                         tensilestrengthindividualvalues_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else aas.Property(None, value_type_list_element, i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else aas.Property(None, value_type_list_element, i)
                             for i in tensilestrengthindividualvalues_items
                         ]
 
@@ -5088,9 +4239,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5157,15 +4306,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -5184,13 +4327,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     elongationafterfractureindividualvalues_items: Optional[
                         Iterable[Union[xsd.Float, aas.Property]]
                     ] = None,
-                    id_short: Optional[
-                        str
-                    ] = r"ElongationAfterFractureIndividualValues",
+                    id_short: Optional[str] = r"ElongationAfterFractureIndividualValues",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5216,9 +4355,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -5244,11 +4381,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     # Build submodel elements from raw values passed in the argument
                     if elongationafterfractureindividualvalues_items:
                         elongationafterfractureindividualvalues_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else aas.Property(None, value_type_list_element, i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else aas.Property(None, value_type_list_element, i)
                             for i in elongationafterfractureindividualvalues_items
                         ]
 
@@ -5262,9 +4395,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5331,15 +4462,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -5374,9 +4499,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -5427,17 +4550,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Probenform",
-                                r"en": r"Shape of the Test Piece",
-                            }
+                            dict_={r"de": r"Probenform", r"en": r"Shape of the Test Piece"}
                         )
 
                     if qualifier is None:
@@ -5482,17 +4600,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Lage des Probenabschnittes",
-                                r"en": r"Location of the Sample",
-                            }
+                            dict_={r"de": r"Lage des Probenabschnittes", r"en": r"Location of the Sample"}
                         )
 
                     if qualifier is None:
@@ -5537,17 +4650,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Probenrichtung",
-                                r"en": r"Direction of the Sample",
-                            }
+                            dict_={r"de": r"Probenrichtung", r"en": r"Direction of the Sample"}
                         )
 
                     if qualifier is None:
@@ -5572,41 +4680,22 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             def __init__(
                 self,
-                yieldOrProofStrengthMean: Optional[
-                    Union[xsd.Float, YieldOrProofStrengthMean]
-                ] = None,
-                tensileStrengthMean: Optional[
-                    Union[xsd.Float, TensileStrengthMean]
-                ] = None,
-                elongationAfterFractureMean: Optional[
-                    Union[xsd.Float, ElongationAfterFractureMean]
-                ] = None,
+                yieldOrProofStrengthMean: Optional[Union[xsd.Float, YieldOrProofStrengthMean]] = None,
+                tensileStrengthMean: Optional[Union[xsd.Float, TensileStrengthMean]] = None,
+                elongationAfterFractureMean: Optional[Union[xsd.Float, ElongationAfterFractureMean]] = None,
                 yieldOrProofStrengthIndividualValues: Optional[
-                    Union[
-                        Iterable[Union[xsd.Float, aas.Property]],
-                        YieldOrProofStrengthIndividualValues,
-                    ]
+                    Union[Iterable[Union[xsd.Float, aas.Property]], YieldOrProofStrengthIndividualValues]
                 ] = None,
                 tensileStrengthIndividualValues: Optional[
-                    Union[
-                        Iterable[Union[xsd.Float, aas.Property]],
-                        TensileStrengthIndividualValues,
-                    ]
+                    Union[Iterable[Union[xsd.Float, aas.Property]], TensileStrengthIndividualValues]
                 ] = None,
                 elongationAfterFractureIndividualValues: Optional[
-                    Union[
-                        Iterable[Union[xsd.Float, aas.Property]],
-                        ElongationAfterFractureIndividualValues,
-                    ]
+                    Union[Iterable[Union[xsd.Float, aas.Property]], ElongationAfterFractureIndividualValues]
                 ] = None,
                 testTemperature: Optional[Union[xsd.Float, TestTemperature]] = None,
                 sampleShape: Optional[Union[aas.LangStringSet, SampleShape]] = None,
-                locationOfSample: Optional[
-                    Iterable[Union[aas.LangStringSet, LocationOfSample]]
-                ] = None,
-                directionOfSample: Optional[
-                    Iterable[Union[aas.LangStringSet, DirectionOfSample]]
-                ] = None,
+                locationOfSample: Optional[Iterable[Union[aas.LangStringSet, LocationOfSample]]] = None,
+                directionOfSample: Optional[Iterable[Union[aas.LangStringSet, DirectionOfSample]]] = None,
                 id_short: Optional[str] = r"TensileTest",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -5623,15 +4712,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Zugversuch", r"en": r"Tensile Test"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Zugversuch", r"en": r"Tensile Test"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -5644,15 +4729,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 if yieldOrProofStrengthMean is not None and not isinstance(
                     yieldOrProofStrengthMean, aas.SubmodelElement
                 ):
-                    yieldOrProofStrengthMean = self.YieldOrProofStrengthMean(
-                        yieldOrProofStrengthMean
-                    )
+                    yieldOrProofStrengthMean = self.YieldOrProofStrengthMean(yieldOrProofStrengthMean)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if tensileStrengthMean is not None and not isinstance(
-                    tensileStrengthMean, aas.SubmodelElement
-                ):
+                if tensileStrengthMean is not None and not isinstance(tensileStrengthMean, aas.SubmodelElement):
                     tensileStrengthMean = self.TensileStrengthMean(tensileStrengthMean)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -5660,109 +4741,75 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 if elongationAfterFractureMean is not None and not isinstance(
                     elongationAfterFractureMean, aas.SubmodelElement
                 ):
-                    elongationAfterFractureMean = self.ElongationAfterFractureMean(
-                        elongationAfterFractureMean
-                    )
+                    elongationAfterFractureMean = self.ElongationAfterFractureMean(elongationAfterFractureMean)
 
                 # A str would be split into its characters
                 if isinstance(yieldOrProofStrengthIndividualValues, str):
-                    raise TypeError(
-                        "yieldOrProofStrengthIndividualValues takes several elements, got a str"
-                    )
+                    raise TypeError("yieldOrProofStrengthIndividualValues takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if yieldOrProofStrengthIndividualValues is not None and not isinstance(
                     yieldOrProofStrengthIndividualValues, aas.SubmodelElement
                 ):
-                    yieldOrProofStrengthIndividualValues = (
-                        self.YieldOrProofStrengthIndividualValues(
-                            yieldOrProofStrengthIndividualValues
-                        )
+                    yieldOrProofStrengthIndividualValues = self.YieldOrProofStrengthIndividualValues(
+                        yieldOrProofStrengthIndividualValues
                     )
 
                 # A str would be split into its characters
                 if isinstance(tensileStrengthIndividualValues, str):
-                    raise TypeError(
-                        "tensileStrengthIndividualValues takes several elements, got a str"
-                    )
+                    raise TypeError("tensileStrengthIndividualValues takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if tensileStrengthIndividualValues is not None and not isinstance(
                     tensileStrengthIndividualValues, aas.SubmodelElement
                 ):
-                    tensileStrengthIndividualValues = (
-                        self.TensileStrengthIndividualValues(
-                            tensileStrengthIndividualValues
-                        )
+                    tensileStrengthIndividualValues = self.TensileStrengthIndividualValues(
+                        tensileStrengthIndividualValues
                     )
 
                 # A str would be split into its characters
                 if isinstance(elongationAfterFractureIndividualValues, str):
-                    raise TypeError(
-                        "elongationAfterFractureIndividualValues takes several elements, got a str"
+                    raise TypeError("elongationAfterFractureIndividualValues takes several elements, got a str")
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if elongationAfterFractureIndividualValues is not None and not isinstance(
+                    elongationAfterFractureIndividualValues, aas.SubmodelElement
+                ):
+                    elongationAfterFractureIndividualValues = self.ElongationAfterFractureIndividualValues(
+                        elongationAfterFractureIndividualValues
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    elongationAfterFractureIndividualValues is not None
-                    and not isinstance(
-                        elongationAfterFractureIndividualValues, aas.SubmodelElement
-                    )
-                ):
-                    elongationAfterFractureIndividualValues = (
-                        self.ElongationAfterFractureIndividualValues(
-                            elongationAfterFractureIndividualValues
-                        )
-                    )
-
-                # Build a submodel element if a raw value was passed in the argument
-
-                if testTemperature is not None and not isinstance(
-                    testTemperature, aas.SubmodelElement
-                ):
+                if testTemperature is not None and not isinstance(testTemperature, aas.SubmodelElement):
                     testTemperature = self.TestTemperature(testTemperature)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if sampleShape is not None and not isinstance(
-                    sampleShape, aas.SubmodelElement
-                ):
+                if sampleShape is not None and not isinstance(sampleShape, aas.SubmodelElement):
                     sampleShape = self.SampleShape(sampleShape)
 
                 # A str would be split into its characters
                 if isinstance(locationOfSample, str):
-                    raise TypeError(
-                        "locationOfSample takes several elements, got a str"
-                    )
+                    raise TypeError("locationOfSample takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if locationOfSample:
                     locationOfSample = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.LocationOfSample(i)
-                        )
-                        for i in locationOfSample
+                        i if isinstance(i, aas.SubmodelElement) else self.LocationOfSample(i) for i in locationOfSample
                     ]
 
                 # A str would be split into its characters
                 if isinstance(directionOfSample, str):
-                    raise TypeError(
-                        "directionOfSample takes several elements, got a str"
-                    )
+                    raise TypeError("directionOfSample takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if directionOfSample:
                     directionOfSample = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.DirectionOfSample(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.DirectionOfSample(i)
                         for i in directionOfSample
                     ]
 
@@ -5790,9 +4837,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5832,17 +4877,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Härteprüfverfahren",
-                                r"en": r"Hardness Testing Method",
-                            }
+                            dict_={r"de": r"Härteprüfverfahren", r"en": r"Hardness Testing Method"}
                         )
 
                     if qualifier is None:
@@ -5889,9 +4929,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -5924,14 +4962,10 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 def __init__(
                     self,
-                    hardnessindividualvalues_items: Optional[
-                        Iterable[Union[str, aas.Property]]
-                    ] = None,
+                    hardnessindividualvalues_items: Optional[Iterable[Union[str, aas.Property]]] = None,
                     id_short: Optional[str] = r"HardnessIndividualValues",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5957,17 +4991,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Härte Einzelwerte",
-                                r"en": r"Hardness Individual Values",
-                            }
+                            dict_={r"de": r"Härte Einzelwerte", r"en": r"Hardness Individual Values"}
                         )
 
                     if qualifier is None:
@@ -5978,18 +5007,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(hardnessindividualvalues_items, str):
-                        raise TypeError(
-                            "hardnessindividualvalues_items takes several elements, got a str"
-                        )
+                        raise TypeError("hardnessindividualvalues_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if hardnessindividualvalues_items:
                         hardnessindividualvalues_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else aas.Property(None, value_type_list_element, i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else aas.Property(None, value_type_list_element, i)
                             for i in hardnessindividualvalues_items
                         ]
 
@@ -6003,9 +5026,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6072,15 +5093,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -6115,9 +5130,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -6168,17 +5181,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Lage des Probenabschnittes",
-                                r"en": r"Location of the Sample",
-                            }
+                            dict_={r"de": r"Lage des Probenabschnittes", r"en": r"Location of the Sample"}
                         )
 
                     if qualifier is None:
@@ -6223,17 +5231,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Probenrichtung",
-                                r"en": r"Direction of the Sample",
-                            }
+                            dict_={r"de": r"Probenrichtung", r"en": r"Direction of the Sample"}
                         )
 
                     if qualifier is None:
@@ -6258,20 +5261,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             def __init__(
                 self,
-                hardnessTestingMethod: Optional[
-                    Union[str, HardnessTestingMethod]
-                ] = None,
+                hardnessTestingMethod: Optional[Union[str, HardnessTestingMethod]] = None,
                 hardnessMean: Optional[Union[str, HardnessMean]] = None,
                 hardnessIndividualValues: Optional[
                     Union[Iterable[Union[str, aas.Property]], HardnessIndividualValues]
                 ] = None,
                 testTemperature: Optional[Union[xsd.Float, TestTemperature]] = None,
-                locationOfSample: Optional[
-                    Iterable[Union[aas.LangStringSet, LocationOfSample]]
-                ] = None,
-                directionOfSample: Optional[
-                    Iterable[Union[aas.LangStringSet, DirectionOfSample]]
-                ] = None,
+                locationOfSample: Optional[Iterable[Union[aas.LangStringSet, LocationOfSample]]] = None,
+                directionOfSample: Optional[Iterable[Union[aas.LangStringSet, DirectionOfSample]]] = None,
                 id_short: Optional[str] = r"HardnessTest",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -6288,15 +5285,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Härteprüfung", r"en": r"Hardness Test"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Härteprüfung", r"en": r"Hardness Test"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -6306,73 +5299,48 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if hardnessTestingMethod is not None and not isinstance(
-                    hardnessTestingMethod, aas.SubmodelElement
-                ):
-                    hardnessTestingMethod = self.HardnessTestingMethod(
-                        hardnessTestingMethod
-                    )
+                if hardnessTestingMethod is not None and not isinstance(hardnessTestingMethod, aas.SubmodelElement):
+                    hardnessTestingMethod = self.HardnessTestingMethod(hardnessTestingMethod)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if hardnessMean is not None and not isinstance(
-                    hardnessMean, aas.SubmodelElement
-                ):
+                if hardnessMean is not None and not isinstance(hardnessMean, aas.SubmodelElement):
                     hardnessMean = self.HardnessMean(hardnessMean)
 
                 # A str would be split into its characters
                 if isinstance(hardnessIndividualValues, str):
-                    raise TypeError(
-                        "hardnessIndividualValues takes several elements, got a str"
-                    )
+                    raise TypeError("hardnessIndividualValues takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if hardnessIndividualValues is not None and not isinstance(
                     hardnessIndividualValues, aas.SubmodelElement
                 ):
-                    hardnessIndividualValues = self.HardnessIndividualValues(
-                        hardnessIndividualValues
-                    )
+                    hardnessIndividualValues = self.HardnessIndividualValues(hardnessIndividualValues)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if testTemperature is not None and not isinstance(
-                    testTemperature, aas.SubmodelElement
-                ):
+                if testTemperature is not None and not isinstance(testTemperature, aas.SubmodelElement):
                     testTemperature = self.TestTemperature(testTemperature)
 
                 # A str would be split into its characters
                 if isinstance(locationOfSample, str):
-                    raise TypeError(
-                        "locationOfSample takes several elements, got a str"
-                    )
+                    raise TypeError("locationOfSample takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if locationOfSample:
                     locationOfSample = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.LocationOfSample(i)
-                        )
-                        for i in locationOfSample
+                        i if isinstance(i, aas.SubmodelElement) else self.LocationOfSample(i) for i in locationOfSample
                     ]
 
                 # A str would be split into its characters
                 if isinstance(directionOfSample, str):
-                    raise TypeError(
-                        "directionOfSample takes several elements, got a str"
-                    )
+                    raise TypeError("directionOfSample takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if directionOfSample:
                     directionOfSample = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.DirectionOfSample(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.DirectionOfSample(i)
                         for i in directionOfSample
                     ]
 
@@ -6396,9 +5364,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -6438,17 +5404,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Kerbschlagzähigkeit Mittelwert",
-                                r"en": r"Notch Impact Strength Mean",
-                            }
+                            dict_={r"de": r"Kerbschlagzähigkeit Mittelwert", r"en": r"Notch Impact Strength Mean"}
                         )
 
                     if qualifier is None:
@@ -6481,9 +5442,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ] = None,
                     id_short: Optional[str] = r"NotchImpactStrengthIndividualValues",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6509,9 +5468,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -6530,18 +5487,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(notchimpactstrengthindividualvalues_items, str):
-                        raise TypeError(
-                            "notchimpactstrengthindividualvalues_items takes several elements, got a str"
-                        )
+                        raise TypeError("notchimpactstrengthindividualvalues_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if notchimpactstrengthindividualvalues_items:
                         notchimpactstrengthindividualvalues_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else aas.Property(None, value_type_list_element, i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else aas.Property(None, value_type_list_element, i)
                             for i in notchimpactstrengthindividualvalues_items
                         ]
 
@@ -6555,9 +5506,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6624,15 +5573,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -6667,17 +5610,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Notch Impact Work Mean",
-                                r"de": r"Kerbschlagbiegearbeit Mittelwert",
-                            }
+                            dict_={r"en": r"Notch Impact Work Mean", r"de": r"Kerbschlagbiegearbeit Mittelwert"}
                         )
 
                     if qualifier is None:
@@ -6705,14 +5643,10 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 def __init__(
                     self,
-                    notchimpactworkindividualvalues_items: Optional[
-                        Iterable[Union[xsd.Float, aas.Property]]
-                    ] = None,
+                    notchimpactworkindividualvalues_items: Optional[Iterable[Union[xsd.Float, aas.Property]]] = None,
                     id_short: Optional[str] = r"NotchImpactWorkIndividualValues",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6738,9 +5672,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -6759,18 +5691,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(notchimpactworkindividualvalues_items, str):
-                        raise TypeError(
-                            "notchimpactworkindividualvalues_items takes several elements, got a str"
-                        )
+                        raise TypeError("notchimpactworkindividualvalues_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if notchimpactworkindividualvalues_items:
                         notchimpactworkindividualvalues_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else aas.Property(None, value_type_list_element, i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else aas.Property(None, value_type_list_element, i)
                             for i in notchimpactworkindividualvalues_items
                         ]
 
@@ -6784,9 +5710,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6853,15 +5777,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -6896,9 +5814,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -6950,17 +5866,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Probenbreite",
-                                r"en": r"Width of Test Piece",
-                            }
+                            dict_={r"de": r"Probenbreite", r"en": r"Width of Test Piece"}
                         )
 
                     if qualifier is None:
@@ -7007,9 +5918,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -7061,17 +5970,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Lage des Probenabschnittes",
-                                r"en": r"Location of the Sample",
-                            }
+                            dict_={r"de": r"Lage des Probenabschnittes", r"en": r"Location of the Sample"}
                         )
 
                     if qualifier is None:
@@ -7118,17 +6022,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Probenrichtung",
-                                r"en": r"Direction of the Test Piece",
-                            }
+                            dict_={r"de": r"Probenrichtung", r"en": r"Direction of the Test Piece"}
                         )
 
                     if qualifier is None:
@@ -7154,31 +6053,19 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             def __init__(
                 self,
-                notchImpactStrengthMean: Optional[
-                    Union[xsd.Float, NotchImpactStrengthMean]
-                ] = None,
+                notchImpactStrengthMean: Optional[Union[xsd.Float, NotchImpactStrengthMean]] = None,
                 notchImpactStrengthIndividualValues: Optional[
-                    Union[
-                        Iterable[Union[xsd.Float, aas.Property]],
-                        NotchImpactStrengthIndividualValues,
-                    ]
+                    Union[Iterable[Union[xsd.Float, aas.Property]], NotchImpactStrengthIndividualValues]
                 ] = None,
                 notchImpactWorkMean: Optional[Union[str, NotchImpactWorkMean]] = None,
                 notchImpactWorkIndividualValues: Optional[
-                    Union[
-                        Iterable[Union[xsd.Float, aas.Property]],
-                        NotchImpactWorkIndividualValues,
-                    ]
+                    Union[Iterable[Union[xsd.Float, aas.Property]], NotchImpactWorkIndividualValues]
                 ] = None,
                 sampleType: Optional[Union[str, SampleType]] = None,
                 sampleWidth: Optional[Union[xsd.Float, SampleWidth]] = None,
                 testTemperature: Optional[Union[xsd.Float, TestTemperature]] = None,
-                locationOfSample: Optional[
-                    Iterable[Union[str, LocationOfSample]]
-                ] = None,
-                directionOfSample: Optional[
-                    Iterable[Union[str, DirectionOfSample]]
-                ] = None,
+                locationOfSample: Optional[Iterable[Union[str, LocationOfSample]]] = None,
+                directionOfSample: Optional[Iterable[Union[str, DirectionOfSample]]] = None,
                 id_short: Optional[str] = r"NotchImpactTest",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -7195,17 +6082,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Kerbschlagbiegeversuch",
-                            r"en": r"Notch Impact Test",
-                        }
+                        dict_={r"de": r"Kerbschlagbiegeversuch", r"en": r"Notch Impact Test"}
                     )
 
                 if qualifier is None:
@@ -7216,106 +6098,73 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if notchImpactStrengthMean is not None and not isinstance(
-                    notchImpactStrengthMean, aas.SubmodelElement
-                ):
-                    notchImpactStrengthMean = self.NotchImpactStrengthMean(
-                        notchImpactStrengthMean
-                    )
+                if notchImpactStrengthMean is not None and not isinstance(notchImpactStrengthMean, aas.SubmodelElement):
+                    notchImpactStrengthMean = self.NotchImpactStrengthMean(notchImpactStrengthMean)
 
                 # A str would be split into its characters
                 if isinstance(notchImpactStrengthIndividualValues, str):
-                    raise TypeError(
-                        "notchImpactStrengthIndividualValues takes several elements, got a str"
-                    )
+                    raise TypeError("notchImpactStrengthIndividualValues takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if notchImpactStrengthIndividualValues is not None and not isinstance(
                     notchImpactStrengthIndividualValues, aas.SubmodelElement
                 ):
-                    notchImpactStrengthIndividualValues = (
-                        self.NotchImpactStrengthIndividualValues(
-                            notchImpactStrengthIndividualValues
-                        )
+                    notchImpactStrengthIndividualValues = self.NotchImpactStrengthIndividualValues(
+                        notchImpactStrengthIndividualValues
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if notchImpactWorkMean is not None and not isinstance(
-                    notchImpactWorkMean, aas.SubmodelElement
-                ):
+                if notchImpactWorkMean is not None and not isinstance(notchImpactWorkMean, aas.SubmodelElement):
                     notchImpactWorkMean = self.NotchImpactWorkMean(notchImpactWorkMean)
 
                 # A str would be split into its characters
                 if isinstance(notchImpactWorkIndividualValues, str):
-                    raise TypeError(
-                        "notchImpactWorkIndividualValues takes several elements, got a str"
-                    )
+                    raise TypeError("notchImpactWorkIndividualValues takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if notchImpactWorkIndividualValues is not None and not isinstance(
                     notchImpactWorkIndividualValues, aas.SubmodelElement
                 ):
-                    notchImpactWorkIndividualValues = (
-                        self.NotchImpactWorkIndividualValues(
-                            notchImpactWorkIndividualValues
-                        )
+                    notchImpactWorkIndividualValues = self.NotchImpactWorkIndividualValues(
+                        notchImpactWorkIndividualValues
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if sampleType is not None and not isinstance(
-                    sampleType, aas.SubmodelElement
-                ):
+                if sampleType is not None and not isinstance(sampleType, aas.SubmodelElement):
                     sampleType = self.SampleType(sampleType)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if sampleWidth is not None and not isinstance(
-                    sampleWidth, aas.SubmodelElement
-                ):
+                if sampleWidth is not None and not isinstance(sampleWidth, aas.SubmodelElement):
                     sampleWidth = self.SampleWidth(sampleWidth)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if testTemperature is not None and not isinstance(
-                    testTemperature, aas.SubmodelElement
-                ):
+                if testTemperature is not None and not isinstance(testTemperature, aas.SubmodelElement):
                     testTemperature = self.TestTemperature(testTemperature)
 
                 # A str would be split into its characters
                 if isinstance(locationOfSample, str):
-                    raise TypeError(
-                        "locationOfSample takes several elements, got a str"
-                    )
+                    raise TypeError("locationOfSample takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if locationOfSample:
                     locationOfSample = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.LocationOfSample(i)
-                        )
-                        for i in locationOfSample
+                        i if isinstance(i, aas.SubmodelElement) else self.LocationOfSample(i) for i in locationOfSample
                     ]
 
                 # A str would be split into its characters
                 if isinstance(directionOfSample, str):
-                    raise TypeError(
-                        "directionOfSample takes several elements, got a str"
-                    )
+                    raise TypeError("directionOfSample takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if directionOfSample:
                     directionOfSample = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.DirectionOfSample(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.DirectionOfSample(i)
                         for i in directionOfSample
                     ]
 
@@ -7342,9 +6191,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -7369,20 +6216,13 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#01-AKG420#020",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AKG420#020"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -7421,9 +6261,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -7463,9 +6301,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -7517,9 +6353,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -7571,15 +6405,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Masseanteil C", r"en": r"Mass Fraction C"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Masseanteil C", r"en": r"Mass Fraction C"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -7625,9 +6455,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -7679,9 +6507,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -7733,9 +6559,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -7787,9 +6611,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -7841,15 +6663,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Masseanteil N", r"en": r"Mass Fraction N"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Masseanteil N", r"en": r"Mass Fraction N"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -7895,9 +6713,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -7949,9 +6765,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -8003,15 +6817,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Masseanteil P", r"en": r"Mass Fraction P"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Masseanteil P", r"en": r"Mass Fraction P"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -8057,9 +6867,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -8111,15 +6919,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Masseanteil S", r"en": r"Mass Fraction S"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Masseanteil S", r"en": r"Mass Fraction S"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -8165,9 +6969,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -8219,9 +7021,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -8273,9 +7073,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -8327,15 +7125,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Masseanteil V", r"en": r"Mass Fraction V"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Masseanteil V", r"en": r"Mass Fraction V"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -8381,15 +7175,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Masseanteil W", r"en": r"Mass Fraction W"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Masseanteil W", r"en": r"Mass Fraction W"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -8434,17 +7224,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Stahlherstellungsverfahren",
-                            r"en": r"Steelmaking Process",
-                        }
+                        dict_={r"de": r"Stahlherstellungsverfahren", r"en": r"Steelmaking Process"}
                     )
 
                 if qualifier is None:
@@ -8487,28 +7272,19 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             massFraction_Ti: Optional[Union[xsd.Float, MassFraction_Ti]] = None,
             massFraction_V: Optional[Union[xsd.Float, MassFraction_V]] = None,
             massFraction_W: Optional[Union[xsd.Float, MassFraction_W]] = None,
-            steelmakingProcess: Optional[
-                Union[aas.LangStringSet, SteelmakingProcess]
-            ] = None,
+            steelmakingProcess: Optional[Union[aas.LangStringSet, SteelmakingProcess]] = None,
             id_short: Optional[str] = r"ChemicalAnalysis",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#01-AKG373#020",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AKG373#020"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -8524,135 +7300,97 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_Al is not None and not isinstance(
-                massFraction_Al, aas.SubmodelElement
-            ):
+            if massFraction_Al is not None and not isinstance(massFraction_Al, aas.SubmodelElement):
                 massFraction_Al = self.MassFraction_Al(massFraction_Al)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_Be is not None and not isinstance(
-                massFraction_Be, aas.SubmodelElement
-            ):
+            if massFraction_Be is not None and not isinstance(massFraction_Be, aas.SubmodelElement):
                 massFraction_Be = self.MassFraction_Be(massFraction_Be)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_C is not None and not isinstance(
-                massFraction_C, aas.SubmodelElement
-            ):
+            if massFraction_C is not None and not isinstance(massFraction_C, aas.SubmodelElement):
                 massFraction_C = self.MassFraction_C(massFraction_C)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_Cr is not None and not isinstance(
-                massFraction_Cr, aas.SubmodelElement
-            ):
+            if massFraction_Cr is not None and not isinstance(massFraction_Cr, aas.SubmodelElement):
                 massFraction_Cr = self.MassFraction_Cr(massFraction_Cr)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_Cu is not None and not isinstance(
-                massFraction_Cu, aas.SubmodelElement
-            ):
+            if massFraction_Cu is not None and not isinstance(massFraction_Cu, aas.SubmodelElement):
                 massFraction_Cu = self.MassFraction_Cu(massFraction_Cu)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_Mn is not None and not isinstance(
-                massFraction_Mn, aas.SubmodelElement
-            ):
+            if massFraction_Mn is not None and not isinstance(massFraction_Mn, aas.SubmodelElement):
                 massFraction_Mn = self.MassFraction_Mn(massFraction_Mn)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_Mo is not None and not isinstance(
-                massFraction_Mo, aas.SubmodelElement
-            ):
+            if massFraction_Mo is not None and not isinstance(massFraction_Mo, aas.SubmodelElement):
                 massFraction_Mo = self.MassFraction_Mo(massFraction_Mo)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_N is not None and not isinstance(
-                massFraction_N, aas.SubmodelElement
-            ):
+            if massFraction_N is not None and not isinstance(massFraction_N, aas.SubmodelElement):
                 massFraction_N = self.MassFraction_N(massFraction_N)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_Nb is not None and not isinstance(
-                massFraction_Nb, aas.SubmodelElement
-            ):
+            if massFraction_Nb is not None and not isinstance(massFraction_Nb, aas.SubmodelElement):
                 massFraction_Nb = self.MassFraction_Nb(massFraction_Nb)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_Ni is not None and not isinstance(
-                massFraction_Ni, aas.SubmodelElement
-            ):
+            if massFraction_Ni is not None and not isinstance(massFraction_Ni, aas.SubmodelElement):
                 massFraction_Ni = self.MassFraction_Ni(massFraction_Ni)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_P is not None and not isinstance(
-                massFraction_P, aas.SubmodelElement
-            ):
+            if massFraction_P is not None and not isinstance(massFraction_P, aas.SubmodelElement):
                 massFraction_P = self.MassFraction_P(massFraction_P)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_Pb is not None and not isinstance(
-                massFraction_Pb, aas.SubmodelElement
-            ):
+            if massFraction_Pb is not None and not isinstance(massFraction_Pb, aas.SubmodelElement):
                 massFraction_Pb = self.MassFraction_Pb(massFraction_Pb)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_S is not None and not isinstance(
-                massFraction_S, aas.SubmodelElement
-            ):
+            if massFraction_S is not None and not isinstance(massFraction_S, aas.SubmodelElement):
                 massFraction_S = self.MassFraction_S(massFraction_S)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_Si is not None and not isinstance(
-                massFraction_Si, aas.SubmodelElement
-            ):
+            if massFraction_Si is not None and not isinstance(massFraction_Si, aas.SubmodelElement):
                 massFraction_Si = self.MassFraction_Si(massFraction_Si)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_Ta is not None and not isinstance(
-                massFraction_Ta, aas.SubmodelElement
-            ):
+            if massFraction_Ta is not None and not isinstance(massFraction_Ta, aas.SubmodelElement):
                 massFraction_Ta = self.MassFraction_Ta(massFraction_Ta)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_Ti is not None and not isinstance(
-                massFraction_Ti, aas.SubmodelElement
-            ):
+            if massFraction_Ti is not None and not isinstance(massFraction_Ti, aas.SubmodelElement):
                 massFraction_Ti = self.MassFraction_Ti(massFraction_Ti)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_V is not None and not isinstance(
-                massFraction_V, aas.SubmodelElement
-            ):
+            if massFraction_V is not None and not isinstance(massFraction_V, aas.SubmodelElement):
                 massFraction_V = self.MassFraction_V(massFraction_V)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if massFraction_W is not None and not isinstance(
-                massFraction_W, aas.SubmodelElement
-            ):
+            if massFraction_W is not None and not isinstance(massFraction_W, aas.SubmodelElement):
                 massFraction_W = self.MassFraction_W(massFraction_W)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if steelmakingProcess is not None and not isinstance(
-                steelmakingProcess, aas.SubmodelElement
-            ):
+            if steelmakingProcess is not None and not isinstance(steelmakingProcess, aas.SubmodelElement):
                 steelmakingProcess = self.SteelmakingProcess(steelmakingProcess)
 
             # Add all passed/initialized submodel elements to a single list
@@ -8688,9 +7426,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -8730,17 +7466,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Konformitätserklärung",
-                            r"en": r"Statement of Compliance",
-                        }
+                        dict_={r"de": r"Konformitätserklärung", r"en": r"Statement of Compliance"}
                     )
 
                 if qualifier is None:
@@ -8787,15 +7518,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Ausstelldatum", r"en": r"Date of Issue"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Ausstelldatum", r"en": r"Date of Issue"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -8841,17 +7568,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Aussteller der Bescheinigung",
-                            r"en": r"Originator of the document",
-                        }
+                        dict_={r"de": r"Aussteller der Bescheinigung", r"en": r"Originator of the document"}
                     )
 
                 if qualifier is None:
@@ -8885,12 +7607,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"MarkingName",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#07-DAA603#005",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#07-DAA603#005"),),
                         referred_semantic_id=None,
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -8908,9 +7625,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -8953,20 +7668,13 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABH783#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABH783#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -9020,9 +7728,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -9075,9 +7781,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -9123,16 +7827,12 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: see also [IRDI] 0173-1#02-AAM954#002 details of other certificate "
-                            }
+                            dict_={r"en": r"Note: see also [IRDI] 0173-1#02-AAM954#002 details of other certificate "}
                         )
 
                     if qualifier is None:
@@ -9160,38 +7860,25 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 self,
                 markingName: Union[str, MarkingName],
                 markingFile: MarkingFile,
-                designationOfCertificateOrApproval: Optional[
-                    Union[str, DesignationOfCertificateOrApproval]
-                ] = None,
+                designationOfCertificateOrApproval: Optional[Union[str, DesignationOfCertificateOrApproval]] = None,
                 issueDate: Optional[Union[str, IssueDate]] = None,
-                markingAdditionalText: Optional[
-                    Iterable[Union[str, MarkingAdditionalText]]
-                ] = None,
+                markingAdditionalText: Optional[Iterable[Union[str, MarkingAdditionalText]]] = None,
                 id_short: Optional[str] = r"CEMarking",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#01-AHD206#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AHD206#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"CE-Zeichen", r"en": r"CE Marking"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"CE-Zeichen", r"en": r"CE Marking"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -9208,9 +7895,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if markingName is not None and not isinstance(
-                    markingName, aas.SubmodelElement
-                ):
+                if markingName is not None and not isinstance(markingName, aas.SubmodelElement):
                     markingName = self.MarkingName(markingName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -9218,33 +7903,23 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 if designationOfCertificateOrApproval is not None and not isinstance(
                     designationOfCertificateOrApproval, aas.SubmodelElement
                 ):
-                    designationOfCertificateOrApproval = (
-                        self.DesignationOfCertificateOrApproval(
-                            designationOfCertificateOrApproval
-                        )
+                    designationOfCertificateOrApproval = self.DesignationOfCertificateOrApproval(
+                        designationOfCertificateOrApproval
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if issueDate is not None and not isinstance(
-                    issueDate, aas.SubmodelElement
-                ):
+                if issueDate is not None and not isinstance(issueDate, aas.SubmodelElement):
                     issueDate = self.IssueDate(issueDate)
 
                 # A str would be split into its characters
                 if isinstance(markingAdditionalText, str):
-                    raise TypeError(
-                        "markingAdditionalText takes several elements, got a str"
-                    )
+                    raise TypeError("markingAdditionalText takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if markingAdditionalText:
                     markingAdditionalText = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.MarkingAdditionalText(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.MarkingAdditionalText(i)
                         for i in markingAdditionalText
                     ]
 
@@ -9267,9 +7942,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -9306,15 +7979,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Bestätigung", r"en": r"Validation"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"de": r"Bestätigung", r"en": r"Validation"})
 
             if qualifier is None:
                 qualifier = ()
@@ -9324,35 +7993,22 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if statementOfCompliance is not None and not isinstance(
-                statementOfCompliance, aas.SubmodelElement
-            ):
-                statementOfCompliance = self.StatementOfCompliance(
-                    statementOfCompliance
-                )
+            if statementOfCompliance is not None and not isinstance(statementOfCompliance, aas.SubmodelElement):
+                statementOfCompliance = self.StatementOfCompliance(statementOfCompliance)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if dateOfIssue is not None and not isinstance(
-                dateOfIssue, aas.SubmodelElement
-            ):
+            if dateOfIssue is not None and not isinstance(dateOfIssue, aas.SubmodelElement):
                 dateOfIssue = self.DateOfIssue(dateOfIssue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if originatorOfDocument is not None and not isinstance(
-                originatorOfDocument, aas.SubmodelElement
-            ):
+            if originatorOfDocument is not None and not isinstance(originatorOfDocument, aas.SubmodelElement):
                 originatorOfDocument = self.OriginatorOfDocument(originatorOfDocument)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                statementOfCompliance,
-                dateOfIssue,
-                originatorOfDocument,
-                cEMarking,
-            ]:
+            for se_arg in [statementOfCompliance, dateOfIssue, originatorOfDocument, cEMarking]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -9363,9 +8019,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -9413,10 +8067,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
         if display_name is None:
             display_name = aas.MultiLanguageNameType(
-                dict_={
-                    r"de": r"Prüfbescheinigung für Stahlprodukte",
-                    r"en": r"Inspection Documents for Steel Products",
-                }
+                dict_={r"de": r"Prüfbescheinigung für Stahlprodukte", r"en": r"Inspection Documents for Steel Products"}
             )
 
         if administration is None:
@@ -9440,15 +8091,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
-        for se_arg in [
-            manufacturer,
-            customer,
-            orderData,
-            productData,
-            mechanicalTests,
-            chemicalAnalysis,
-            validation,
-        ]:
+        for se_arg in [manufacturer, customer, orderData, productData, mechanicalTests, chemicalAnalysis, validation]:
             if se_arg is None:
                 continue
             elif isinstance(se_arg, aas.SubmodelElement):
@@ -9459,9 +8102,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

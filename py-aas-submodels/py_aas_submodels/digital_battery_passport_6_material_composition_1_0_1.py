@@ -30,15 +30,11 @@ class MaterialComposition(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"short name"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"short name"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -84,15 +80,11 @@ class MaterialComposition(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"clear name"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"clear name"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -135,15 +127,11 @@ class MaterialComposition(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"battery chemistry"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery chemistry"})
 
             if qualifier is None:
                 qualifier = ()
@@ -174,9 +162,7 @@ class MaterialComposition(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -220,15 +206,11 @@ class MaterialComposition(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"component name"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"component name"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -274,15 +256,11 @@ class MaterialComposition(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"component ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"component ID"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -325,15 +303,11 @@ class MaterialComposition(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"battery material location"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery material location"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -348,16 +322,12 @@ class MaterialComposition(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if componentName is not None and not isinstance(
-                        componentName, aas.SubmodelElement
-                    ):
+                    if componentName is not None and not isinstance(componentName, aas.SubmodelElement):
                         componentName = self.ComponentName(componentName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if componentId is not None and not isinstance(
-                        componentId, aas.SubmodelElement
-                    ):
+                    if componentId is not None and not isinstance(componentId, aas.SubmodelElement):
                         componentId = self.ComponentId(componentId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -373,9 +343,7 @@ class MaterialComposition(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -423,24 +391,15 @@ class MaterialComposition(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:irdi:0173-1#02-ABH034#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABH034#003"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"battery material identifier"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery material identifier"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -487,24 +446,15 @@ class MaterialComposition(aas.Submodel):
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:irdi:0173-1#02-AAN920#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAN920#003"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"battery material name"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery material name"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -550,15 +500,11 @@ class MaterialComposition(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"battery material mass"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery material mass"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -604,15 +550,11 @@ class MaterialComposition(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"is critical raw material"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"is critical raw material"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -641,9 +583,7 @@ class MaterialComposition(aas.Submodel):
                 batteryMaterialIdentifier: Union[str, BatteryMaterialIdentifier],
                 batteryMaterialName: Union[str, BatteryMaterialName],
                 isCriticalRawMaterial: Union[bool, IsCriticalRawMaterial],
-                batteryMaterialMass: Optional[
-                    Union[xsd.Float, BatteryMaterialMass]
-                ] = None,
+                batteryMaterialMass: Optional[Union[xsd.Float, BatteryMaterialMass]] = None,
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -660,15 +600,11 @@ class MaterialComposition(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"battery material"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery material"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -681,32 +617,22 @@ class MaterialComposition(aas.Submodel):
                 if batteryMaterialIdentifier is not None and not isinstance(
                     batteryMaterialIdentifier, aas.SubmodelElement
                 ):
-                    batteryMaterialIdentifier = self.BatteryMaterialIdentifier(
-                        batteryMaterialIdentifier
-                    )
+                    batteryMaterialIdentifier = self.BatteryMaterialIdentifier(batteryMaterialIdentifier)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if batteryMaterialName is not None and not isinstance(
-                    batteryMaterialName, aas.SubmodelElement
-                ):
+                if batteryMaterialName is not None and not isinstance(batteryMaterialName, aas.SubmodelElement):
                     batteryMaterialName = self.BatteryMaterialName(batteryMaterialName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if batteryMaterialMass is not None and not isinstance(
-                    batteryMaterialMass, aas.SubmodelElement
-                ):
+                if batteryMaterialMass is not None and not isinstance(batteryMaterialMass, aas.SubmodelElement):
                     batteryMaterialMass = self.BatteryMaterialMass(batteryMaterialMass)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if isCriticalRawMaterial is not None and not isinstance(
-                    isCriticalRawMaterial, aas.SubmodelElement
-                ):
-                    isCriticalRawMaterial = self.IsCriticalRawMaterial(
-                        isCriticalRawMaterial
-                    )
+                if isCriticalRawMaterial is not None and not isinstance(isCriticalRawMaterial, aas.SubmodelElement):
+                    isCriticalRawMaterial = self.IsCriticalRawMaterial(isCriticalRawMaterial)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -727,9 +653,7 @@ class MaterialComposition(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -767,15 +691,11 @@ class MaterialComposition(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"battery materials"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery materials"})
 
             if qualifier is None:
                 qualifier = ()
@@ -785,9 +705,7 @@ class MaterialComposition(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(batterymaterials_items, str):
-                raise TypeError(
-                    "batterymaterials_items takes several elements, got a str"
-                )
+                raise TypeError("batterymaterials_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -799,9 +717,7 @@ class MaterialComposition(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -870,10 +786,7 @@ class MaterialComposition(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -912,15 +825,11 @@ class MaterialComposition(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"hazardous substance class"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance class"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -966,15 +875,11 @@ class MaterialComposition(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"hazardous substance name"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance name"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1020,15 +925,11 @@ class MaterialComposition(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"hazardous substance concentration"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance concentration"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1076,15 +977,11 @@ class MaterialComposition(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"impact"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"impact"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1132,15 +1029,11 @@ class MaterialComposition(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"hazardous substance impact"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance impact"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1150,18 +1043,12 @@ class MaterialComposition(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(hazardoussubstanceimpact_items, str):
-                        raise TypeError(
-                            "hazardoussubstanceimpact_items takes several elements, got a str"
-                        )
+                        raise TypeError("hazardoussubstanceimpact_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if hazardoussubstanceimpact_items:
                         hazardoussubstanceimpact_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Hazardoussubstanceimpact_item(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.Hazardoussubstanceimpact_item(i)
                             for i in hazardoussubstanceimpact_items
                         ]
 
@@ -1175,9 +1062,7 @@ class MaterialComposition(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1244,15 +1129,9 @@ class MaterialComposition(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -1289,15 +1168,11 @@ class MaterialComposition(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"component name"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"component name"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1343,15 +1218,11 @@ class MaterialComposition(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"component ID"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"component ID"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1394,15 +1265,11 @@ class MaterialComposition(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"hazardous substance location"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance location"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1417,16 +1284,12 @@ class MaterialComposition(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if componentName is not None and not isinstance(
-                        componentName, aas.SubmodelElement
-                    ):
+                    if componentName is not None and not isinstance(componentName, aas.SubmodelElement):
                         componentName = self.ComponentName(componentName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if componentId is not None and not isinstance(
-                        componentId, aas.SubmodelElement
-                    ):
+                    if componentId is not None and not isinstance(componentId, aas.SubmodelElement):
                         componentId = self.ComponentId(componentId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1442,9 +1305,7 @@ class MaterialComposition(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1492,15 +1353,11 @@ class MaterialComposition(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"hazardous substance identifier"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance identifier"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1527,20 +1384,11 @@ class MaterialComposition(aas.Submodel):
                 self,
                 hazardousSubstanceName: Union[str, HazardousSubstanceName],
                 hazardousSubstanceIdentifier: Union[str, HazardousSubstanceIdentifier],
-                hazardousSubstanceClass: Optional[
-                    Union[str, HazardousSubstanceClass]
-                ] = None,
-                hazardousSubstanceConcentration: Optional[
-                    Union[float, HazardousSubstanceConcentration]
-                ] = None,
+                hazardousSubstanceClass: Optional[Union[str, HazardousSubstanceClass]] = None,
+                hazardousSubstanceConcentration: Optional[Union[float, HazardousSubstanceConcentration]] = None,
                 hazardousSubstanceImpact: Optional[
                     Union[
-                        Iterable[
-                            Union[
-                                str,
-                                HazardousSubstanceImpact.Hazardoussubstanceimpact_item,
-                            ]
-                        ],
+                        Iterable[Union[str, HazardousSubstanceImpact.Hazardoussubstanceimpact_item]],
                         HazardousSubstanceImpact,
                     ]
                 ] = None,
@@ -1561,15 +1409,11 @@ class MaterialComposition(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"hazardous substance"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1579,56 +1423,40 @@ class MaterialComposition(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if hazardousSubstanceClass is not None and not isinstance(
-                    hazardousSubstanceClass, aas.SubmodelElement
-                ):
-                    hazardousSubstanceClass = self.HazardousSubstanceClass(
-                        hazardousSubstanceClass
-                    )
+                if hazardousSubstanceClass is not None and not isinstance(hazardousSubstanceClass, aas.SubmodelElement):
+                    hazardousSubstanceClass = self.HazardousSubstanceClass(hazardousSubstanceClass)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if hazardousSubstanceName is not None and not isinstance(
-                    hazardousSubstanceName, aas.SubmodelElement
-                ):
-                    hazardousSubstanceName = self.HazardousSubstanceName(
-                        hazardousSubstanceName
-                    )
+                if hazardousSubstanceName is not None and not isinstance(hazardousSubstanceName, aas.SubmodelElement):
+                    hazardousSubstanceName = self.HazardousSubstanceName(hazardousSubstanceName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if hazardousSubstanceConcentration is not None and not isinstance(
                     hazardousSubstanceConcentration, aas.SubmodelElement
                 ):
-                    hazardousSubstanceConcentration = (
-                        self.HazardousSubstanceConcentration(
-                            hazardousSubstanceConcentration
-                        )
+                    hazardousSubstanceConcentration = self.HazardousSubstanceConcentration(
+                        hazardousSubstanceConcentration
                     )
 
                 # A str would be split into its characters
                 if isinstance(hazardousSubstanceImpact, str):
-                    raise TypeError(
-                        "hazardousSubstanceImpact takes several elements, got a str"
-                    )
+                    raise TypeError("hazardousSubstanceImpact takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if hazardousSubstanceImpact is not None and not isinstance(
                     hazardousSubstanceImpact, aas.SubmodelElement
                 ):
-                    hazardousSubstanceImpact = self.HazardousSubstanceImpact(
-                        hazardousSubstanceImpact
-                    )
+                    hazardousSubstanceImpact = self.HazardousSubstanceImpact(hazardousSubstanceImpact)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if hazardousSubstanceIdentifier is not None and not isinstance(
                     hazardousSubstanceIdentifier, aas.SubmodelElement
                 ):
-                    hazardousSubstanceIdentifier = self.HazardousSubstanceIdentifier(
-                        hazardousSubstanceIdentifier
-                    )
+                    hazardousSubstanceIdentifier = self.HazardousSubstanceIdentifier(hazardousSubstanceIdentifier)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1650,9 +1478,7 @@ class MaterialComposition(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1669,9 +1495,7 @@ class MaterialComposition(aas.Submodel):
 
         def __init__(
             self,
-            hazardoussubstances_items: Optional[
-                Iterable[Hazardoussubstances_item]
-            ] = None,
+            hazardoussubstances_items: Optional[Iterable[Hazardoussubstances_item]] = None,
             id_short: Optional[str] = r"HazardousSubstances",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1692,15 +1516,11 @@ class MaterialComposition(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"hazardous substances"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substances"})
 
             if qualifier is None:
                 qualifier = ()
@@ -1710,9 +1530,7 @@ class MaterialComposition(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(hazardoussubstances_items, str):
-                raise TypeError(
-                    "hazardoussubstances_items takes several elements, got a str"
-                )
+                raise TypeError("hazardoussubstances_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1724,9 +1542,7 @@ class MaterialComposition(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1795,10 +1611,7 @@ class MaterialComposition(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -1814,12 +1627,8 @@ class MaterialComposition(aas.Submodel):
         self,
         id_: str,
         batteryChemistry: BatteryChemistry,
-        batteryMaterials: Union[
-            Iterable[BatteryMaterials.Batterymaterials_item], BatteryMaterials
-        ],
-        hazardousSubstances: Union[
-            Iterable[HazardousSubstances.Hazardoussubstances_item], HazardousSubstances
-        ],
+        batteryMaterials: Union[Iterable[BatteryMaterials.Batterymaterials_item], BatteryMaterials],
+        hazardousSubstances: Union[Iterable[HazardousSubstances.Hazardoussubstances_item], HazardousSubstances],
         id_short: Optional[str] = r"MaterialComposition",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -1842,9 +1651,7 @@ class MaterialComposition(aas.Submodel):
     ):
 
         if display_name is None:
-            display_name = aas.MultiLanguageNameType(
-                dict_={r"en": r"material composition"}
-            )
+            display_name = aas.MultiLanguageNameType(dict_={r"en": r"material composition"})
 
         if description is None:
             description = aas.MultiLanguageTextType(
@@ -1874,9 +1681,7 @@ class MaterialComposition(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if batteryMaterials is not None and not isinstance(
-            batteryMaterials, aas.SubmodelElement
-        ):
+        if batteryMaterials is not None and not isinstance(batteryMaterials, aas.SubmodelElement):
             batteryMaterials = self.BatteryMaterials(batteryMaterials)
 
         # A str would be split into its characters
@@ -1885,9 +1690,7 @@ class MaterialComposition(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if hazardousSubstances is not None and not isinstance(
-            hazardousSubstances, aas.SubmodelElement
-        ):
+        if hazardousSubstances is not None and not isinstance(hazardousSubstances, aas.SubmodelElement):
             hazardousSubstances = self.HazardousSubstances(hazardousSubstances)
 
         # Add all passed/initialized submodel elements to a single list
@@ -1903,9 +1706,7 @@ class MaterialComposition(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

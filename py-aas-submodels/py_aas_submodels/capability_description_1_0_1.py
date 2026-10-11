@@ -29,15 +29,11 @@ class CapabilityDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Capability"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -138,20 +134,14 @@ class CapabilityDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Capability Comment"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Comment"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Individual comment of the capability."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Individual comment of the capability."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -203,9 +193,7 @@ class CapabilityDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -217,15 +205,11 @@ class CapabilityDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Same Property"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Same Property"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -265,9 +249,7 @@ class CapabilityDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -279,15 +261,11 @@ class CapabilityDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Property Range"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Property Range"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -328,9 +306,7 @@ class CapabilityDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -342,15 +318,11 @@ class CapabilityDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Property Property"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Property Property"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -390,9 +362,7 @@ class CapabilityDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -404,9 +374,7 @@ class CapabilityDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
@@ -451,9 +419,7 @@ class CapabilityDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -465,21 +431,15 @@ class CapabilityDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Property Comment"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Property Comment"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"General description of the property."
-                                    }
+                                    dict_={r"en": r"General description of the property."}
                                 )
 
                             if qualifier is None:
@@ -505,20 +465,12 @@ class CapabilityDescription(aas.Submodel):
                     def __init__(
                         self,
                         sameProperty: Optional[Iterable[SameProperty]] = None,
-                        propertyRange: Optional[
-                            Iterable[Union[Tuple[str, str], PropertyRange]]
-                        ] = None,
-                        propertyProperty: Optional[
-                            Iterable[Union[str, PropertyProperty]]
-                        ] = None,
+                        propertyRange: Optional[Iterable[Union[Tuple[str, str], PropertyRange]]] = None,
+                        propertyProperty: Optional[Iterable[Union[str, PropertyProperty]]] = None,
                         propertyMultiLanguageProperty: Optional[
-                            Iterable[
-                                Union[aas.LangStringSet, PropertyMultiLanguageProperty]
-                            ]
+                            Iterable[Union[aas.LangStringSet, PropertyMultiLanguageProperty]]
                         ] = None,
-                        propertyComment: Optional[
-                            Union[aas.LangStringSet, PropertyComment]
-                        ] = None,
+                        propertyComment: Optional[Union[aas.LangStringSet, PropertyComment]] = None,
                         id_short: Optional[str] = r"PropertyContainer",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -535,15 +487,11 @@ class CapabilityDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Property Container"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Property Container"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -560,66 +508,44 @@ class CapabilityDescription(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(sameProperty, str):
-                            raise TypeError(
-                                "sameProperty takes several elements, got a str"
-                            )
+                            raise TypeError("sameProperty takes several elements, got a str")
 
                         # A str would be split into its characters
                         if isinstance(propertyRange, str):
-                            raise TypeError(
-                                "propertyRange takes several elements, got a str"
-                            )
+                            raise TypeError("propertyRange takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if propertyRange:
                             propertyRange = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.PropertyRange(min=i[0], max=i[1])
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.PropertyRange(min=i[0], max=i[1])
                                 for i in propertyRange
                             ]
 
                         # A str would be split into its characters
                         if isinstance(propertyProperty, str):
-                            raise TypeError(
-                                "propertyProperty takes several elements, got a str"
-                            )
+                            raise TypeError("propertyProperty takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if propertyProperty:
                             propertyProperty = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.PropertyProperty(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.PropertyProperty(i)
                                 for i in propertyProperty
                             ]
 
                         # A str would be split into its characters
                         if isinstance(propertyMultiLanguageProperty, str):
-                            raise TypeError(
-                                "propertyMultiLanguageProperty takes several elements, got a str"
-                            )
+                            raise TypeError("propertyMultiLanguageProperty takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if propertyMultiLanguageProperty:
                             propertyMultiLanguageProperty = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.PropertyMultiLanguageProperty(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.PropertyMultiLanguageProperty(i)
                                 for i in propertyMultiLanguageProperty
                             ]
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if propertyComment is not None and not isinstance(
-                            propertyComment, aas.SubmodelElement
-                        ):
+                        if propertyComment is not None and not isinstance(propertyComment, aas.SubmodelElement):
                             propertyComment = self.PropertyComment(propertyComment)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -641,9 +567,7 @@ class CapabilityDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -677,21 +601,15 @@ class CapabilityDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Property Set"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Property Set"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Set of properties describing the capability in more detail, if existing."
-                            }
+                            dict_={r"en": r"Set of properties describing the capability in more detail, if existing."}
                         )
 
                     if qualifier is None:
@@ -702,9 +620,7 @@ class CapabilityDescription(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(propertyContainer, str):
-                        raise TypeError(
-                            "propertyContainer takes several elements, got a str"
-                        )
+                        raise TypeError("propertyContainer takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -719,9 +635,7 @@ class CapabilityDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -749,17 +663,9 @@ class CapabilityDescription(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"CapabilitySet",
-                                ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"CapabilityContainer",
-                                ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.CAPABILITY, value=r"Capability"
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"),
+                                aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                             ),
                             type_=aas.Capability,
                             referred_semantic_id=None,
@@ -788,15 +694,11 @@ class CapabilityDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Capability Realized By"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Realized By"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -840,18 +742,11 @@ class CapabilityDescription(aas.Submodel):
                                             type_=aas.KeyTypes.SUBMODEL,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                         ),
+                                        aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
                                         aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                            value=r"CapabilitySet",
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
                                         ),
-                                        aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                            value=r"CapabilityContainer",
-                                        ),
-                                        aas.Key(
-                                            type_=aas.KeyTypes.CAPABILITY,
-                                            value=r"Capability",
-                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                                     ),
                                     type_=aas.Capability,
                                     referred_semantic_id=None,
@@ -862,30 +757,19 @@ class CapabilityDescription(aas.Submodel):
                                             type_=aas.KeyTypes.SUBMODEL,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                         ),
+                                        aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
                                         aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                            value=r"CapabilitySet",
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
                                         ),
-                                        aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                            value=r"CapabilityContainer",
-                                        ),
-                                        aas.Key(
-                                            type_=aas.KeyTypes.CAPABILITY,
-                                            value=r"Capability",
-                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                                     ),
                                     type_=aas.Capability,
                                     referred_semantic_id=None,
                                 ),
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -897,15 +781,11 @@ class CapabilityDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Capability Composed Of"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Composed Of"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -941,14 +821,10 @@ class CapabilityDescription(aas.Submodel):
                                 value: aas.LangStringSet,
                                 id_short: Optional[str] = r"ComposedOfComment",
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -960,21 +836,15 @@ class CapabilityDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Composed Of Comment"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Composed Of Comment"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Comment to describe the composition in human readable form."
-                                        }
+                                        dict_={r"en": r"Comment to describe the composition in human readable form."}
                                     )
 
                                 if qualifier is None:
@@ -1000,16 +870,12 @@ class CapabilityDescription(aas.Submodel):
                         def __init__(
                             self,
                             capabilityComposedOf: Iterable[CapabilityComposedOf],
-                            composedOfComment: Optional[
-                                Union[aas.LangStringSet, ComposedOfComment]
-                            ] = None,
+                            composedOfComment: Optional[Union[aas.LangStringSet, ComposedOfComment]] = None,
                             id_short: Optional[str] = r"ComposedOfContainer",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1021,15 +887,11 @@ class CapabilityDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Composed Of Container"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Composed Of Container"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -1046,18 +908,12 @@ class CapabilityDescription(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(capabilityComposedOf, str):
-                                raise TypeError(
-                                    "capabilityComposedOf takes several elements, got a str"
-                                )
+                                raise TypeError("capabilityComposedOf takes several elements, got a str")
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if composedOfComment is not None and not isinstance(
-                                composedOfComment, aas.SubmodelElement
-                            ):
-                                composedOfComment = self.ComposedOfComment(
-                                    composedOfComment
-                                )
+                            if composedOfComment is not None and not isinstance(composedOfComment, aas.SubmodelElement):
+                                composedOfComment = self.ComposedOfComment(composedOfComment)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -1108,15 +964,11 @@ class CapabilityDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Composed Of Set"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Composed Of Set"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -1133,9 +985,7 @@ class CapabilityDescription(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(composedOfContainer, str):
-                            raise TypeError(
-                                "composedOfContainer takes several elements, got a str"
-                            )
+                            raise TypeError("composedOfContainer takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -1150,9 +1000,7 @@ class CapabilityDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1180,18 +1028,11 @@ class CapabilityDescription(aas.Submodel):
                                         type_=aas.KeyTypes.SUBMODEL,
                                         value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                     ),
+                                    aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
                                     aas.Key(
-                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                        value=r"CapabilitySet",
+                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
                                     ),
-                                    aas.Key(
-                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                        value=r"CapabilityContainer",
-                                    ),
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CAPABILITY,
-                                        value=r"Capability",
-                                    ),
+                                    aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                                 ),
                                 type_=aas.Capability,
                                 referred_semantic_id=None,
@@ -1202,18 +1043,11 @@ class CapabilityDescription(aas.Submodel):
                                         type_=aas.KeyTypes.SUBMODEL,
                                         value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                     ),
+                                    aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
                                     aas.Key(
-                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                        value=r"CapabilitySet",
+                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
                                     ),
-                                    aas.Key(
-                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                        value=r"CapabilityContainer",
-                                    ),
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CAPABILITY,
-                                        value=r"Capability",
-                                    ),
+                                    aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                                 ),
                                 type_=aas.Capability,
                                 referred_semantic_id=None,
@@ -1221,9 +1055,7 @@ class CapabilityDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1235,15 +1067,11 @@ class CapabilityDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Capability Generalized By"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Generalized By"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -1291,15 +1119,11 @@ class CapabilityDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Generalized By Set"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Generalized By Set"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -1316,9 +1140,7 @@ class CapabilityDescription(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(capabilityGeneralizedBy, str):
-                            raise TypeError(
-                                "capabilityGeneralizedBy takes several elements, got a str"
-                            )
+                            raise TypeError("capabilityGeneralizedBy takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -1333,9 +1155,7 @@ class CapabilityDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1362,14 +1182,10 @@ class CapabilityDescription(aas.Submodel):
                                 id_short: Optional[str] = r"BasicConstraint",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1381,15 +1197,11 @@ class CapabilityDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Basic Constraint"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Basic Constraint"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -1434,14 +1246,10 @@ class CapabilityDescription(aas.Submodel):
                             def __init__(
                                 self,
                                 id_short: Optional[str] = r"CustomConstraint",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1453,15 +1261,11 @@ class CapabilityDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Custom Constraint"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Custom Constraint"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -1486,9 +1290,7 @@ class CapabilityDescription(aas.Submodel):
                                     elif isinstance(se_arg, Iterable):
                                         # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                         for n, element in enumerate(se_arg):
-                                            element.id_short = (
-                                                f"{element.id_short}{n:02d}"
-                                            )
+                                            element.id_short = f"{element.id_short}{n:02d}"
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
@@ -1514,17 +1316,11 @@ class CapabilityDescription(aas.Submodel):
                                 self,
                                 value: str,
                                 id_short: Optional[str] = r"OCLConstraint",
-                                content_type: Optional[
-                                    str
-                                ] = r"application/octet-stream",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                content_type: Optional[str] = r"application/octet-stream",
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1536,15 +1332,11 @@ class CapabilityDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"OCL Constraint"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"OCL Constraint"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -1579,14 +1371,10 @@ class CapabilityDescription(aas.Submodel):
                                 self,
                                 value: aas.Reference,
                                 id_short: Optional[str] = r"OperationConstraint",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1598,15 +1386,11 @@ class CapabilityDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Operation Constraint"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Operation Constraint"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -1649,14 +1433,10 @@ class CapabilityDescription(aas.Submodel):
                                 id_short: Optional[str] = r"ConstraintType",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1668,15 +1448,11 @@ class CapabilityDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Constraint Type"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Constraint Type"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -1691,10 +1467,7 @@ class CapabilityDescription(aas.Submodel):
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
 
-                                if (
-                                    value is not None
-                                    and value not in self.ALLOWED_VALUES
-                                ):
+                                if value is not None and value not in self.ALLOWED_VALUES:
                                     raise ValueError(
                                         f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
                                     )
@@ -1722,14 +1495,10 @@ class CapabilityDescription(aas.Submodel):
                                 id_short: Optional[str] = r"PropertyConditionalType",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1741,9 +1510,7 @@ class CapabilityDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
@@ -1779,9 +1546,7 @@ class CapabilityDescription(aas.Submodel):
                                     embedded_data_specifications=embedded_data_specifications,
                                 )
 
-                        class ConstraintPropertyRelations(
-                            aas.SubmodelElementCollection
-                        ):
+                        class ConstraintPropertyRelations(aas.SubmodelElementCollection):
 
                             class ConstraintHasProperty(aas.RelationshipElement):
 
@@ -1795,8 +1560,7 @@ class CapabilityDescription(aas.Submodel):
                                                 value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                             ),
                                             aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                                value=r"CapabilitySet",
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"
                                             ),
                                             aas.Key(
                                                 type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
@@ -1807,63 +1571,46 @@ class CapabilityDescription(aas.Submodel):
                                                 value=r"CapabilityRelations",
                                             ),
                                             aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                                value=r"ConstraintSet",
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ConstraintSet"
                                             ),
                                             aas.Key(
                                                 type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                                 value=r"PropertyConstraintContainer",
                                             ),
-                                            aas.Key(
-                                                type_=aas.KeyTypes.PROPERTY,
-                                                value=r"BasicConstraint",
-                                            ),
+                                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"BasicConstraint"),
                                         ),
                                         type_=aas.Property,
                                         referred_semantic_id=None,
                                     ),
-                                    second: Optional[
-                                        aas.Reference
-                                    ] = aas.ModelReference(
+                                    second: Optional[aas.Reference] = aas.ModelReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.SUBMODEL,
                                                 value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                             ),
                                             aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                                value=r"CapabilitySet",
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"
                                             ),
                                             aas.Key(
                                                 type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                                 value=r"CapabilityContainer",
                                             ),
                                             aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                                value=r"PropertySet",
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"PropertySet"
                                             ),
                                             aas.Key(
                                                 type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
                                                 value=r"PropertyContainer",
                                             ),
-                                            aas.Key(
-                                                type_=aas.KeyTypes.PROPERTY,
-                                                value=r"PropertyProperty",
-                                            ),
+                                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"PropertyProperty"),
                                         ),
                                         type_=aas.Property,
                                         referred_semantic_id=None,
                                     ),
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1874,12 +1621,8 @@ class CapabilityDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
@@ -1917,17 +1660,11 @@ class CapabilityDescription(aas.Submodel):
                             def __init__(
                                 self,
                                 constraintHasProperty: Iterable[ConstraintHasProperty],
-                                id_short: Optional[
-                                    str
-                                ] = r"ConstraintPropertyRelations",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                id_short: Optional[str] = r"ConstraintPropertyRelations",
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1939,9 +1676,7 @@ class CapabilityDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
@@ -1964,9 +1699,7 @@ class CapabilityDescription(aas.Submodel):
 
                                 # A str would be split into its characters
                                 if isinstance(constraintHasProperty, str):
-                                    raise TypeError(
-                                        "constraintHasProperty takes several elements, got a str"
-                                    )
+                                    raise TypeError("constraintHasProperty takes several elements, got a str")
 
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
@@ -1978,9 +1711,7 @@ class CapabilityDescription(aas.Submodel):
                                     elif isinstance(se_arg, Iterable):
                                         # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                         for n, element in enumerate(se_arg):
-                                            element.id_short = (
-                                                f"{element.id_short}{n:02d}"
-                                            )
+                                            element.id_short = f"{element.id_short}{n:02d}"
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
@@ -2005,21 +1736,15 @@ class CapabilityDescription(aas.Submodel):
                             basicConstraint: Union[str, BasicConstraint],
                             customConstraint: CustomConstraint,
                             oCLConstraint: OCLConstraint,
-                            operationConstraint: Union[
-                                aas.Reference, OperationConstraint
-                            ],
+                            operationConstraint: Union[aas.Reference, OperationConstraint],
                             constraintType: Union[str, ConstraintType],
-                            propertyConditionalType: Union[
-                                str, PropertyConditionalType
-                            ],
+                            propertyConditionalType: Union[str, PropertyConditionalType],
                             constraintPropertyRelations: ConstraintPropertyRelations,
                             id_short: Optional[str] = r"PropertyConstraintContainer",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2031,9 +1756,7 @@ class CapabilityDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
@@ -2056,9 +1779,7 @@ class CapabilityDescription(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if basicConstraint is not None and not isinstance(
-                                basicConstraint, aas.SubmodelElement
-                            ):
+                            if basicConstraint is not None and not isinstance(basicConstraint, aas.SubmodelElement):
                                 basicConstraint = self.BasicConstraint(basicConstraint)
 
                             # Build a submodel element if a raw value was passed in the argument
@@ -2066,15 +1787,11 @@ class CapabilityDescription(aas.Submodel):
                             if operationConstraint is not None and not isinstance(
                                 operationConstraint, aas.SubmodelElement
                             ):
-                                operationConstraint = self.OperationConstraint(
-                                    operationConstraint
-                                )
+                                operationConstraint = self.OperationConstraint(operationConstraint)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if constraintType is not None and not isinstance(
-                                constraintType, aas.SubmodelElement
-                            ):
+                            if constraintType is not None and not isinstance(constraintType, aas.SubmodelElement):
                                 constraintType = self.ConstraintType(constraintType)
 
                             # Build a submodel element if a raw value was passed in the argument
@@ -2082,9 +1799,7 @@ class CapabilityDescription(aas.Submodel):
                             if propertyConditionalType is not None and not isinstance(
                                 propertyConditionalType, aas.SubmodelElement
                             ):
-                                propertyConditionalType = self.PropertyConditionalType(
-                                    propertyConditionalType
-                                )
+                                propertyConditionalType = self.PropertyConditionalType(propertyConditionalType)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -2137,18 +1852,11 @@ class CapabilityDescription(aas.Submodel):
                                             type_=aas.KeyTypes.SUBMODEL,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                         ),
+                                        aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
                                         aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                            value=r"CapabilitySet",
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
                                         ),
-                                        aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                            value=r"CapabilityContainer",
-                                        ),
-                                        aas.Key(
-                                            type_=aas.KeyTypes.CAPABILITY,
-                                            value=r"Capability",
-                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                                     ),
                                     type_=aas.Capability,
                                     referred_semantic_id=None,
@@ -2159,30 +1867,19 @@ class CapabilityDescription(aas.Submodel):
                                             type_=aas.KeyTypes.SUBMODEL,
                                             value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
                                         ),
+                                        aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
                                         aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                            value=r"CapabilitySet",
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
                                         ),
-                                        aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                            value=r"CapabilityContainer",
-                                        ),
-                                        aas.Key(
-                                            type_=aas.KeyTypes.CAPABILITY,
-                                            value=r"Capability",
-                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                                     ),
                                     type_=aas.Capability,
                                     referred_semantic_id=None,
                                 ),
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2194,9 +1891,7 @@ class CapabilityDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
@@ -2239,14 +1934,10 @@ class CapabilityDescription(aas.Submodel):
                                 id_short: Optional[str] = r"TransitionConditionalType",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2258,9 +1949,7 @@ class CapabilityDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
@@ -2299,16 +1988,12 @@ class CapabilityDescription(aas.Submodel):
                         def __init__(
                             self,
                             transitionConstrainedBy: TransitionConstrainedBy,
-                            transitionConditionalType: Union[
-                                str, TransitionConditionalType
-                            ],
+                            transitionConditionalType: Union[str, TransitionConditionalType],
                             id_short: Optional[str] = r"TransitionConstraintContainer",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2320,9 +2005,7 @@ class CapabilityDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
@@ -2345,24 +2028,14 @@ class CapabilityDescription(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if (
-                                transitionConditionalType is not None
-                                and not isinstance(
-                                    transitionConditionalType, aas.SubmodelElement
-                                )
+                            if transitionConditionalType is not None and not isinstance(
+                                transitionConditionalType, aas.SubmodelElement
                             ):
-                                transitionConditionalType = (
-                                    self.TransitionConditionalType(
-                                        transitionConditionalType
-                                    )
-                                )
+                                transitionConditionalType = self.TransitionConditionalType(transitionConditionalType)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in [
-                                transitionConstrainedBy,
-                                transitionConditionalType,
-                            ]:
+                            for se_arg in [transitionConstrainedBy, transitionConditionalType]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -2392,12 +2065,8 @@ class CapabilityDescription(aas.Submodel):
 
                     def __init__(
                         self,
-                        propertyConstraintContainer: Optional[
-                            Iterable[PropertyConstraintContainer]
-                        ] = None,
-                        transitionConstraintContainer: Optional[
-                            Iterable[TransitionConstraintContainer]
-                        ] = None,
+                        propertyConstraintContainer: Optional[Iterable[PropertyConstraintContainer]] = None,
+                        transitionConstraintContainer: Optional[Iterable[TransitionConstraintContainer]] = None,
                         id_short: Optional[str] = r"ConstraintSet",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -2414,15 +2083,11 @@ class CapabilityDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Constraint Set"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Constraint Set"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -2439,22 +2104,15 @@ class CapabilityDescription(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(propertyConstraintContainer, str):
-                            raise TypeError(
-                                "propertyConstraintContainer takes several elements, got a str"
-                            )
+                            raise TypeError("propertyConstraintContainer takes several elements, got a str")
 
                         # A str would be split into its characters
                         if isinstance(transitionConstraintContainer, str):
-                            raise TypeError(
-                                "transitionConstraintContainer takes several elements, got a str"
-                            )
+                            raise TypeError("transitionConstraintContainer takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            propertyConstraintContainer,
-                            transitionConstraintContainer,
-                        ]:
+                        for se_arg in [propertyConstraintContainer, transitionConstraintContainer]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -2465,9 +2123,7 @@ class CapabilityDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2484,9 +2140,7 @@ class CapabilityDescription(aas.Submodel):
 
                 def __init__(
                     self,
-                    capabilityRealizedBy: Optional[
-                        Iterable[CapabilityRealizedBy]
-                    ] = None,
+                    capabilityRealizedBy: Optional[Iterable[CapabilityRealizedBy]] = None,
                     composedOfSet: Optional[ComposedOfSet] = None,
                     generalizedBySet: Optional[Iterable[GeneralizedBySet]] = None,
                     constraintSet: Optional[Iterable[ConstraintSet]] = None,
@@ -2506,21 +2160,15 @@ class CapabilityDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Capability Relations"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Relations"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Collection of relationships for the capability, if existing."
-                            }
+                            dict_={r"en": r"Collection of relationships for the capability, if existing."}
                         )
 
                     if qualifier is None:
@@ -2531,30 +2179,19 @@ class CapabilityDescription(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(capabilityRealizedBy, str):
-                        raise TypeError(
-                            "capabilityRealizedBy takes several elements, got a str"
-                        )
+                        raise TypeError("capabilityRealizedBy takes several elements, got a str")
 
                     # A str would be split into its characters
                     if isinstance(generalizedBySet, str):
-                        raise TypeError(
-                            "generalizedBySet takes several elements, got a str"
-                        )
+                        raise TypeError("generalizedBySet takes several elements, got a str")
 
                     # A str would be split into its characters
                     if isinstance(constraintSet, str):
-                        raise TypeError(
-                            "constraintSet takes several elements, got a str"
-                        )
+                        raise TypeError("constraintSet takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        capabilityRealizedBy,
-                        composedOfSet,
-                        generalizedBySet,
-                        constraintSet,
-                    ]:
+                    for se_arg in [capabilityRealizedBy, composedOfSet, generalizedBySet, constraintSet]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -2565,9 +2202,7 @@ class CapabilityDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2585,9 +2220,7 @@ class CapabilityDescription(aas.Submodel):
             def __init__(
                 self,
                 capability: Capability,
-                capabilityComment: Optional[
-                    Union[aas.LangStringSet, CapabilityComment]
-                ] = None,
+                capabilityComment: Optional[Union[aas.LangStringSet, CapabilityComment]] = None,
                 propertySet: Optional[Iterable[PropertySet]] = None,
                 capabilityRelations: Optional[CapabilityRelations] = None,
                 id_short: Optional[str] = r"CapabilityContainer",
@@ -2606,21 +2239,15 @@ class CapabilityDescription(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Capability Container"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Container"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"A Container for one capability and all its additional descriptive elements."
-                        }
+                        dict_={r"en": r"A Container for one capability and all its additional descriptive elements."}
                     )
 
                 if qualifier is None:
@@ -2631,9 +2258,7 @@ class CapabilityDescription(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if capabilityComment is not None and not isinstance(
-                    capabilityComment, aas.SubmodelElement
-                ):
+                if capabilityComment is not None and not isinstance(capabilityComment, aas.SubmodelElement):
                     capabilityComment = self.CapabilityComment(capabilityComment)
 
                 # A str would be split into its characters
@@ -2642,12 +2267,7 @@ class CapabilityDescription(aas.Submodel):
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    capability,
-                    capabilityComment,
-                    propertySet,
-                    capabilityRelations,
-                ]:
+                for se_arg in [capability, capabilityComment, propertySet, capabilityRelations]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -2658,9 +2278,7 @@ class CapabilityDescription(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2694,21 +2312,15 @@ class CapabilityDescription(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Capability Set"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Set"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"A Set of CapabilityContainer for a Use Case for the asset."
-                    }
+                    dict_={r"en": r"A Set of CapabilityContainer for a Use Case for the asset."}
                 )
 
             if qualifier is None:
@@ -2734,9 +2346,7 @@ class CapabilityDescription(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2778,9 +2388,7 @@ class CapabilityDescription(aas.Submodel):
     ):
 
         if display_name is None:
-            display_name = aas.MultiLanguageNameType(
-                dict_={r"en": r"Submodel Template Capability Description"}
-            )
+            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Submodel Template Capability Description"})
 
         if description is None:
             description = aas.MultiLanguageTextType(
@@ -2812,9 +2420,7 @@ class CapabilityDescription(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

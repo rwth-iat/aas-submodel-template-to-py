@@ -17,20 +17,13 @@ class FunctionalSafety(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0112/2///62683#ACE005#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE005#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -62,9 +55,7 @@ class FunctionalSafety(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class OperatingConditionsOfFunctionalSafetyCharacteristics(
-        aas.SubmodelElementCollection
-    ):
+    class OperatingConditionsOfFunctionalSafetyCharacteristics(aas.SubmodelElementCollection):
 
         class TypeOfVoltage(aas.Property):
 
@@ -75,18 +66,9 @@ class FunctionalSafety(aas.Submodel):
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///61987#ABL837#001",
-                        ),
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///61987#ABL838#001",
-                        ),
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///61987#ABI407#004",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABL837#001"),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABL838#001"),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABI407#004"),
                     ),
                     referred_semantic_id=None,
                 ),
@@ -94,29 +76,18 @@ class FunctionalSafety(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///61987#ABA969#007",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA969#007"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"type of voltage",
-                            r"fr": r"type de tension",
-                            r"de": r"Spannungsart",
-                        }
+                        dict_={r"en": r"type of voltage", r"fr": r"type de tension", r"de": r"Spannungsart"}
                     )
 
                 if qualifier is None:
@@ -152,29 +123,18 @@ class FunctionalSafety(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///61987#ABA588#004",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA588#004"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"rated voltage",
-                            r"fr": r"tension assignée",
-                            r"de": r"Bemessungsspannung",
-                        }
+                        dict_={r"en": r"rated voltage", r"fr": r"tension assignée", r"de": r"Bemessungsspannung"}
                     )
 
                 if qualifier is None:
@@ -210,20 +170,13 @@ class FunctionalSafety(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///61987#ABD461#004",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABD461#004"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -268,20 +221,13 @@ class FunctionalSafety(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///61987#ABD462#004",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABD462#004"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -337,15 +283,11 @@ class FunctionalSafety(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"rated operational current"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"rated operational current"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -377,22 +319,10 @@ class FunctionalSafety(aas.Submodel):
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACH673#001",
-                        ),
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACH674#001",
-                        ),
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACH675#001",
-                        ),
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACH676#001",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH673#001"),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH674#001"),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH675#001"),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH676#001"),
                     ),
                     referred_semantic_id=None,
                 ),
@@ -400,28 +330,18 @@ class FunctionalSafety(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACE053#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE053#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"type of interlocking device",
-                            r"fr": r"type de dispositif de verrouillage",
-                        }
+                        dict_={r"en": r"type of interlocking device", r"fr": r"type de dispositif de verrouillage"}
                     )
 
                 if qualifier is None:
@@ -457,28 +377,18 @@ class FunctionalSafety(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACE070#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE070#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"other operating conditions",
-                            r"fr": r"autres conditions de fonctionnement",
-                        }
+                        dict_={r"en": r"other operating conditions", r"fr": r"autres conditions de fonctionnement"}
                     )
 
                 if qualifier is None:
@@ -514,20 +424,13 @@ class FunctionalSafety(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACE055#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE055#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -571,20 +474,13 @@ class FunctionalSafety(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACE054#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE054#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -622,42 +518,23 @@ class FunctionalSafety(aas.Submodel):
             ratedVoltage: Optional[Union[float, RatedVoltage]] = None,
             minimumRatedVoltage: Optional[Union[float, MinimumRatedVoltage]] = None,
             maximumRatedVoltage: Optional[Union[float, MaximumRatedVoltage]] = None,
-            ratedOperationalCurrent: Optional[
-                Union[float, RatedOperationalCurrent]
-            ] = None,
-            typeOfInterlockingDevice: Optional[
-                Union[str, TypeOfInterlockingDevice]
-            ] = None,
-            otherOperatingConditions: Optional[
-                Union[str, OtherOperatingConditions]
-            ] = None,
-            usefulLifeInNumberOfOperations: Optional[
-                Union[float, UsefulLifeInNumberOfOperations]
-            ] = None,
-            usefulLifeInTimeInterval: Optional[
-                Union[float, UsefulLifeInTimeInterval]
-            ] = None,
-            id_short: Optional[
-                str
-            ] = r"OperatingConditionsOfFunctionalSafetyCharacteristics",
+            ratedOperationalCurrent: Optional[Union[float, RatedOperationalCurrent]] = None,
+            typeOfInterlockingDevice: Optional[Union[str, TypeOfInterlockingDevice]] = None,
+            otherOperatingConditions: Optional[Union[str, OtherOperatingConditions]] = None,
+            usefulLifeInNumberOfOperations: Optional[Union[float, UsefulLifeInNumberOfOperations]] = None,
+            usefulLifeInTimeInterval: Optional[Union[float, UsefulLifeInTimeInterval]] = None,
+            id_short: Optional[str] = r"OperatingConditionsOfFunctionalSafetyCharacteristics",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0112/2///62683#ACG057#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACG057#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -676,76 +553,50 @@ class FunctionalSafety(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if typeOfVoltage is not None and not isinstance(
-                typeOfVoltage, aas.SubmodelElement
-            ):
+            if typeOfVoltage is not None and not isinstance(typeOfVoltage, aas.SubmodelElement):
                 typeOfVoltage = self.TypeOfVoltage(typeOfVoltage)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if ratedVoltage is not None and not isinstance(
-                ratedVoltage, aas.SubmodelElement
-            ):
+            if ratedVoltage is not None and not isinstance(ratedVoltage, aas.SubmodelElement):
                 ratedVoltage = self.RatedVoltage(ratedVoltage)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if minimumRatedVoltage is not None and not isinstance(
-                minimumRatedVoltage, aas.SubmodelElement
-            ):
+            if minimumRatedVoltage is not None and not isinstance(minimumRatedVoltage, aas.SubmodelElement):
                 minimumRatedVoltage = self.MinimumRatedVoltage(minimumRatedVoltage)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if maximumRatedVoltage is not None and not isinstance(
-                maximumRatedVoltage, aas.SubmodelElement
-            ):
+            if maximumRatedVoltage is not None and not isinstance(maximumRatedVoltage, aas.SubmodelElement):
                 maximumRatedVoltage = self.MaximumRatedVoltage(maximumRatedVoltage)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if ratedOperationalCurrent is not None and not isinstance(
-                ratedOperationalCurrent, aas.SubmodelElement
-            ):
-                ratedOperationalCurrent = self.RatedOperationalCurrent(
-                    ratedOperationalCurrent
-                )
+            if ratedOperationalCurrent is not None and not isinstance(ratedOperationalCurrent, aas.SubmodelElement):
+                ratedOperationalCurrent = self.RatedOperationalCurrent(ratedOperationalCurrent)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if typeOfInterlockingDevice is not None and not isinstance(
-                typeOfInterlockingDevice, aas.SubmodelElement
-            ):
-                typeOfInterlockingDevice = self.TypeOfInterlockingDevice(
-                    typeOfInterlockingDevice
-                )
+            if typeOfInterlockingDevice is not None and not isinstance(typeOfInterlockingDevice, aas.SubmodelElement):
+                typeOfInterlockingDevice = self.TypeOfInterlockingDevice(typeOfInterlockingDevice)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if otherOperatingConditions is not None and not isinstance(
-                otherOperatingConditions, aas.SubmodelElement
-            ):
-                otherOperatingConditions = self.OtherOperatingConditions(
-                    otherOperatingConditions
-                )
+            if otherOperatingConditions is not None and not isinstance(otherOperatingConditions, aas.SubmodelElement):
+                otherOperatingConditions = self.OtherOperatingConditions(otherOperatingConditions)
 
             # Build a submodel element if a raw value was passed in the argument
 
             if usefulLifeInNumberOfOperations is not None and not isinstance(
                 usefulLifeInNumberOfOperations, aas.SubmodelElement
             ):
-                usefulLifeInNumberOfOperations = self.UsefulLifeInNumberOfOperations(
-                    usefulLifeInNumberOfOperations
-                )
+                usefulLifeInNumberOfOperations = self.UsefulLifeInNumberOfOperations(usefulLifeInNumberOfOperations)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if usefulLifeInTimeInterval is not None and not isinstance(
-                usefulLifeInTimeInterval, aas.SubmodelElement
-            ):
-                usefulLifeInTimeInterval = self.UsefulLifeInTimeInterval(
-                    usefulLifeInTimeInterval
-                )
+            if usefulLifeInTimeInterval is not None and not isinstance(usefulLifeInTimeInterval, aas.SubmodelElement):
+                usefulLifeInTimeInterval = self.UsefulLifeInTimeInterval(usefulLifeInTimeInterval)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -770,9 +621,7 @@ class FunctionalSafety(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -798,22 +647,10 @@ class FunctionalSafety(aas.Submodel):
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACH687",
-                        ),
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACH688",
-                        ),
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACH689",
-                        ),
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACH690",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH687"),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH688"),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH689"),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH690"),
                     ),
                     referred_semantic_id=None,
                 ),
@@ -821,20 +658,13 @@ class FunctionalSafety(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACE071#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE071#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -877,18 +707,9 @@ class FunctionalSafety(aas.Submodel):
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH670#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH671#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH672#001",
-                            ),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH670#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH671#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH672#001"),
                         ),
                         referred_semantic_id=None,
                     ),
@@ -896,28 +717,18 @@ class FunctionalSafety(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACE051#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE051#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"safety integrity level",
-                                r"fr": "niveau d'intégrité de sécurité",
-                            }
+                            dict_={r"en": r"safety integrity level", r"fr": "niveau d'intégrité de sécurité"}
                         )
 
                     if qualifier is None:
@@ -953,20 +764,13 @@ class FunctionalSafety(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACE052#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE052#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1010,28 +814,18 @@ class FunctionalSafety(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACE058#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE058#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"proof test interval",
-                                r"fr": r"intervalle entre essai périodique",
-                            }
+                            dict_={r"en": r"proof test interval", r"fr": r"intervalle entre essai périodique"}
                         )
 
                     if qualifier is None:
@@ -1064,26 +858,11 @@ class FunctionalSafety(aas.Submodel):
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH677#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH678#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH679#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH680#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH681#001",
-                            ),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH677#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH678#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH679#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH680#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH681#001"),
                         ),
                         referred_semantic_id=None,
                     ),
@@ -1091,28 +870,18 @@ class FunctionalSafety(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACE060#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE060#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"performance level",
-                                r"fr": r"niveau de performance",
-                            }
+                            dict_={r"en": r"performance level", r"fr": r"niveau de performance"}
                         )
 
                     if qualifier is None:
@@ -1145,26 +914,11 @@ class FunctionalSafety(aas.Submodel):
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH682#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH683#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH684#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH685#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH686#001",
-                            ),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH682#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH683#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH684#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH685#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH686#001"),
                         ),
                         referred_semantic_id=None,
                     ),
@@ -1172,26 +926,17 @@ class FunctionalSafety(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACE063#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE063#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"category", r"fr": r"catégory"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"category", r"fr": r"catégory"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1226,28 +971,18 @@ class FunctionalSafety(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACG065#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACG065#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Safety subsystem",
-                            r"fr": r"Sous-système de sécurité",
-                        }
+                        dict_={r"en": r"Safety subsystem", r"fr": r"Sous-système de sécurité"}
                     )
 
                 if qualifier is None:
@@ -1268,9 +1003,7 @@ class FunctionalSafety(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if proofTestInterval is not None and not isinstance(
-                    proofTestInterval, aas.SubmodelElement
-                ):
+                if proofTestInterval is not None and not isinstance(proofTestInterval, aas.SubmodelElement):
                     proofTestInterval = self.ProofTestInterval(proofTestInterval)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1280,9 +1013,7 @@ class FunctionalSafety(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if category_ is not None and not isinstance(
-                    category_, aas.SubmodelElement
-                ):
+                if category_ is not None and not isinstance(category_, aas.SubmodelElement):
                     category_ = self.Category(category_)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1298,9 +1029,7 @@ class FunctionalSafety(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1329,20 +1058,13 @@ class FunctionalSafety(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACE057#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE057#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1397,15 +1119,11 @@ class FunctionalSafety(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"ratio of dangerous failure"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"ratio of dangerous failure"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1440,28 +1158,18 @@ class FunctionalSafety(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACE058#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE058#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"proof test interval",
-                                r"fr": r"intervalle entre essai périodique",
-                            }
+                            dict_={r"en": r"proof test interval", r"fr": r"intervalle entre essai périodique"}
                         )
 
                     if qualifier is None:
@@ -1495,28 +1203,18 @@ class FunctionalSafety(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACG066#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACG066#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Electronic element",
-                            r"fr": r"Elément électronique",
-                        }
+                        dict_={r"en": r"Electronic element", r"fr": r"Elément électronique"}
                     )
 
                 if qualifier is None:
@@ -1537,9 +1235,7 @@ class FunctionalSafety(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if proofTestInterval is not None and not isinstance(
-                    proofTestInterval, aas.SubmodelElement
-                ):
+                if proofTestInterval is not None and not isinstance(proofTestInterval, aas.SubmodelElement):
                     proofTestInterval = self.ProofTestInterval(proofTestInterval)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1555,9 +1251,7 @@ class FunctionalSafety(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1586,20 +1280,13 @@ class FunctionalSafety(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACE056#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE056#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1643,28 +1330,18 @@ class FunctionalSafety(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACE058#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE058#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"proof test interval",
-                                r"fr": r"intervalle entre essai périodique",
-                            }
+                            dict_={r"en": r"proof test interval", r"fr": r"intervalle entre essai périodique"}
                         )
 
                     if qualifier is None:
@@ -1697,28 +1374,18 @@ class FunctionalSafety(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACG067#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACG067#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Electromechanical element",
-                            r"fr": r"Elément électromécanique de sous-système",
-                        }
+                        dict_={r"en": r"Electromechanical element", r"fr": r"Elément électromécanique de sous-système"}
                     )
 
                 if qualifier is None:
@@ -1734,9 +1401,7 @@ class FunctionalSafety(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if proofTestInterval is not None and not isinstance(
-                    proofTestInterval, aas.SubmodelElement
-                ):
+                if proofTestInterval is not None and not isinstance(proofTestInterval, aas.SubmodelElement):
                     proofTestInterval = self.ProofTestInterval(proofTestInterval)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1752,9 +1417,7 @@ class FunctionalSafety(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1780,18 +1443,9 @@ class FunctionalSafety(aas.Submodel):
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH670#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH671#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH672#001",
-                            ),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH670#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH671#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH672#001"),
                         ),
                         referred_semantic_id=None,
                     ),
@@ -1799,28 +1453,18 @@ class FunctionalSafety(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACE051#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE051#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"safety integrity level",
-                                r"fr": "niveau d'intégrité de sécurité",
-                            }
+                            dict_={r"en": r"safety integrity level", r"fr": "niveau d'intégrité de sécurité"}
                         )
 
                     if qualifier is None:
@@ -1856,28 +1500,18 @@ class FunctionalSafety(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACE058#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE058#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"proof test interval",
-                                r"fr": r"intervalle entre essai périodique",
-                            }
+                            dict_={r"en": r"proof test interval", r"fr": r"intervalle entre essai périodique"}
                         )
 
                     if qualifier is None:
@@ -1910,26 +1544,11 @@ class FunctionalSafety(aas.Submodel):
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH677#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH678#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH679#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH680#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH681#001",
-                            ),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH677#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH678#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH679#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH680#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH681#001"),
                         ),
                         referred_semantic_id=None,
                     ),
@@ -1937,28 +1556,18 @@ class FunctionalSafety(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACE060#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE060#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"performance level",
-                                r"fr": r"niveau de performance",
-                            }
+                            dict_={r"en": r"performance level", r"fr": r"niveau de performance"}
                         )
 
                     if qualifier is None:
@@ -1991,26 +1600,11 @@ class FunctionalSafety(aas.Submodel):
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH682#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH683#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH684#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH685#001",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACH686#001",
-                            ),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH682#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH683#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH684#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH685#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH686#001"),
                         ),
                         referred_semantic_id=None,
                     ),
@@ -2018,26 +1612,17 @@ class FunctionalSafety(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///62683#ACE063#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACE063#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"category", r"fr": r"catégory"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"category", r"fr": r"catégory"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2071,28 +1656,18 @@ class FunctionalSafety(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///62683#ACG069#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACG069#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Inherently safe subsystem",
-                            r"fr": r"Sous-système intrinsèquement sûr",
-                        }
+                        dict_={r"en": r"Inherently safe subsystem", r"fr": r"Sous-système intrinsèquement sûr"}
                     )
 
                 if qualifier is None:
@@ -2108,9 +1683,7 @@ class FunctionalSafety(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if proofTestInterval is not None and not isinstance(
-                    proofTestInterval, aas.SubmodelElement
-                ):
+                if proofTestInterval is not None and not isinstance(proofTestInterval, aas.SubmodelElement):
                     proofTestInterval = self.ProofTestInterval(proofTestInterval)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -2120,9 +1693,7 @@ class FunctionalSafety(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if category_ is not None and not isinstance(
-                    category_, aas.SubmodelElement
-                ):
+                if category_ is not None and not isinstance(category_, aas.SubmodelElement):
                     category_ = self.Category(category_)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2138,9 +1709,7 @@ class FunctionalSafety(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2167,20 +1736,13 @@ class FunctionalSafety(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0112/2///62683#ACG070#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACG070#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -2199,9 +1761,7 @@ class FunctionalSafety(aas.Submodel):
             if functionalSafetyDeviceType is not None and not isinstance(
                 functionalSafetyDeviceType, aas.SubmodelElement
             ):
-                functionalSafetyDeviceType = self.FunctionalSafetyDeviceType(
-                    functionalSafetyDeviceType
-                )
+                functionalSafetyDeviceType = self.FunctionalSafetyDeviceType(functionalSafetyDeviceType)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2222,9 +1782,7 @@ class FunctionalSafety(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2242,9 +1800,7 @@ class FunctionalSafety(aas.Submodel):
     def __init__(
         self,
         id_: str,
-        numberOfFunctionalSafetySetsOfCharacteristics: Union[
-            xsd.Int, NumberOfFunctionalSafetySetsOfCharacteristics
-        ],
+        numberOfFunctionalSafetySetsOfCharacteristics: Union[xsd.Int, NumberOfFunctionalSafetySetsOfCharacteristics],
         operatingConditionsOfFunctionalSafetyCharacteristics: Optional[
             Iterable[OperatingConditionsOfFunctionalSafetyCharacteristics]
         ] = None,
@@ -2257,8 +1813,7 @@ class FunctionalSafety(aas.Submodel):
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"https://admin-shell.io/idta/iec62683/1/0/FunctionalSafety",
+                    type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/iec62683/1/0/FunctionalSafety"
                 ),
             ),
             type_=aas.Submodel,
@@ -2273,11 +1828,7 @@ class FunctionalSafety(aas.Submodel):
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -2288,23 +1839,16 @@ class FunctionalSafety(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if (
-            numberOfFunctionalSafetySetsOfCharacteristics is not None
-            and not isinstance(
-                numberOfFunctionalSafetySetsOfCharacteristics, aas.SubmodelElement
-            )
+        if numberOfFunctionalSafetySetsOfCharacteristics is not None and not isinstance(
+            numberOfFunctionalSafetySetsOfCharacteristics, aas.SubmodelElement
         ):
-            numberOfFunctionalSafetySetsOfCharacteristics = (
-                self.NumberOfFunctionalSafetySetsOfCharacteristics(
-                    numberOfFunctionalSafetySetsOfCharacteristics
-                )
+            numberOfFunctionalSafetySetsOfCharacteristics = self.NumberOfFunctionalSafetySetsOfCharacteristics(
+                numberOfFunctionalSafetySetsOfCharacteristics
             )
 
         # A str would be split into its characters
         if isinstance(operatingConditionsOfFunctionalSafetyCharacteristics, str):
-            raise TypeError(
-                "operatingConditionsOfFunctionalSafetyCharacteristics takes several elements, got a str"
-            )
+            raise TypeError("operatingConditionsOfFunctionalSafetyCharacteristics takes several elements, got a str")
 
         # A str would be split into its characters
         if isinstance(safetyDeviceTypes, str):
@@ -2327,9 +1871,7 @@ class FunctionalSafety(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

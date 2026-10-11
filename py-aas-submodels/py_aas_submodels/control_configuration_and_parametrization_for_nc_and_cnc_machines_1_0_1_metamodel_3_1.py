@@ -26,16 +26,12 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Reference to the digital nameplate of the controller."
-                    }
+                    dict_={r"en": r"Reference to the digital nameplate of the controller."}
                 )
 
             if qualifier is None:
@@ -82,16 +78,12 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The Controller Type describes the type of controller"
-                    }
+                    dict_={r"en": r"The Controller Type describes the type of controller"}
                 )
 
             if qualifier is None:
@@ -143,15 +135,11 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Time unit of the control"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Time unit of the control"})
 
             if qualifier is None:
                 qualifier = ()
@@ -197,15 +185,11 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Length Unit of the control"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Length Unit of the control"})
 
             if qualifier is None:
                 qualifier = ()
@@ -251,15 +235,11 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Fieldbus Type of the control"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Fieldbus Type of the control"})
 
             if qualifier is None:
                 qualifier = ()
@@ -305,15 +285,11 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Defines the cycle time of the CNC control"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Defines the cycle time of the CNC control"})
 
             if qualifier is None:
                 qualifier = ()
@@ -359,15 +335,11 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Defines the cycle time of the PLC control"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Defines the cycle time of the PLC control"})
 
             if qualifier is None:
                 qualifier = ()
@@ -413,9 +385,7 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -467,15 +437,11 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Defines the velocity unit of the CNC control "}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Defines the velocity unit of the CNC control "})
 
             if qualifier is None:
                 qualifier = ()
@@ -521,16 +487,12 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Defines the acceleration unit unit of the CNC control"
-                    }
+                    dict_={r"en": r"Defines the acceleration unit unit of the CNC control"}
                 )
 
             if qualifier is None:
@@ -577,15 +539,11 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Defines the jerk unit of the CNC control "}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Defines the jerk unit of the CNC control "})
 
             if qualifier is None:
                 qualifier = ()
@@ -633,15 +591,11 @@ class ControlConfig(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Name of the control configuration file"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Name of the control configuration file"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -686,15 +640,11 @@ class ControlConfig(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"File to configure the control"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"File to configure the control"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -736,17 +686,12 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Control configuration data",
-                        r"de": r"Steuerungskonfigurationsdaten",
-                    }
+                    dict_={r"en": r"Control configuration data", r"de": r"Steuerungskonfigurationsdaten"}
                 )
 
             if qualifier is None:
@@ -757,12 +702,8 @@ class ControlConfig(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if controlConfigFileName is not None and not isinstance(
-                controlConfigFileName, aas.SubmodelElement
-            ):
-                controlConfigFileName = self.ControlConfigFileName(
-                    controlConfigFileName
-                )
+            if controlConfigFileName is not None and not isinstance(controlConfigFileName, aas.SubmodelElement):
+                controlConfigFileName = self.ControlConfigFileName(controlConfigFileName)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -777,9 +718,7 @@ class ControlConfig(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -821,16 +760,12 @@ class ControlConfig(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"This describes the unique channel identification of the specific channel"
-                            }
+                            dict_={r"en": r"This describes the unique channel identification of the specific channel"}
                         )
 
                     if qualifier is None:
@@ -879,15 +814,11 @@ class ControlConfig(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Unique axis name"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Unique axis name"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -931,15 +862,11 @@ class ControlConfig(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Reference to the axis"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Reference to the axis"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -980,9 +907,7 @@ class ControlConfig(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1000,16 +925,12 @@ class ControlConfig(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if axisName is not None and not isinstance(
-                        axisName, aas.SubmodelElement
-                    ):
+                    if axisName is not None and not isinstance(axisName, aas.SubmodelElement):
                         axisName = self.AxisName(axisName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if referenceToAxis is not None and not isinstance(
-                        referenceToAxis, aas.SubmodelElement
-                    ):
+                    if referenceToAxis is not None and not isinstance(referenceToAxis, aas.SubmodelElement):
                         referenceToAxis = self.ReferenceToAxis(referenceToAxis)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1025,9 +946,7 @@ class ControlConfig(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1062,16 +981,12 @@ class ControlConfig(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Configuration information of a specific channel"
-                        }
+                        dict_={r"en": r"Configuration information of a specific channel"}
                     )
 
                 if qualifier is None:
@@ -1082,12 +997,8 @@ class ControlConfig(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if channelIdentification is not None and not isinstance(
-                    channelIdentification, aas.SubmodelElement
-                ):
-                    channelIdentification = self.ChannelIdentification(
-                        channelIdentification
-                    )
+                if channelIdentification is not None and not isinstance(channelIdentification, aas.SubmodelElement):
+                    channelIdentification = self.ChannelIdentification(channelIdentification)
 
                 # A str would be split into its characters
                 if isinstance(axesReference, str):
@@ -1106,9 +1017,7 @@ class ControlConfig(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1142,15 +1051,11 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Collection of channels of the control"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Collection of channels of the control"})
 
             if qualifier is None:
                 qualifier = ()
@@ -1171,9 +1076,7 @@ class ControlConfig(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1215,15 +1118,11 @@ class ControlConfig(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Name of the axis"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Name of the axis"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1269,15 +1168,11 @@ class ControlConfig(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Type of the axis"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Type of the axis"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1323,15 +1218,11 @@ class ControlConfig(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Axis is a simulated or real one"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Axis is a simulated or real one"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1377,15 +1268,11 @@ class ControlConfig(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Positive software limit switch"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Positive software limit switch"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1431,15 +1318,11 @@ class ControlConfig(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Negative software limit switch"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Negative software limit switch"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1485,15 +1368,11 @@ class ControlConfig(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Velocity limit of the axis"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Velocity limit of the axis"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1539,15 +1418,11 @@ class ControlConfig(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Accelerationlimit of the axis"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Accelerationlimit of the axis"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1593,15 +1468,11 @@ class ControlConfig(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Jerk limit of the axis"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Jerk limit of the axis"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1649,15 +1520,11 @@ class ControlConfig(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Axis configuration file name"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Axis configuration file name"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1702,15 +1569,11 @@ class ControlConfig(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Configuration file of the axis"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Configuration file of the axis"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1752,16 +1615,12 @@ class ControlConfig(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The SMC “AxisConfigData” is a collection of axis configuration data."
-                            }
+                            dict_={r"en": r"The SMC “AxisConfigData” is a collection of axis configuration data."}
                         )
 
                     if qualifier is None:
@@ -1772,9 +1631,7 @@ class ControlConfig(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if axisConfigFileName is not None and not isinstance(
-                        axisConfigFileName, aas.SubmodelElement
-                    ):
+                    if axisConfigFileName is not None and not isinstance(axisConfigFileName, aas.SubmodelElement):
                         axisConfigFileName = self.AxisConfigFileName(axisConfigFileName)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1790,9 +1647,7 @@ class ControlConfig(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1831,15 +1686,11 @@ class ControlConfig(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"The manual file of the drive "}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"The manual file of the drive "})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1882,9 +1733,7 @@ class ControlConfig(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1926,9 +1775,7 @@ class ControlConfig(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1940,16 +1787,12 @@ class ControlConfig(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Name of the configuration file of the drive "
-                                    }
+                                    dict_={r"en": r"Name of the configuration file of the drive "}
                                 )
 
                             if qualifier is None:
@@ -1983,9 +1826,7 @@ class ControlConfig(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1997,9 +1838,7 @@ class ControlConfig(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -2029,9 +1868,7 @@ class ControlConfig(aas.Submodel):
 
                     def __init__(
                         self,
-                        driveConfigFileName: Optional[
-                            Union[str, DriveConfigFileName]
-                        ] = None,
+                        driveConfigFileName: Optional[Union[str, DriveConfigFileName]] = None,
                         driveConfigFile: Optional[DriveConfigFile] = None,
                         id_short: Optional[str] = r"DriveConfigData",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2049,16 +1886,12 @@ class ControlConfig(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The SMC “DriveConfigData” is a collection of drive configuration data."
-                                }
+                                dict_={r"en": r"The SMC “DriveConfigData” is a collection of drive configuration data."}
                             )
 
                         if qualifier is None:
@@ -2069,12 +1902,8 @@ class ControlConfig(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if driveConfigFileName is not None and not isinstance(
-                            driveConfigFileName, aas.SubmodelElement
-                        ):
-                            driveConfigFileName = self.DriveConfigFileName(
-                                driveConfigFileName
-                            )
+                        if driveConfigFileName is not None and not isinstance(driveConfigFileName, aas.SubmodelElement):
+                            driveConfigFileName = self.DriveConfigFileName(driveConfigFileName)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -2089,9 +1918,7 @@ class ControlConfig(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2127,16 +1954,12 @@ class ControlConfig(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The SMC “Drive” is a collection of drive configuration information."
-                            }
+                            dict_={r"en": r"The SMC “Drive” is a collection of drive configuration information."}
                         )
 
                     if qualifier is None:
@@ -2147,9 +1970,7 @@ class ControlConfig(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if technicalData is not None and not isinstance(
-                        technicalData, aas.SubmodelElement
-                    ):
+                    if technicalData is not None and not isinstance(technicalData, aas.SubmodelElement):
                         technicalData = self.TechnicalData(technicalData)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2165,9 +1986,7 @@ class ControlConfig(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2210,16 +2029,12 @@ class ControlConfig(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The SMC “Axis” is a collection of axis configuration information."
-                        }
+                        dict_={r"en": r"The SMC “Axis” is a collection of axis configuration information."}
                     )
 
                 if qualifier is None:
@@ -2230,58 +2045,42 @@ class ControlConfig(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if axisName is not None and not isinstance(
-                    axisName, aas.SubmodelElement
-                ):
+                if axisName is not None and not isinstance(axisName, aas.SubmodelElement):
                     axisName = self.AxisName(axisName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if axisType is not None and not isinstance(
-                    axisType, aas.SubmodelElement
-                ):
+                if axisType is not None and not isinstance(axisType, aas.SubmodelElement):
                     axisType = self.AxisType(axisType)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if simulationAxis is not None and not isinstance(
-                    simulationAxis, aas.SubmodelElement
-                ):
+                if simulationAxis is not None and not isinstance(simulationAxis, aas.SubmodelElement):
                     simulationAxis = self.SimulationAxis(simulationAxis)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if swLimitSwitchNeg is not None and not isinstance(
-                    swLimitSwitchNeg, aas.SubmodelElement
-                ):
+                if swLimitSwitchNeg is not None and not isinstance(swLimitSwitchNeg, aas.SubmodelElement):
                     swLimitSwitchNeg = self.SwLimitSwitchNeg(swLimitSwitchNeg)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if swLimitSwitchPos is not None and not isinstance(
-                    swLimitSwitchPos, aas.SubmodelElement
-                ):
+                if swLimitSwitchPos is not None and not isinstance(swLimitSwitchPos, aas.SubmodelElement):
                     swLimitSwitchPos = self.SwLimitSwitchPos(swLimitSwitchPos)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if velocityLimit is not None and not isinstance(
-                    velocityLimit, aas.SubmodelElement
-                ):
+                if velocityLimit is not None and not isinstance(velocityLimit, aas.SubmodelElement):
                     velocityLimit = self.VelocityLimit(velocityLimit)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if accelerationLimit is not None and not isinstance(
-                    accelerationLimit, aas.SubmodelElement
-                ):
+                if accelerationLimit is not None and not isinstance(accelerationLimit, aas.SubmodelElement):
                     accelerationLimit = self.AccelerationLimit(accelerationLimit)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if jerkLimit is not None and not isinstance(
-                    jerkLimit, aas.SubmodelElement
-                ):
+                if jerkLimit is not None and not isinstance(jerkLimit, aas.SubmodelElement):
                     jerkLimit = self.JerkLimit(jerkLimit)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2308,9 +2107,7 @@ class ControlConfig(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2335,8 +2132,7 @@ class ControlConfig(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/ControlConfig/Axes/1/0",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/ControlConfig/Axes/1/0"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -2344,16 +2140,12 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The SMC “Axes” is a collection of axes of the CNC controller."
-                    }
+                    dict_={r"en": r"The SMC “Axes” is a collection of axes of the CNC controller."}
                 )
 
             if qualifier is None:
@@ -2375,9 +2167,7 @@ class ControlConfig(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2417,16 +2207,12 @@ class ControlConfig(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"NC program file type, which the CNC control can work with"
-                        }
+                        dict_={r"en": r"NC program file type, which the CNC control can work with"}
                     )
 
                 if qualifier is None:
@@ -2473,15 +2259,11 @@ class ControlConfig(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"NC program syntax type"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"NC program syntax type"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2526,9 +2308,7 @@ class ControlConfig(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -2577,16 +2357,12 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The SMC “NCProgramConfig” is a collection of NC program configuration information."
-                    }
+                    dict_={r"en": r"The SMC “NCProgramConfig” is a collection of NC program configuration information."}
                 )
 
             if qualifier is None:
@@ -2597,31 +2373,21 @@ class ControlConfig(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if nCProgramFileType is not None and not isinstance(
-                nCProgramFileType, aas.SubmodelElement
-            ):
+            if nCProgramFileType is not None and not isinstance(nCProgramFileType, aas.SubmodelElement):
                 nCProgramFileType = self.NCProgramFileType(nCProgramFileType)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if nCProgramSyntaxType is not None and not isinstance(
-                nCProgramSyntaxType, aas.SubmodelElement
-            ):
+            if nCProgramSyntaxType is not None and not isinstance(nCProgramSyntaxType, aas.SubmodelElement):
                 nCProgramSyntaxType = self.NCProgramSyntaxType(nCProgramSyntaxType)
 
             # A str would be split into its characters
             if isinstance(nCProgramSyntaxManual, str):
-                raise TypeError(
-                    "nCProgramSyntaxManual takes several elements, got a str"
-                )
+                raise TypeError("nCProgramSyntaxManual takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                nCProgramFileType,
-                nCProgramSyntaxType,
-                nCProgramSyntaxManual,
-            ]:
+            for se_arg in [nCProgramFileType, nCProgramSyntaxType, nCProgramSyntaxManual]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -2632,9 +2398,7 @@ class ControlConfig(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2674,15 +2438,11 @@ class ControlConfig(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Type of communication to the control"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Type of communication to the control"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2728,15 +2488,11 @@ class ControlConfig(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Communication address into the control"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Communication address into the control"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2782,16 +2538,12 @@ class ControlConfig(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Communication information model if ones exist like OPCUA"
-                        }
+                        dict_={r"en": r"Communication information model if ones exist like OPCUA"}
                     )
 
                 if qualifier is None:
@@ -2836,16 +2588,12 @@ class ControlConfig(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Reference to the OPCUA server datasheet Submodel"
-                        }
+                        dict_={r"en": r"Reference to the OPCUA server datasheet Submodel"}
                     )
 
                 if qualifier is None:
@@ -2871,12 +2619,8 @@ class ControlConfig(aas.Submodel):
             self,
             communicationType: Optional[Union[str, CommunicationType]] = None,
             communicationAdress: Optional[Union[str, CommunicationAdress]] = None,
-            communicationInformationModel: Optional[
-                Union[str, CommunicationInformationModel]
-            ] = None,
-            oPCUAServerDataSheet: Optional[
-                Union[aas.Reference, OPCUAServerDataSheet]
-            ] = None,
+            communicationInformationModel: Optional[Union[str, CommunicationInformationModel]] = None,
+            oPCUAServerDataSheet: Optional[Union[aas.Reference, OPCUAServerDataSheet]] = None,
             id_short: Optional[str] = r"CommunicationConfig",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
@@ -2893,9 +2637,7 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -2913,16 +2655,12 @@ class ControlConfig(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if communicationType is not None and not isinstance(
-                communicationType, aas.SubmodelElement
-            ):
+            if communicationType is not None and not isinstance(communicationType, aas.SubmodelElement):
                 communicationType = self.CommunicationType(communicationType)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if communicationAdress is not None and not isinstance(
-                communicationAdress, aas.SubmodelElement
-            ):
+            if communicationAdress is not None and not isinstance(communicationAdress, aas.SubmodelElement):
                 communicationAdress = self.CommunicationAdress(communicationAdress)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2930,25 +2668,16 @@ class ControlConfig(aas.Submodel):
             if communicationInformationModel is not None and not isinstance(
                 communicationInformationModel, aas.SubmodelElement
             ):
-                communicationInformationModel = self.CommunicationInformationModel(
-                    communicationInformationModel
-                )
+                communicationInformationModel = self.CommunicationInformationModel(communicationInformationModel)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if oPCUAServerDataSheet is not None and not isinstance(
-                oPCUAServerDataSheet, aas.SubmodelElement
-            ):
+            if oPCUAServerDataSheet is not None and not isinstance(oPCUAServerDataSheet, aas.SubmodelElement):
                 oPCUAServerDataSheet = self.OPCUAServerDataSheet(oPCUAServerDataSheet)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                communicationType,
-                communicationAdress,
-                communicationInformationModel,
-                oPCUAServerDataSheet,
-            ]:
+            for se_arg in [communicationType, communicationAdress, communicationInformationModel, oPCUAServerDataSheet]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -2959,9 +2688,7 @@ class ControlConfig(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3001,16 +2728,12 @@ class ControlConfig(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference to the tool description Submodel of the specific tool."
-                            }
+                            dict_={r"en": r"Reference to the tool description Submodel of the specific tool."}
                         )
 
                     if qualifier is None:
@@ -3051,16 +2774,12 @@ class ControlConfig(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The SMC “Tool” is a collection of tool configuration information."
-                        }
+                        dict_={r"en": r"The SMC “Tool” is a collection of tool configuration information."}
                     )
 
                 if qualifier is None:
@@ -3071,9 +2790,7 @@ class ControlConfig(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if toolDescription is not None and not isinstance(
-                    toolDescription, aas.SubmodelElement
-                ):
+                if toolDescription is not None and not isinstance(toolDescription, aas.SubmodelElement):
                     toolDescription = self.ToolDescription(toolDescription)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3089,9 +2806,7 @@ class ControlConfig(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3125,16 +2840,12 @@ class ControlConfig(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Explanation: The SMC “Tools” is a collection of tools of the CNC controller."
-                    }
+                    dict_={r"en": r"Explanation: The SMC “Tools” is a collection of tools of the CNC controller."}
                 )
 
             if qualifier is None:
@@ -3160,9 +2871,7 @@ class ControlConfig(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3203,12 +2912,7 @@ class ControlConfig(aas.Submodel):
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"https://admin-shell.io/idta/ControlConfig/1/0",
-                ),
-            ),
+            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/ControlConfig/1/0"),),
             type_=aas.Submodel,
             referred_semantic_id=None,
         ),
@@ -3243,16 +2947,12 @@ class ControlConfig(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if digitalNameplate is not None and not isinstance(
-            digitalNameplate, aas.SubmodelElement
-        ):
+        if digitalNameplate is not None and not isinstance(digitalNameplate, aas.SubmodelElement):
             digitalNameplate = self.DigitalNameplate(digitalNameplate)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if controllerType is not None and not isinstance(
-            controllerType, aas.SubmodelElement
-        ):
+        if controllerType is not None and not isinstance(controllerType, aas.SubmodelElement):
             controllerType = self.ControllerType(controllerType)
 
         # Build a submodel element if a raw value was passed in the argument
@@ -3267,44 +2967,32 @@ class ControlConfig(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if fieldbusType is not None and not isinstance(
-            fieldbusType, aas.SubmodelElement
-        ):
+        if fieldbusType is not None and not isinstance(fieldbusType, aas.SubmodelElement):
             fieldbusType = self.FieldbusType(fieldbusType)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if cNCCycleTime is not None and not isinstance(
-            cNCCycleTime, aas.SubmodelElement
-        ):
+        if cNCCycleTime is not None and not isinstance(cNCCycleTime, aas.SubmodelElement):
             cNCCycleTime = self.CNCCycleTime(cNCCycleTime)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if pLCCycleTime is not None and not isinstance(
-            pLCCycleTime, aas.SubmodelElement
-        ):
+        if pLCCycleTime is not None and not isinstance(pLCCycleTime, aas.SubmodelElement):
             pLCCycleTime = self.PLCCycleTime(pLCCycleTime)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if fieldbusCycleTime is not None and not isinstance(
-            fieldbusCycleTime, aas.SubmodelElement
-        ):
+        if fieldbusCycleTime is not None and not isinstance(fieldbusCycleTime, aas.SubmodelElement):
             fieldbusCycleTime = self.FieldbusCycleTime(fieldbusCycleTime)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if velocityUnit is not None and not isinstance(
-            velocityUnit, aas.SubmodelElement
-        ):
+        if velocityUnit is not None and not isinstance(velocityUnit, aas.SubmodelElement):
             velocityUnit = self.VelocityUnit(velocityUnit)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if accelerationUnit is not None and not isinstance(
-            accelerationUnit, aas.SubmodelElement
-        ):
+        if accelerationUnit is not None and not isinstance(accelerationUnit, aas.SubmodelElement):
             accelerationUnit = self.AccelerationUnit(accelerationUnit)
 
         # Build a submodel element if a raw value was passed in the argument
@@ -3359,9 +3047,7 @@ class ControlConfig(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

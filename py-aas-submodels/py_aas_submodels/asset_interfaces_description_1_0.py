@@ -19,20 +19,13 @@ class AssetInterfacesDescription(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://www.w3.org/2019/wot/td#title",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#title"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -68,20 +61,13 @@ class AssetInterfacesDescription(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://purl.org/dc/terms/created",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://purl.org/dc/terms/created"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -117,20 +103,13 @@ class AssetInterfacesDescription(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://purl.org/dc/terms/modified",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://purl.org/dc/terms/modified"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -168,8 +147,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://www.w3.org/2019/wot/td#supportContact",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#supportContact"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -177,9 +155,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -219,8 +195,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#baseURI",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#baseURI"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -228,9 +203,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -277,9 +250,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -318,9 +289,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -347,9 +316,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -375,9 +342,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -388,19 +353,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(security_items, str):
-                        raise TypeError(
-                            "security_items takes several elements, got a str"
-                        )
+                        raise TypeError("security_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if security_items:
                         security_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Security_item(i)
-                            )
-                            for i in security_items
+                            i if isinstance(i, aas.SubmodelElement) else self.Security_item(i) for i in security_items
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -413,9 +371,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -482,15 +438,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -517,9 +467,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -531,9 +479,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -576,9 +522,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -589,9 +533,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -607,9 +549,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -637,9 +577,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -651,9 +589,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -688,9 +624,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -702,9 +636,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -748,9 +680,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -761,16 +691,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -786,9 +712,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -816,9 +740,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -830,9 +752,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -867,9 +787,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -881,9 +799,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -918,9 +834,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -932,9 +846,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -969,9 +881,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -983,9 +893,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1031,9 +939,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1044,16 +950,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if name is not None and not isinstance(
-                            name, aas.SubmodelElement
-                        ):
+                        if name is not None and not isinstance(name, aas.SubmodelElement):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -1063,9 +965,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1081,9 +981,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1111,9 +1009,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1125,9 +1021,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1158,9 +1052,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             oneof_items: Optional[Iterable[aas.SubmodelElement]] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
-                            semantic_id_list_element: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1169,16 +1061,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            value_type_list_element: Optional[
-                                aas.DataTypeDefXsd
-                            ] = None,
+                            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1190,9 +1078,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1203,9 +1089,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(oneof_items, str):
-                                raise TypeError(
-                                    "oneof_items takes several elements, got a str"
-                                )
+                                raise TypeError("oneof_items takes several elements, got a str")
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -1273,8 +1157,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             # is either Property or Range. Thus, `new` must have the value_type property.
                             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                             if (
-                                self.type_value_list_element
-                                in (aas.Property, aas.Range)
+                                self.type_value_list_element in (aas.Property, aas.Range)
                                 and new.value_type is not self.value_type_list_element
                             ):  # type: ignore
                                 raise aas.AASConstraintViolation(
@@ -1287,15 +1170,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                            if (
-                                new.semantic_id is not None
-                                and self.semantic_id_list_element is None
-                            ):
+                            if new.semantic_id is not None and self.semantic_id_list_element is None:
                                 for item in existing:
-                                    if (
-                                        item.semantic_id is not None
-                                        and new.semantic_id != item.semantic_id
-                                    ):
+                                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                         raise aas.AASConstraintViolation(
                                             114,
                                             f"Element to be added {new!r} has semantic_id "
@@ -1314,9 +1191,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             allof_items: Optional[Iterable[aas.SubmodelElement]] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
-                            semantic_id_list_element: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1325,16 +1200,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            value_type_list_element: Optional[
-                                aas.DataTypeDefXsd
-                            ] = None,
+                            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1346,9 +1217,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1359,9 +1228,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(allof_items, str):
-                                raise TypeError(
-                                    "allof_items takes several elements, got a str"
-                                )
+                                raise TypeError("allof_items takes several elements, got a str")
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -1429,8 +1296,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             # is either Property or Range. Thus, `new` must have the value_type property.
                             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                             if (
-                                self.type_value_list_element
-                                in (aas.Property, aas.Range)
+                                self.type_value_list_element in (aas.Property, aas.Range)
                                 and new.value_type is not self.value_type_list_element
                             ):  # type: ignore
                                 raise aas.AASConstraintViolation(
@@ -1443,15 +1309,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                            if (
-                                new.semantic_id is not None
-                                and self.semantic_id_list_element is None
-                            ):
+                            if new.semantic_id is not None and self.semantic_id_list_element is None:
                                 for item in existing:
-                                    if (
-                                        item.semantic_id is not None
-                                        and new.semantic_id != item.semantic_id
-                                    ):
+                                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                         raise aas.AASConstraintViolation(
                                             114,
                                             f"Element to be added {new!r} has semantic_id "
@@ -1474,9 +1334,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1488,9 +1346,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1536,9 +1392,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1549,9 +1403,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # A str would be split into its characters
@@ -1560,9 +1412,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if oneOf is not None and not isinstance(
-                            oneOf, aas.SubmodelElement
-                        ):
+                        if oneOf is not None and not isinstance(oneOf, aas.SubmodelElement):
                             oneOf = self.OneOf(oneOf)
 
                         # A str would be split into its characters
@@ -1571,16 +1421,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if allOf is not None and not isinstance(
-                            allOf, aas.SubmodelElement
-                        ):
+                        if allOf is not None and not isinstance(allOf, aas.SubmodelElement):
                             allOf = self.AllOf(allOf)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1596,9 +1442,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1626,9 +1470,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1640,9 +1482,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1677,9 +1517,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1691,9 +1529,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1728,9 +1564,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1742,9 +1576,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1779,9 +1611,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1793,9 +1623,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1841,9 +1669,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1854,16 +1680,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if name is not None and not isinstance(
-                            name, aas.SubmodelElement
-                        ):
+                        if name is not None and not isinstance(name, aas.SubmodelElement):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -1873,9 +1695,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1891,9 +1711,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1921,9 +1739,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1935,9 +1751,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1972,9 +1786,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1986,9 +1798,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2023,9 +1833,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2037,9 +1845,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2084,9 +1890,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2097,23 +1901,17 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if identity is not None and not isinstance(
-                            identity, aas.SubmodelElement
-                        ):
+                        if identity is not None and not isinstance(identity, aas.SubmodelElement):
                             identity = self.Identity(identity)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -2129,9 +1927,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2159,9 +1955,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2173,9 +1967,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2210,9 +2002,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2224,9 +2014,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2261,9 +2049,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2275,9 +2061,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2312,9 +2096,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2326,9 +2108,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2363,9 +2143,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2377,9 +2155,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2426,9 +2202,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2439,16 +2213,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if name is not None and not isinstance(
-                            name, aas.SubmodelElement
-                        ):
+                        if name is not None and not isinstance(name, aas.SubmodelElement):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -2463,9 +2233,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -2481,9 +2249,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2511,9 +2277,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2525,9 +2289,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2562,9 +2324,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2576,9 +2336,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2613,9 +2371,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2627,9 +2383,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2664,9 +2418,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2678,9 +2430,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2715,9 +2465,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2729,9 +2477,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2766,9 +2512,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2780,9 +2524,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2817,9 +2559,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2831,9 +2571,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2882,9 +2620,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2895,16 +2631,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if name is not None and not isinstance(
-                            name, aas.SubmodelElement
-                        ):
+                        if name is not None and not isinstance(name, aas.SubmodelElement):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -2914,9 +2646,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if authorization is not None and not isinstance(
-                            authorization, aas.SubmodelElement
-                        ):
+                        if authorization is not None and not isinstance(authorization, aas.SubmodelElement):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -2926,29 +2656,17 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if format is not None and not isinstance(
-                            format, aas.SubmodelElement
-                        ):
+                        if format is not None and not isinstance(format, aas.SubmodelElement):
                             format = self.Format(format)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            scheme,
-                            name,
-                            in_,
-                            authorization,
-                            alg,
-                            format,
-                            proxy,
-                        ]:
+                        for se_arg in [scheme, name, in_, authorization, alg, format, proxy]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -2959,9 +2677,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2989,9 +2705,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3003,9 +2717,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3040,9 +2752,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3054,9 +2764,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3091,9 +2799,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3105,9 +2811,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3142,9 +2846,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3156,9 +2858,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3193,9 +2893,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3207,9 +2905,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3244,9 +2940,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3258,9 +2952,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3295,9 +2987,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3309,9 +2999,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3340,9 +3028,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         scheme: Union[str, Scheme],
                         token: Optional[Union[xsd.AnyURI, Token]] = None,
                         refresh: Optional[Union[xsd.AnyURI, Refresh]] = None,
-                        authorization: Optional[
-                            Union[xsd.AnyURI, Authorization]
-                        ] = None,
+                        authorization: Optional[Union[xsd.AnyURI, Authorization]] = None,
                         scopes: Optional[Union[str, Scopes]] = None,
                         flow: Optional[Union[str, Flow]] = None,
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
@@ -3362,9 +3048,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3375,64 +3059,42 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if token is not None and not isinstance(
-                            token, aas.SubmodelElement
-                        ):
+                        if token is not None and not isinstance(token, aas.SubmodelElement):
                             token = self.Token(token)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if refresh is not None and not isinstance(
-                            refresh, aas.SubmodelElement
-                        ):
+                        if refresh is not None and not isinstance(refresh, aas.SubmodelElement):
                             refresh = self.Refresh(refresh)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if authorization is not None and not isinstance(
-                            authorization, aas.SubmodelElement
-                        ):
+                        if authorization is not None and not isinstance(authorization, aas.SubmodelElement):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scopes is not None and not isinstance(
-                            scopes, aas.SubmodelElement
-                        ):
+                        if scopes is not None and not isinstance(scopes, aas.SubmodelElement):
                             scopes = self.Scopes(scopes)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if flow is not None and not isinstance(
-                            flow, aas.SubmodelElement
-                        ):
+                        if flow is not None and not isinstance(flow, aas.SubmodelElement):
                             flow = self.Flow(flow)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            scheme,
-                            token,
-                            refresh,
-                            authorization,
-                            scopes,
-                            flow,
-                            proxy,
-                        ]:
+                        for se_arg in [scheme, token, refresh, authorization, scopes, flow, proxy]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -3443,9 +3105,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -3487,9 +3147,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3521,9 +3179,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3542,9 +3198,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 self,
                 base: Union[xsd.AnyURI, Base],
                 contentType: Union[str, ContentType],
-                security: Union[
-                    Iterable[Union[aas.Reference, Security.Security_item]], Security
-                ],
+                security: Union[Iterable[Union[aas.Reference, Security.Security_item]], Security],
                 securityDefinitions: SecurityDefinitions,
                 id_short: Optional[str] = r"EndpointMetadata",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3562,9 +3216,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -3580,9 +3232,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if contentType is not None and not isinstance(
-                    contentType, aas.SubmodelElement
-                ):
+                if contentType is not None and not isinstance(contentType, aas.SubmodelElement):
                     contentType = self.ContentType(contentType)
 
                 # A str would be split into its characters
@@ -3591,9 +3241,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if security is not None and not isinstance(
-                    security, aas.SubmodelElement
-                ):
+                if security is not None and not isinstance(security, aas.SubmodelElement):
                     security = self.Security(security)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3609,9 +3257,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3643,9 +3289,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3667,9 +3311,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3704,9 +3346,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3718,9 +3358,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3755,9 +3393,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3769,9 +3405,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3806,9 +3440,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3820,9 +3452,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3857,9 +3487,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3871,9 +3499,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3908,9 +3534,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3922,9 +3546,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3959,23 +3581,16 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://schema.org/unitCode",
-                                    ),
+                                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/unitCode"),
                                 ),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -4010,9 +3625,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4043,9 +3656,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -4099,9 +3710,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4132,9 +3741,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -4187,14 +3794,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"type",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4206,9 +3809,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -4240,18 +3841,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"unit",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://schema.org/unitCode",
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/unitCode"
                                         ),
                                     ),
                                     referred_semantic_id=None,
@@ -4259,9 +3855,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -4293,14 +3887,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"default",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4312,9 +3902,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -4346,14 +3934,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"const",
                                 value_type: aas.DataTypeDefXsd = xsd.Int,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4365,9 +3949,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -4399,14 +3981,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"observable",
                                 value_type: aas.DataTypeDefXsd = bool,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4418,9 +3996,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -4452,14 +4028,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"title",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4471,9 +4043,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -4505,14 +4075,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 max: str,
                                 id_short: Optional[str] = r"min_max",
                                 value_type: aas.DataTypeDefXsd = str,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4543,9 +4109,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         referred_semantic_id=None,
                                     ),
                                 ),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -4596,14 +4160,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 max: str,
                                 id_short: Optional[str] = r"lengthRange",
                                 value_type: aas.DataTypeDefXsd = str,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4634,9 +4194,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         referred_semantic_id=None,
                                     ),
                                 ),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -4685,14 +4243,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 self,
                                 value: aas.Reference,
                                 id_short: Optional[str] = r"valueSemantics",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4704,9 +4258,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -4737,19 +4289,13 @@ class AssetInterfacesDescription(aas.Submodel):
                             observable: Optional[Union[bool, Observable]] = None,
                             title: Optional[Union[str, Title]] = None,
                             min_max: Optional[Union[Tuple[str, str], Min_max]] = None,
-                            lengthRange: Optional[
-                                Union[Tuple[str, str], LengthRange]
-                            ] = None,
-                            valueSemantics: Optional[
-                                Union[aas.Reference, ValueSemantics]
-                            ] = None,
+                            lengthRange: Optional[Union[Tuple[str, str], LengthRange]] = None,
+                            valueSemantics: Optional[Union[aas.Reference, ValueSemantics]] = None,
                             id_short: Optional[str] = r"items",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4761,9 +4307,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -4784,67 +4328,47 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if type is not None and not isinstance(
-                                type, aas.SubmodelElement
-                            ):
+                            if type is not None and not isinstance(type, aas.SubmodelElement):
                                 type = self.Type(type)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if unit is not None and not isinstance(
-                                unit, aas.SubmodelElement
-                            ):
+                            if unit is not None and not isinstance(unit, aas.SubmodelElement):
                                 unit = self.Unit(unit)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if default is not None and not isinstance(
-                                default, aas.SubmodelElement
-                            ):
+                            if default is not None and not isinstance(default, aas.SubmodelElement):
                                 default = self.Default(default)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if const is not None and not isinstance(
-                                const, aas.SubmodelElement
-                            ):
+                            if const is not None and not isinstance(const, aas.SubmodelElement):
                                 const = self.Const(const)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if observable is not None and not isinstance(
-                                observable, aas.SubmodelElement
-                            ):
+                            if observable is not None and not isinstance(observable, aas.SubmodelElement):
                                 observable = self.Observable(observable)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if title is not None and not isinstance(
-                                title, aas.SubmodelElement
-                            ):
+                            if title is not None and not isinstance(title, aas.SubmodelElement):
                                 title = self.Title(title)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if min_max is not None and not isinstance(
-                                min_max, aas.SubmodelElement
-                            ):
+                            if min_max is not None and not isinstance(min_max, aas.SubmodelElement):
                                 min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if lengthRange is not None and not isinstance(
-                                lengthRange, aas.SubmodelElement
-                            ):
-                                lengthRange = self.LengthRange(
-                                    min=lengthRange[0], max=lengthRange[1]
-                                )
+                            if lengthRange is not None and not isinstance(lengthRange, aas.SubmodelElement):
+                                lengthRange = self.LengthRange(min=lengthRange[0], max=lengthRange[1])
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if valueSemantics is not None and not isinstance(
-                                valueSemantics, aas.SubmodelElement
-                            ):
+                            if valueSemantics is not None and not isinstance(valueSemantics, aas.SubmodelElement):
                                 valueSemantics = self.ValueSemantics(valueSemantics)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -4898,9 +4422,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4931,9 +4453,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -4988,16 +4508,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"key",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5008,12 +4522,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -5045,16 +4555,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"type",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5065,12 +4569,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -5102,16 +4602,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"title",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5122,12 +4616,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -5159,16 +4649,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"observable",
                                     value_type: aas.DataTypeDefXsd = bool,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5179,12 +4663,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -5216,16 +4696,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"const",
                                     value_type: aas.DataTypeDefXsd = xsd.Int,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5236,12 +4710,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -5273,16 +4743,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"default",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5293,12 +4757,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -5330,16 +4790,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"unit",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5350,12 +4804,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -5387,16 +4837,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     max: str,
                                     id_short: Optional[str] = r"min_max",
                                     value_type: aas.DataTypeDefXsd = str,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5407,9 +4851,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (
                                         aas.ExternalReference(
                                             key=(
                                                 aas.Key(
@@ -5429,9 +4871,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             referred_semantic_id=None,
                                         ),
                                     ),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -5482,16 +4922,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     max: str,
                                     id_short: Optional[str] = r"lengthRange",
                                     value_type: aas.DataTypeDefXsd = str,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5502,9 +4936,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (
                                         aas.ExternalReference(
                                             key=(
                                                 aas.Key(
@@ -5524,9 +4956,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             referred_semantic_id=None,
                                         ),
                                     ),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -5579,16 +5009,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"type",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5599,12 +5023,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -5634,16 +5054,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         self,
                                         value: aas.Reference,
                                         id_short: Optional[str] = r"valueSemantics",
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5654,12 +5068,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -5689,16 +5099,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"unit",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5709,12 +5113,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -5746,16 +5146,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"default",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5766,12 +5160,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -5803,16 +5193,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"const",
                                         value_type: aas.DataTypeDefXsd = xsd.Int,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5823,12 +5207,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -5860,16 +5240,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"observable",
                                         value_type: aas.DataTypeDefXsd = bool,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5880,12 +5254,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -5917,16 +5287,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"title",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5937,12 +5301,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -5974,16 +5334,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         max: str,
                                         id_short: Optional[str] = r"min_max",
                                         value_type: aas.DataTypeDefXsd = str,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5994,9 +5348,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (
                                             aas.ExternalReference(
                                                 key=(
                                                     aas.Key(
@@ -6016,9 +5368,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 referred_semantic_id=None,
                                             ),
                                         ),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -6069,16 +5419,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         max: str,
                                         id_short: Optional[str] = r"lengthRange",
                                         value_type: aas.DataTypeDefXsd = str,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6089,9 +5433,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (
                                             aas.ExternalReference(
                                                 key=(
                                                     aas.Key(
@@ -6111,9 +5453,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 referred_semantic_id=None,
                                             ),
                                         ),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -6159,33 +5499,19 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     type: Optional[Union[str, Type]] = None,
-                                    valueSemantics: Optional[
-                                        Union[aas.Reference, ValueSemantics]
-                                    ] = None,
+                                    valueSemantics: Optional[Union[aas.Reference, ValueSemantics]] = None,
                                     unit: Optional[Union[str, Unit]] = None,
                                     default: Optional[Union[str, Default]] = None,
                                     const: Optional[Union[xsd.Int, Const]] = None,
-                                    observable: Optional[
-                                        Union[bool, Observable]
-                                    ] = None,
+                                    observable: Optional[Union[bool, Observable]] = None,
                                     title: Optional[Union[str, Title]] = None,
-                                    min_max: Optional[
-                                        Union[Tuple[str, str], Min_max]
-                                    ] = None,
-                                    lengthRange: Optional[
-                                        Union[Tuple[str, str], LengthRange]
-                                    ] = None,
+                                    min_max: Optional[Union[Tuple[str, str], Min_max]] = None,
+                                    lengthRange: Optional[Union[Tuple[str, str], LengthRange]] = None,
                                     id_short: Optional[str] = r"items",
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6196,12 +5522,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -6222,9 +5544,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if type is not None and not isinstance(
-                                        type, aas.SubmodelElement
-                                    ):
+                                    if type is not None and not isinstance(type, aas.SubmodelElement):
                                         type = self.Type(type)
 
                                     # Build a submodel element if a raw value was passed in the argument
@@ -6232,62 +5552,42 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if valueSemantics is not None and not isinstance(
                                         valueSemantics, aas.SubmodelElement
                                     ):
-                                        valueSemantics = self.ValueSemantics(
-                                            valueSemantics
-                                        )
+                                        valueSemantics = self.ValueSemantics(valueSemantics)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if unit is not None and not isinstance(
-                                        unit, aas.SubmodelElement
-                                    ):
+                                    if unit is not None and not isinstance(unit, aas.SubmodelElement):
                                         unit = self.Unit(unit)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if default is not None and not isinstance(
-                                        default, aas.SubmodelElement
-                                    ):
+                                    if default is not None and not isinstance(default, aas.SubmodelElement):
                                         default = self.Default(default)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if const is not None and not isinstance(
-                                        const, aas.SubmodelElement
-                                    ):
+                                    if const is not None and not isinstance(const, aas.SubmodelElement):
                                         const = self.Const(const)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if observable is not None and not isinstance(
-                                        observable, aas.SubmodelElement
-                                    ):
+                                    if observable is not None and not isinstance(observable, aas.SubmodelElement):
                                         observable = self.Observable(observable)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if title is not None and not isinstance(
-                                        title, aas.SubmodelElement
-                                    ):
+                                    if title is not None and not isinstance(title, aas.SubmodelElement):
                                         title = self.Title(title)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if min_max is not None and not isinstance(
-                                        min_max, aas.SubmodelElement
-                                    ):
-                                        min_max = self.Min_max(
-                                            min=min_max[0], max=min_max[1]
-                                        )
+                                    if min_max is not None and not isinstance(min_max, aas.SubmodelElement):
+                                        min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if lengthRange is not None and not isinstance(
-                                        lengthRange, aas.SubmodelElement
-                                    ):
-                                        lengthRange = self.LengthRange(
-                                            min=lengthRange[0], max=lengthRange[1]
-                                        )
+                                    if lengthRange is not None and not isinstance(lengthRange, aas.SubmodelElement):
+                                        lengthRange = self.LengthRange(min=lengthRange[0], max=lengthRange[1])
 
                                     # Add all passed/initialized submodel elements to a single list
                                     embedded_submodel_elements = []
@@ -6309,12 +5609,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         elif isinstance(se_arg, Iterable):
                                             # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                             for n, element in enumerate(se_arg):
-                                                element.id_short = (
-                                                    f"{element.id_short}{n:02d}"
-                                                )
-                                                embedded_submodel_elements.append(
-                                                    element
-                                                )
+                                                element.id_short = f"{element.id_short}{n:02d}"
+                                                embedded_submodel_elements.append(element)
                                         else:
                                             raise TypeError(
                                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6341,16 +5637,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     max: str,
                                     id_short: Optional[str] = r"itemsRange",
                                     value_type: aas.DataTypeDefXsd = str,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6361,9 +5651,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (
                                         aas.ExternalReference(
                                             key=(
                                                 aas.Key(
@@ -6383,9 +5671,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             referred_semantic_id=None,
                                         ),
                                     ),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -6433,16 +5719,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     id_short: Optional[str] = r"properties",
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6453,12 +5733,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -6496,12 +5772,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         elif isinstance(se_arg, Iterable):
                                             # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                             for n, element in enumerate(se_arg):
-                                                element.id_short = (
-                                                    f"{element.id_short}{n:02d}"
-                                                )
-                                                embedded_submodel_elements.append(
-                                                    element
-                                                )
+                                                element.id_short = f"{element.id_short}{n:02d}"
+                                                embedded_submodel_elements.append(element)
                                         else:
                                             raise TypeError(
                                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -6526,16 +5798,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     self,
                                     value: aas.Reference,
                                     id_short: Optional[str] = r"valueSemantics",
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6546,12 +5812,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -6582,29 +5844,17 @@ class AssetInterfacesDescription(aas.Submodel):
                                 const: Optional[Union[xsd.Int, Const]] = None,
                                 default: Optional[Union[str, Default]] = None,
                                 unit: Optional[Union[str, Unit]] = None,
-                                min_max: Optional[
-                                    Union[Tuple[str, str], Min_max]
-                                ] = None,
-                                lengthRange: Optional[
-                                    Union[Tuple[str, str], LengthRange]
-                                ] = None,
+                                min_max: Optional[Union[Tuple[str, str], Min_max]] = None,
+                                lengthRange: Optional[Union[Tuple[str, str], LengthRange]] = None,
                                 items: Optional[Items] = None,
-                                itemsRange: Optional[
-                                    Union[Tuple[str, str], ItemsRange]
-                                ] = None,
+                                itemsRange: Optional[Union[Tuple[str, str], ItemsRange]] = None,
                                 properties: Optional[Properties] = None,
-                                valueSemantics: Optional[
-                                    Union[aas.Reference, ValueSemantics]
-                                ] = None,
+                                valueSemantics: Optional[Union[aas.Reference, ValueSemantics]] = None,
                                 id_short: Optional[str] = r"property_name",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6616,9 +5866,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -6638,85 +5886,57 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if key is not None and not isinstance(
-                                    key, aas.SubmodelElement
-                                ):
+                                if key is not None and not isinstance(key, aas.SubmodelElement):
                                     key = self.Key(key)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if type is not None and not isinstance(
-                                    type, aas.SubmodelElement
-                                ):
+                                if type is not None and not isinstance(type, aas.SubmodelElement):
                                     type = self.Type(type)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if title is not None and not isinstance(
-                                    title, aas.SubmodelElement
-                                ):
+                                if title is not None and not isinstance(title, aas.SubmodelElement):
                                     title = self.Title(title)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if observable is not None and not isinstance(
-                                    observable, aas.SubmodelElement
-                                ):
+                                if observable is not None and not isinstance(observable, aas.SubmodelElement):
                                     observable = self.Observable(observable)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if const is not None and not isinstance(
-                                    const, aas.SubmodelElement
-                                ):
+                                if const is not None and not isinstance(const, aas.SubmodelElement):
                                     const = self.Const(const)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if default is not None and not isinstance(
-                                    default, aas.SubmodelElement
-                                ):
+                                if default is not None and not isinstance(default, aas.SubmodelElement):
                                     default = self.Default(default)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if unit is not None and not isinstance(
-                                    unit, aas.SubmodelElement
-                                ):
+                                if unit is not None and not isinstance(unit, aas.SubmodelElement):
                                     unit = self.Unit(unit)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if min_max is not None and not isinstance(
-                                    min_max, aas.SubmodelElement
-                                ):
-                                    min_max = self.Min_max(
-                                        min=min_max[0], max=min_max[1]
-                                    )
+                                if min_max is not None and not isinstance(min_max, aas.SubmodelElement):
+                                    min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if lengthRange is not None and not isinstance(
-                                    lengthRange, aas.SubmodelElement
-                                ):
-                                    lengthRange = self.LengthRange(
-                                        min=lengthRange[0], max=lengthRange[1]
-                                    )
+                                if lengthRange is not None and not isinstance(lengthRange, aas.SubmodelElement):
+                                    lengthRange = self.LengthRange(min=lengthRange[0], max=lengthRange[1])
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if itemsRange is not None and not isinstance(
-                                    itemsRange, aas.SubmodelElement
-                                ):
-                                    itemsRange = self.ItemsRange(
-                                        min=itemsRange[0], max=itemsRange[1]
-                                    )
+                                if itemsRange is not None and not isinstance(itemsRange, aas.SubmodelElement):
+                                    itemsRange = self.ItemsRange(min=itemsRange[0], max=itemsRange[1])
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if valueSemantics is not None and not isinstance(
-                                    valueSemantics, aas.SubmodelElement
-                                ):
+                                if valueSemantics is not None and not isinstance(valueSemantics, aas.SubmodelElement):
                                     valueSemantics = self.ValueSemantics(valueSemantics)
 
                                 # Add all passed/initialized submodel elements to a single list
@@ -6743,9 +5963,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, Iterable):
                                         # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                         for n, element in enumerate(se_arg):
-                                            element.id_short = (
-                                                f"{element.id_short}{n:02d}"
-                                            )
+                                            element.id_short = f"{element.id_short}{n:02d}"
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
@@ -6772,9 +5990,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6786,9 +6002,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -6809,9 +6023,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(property_name, str):
-                                raise TypeError(
-                                    "property_name takes several elements, got a str"
-                                )
+                                raise TypeError("property_name takes several elements, got a str")
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -6852,9 +6064,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6866,9 +6076,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -6900,14 +6108,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"href",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6919,9 +6123,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -6953,14 +6155,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"contentType",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6972,9 +6170,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -7006,22 +6202,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                     self,
                                     value: aas.Reference,
                                     id_short: Optional[str] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
+                                    description: Optional[aas.MultiLanguageTextType] = None,
                                     semantic_id: Optional[aas.Reference] = None,
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -7045,14 +6233,10 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             def __init__(
                                 self,
-                                security_items: Iterable[
-                                    Union[aas.Reference, Security_item]
-                                ],
+                                security_items: Iterable[Union[aas.Reference, Security_item]],
                                 id_short: Optional[str] = r"security",
                                 type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                                semantic_id_list_element: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7061,18 +6245,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                value_type_list_element: Optional[
-                                    aas.DataTypeDefXsd
-                                ] = None,
+                                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                                 order_relevant: bool = True,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7084,9 +6262,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -7097,18 +6273,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 # A str would be split into its characters
                                 if isinstance(security_items, str):
-                                    raise TypeError(
-                                        "security_items takes several elements, got a str"
-                                    )
+                                    raise TypeError("security_items takes several elements, got a str")
 
                                 # Build submodel elements from raw values passed in the argument
                                 if security_items:
                                     security_items = [
-                                        (
-                                            i
-                                            if isinstance(i, aas.SubmodelElement)
-                                            else self.Security_item(i)
-                                        )
+                                        i if isinstance(i, aas.SubmodelElement) else self.Security_item(i)
                                         for i in security_items
                                     ]
 
@@ -7178,10 +6348,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 # is either Property or Range. Thus, `new` must have the value_type property.
                                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                                 if (
-                                    self.type_value_list_element
-                                    in (aas.Property, aas.Range)
-                                    and new.value_type
-                                    is not self.value_type_list_element
+                                    self.type_value_list_element in (aas.Property, aas.Range)
+                                    and new.value_type is not self.value_type_list_element
                                 ):  # type: ignore
                                     raise aas.AASConstraintViolation(
                                         109,
@@ -7193,15 +6361,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                                if (
-                                    new.semantic_id is not None
-                                    and self.semantic_id_list_element is None
-                                ):
+                                if new.semantic_id is not None and self.semantic_id_list_element is None:
                                     for item in existing:
-                                        if (
-                                            item.semantic_id is not None
-                                            and new.semantic_id != item.semantic_id
-                                        ):
+                                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                             raise aas.AASConstraintViolation(
                                                 114,
                                                 f"Element to be added {new!r} has semantic_id "
@@ -7221,14 +6383,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"htv_methodName",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7240,9 +6398,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -7288,16 +6444,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"htv_fieldName",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7308,12 +6458,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -7345,16 +6491,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"htv_fieldValue",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7365,12 +6505,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -7399,16 +6535,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     htv_fieldName: Union[str, Htv_fieldName],
                                     htv_fieldValue: Union[str, Htv_fieldValue],
                                     id_short: Optional[str] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7419,12 +6549,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -7435,21 +6561,15 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if htv_fieldName is not None and not isinstance(
-                                        htv_fieldName, aas.SubmodelElement
-                                    ):
-                                        htv_fieldName = self.Htv_fieldName(
-                                            htv_fieldName
-                                        )
+                                    if htv_fieldName is not None and not isinstance(htv_fieldName, aas.SubmodelElement):
+                                        htv_fieldName = self.Htv_fieldName(htv_fieldName)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
                                     if htv_fieldValue is not None and not isinstance(
                                         htv_fieldValue, aas.SubmodelElement
                                     ):
-                                        htv_fieldValue = self.Htv_fieldValue(
-                                            htv_fieldValue
-                                        )
+                                        htv_fieldValue = self.Htv_fieldValue(htv_fieldValue)
 
                                     # Add all passed/initialized submodel elements to a single list
                                     embedded_submodel_elements = []
@@ -7461,12 +6581,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         elif isinstance(se_arg, Iterable):
                                             # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                             for n, element in enumerate(se_arg):
-                                                element.id_short = (
-                                                    f"{element.id_short}{n:02d}"
-                                                )
-                                                embedded_submodel_elements.append(
-                                                    element
-                                                )
+                                                element.id_short = f"{element.id_short}{n:02d}"
+                                                embedded_submodel_elements.append(element)
                                         else:
                                             raise TypeError(
                                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -7490,9 +6606,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 htv_headers_items: Iterable[Htv_headers_item],
                                 id_short: Optional[str] = r"htv_headers",
                                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                                semantic_id_list_element: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7501,18 +6615,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                value_type_list_element: Optional[
-                                    aas.DataTypeDefXsd
-                                ] = str,
+                                value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                                 order_relevant: bool = True,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7524,9 +6632,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -7547,9 +6653,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 # A str would be split into its characters
                                 if isinstance(htv_headers_items, str):
-                                    raise TypeError(
-                                        "htv_headers_items takes several elements, got a str"
-                                    )
+                                    raise TypeError("htv_headers_items takes several elements, got a str")
 
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
@@ -7617,10 +6721,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 # is either Property or Range. Thus, `new` must have the value_type property.
                                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                                 if (
-                                    self.type_value_list_element
-                                    in (aas.Property, aas.Range)
-                                    and new.value_type
-                                    is not self.value_type_list_element
+                                    self.type_value_list_element in (aas.Property, aas.Range)
+                                    and new.value_type is not self.value_type_list_element
                                 ):  # type: ignore
                                     raise aas.AASConstraintViolation(
                                         109,
@@ -7632,15 +6734,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                                if (
-                                    new.semantic_id is not None
-                                    and self.semantic_id_list_element is None
-                                ):
+                                if new.semantic_id is not None and self.semantic_id_list_element is None:
                                     for item in existing:
-                                        if (
-                                            item.semantic_id is not None
-                                            and new.semantic_id != item.semantic_id
-                                        ):
+                                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                             raise aas.AASConstraintViolation(
                                                 114,
                                                 f"Element to be added {new!r} has semantic_id "
@@ -7655,24 +6751,15 @@ class AssetInterfacesDescription(aas.Submodel):
                         def __init__(
                             self,
                             href: Union[str, Href],
-                            security: Union[
-                                Iterable[Union[aas.Reference, Security.Security_item]],
-                                Security,
-                            ],
+                            security: Union[Iterable[Union[aas.Reference, Security.Security_item]], Security],
                             contentType: Optional[Union[str, ContentType]] = None,
                             htv_methodName: Optional[Union[str, Htv_methodName]] = None,
-                            htv_headers: Optional[
-                                Union[
-                                    Iterable[Htv_headers.Htv_headers_item], Htv_headers
-                                ]
-                            ] = None,
+                            htv_headers: Optional[Union[Iterable[Htv_headers.Htv_headers_item], Htv_headers]] = None,
                             id_short: Optional[str] = r"forms",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7684,9 +6771,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -7697,60 +6782,40 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if href is not None and not isinstance(
-                                href, aas.SubmodelElement
-                            ):
+                            if href is not None and not isinstance(href, aas.SubmodelElement):
                                 href = self.Href(href)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if contentType is not None and not isinstance(
-                                contentType, aas.SubmodelElement
-                            ):
+                            if contentType is not None and not isinstance(contentType, aas.SubmodelElement):
                                 contentType = self.ContentType(contentType)
 
                             # A str would be split into its characters
                             if isinstance(security, str):
-                                raise TypeError(
-                                    "security takes several elements, got a str"
-                                )
+                                raise TypeError("security takes several elements, got a str")
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if security is not None and not isinstance(
-                                security, aas.SubmodelElement
-                            ):
+                            if security is not None and not isinstance(security, aas.SubmodelElement):
                                 security = self.Security(security)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if htv_methodName is not None and not isinstance(
-                                htv_methodName, aas.SubmodelElement
-                            ):
+                            if htv_methodName is not None and not isinstance(htv_methodName, aas.SubmodelElement):
                                 htv_methodName = self.Htv_methodName(htv_methodName)
 
                             # A str would be split into its characters
                             if isinstance(htv_headers, str):
-                                raise TypeError(
-                                    "htv_headers takes several elements, got a str"
-                                )
+                                raise TypeError("htv_headers takes several elements, got a str")
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if htv_headers is not None and not isinstance(
-                                htv_headers, aas.SubmodelElement
-                            ):
+                            if htv_headers is not None and not isinstance(htv_headers, aas.SubmodelElement):
                                 htv_headers = self.Htv_headers(htv_headers)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in [
-                                href,
-                                contentType,
-                                security,
-                                htv_methodName,
-                                htv_headers,
-                            ]:
+                            for se_arg in [href, contentType, security, htv_methodName, htv_headers]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -7789,15 +6854,11 @@ class AssetInterfacesDescription(aas.Submodel):
                         default: Optional[Union[str, Default]] = None,
                         unit: Optional[Union[str, Unit]] = None,
                         min_max: Optional[Union[Tuple[str, str], Min_max]] = None,
-                        lengthRange: Optional[
-                            Union[Tuple[str, str], LengthRange]
-                        ] = None,
+                        lengthRange: Optional[Union[Tuple[str, str], LengthRange]] = None,
                         items: Optional[Items] = None,
                         itemsRange: Optional[Union[Tuple[str, str], ItemsRange]] = None,
                         properties: Optional[Properties] = None,
-                        valueSemantics: Optional[
-                            Union[aas.Reference, ValueSemantics]
-                        ] = None,
+                        valueSemantics: Optional[Union[aas.Reference, ValueSemantics]] = None,
                         id_short: Optional[str] = r"property_name",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -7824,9 +6885,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -7851,76 +6910,52 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if type is not None and not isinstance(
-                            type, aas.SubmodelElement
-                        ):
+                        if type is not None and not isinstance(type, aas.SubmodelElement):
                             type = self.Type(type)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if title is not None and not isinstance(
-                            title, aas.SubmodelElement
-                        ):
+                        if title is not None and not isinstance(title, aas.SubmodelElement):
                             title = self.Title(title)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if observable is not None and not isinstance(
-                            observable, aas.SubmodelElement
-                        ):
+                        if observable is not None and not isinstance(observable, aas.SubmodelElement):
                             observable = self.Observable(observable)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if const is not None and not isinstance(
-                            const, aas.SubmodelElement
-                        ):
+                        if const is not None and not isinstance(const, aas.SubmodelElement):
                             const = self.Const(const)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if default is not None and not isinstance(
-                            default, aas.SubmodelElement
-                        ):
+                        if default is not None and not isinstance(default, aas.SubmodelElement):
                             default = self.Default(default)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if unit is not None and not isinstance(
-                            unit, aas.SubmodelElement
-                        ):
+                        if unit is not None and not isinstance(unit, aas.SubmodelElement):
                             unit = self.Unit(unit)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if min_max is not None and not isinstance(
-                            min_max, aas.SubmodelElement
-                        ):
+                        if min_max is not None and not isinstance(min_max, aas.SubmodelElement):
                             min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if lengthRange is not None and not isinstance(
-                            lengthRange, aas.SubmodelElement
-                        ):
-                            lengthRange = self.LengthRange(
-                                min=lengthRange[0], max=lengthRange[1]
-                            )
+                        if lengthRange is not None and not isinstance(lengthRange, aas.SubmodelElement):
+                            lengthRange = self.LengthRange(min=lengthRange[0], max=lengthRange[1])
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if itemsRange is not None and not isinstance(
-                            itemsRange, aas.SubmodelElement
-                        ):
-                            itemsRange = self.ItemsRange(
-                                min=itemsRange[0], max=itemsRange[1]
-                            )
+                        if itemsRange is not None and not isinstance(itemsRange, aas.SubmodelElement):
+                            itemsRange = self.ItemsRange(min=itemsRange[0], max=itemsRange[1])
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if valueSemantics is not None and not isinstance(
-                            valueSemantics, aas.SubmodelElement
-                        ):
+                        if valueSemantics is not None and not isinstance(valueSemantics, aas.SubmodelElement):
                             valueSemantics = self.ValueSemantics(valueSemantics)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -7951,9 +6986,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -7987,9 +7020,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8000,9 +7031,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(property_name, str):
-                        raise TypeError(
-                            "property_name takes several elements, got a str"
-                        )
+                        raise TypeError("property_name takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -8017,9 +7046,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -8054,9 +7081,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8078,9 +7103,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -8115,9 +7138,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8139,9 +7160,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -8187,9 +7206,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -8211,9 +7228,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -8252,9 +7267,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8296,9 +7309,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -8320,9 +7331,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -8363,27 +7372,15 @@ class AssetInterfacesDescription(aas.Submodel):
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://www.w3.org/2011/http",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://www.w3.org/2011/http"),),
                     referred_semantic_id=None,
                 ),
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://www.w3.org/2019/wot/td",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -8433,9 +7430,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -8464,20 +7459,13 @@ class AssetInterfacesDescription(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://www.w3.org/2019/wot/td#title",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#title"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -8513,20 +7501,13 @@ class AssetInterfacesDescription(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://purl.org/dc/terms/created",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://purl.org/dc/terms/created"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -8562,20 +7543,13 @@ class AssetInterfacesDescription(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://purl.org/dc/terms/modified",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://purl.org/dc/terms/modified"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -8612,19 +7586,14 @@ class AssetInterfacesDescription(aas.Submodel):
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://www.w3.org/2019/wot/td#support",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#support"),
                     ),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -8663,19 +7632,14 @@ class AssetInterfacesDescription(aas.Submodel):
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#base",
-                            ),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#base"),
                         ),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8722,9 +7686,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8763,9 +7725,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8792,9 +7752,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8820,9 +7778,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8833,19 +7789,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(security_items, str):
-                        raise TypeError(
-                            "security_items takes several elements, got a str"
-                        )
+                        raise TypeError("security_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if security_items:
                         security_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Security_item(i)
-                            )
-                            for i in security_items
+                            i if isinstance(i, aas.SubmodelElement) else self.Security_item(i) for i in security_items
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -8858,9 +7807,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -8927,15 +7874,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -8962,9 +7903,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -8976,9 +7915,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -9021,9 +7958,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9034,9 +7969,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -9052,9 +7985,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -9082,9 +8013,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9096,9 +8025,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -9133,9 +8060,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9147,9 +8072,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -9193,9 +8116,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9206,16 +8127,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -9231,9 +8148,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -9261,9 +8176,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9275,9 +8188,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -9312,9 +8223,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9326,9 +8235,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -9363,9 +8270,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9377,9 +8282,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -9414,9 +8317,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9428,9 +8329,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -9476,9 +8375,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9489,16 +8386,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if name is not None and not isinstance(
-                            name, aas.SubmodelElement
-                        ):
+                        if name is not None and not isinstance(name, aas.SubmodelElement):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -9508,9 +8401,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -9526,9 +8417,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -9556,9 +8445,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9570,9 +8457,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -9603,9 +8488,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             oneof_items: Optional[Iterable[aas.SubmodelElement]] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
-                            semantic_id_list_element: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9614,16 +8497,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            value_type_list_element: Optional[
-                                aas.DataTypeDefXsd
-                            ] = None,
+                            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9635,9 +8514,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -9648,9 +8525,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(oneof_items, str):
-                                raise TypeError(
-                                    "oneof_items takes several elements, got a str"
-                                )
+                                raise TypeError("oneof_items takes several elements, got a str")
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -9718,8 +8593,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             # is either Property or Range. Thus, `new` must have the value_type property.
                             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                             if (
-                                self.type_value_list_element
-                                in (aas.Property, aas.Range)
+                                self.type_value_list_element in (aas.Property, aas.Range)
                                 and new.value_type is not self.value_type_list_element
                             ):  # type: ignore
                                 raise aas.AASConstraintViolation(
@@ -9732,15 +8606,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                            if (
-                                new.semantic_id is not None
-                                and self.semantic_id_list_element is None
-                            ):
+                            if new.semantic_id is not None and self.semantic_id_list_element is None:
                                 for item in existing:
-                                    if (
-                                        item.semantic_id is not None
-                                        and new.semantic_id != item.semantic_id
-                                    ):
+                                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                         raise aas.AASConstraintViolation(
                                             114,
                                             f"Element to be added {new!r} has semantic_id "
@@ -9759,9 +8627,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             allof_items: Optional[Iterable[aas.SubmodelElement]] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
-                            semantic_id_list_element: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9770,16 +8636,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            value_type_list_element: Optional[
-                                aas.DataTypeDefXsd
-                            ] = None,
+                            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9791,9 +8653,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -9804,9 +8664,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(allof_items, str):
-                                raise TypeError(
-                                    "allof_items takes several elements, got a str"
-                                )
+                                raise TypeError("allof_items takes several elements, got a str")
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -9874,8 +8732,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             # is either Property or Range. Thus, `new` must have the value_type property.
                             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                             if (
-                                self.type_value_list_element
-                                in (aas.Property, aas.Range)
+                                self.type_value_list_element in (aas.Property, aas.Range)
                                 and new.value_type is not self.value_type_list_element
                             ):  # type: ignore
                                 raise aas.AASConstraintViolation(
@@ -9888,15 +8745,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                            if (
-                                new.semantic_id is not None
-                                and self.semantic_id_list_element is None
-                            ):
+                            if new.semantic_id is not None and self.semantic_id_list_element is None:
                                 for item in existing:
-                                    if (
-                                        item.semantic_id is not None
-                                        and new.semantic_id != item.semantic_id
-                                    ):
+                                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                         raise aas.AASConstraintViolation(
                                             114,
                                             f"Element to be added {new!r} has semantic_id "
@@ -9919,9 +8770,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -9933,9 +8782,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -9981,9 +8828,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9994,9 +8839,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # A str would be split into its characters
@@ -10005,9 +8848,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if oneOf is not None and not isinstance(
-                            oneOf, aas.SubmodelElement
-                        ):
+                        if oneOf is not None and not isinstance(oneOf, aas.SubmodelElement):
                             oneOf = self.OneOf(oneOf)
 
                         # A str would be split into its characters
@@ -10016,16 +8857,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if allOf is not None and not isinstance(
-                            allOf, aas.SubmodelElement
-                        ):
+                        if allOf is not None and not isinstance(allOf, aas.SubmodelElement):
                             allOf = self.AllOf(allOf)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -10041,9 +8878,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -10071,9 +8906,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10085,9 +8918,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -10122,9 +8953,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10136,9 +8965,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -10173,9 +9000,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10187,9 +9012,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -10224,9 +9047,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10238,9 +9059,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -10286,9 +9105,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10299,16 +9116,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if name is not None and not isinstance(
-                            name, aas.SubmodelElement
-                        ):
+                        if name is not None and not isinstance(name, aas.SubmodelElement):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -10318,9 +9131,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -10336,9 +9147,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -10366,9 +9175,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10380,9 +9187,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -10417,9 +9222,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10431,9 +9234,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -10468,9 +9269,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10482,9 +9281,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -10529,9 +9326,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10542,23 +9337,17 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if identity is not None and not isinstance(
-                            identity, aas.SubmodelElement
-                        ):
+                        if identity is not None and not isinstance(identity, aas.SubmodelElement):
                             identity = self.Identity(identity)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -10574,9 +9363,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -10604,9 +9391,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10618,9 +9403,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -10655,9 +9438,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10669,9 +9450,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -10706,9 +9485,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10720,9 +9497,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -10757,9 +9532,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10771,9 +9544,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -10808,9 +9579,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10822,9 +9591,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -10871,9 +9638,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10884,16 +9649,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if name is not None and not isinstance(
-                            name, aas.SubmodelElement
-                        ):
+                        if name is not None and not isinstance(name, aas.SubmodelElement):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -10908,9 +9669,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -10926,9 +9685,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -10956,9 +9713,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -10970,9 +9725,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11007,9 +9760,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11021,9 +9772,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11058,9 +9807,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11072,9 +9819,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11109,9 +9854,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11123,9 +9866,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11160,9 +9901,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11174,9 +9913,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11211,9 +9948,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11225,9 +9960,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11262,9 +9995,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11276,9 +10007,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11327,9 +10056,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11340,16 +10067,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if name is not None and not isinstance(
-                            name, aas.SubmodelElement
-                        ):
+                        if name is not None and not isinstance(name, aas.SubmodelElement):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -11359,9 +10082,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if authorization is not None and not isinstance(
-                            authorization, aas.SubmodelElement
-                        ):
+                        if authorization is not None and not isinstance(authorization, aas.SubmodelElement):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -11371,29 +10092,17 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if format is not None and not isinstance(
-                            format, aas.SubmodelElement
-                        ):
+                        if format is not None and not isinstance(format, aas.SubmodelElement):
                             format = self.Format(format)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            scheme,
-                            name,
-                            in_,
-                            authorization,
-                            alg,
-                            format,
-                            proxy,
-                        ]:
+                        for se_arg in [scheme, name, in_, authorization, alg, format, proxy]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -11404,9 +10113,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -11434,9 +10141,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11448,9 +10153,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11485,9 +10188,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11499,9 +10200,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11536,9 +10235,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11550,9 +10247,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11587,9 +10282,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11601,9 +10294,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11638,9 +10329,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11652,9 +10341,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11689,9 +10376,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11703,9 +10388,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11740,9 +10423,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -11754,9 +10435,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -11785,9 +10464,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         scheme: Union[str, Scheme],
                         token: Optional[Union[xsd.AnyURI, Token]] = None,
                         refresh: Optional[Union[xsd.AnyURI, Refresh]] = None,
-                        authorization: Optional[
-                            Union[xsd.AnyURI, Authorization]
-                        ] = None,
+                        authorization: Optional[Union[xsd.AnyURI, Authorization]] = None,
                         scopes: Optional[Union[str, Scopes]] = None,
                         flow: Optional[Union[str, Flow]] = None,
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
@@ -11807,9 +10484,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11820,64 +10495,42 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if token is not None and not isinstance(
-                            token, aas.SubmodelElement
-                        ):
+                        if token is not None and not isinstance(token, aas.SubmodelElement):
                             token = self.Token(token)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if refresh is not None and not isinstance(
-                            refresh, aas.SubmodelElement
-                        ):
+                        if refresh is not None and not isinstance(refresh, aas.SubmodelElement):
                             refresh = self.Refresh(refresh)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if authorization is not None and not isinstance(
-                            authorization, aas.SubmodelElement
-                        ):
+                        if authorization is not None and not isinstance(authorization, aas.SubmodelElement):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scopes is not None and not isinstance(
-                            scopes, aas.SubmodelElement
-                        ):
+                        if scopes is not None and not isinstance(scopes, aas.SubmodelElement):
                             scopes = self.Scopes(scopes)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if flow is not None and not isinstance(
-                            flow, aas.SubmodelElement
-                        ):
+                        if flow is not None and not isinstance(flow, aas.SubmodelElement):
                             flow = self.Flow(flow)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            scheme,
-                            token,
-                            refresh,
-                            authorization,
-                            scopes,
-                            flow,
-                            proxy,
-                        ]:
+                        for se_arg in [scheme, token, refresh, authorization, scopes, flow, proxy]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -11888,9 +10541,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -11932,9 +10583,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11966,9 +10615,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -12006,9 +10653,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12065,9 +10710,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12105,16 +10748,10 @@ class AssetInterfacesDescription(aas.Submodel):
                 self,
                 base: Union[xsd.AnyURI, Base],
                 contentType: Union[str, ContentType],
-                security: Union[
-                    Iterable[Union[aas.Reference, Security.Security_item]], Security
-                ],
+                security: Union[Iterable[Union[aas.Reference, Security.Security_item]], Security],
                 securityDefinitions: SecurityDefinitions,
-                modv_mostSignificantByte: Optional[
-                    Union[str, Modv_mostSignificantByte]
-                ] = None,
-                modv_mostSignificantWord: Optional[
-                    Union[str, Modv_mostSignificantWord]
-                ] = None,
+                modv_mostSignificantByte: Optional[Union[str, Modv_mostSignificantByte]] = None,
+                modv_mostSignificantWord: Optional[Union[str, Modv_mostSignificantWord]] = None,
                 id_short: Optional[str] = r"EndpointMetadata",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -12131,9 +10768,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -12149,9 +10784,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if contentType is not None and not isinstance(
-                    contentType, aas.SubmodelElement
-                ):
+                if contentType is not None and not isinstance(contentType, aas.SubmodelElement):
                     contentType = self.ContentType(contentType)
 
                 # A str would be split into its characters
@@ -12160,9 +10793,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if security is not None and not isinstance(
-                    security, aas.SubmodelElement
-                ):
+                if security is not None and not isinstance(security, aas.SubmodelElement):
                     security = self.Security(security)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12170,18 +10801,14 @@ class AssetInterfacesDescription(aas.Submodel):
                 if modv_mostSignificantByte is not None and not isinstance(
                     modv_mostSignificantByte, aas.SubmodelElement
                 ):
-                    modv_mostSignificantByte = self.Modv_mostSignificantByte(
-                        modv_mostSignificantByte
-                    )
+                    modv_mostSignificantByte = self.Modv_mostSignificantByte(modv_mostSignificantByte)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if modv_mostSignificantWord is not None and not isinstance(
                     modv_mostSignificantWord, aas.SubmodelElement
                 ):
-                    modv_mostSignificantWord = self.Modv_mostSignificantWord(
-                        modv_mostSignificantWord
-                    )
+                    modv_mostSignificantWord = self.Modv_mostSignificantWord(modv_mostSignificantWord)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -12203,9 +10830,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -12237,9 +10862,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12261,9 +10884,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -12298,9 +10919,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12312,9 +10931,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -12349,9 +10966,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12363,9 +10978,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -12400,9 +11013,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12414,9 +11025,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -12451,9 +11060,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12465,9 +11072,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -12502,9 +11107,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12516,9 +11119,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -12553,23 +11154,16 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://schema.org/unitCode",
-                                    ),
+                                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/unitCode"),
                                 ),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -12604,9 +11198,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12637,9 +11229,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -12693,9 +11283,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12726,9 +11314,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -12781,14 +11367,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"type",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12800,9 +11382,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -12834,18 +11414,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"unit",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://schema.org/unitCode",
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/unitCode"
                                         ),
                                     ),
                                     referred_semantic_id=None,
@@ -12853,9 +11428,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -12887,14 +11460,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"default",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12906,9 +11475,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -12940,14 +11507,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"const",
                                 value_type: aas.DataTypeDefXsd = xsd.Int,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -12959,9 +11522,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -12993,14 +11554,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"observable",
                                 value_type: aas.DataTypeDefXsd = bool,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13012,9 +11569,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -13046,14 +11601,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"title",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13065,9 +11616,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -13099,14 +11648,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 max: str,
                                 id_short: Optional[str] = r"min_max",
                                 value_type: aas.DataTypeDefXsd = str,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13137,9 +11682,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         referred_semantic_id=None,
                                     ),
                                 ),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -13190,14 +11733,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 max: str,
                                 id_short: Optional[str] = r"lengthRange",
                                 value_type: aas.DataTypeDefXsd = str,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13228,9 +11767,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         referred_semantic_id=None,
                                     ),
                                 ),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -13279,14 +11816,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 self,
                                 value: aas.Reference,
                                 id_short: Optional[str] = r"valueSemantics",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13298,9 +11831,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -13331,19 +11862,13 @@ class AssetInterfacesDescription(aas.Submodel):
                             observable: Optional[Union[bool, Observable]] = None,
                             title: Optional[Union[str, Title]] = None,
                             min_max: Optional[Union[Tuple[str, str], Min_max]] = None,
-                            lengthRange: Optional[
-                                Union[Tuple[str, str], LengthRange]
-                            ] = None,
-                            valueSemantics: Optional[
-                                Union[aas.Reference, ValueSemantics]
-                            ] = None,
+                            lengthRange: Optional[Union[Tuple[str, str], LengthRange]] = None,
+                            valueSemantics: Optional[Union[aas.Reference, ValueSemantics]] = None,
                             id_short: Optional[str] = r"items",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13355,9 +11880,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -13378,67 +11901,47 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if type is not None and not isinstance(
-                                type, aas.SubmodelElement
-                            ):
+                            if type is not None and not isinstance(type, aas.SubmodelElement):
                                 type = self.Type(type)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if unit is not None and not isinstance(
-                                unit, aas.SubmodelElement
-                            ):
+                            if unit is not None and not isinstance(unit, aas.SubmodelElement):
                                 unit = self.Unit(unit)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if default is not None and not isinstance(
-                                default, aas.SubmodelElement
-                            ):
+                            if default is not None and not isinstance(default, aas.SubmodelElement):
                                 default = self.Default(default)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if const is not None and not isinstance(
-                                const, aas.SubmodelElement
-                            ):
+                            if const is not None and not isinstance(const, aas.SubmodelElement):
                                 const = self.Const(const)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if observable is not None and not isinstance(
-                                observable, aas.SubmodelElement
-                            ):
+                            if observable is not None and not isinstance(observable, aas.SubmodelElement):
                                 observable = self.Observable(observable)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if title is not None and not isinstance(
-                                title, aas.SubmodelElement
-                            ):
+                            if title is not None and not isinstance(title, aas.SubmodelElement):
                                 title = self.Title(title)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if min_max is not None and not isinstance(
-                                min_max, aas.SubmodelElement
-                            ):
+                            if min_max is not None and not isinstance(min_max, aas.SubmodelElement):
                                 min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if lengthRange is not None and not isinstance(
-                                lengthRange, aas.SubmodelElement
-                            ):
-                                lengthRange = self.LengthRange(
-                                    min=lengthRange[0], max=lengthRange[1]
-                                )
+                            if lengthRange is not None and not isinstance(lengthRange, aas.SubmodelElement):
+                                lengthRange = self.LengthRange(min=lengthRange[0], max=lengthRange[1])
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if valueSemantics is not None and not isinstance(
-                                valueSemantics, aas.SubmodelElement
-                            ):
+                            if valueSemantics is not None and not isinstance(valueSemantics, aas.SubmodelElement):
                                 valueSemantics = self.ValueSemantics(valueSemantics)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -13492,9 +11995,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13525,9 +12026,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -13582,16 +12081,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"key",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13602,12 +12095,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -13639,16 +12128,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"type",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13659,12 +12142,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -13696,16 +12175,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"title",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13716,12 +12189,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -13753,16 +12222,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"observable",
                                     value_type: aas.DataTypeDefXsd = bool,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13773,12 +12236,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -13810,16 +12269,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"const",
                                     value_type: aas.DataTypeDefXsd = xsd.Int,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13830,12 +12283,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -13867,16 +12316,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"default",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13887,12 +12330,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -13924,16 +12363,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"unit",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -13944,12 +12377,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -13981,16 +12410,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     max: str,
                                     id_short: Optional[str] = r"min_max",
                                     value_type: aas.DataTypeDefXsd = str,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14001,9 +12424,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (
                                         aas.ExternalReference(
                                             key=(
                                                 aas.Key(
@@ -14023,9 +12444,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             referred_semantic_id=None,
                                         ),
                                     ),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -14076,16 +12495,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     max: str,
                                     id_short: Optional[str] = r"lengthRange",
                                     value_type: aas.DataTypeDefXsd = str,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14096,9 +12509,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (
                                         aas.ExternalReference(
                                             key=(
                                                 aas.Key(
@@ -14118,9 +12529,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             referred_semantic_id=None,
                                         ),
                                     ),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -14173,16 +12582,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"type",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14193,12 +12596,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -14228,16 +12627,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         self,
                                         value: aas.Reference,
                                         id_short: Optional[str] = r"valueSemantics",
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14248,12 +12641,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -14283,16 +12672,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"unit",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14303,12 +12686,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -14340,16 +12719,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"default",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14360,12 +12733,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -14397,16 +12766,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"const",
                                         value_type: aas.DataTypeDefXsd = xsd.Int,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14417,12 +12780,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -14454,16 +12813,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"observable",
                                         value_type: aas.DataTypeDefXsd = bool,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14474,12 +12827,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -14511,16 +12860,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"title",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14531,12 +12874,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -14568,16 +12907,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         max: str,
                                         id_short: Optional[str] = r"min_max",
                                         value_type: aas.DataTypeDefXsd = str,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14588,9 +12921,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (
                                             aas.ExternalReference(
                                                 key=(
                                                     aas.Key(
@@ -14610,9 +12941,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 referred_semantic_id=None,
                                             ),
                                         ),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -14663,16 +12992,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         max: str,
                                         id_short: Optional[str] = r"lengthRange",
                                         value_type: aas.DataTypeDefXsd = str,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14683,9 +13006,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (
                                             aas.ExternalReference(
                                                 key=(
                                                     aas.Key(
@@ -14705,9 +13026,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 referred_semantic_id=None,
                                             ),
                                         ),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -14753,33 +13072,19 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     type: Optional[Union[str, Type]] = None,
-                                    valueSemantics: Optional[
-                                        Union[aas.Reference, ValueSemantics]
-                                    ] = None,
+                                    valueSemantics: Optional[Union[aas.Reference, ValueSemantics]] = None,
                                     unit: Optional[Union[str, Unit]] = None,
                                     default: Optional[Union[str, Default]] = None,
                                     const: Optional[Union[xsd.Int, Const]] = None,
-                                    observable: Optional[
-                                        Union[bool, Observable]
-                                    ] = None,
+                                    observable: Optional[Union[bool, Observable]] = None,
                                     title: Optional[Union[str, Title]] = None,
-                                    min_max: Optional[
-                                        Union[Tuple[str, str], Min_max]
-                                    ] = None,
-                                    lengthRange: Optional[
-                                        Union[Tuple[str, str], LengthRange]
-                                    ] = None,
+                                    min_max: Optional[Union[Tuple[str, str], Min_max]] = None,
+                                    lengthRange: Optional[Union[Tuple[str, str], LengthRange]] = None,
                                     id_short: Optional[str] = r"items",
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14790,12 +13095,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -14816,9 +13117,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if type is not None and not isinstance(
-                                        type, aas.SubmodelElement
-                                    ):
+                                    if type is not None and not isinstance(type, aas.SubmodelElement):
                                         type = self.Type(type)
 
                                     # Build a submodel element if a raw value was passed in the argument
@@ -14826,62 +13125,42 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if valueSemantics is not None and not isinstance(
                                         valueSemantics, aas.SubmodelElement
                                     ):
-                                        valueSemantics = self.ValueSemantics(
-                                            valueSemantics
-                                        )
+                                        valueSemantics = self.ValueSemantics(valueSemantics)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if unit is not None and not isinstance(
-                                        unit, aas.SubmodelElement
-                                    ):
+                                    if unit is not None and not isinstance(unit, aas.SubmodelElement):
                                         unit = self.Unit(unit)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if default is not None and not isinstance(
-                                        default, aas.SubmodelElement
-                                    ):
+                                    if default is not None and not isinstance(default, aas.SubmodelElement):
                                         default = self.Default(default)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if const is not None and not isinstance(
-                                        const, aas.SubmodelElement
-                                    ):
+                                    if const is not None and not isinstance(const, aas.SubmodelElement):
                                         const = self.Const(const)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if observable is not None and not isinstance(
-                                        observable, aas.SubmodelElement
-                                    ):
+                                    if observable is not None and not isinstance(observable, aas.SubmodelElement):
                                         observable = self.Observable(observable)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if title is not None and not isinstance(
-                                        title, aas.SubmodelElement
-                                    ):
+                                    if title is not None and not isinstance(title, aas.SubmodelElement):
                                         title = self.Title(title)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if min_max is not None and not isinstance(
-                                        min_max, aas.SubmodelElement
-                                    ):
-                                        min_max = self.Min_max(
-                                            min=min_max[0], max=min_max[1]
-                                        )
+                                    if min_max is not None and not isinstance(min_max, aas.SubmodelElement):
+                                        min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if lengthRange is not None and not isinstance(
-                                        lengthRange, aas.SubmodelElement
-                                    ):
-                                        lengthRange = self.LengthRange(
-                                            min=lengthRange[0], max=lengthRange[1]
-                                        )
+                                    if lengthRange is not None and not isinstance(lengthRange, aas.SubmodelElement):
+                                        lengthRange = self.LengthRange(min=lengthRange[0], max=lengthRange[1])
 
                                     # Add all passed/initialized submodel elements to a single list
                                     embedded_submodel_elements = []
@@ -14903,12 +13182,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         elif isinstance(se_arg, Iterable):
                                             # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                             for n, element in enumerate(se_arg):
-                                                element.id_short = (
-                                                    f"{element.id_short}{n:02d}"
-                                                )
-                                                embedded_submodel_elements.append(
-                                                    element
-                                                )
+                                                element.id_short = f"{element.id_short}{n:02d}"
+                                                embedded_submodel_elements.append(element)
                                         else:
                                             raise TypeError(
                                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -14935,16 +13210,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     max: str,
                                     id_short: Optional[str] = r"itemsRange",
                                     value_type: aas.DataTypeDefXsd = str,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -14955,9 +13224,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (
                                         aas.ExternalReference(
                                             key=(
                                                 aas.Key(
@@ -14977,9 +13244,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             referred_semantic_id=None,
                                         ),
                                     ),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -15027,16 +13292,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     id_short: Optional[str] = r"properties",
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15047,12 +13306,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -15090,12 +13345,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         elif isinstance(se_arg, Iterable):
                                             # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                             for n, element in enumerate(se_arg):
-                                                element.id_short = (
-                                                    f"{element.id_short}{n:02d}"
-                                                )
-                                                embedded_submodel_elements.append(
-                                                    element
-                                                )
+                                                element.id_short = f"{element.id_short}{n:02d}"
+                                                embedded_submodel_elements.append(element)
                                         else:
                                             raise TypeError(
                                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -15120,16 +13371,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     self,
                                     value: aas.Reference,
                                     id_short: Optional[str] = r"valueSemantics",
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15140,12 +13385,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -15176,29 +13417,17 @@ class AssetInterfacesDescription(aas.Submodel):
                                 const: Optional[Union[xsd.Int, Const]] = None,
                                 default: Optional[Union[str, Default]] = None,
                                 unit: Optional[Union[str, Unit]] = None,
-                                min_max: Optional[
-                                    Union[Tuple[str, str], Min_max]
-                                ] = None,
-                                lengthRange: Optional[
-                                    Union[Tuple[str, str], LengthRange]
-                                ] = None,
+                                min_max: Optional[Union[Tuple[str, str], Min_max]] = None,
+                                lengthRange: Optional[Union[Tuple[str, str], LengthRange]] = None,
                                 items: Optional[Items] = None,
-                                itemsRange: Optional[
-                                    Union[Tuple[str, str], ItemsRange]
-                                ] = None,
+                                itemsRange: Optional[Union[Tuple[str, str], ItemsRange]] = None,
                                 properties: Optional[Properties] = None,
-                                valueSemantics: Optional[
-                                    Union[aas.Reference, ValueSemantics]
-                                ] = None,
+                                valueSemantics: Optional[Union[aas.Reference, ValueSemantics]] = None,
                                 id_short: Optional[str] = r"property_name",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15210,9 +13439,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -15232,85 +13459,57 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if key is not None and not isinstance(
-                                    key, aas.SubmodelElement
-                                ):
+                                if key is not None and not isinstance(key, aas.SubmodelElement):
                                     key = self.Key(key)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if type is not None and not isinstance(
-                                    type, aas.SubmodelElement
-                                ):
+                                if type is not None and not isinstance(type, aas.SubmodelElement):
                                     type = self.Type(type)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if title is not None and not isinstance(
-                                    title, aas.SubmodelElement
-                                ):
+                                if title is not None and not isinstance(title, aas.SubmodelElement):
                                     title = self.Title(title)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if observable is not None and not isinstance(
-                                    observable, aas.SubmodelElement
-                                ):
+                                if observable is not None and not isinstance(observable, aas.SubmodelElement):
                                     observable = self.Observable(observable)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if const is not None and not isinstance(
-                                    const, aas.SubmodelElement
-                                ):
+                                if const is not None and not isinstance(const, aas.SubmodelElement):
                                     const = self.Const(const)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if default is not None and not isinstance(
-                                    default, aas.SubmodelElement
-                                ):
+                                if default is not None and not isinstance(default, aas.SubmodelElement):
                                     default = self.Default(default)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if unit is not None and not isinstance(
-                                    unit, aas.SubmodelElement
-                                ):
+                                if unit is not None and not isinstance(unit, aas.SubmodelElement):
                                     unit = self.Unit(unit)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if min_max is not None and not isinstance(
-                                    min_max, aas.SubmodelElement
-                                ):
-                                    min_max = self.Min_max(
-                                        min=min_max[0], max=min_max[1]
-                                    )
+                                if min_max is not None and not isinstance(min_max, aas.SubmodelElement):
+                                    min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if lengthRange is not None and not isinstance(
-                                    lengthRange, aas.SubmodelElement
-                                ):
-                                    lengthRange = self.LengthRange(
-                                        min=lengthRange[0], max=lengthRange[1]
-                                    )
+                                if lengthRange is not None and not isinstance(lengthRange, aas.SubmodelElement):
+                                    lengthRange = self.LengthRange(min=lengthRange[0], max=lengthRange[1])
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if itemsRange is not None and not isinstance(
-                                    itemsRange, aas.SubmodelElement
-                                ):
-                                    itemsRange = self.ItemsRange(
-                                        min=itemsRange[0], max=itemsRange[1]
-                                    )
+                                if itemsRange is not None and not isinstance(itemsRange, aas.SubmodelElement):
+                                    itemsRange = self.ItemsRange(min=itemsRange[0], max=itemsRange[1])
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if valueSemantics is not None and not isinstance(
-                                    valueSemantics, aas.SubmodelElement
-                                ):
+                                if valueSemantics is not None and not isinstance(valueSemantics, aas.SubmodelElement):
                                     valueSemantics = self.ValueSemantics(valueSemantics)
 
                                 # Add all passed/initialized submodel elements to a single list
@@ -15337,9 +13536,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, Iterable):
                                         # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                         for n, element in enumerate(se_arg):
-                                            element.id_short = (
-                                                f"{element.id_short}{n:02d}"
-                                            )
+                                            element.id_short = f"{element.id_short}{n:02d}"
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
@@ -15366,9 +13563,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15380,9 +13575,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -15403,9 +13596,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(property_name, str):
-                                raise TypeError(
-                                    "property_name takes several elements, got a str"
-                                )
+                                raise TypeError("property_name takes several elements, got a str")
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -15446,9 +13637,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15460,9 +13649,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -15494,14 +13681,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"href",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15513,9 +13696,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -15547,14 +13728,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"contentType",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15566,9 +13743,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -15600,22 +13775,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                     self,
                                     value: aas.Reference,
                                     id_short: Optional[str] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
+                                    description: Optional[aas.MultiLanguageTextType] = None,
                                     semantic_id: Optional[aas.Reference] = None,
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -15639,14 +13806,10 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             def __init__(
                                 self,
-                                security_items: Iterable[
-                                    Union[aas.Reference, Security_item]
-                                ],
+                                security_items: Iterable[Union[aas.Reference, Security_item]],
                                 id_short: Optional[str] = r"security",
                                 type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                                semantic_id_list_element: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15655,18 +13818,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                value_type_list_element: Optional[
-                                    aas.DataTypeDefXsd
-                                ] = None,
+                                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                                 order_relevant: bool = True,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15678,9 +13835,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -15691,18 +13846,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 # A str would be split into its characters
                                 if isinstance(security_items, str):
-                                    raise TypeError(
-                                        "security_items takes several elements, got a str"
-                                    )
+                                    raise TypeError("security_items takes several elements, got a str")
 
                                 # Build submodel elements from raw values passed in the argument
                                 if security_items:
                                     security_items = [
-                                        (
-                                            i
-                                            if isinstance(i, aas.SubmodelElement)
-                                            else self.Security_item(i)
-                                        )
+                                        i if isinstance(i, aas.SubmodelElement) else self.Security_item(i)
                                         for i in security_items
                                     ]
 
@@ -15772,10 +13921,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 # is either Property or Range. Thus, `new` must have the value_type property.
                                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                                 if (
-                                    self.type_value_list_element
-                                    in (aas.Property, aas.Range)
-                                    and new.value_type
-                                    is not self.value_type_list_element
+                                    self.type_value_list_element in (aas.Property, aas.Range)
+                                    and new.value_type is not self.value_type_list_element
                                 ):  # type: ignore
                                     raise aas.AASConstraintViolation(
                                         109,
@@ -15787,15 +13934,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                                if (
-                                    new.semantic_id is not None
-                                    and self.semantic_id_list_element is None
-                                ):
+                                if new.semantic_id is not None and self.semantic_id_list_element is None:
                                     for item in existing:
-                                        if (
-                                            item.semantic_id is not None
-                                            and new.semantic_id != item.semantic_id
-                                        ):
+                                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                             raise aas.AASConstraintViolation(
                                                 114,
                                                 f"Element to be added {new!r} has semantic_id "
@@ -15815,14 +13956,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"modv_function",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15834,9 +13971,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -15878,14 +14013,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"modv_entity",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15897,9 +14028,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -15941,14 +14070,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"modv_zeroBasedAddressing",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -15960,9 +14085,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -16004,14 +14127,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"modv_pollingTime",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -16023,9 +14142,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -16067,14 +14184,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"modv_timeout",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -16086,9 +14199,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -16130,14 +14241,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"modv_type",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -16149,9 +14256,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -16193,14 +14298,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"modv_mostSignificantByte",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -16212,9 +14313,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -16256,14 +14355,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"modv_mostSignificantWord",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -16275,9 +14370,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -16314,34 +14407,21 @@ class AssetInterfacesDescription(aas.Submodel):
                         def __init__(
                             self,
                             href: Union[str, Href],
-                            security: Union[
-                                Iterable[Union[aas.Reference, Security.Security_item]],
-                                Security,
-                            ],
+                            security: Union[Iterable[Union[aas.Reference, Security.Security_item]], Security],
                             contentType: Optional[Union[str, ContentType]] = None,
                             modv_function: Optional[Union[str, Modv_function]] = None,
                             modv_entity: Optional[Union[str, Modv_entity]] = None,
-                            modv_zeroBasedAddressing: Optional[
-                                Union[str, Modv_zeroBasedAddressing]
-                            ] = None,
-                            modv_pollingTime: Optional[
-                                Union[str, Modv_pollingTime]
-                            ] = None,
+                            modv_zeroBasedAddressing: Optional[Union[str, Modv_zeroBasedAddressing]] = None,
+                            modv_pollingTime: Optional[Union[str, Modv_pollingTime]] = None,
                             modv_timeout: Optional[Union[str, Modv_timeout]] = None,
                             modv_type: Optional[Union[str, Modv_type]] = None,
-                            modv_mostSignificantByte: Optional[
-                                Union[str, Modv_mostSignificantByte]
-                            ] = None,
-                            modv_mostSignificantWord: Optional[
-                                Union[str, Modv_mostSignificantWord]
-                            ] = None,
+                            modv_mostSignificantByte: Optional[Union[str, Modv_mostSignificantByte]] = None,
+                            modv_mostSignificantWord: Optional[Union[str, Modv_mostSignificantWord]] = None,
                             id_short: Optional[str] = r"forms",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -16353,9 +14433,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -16366,43 +14444,31 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if href is not None and not isinstance(
-                                href, aas.SubmodelElement
-                            ):
+                            if href is not None and not isinstance(href, aas.SubmodelElement):
                                 href = self.Href(href)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if contentType is not None and not isinstance(
-                                contentType, aas.SubmodelElement
-                            ):
+                            if contentType is not None and not isinstance(contentType, aas.SubmodelElement):
                                 contentType = self.ContentType(contentType)
 
                             # A str would be split into its characters
                             if isinstance(security, str):
-                                raise TypeError(
-                                    "security takes several elements, got a str"
-                                )
+                                raise TypeError("security takes several elements, got a str")
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if security is not None and not isinstance(
-                                security, aas.SubmodelElement
-                            ):
+                            if security is not None and not isinstance(security, aas.SubmodelElement):
                                 security = self.Security(security)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if modv_function is not None and not isinstance(
-                                modv_function, aas.SubmodelElement
-                            ):
+                            if modv_function is not None and not isinstance(modv_function, aas.SubmodelElement):
                                 modv_function = self.Modv_function(modv_function)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if modv_entity is not None and not isinstance(
-                                modv_entity, aas.SubmodelElement
-                            ):
+                            if modv_entity is not None and not isinstance(modv_entity, aas.SubmodelElement):
                                 modv_entity = self.Modv_entity(modv_entity)
 
                             # Build a submodel element if a raw value was passed in the argument
@@ -16410,33 +14476,21 @@ class AssetInterfacesDescription(aas.Submodel):
                             if modv_zeroBasedAddressing is not None and not isinstance(
                                 modv_zeroBasedAddressing, aas.SubmodelElement
                             ):
-                                modv_zeroBasedAddressing = (
-                                    self.Modv_zeroBasedAddressing(
-                                        modv_zeroBasedAddressing
-                                    )
-                                )
+                                modv_zeroBasedAddressing = self.Modv_zeroBasedAddressing(modv_zeroBasedAddressing)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if modv_pollingTime is not None and not isinstance(
-                                modv_pollingTime, aas.SubmodelElement
-                            ):
-                                modv_pollingTime = self.Modv_pollingTime(
-                                    modv_pollingTime
-                                )
+                            if modv_pollingTime is not None and not isinstance(modv_pollingTime, aas.SubmodelElement):
+                                modv_pollingTime = self.Modv_pollingTime(modv_pollingTime)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if modv_timeout is not None and not isinstance(
-                                modv_timeout, aas.SubmodelElement
-                            ):
+                            if modv_timeout is not None and not isinstance(modv_timeout, aas.SubmodelElement):
                                 modv_timeout = self.Modv_timeout(modv_timeout)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if modv_type is not None and not isinstance(
-                                modv_type, aas.SubmodelElement
-                            ):
+                            if modv_type is not None and not isinstance(modv_type, aas.SubmodelElement):
                                 modv_type = self.Modv_type(modv_type)
 
                             # Build a submodel element if a raw value was passed in the argument
@@ -16444,22 +14498,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             if modv_mostSignificantByte is not None and not isinstance(
                                 modv_mostSignificantByte, aas.SubmodelElement
                             ):
-                                modv_mostSignificantByte = (
-                                    self.Modv_mostSignificantByte(
-                                        modv_mostSignificantByte
-                                    )
-                                )
+                                modv_mostSignificantByte = self.Modv_mostSignificantByte(modv_mostSignificantByte)
 
                             # Build a submodel element if a raw value was passed in the argument
 
                             if modv_mostSignificantWord is not None and not isinstance(
                                 modv_mostSignificantWord, aas.SubmodelElement
                             ):
-                                modv_mostSignificantWord = (
-                                    self.Modv_mostSignificantWord(
-                                        modv_mostSignificantWord
-                                    )
-                                )
+                                modv_mostSignificantWord = self.Modv_mostSignificantWord(modv_mostSignificantWord)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -16514,15 +14560,11 @@ class AssetInterfacesDescription(aas.Submodel):
                         default: Optional[Union[str, Default]] = None,
                         unit: Optional[Union[str, Unit]] = None,
                         min_max: Optional[Union[Tuple[str, str], Min_max]] = None,
-                        lengthRange: Optional[
-                            Union[Tuple[str, str], LengthRange]
-                        ] = None,
+                        lengthRange: Optional[Union[Tuple[str, str], LengthRange]] = None,
                         items: Optional[Items] = None,
                         itemsRange: Optional[Union[Tuple[str, str], ItemsRange]] = None,
                         properties: Optional[Properties] = None,
-                        valueSemantics: Optional[
-                            Union[aas.Reference, ValueSemantics]
-                        ] = None,
+                        valueSemantics: Optional[Union[aas.Reference, ValueSemantics]] = None,
                         id_short: Optional[str] = r"property_name",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -16549,9 +14591,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -16576,76 +14616,52 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if type is not None and not isinstance(
-                            type, aas.SubmodelElement
-                        ):
+                        if type is not None and not isinstance(type, aas.SubmodelElement):
                             type = self.Type(type)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if title is not None and not isinstance(
-                            title, aas.SubmodelElement
-                        ):
+                        if title is not None and not isinstance(title, aas.SubmodelElement):
                             title = self.Title(title)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if observable is not None and not isinstance(
-                            observable, aas.SubmodelElement
-                        ):
+                        if observable is not None and not isinstance(observable, aas.SubmodelElement):
                             observable = self.Observable(observable)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if const is not None and not isinstance(
-                            const, aas.SubmodelElement
-                        ):
+                        if const is not None and not isinstance(const, aas.SubmodelElement):
                             const = self.Const(const)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if default is not None and not isinstance(
-                            default, aas.SubmodelElement
-                        ):
+                        if default is not None and not isinstance(default, aas.SubmodelElement):
                             default = self.Default(default)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if unit is not None and not isinstance(
-                            unit, aas.SubmodelElement
-                        ):
+                        if unit is not None and not isinstance(unit, aas.SubmodelElement):
                             unit = self.Unit(unit)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if min_max is not None and not isinstance(
-                            min_max, aas.SubmodelElement
-                        ):
+                        if min_max is not None and not isinstance(min_max, aas.SubmodelElement):
                             min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if lengthRange is not None and not isinstance(
-                            lengthRange, aas.SubmodelElement
-                        ):
-                            lengthRange = self.LengthRange(
-                                min=lengthRange[0], max=lengthRange[1]
-                            )
+                        if lengthRange is not None and not isinstance(lengthRange, aas.SubmodelElement):
+                            lengthRange = self.LengthRange(min=lengthRange[0], max=lengthRange[1])
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if itemsRange is not None and not isinstance(
-                            itemsRange, aas.SubmodelElement
-                        ):
-                            itemsRange = self.ItemsRange(
-                                min=itemsRange[0], max=itemsRange[1]
-                            )
+                        if itemsRange is not None and not isinstance(itemsRange, aas.SubmodelElement):
+                            itemsRange = self.ItemsRange(min=itemsRange[0], max=itemsRange[1])
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if valueSemantics is not None and not isinstance(
-                            valueSemantics, aas.SubmodelElement
-                        ):
+                        if valueSemantics is not None and not isinstance(valueSemantics, aas.SubmodelElement):
                             valueSemantics = self.ValueSemantics(valueSemantics)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -16676,9 +14692,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -16712,9 +14726,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16725,9 +14737,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(property_name, str):
-                        raise TypeError(
-                            "property_name takes several elements, got a str"
-                        )
+                        raise TypeError("property_name takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -16742,9 +14752,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -16779,9 +14787,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16803,9 +14809,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -16840,9 +14844,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16864,9 +14866,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -16912,9 +14912,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -16936,9 +14934,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -16977,9 +14973,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17021,9 +15015,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -17045,9 +15037,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -17088,27 +15078,15 @@ class AssetInterfacesDescription(aas.Submodel):
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://www.w3.org/2011/modbus",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://www.w3.org/2011/modbus"),),
                     referred_semantic_id=None,
                 ),
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://www.w3.org/2019/wot/td",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -17158,9 +15136,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -17189,20 +15165,13 @@ class AssetInterfacesDescription(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://www.w3.org/2019/wot/td#title",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#title"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -17238,20 +15207,13 @@ class AssetInterfacesDescription(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://purl.org/dc/terms/created",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://purl.org/dc/terms/created"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -17287,20 +15249,13 @@ class AssetInterfacesDescription(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://purl.org/dc/terms/modified",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://purl.org/dc/terms/modified"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -17337,19 +15292,14 @@ class AssetInterfacesDescription(aas.Submodel):
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://www.w3.org/2019/wot/td#support",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#support"),
                     ),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -17388,19 +15338,14 @@ class AssetInterfacesDescription(aas.Submodel):
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#base",
-                            ),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#base"),
                         ),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17447,9 +15392,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17488,9 +15431,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -17517,9 +15458,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -17545,9 +15484,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17558,19 +15495,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(security_items, str):
-                        raise TypeError(
-                            "security_items takes several elements, got a str"
-                        )
+                        raise TypeError("security_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if security_items:
                         security_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Security_item(i)
-                            )
-                            for i in security_items
+                            i if isinstance(i, aas.SubmodelElement) else self.Security_item(i) for i in security_items
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -17583,9 +15513,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -17652,15 +15580,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -17687,9 +15609,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -17701,9 +15621,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -17746,9 +15664,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -17759,9 +15675,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -17777,9 +15691,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -17807,9 +15719,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -17821,9 +15731,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -17858,9 +15766,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -17872,9 +15778,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -17918,9 +15822,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -17931,16 +15833,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -17956,9 +15854,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -17986,9 +15882,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18000,9 +15894,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -18037,9 +15929,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18051,9 +15941,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -18088,9 +15976,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18102,9 +15988,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -18139,9 +16023,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18153,9 +16035,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -18201,9 +16081,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -18214,16 +16092,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if name is not None and not isinstance(
-                            name, aas.SubmodelElement
-                        ):
+                        if name is not None and not isinstance(name, aas.SubmodelElement):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -18233,9 +16107,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -18251,9 +16123,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -18281,9 +16151,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18295,9 +16163,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -18328,9 +16194,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             oneof_items: Optional[Iterable[aas.SubmodelElement]] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
-                            semantic_id_list_element: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18339,16 +16203,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            value_type_list_element: Optional[
-                                aas.DataTypeDefXsd
-                            ] = None,
+                            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18360,9 +16220,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -18373,9 +16231,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(oneof_items, str):
-                                raise TypeError(
-                                    "oneof_items takes several elements, got a str"
-                                )
+                                raise TypeError("oneof_items takes several elements, got a str")
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -18443,8 +16299,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             # is either Property or Range. Thus, `new` must have the value_type property.
                             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                             if (
-                                self.type_value_list_element
-                                in (aas.Property, aas.Range)
+                                self.type_value_list_element in (aas.Property, aas.Range)
                                 and new.value_type is not self.value_type_list_element
                             ):  # type: ignore
                                 raise aas.AASConstraintViolation(
@@ -18457,15 +16312,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                            if (
-                                new.semantic_id is not None
-                                and self.semantic_id_list_element is None
-                            ):
+                            if new.semantic_id is not None and self.semantic_id_list_element is None:
                                 for item in existing:
-                                    if (
-                                        item.semantic_id is not None
-                                        and new.semantic_id != item.semantic_id
-                                    ):
+                                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                         raise aas.AASConstraintViolation(
                                             114,
                                             f"Element to be added {new!r} has semantic_id "
@@ -18484,9 +16333,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             allof_items: Optional[Iterable[aas.SubmodelElement]] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
-                            semantic_id_list_element: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18495,16 +16342,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            value_type_list_element: Optional[
-                                aas.DataTypeDefXsd
-                            ] = None,
+                            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18516,9 +16359,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -18529,9 +16370,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(allof_items, str):
-                                raise TypeError(
-                                    "allof_items takes several elements, got a str"
-                                )
+                                raise TypeError("allof_items takes several elements, got a str")
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -18599,8 +16438,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             # is either Property or Range. Thus, `new` must have the value_type property.
                             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                             if (
-                                self.type_value_list_element
-                                in (aas.Property, aas.Range)
+                                self.type_value_list_element in (aas.Property, aas.Range)
                                 and new.value_type is not self.value_type_list_element
                             ):  # type: ignore
                                 raise aas.AASConstraintViolation(
@@ -18613,15 +16451,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                            if (
-                                new.semantic_id is not None
-                                and self.semantic_id_list_element is None
-                            ):
+                            if new.semantic_id is not None and self.semantic_id_list_element is None:
                                 for item in existing:
-                                    if (
-                                        item.semantic_id is not None
-                                        and new.semantic_id != item.semantic_id
-                                    ):
+                                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                         raise aas.AASConstraintViolation(
                                             114,
                                             f"Element to be added {new!r} has semantic_id "
@@ -18644,9 +16476,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18658,9 +16488,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -18706,9 +16534,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -18719,9 +16545,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # A str would be split into its characters
@@ -18730,9 +16554,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if oneOf is not None and not isinstance(
-                            oneOf, aas.SubmodelElement
-                        ):
+                        if oneOf is not None and not isinstance(oneOf, aas.SubmodelElement):
                             oneOf = self.OneOf(oneOf)
 
                         # A str would be split into its characters
@@ -18741,16 +16563,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if allOf is not None and not isinstance(
-                            allOf, aas.SubmodelElement
-                        ):
+                        if allOf is not None and not isinstance(allOf, aas.SubmodelElement):
                             allOf = self.AllOf(allOf)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -18766,9 +16584,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -18796,9 +16612,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18810,9 +16624,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -18847,9 +16659,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18861,9 +16671,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -18898,9 +16706,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18912,9 +16718,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -18949,9 +16753,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -18963,9 +16765,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19011,9 +16811,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -19024,16 +16822,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if name is not None and not isinstance(
-                            name, aas.SubmodelElement
-                        ):
+                        if name is not None and not isinstance(name, aas.SubmodelElement):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -19043,9 +16837,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -19061,9 +16853,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -19091,9 +16881,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19105,9 +16893,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19142,9 +16928,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19156,9 +16940,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19193,9 +16975,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19207,9 +16987,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19254,9 +17032,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -19267,23 +17043,17 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if identity is not None and not isinstance(
-                            identity, aas.SubmodelElement
-                        ):
+                        if identity is not None and not isinstance(identity, aas.SubmodelElement):
                             identity = self.Identity(identity)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -19299,9 +17069,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -19329,9 +17097,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19343,9 +17109,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19380,9 +17144,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19394,9 +17156,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19431,9 +17191,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19445,9 +17203,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19482,9 +17238,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19496,9 +17250,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19533,9 +17285,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19547,9 +17297,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19596,9 +17344,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -19609,16 +17355,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if name is not None and not isinstance(
-                            name, aas.SubmodelElement
-                        ):
+                        if name is not None and not isinstance(name, aas.SubmodelElement):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -19633,9 +17375,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -19651,9 +17391,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -19681,9 +17419,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19695,9 +17431,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19732,9 +17466,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19746,9 +17478,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19783,9 +17513,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19797,9 +17525,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19834,9 +17560,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19848,9 +17572,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19885,9 +17607,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19899,9 +17619,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19936,9 +17654,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -19950,9 +17666,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -19987,9 +17701,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20001,9 +17713,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -20052,9 +17762,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -20065,16 +17773,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if name is not None and not isinstance(
-                            name, aas.SubmodelElement
-                        ):
+                        if name is not None and not isinstance(name, aas.SubmodelElement):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -20084,9 +17788,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if authorization is not None and not isinstance(
-                            authorization, aas.SubmodelElement
-                        ):
+                        if authorization is not None and not isinstance(authorization, aas.SubmodelElement):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -20096,29 +17798,17 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if format is not None and not isinstance(
-                            format, aas.SubmodelElement
-                        ):
+                        if format is not None and not isinstance(format, aas.SubmodelElement):
                             format = self.Format(format)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            scheme,
-                            name,
-                            in_,
-                            authorization,
-                            alg,
-                            format,
-                            proxy,
-                        ]:
+                        for se_arg in [scheme, name, in_, authorization, alg, format, proxy]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -20129,9 +17819,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -20159,9 +17847,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20173,9 +17859,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -20210,9 +17894,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20224,9 +17906,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -20261,9 +17941,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20275,9 +17953,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -20312,9 +17988,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20326,9 +18000,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -20363,9 +18035,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20377,9 +18047,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -20414,9 +18082,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20428,9 +18094,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -20465,9 +18129,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20479,9 +18141,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -20510,9 +18170,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         scheme: Union[str, Scheme],
                         token: Optional[Union[xsd.AnyURI, Token]] = None,
                         refresh: Optional[Union[xsd.AnyURI, Refresh]] = None,
-                        authorization: Optional[
-                            Union[xsd.AnyURI, Authorization]
-                        ] = None,
+                        authorization: Optional[Union[xsd.AnyURI, Authorization]] = None,
                         scopes: Optional[Union[str, Scopes]] = None,
                         flow: Optional[Union[str, Flow]] = None,
                         proxy: Optional[Union[xsd.AnyURI, Proxy]] = None,
@@ -20532,9 +18190,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -20545,64 +18201,42 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scheme is not None and not isinstance(
-                            scheme, aas.SubmodelElement
-                        ):
+                        if scheme is not None and not isinstance(scheme, aas.SubmodelElement):
                             scheme = self.Scheme(scheme)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if token is not None and not isinstance(
-                            token, aas.SubmodelElement
-                        ):
+                        if token is not None and not isinstance(token, aas.SubmodelElement):
                             token = self.Token(token)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if refresh is not None and not isinstance(
-                            refresh, aas.SubmodelElement
-                        ):
+                        if refresh is not None and not isinstance(refresh, aas.SubmodelElement):
                             refresh = self.Refresh(refresh)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if authorization is not None and not isinstance(
-                            authorization, aas.SubmodelElement
-                        ):
+                        if authorization is not None and not isinstance(authorization, aas.SubmodelElement):
                             authorization = self.Authorization(authorization)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if scopes is not None and not isinstance(
-                            scopes, aas.SubmodelElement
-                        ):
+                        if scopes is not None and not isinstance(scopes, aas.SubmodelElement):
                             scopes = self.Scopes(scopes)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if flow is not None and not isinstance(
-                            flow, aas.SubmodelElement
-                        ):
+                        if flow is not None and not isinstance(flow, aas.SubmodelElement):
                             flow = self.Flow(flow)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if proxy is not None and not isinstance(
-                            proxy, aas.SubmodelElement
-                        ):
+                        if proxy is not None and not isinstance(proxy, aas.SubmodelElement):
                             proxy = self.Proxy(proxy)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            scheme,
-                            token,
-                            refresh,
-                            authorization,
-                            scopes,
-                            flow,
-                            proxy,
-                        ]:
+                        for se_arg in [scheme, token, refresh, authorization, scopes, flow, proxy]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -20613,9 +18247,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -20657,9 +18289,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -20691,9 +18321,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -20712,9 +18340,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 self,
                 base: Union[xsd.AnyURI, Base],
                 contentType: Union[str, ContentType],
-                security: Union[
-                    Iterable[Union[aas.Reference, Security.Security_item]], Security
-                ],
+                security: Union[Iterable[Union[aas.Reference, Security.Security_item]], Security],
                 securityDefinitions: SecurityDefinitions,
                 id_short: Optional[str] = r"EndpointMetadata",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -20732,9 +18358,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -20750,9 +18374,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if contentType is not None and not isinstance(
-                    contentType, aas.SubmodelElement
-                ):
+                if contentType is not None and not isinstance(contentType, aas.SubmodelElement):
                     contentType = self.ContentType(contentType)
 
                 # A str would be split into its characters
@@ -20761,9 +18383,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if security is not None and not isinstance(
-                    security, aas.SubmodelElement
-                ):
+                if security is not None and not isinstance(security, aas.SubmodelElement):
                     security = self.Security(security)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -20779,9 +18399,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -20813,9 +18431,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20837,9 +18453,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -20874,9 +18488,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20888,9 +18500,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -20925,9 +18535,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20939,9 +18547,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -20976,9 +18582,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -20990,9 +18594,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -21027,9 +18629,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -21041,9 +18641,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -21078,9 +18676,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -21092,9 +18688,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -21129,23 +18723,16 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://schema.org/unitCode",
-                                    ),
+                                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/unitCode"),
                                 ),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -21180,9 +18767,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -21213,9 +18798,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -21269,9 +18852,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -21302,9 +18883,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -21357,14 +18936,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"type",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -21376,9 +18951,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -21410,18 +18983,13 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"unit",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://schema.org/unitCode",
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/unitCode"
                                         ),
                                     ),
                                     referred_semantic_id=None,
@@ -21429,9 +18997,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -21463,14 +19029,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"default",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -21482,9 +19044,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -21516,14 +19076,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"const",
                                 value_type: aas.DataTypeDefXsd = xsd.Int,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -21535,9 +19091,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -21569,14 +19123,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"observable",
                                 value_type: aas.DataTypeDefXsd = bool,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -21588,9 +19138,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -21622,14 +19170,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"title",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -21641,9 +19185,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -21675,14 +19217,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 max: str,
                                 id_short: Optional[str] = r"min_max",
                                 value_type: aas.DataTypeDefXsd = str,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -21713,9 +19251,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         referred_semantic_id=None,
                                     ),
                                 ),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -21766,14 +19302,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 max: str,
                                 id_short: Optional[str] = r"lengthRange",
                                 value_type: aas.DataTypeDefXsd = str,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -21804,9 +19336,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         referred_semantic_id=None,
                                     ),
                                 ),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -21855,14 +19385,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 self,
                                 value: aas.Reference,
                                 id_short: Optional[str] = r"valueSemantics",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -21874,9 +19400,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -21907,19 +19431,13 @@ class AssetInterfacesDescription(aas.Submodel):
                             observable: Optional[Union[bool, Observable]] = None,
                             title: Optional[Union[str, Title]] = None,
                             min_max: Optional[Union[Tuple[str, str], Min_max]] = None,
-                            lengthRange: Optional[
-                                Union[Tuple[str, str], LengthRange]
-                            ] = None,
-                            valueSemantics: Optional[
-                                Union[aas.Reference, ValueSemantics]
-                            ] = None,
+                            lengthRange: Optional[Union[Tuple[str, str], LengthRange]] = None,
+                            valueSemantics: Optional[Union[aas.Reference, ValueSemantics]] = None,
                             id_short: Optional[str] = r"items",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -21931,9 +19449,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -21954,67 +19470,47 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if type is not None and not isinstance(
-                                type, aas.SubmodelElement
-                            ):
+                            if type is not None and not isinstance(type, aas.SubmodelElement):
                                 type = self.Type(type)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if unit is not None and not isinstance(
-                                unit, aas.SubmodelElement
-                            ):
+                            if unit is not None and not isinstance(unit, aas.SubmodelElement):
                                 unit = self.Unit(unit)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if default is not None and not isinstance(
-                                default, aas.SubmodelElement
-                            ):
+                            if default is not None and not isinstance(default, aas.SubmodelElement):
                                 default = self.Default(default)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if const is not None and not isinstance(
-                                const, aas.SubmodelElement
-                            ):
+                            if const is not None and not isinstance(const, aas.SubmodelElement):
                                 const = self.Const(const)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if observable is not None and not isinstance(
-                                observable, aas.SubmodelElement
-                            ):
+                            if observable is not None and not isinstance(observable, aas.SubmodelElement):
                                 observable = self.Observable(observable)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if title is not None and not isinstance(
-                                title, aas.SubmodelElement
-                            ):
+                            if title is not None and not isinstance(title, aas.SubmodelElement):
                                 title = self.Title(title)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if min_max is not None and not isinstance(
-                                min_max, aas.SubmodelElement
-                            ):
+                            if min_max is not None and not isinstance(min_max, aas.SubmodelElement):
                                 min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if lengthRange is not None and not isinstance(
-                                lengthRange, aas.SubmodelElement
-                            ):
-                                lengthRange = self.LengthRange(
-                                    min=lengthRange[0], max=lengthRange[1]
-                                )
+                            if lengthRange is not None and not isinstance(lengthRange, aas.SubmodelElement):
+                                lengthRange = self.LengthRange(min=lengthRange[0], max=lengthRange[1])
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if valueSemantics is not None and not isinstance(
-                                valueSemantics, aas.SubmodelElement
-                            ):
+                            if valueSemantics is not None and not isinstance(valueSemantics, aas.SubmodelElement):
                                 valueSemantics = self.ValueSemantics(valueSemantics)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -22068,9 +19564,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22101,9 +19595,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -22158,16 +19650,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"key",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22178,12 +19664,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -22215,16 +19697,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"type",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22235,12 +19711,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -22272,16 +19744,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"title",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22292,12 +19758,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -22329,16 +19791,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"observable",
                                     value_type: aas.DataTypeDefXsd = bool,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22349,12 +19805,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -22386,16 +19838,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"const",
                                     value_type: aas.DataTypeDefXsd = xsd.Int,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22406,12 +19852,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -22443,16 +19885,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"default",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22463,12 +19899,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -22500,16 +19932,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     id_short: Optional[str] = r"unit",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22520,12 +19946,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -22557,16 +19979,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     max: str,
                                     id_short: Optional[str] = r"min_max",
                                     value_type: aas.DataTypeDefXsd = str,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22577,9 +19993,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (
                                         aas.ExternalReference(
                                             key=(
                                                 aas.Key(
@@ -22599,9 +20013,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             referred_semantic_id=None,
                                         ),
                                     ),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -22652,16 +20064,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     max: str,
                                     id_short: Optional[str] = r"lengthRange",
                                     value_type: aas.DataTypeDefXsd = str,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22672,9 +20078,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (
                                         aas.ExternalReference(
                                             key=(
                                                 aas.Key(
@@ -22694,9 +20098,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             referred_semantic_id=None,
                                         ),
                                     ),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -22749,16 +20151,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"type",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22769,12 +20165,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -22804,16 +20196,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         self,
                                         value: aas.Reference,
                                         id_short: Optional[str] = r"valueSemantics",
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22824,12 +20210,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -22859,16 +20241,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"unit",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22879,12 +20255,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -22916,16 +20288,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"default",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22936,12 +20302,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -22973,16 +20335,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"const",
                                         value_type: aas.DataTypeDefXsd = xsd.Int,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -22993,12 +20349,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -23030,16 +20382,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"observable",
                                         value_type: aas.DataTypeDefXsd = bool,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -23050,12 +20396,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -23087,16 +20429,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         id_short: Optional[str] = r"title",
                                         value_type: aas.DataTypeDefXsd = str,
                                         value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -23107,12 +20443,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -23144,16 +20476,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         max: str,
                                         id_short: Optional[str] = r"min_max",
                                         value_type: aas.DataTypeDefXsd = str,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -23164,9 +20490,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (
                                             aas.ExternalReference(
                                                 key=(
                                                     aas.Key(
@@ -23186,9 +20510,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 referred_semantic_id=None,
                                             ),
                                         ),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -23239,16 +20561,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                         max: str,
                                         id_short: Optional[str] = r"lengthRange",
                                         value_type: aas.DataTypeDefXsd = str,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -23259,9 +20575,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (
                                             aas.ExternalReference(
                                                 key=(
                                                     aas.Key(
@@ -23281,9 +20595,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 referred_semantic_id=None,
                                             ),
                                         ),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if qualifier is None:
@@ -23329,33 +20641,19 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     type: Optional[Union[str, Type]] = None,
-                                    valueSemantics: Optional[
-                                        Union[aas.Reference, ValueSemantics]
-                                    ] = None,
+                                    valueSemantics: Optional[Union[aas.Reference, ValueSemantics]] = None,
                                     unit: Optional[Union[str, Unit]] = None,
                                     default: Optional[Union[str, Default]] = None,
                                     const: Optional[Union[xsd.Int, Const]] = None,
-                                    observable: Optional[
-                                        Union[bool, Observable]
-                                    ] = None,
+                                    observable: Optional[Union[bool, Observable]] = None,
                                     title: Optional[Union[str, Title]] = None,
-                                    min_max: Optional[
-                                        Union[Tuple[str, str], Min_max]
-                                    ] = None,
-                                    lengthRange: Optional[
-                                        Union[Tuple[str, str], LengthRange]
-                                    ] = None,
+                                    min_max: Optional[Union[Tuple[str, str], Min_max]] = None,
+                                    lengthRange: Optional[Union[Tuple[str, str], LengthRange]] = None,
                                     id_short: Optional[str] = r"items",
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -23366,12 +20664,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -23392,9 +20686,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if type is not None and not isinstance(
-                                        type, aas.SubmodelElement
-                                    ):
+                                    if type is not None and not isinstance(type, aas.SubmodelElement):
                                         type = self.Type(type)
 
                                     # Build a submodel element if a raw value was passed in the argument
@@ -23402,62 +20694,42 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if valueSemantics is not None and not isinstance(
                                         valueSemantics, aas.SubmodelElement
                                     ):
-                                        valueSemantics = self.ValueSemantics(
-                                            valueSemantics
-                                        )
+                                        valueSemantics = self.ValueSemantics(valueSemantics)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if unit is not None and not isinstance(
-                                        unit, aas.SubmodelElement
-                                    ):
+                                    if unit is not None and not isinstance(unit, aas.SubmodelElement):
                                         unit = self.Unit(unit)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if default is not None and not isinstance(
-                                        default, aas.SubmodelElement
-                                    ):
+                                    if default is not None and not isinstance(default, aas.SubmodelElement):
                                         default = self.Default(default)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if const is not None and not isinstance(
-                                        const, aas.SubmodelElement
-                                    ):
+                                    if const is not None and not isinstance(const, aas.SubmodelElement):
                                         const = self.Const(const)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if observable is not None and not isinstance(
-                                        observable, aas.SubmodelElement
-                                    ):
+                                    if observable is not None and not isinstance(observable, aas.SubmodelElement):
                                         observable = self.Observable(observable)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if title is not None and not isinstance(
-                                        title, aas.SubmodelElement
-                                    ):
+                                    if title is not None and not isinstance(title, aas.SubmodelElement):
                                         title = self.Title(title)
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if min_max is not None and not isinstance(
-                                        min_max, aas.SubmodelElement
-                                    ):
-                                        min_max = self.Min_max(
-                                            min=min_max[0], max=min_max[1]
-                                        )
+                                    if min_max is not None and not isinstance(min_max, aas.SubmodelElement):
+                                        min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if lengthRange is not None and not isinstance(
-                                        lengthRange, aas.SubmodelElement
-                                    ):
-                                        lengthRange = self.LengthRange(
-                                            min=lengthRange[0], max=lengthRange[1]
-                                        )
+                                    if lengthRange is not None and not isinstance(lengthRange, aas.SubmodelElement):
+                                        lengthRange = self.LengthRange(min=lengthRange[0], max=lengthRange[1])
 
                                     # Add all passed/initialized submodel elements to a single list
                                     embedded_submodel_elements = []
@@ -23479,12 +20751,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         elif isinstance(se_arg, Iterable):
                                             # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                             for n, element in enumerate(se_arg):
-                                                element.id_short = (
-                                                    f"{element.id_short}{n:02d}"
-                                                )
-                                                embedded_submodel_elements.append(
-                                                    element
-                                                )
+                                                element.id_short = f"{element.id_short}{n:02d}"
+                                                embedded_submodel_elements.append(element)
                                         else:
                                             raise TypeError(
                                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -23511,16 +20779,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     max: str,
                                     id_short: Optional[str] = r"itemsRange",
                                     value_type: aas.DataTypeDefXsd = str,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -23531,9 +20793,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (
                                         aas.ExternalReference(
                                             key=(
                                                 aas.Key(
@@ -23553,9 +20813,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             referred_semantic_id=None,
                                         ),
                                     ),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -23603,16 +20861,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 def __init__(
                                     self,
                                     id_short: Optional[str] = r"properties",
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -23623,12 +20875,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -23666,12 +20914,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         elif isinstance(se_arg, Iterable):
                                             # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                             for n, element in enumerate(se_arg):
-                                                element.id_short = (
-                                                    f"{element.id_short}{n:02d}"
-                                                )
-                                                embedded_submodel_elements.append(
-                                                    element
-                                                )
+                                                element.id_short = f"{element.id_short}{n:02d}"
+                                                embedded_submodel_elements.append(element)
                                         else:
                                             raise TypeError(
                                                 f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -23696,16 +20940,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                     self,
                                     value: aas.Reference,
                                     id_short: Optional[str] = r"valueSemantics",
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -23716,12 +20954,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -23752,29 +20986,17 @@ class AssetInterfacesDescription(aas.Submodel):
                                 const: Optional[Union[xsd.Int, Const]] = None,
                                 default: Optional[Union[str, Default]] = None,
                                 unit: Optional[Union[str, Unit]] = None,
-                                min_max: Optional[
-                                    Union[Tuple[str, str], Min_max]
-                                ] = None,
-                                lengthRange: Optional[
-                                    Union[Tuple[str, str], LengthRange]
-                                ] = None,
+                                min_max: Optional[Union[Tuple[str, str], Min_max]] = None,
+                                lengthRange: Optional[Union[Tuple[str, str], LengthRange]] = None,
                                 items: Optional[Items] = None,
-                                itemsRange: Optional[
-                                    Union[Tuple[str, str], ItemsRange]
-                                ] = None,
+                                itemsRange: Optional[Union[Tuple[str, str], ItemsRange]] = None,
                                 properties: Optional[Properties] = None,
-                                valueSemantics: Optional[
-                                    Union[aas.Reference, ValueSemantics]
-                                ] = None,
+                                valueSemantics: Optional[Union[aas.Reference, ValueSemantics]] = None,
                                 id_short: Optional[str] = r"property_name",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -23786,9 +21008,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -23808,85 +21028,57 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if key is not None and not isinstance(
-                                    key, aas.SubmodelElement
-                                ):
+                                if key is not None and not isinstance(key, aas.SubmodelElement):
                                     key = self.Key(key)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if type is not None and not isinstance(
-                                    type, aas.SubmodelElement
-                                ):
+                                if type is not None and not isinstance(type, aas.SubmodelElement):
                                     type = self.Type(type)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if title is not None and not isinstance(
-                                    title, aas.SubmodelElement
-                                ):
+                                if title is not None and not isinstance(title, aas.SubmodelElement):
                                     title = self.Title(title)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if observable is not None and not isinstance(
-                                    observable, aas.SubmodelElement
-                                ):
+                                if observable is not None and not isinstance(observable, aas.SubmodelElement):
                                     observable = self.Observable(observable)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if const is not None and not isinstance(
-                                    const, aas.SubmodelElement
-                                ):
+                                if const is not None and not isinstance(const, aas.SubmodelElement):
                                     const = self.Const(const)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if default is not None and not isinstance(
-                                    default, aas.SubmodelElement
-                                ):
+                                if default is not None and not isinstance(default, aas.SubmodelElement):
                                     default = self.Default(default)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if unit is not None and not isinstance(
-                                    unit, aas.SubmodelElement
-                                ):
+                                if unit is not None and not isinstance(unit, aas.SubmodelElement):
                                     unit = self.Unit(unit)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if min_max is not None and not isinstance(
-                                    min_max, aas.SubmodelElement
-                                ):
-                                    min_max = self.Min_max(
-                                        min=min_max[0], max=min_max[1]
-                                    )
+                                if min_max is not None and not isinstance(min_max, aas.SubmodelElement):
+                                    min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if lengthRange is not None and not isinstance(
-                                    lengthRange, aas.SubmodelElement
-                                ):
-                                    lengthRange = self.LengthRange(
-                                        min=lengthRange[0], max=lengthRange[1]
-                                    )
+                                if lengthRange is not None and not isinstance(lengthRange, aas.SubmodelElement):
+                                    lengthRange = self.LengthRange(min=lengthRange[0], max=lengthRange[1])
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if itemsRange is not None and not isinstance(
-                                    itemsRange, aas.SubmodelElement
-                                ):
-                                    itemsRange = self.ItemsRange(
-                                        min=itemsRange[0], max=itemsRange[1]
-                                    )
+                                if itemsRange is not None and not isinstance(itemsRange, aas.SubmodelElement):
+                                    itemsRange = self.ItemsRange(min=itemsRange[0], max=itemsRange[1])
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if valueSemantics is not None and not isinstance(
-                                    valueSemantics, aas.SubmodelElement
-                                ):
+                                if valueSemantics is not None and not isinstance(valueSemantics, aas.SubmodelElement):
                                     valueSemantics = self.ValueSemantics(valueSemantics)
 
                                 # Add all passed/initialized submodel elements to a single list
@@ -23913,9 +21105,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     elif isinstance(se_arg, Iterable):
                                         # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                         for n, element in enumerate(se_arg):
-                                            element.id_short = (
-                                                f"{element.id_short}{n:02d}"
-                                            )
+                                            element.id_short = f"{element.id_short}{n:02d}"
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
@@ -23942,9 +21132,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -23956,9 +21144,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -23979,9 +21165,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(property_name, str):
-                                raise TypeError(
-                                    "property_name takes several elements, got a str"
-                                )
+                                raise TypeError("property_name takes several elements, got a str")
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -24022,9 +21206,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -24036,9 +21218,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -24070,14 +21250,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"href",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -24089,9 +21265,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -24123,14 +21297,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"contentType",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -24142,9 +21312,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -24176,22 +21344,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                     self,
                                     value: aas.Reference,
                                     id_short: Optional[str] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
+                                    description: Optional[aas.MultiLanguageTextType] = None,
                                     semantic_id: Optional[aas.Reference] = None,
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -24215,14 +21375,10 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             def __init__(
                                 self,
-                                security_items: Iterable[
-                                    Union[aas.Reference, Security_item]
-                                ],
+                                security_items: Iterable[Union[aas.Reference, Security_item]],
                                 id_short: Optional[str] = r"security",
                                 type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                                semantic_id_list_element: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -24231,18 +21387,12 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ),
                                     referred_semantic_id=None,
                                 ),
-                                value_type_list_element: Optional[
-                                    aas.DataTypeDefXsd
-                                ] = None,
+                                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                                 order_relevant: bool = True,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -24254,9 +21404,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -24267,18 +21415,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 # A str would be split into its characters
                                 if isinstance(security_items, str):
-                                    raise TypeError(
-                                        "security_items takes several elements, got a str"
-                                    )
+                                    raise TypeError("security_items takes several elements, got a str")
 
                                 # Build submodel elements from raw values passed in the argument
                                 if security_items:
                                     security_items = [
-                                        (
-                                            i
-                                            if isinstance(i, aas.SubmodelElement)
-                                            else self.Security_item(i)
-                                        )
+                                        i if isinstance(i, aas.SubmodelElement) else self.Security_item(i)
                                         for i in security_items
                                     ]
 
@@ -24348,10 +21490,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 # is either Property or Range. Thus, `new` must have the value_type property.
                                 # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                                 if (
-                                    self.type_value_list_element
-                                    in (aas.Property, aas.Range)
-                                    and new.value_type
-                                    is not self.value_type_list_element
+                                    self.type_value_list_element in (aas.Property, aas.Range)
+                                    and new.value_type is not self.value_type_list_element
                                 ):  # type: ignore
                                     raise aas.AASConstraintViolation(
                                         109,
@@ -24363,15 +21503,9 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                                if (
-                                    new.semantic_id is not None
-                                    and self.semantic_id_list_element is None
-                                ):
+                                if new.semantic_id is not None and self.semantic_id_list_element is None:
                                     for item in existing:
-                                        if (
-                                            item.semantic_id is not None
-                                            and new.semantic_id != item.semantic_id
-                                        ):
+                                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                             raise aas.AASConstraintViolation(
                                                 114,
                                                 f"Element to be added {new!r} has semantic_id "
@@ -24391,14 +21525,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"mqv_retain",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -24410,9 +21540,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -24454,14 +21582,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"mqv_controlPacket",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -24473,9 +21597,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -24517,14 +21639,10 @@ class AssetInterfacesDescription(aas.Submodel):
                                 id_short: Optional[str] = r"mqv_qos",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -24536,9 +21654,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -24575,23 +21691,16 @@ class AssetInterfacesDescription(aas.Submodel):
                         def __init__(
                             self,
                             href: Union[str, Href],
-                            security: Union[
-                                Iterable[Union[aas.Reference, Security.Security_item]],
-                                Security,
-                            ],
+                            security: Union[Iterable[Union[aas.Reference, Security.Security_item]], Security],
                             contentType: Optional[Union[str, ContentType]] = None,
                             mqv_retain: Optional[Union[str, Mqv_retain]] = None,
-                            mqv_controlPacket: Optional[
-                                Union[str, Mqv_controlPacket]
-                            ] = None,
+                            mqv_controlPacket: Optional[Union[str, Mqv_controlPacket]] = None,
                             mqv_qos: Optional[Union[str, Mqv_qos]] = None,
                             id_short: Optional[str] = r"forms",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -24603,9 +21712,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -24616,64 +21723,41 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if href is not None and not isinstance(
-                                href, aas.SubmodelElement
-                            ):
+                            if href is not None and not isinstance(href, aas.SubmodelElement):
                                 href = self.Href(href)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if contentType is not None and not isinstance(
-                                contentType, aas.SubmodelElement
-                            ):
+                            if contentType is not None and not isinstance(contentType, aas.SubmodelElement):
                                 contentType = self.ContentType(contentType)
 
                             # A str would be split into its characters
                             if isinstance(security, str):
-                                raise TypeError(
-                                    "security takes several elements, got a str"
-                                )
+                                raise TypeError("security takes several elements, got a str")
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if security is not None and not isinstance(
-                                security, aas.SubmodelElement
-                            ):
+                            if security is not None and not isinstance(security, aas.SubmodelElement):
                                 security = self.Security(security)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if mqv_retain is not None and not isinstance(
-                                mqv_retain, aas.SubmodelElement
-                            ):
+                            if mqv_retain is not None and not isinstance(mqv_retain, aas.SubmodelElement):
                                 mqv_retain = self.Mqv_retain(mqv_retain)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if mqv_controlPacket is not None and not isinstance(
-                                mqv_controlPacket, aas.SubmodelElement
-                            ):
-                                mqv_controlPacket = self.Mqv_controlPacket(
-                                    mqv_controlPacket
-                                )
+                            if mqv_controlPacket is not None and not isinstance(mqv_controlPacket, aas.SubmodelElement):
+                                mqv_controlPacket = self.Mqv_controlPacket(mqv_controlPacket)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if mqv_qos is not None and not isinstance(
-                                mqv_qos, aas.SubmodelElement
-                            ):
+                            if mqv_qos is not None and not isinstance(mqv_qos, aas.SubmodelElement):
                                 mqv_qos = self.Mqv_qos(mqv_qos)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in [
-                                href,
-                                contentType,
-                                security,
-                                mqv_retain,
-                                mqv_controlPacket,
-                                mqv_qos,
-                            ]:
+                            for se_arg in [href, contentType, security, mqv_retain, mqv_controlPacket, mqv_qos]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -24712,15 +21796,11 @@ class AssetInterfacesDescription(aas.Submodel):
                         default: Optional[Union[str, Default]] = None,
                         unit: Optional[Union[str, Unit]] = None,
                         min_max: Optional[Union[Tuple[str, str], Min_max]] = None,
-                        lengthRange: Optional[
-                            Union[Tuple[str, str], LengthRange]
-                        ] = None,
+                        lengthRange: Optional[Union[Tuple[str, str], LengthRange]] = None,
                         items: Optional[Items] = None,
                         itemsRange: Optional[Union[Tuple[str, str], ItemsRange]] = None,
                         properties: Optional[Properties] = None,
-                        valueSemantics: Optional[
-                            Union[aas.Reference, ValueSemantics]
-                        ] = None,
+                        valueSemantics: Optional[Union[aas.Reference, ValueSemantics]] = None,
                         id_short: Optional[str] = r"property_name",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -24747,9 +21827,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -24774,76 +21852,52 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if type is not None and not isinstance(
-                            type, aas.SubmodelElement
-                        ):
+                        if type is not None and not isinstance(type, aas.SubmodelElement):
                             type = self.Type(type)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if title is not None and not isinstance(
-                            title, aas.SubmodelElement
-                        ):
+                        if title is not None and not isinstance(title, aas.SubmodelElement):
                             title = self.Title(title)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if observable is not None and not isinstance(
-                            observable, aas.SubmodelElement
-                        ):
+                        if observable is not None and not isinstance(observable, aas.SubmodelElement):
                             observable = self.Observable(observable)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if const is not None and not isinstance(
-                            const, aas.SubmodelElement
-                        ):
+                        if const is not None and not isinstance(const, aas.SubmodelElement):
                             const = self.Const(const)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if default is not None and not isinstance(
-                            default, aas.SubmodelElement
-                        ):
+                        if default is not None and not isinstance(default, aas.SubmodelElement):
                             default = self.Default(default)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if unit is not None and not isinstance(
-                            unit, aas.SubmodelElement
-                        ):
+                        if unit is not None and not isinstance(unit, aas.SubmodelElement):
                             unit = self.Unit(unit)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if min_max is not None and not isinstance(
-                            min_max, aas.SubmodelElement
-                        ):
+                        if min_max is not None and not isinstance(min_max, aas.SubmodelElement):
                             min_max = self.Min_max(min=min_max[0], max=min_max[1])
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if lengthRange is not None and not isinstance(
-                            lengthRange, aas.SubmodelElement
-                        ):
-                            lengthRange = self.LengthRange(
-                                min=lengthRange[0], max=lengthRange[1]
-                            )
+                        if lengthRange is not None and not isinstance(lengthRange, aas.SubmodelElement):
+                            lengthRange = self.LengthRange(min=lengthRange[0], max=lengthRange[1])
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if itemsRange is not None and not isinstance(
-                            itemsRange, aas.SubmodelElement
-                        ):
-                            itemsRange = self.ItemsRange(
-                                min=itemsRange[0], max=itemsRange[1]
-                            )
+                        if itemsRange is not None and not isinstance(itemsRange, aas.SubmodelElement):
+                            itemsRange = self.ItemsRange(min=itemsRange[0], max=itemsRange[1])
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if valueSemantics is not None and not isinstance(
-                            valueSemantics, aas.SubmodelElement
-                        ):
+                        if valueSemantics is not None and not isinstance(valueSemantics, aas.SubmodelElement):
                             valueSemantics = self.ValueSemantics(valueSemantics)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -24874,9 +21928,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -24910,9 +21962,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -24923,9 +21973,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(property_name, str):
-                        raise TypeError(
-                            "property_name takes several elements, got a str"
-                        )
+                        raise TypeError("property_name takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -24940,9 +21988,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -24977,9 +22023,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -25001,9 +22045,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -25038,9 +22080,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -25062,9 +22102,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -25110,9 +22148,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -25134,9 +22170,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -25175,9 +22209,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -25219,9 +22251,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -25243,9 +22273,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -25286,27 +22314,15 @@ class AssetInterfacesDescription(aas.Submodel):
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://www.w3.org/2011/mqtt",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://www.w3.org/2011/mqtt"),),
                     referred_semantic_id=None,
                 ),
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://www.w3.org/2019/wot/td",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -25356,9 +22372,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -25377,9 +22391,7 @@ class AssetInterfacesDescription(aas.Submodel):
         self,
         id_: str,
         interfaceTemplateForHTTP: Optional[Iterable[InterfaceTemplateForHTTP]] = None,
-        interfaceTemplateForMODBUS: Optional[
-            Iterable[InterfaceTemplateForMODBUS]
-        ] = None,
+        interfaceTemplateForMODBUS: Optional[Iterable[InterfaceTemplateForMODBUS]] = None,
         interfaceTemplateForMQTT: Optional[Iterable[InterfaceTemplateForMQTT]] = None,
         id_short: Optional[str] = r"AssetInterfacesDescription",
         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -25403,9 +22415,7 @@ class AssetInterfacesDescription(aas.Submodel):
     ):
 
         if description is None:
-            description = aas.MultiLanguageTextType(
-                dict_={r"en": r"AID Template Sample"}
-            )
+            description = aas.MultiLanguageTextType(dict_={r"en": r"AID Template Sample"})
 
         if qualifier is None:
             qualifier = ()
@@ -25415,29 +22425,19 @@ class AssetInterfacesDescription(aas.Submodel):
 
         # A str would be split into its characters
         if isinstance(interfaceTemplateForHTTP, str):
-            raise TypeError(
-                "interfaceTemplateForHTTP takes several elements, got a str"
-            )
+            raise TypeError("interfaceTemplateForHTTP takes several elements, got a str")
 
         # A str would be split into its characters
         if isinstance(interfaceTemplateForMODBUS, str):
-            raise TypeError(
-                "interfaceTemplateForMODBUS takes several elements, got a str"
-            )
+            raise TypeError("interfaceTemplateForMODBUS takes several elements, got a str")
 
         # A str would be split into its characters
         if isinstance(interfaceTemplateForMQTT, str):
-            raise TypeError(
-                "interfaceTemplateForMQTT takes several elements, got a str"
-            )
+            raise TypeError("interfaceTemplateForMQTT takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
-        for se_arg in [
-            interfaceTemplateForHTTP,
-            interfaceTemplateForMODBUS,
-            interfaceTemplateForMQTT,
-        ]:
+        for se_arg in [interfaceTemplateForHTTP, interfaceTemplateForMODBUS, interfaceTemplateForMQTT]:
             if se_arg is None:
                 continue
             elif isinstance(se_arg, aas.SubmodelElement):
@@ -25448,9 +22448,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

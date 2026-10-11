@@ -30,9 +30,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -86,9 +84,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -144,9 +140,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -202,16 +196,12 @@ class WirelessCommunication(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Number of timeslots reserved for downlink communication."
-                                }
+                                dict_={r"en": r"Number of timeslots reserved for downlink communication."}
                             )
 
                         if qualifier is None:
@@ -258,16 +248,12 @@ class WirelessCommunication(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Number of timeslots reserved for uplink communication."
-                                }
+                                dict_={r"en": r"Number of timeslots reserved for uplink communication."}
                             )
 
                         if qualifier is None:
@@ -314,9 +300,7 @@ class WirelessCommunication(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -368,9 +352,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -388,38 +370,22 @@ class WirelessCommunication(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if numberOfDownlinkSlots is not None and not isinstance(
-                        numberOfDownlinkSlots, aas.SubmodelElement
-                    ):
-                        numberOfDownlinkSlots = self.NumberOfDownlinkSlots(
-                            numberOfDownlinkSlots
-                        )
+                    if numberOfDownlinkSlots is not None and not isinstance(numberOfDownlinkSlots, aas.SubmodelElement):
+                        numberOfDownlinkSlots = self.NumberOfDownlinkSlots(numberOfDownlinkSlots)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if numberOfUplinkSlots is not None and not isinstance(
-                        numberOfUplinkSlots, aas.SubmodelElement
-                    ):
-                        numberOfUplinkSlots = self.NumberOfUplinkSlots(
-                            numberOfUplinkSlots
-                        )
+                    if numberOfUplinkSlots is not None and not isinstance(numberOfUplinkSlots, aas.SubmodelElement):
+                        numberOfUplinkSlots = self.NumberOfUplinkSlots(numberOfUplinkSlots)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if numberOfSharedSlots is not None and not isinstance(
-                        numberOfSharedSlots, aas.SubmodelElement
-                    ):
-                        numberOfSharedSlots = self.NumberOfSharedSlots(
-                            numberOfSharedSlots
-                        )
+                    if numberOfSharedSlots is not None and not isinstance(numberOfSharedSlots, aas.SubmodelElement):
+                        numberOfSharedSlots = self.NumberOfSharedSlots(numberOfSharedSlots)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        numberOfDownlinkSlots,
-                        numberOfUplinkSlots,
-                        numberOfSharedSlots,
-                    ]:
+                    for se_arg in [numberOfDownlinkSlots, numberOfUplinkSlots, numberOfSharedSlots]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -430,9 +396,7 @@ class WirelessCommunication(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -467,9 +431,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -487,9 +449,7 @@ class WirelessCommunication(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if mediumAccessType is not None and not isinstance(
-                    mediumAccessType, aas.SubmodelElement
-                ):
+                if mediumAccessType is not None and not isinstance(mediumAccessType, aas.SubmodelElement):
                     mediumAccessType = self.MediumAccessType(mediumAccessType)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -505,9 +465,7 @@ class WirelessCommunication(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -545,9 +503,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -580,9 +536,7 @@ class WirelessCommunication(aas.Submodel):
 
         def __init__(
             self,
-            communicationCycle: Optional[
-                Iterable[Union[str, CommunicationCycle]]
-            ] = None,
+            communicationCycle: Optional[Iterable[Union[str, CommunicationCycle]]] = None,
             technologyStandard: Optional[Union[str, TechnologyStandard]] = None,
             mediumAccess: Optional[Iterable[MediumAccess]] = None,
             securityMechanism: Optional[Iterable[Union[str, SecurityMechanism]]] = None,
@@ -602,9 +556,7 @@ class WirelessCommunication(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -627,19 +579,12 @@ class WirelessCommunication(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if communicationCycle:
                 communicationCycle = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.CommunicationCycle(i)
-                    )
-                    for i in communicationCycle
+                    i if isinstance(i, aas.SubmodelElement) else self.CommunicationCycle(i) for i in communicationCycle
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if technologyStandard is not None and not isinstance(
-                technologyStandard, aas.SubmodelElement
-            ):
+            if technologyStandard is not None and not isinstance(technologyStandard, aas.SubmodelElement):
                 technologyStandard = self.TechnologyStandard(technologyStandard)
 
             # A str would be split into its characters
@@ -653,22 +598,12 @@ class WirelessCommunication(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if securityMechanism:
                 securityMechanism = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.SecurityMechanism(i)
-                    )
-                    for i in securityMechanism
+                    i if isinstance(i, aas.SubmodelElement) else self.SecurityMechanism(i) for i in securityMechanism
                 ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                communicationCycle,
-                technologyStandard,
-                mediumAccess,
-                securityMechanism,
-            ]:
+            for se_arg in [communicationCycle, technologyStandard, mediumAccess, securityMechanism]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -679,9 +614,7 @@ class WirelessCommunication(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -719,9 +652,7 @@ class WirelessCommunication(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -779,16 +710,12 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List of bands that can be configured on the asset. "
-                            }
+                            dict_={r"en": r"List of bands that can be configured on the asset. "}
                         )
 
                     if qualifier is None:
@@ -835,15 +762,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"ID of current configured band."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"ID of current configured band."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -889,16 +812,12 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Center frequency in MHz of the current configured band."
-                            }
+                            dict_={r"en": r"Center frequency in MHz of the current configured band."}
                         )
 
                     if qualifier is None:
@@ -945,9 +864,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1000,9 +917,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1024,30 +939,21 @@ class WirelessCommunication(aas.Submodel):
 
                 # Build submodel elements from raw values passed in the argument
                 if bandIDList:
-                    bandIDList = [
-                        i if isinstance(i, aas.SubmodelElement) else self.BandIDList(i)
-                        for i in bandIDList
-                    ]
+                    bandIDList = [i if isinstance(i, aas.SubmodelElement) else self.BandIDList(i) for i in bandIDList]
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if bandIDCurrent is not None and not isinstance(
-                    bandIDCurrent, aas.SubmodelElement
-                ):
+                if bandIDCurrent is not None and not isinstance(bandIDCurrent, aas.SubmodelElement):
                     bandIDCurrent = self.BandIDCurrent(bandIDCurrent)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if centerFrequecy is not None and not isinstance(
-                    centerFrequecy, aas.SubmodelElement
-                ):
+                if centerFrequecy is not None and not isinstance(centerFrequecy, aas.SubmodelElement):
                     centerFrequecy = self.CenterFrequecy(centerFrequecy)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if bandwidth is not None and not isinstance(
-                    bandwidth, aas.SubmodelElement
-                ):
+                if bandwidth is not None and not isinstance(bandwidth, aas.SubmodelElement):
                     bandwidth = self.Bandwidth(bandwidth)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1063,9 +969,7 @@ class WirelessCommunication(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1105,9 +1009,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1161,9 +1063,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1217,9 +1117,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1252,12 +1150,8 @@ class WirelessCommunication(aas.Submodel):
 
             def __init__(
                 self,
-                channelNumbering: Optional[
-                    Iterable[Union[str, ChannelNumbering]]
-                ] = None,
-                usedChannelCentreFrequency: Optional[
-                    Union[xsd.Float, UsedChannelCentreFrequency]
-                ] = None,
+                channelNumbering: Optional[Iterable[Union[str, ChannelNumbering]]] = None,
+                usedChannelCentreFrequency: Optional[Union[xsd.Float, UsedChannelCentreFrequency]] = None,
                 usedChannelBandwidth: Optional[Union[str, UsedChannelBandwidth]] = None,
                 id_short: Optional[str] = r"RadioFrequencyChannel",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -1275,9 +1169,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1295,19 +1187,12 @@ class WirelessCommunication(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(channelNumbering, str):
-                    raise TypeError(
-                        "channelNumbering takes several elements, got a str"
-                    )
+                    raise TypeError("channelNumbering takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if channelNumbering:
                     channelNumbering = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ChannelNumbering(i)
-                        )
-                        for i in channelNumbering
+                        i if isinstance(i, aas.SubmodelElement) else self.ChannelNumbering(i) for i in channelNumbering
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1315,26 +1200,16 @@ class WirelessCommunication(aas.Submodel):
                 if usedChannelCentreFrequency is not None and not isinstance(
                     usedChannelCentreFrequency, aas.SubmodelElement
                 ):
-                    usedChannelCentreFrequency = self.UsedChannelCentreFrequency(
-                        usedChannelCentreFrequency
-                    )
+                    usedChannelCentreFrequency = self.UsedChannelCentreFrequency(usedChannelCentreFrequency)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if usedChannelBandwidth is not None and not isinstance(
-                    usedChannelBandwidth, aas.SubmodelElement
-                ):
-                    usedChannelBandwidth = self.UsedChannelBandwidth(
-                        usedChannelBandwidth
-                    )
+                if usedChannelBandwidth is not None and not isinstance(usedChannelBandwidth, aas.SubmodelElement):
+                    usedChannelBandwidth = self.UsedChannelBandwidth(usedChannelBandwidth)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    channelNumbering,
-                    usedChannelCentreFrequency,
-                    usedChannelBandwidth,
-                ]:
+                for se_arg in [channelNumbering, usedChannelCentreFrequency, usedChannelBandwidth]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -1345,9 +1220,7 @@ class WirelessCommunication(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1382,16 +1255,12 @@ class WirelessCommunication(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"It describes the characteristics of radio channel as frequency, band, bandwidth."
-                    }
+                    dict_={r"en": r"It describes the characteristics of radio channel as frequency, band, bandwidth."}
                 )
 
             if qualifier is None:
@@ -1413,9 +1282,7 @@ class WirelessCommunication(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1455,16 +1322,12 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"It is a string that describes the parameter type depending on the technology."
-                        }
+                        dict_={r"en": r"It is a string that describes the parameter type depending on the technology."}
                     )
 
                 if qualifier is None:
@@ -1511,9 +1374,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1567,16 +1428,12 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"It is the value specified during the desing phase."
-                        }
+                        dict_={r"en": r"It is the value specified during the desing phase."}
                     )
 
                 if qualifier is None:
@@ -1623,16 +1480,12 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"It is the value configured In the commissioning phase."
-                        }
+                        dict_={r"en": r"It is the value configured In the commissioning phase."}
                     )
 
                 if qualifier is None:
@@ -1679,9 +1532,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1735,9 +1586,7 @@ class WirelessCommunication(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -1755,9 +1604,7 @@ class WirelessCommunication(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if parameterType is not None and not isinstance(
-                parameterType, aas.SubmodelElement
-            ):
+            if parameterType is not None and not isinstance(parameterType, aas.SubmodelElement):
                 parameterType = self.ParameterType(parameterType)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1767,34 +1614,22 @@ class WirelessCommunication(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if specifiedValue is not None and not isinstance(
-                specifiedValue, aas.SubmodelElement
-            ):
+            if specifiedValue is not None and not isinstance(specifiedValue, aas.SubmodelElement):
                 specifiedValue = self.SpecifiedValue(specifiedValue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if referenceValue is not None and not isinstance(
-                referenceValue, aas.SubmodelElement
-            ):
+            if referenceValue is not None and not isinstance(referenceValue, aas.SubmodelElement):
                 referenceValue = self.ReferenceValue(referenceValue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                parameterType,
-                range,
-                specifiedValue,
-                referenceValue,
-                currentValue,
-            ]:
+            for se_arg in [parameterType, range, specifiedValue, referenceValue, currentValue]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -1805,9 +1640,7 @@ class WirelessCommunication(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1847,16 +1680,12 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"It is a string that describes the parameter type depending on the technology."
-                        }
+                        dict_={r"en": r"It is a string that describes the parameter type depending on the technology."}
                     )
 
                 if qualifier is None:
@@ -1903,9 +1732,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1959,16 +1786,12 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"It is the value specified during the desing phase."
-                        }
+                        dict_={r"en": r"It is the value specified during the desing phase."}
                     )
 
                 if qualifier is None:
@@ -1978,22 +1801,12 @@ class WirelessCommunication(aas.Submodel):
                             value_type=str,
                             value=r"SPEC",
                             value_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0112/2///61360_4#AAF579",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF579"),),
                                 referred_semantic_id=None,
                             ),
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0112/2///61360_4#AAF575",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_4#AAF575"),),
                                 referred_semantic_id=None,
                             ),
                             supplemental_semantic_id=(),
@@ -2041,16 +1854,12 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"It is the value configured In the commissioning phase."
-                        }
+                        dict_={r"en": r"It is the value configured In the commissioning phase."}
                     )
 
                 if qualifier is None:
@@ -2097,9 +1906,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -2153,9 +1960,7 @@ class WirelessCommunication(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -2173,9 +1978,7 @@ class WirelessCommunication(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if parameterType is not None and not isinstance(
-                parameterType, aas.SubmodelElement
-            ):
+            if parameterType is not None and not isinstance(parameterType, aas.SubmodelElement):
                 parameterType = self.ParameterType(parameterType)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2185,34 +1988,22 @@ class WirelessCommunication(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if specifiedValue is not None and not isinstance(
-                specifiedValue, aas.SubmodelElement
-            ):
+            if specifiedValue is not None and not isinstance(specifiedValue, aas.SubmodelElement):
                 specifiedValue = self.SpecifiedValue(specifiedValue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if referenceValue is not None and not isinstance(
-                referenceValue, aas.SubmodelElement
-            ):
+            if referenceValue is not None and not isinstance(referenceValue, aas.SubmodelElement):
                 referenceValue = self.ReferenceValue(referenceValue)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                parameterType,
-                range,
-                specifiedValue,
-                referenceValue,
-                currentValue,
-            ]:
+            for se_arg in [parameterType, range, specifiedValue, referenceValue, currentValue]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -2223,9 +2014,7 @@ class WirelessCommunication(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2267,16 +2056,12 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Official name of the applying/responsible company"
-                            }
+                            dict_={r"en": r"Official name of the applying/responsible company"}
                         )
 
                     if qualifier is None:
@@ -2323,15 +2108,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Name of the responsible person"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Name of the responsible person"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2377,15 +2158,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"First name of the responsible"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"First name of the responsible"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2431,15 +2208,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Official company address"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Official company address"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2485,15 +2258,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Phone number"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Phone number"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2539,15 +2308,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Fax number (optional parameter)."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Fax number (optional parameter)."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2593,9 +2358,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2647,16 +2410,12 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of the intended use (Aproximately one page)."
-                            }
+                            dict_={r"en": r"Description of the intended use (Aproximately one page)."}
                         )
 
                     if qualifier is None:
@@ -2703,16 +2462,12 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Type of license: trial operation, normal operation."
-                            }
+                            dict_={r"en": r"Type of license: trial operation, normal operation."}
                         )
 
                     if qualifier is None:
@@ -2763,9 +2518,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -2783,23 +2536,17 @@ class WirelessCommunication(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if companyName is not None and not isinstance(
-                    companyName, aas.SubmodelElement
-                ):
+                if companyName is not None and not isinstance(companyName, aas.SubmodelElement):
                     companyName = self.CompanyName(companyName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if contactSurname is not None and not isinstance(
-                    contactSurname, aas.SubmodelElement
-                ):
+                if contactSurname is not None and not isinstance(contactSurname, aas.SubmodelElement):
                     contactSurname = self.ContactSurname(contactSurname)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if contactFirstName is not None and not isinstance(
-                    contactFirstName, aas.SubmodelElement
-                ):
+                if contactFirstName is not None and not isinstance(contactFirstName, aas.SubmodelElement):
                     contactFirstName = self.ContactFirstName(contactFirstName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -2824,16 +2571,12 @@ class WirelessCommunication(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if description_ is not None and not isinstance(
-                    description_, aas.SubmodelElement
-                ):
+                if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if licenseType is not None and not isinstance(
-                    licenseType, aas.SubmodelElement
-                ):
+                if licenseType is not None and not isinstance(licenseType, aas.SubmodelElement):
                     licenseType = self.LicenseType(licenseType)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2859,9 +2602,7 @@ class WirelessCommunication(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2901,9 +2642,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2957,9 +2696,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -3013,9 +2750,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -3067,9 +2802,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -3087,26 +2820,18 @@ class WirelessCommunication(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if frequency is not None and not isinstance(
-                    frequency, aas.SubmodelElement
-                ):
+                if frequency is not None and not isinstance(frequency, aas.SubmodelElement):
                     frequency = self.Frequency(frequency)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if frequencies is not None and not isinstance(
-                    frequencies, aas.SubmodelElement
-                ):
+                if frequencies is not None and not isinstance(frequencies, aas.SubmodelElement):
                     frequencies = self.Frequencies(frequencies)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if frequencyRange is not None and not isinstance(
-                    frequencyRange, aas.SubmodelElement
-                ):
-                    frequencyRange = self.FrequencyRange(
-                        min=frequencyRange[0], max=frequencyRange[1]
-                    )
+                if frequencyRange is not None and not isinstance(frequencyRange, aas.SubmodelElement):
+                    frequencyRange = self.FrequencyRange(min=frequencyRange[0], max=frequencyRange[1])
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -3121,9 +2846,7 @@ class WirelessCommunication(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3163,15 +2886,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Begin of operation Day"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Begin of operation Day"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3217,15 +2936,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Begin of operation Month."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Begin of operation Month."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3271,15 +2986,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Begin of operation year"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Begin of operation year"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3325,15 +3036,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Duration of operation in Days"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Duration of operation in Days"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3378,9 +3085,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -3413,9 +3118,7 @@ class WirelessCommunication(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if duration is not None and not isinstance(
-                    duration, aas.SubmodelElement
-                ):
+                if duration is not None and not isinstance(duration, aas.SubmodelElement):
                     duration = self.Duration(duration)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3431,9 +3134,7 @@ class WirelessCommunication(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3473,15 +3174,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Address of the location."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Address of the location."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3527,16 +3224,12 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Geographic Position in East and North degree, minute and second"
-                            }
+                            dict_={r"en": r"Geographic Position in East and North degree, minute and second"}
                         )
 
                     if qualifier is None:
@@ -3583,15 +3276,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Altitide above sea level."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Altitide above sea level."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3637,15 +3326,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": "Altitude above earth's surface."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": "Altitude above earth's surface."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3691,15 +3376,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"FixedStations/NumberOfStations/1/0"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"FixedStations/NumberOfStations/1/0"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3745,9 +3426,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -3765,48 +3444,32 @@ class WirelessCommunication(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if location is not None and not isinstance(
-                    location, aas.SubmodelElement
-                ):
+                if location is not None and not isinstance(location, aas.SubmodelElement):
                     location = self.Location(location)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if geographicPosition is not None and not isinstance(
-                    geographicPosition, aas.SubmodelElement
-                ):
+                if geographicPosition is not None and not isinstance(geographicPosition, aas.SubmodelElement):
                     geographicPosition = self.GeographicPosition(geographicPosition)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if altitudeLocation is not None and not isinstance(
-                    altitudeLocation, aas.SubmodelElement
-                ):
+                if altitudeLocation is not None and not isinstance(altitudeLocation, aas.SubmodelElement):
                     altitudeLocation = self.AltitudeLocation(altitudeLocation)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if altitudeAntenna is not None and not isinstance(
-                    altitudeAntenna, aas.SubmodelElement
-                ):
+                if altitudeAntenna is not None and not isinstance(altitudeAntenna, aas.SubmodelElement):
                     altitudeAntenna = self.AltitudeAntenna(altitudeAntenna)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if stationID is not None and not isinstance(
-                    stationID, aas.SubmodelElement
-                ):
+                if stationID is not None and not isinstance(stationID, aas.SubmodelElement):
                     stationID = self.StationID(stationID)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    location,
-                    geographicPosition,
-                    altitudeLocation,
-                    altitudeAntenna,
-                    stationID,
-                ]:
+                for se_arg in [location, geographicPosition, altitudeLocation, altitudeAntenna, stationID]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -3817,9 +3480,7 @@ class WirelessCommunication(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3859,9 +3520,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -3913,15 +3572,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Number of mobile stations."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Number of mobile stations."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3967,15 +3622,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"One way or two way communication."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"One way or two way communication."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4019,9 +3670,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -4044,16 +3693,12 @@ class WirelessCommunication(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if stationID is not None and not isinstance(
-                    stationID, aas.SubmodelElement
-                ):
+                if stationID is not None and not isinstance(stationID, aas.SubmodelElement):
                     stationID = self.StationID(stationID)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if kindOfOperation is not None and not isinstance(
-                    kindOfOperation, aas.SubmodelElement
-                ):
+                if kindOfOperation is not None and not isinstance(kindOfOperation, aas.SubmodelElement):
                     kindOfOperation = self.KindOfOperation(kindOfOperation)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4069,9 +3714,7 @@ class WirelessCommunication(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4111,15 +3754,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Name or code of the equipment."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Name or code of the equipment."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4165,15 +3804,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Manufacturer of the equipment."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Manufacturer of the equipment."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4219,15 +3854,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Duplex Mode (FDD or TDD)."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Duplex Mode (FDD or TDD)."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4273,15 +3904,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Access Mode e.g. FDMA"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Access Mode e.g. FDMA"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4327,15 +3954,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Type of Modulation e.g. FM"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Type of Modulation e.g. FM"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4381,15 +4004,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Used Bandwith in MHz."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Used Bandwith in MHz."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4435,9 +4054,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -4489,16 +4106,12 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Antenna Gain in dBi respectively antenna pattern."
-                            }
+                            dict_={r"en": r"Antenna Gain in dBi respectively antenna pattern."}
                         )
 
                     if qualifier is None:
@@ -4545,16 +4158,12 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Polarisation of the antenna e.g. horizontal, vertical, …"
-                            }
+                            dict_={r"en": r"Polarisation of the antenna e.g. horizontal, vertical, …"}
                         )
 
                     if qualifier is None:
@@ -4601,15 +4210,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Azimut of the antenna."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Azimut of the antenna."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4655,15 +4260,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Elevation of the antenna."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Elevation of the antenna."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4709,16 +4310,12 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Connection between radio system and other telecommunication systems."
-                            }
+                            dict_={r"en": r"Connection between radio system and other telecommunication systems."}
                         )
 
                     if qualifier is None:
@@ -4772,16 +4369,12 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"This list contains the technical parameters of the network."
-                        }
+                        dict_={r"en": r"This list contains the technical parameters of the network."}
                     )
 
                 if qualifier is None:
@@ -4792,67 +4385,47 @@ class WirelessCommunication(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if equipmentMarketing is not None and not isinstance(
-                    equipmentMarketing, aas.SubmodelElement
-                ):
+                if equipmentMarketing is not None and not isinstance(equipmentMarketing, aas.SubmodelElement):
                     equipmentMarketing = self.EquipmentMarketing(equipmentMarketing)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if manufacturer is not None and not isinstance(
-                    manufacturer, aas.SubmodelElement
-                ):
+                if manufacturer is not None and not isinstance(manufacturer, aas.SubmodelElement):
                     manufacturer = self.Manufacturer(manufacturer)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if duplexMethod is not None and not isinstance(
-                    duplexMethod, aas.SubmodelElement
-                ):
+                if duplexMethod is not None and not isinstance(duplexMethod, aas.SubmodelElement):
                     duplexMethod = self.DuplexMethod(duplexMethod)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if accessMethod is not None and not isinstance(
-                    accessMethod, aas.SubmodelElement
-                ):
+                if accessMethod is not None and not isinstance(accessMethod, aas.SubmodelElement):
                     accessMethod = self.AccessMethod(accessMethod)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if typeOfModulation is not None and not isinstance(
-                    typeOfModulation, aas.SubmodelElement
-                ):
+                if typeOfModulation is not None and not isinstance(typeOfModulation, aas.SubmodelElement):
                     typeOfModulation = self.TypeOfModulation(typeOfModulation)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if bandwidth is not None and not isinstance(
-                    bandwidth, aas.SubmodelElement
-                ):
+                if bandwidth is not None and not isinstance(bandwidth, aas.SubmodelElement):
                     bandwidth = self.Bandwidth(bandwidth)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if transmiterOutputPower is not None and not isinstance(
-                    transmiterOutputPower, aas.SubmodelElement
-                ):
-                    transmiterOutputPower = self.TransmiterOutputPower(
-                        transmiterOutputPower
-                    )
+                if transmiterOutputPower is not None and not isinstance(transmiterOutputPower, aas.SubmodelElement):
+                    transmiterOutputPower = self.TransmiterOutputPower(transmiterOutputPower)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if antennaGain is not None and not isinstance(
-                    antennaGain, aas.SubmodelElement
-                ):
+                if antennaGain is not None and not isinstance(antennaGain, aas.SubmodelElement):
                     antennaGain = self.AntennaGain(antennaGain)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if polarisation is not None and not isinstance(
-                    polarisation, aas.SubmodelElement
-                ):
+                if polarisation is not None and not isinstance(polarisation, aas.SubmodelElement):
                     polarisation = self.Polarisation(polarisation)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -4862,16 +4435,12 @@ class WirelessCommunication(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if elevation is not None and not isinstance(
-                    elevation, aas.SubmodelElement
-                ):
+                if elevation is not None and not isinstance(elevation, aas.SubmodelElement):
                     elevation = self.Elevation(elevation)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if interfaces is not None and not isinstance(
-                    interfaces, aas.SubmodelElement
-                ):
+                if interfaces is not None and not isinstance(interfaces, aas.SubmodelElement):
                     interfaces = self.Interfaces(interfaces)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4900,9 +4469,7 @@ class WirelessCommunication(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4942,15 +4509,11 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Date of application submission."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Date of application submission."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4996,16 +4559,12 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Date of response from regulatory authority."
-                            }
+                            dict_={r"en": r"Date of response from regulatory authority."}
                         )
 
                     if qualifier is None:
@@ -5052,9 +4611,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -5108,9 +4665,7 @@ class WirelessCommunication(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -5163,16 +4718,12 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Information about the time and status of application"
-                        }
+                        dict_={r"en": r"Information about the time and status of application"}
                     )
 
                 if qualifier is None:
@@ -5183,16 +4734,12 @@ class WirelessCommunication(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if timeOfRequest is not None and not isinstance(
-                    timeOfRequest, aas.SubmodelElement
-                ):
+                if timeOfRequest is not None and not isinstance(timeOfRequest, aas.SubmodelElement):
                     timeOfRequest = self.TimeOfRequest(timeOfRequest)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if timeOfResponse is not None and not isinstance(
-                    timeOfResponse, aas.SubmodelElement
-                ):
+                if timeOfResponse is not None and not isinstance(timeOfResponse, aas.SubmodelElement):
                     timeOfResponse = self.TimeOfResponse(timeOfResponse)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -5202,9 +4749,7 @@ class WirelessCommunication(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if conditions is not None and not isinstance(
-                    conditions, aas.SubmodelElement
-                ):
+                if conditions is not None and not isinstance(conditions, aas.SubmodelElement):
                     conditions = self.Conditions(conditions)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -5220,9 +4765,7 @@ class WirelessCommunication(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5262,9 +4805,7 @@ class WirelessCommunication(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -5302,9 +4843,7 @@ class WirelessCommunication(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -5344,9 +4883,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -5400,9 +4937,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -5454,15 +4989,11 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Connector type of the antenna."}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Connector type of the antenna."})
 
                 if qualifier is None:
                     qualifier = ()
@@ -5508,15 +5039,11 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Height of the antenna."}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Height of the antenna."})
 
                 if qualifier is None:
                     qualifier = ()
@@ -5562,9 +5089,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -5598,9 +5123,7 @@ class WirelessCommunication(aas.Submodel):
         def __init__(
             self,
             antennaType: Optional[Iterable[Union[str, AntennaType]]] = None,
-            numberOfAntennas: Optional[
-                Iterable[Union[xsd.Short, NumberOfAntennas]]
-            ] = None,
+            numberOfAntennas: Optional[Iterable[Union[xsd.Short, NumberOfAntennas]]] = None,
             connectorType: Optional[Iterable[Union[str, ConnectorType]]] = None,
             antennaHeight: Optional[Iterable[Union[str, AntennaHeight]]] = None,
             interfaces: Optional[Iterable[Union[str, Interfaces]]] = None,
@@ -5620,9 +5143,7 @@ class WirelessCommunication(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -5644,10 +5165,7 @@ class WirelessCommunication(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if antennaType:
-                antennaType = [
-                    i if isinstance(i, aas.SubmodelElement) else self.AntennaType(i)
-                    for i in antennaType
-                ]
+                antennaType = [i if isinstance(i, aas.SubmodelElement) else self.AntennaType(i) for i in antennaType]
 
             # A str would be split into its characters
             if isinstance(numberOfAntennas, str):
@@ -5656,12 +5174,7 @@ class WirelessCommunication(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if numberOfAntennas:
                 numberOfAntennas = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.NumberOfAntennas(i)
-                    )
-                    for i in numberOfAntennas
+                    i if isinstance(i, aas.SubmodelElement) else self.NumberOfAntennas(i) for i in numberOfAntennas
                 ]
 
             # A str would be split into its characters
@@ -5671,8 +5184,7 @@ class WirelessCommunication(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if connectorType:
                 connectorType = [
-                    i if isinstance(i, aas.SubmodelElement) else self.ConnectorType(i)
-                    for i in connectorType
+                    i if isinstance(i, aas.SubmodelElement) else self.ConnectorType(i) for i in connectorType
                 ]
 
             # A str would be split into its characters
@@ -5682,8 +5194,7 @@ class WirelessCommunication(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if antennaHeight:
                 antennaHeight = [
-                    i if isinstance(i, aas.SubmodelElement) else self.AntennaHeight(i)
-                    for i in antennaHeight
+                    i if isinstance(i, aas.SubmodelElement) else self.AntennaHeight(i) for i in antennaHeight
                 ]
 
             # A str would be split into its characters
@@ -5692,20 +5203,11 @@ class WirelessCommunication(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if interfaces:
-                interfaces = [
-                    i if isinstance(i, aas.SubmodelElement) else self.Interfaces(i)
-                    for i in interfaces
-                ]
+                interfaces = [i if isinstance(i, aas.SubmodelElement) else self.Interfaces(i) for i in interfaces]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                antennaType,
-                numberOfAntennas,
-                connectorType,
-                antennaHeight,
-                interfaces,
-            ]:
+            for se_arg in [antennaType, numberOfAntennas, connectorType, antennaHeight, interfaces]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -5716,9 +5218,7 @@ class WirelessCommunication(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -5758,9 +5258,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -5814,9 +5312,7 @@ class WirelessCommunication(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -5849,9 +5345,7 @@ class WirelessCommunication(aas.Submodel):
 
         def __init__(
             self,
-            authenticationIdentifier: Optional[
-                Union[str, AuthenticationIdentifier]
-            ] = None,
+            authenticationIdentifier: Optional[Union[str, AuthenticationIdentifier]] = None,
             authenticationKey: Optional[Union[str, AuthenticationKey]] = None,
             id_short: Optional[str] = r"Authentication",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -5869,9 +5363,7 @@ class WirelessCommunication(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -5889,18 +5381,12 @@ class WirelessCommunication(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if authenticationIdentifier is not None and not isinstance(
-                authenticationIdentifier, aas.SubmodelElement
-            ):
-                authenticationIdentifier = self.AuthenticationIdentifier(
-                    authenticationIdentifier
-                )
+            if authenticationIdentifier is not None and not isinstance(authenticationIdentifier, aas.SubmodelElement):
+                authenticationIdentifier = self.AuthenticationIdentifier(authenticationIdentifier)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if authenticationKey is not None and not isinstance(
-                authenticationKey, aas.SubmodelElement
-            ):
+            if authenticationKey is not None and not isinstance(authenticationKey, aas.SubmodelElement):
                 authenticationKey = self.AuthenticationKey(authenticationKey)
 
             # Add all passed/initialized submodel elements to a single list
@@ -5916,9 +5402,7 @@ class WirelessCommunication(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -5967,18 +5451,12 @@ class WirelessCommunication(aas.Submodel):
 
         if description is None:
             description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Contains the wireless communication aspects of the asset."
-                }
+                dict_={r"en": r"Contains the wireless communication aspects of the asset."}
             )
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -5994,15 +5472,12 @@ class WirelessCommunication(aas.Submodel):
         # Build submodel elements from raw values passed in the argument
         if wirelessNetworkRole:
             wirelessNetworkRole = [
-                i if isinstance(i, aas.SubmodelElement) else self.WirelessNetworkRole(i)
-                for i in wirelessNetworkRole
+                i if isinstance(i, aas.SubmodelElement) else self.WirelessNetworkRole(i) for i in wirelessNetworkRole
             ]
 
         # A str would be split into its characters
         if isinstance(receptionQualityIndicator, str):
-            raise TypeError(
-                "receptionQualityIndicator takes several elements, got a str"
-            )
+            raise TypeError("receptionQualityIndicator takes several elements, got a str")
 
         # A str would be split into its characters
         if isinstance(outputPower, str):
@@ -6038,9 +5513,7 @@ class WirelessCommunication(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

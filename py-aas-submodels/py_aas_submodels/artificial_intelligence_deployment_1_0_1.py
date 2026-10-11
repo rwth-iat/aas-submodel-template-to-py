@@ -17,20 +17,13 @@ class AIDeployment(aas.Submodel):
             category: Optional[str] = r"PARAMETER",
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0112/2///61987#ABN590#002 ",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABN590#002 "),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -74,28 +67,18 @@ class AIDeployment(aas.Submodel):
             category: Optional[str] = r"PARAMETER",
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-AAS354#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAS354#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Version of the deployment ",
-                        r"en": r"Version des Deployments",
-                    }
+                    dict_={r"de": r"Version of the deployment ", r"en": r"Version des Deployments"}
                 )
 
             if qualifier is None:
@@ -140,9 +123,7 @@ class AIDeployment(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -192,16 +173,12 @@ class AIDeployment(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Reference to the ModelNameplate-Submodel of the deployed model"
-                    }
+                    dict_={r"en": r"Reference to the ModelNameplate-Submodel of the deployed model"}
                 )
 
             if qualifier is None:
@@ -248,16 +225,12 @@ class AIDeployment(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Data format of the deployable model (e.g. onnx, docker-image ,...)"
-                        }
+                        dict_={r"en": r"Data format of the deployable model (e.g. onnx, docker-image ,...)"}
                     )
 
                 if qualifier is None:
@@ -303,15 +276,11 @@ class AIDeployment(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"The deployable model"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"The deployable model"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -353,16 +322,12 @@ class AIDeployment(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection of storage information about the deployable AI-model"
-                    }
+                    dict_={r"en": r"Collection of storage information about the deployable AI-model"}
                 )
 
             if qualifier is None:
@@ -389,9 +354,7 @@ class AIDeployment(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -431,16 +394,12 @@ class AIDeployment(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"This is an example inputinformation placeholder"
-                        }
+                        dict_={r"en": r"This is an example inputinformation placeholder"}
                     )
 
                 if qualifier is None:
@@ -474,8 +433,7 @@ class AIDeployment(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/AIDeployment/Input/1/0",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/AIDeployment/Input/1/0"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -483,16 +441,12 @@ class AIDeployment(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection of information about the input data for deployment"
-                    }
+                    dict_={r"en": r"Collection of information about the input data for deployment"}
                 )
 
             if qualifier is None:
@@ -507,10 +461,7 @@ class AIDeployment(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if exampleInput:
-                exampleInput = [
-                    i if isinstance(i, aas.SubmodelElement) else self.ExampleInput(i)
-                    for i in exampleInput
-                ]
+                exampleInput = [i if isinstance(i, aas.SubmodelElement) else self.ExampleInput(i) for i in exampleInput]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -525,9 +476,7 @@ class AIDeployment(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -567,16 +516,12 @@ class AIDeployment(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"This is an example inputinformation placeholder"
-                        }
+                        dict_={r"en": r"This is an example inputinformation placeholder"}
                     )
 
                 if qualifier is None:
@@ -619,16 +564,12 @@ class AIDeployment(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection of information about the output data for deployment"
-                    }
+                    dict_={r"en": r"Collection of information about the output data for deployment"}
                 )
 
             if qualifier is None:
@@ -644,8 +585,7 @@ class AIDeployment(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if exampleOutput:
                 exampleOutput = [
-                    i if isinstance(i, aas.SubmodelElement) else self.ExampleOutput(i)
-                    for i in exampleOutput
+                    i if isinstance(i, aas.SubmodelElement) else self.ExampleOutput(i) for i in exampleOutput
                 ]
 
             # Add all passed/initialized submodel elements to a single list
@@ -661,9 +601,7 @@ class AIDeployment(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -702,9 +640,7 @@ class AIDeployment(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -751,9 +687,7 @@ class AIDeployment(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -780,9 +714,7 @@ class AIDeployment(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -821,9 +753,7 @@ class AIDeployment(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -870,9 +800,7 @@ class AIDeployment(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -899,9 +827,7 @@ class AIDeployment(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -942,15 +868,11 @@ class AIDeployment(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Measured inference time"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Measured inference time"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -986,26 +908,17 @@ class AIDeployment(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#01-ACL481#008",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-ACL481#008"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Information about the CPU."}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Information about the CPU."})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1040,26 +953,17 @@ class AIDeployment(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#01-ACL476#008",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-ACL476#008"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Information about the GPU."}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Information about the GPU."})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1105,15 +1009,11 @@ class AIDeployment(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Information about the TPU."}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Information about the TPU."})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1148,26 +1048,17 @@ class AIDeployment(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#01-ACL340#008",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-ACL340#008"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Information about the RAM."}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Information about the RAM."})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1212,16 +1103,12 @@ class AIDeployment(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Collection of hardware used for the measurement"
-                            }
+                            dict_={r"en": r"Collection of hardware used for the measurement"}
                         )
 
                     if qualifier is None:
@@ -1263,9 +1150,7 @@ class AIDeployment(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1300,9 +1185,7 @@ class AIDeployment(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1336,9 +1219,7 @@ class AIDeployment(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1372,15 +1253,11 @@ class AIDeployment(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Collection of performance measurements"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Collection of performance measurements"})
 
             if qualifier is None:
                 qualifier = ()
@@ -1405,9 +1282,7 @@ class AIDeployment(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1447,15 +1322,11 @@ class AIDeployment(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Live confidence"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Live confidence"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1501,16 +1372,12 @@ class AIDeployment(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Time intervall for calculating the average confidence"
-                        }
+                        dict_={r"en": r"Time intervall for calculating the average confidence"}
                     )
 
                 if qualifier is None:
@@ -1557,15 +1424,11 @@ class AIDeployment(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"confidence over a definded time intervall"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"confidence over a definded time intervall"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1611,16 +1474,12 @@ class AIDeployment(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Time the deployed model is running without a break or downtime"
-                        }
+                        dict_={r"en": r"Time the deployed model is running without a break or downtime"}
                     )
 
                 if qualifier is None:
@@ -1669,15 +1528,11 @@ class AIDeployment(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Live GPU workload."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Live GPU workload."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1723,15 +1578,11 @@ class AIDeployment(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Llive CPU workload."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Llive CPU workload."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1777,15 +1628,11 @@ class AIDeployment(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Live TPU workload."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Live TPU workload."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1831,15 +1678,11 @@ class AIDeployment(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Live RAM workload."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Live RAM workload."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1884,16 +1727,12 @@ class AIDeployment(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Collection containing the live hardware workload"
-                        }
+                        dict_={r"en": r"Collection containing the live hardware workload"}
                     )
 
                 if qualifier is None:
@@ -1904,30 +1743,22 @@ class AIDeployment(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if gPUWorkload is not None and not isinstance(
-                    gPUWorkload, aas.SubmodelElement
-                ):
+                if gPUWorkload is not None and not isinstance(gPUWorkload, aas.SubmodelElement):
                     gPUWorkload = self.GPUWorkload(gPUWorkload)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if cPUWorkload is not None and not isinstance(
-                    cPUWorkload, aas.SubmodelElement
-                ):
+                if cPUWorkload is not None and not isinstance(cPUWorkload, aas.SubmodelElement):
                     cPUWorkload = self.CPUWorkload(cPUWorkload)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if tPUWorkload is not None and not isinstance(
-                    tPUWorkload, aas.SubmodelElement
-                ):
+                if tPUWorkload is not None and not isinstance(tPUWorkload, aas.SubmodelElement):
                     tPUWorkload = self.TPUWorkload(tPUWorkload)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if rAMWorkload is not None and not isinstance(
-                    rAMWorkload, aas.SubmodelElement
-                ):
+                if rAMWorkload is not None and not isinstance(rAMWorkload, aas.SubmodelElement):
                     rAMWorkload = self.RAMWorkload(rAMWorkload)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1943,9 +1774,7 @@ class AIDeployment(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1985,15 +1814,11 @@ class AIDeployment(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Live data drift"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Live data drift"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2039,15 +1864,11 @@ class AIDeployment(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Live concept drift"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Live concept drift"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2093,15 +1914,11 @@ class AIDeployment(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Live performance drift"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Live performance drift"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2145,16 +1962,12 @@ class AIDeployment(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Collection of live monitoring of different drift metrics"
-                        }
+                        dict_={r"en": r"Collection of live monitoring of different drift metrics"}
                     )
 
                 if qualifier is None:
@@ -2165,23 +1978,17 @@ class AIDeployment(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if dataDrift is not None and not isinstance(
-                    dataDrift, aas.SubmodelElement
-                ):
+                if dataDrift is not None and not isinstance(dataDrift, aas.SubmodelElement):
                     dataDrift = self.DataDrift(dataDrift)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if conceptDrift is not None and not isinstance(
-                    conceptDrift, aas.SubmodelElement
-                ):
+                if conceptDrift is not None and not isinstance(conceptDrift, aas.SubmodelElement):
                     conceptDrift = self.ConceptDrift(conceptDrift)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if performanceDrift is not None and not isinstance(
-                    performanceDrift, aas.SubmodelElement
-                ):
+                if performanceDrift is not None and not isinstance(performanceDrift, aas.SubmodelElement):
                     performanceDrift = self.PerformanceDrift(performanceDrift)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2197,9 +2004,7 @@ class AIDeployment(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2218,9 +2023,7 @@ class AIDeployment(aas.Submodel):
             self,
             confidence: Optional[Union[str, Confidence]] = None,
             timeIntervall: Optional[Union[Tuple[str, str], TimeIntervall]] = None,
-            averageConfidenceOverTime: Optional[
-                Union[str, AverageConfidenceOverTime]
-            ] = None,
+            averageConfidenceOverTime: Optional[Union[str, AverageConfidenceOverTime]] = None,
             runTime: Optional[Union[str, RunTime]] = None,
             hardwareWorkload: Optional[HardwareWorkload] = None,
             driftMetrics: Optional[DriftMetrics] = None,
@@ -2240,9 +2043,7 @@ class AIDeployment(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -2258,28 +2059,18 @@ class AIDeployment(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if confidence is not None and not isinstance(
-                confidence, aas.SubmodelElement
-            ):
+            if confidence is not None and not isinstance(confidence, aas.SubmodelElement):
                 confidence = self.Confidence(confidence)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if timeIntervall is not None and not isinstance(
-                timeIntervall, aas.SubmodelElement
-            ):
-                timeIntervall = self.TimeIntervall(
-                    min=timeIntervall[0], max=timeIntervall[1]
-                )
+            if timeIntervall is not None and not isinstance(timeIntervall, aas.SubmodelElement):
+                timeIntervall = self.TimeIntervall(min=timeIntervall[0], max=timeIntervall[1])
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if averageConfidenceOverTime is not None and not isinstance(
-                averageConfidenceOverTime, aas.SubmodelElement
-            ):
-                averageConfidenceOverTime = self.AverageConfidenceOverTime(
-                    averageConfidenceOverTime
-                )
+            if averageConfidenceOverTime is not None and not isinstance(averageConfidenceOverTime, aas.SubmodelElement):
+                averageConfidenceOverTime = self.AverageConfidenceOverTime(averageConfidenceOverTime)
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -2306,9 +2097,7 @@ class AIDeployment(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2344,9 +2133,7 @@ class AIDeployment(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -2428,9 +2215,7 @@ class AIDeployment(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if uRIOfTheProduct is not None and not isinstance(
-            uRIOfTheProduct, aas.SubmodelElement
-        ):
+        if uRIOfTheProduct is not None and not isinstance(uRIOfTheProduct, aas.SubmodelElement):
             uRIOfTheProduct = self.URIOfTheProduct(uRIOfTheProduct)
 
         # Build a submodel element if a raw value was passed in the argument
@@ -2440,23 +2225,17 @@ class AIDeployment(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if contactInformation is not None and not isinstance(
-            contactInformation, aas.SubmodelElement
-        ):
+        if contactInformation is not None and not isinstance(contactInformation, aas.SubmodelElement):
             contactInformation = self.ContactInformation(contactInformation)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if modelNameplateRef is not None and not isinstance(
-            modelNameplateRef, aas.SubmodelElement
-        ):
+        if modelNameplateRef is not None and not isinstance(modelNameplateRef, aas.SubmodelElement):
             modelNameplateRef = self.ModelNameplateRef(modelNameplateRef)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if riskAssessment is not None and not isinstance(
-            riskAssessment, aas.SubmodelElement
-        ):
+        if riskAssessment is not None and not isinstance(riskAssessment, aas.SubmodelElement):
             riskAssessment = self.RiskAssessment(riskAssessment)
 
         # Add all passed/initialized submodel elements to a single list
@@ -2485,9 +2264,7 @@ class AIDeployment(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

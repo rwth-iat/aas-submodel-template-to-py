@@ -29,9 +29,7 @@ class TimeSeries(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -76,9 +74,7 @@ class TimeSeries(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -126,9 +122,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -165,19 +159,14 @@ class TimeSeries(aas.Submodel):
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://sample.com/AccelerationX/1/1",
-                            ),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://sample.com/AccelerationX/1/1"),
                         ),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -214,19 +203,14 @@ class TimeSeries(aas.Submodel):
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://sample.com/AccelerationY/1/1",
-                            ),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://sample.com/AccelerationY/1/1"),
                         ),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -263,19 +247,14 @@ class TimeSeries(aas.Submodel):
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://sample.com/AccelerationZ/1/1",
-                            ),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://sample.com/AccelerationZ/1/1"),
                         ),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -302,15 +281,9 @@ class TimeSeries(aas.Submodel):
             def __init__(
                 self,
                 time: Iterable[Union[xsd.Long, Time]],
-                sampleAccelerationX: Optional[
-                    Union[xsd.Long, SampleAccelerationX]
-                ] = None,
-                sampleAccelerationY: Optional[
-                    Union[xsd.Long, SampleAccelerationY]
-                ] = None,
-                sampleAccelerationZ: Optional[
-                    Union[xsd.Long, SampleAccelerationZ]
-                ] = None,
+                sampleAccelerationX: Optional[Union[xsd.Long, SampleAccelerationX]] = None,
+                sampleAccelerationY: Optional[Union[xsd.Long, SampleAccelerationY]] = None,
+                sampleAccelerationZ: Optional[Union[xsd.Long, SampleAccelerationZ]] = None,
                 id_short: Optional[str] = r"Record",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -327,9 +300,7 @@ class TimeSeries(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -344,40 +315,26 @@ class TimeSeries(aas.Submodel):
 
                 # Build submodel elements from raw values passed in the argument
                 if time:
-                    time = [
-                        i if isinstance(i, aas.SubmodelElement) else self.Time(i)
-                        for i in time
-                    ]
+                    time = [i if isinstance(i, aas.SubmodelElement) else self.Time(i) for i in time]
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if sampleAccelerationX is not None and not isinstance(
-                    sampleAccelerationX, aas.SubmodelElement
-                ):
+                if sampleAccelerationX is not None and not isinstance(sampleAccelerationX, aas.SubmodelElement):
                     sampleAccelerationX = self.SampleAccelerationX(sampleAccelerationX)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if sampleAccelerationY is not None and not isinstance(
-                    sampleAccelerationY, aas.SubmodelElement
-                ):
+                if sampleAccelerationY is not None and not isinstance(sampleAccelerationY, aas.SubmodelElement):
                     sampleAccelerationY = self.SampleAccelerationY(sampleAccelerationY)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if sampleAccelerationZ is not None and not isinstance(
-                    sampleAccelerationZ, aas.SubmodelElement
-                ):
+                if sampleAccelerationZ is not None and not isinstance(sampleAccelerationZ, aas.SubmodelElement):
                     sampleAccelerationZ = self.SampleAccelerationZ(sampleAccelerationZ)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    time,
-                    sampleAccelerationX,
-                    sampleAccelerationY,
-                    sampleAccelerationZ,
-                ]:
+                for se_arg in [time, sampleAccelerationX, sampleAccelerationY, sampleAccelerationZ]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -388,9 +345,7 @@ class TimeSeries(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -426,9 +381,7 @@ class TimeSeries(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -444,9 +397,7 @@ class TimeSeries(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if description_ is not None and not isinstance(
-                description_, aas.SubmodelElement
-            ):
+            if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                 description_ = self.Description(description_)
 
             # Add all passed/initialized submodel elements to a single list
@@ -462,9 +413,7 @@ class TimeSeries(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -505,9 +454,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -552,9 +499,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -600,9 +545,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -649,9 +592,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -698,9 +639,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -747,9 +686,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -796,9 +733,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -845,9 +780,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -894,9 +827,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -943,9 +874,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -991,9 +920,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1038,9 +965,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1093,9 +1018,7 @@ class TimeSeries(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1111,23 +1034,17 @@ class TimeSeries(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if description_ is not None and not isinstance(
-                    description_, aas.SubmodelElement
-                ):
+                if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if recordCount is not None and not isinstance(
-                    recordCount, aas.SubmodelElement
-                ):
+                if recordCount is not None and not isinstance(recordCount, aas.SubmodelElement):
                     recordCount = self.RecordCount(recordCount)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if startTime is not None and not isinstance(
-                    startTime, aas.SubmodelElement
-                ):
+                if startTime is not None and not isinstance(startTime, aas.SubmodelElement):
                     startTime = self.StartTime(startTime)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1137,23 +1054,17 @@ class TimeSeries(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if duration is not None and not isinstance(
-                    duration, aas.SubmodelElement
-                ):
+                if duration is not None and not isinstance(duration, aas.SubmodelElement):
                     duration = self.Duration(duration)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if samplingInterval is not None and not isinstance(
-                    samplingInterval, aas.SubmodelElement
-                ):
+                if samplingInterval is not None and not isinstance(samplingInterval, aas.SubmodelElement):
                     samplingInterval = self.SamplingInterval(samplingInterval)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if samplingRate is not None and not isinstance(
-                    samplingRate, aas.SubmodelElement
-                ):
+                if samplingRate is not None and not isinstance(samplingRate, aas.SubmodelElement):
                     samplingRate = self.SamplingRate(samplingRate)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1163,9 +1074,7 @@ class TimeSeries(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if lastUpdate is not None and not isinstance(
-                    lastUpdate, aas.SubmodelElement
-                ):
+                if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                     lastUpdate = self.LastUpdate(lastUpdate)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1194,9 +1103,7 @@ class TimeSeries(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1235,9 +1142,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1282,9 +1187,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1330,9 +1233,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1379,9 +1280,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1428,9 +1327,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1477,9 +1374,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1526,9 +1421,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1575,9 +1468,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1624,9 +1515,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1673,9 +1562,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1722,9 +1609,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1771,9 +1656,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1827,9 +1710,7 @@ class TimeSeries(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1845,23 +1726,17 @@ class TimeSeries(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if description_ is not None and not isinstance(
-                    description_, aas.SubmodelElement
-                ):
+                if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if recordCount is not None and not isinstance(
-                    recordCount, aas.SubmodelElement
-                ):
+                if recordCount is not None and not isinstance(recordCount, aas.SubmodelElement):
                     recordCount = self.RecordCount(recordCount)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if startTime is not None and not isinstance(
-                    startTime, aas.SubmodelElement
-                ):
+                if startTime is not None and not isinstance(startTime, aas.SubmodelElement):
                     startTime = self.StartTime(startTime)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1871,23 +1746,17 @@ class TimeSeries(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if duration is not None and not isinstance(
-                    duration, aas.SubmodelElement
-                ):
+                if duration is not None and not isinstance(duration, aas.SubmodelElement):
                     duration = self.Duration(duration)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if samplingInterval is not None and not isinstance(
-                    samplingInterval, aas.SubmodelElement
-                ):
+                if samplingInterval is not None and not isinstance(samplingInterval, aas.SubmodelElement):
                     samplingInterval = self.SamplingInterval(samplingInterval)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if samplingRate is not None and not isinstance(
-                    samplingRate, aas.SubmodelElement
-                ):
+                if samplingRate is not None and not isinstance(samplingRate, aas.SubmodelElement):
                     samplingRate = self.SamplingRate(samplingRate)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1897,16 +1766,12 @@ class TimeSeries(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if lastUpdate is not None and not isinstance(
-                    lastUpdate, aas.SubmodelElement
-                ):
+                if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                     lastUpdate = self.LastUpdate(lastUpdate)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if endpoint is not None and not isinstance(
-                    endpoint, aas.SubmodelElement
-                ):
+                if endpoint is not None and not isinstance(endpoint, aas.SubmodelElement):
                     endpoint = self.Endpoint(endpoint)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1940,9 +1805,7 @@ class TimeSeries(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1981,9 +1844,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2028,9 +1889,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2076,9 +1935,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2125,9 +1982,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2174,9 +2029,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2223,9 +2076,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2272,9 +2123,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2321,9 +2170,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2370,9 +2217,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2419,9 +2264,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2460,9 +2303,7 @@ class TimeSeries(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"VARIABLE",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2474,9 +2315,7 @@ class TimeSeries(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2511,9 +2350,7 @@ class TimeSeries(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"VARIABLE",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2525,9 +2362,7 @@ class TimeSeries(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2562,9 +2397,7 @@ class TimeSeries(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"VARIABLE",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2576,9 +2409,7 @@ class TimeSeries(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2613,9 +2444,7 @@ class TimeSeries(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"VARIABLE",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2627,9 +2456,7 @@ class TimeSeries(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2656,15 +2483,9 @@ class TimeSeries(aas.Submodel):
                     def __init__(
                         self,
                         time: Iterable[Union[xsd.Long, Time]],
-                        sampleAccelerationX: Optional[
-                            Union[xsd.Long, SampleAccelerationX]
-                        ] = None,
-                        sampleAccelerationY: Optional[
-                            Union[xsd.Long, SampleAccelerationY]
-                        ] = None,
-                        sampleAccelerationZ: Optional[
-                            Union[xsd.Long, SampleAccelerationZ]
-                        ] = None,
+                        sampleAccelerationX: Optional[Union[xsd.Long, SampleAccelerationX]] = None,
+                        sampleAccelerationY: Optional[Union[xsd.Long, SampleAccelerationY]] = None,
+                        sampleAccelerationZ: Optional[Union[xsd.Long, SampleAccelerationZ]] = None,
                         id_short: Optional[str] = r"Record",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -2681,9 +2502,7 @@ class TimeSeries(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2698,50 +2517,26 @@ class TimeSeries(aas.Submodel):
 
                         # Build submodel elements from raw values passed in the argument
                         if time:
-                            time = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Time(i)
-                                )
-                                for i in time
-                            ]
+                            time = [i if isinstance(i, aas.SubmodelElement) else self.Time(i) for i in time]
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sampleAccelerationX is not None and not isinstance(
-                            sampleAccelerationX, aas.SubmodelElement
-                        ):
-                            sampleAccelerationX = self.SampleAccelerationX(
-                                sampleAccelerationX
-                            )
+                        if sampleAccelerationX is not None and not isinstance(sampleAccelerationX, aas.SubmodelElement):
+                            sampleAccelerationX = self.SampleAccelerationX(sampleAccelerationX)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sampleAccelerationY is not None and not isinstance(
-                            sampleAccelerationY, aas.SubmodelElement
-                        ):
-                            sampleAccelerationY = self.SampleAccelerationY(
-                                sampleAccelerationY
-                            )
+                        if sampleAccelerationY is not None and not isinstance(sampleAccelerationY, aas.SubmodelElement):
+                            sampleAccelerationY = self.SampleAccelerationY(sampleAccelerationY)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if sampleAccelerationZ is not None and not isinstance(
-                            sampleAccelerationZ, aas.SubmodelElement
-                        ):
-                            sampleAccelerationZ = self.SampleAccelerationZ(
-                                sampleAccelerationZ
-                            )
+                        if sampleAccelerationZ is not None and not isinstance(sampleAccelerationZ, aas.SubmodelElement):
+                            sampleAccelerationZ = self.SampleAccelerationZ(sampleAccelerationZ)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            time,
-                            sampleAccelerationX,
-                            sampleAccelerationY,
-                            sampleAccelerationZ,
-                        ]:
+                        for se_arg in [time, sampleAccelerationX, sampleAccelerationY, sampleAccelerationZ]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -2752,9 +2547,7 @@ class TimeSeries(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2788,9 +2581,7 @@ class TimeSeries(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2816,9 +2607,7 @@ class TimeSeries(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2862,9 +2651,7 @@ class TimeSeries(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2880,23 +2667,17 @@ class TimeSeries(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if description_ is not None and not isinstance(
-                    description_, aas.SubmodelElement
-                ):
+                if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if recordCount is not None and not isinstance(
-                    recordCount, aas.SubmodelElement
-                ):
+                if recordCount is not None and not isinstance(recordCount, aas.SubmodelElement):
                     recordCount = self.RecordCount(recordCount)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if startTime is not None and not isinstance(
-                    startTime, aas.SubmodelElement
-                ):
+                if startTime is not None and not isinstance(startTime, aas.SubmodelElement):
                     startTime = self.StartTime(startTime)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -2906,23 +2687,17 @@ class TimeSeries(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if duration is not None and not isinstance(
-                    duration, aas.SubmodelElement
-                ):
+                if duration is not None and not isinstance(duration, aas.SubmodelElement):
                     duration = self.Duration(duration)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if samplingInterval is not None and not isinstance(
-                    samplingInterval, aas.SubmodelElement
-                ):
+                if samplingInterval is not None and not isinstance(samplingInterval, aas.SubmodelElement):
                     samplingInterval = self.SamplingInterval(samplingInterval)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if samplingRate is not None and not isinstance(
-                    samplingRate, aas.SubmodelElement
-                ):
+                if samplingRate is not None and not isinstance(samplingRate, aas.SubmodelElement):
                     samplingRate = self.SamplingRate(samplingRate)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -2932,9 +2707,7 @@ class TimeSeries(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if lastUpdate is not None and not isinstance(
-                    lastUpdate, aas.SubmodelElement
-                ):
+                if lastUpdate is not None and not isinstance(lastUpdate, aas.SubmodelElement):
                     lastUpdate = self.LastUpdate(lastUpdate)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2962,9 +2735,7 @@ class TimeSeries(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3000,9 +2771,7 @@ class TimeSeries(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -3036,9 +2805,7 @@ class TimeSeries(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3076,9 +2843,7 @@ class TimeSeries(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if input_variable is None:
@@ -3223,9 +2988,7 @@ class TimeSeries(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if input_variable is None:
@@ -3318,9 +3081,7 @@ class TimeSeries(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if input_variable is None:
@@ -3404,12 +3165,7 @@ class TimeSeries(aas.Submodel):
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"https://admin-shell.io/idta/TimeSeries/1/1",
-                ),
-            ),
+            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/TimeSeries/1/1"),),
             type_=aas.Submodel,
             referred_semantic_id=None,
         ),
@@ -3430,11 +3186,7 @@ class TimeSeries(aas.Submodel):
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"1",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"1", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -3456,9 +3208,7 @@ class TimeSeries(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

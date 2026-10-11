@@ -30,9 +30,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -78,9 +76,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -126,9 +122,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -175,9 +169,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -223,9 +215,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -271,9 +261,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -319,9 +307,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -367,9 +353,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -396,9 +380,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
         def __init__(
             self,
             materialType: Optional[Union[str, MaterialType]] = None,
-            baseUnitOfMeasure: Optional[
-                Union[aas.LangStringSet, BaseUnitOfMeasure]
-            ] = None,
+            baseUnitOfMeasure: Optional[Union[aas.LangStringSet, BaseUnitOfMeasure]] = None,
             materialStatus: Optional[Union[str, MaterialStatus]] = None,
             industry: Optional[Union[str, Industry]] = None,
             productName: Optional[Union[aas.LangStringSet, ProductName]] = None,
@@ -421,9 +403,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -434,23 +414,17 @@ class BackendSpecificMaterialInformation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if materialType is not None and not isinstance(
-                materialType, aas.SubmodelElement
-            ):
+            if materialType is not None and not isinstance(materialType, aas.SubmodelElement):
                 materialType = self.MaterialType(materialType)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if baseUnitOfMeasure is not None and not isinstance(
-                baseUnitOfMeasure, aas.SubmodelElement
-            ):
+            if baseUnitOfMeasure is not None and not isinstance(baseUnitOfMeasure, aas.SubmodelElement):
                 baseUnitOfMeasure = self.BaseUnitOfMeasure(baseUnitOfMeasure)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if materialStatus is not None and not isinstance(
-                materialStatus, aas.SubmodelElement
-            ):
+            if materialStatus is not None and not isinstance(materialStatus, aas.SubmodelElement):
                 materialStatus = self.MaterialStatus(materialStatus)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -460,23 +434,17 @@ class BackendSpecificMaterialInformation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if productName is not None and not isinstance(
-                productName, aas.SubmodelElement
-            ):
+            if productName is not None and not isinstance(productName, aas.SubmodelElement):
                 productName = self.ProductName(productName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if materialNumber is not None and not isinstance(
-                materialNumber, aas.SubmodelElement
-            ):
+            if materialNumber is not None and not isinstance(materialNumber, aas.SubmodelElement):
                 materialNumber = self.MaterialNumber(materialNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if description_ is not None and not isinstance(
-                description_, aas.SubmodelElement
-            ):
+            if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                 description_ = self.Description(description_)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -506,9 +474,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -567,9 +533,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

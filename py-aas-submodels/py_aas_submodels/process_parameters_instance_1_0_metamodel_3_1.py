@@ -30,15 +30,11 @@ class ExecutedProcesses(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Indicates the outcome of a run."}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Indicates the outcome of a run."})
 
                 if qualifier is None:
                     qualifier = ()
@@ -86,15 +82,11 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Describes the ID of the process"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Describes the ID of the process"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -140,15 +132,11 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Describes the Name of the Process "}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Describes the Name of the Process "})
 
                     if qualifier is None:
                         qualifier = ()
@@ -193,15 +181,11 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Describes the process."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Describes the process."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -246,16 +230,12 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Planned processing time for process execution (without set-up time)"
-                            }
+                            dict_={r"en": r"Planned processing time for process execution (without set-up time)"}
                         )
 
                     if qualifier is None:
@@ -299,16 +279,12 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Mandatory product parameters for process execution"
-                            }
+                            dict_={r"en": r"Mandatory product parameters for process execution"}
                         )
 
                     if qualifier is None:
@@ -330,9 +306,7 @@ class ExecutedProcesses(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -367,16 +341,12 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Mandatory process parameters for process execution"
-                            }
+                            dict_={r"en": r"Mandatory process parameters for process execution"}
                         )
 
                     if qualifier is None:
@@ -398,9 +368,7 @@ class ExecutedProcesses(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -435,16 +403,12 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Mandatory resource parameters for process execution"
-                            }
+                            dict_={r"en": r"Mandatory resource parameters for process execution"}
                         )
 
                     if qualifier is None:
@@ -466,9 +430,7 @@ class ExecutedProcesses(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -503,9 +465,7 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -534,9 +494,7 @@ class ExecutedProcesses(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -574,15 +532,11 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Describes the process status."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Describes the process status."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -628,15 +582,11 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Result of the process."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Result of the process."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -682,15 +632,11 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Role of the operator in the process."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Role of the operator in the process."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -736,15 +682,11 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Start time of the process."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Start time of the process."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -790,15 +732,11 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"End time of the process."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"End time of the process."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -836,9 +774,7 @@ class ExecutedProcesses(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -850,15 +786,11 @@ class ExecutedProcesses(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"ID of the stage."}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"ID of the stage."})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -892,9 +824,7 @@ class ExecutedProcesses(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -906,15 +836,11 @@ class ExecutedProcesses(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Time when the stage started."}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Time when the stage started."})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -948,9 +874,7 @@ class ExecutedProcesses(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -962,15 +886,11 @@ class ExecutedProcesses(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Time when the stage ended."}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Time when the stage ended."})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -1004,9 +924,7 @@ class ExecutedProcesses(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1018,15 +936,11 @@ class ExecutedProcesses(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Stage result."}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Stage result."})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -1071,9 +985,7 @@ class ExecutedProcesses(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1089,30 +1001,22 @@ class ExecutedProcesses(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if stageId is not None and not isinstance(
-                            stageId, aas.SubmodelElement
-                        ):
+                        if stageId is not None and not isinstance(stageId, aas.SubmodelElement):
                             stageId = self.StageId(stageId)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if startTime is not None and not isinstance(
-                            startTime, aas.SubmodelElement
-                        ):
+                        if startTime is not None and not isinstance(startTime, aas.SubmodelElement):
                             startTime = self.StartTime(startTime)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if endTime is not None and not isinstance(
-                            endTime, aas.SubmodelElement
-                        ):
+                        if endTime is not None and not isinstance(endTime, aas.SubmodelElement):
                             endTime = self.EndTime(endTime)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if result is not None and not isinstance(
-                            result, aas.SubmodelElement
-                        ):
+                        if result is not None and not isinstance(result, aas.SubmodelElement):
                             result = self.Result(result)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1128,9 +1032,7 @@ class ExecutedProcesses(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1164,16 +1066,12 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List of stages that the process went through."
-                            }
+                            dict_={r"en": r"List of stages that the process went through."}
                         )
 
                     if qualifier is None:
@@ -1184,9 +1082,7 @@ class ExecutedProcesses(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(processStage, str):
-                        raise TypeError(
-                            "processStage takes several elements, got a str"
-                        )
+                        raise TypeError("processStage takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1201,9 +1097,7 @@ class ExecutedProcesses(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1233,9 +1127,7 @@ class ExecutedProcesses(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1247,15 +1139,11 @@ class ExecutedProcesses(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Error code."}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Error code."})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -1289,9 +1177,7 @@ class ExecutedProcesses(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1303,15 +1189,11 @@ class ExecutedProcesses(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Error description."}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Error description."})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -1354,16 +1236,12 @@ class ExecutedProcesses(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"An error that caused the process to fail."
-                                }
+                                dict_={r"en": r"An error that caused the process to fail."}
                             )
 
                         if qualifier is None:
@@ -1374,16 +1252,12 @@ class ExecutedProcesses(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if errorCode is not None and not isinstance(
-                            errorCode, aas.SubmodelElement
-                        ):
+                        if errorCode is not None and not isinstance(errorCode, aas.SubmodelElement):
                             errorCode = self.ErrorCode(errorCode)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if errorDescription is not None and not isinstance(
-                            errorDescription, aas.SubmodelElement
-                        ):
+                        if errorDescription is not None and not isinstance(errorDescription, aas.SubmodelElement):
                             errorDescription = self.ErrorDescription(errorDescription)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1399,9 +1273,7 @@ class ExecutedProcesses(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1435,16 +1307,12 @@ class ExecutedProcesses(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List of errors that caused the process to fail."
-                            }
+                            dict_={r"en": r"List of errors that caused the process to fail."}
                         )
 
                     if qualifier is None:
@@ -1455,9 +1323,7 @@ class ExecutedProcesses(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(processError, str):
-                        raise TypeError(
-                            "processError takes several elements, got a str"
-                        )
+                        raise TypeError("processError takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1472,9 +1338,7 @@ class ExecutedProcesses(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1522,16 +1386,12 @@ class ExecutedProcesses(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Describes the values of a process that was executed."
-                        }
+                        dict_={r"en": r"Describes the values of a process that was executed."}
                     )
 
                 if qualifier is None:
@@ -1542,65 +1402,47 @@ class ExecutedProcesses(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if processId is not None and not isinstance(
-                    processId, aas.SubmodelElement
-                ):
+                if processId is not None and not isinstance(processId, aas.SubmodelElement):
                     processId = self.ProcessId(processId)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if processName is not None and not isinstance(
-                    processName, aas.SubmodelElement
-                ):
+                if processName is not None and not isinstance(processName, aas.SubmodelElement):
                     processName = self.ProcessName(processName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if processDescription is not None and not isinstance(
-                    processDescription, aas.SubmodelElement
-                ):
+                if processDescription is not None and not isinstance(processDescription, aas.SubmodelElement):
                     processDescription = self.ProcessDescription(processDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if plannedProcessTime is not None and not isinstance(
-                    plannedProcessTime, aas.SubmodelElement
-                ):
+                if plannedProcessTime is not None and not isinstance(plannedProcessTime, aas.SubmodelElement):
                     plannedProcessTime = self.PlannedProcessTime(plannedProcessTime)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if processStatus is not None and not isinstance(
-                    processStatus, aas.SubmodelElement
-                ):
+                if processStatus is not None and not isinstance(processStatus, aas.SubmodelElement):
                     processStatus = self.ProcessStatus(processStatus)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if processResult is not None and not isinstance(
-                    processResult, aas.SubmodelElement
-                ):
+                if processResult is not None and not isinstance(processResult, aas.SubmodelElement):
                     processResult = self.ProcessResult(processResult)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if operatorRole is not None and not isinstance(
-                    operatorRole, aas.SubmodelElement
-                ):
+                if operatorRole is not None and not isinstance(operatorRole, aas.SubmodelElement):
                     operatorRole = self.OperatorRole(operatorRole)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if processStartTime is not None and not isinstance(
-                    processStartTime, aas.SubmodelElement
-                ):
+                if processStartTime is not None and not isinstance(processStartTime, aas.SubmodelElement):
                     processStartTime = self.ProcessStartTime(processStartTime)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if processEndTime is not None and not isinstance(
-                    processEndTime, aas.SubmodelElement
-                ):
+                if processEndTime is not None and not isinstance(processEndTime, aas.SubmodelElement):
                     processEndTime = self.ProcessEndTime(processEndTime)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1632,9 +1474,7 @@ class ExecutedProcesses(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1669,16 +1509,12 @@ class ExecutedProcesses(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Represents a single execution of the processes defined in the bill-of-process."
-                    }
+                    dict_={r"en": r"Represents a single execution of the processes defined in the bill-of-process."}
                 )
 
             if qualifier is None:
@@ -1709,9 +1545,7 @@ class ExecutedProcesses(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1738,8 +1572,7 @@ class ExecutedProcesses(aas.Submodel):
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
                 aas.Key(
-                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                    value=r"https://admin-shell.io/idta/ExecutedProcesses/1/0",
+                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/ExecutedProcesses/1/0"
                 ),
             ),
             referred_semantic_id=None,
@@ -1753,9 +1586,7 @@ class ExecutedProcesses(aas.Submodel):
 
         if description is None:
             description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The Submodel describes the input and output parameters for the execution of processes."
-                }
+                dict_={r"en": r"The Submodel describes the input and output parameters for the execution of processes."}
             )
 
         if administration is None:
@@ -1790,9 +1621,7 @@ class ExecutedProcesses(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

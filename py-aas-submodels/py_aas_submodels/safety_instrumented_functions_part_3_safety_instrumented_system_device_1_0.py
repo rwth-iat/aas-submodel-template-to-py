@@ -21,8 +21,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/TagName/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/TagName/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -30,9 +29,7 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -40,9 +37,7 @@ class SISDevice(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the tag that the device represents"
-                        }
+                        dict_={r"en": r"gives information about the tag that the device represents"}
                     )
 
                 if qualifier is None:
@@ -89,21 +84,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"tag description"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"tag description"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives relevant information about the tag that the device represents"
-                        }
+                        dict_={r"en": r"gives relevant information about the tag that the device represents"}
                     )
 
                 if qualifier is None:
@@ -143,8 +132,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/Subsystem/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/Subsystem/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -152,21 +140,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"subsystem"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"subsystem"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives relevant information about the tag that the device represents"
-                        }
+                        dict_={r"en": r"gives relevant information about the tag that the device represents"}
                     )
 
                 if qualifier is None:
@@ -228,21 +210,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"safe state of device"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"safe state of device"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives relevant information about the tag that the device represents"
-                        }
+                        dict_={r"en": r"gives relevant information about the tag that the device represents"}
                     )
 
                 if qualifier is None:
@@ -289,21 +265,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Equipment type"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Equipment type"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives relevant information about the tag that the device represents"
-                        }
+                        dict_={r"en": r"gives relevant information about the tag that the device represents"}
                     )
 
                 if qualifier is None:
@@ -350,21 +320,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"reference to tag group"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to tag group"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives relevant information about the tag that the device represents"
-                        }
+                        dict_={r"en": r"gives relevant information about the tag that the device represents"}
                     )
 
                 if qualifier is None:
@@ -395,9 +359,7 @@ class SISDevice(aas.Submodel):
             tagDescription: Optional[Union[str, TagDescription]] = None,
             safeStateOfDevice: Optional[Union[str, SafeStateOfDevice]] = None,
             equipmentType: Optional[Union[str, EquipmentType]] = None,
-            referenceToTagGroup: Optional[
-                Iterable[Union[str, ReferenceToTagGroup]]
-            ] = None,
+            referenceToTagGroup: Optional[Iterable[Union[str, ReferenceToTagGroup]]] = None,
             id_short: Optional[str] = r"TagInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -405,8 +367,7 @@ class SISDevice(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/TagInformation/1",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/TagInformation/1"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -414,21 +375,15 @@ class SISDevice(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"tag information"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"tag information"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"gives relevant information about the tag that the device represents"
-                    }
+                    dict_={r"en": r"gives relevant information about the tag that the device represents"}
                 )
 
             if qualifier is None:
@@ -444,9 +399,7 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if tagDescription is not None and not isinstance(
-                tagDescription, aas.SubmodelElement
-            ):
+            if tagDescription is not None and not isinstance(tagDescription, aas.SubmodelElement):
                 tagDescription = self.TagDescription(tagDescription)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -456,16 +409,12 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if safeStateOfDevice is not None and not isinstance(
-                safeStateOfDevice, aas.SubmodelElement
-            ):
+            if safeStateOfDevice is not None and not isinstance(safeStateOfDevice, aas.SubmodelElement):
                 safeStateOfDevice = self.SafeStateOfDevice(safeStateOfDevice)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if equipmentType is not None and not isinstance(
-                equipmentType, aas.SubmodelElement
-            ):
+            if equipmentType is not None and not isinstance(equipmentType, aas.SubmodelElement):
                 equipmentType = self.EquipmentType(equipmentType)
 
             # A str would be split into its characters
@@ -475,24 +424,13 @@ class SISDevice(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if referenceToTagGroup:
                 referenceToTagGroup = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.ReferenceToTagGroup(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.ReferenceToTagGroup(i)
                     for i in referenceToTagGroup
                 ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                tagName,
-                tagDescription,
-                subsystem,
-                safeStateOfDevice,
-                equipmentType,
-                referenceToTagGroup,
-            ]:
+            for se_arg in [tagName, tagDescription, subsystem, safeStateOfDevice, equipmentType, referenceToTagGroup]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -503,9 +441,7 @@ class SISDevice(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -547,20 +483,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"systematic capability requirement"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"systematic capability requirement"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = (
@@ -612,8 +542,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/PFDBudget/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/PFDBudget/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -621,20 +550,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"PFD budget"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"PFD budget"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -671,8 +594,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/PFHBudget/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/PFHBudget/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -680,20 +602,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"PFH budget"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"PFH budget"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = (
@@ -751,21 +667,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"internal HFT requirement"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"internal HFT requirement"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -829,15 +739,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"test coverage"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"test coverage"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -880,9 +786,7 @@ class SISDevice(aas.Submodel):
                 def __init__(
                     self,
                     value: int,
-                    id_short: Optional[
-                        str
-                    ] = r"MinimumTestIntervalOperatorSpecification",
+                    id_short: Optional[str] = r"MinimumTestIntervalOperatorSpecification",
                     value_type: aas.DataTypeDefXsd = int,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -900,16 +804,12 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"minimum test interval operator specification"
-                            }
+                            dict_={r"en": r"minimum test interval operator specification"}
                         )
 
                     if description is None:
@@ -971,9 +871,7 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -1039,15 +937,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"test procedure"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"test procedure"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1097,15 +991,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"requirements for testing"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"requirements for testing"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1158,21 +1048,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"fail criterion failure mode"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"fail criterion failure mode"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -1219,9 +1103,7 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -1231,9 +1113,7 @@ class SISDevice(aas.Submodel):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -1262,9 +1142,7 @@ class SISDevice(aas.Submodel):
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[
-                            str
-                        ] = r"NumericFailCriterionDescriptionOfMeasurement",
+                        id_short: Optional[str] = r"NumericFailCriterionDescriptionOfMeasurement",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -1282,23 +1160,17 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"numeric fail criterion description of measurement"
-                                }
+                                dict_={r"en": r"numeric fail criterion description of measurement"}
                             )
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -1345,21 +1217,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"numeric fail criterion value"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"numeric fail criterion value"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -1406,15 +1272,11 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"unit of measure"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"unit of measure"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -1467,21 +1329,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"numeric fail criterion operator"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"numeric fail criterion operator"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -1543,21 +1399,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"comments to fail criterion"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"comments to fail criterion"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -1584,22 +1434,14 @@ class SISDevice(aas.Submodel):
                 def __init__(
                     self,
                     failCriterionFailureMode: Union[str, FailCriterionFailureMode],
-                    booleanFailCriterionDescription: Optional[
-                        Union[str, BooleanFailCriterionDescription]
-                    ] = None,
+                    booleanFailCriterionDescription: Optional[Union[str, BooleanFailCriterionDescription]] = None,
                     numericFailCriterionDescriptionOfMeasurement: Optional[
                         Union[str, NumericFailCriterionDescriptionOfMeasurement]
                     ] = None,
-                    numericFailCriterionValue: Optional[
-                        Union[xsd.Decimal, NumericFailCriterionValue]
-                    ] = None,
+                    numericFailCriterionValue: Optional[Union[xsd.Decimal, NumericFailCriterionValue]] = None,
                     unitOfMeasure: Optional[Union[str, UnitOfMeasure]] = None,
-                    numericFailCriterionOperator: Optional[
-                        Union[str, NumericFailCriterionOperator]
-                    ] = None,
-                    commentsToFailCriterion: Optional[
-                        Iterable[Union[str, CommentsToFailCriterion]]
-                    ] = None,
+                    numericFailCriterionOperator: Optional[Union[str, NumericFailCriterionOperator]] = None,
+                    commentsToFailCriterion: Optional[Iterable[Union[str, CommentsToFailCriterion]]] = None,
                     id_short: Optional[str] = r"FailCriterion",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -1616,15 +1458,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"fail criterion"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"fail criterion"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1642,29 +1480,21 @@ class SISDevice(aas.Submodel):
                     if failCriterionFailureMode is not None and not isinstance(
                         failCriterionFailureMode, aas.SubmodelElement
                     ):
-                        failCriterionFailureMode = self.FailCriterionFailureMode(
-                            failCriterionFailureMode
-                        )
+                        failCriterionFailureMode = self.FailCriterionFailureMode(failCriterionFailureMode)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if booleanFailCriterionDescription is not None and not isinstance(
                         booleanFailCriterionDescription, aas.SubmodelElement
                     ):
-                        booleanFailCriterionDescription = (
-                            self.BooleanFailCriterionDescription(
-                                booleanFailCriterionDescription
-                            )
+                        booleanFailCriterionDescription = self.BooleanFailCriterionDescription(
+                            booleanFailCriterionDescription
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if (
-                        numericFailCriterionDescriptionOfMeasurement is not None
-                        and not isinstance(
-                            numericFailCriterionDescriptionOfMeasurement,
-                            aas.SubmodelElement,
-                        )
+                    if numericFailCriterionDescriptionOfMeasurement is not None and not isinstance(
+                        numericFailCriterionDescriptionOfMeasurement, aas.SubmodelElement
                     ):
                         numericFailCriterionDescriptionOfMeasurement = (
                             self.NumericFailCriterionDescriptionOfMeasurement(
@@ -1677,15 +1507,11 @@ class SISDevice(aas.Submodel):
                     if numericFailCriterionValue is not None and not isinstance(
                         numericFailCriterionValue, aas.SubmodelElement
                     ):
-                        numericFailCriterionValue = self.NumericFailCriterionValue(
-                            numericFailCriterionValue
-                        )
+                        numericFailCriterionValue = self.NumericFailCriterionValue(numericFailCriterionValue)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if unitOfMeasure is not None and not isinstance(
-                        unitOfMeasure, aas.SubmodelElement
-                    ):
+                    if unitOfMeasure is not None and not isinstance(unitOfMeasure, aas.SubmodelElement):
                         unitOfMeasure = self.UnitOfMeasure(unitOfMeasure)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -1693,26 +1519,16 @@ class SISDevice(aas.Submodel):
                     if numericFailCriterionOperator is not None and not isinstance(
                         numericFailCriterionOperator, aas.SubmodelElement
                     ):
-                        numericFailCriterionOperator = (
-                            self.NumericFailCriterionOperator(
-                                numericFailCriterionOperator
-                            )
-                        )
+                        numericFailCriterionOperator = self.NumericFailCriterionOperator(numericFailCriterionOperator)
 
                     # A str would be split into its characters
                     if isinstance(commentsToFailCriterion, str):
-                        raise TypeError(
-                            "commentsToFailCriterion takes several elements, got a str"
-                        )
+                        raise TypeError("commentsToFailCriterion takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if commentsToFailCriterion:
                         commentsToFailCriterion = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.CommentsToFailCriterion(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.CommentsToFailCriterion(i)
                             for i in commentsToFailCriterion
                         ]
 
@@ -1737,9 +1553,7 @@ class SISDevice(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1757,17 +1571,11 @@ class SISDevice(aas.Submodel):
             def __init__(
                 self,
                 testCoverage: Union[xsd.Decimal, TestCoverage],
-                minimumTestIntervalOperatorSpecification: Union[
-                    int, MinimumTestIntervalOperatorSpecification
-                ],
-                maximumTestIntervalForSILCompliance: Union[
-                    int, MaximumTestIntervalForSILCompliance
-                ],
+                minimumTestIntervalOperatorSpecification: Union[int, MinimumTestIntervalOperatorSpecification],
+                maximumTestIntervalForSILCompliance: Union[int, MaximumTestIntervalForSILCompliance],
                 failCriterion: Iterable[FailCriterion],
                 testProcedure: Optional[Iterable[TestProcedure]] = None,
-                requirementsForTesting: Optional[
-                    Iterable[Union[str, RequirementsForTesting]]
-                ] = None,
+                requirementsForTesting: Optional[Iterable[Union[str, RequirementsForTesting]]] = None,
                 id_short: Optional[str] = r"ProofTest",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -1775,8 +1583,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/ProofTest/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/ProofTest/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -1784,20 +1591,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"proof test"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"proof test"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1807,23 +1608,16 @@ class SISDevice(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if testCoverage is not None and not isinstance(
-                    testCoverage, aas.SubmodelElement
-                ):
+                if testCoverage is not None and not isinstance(testCoverage, aas.SubmodelElement):
                     testCoverage = self.TestCoverage(testCoverage)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    minimumTestIntervalOperatorSpecification is not None
-                    and not isinstance(
-                        minimumTestIntervalOperatorSpecification, aas.SubmodelElement
-                    )
+                if minimumTestIntervalOperatorSpecification is not None and not isinstance(
+                    minimumTestIntervalOperatorSpecification, aas.SubmodelElement
                 ):
-                    minimumTestIntervalOperatorSpecification = (
-                        self.MinimumTestIntervalOperatorSpecification(
-                            minimumTestIntervalOperatorSpecification
-                        )
+                    minimumTestIntervalOperatorSpecification = self.MinimumTestIntervalOperatorSpecification(
+                        minimumTestIntervalOperatorSpecification
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1831,10 +1625,8 @@ class SISDevice(aas.Submodel):
                 if maximumTestIntervalForSILCompliance is not None and not isinstance(
                     maximumTestIntervalForSILCompliance, aas.SubmodelElement
                 ):
-                    maximumTestIntervalForSILCompliance = (
-                        self.MaximumTestIntervalForSILCompliance(
-                            maximumTestIntervalForSILCompliance
-                        )
+                    maximumTestIntervalForSILCompliance = self.MaximumTestIntervalForSILCompliance(
+                        maximumTestIntervalForSILCompliance
                     )
 
                 # A str would be split into its characters
@@ -1843,18 +1635,12 @@ class SISDevice(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(requirementsForTesting, str):
-                    raise TypeError(
-                        "requirementsForTesting takes several elements, got a str"
-                    )
+                    raise TypeError("requirementsForTesting takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if requirementsForTesting:
                     requirementsForTesting = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.RequirementsForTesting(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.RequirementsForTesting(i)
                         for i in requirementsForTesting
                     ]
 
@@ -1882,9 +1668,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1924,15 +1708,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"test coverage"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"test coverage"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1975,9 +1755,7 @@ class SISDevice(aas.Submodel):
                 def __init__(
                     self,
                     value: int,
-                    id_short: Optional[
-                        str
-                    ] = r"MinimumTestIntervalOperatorSpecification",
+                    id_short: Optional[str] = r"MinimumTestIntervalOperatorSpecification",
                     value_type: aas.DataTypeDefXsd = int,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -1995,16 +1773,12 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"minimum test interval operator specification"
-                            }
+                            dict_={r"en": r"minimum test interval operator specification"}
                         )
 
                     if description is None:
@@ -2066,9 +1840,7 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -2134,15 +1906,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"test procedure"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"test procedure"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -2194,21 +1962,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"fail criterion failure mode"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"fail criterion failure mode"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -2255,9 +2017,7 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -2267,9 +2027,7 @@ class SISDevice(aas.Submodel):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -2298,9 +2056,7 @@ class SISDevice(aas.Submodel):
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[
-                            str
-                        ] = r"NumericFailCriterionDescriptionOfMeasurement",
+                        id_short: Optional[str] = r"NumericFailCriterionDescriptionOfMeasurement",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2318,23 +2074,17 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"numeric fail criterion description of measurement"
-                                }
+                                dict_={r"en": r"numeric fail criterion description of measurement"}
                             )
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -2381,21 +2131,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"numeric fail criterion value"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"numeric fail criterion value"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -2442,15 +2186,11 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"unit of measure"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"unit of measure"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -2503,21 +2243,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"numeric fail criterion operator"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"numeric fail criterion operator"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -2579,21 +2313,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"comments to fail criterion"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"comments to fail criterion"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -2620,22 +2348,14 @@ class SISDevice(aas.Submodel):
                 def __init__(
                     self,
                     failCriterionFailureMode: Union[str, FailCriterionFailureMode],
-                    booleanFailCriterionDescription: Optional[
-                        Union[str, BooleanFailCriterionDescription]
-                    ] = None,
+                    booleanFailCriterionDescription: Optional[Union[str, BooleanFailCriterionDescription]] = None,
                     numericFailCriterionDescriptionOfMeasurement: Optional[
                         Union[str, NumericFailCriterionDescriptionOfMeasurement]
                     ] = None,
-                    numericFailCriterionValue: Optional[
-                        Union[xsd.Decimal, NumericFailCriterionValue]
-                    ] = None,
+                    numericFailCriterionValue: Optional[Union[xsd.Decimal, NumericFailCriterionValue]] = None,
                     unitOfMeasure: Optional[Union[str, UnitOfMeasure]] = None,
-                    numericFailCriterionComparison: Optional[
-                        Union[str, NumericFailCriterionComparison]
-                    ] = None,
-                    commentsToFailCriterion: Optional[
-                        Iterable[Union[str, CommentsToFailCriterion]]
-                    ] = None,
+                    numericFailCriterionComparison: Optional[Union[str, NumericFailCriterionComparison]] = None,
+                    commentsToFailCriterion: Optional[Iterable[Union[str, CommentsToFailCriterion]]] = None,
                     id_short: Optional[str] = r"FailCriterion",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -2652,15 +2372,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"fail criterion"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"fail criterion"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -2678,29 +2394,21 @@ class SISDevice(aas.Submodel):
                     if failCriterionFailureMode is not None and not isinstance(
                         failCriterionFailureMode, aas.SubmodelElement
                     ):
-                        failCriterionFailureMode = self.FailCriterionFailureMode(
-                            failCriterionFailureMode
-                        )
+                        failCriterionFailureMode = self.FailCriterionFailureMode(failCriterionFailureMode)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if booleanFailCriterionDescription is not None and not isinstance(
                         booleanFailCriterionDescription, aas.SubmodelElement
                     ):
-                        booleanFailCriterionDescription = (
-                            self.BooleanFailCriterionDescription(
-                                booleanFailCriterionDescription
-                            )
+                        booleanFailCriterionDescription = self.BooleanFailCriterionDescription(
+                            booleanFailCriterionDescription
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if (
-                        numericFailCriterionDescriptionOfMeasurement is not None
-                        and not isinstance(
-                            numericFailCriterionDescriptionOfMeasurement,
-                            aas.SubmodelElement,
-                        )
+                    if numericFailCriterionDescriptionOfMeasurement is not None and not isinstance(
+                        numericFailCriterionDescriptionOfMeasurement, aas.SubmodelElement
                     ):
                         numericFailCriterionDescriptionOfMeasurement = (
                             self.NumericFailCriterionDescriptionOfMeasurement(
@@ -2713,15 +2421,11 @@ class SISDevice(aas.Submodel):
                     if numericFailCriterionValue is not None and not isinstance(
                         numericFailCriterionValue, aas.SubmodelElement
                     ):
-                        numericFailCriterionValue = self.NumericFailCriterionValue(
-                            numericFailCriterionValue
-                        )
+                        numericFailCriterionValue = self.NumericFailCriterionValue(numericFailCriterionValue)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if unitOfMeasure is not None and not isinstance(
-                        unitOfMeasure, aas.SubmodelElement
-                    ):
+                    if unitOfMeasure is not None and not isinstance(unitOfMeasure, aas.SubmodelElement):
                         unitOfMeasure = self.UnitOfMeasure(unitOfMeasure)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -2729,26 +2433,18 @@ class SISDevice(aas.Submodel):
                     if numericFailCriterionComparison is not None and not isinstance(
                         numericFailCriterionComparison, aas.SubmodelElement
                     ):
-                        numericFailCriterionComparison = (
-                            self.NumericFailCriterionComparison(
-                                numericFailCriterionComparison
-                            )
+                        numericFailCriterionComparison = self.NumericFailCriterionComparison(
+                            numericFailCriterionComparison
                         )
 
                     # A str would be split into its characters
                     if isinstance(commentsToFailCriterion, str):
-                        raise TypeError(
-                            "commentsToFailCriterion takes several elements, got a str"
-                        )
+                        raise TypeError("commentsToFailCriterion takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if commentsToFailCriterion:
                         commentsToFailCriterion = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.CommentsToFailCriterion(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.CommentsToFailCriterion(i)
                             for i in commentsToFailCriterion
                         ]
 
@@ -2773,9 +2469,7 @@ class SISDevice(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2793,12 +2487,8 @@ class SISDevice(aas.Submodel):
             def __init__(
                 self,
                 testCoverage: Union[xsd.Decimal, TestCoverage],
-                minimumTestIntervalOperatorSpecification: Union[
-                    int, MinimumTestIntervalOperatorSpecification
-                ],
-                maximumTestIntervalForSILCompliance: Union[
-                    int, MaximumTestIntervalForSILCompliance
-                ],
+                minimumTestIntervalOperatorSpecification: Union[int, MinimumTestIntervalOperatorSpecification],
+                maximumTestIntervalForSILCompliance: Union[int, MaximumTestIntervalForSILCompliance],
                 failCriterion: Iterable[FailCriterion],
                 testProcedure: Optional[Iterable[TestProcedure]] = None,
                 id_short: Optional[str] = r"PartialStrokeTest",
@@ -2817,20 +2507,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"partial stroke test"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"partial stroke test"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2840,23 +2524,16 @@ class SISDevice(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if testCoverage is not None and not isinstance(
-                    testCoverage, aas.SubmodelElement
-                ):
+                if testCoverage is not None and not isinstance(testCoverage, aas.SubmodelElement):
                     testCoverage = self.TestCoverage(testCoverage)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    minimumTestIntervalOperatorSpecification is not None
-                    and not isinstance(
-                        minimumTestIntervalOperatorSpecification, aas.SubmodelElement
-                    )
+                if minimumTestIntervalOperatorSpecification is not None and not isinstance(
+                    minimumTestIntervalOperatorSpecification, aas.SubmodelElement
                 ):
-                    minimumTestIntervalOperatorSpecification = (
-                        self.MinimumTestIntervalOperatorSpecification(
-                            minimumTestIntervalOperatorSpecification
-                        )
+                    minimumTestIntervalOperatorSpecification = self.MinimumTestIntervalOperatorSpecification(
+                        minimumTestIntervalOperatorSpecification
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -2864,10 +2541,8 @@ class SISDevice(aas.Submodel):
                 if maximumTestIntervalForSILCompliance is not None and not isinstance(
                     maximumTestIntervalForSILCompliance, aas.SubmodelElement
                 ):
-                    maximumTestIntervalForSILCompliance = (
-                        self.MaximumTestIntervalForSILCompliance(
-                            maximumTestIntervalForSILCompliance
-                        )
+                    maximumTestIntervalForSILCompliance = self.MaximumTestIntervalForSILCompliance(
+                        maximumTestIntervalForSILCompliance
                     )
 
                 # A str would be split into its characters
@@ -2897,9 +2572,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2937,9 +2610,7 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2948,9 +2619,7 @@ class SISDevice(aas.Submodel):
                     )
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = (
@@ -3006,9 +2675,7 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -3017,9 +2684,7 @@ class SISDevice(aas.Submodel):
                     )
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = (
@@ -3075,20 +2740,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"maximum permitted repair time"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"maximum permitted repair time"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = (
@@ -3146,15 +2805,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"maximum allowable bypass time"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"maximum allowable bypass time"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -3215,9 +2870,7 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -3274,15 +2927,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"reference to bypass group"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to bypass group"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -3312,15 +2961,9 @@ class SISDevice(aas.Submodel):
 
             def __init__(
                 self,
-                maximumAllowableBypassTime: Union[
-                    xsd.Float, MaximumAllowableBypassTime
-                ],
-                bypassAdministrativeControlIsRequired: Union[
-                    bool, BypassAdministrativeControlIsRequired
-                ],
-                referenceToBypassGroup: Optional[
-                    Iterable[Union[str, ReferenceToBypassGroup]]
-                ] = None,
+                maximumAllowableBypassTime: Union[xsd.Float, MaximumAllowableBypassTime],
+                bypassAdministrativeControlIsRequired: Union[bool, BypassAdministrativeControlIsRequired],
+                referenceToBypassGroup: Optional[Iterable[Union[str, ReferenceToBypassGroup]]] = None,
                 id_short: Optional[str] = r"BypassRequirements",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -3337,20 +2980,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"bypass requirements"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"bypass requirements"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3363,38 +3000,25 @@ class SISDevice(aas.Submodel):
                 if maximumAllowableBypassTime is not None and not isinstance(
                     maximumAllowableBypassTime, aas.SubmodelElement
                 ):
-                    maximumAllowableBypassTime = self.MaximumAllowableBypassTime(
-                        maximumAllowableBypassTime
-                    )
+                    maximumAllowableBypassTime = self.MaximumAllowableBypassTime(maximumAllowableBypassTime)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    bypassAdministrativeControlIsRequired is not None
-                    and not isinstance(
-                        bypassAdministrativeControlIsRequired, aas.SubmodelElement
-                    )
+                if bypassAdministrativeControlIsRequired is not None and not isinstance(
+                    bypassAdministrativeControlIsRequired, aas.SubmodelElement
                 ):
-                    bypassAdministrativeControlIsRequired = (
-                        self.BypassAdministrativeControlIsRequired(
-                            bypassAdministrativeControlIsRequired
-                        )
+                    bypassAdministrativeControlIsRequired = self.BypassAdministrativeControlIsRequired(
+                        bypassAdministrativeControlIsRequired
                     )
 
                 # A str would be split into its characters
                 if isinstance(referenceToBypassGroup, str):
-                    raise TypeError(
-                        "referenceToBypassGroup takes several elements, got a str"
-                    )
+                    raise TypeError("referenceToBypassGroup takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if referenceToBypassGroup:
                     referenceToBypassGroup = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ReferenceToBypassGroup(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.ReferenceToBypassGroup(i)
                         for i in referenceToBypassGroup
                     ]
 
@@ -3415,9 +3039,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3457,20 +3079,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"trip energy mode"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"trip energy mode"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = (
@@ -3531,20 +3147,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"requirement if energized to trip"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"requirement if energized to trip"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3581,8 +3191,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/TripAction/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/TripAction/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -3590,20 +3199,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"trip action"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"trip action"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3649,20 +3252,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"survivability requirement"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"survivability requirement"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3708,20 +3305,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"diagnostic required"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"diagnostic required"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3749,9 +3340,7 @@ class SISDevice(aas.Submodel):
             def __init__(
                 self,
                 value: str,
-                id_short: Optional[
-                    str
-                ] = r"AdditionalDiagnosticRequirementForImplementation",
+                id_short: Optional[str] = r"AdditionalDiagnosticRequirementForImplementation",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3769,22 +3358,16 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"additional diagnostic requirement for implementation"
-                        }
+                        dict_={r"en": r"additional diagnostic requirement for implementation"}
                     )
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3830,20 +3413,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"time delay of action"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"time delay of action"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = (
@@ -3901,20 +3478,14 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"minimum allowable temperature"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"minimum allowable temperature"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"environmental extreme value"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"environmental extreme value"})
 
                     if qualifier is None:
                         qualifier = (
@@ -3970,20 +3541,14 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"maximum allowable temperature"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"maximum allowable temperature"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"environmental extreme value"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"environmental extreme value"})
 
                     if qualifier is None:
                         qualifier = (
@@ -4039,15 +3604,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"minimum allowable humidity"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"minimum allowable humidity"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -4108,15 +3669,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"maximum allowable humidity"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"maximum allowable humidity"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -4177,15 +3734,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"contaminant requirement"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"contaminant requirement"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -4236,15 +3789,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"grounding requirement"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"grounding requirement"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -4295,15 +3844,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Maximum electromagnetic interference"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Maximum electromagnetic interference"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -4364,20 +3909,14 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"mechanical shock resistance"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"mechanical shock resistance"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"environmental extreme value"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"environmental extreme value"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4423,20 +3962,14 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"vibration restistance"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"vibration restistance"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"environmental extreme value"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"environmental extreme value"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4482,20 +4015,14 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"protection against static discharge"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"protection against static discharge"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"environmental extreme value"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"environmental extreme value"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4520,14 +4047,7 @@ class SISDevice(aas.Submodel):
 
             class ATEXZone(aas.Property):
 
-                ALLOWED_VALUES = (
-                    r"Zone 0",
-                    r"Zone 1",
-                    r"Zone 2",
-                    r"Zone 20",
-                    r"Zone 21",
-                    r"Zone 22",
-                )
+                ALLOWED_VALUES = (r"Zone 0", r"Zone 1", r"Zone 2", r"Zone 20", r"Zone 21", r"Zone 22")
 
                 def __init__(
                     self,
@@ -4541,8 +4061,7 @@ class SISDevice(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/cds/ATEXZone/1",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/ATEXZone/1"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -4550,15 +4069,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"ATEX zone"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"ATEX zone"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -4615,8 +4130,7 @@ class SISDevice(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/cds/GasGroup/1",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/GasGroup/1"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -4624,20 +4138,14 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"gas group/explosion group"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"gas group/explosion group"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"environmental extreme value"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"environmental extreme value"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4683,20 +4191,14 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"temperature class"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"temperature class"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"environmental extreme value"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"environmental extreme value"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4742,15 +4244,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"flooding requirement"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"flooding requirement"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -4801,15 +4299,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"lightning exposure requirement"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"lightning exposure requirement"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -4860,15 +4354,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"other environmental requirement"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"other environmental requirement"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -4898,24 +4388,12 @@ class SISDevice(aas.Submodel):
 
             def __init__(
                 self,
-                minimumAllowableTemperature: Optional[
-                    Union[int, MinimumAllowableTemperature]
-                ] = None,
-                maximumAllowableTemperature: Optional[
-                    Union[int, MaximumAllowableTemperature]
-                ] = None,
-                minimumAllowableHumidity: Optional[
-                    Union[int, MinimumAllowableHumidity]
-                ] = None,
-                maximumAllowableHumidity: Optional[
-                    Union[int, MaximumAllowableHumidity]
-                ] = None,
-                contaminantRequirement: Optional[
-                    Iterable[Union[str, ContaminantRequirement]]
-                ] = None,
-                groundingRequirement: Optional[
-                    Iterable[Union[str, GroundingRequirement]]
-                ] = None,
+                minimumAllowableTemperature: Optional[Union[int, MinimumAllowableTemperature]] = None,
+                maximumAllowableTemperature: Optional[Union[int, MaximumAllowableTemperature]] = None,
+                minimumAllowableHumidity: Optional[Union[int, MinimumAllowableHumidity]] = None,
+                maximumAllowableHumidity: Optional[Union[int, MaximumAllowableHumidity]] = None,
+                contaminantRequirement: Optional[Iterable[Union[str, ContaminantRequirement]]] = None,
+                groundingRequirement: Optional[Iterable[Union[str, GroundingRequirement]]] = None,
                 maximumElectromagneticInterference: Optional[
                     Union[xsd.Decimal, MaximumElectromagneticInterference]
                 ] = None,
@@ -4927,15 +4405,9 @@ class SISDevice(aas.Submodel):
                 aTEXZone: Optional[Union[str, ATEXZone]] = None,
                 gasGroup: Optional[Union[str, GasGroup]] = None,
                 temperatureClass: Optional[Union[str, TemperatureClass]] = None,
-                floodingRequirement: Optional[
-                    Iterable[Union[str, FloodingRequirement]]
-                ] = None,
-                lightningExposureRequirement: Optional[
-                    Iterable[Union[str, LightningExposureRequirement]]
-                ] = None,
-                otherEnvironmentalRequirement: Optional[
-                    Iterable[Union[str, OtherEnvironmentalRequirement]]
-                ] = None,
+                floodingRequirement: Optional[Iterable[Union[str, FloodingRequirement]]] = None,
+                lightningExposureRequirement: Optional[Iterable[Union[str, LightningExposureRequirement]]] = None,
+                otherEnvironmentalRequirement: Optional[Iterable[Union[str, OtherEnvironmentalRequirement]]] = None,
                 id_short: Optional[str] = r"EnvironmentalExtremes",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -4952,20 +4424,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Limiting environmental conditions"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Limiting environmental conditions"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"environmental extreme value"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"environmental extreme value"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -4978,68 +4444,48 @@ class SISDevice(aas.Submodel):
                 if minimumAllowableTemperature is not None and not isinstance(
                     minimumAllowableTemperature, aas.SubmodelElement
                 ):
-                    minimumAllowableTemperature = self.MinimumAllowableTemperature(
-                        minimumAllowableTemperature
-                    )
+                    minimumAllowableTemperature = self.MinimumAllowableTemperature(minimumAllowableTemperature)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if maximumAllowableTemperature is not None and not isinstance(
                     maximumAllowableTemperature, aas.SubmodelElement
                 ):
-                    maximumAllowableTemperature = self.MaximumAllowableTemperature(
-                        maximumAllowableTemperature
-                    )
+                    maximumAllowableTemperature = self.MaximumAllowableTemperature(maximumAllowableTemperature)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if minimumAllowableHumidity is not None and not isinstance(
                     minimumAllowableHumidity, aas.SubmodelElement
                 ):
-                    minimumAllowableHumidity = self.MinimumAllowableHumidity(
-                        minimumAllowableHumidity
-                    )
+                    minimumAllowableHumidity = self.MinimumAllowableHumidity(minimumAllowableHumidity)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if maximumAllowableHumidity is not None and not isinstance(
                     maximumAllowableHumidity, aas.SubmodelElement
                 ):
-                    maximumAllowableHumidity = self.MaximumAllowableHumidity(
-                        maximumAllowableHumidity
-                    )
+                    maximumAllowableHumidity = self.MaximumAllowableHumidity(maximumAllowableHumidity)
 
                 # A str would be split into its characters
                 if isinstance(contaminantRequirement, str):
-                    raise TypeError(
-                        "contaminantRequirement takes several elements, got a str"
-                    )
+                    raise TypeError("contaminantRequirement takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if contaminantRequirement:
                     contaminantRequirement = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ContaminantRequirement(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.ContaminantRequirement(i)
                         for i in contaminantRequirement
                     ]
 
                 # A str would be split into its characters
                 if isinstance(groundingRequirement, str):
-                    raise TypeError(
-                        "groundingRequirement takes several elements, got a str"
-                    )
+                    raise TypeError("groundingRequirement takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if groundingRequirement:
                     groundingRequirement = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.GroundingRequirement(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.GroundingRequirement(i)
                         for i in groundingRequirement
                     ]
 
@@ -5048,112 +4494,76 @@ class SISDevice(aas.Submodel):
                 if maximumElectromagneticInterference is not None and not isinstance(
                     maximumElectromagneticInterference, aas.SubmodelElement
                 ):
-                    maximumElectromagneticInterference = (
-                        self.MaximumElectromagneticInterference(
-                            maximumElectromagneticInterference
-                        )
+                    maximumElectromagneticInterference = self.MaximumElectromagneticInterference(
+                        maximumElectromagneticInterference
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if shockResistance is not None and not isinstance(
-                    shockResistance, aas.SubmodelElement
-                ):
+                if shockResistance is not None and not isinstance(shockResistance, aas.SubmodelElement):
                     shockResistance = self.ShockResistance(shockResistance)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if vibrationResistance is not None and not isinstance(
-                    vibrationResistance, aas.SubmodelElement
-                ):
+                if vibrationResistance is not None and not isinstance(vibrationResistance, aas.SubmodelElement):
                     vibrationResistance = self.VibrationResistance(vibrationResistance)
 
                 # A str would be split into its characters
                 if isinstance(electrostaticDischargeProtection, str):
-                    raise TypeError(
-                        "electrostaticDischargeProtection takes several elements, got a str"
-                    )
+                    raise TypeError("electrostaticDischargeProtection takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if electrostaticDischargeProtection:
                     electrostaticDischargeProtection = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ElectrostaticDischargeProtection(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.ElectrostaticDischargeProtection(i)
                         for i in electrostaticDischargeProtection
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if aTEXZone is not None and not isinstance(
-                    aTEXZone, aas.SubmodelElement
-                ):
+                if aTEXZone is not None and not isinstance(aTEXZone, aas.SubmodelElement):
                     aTEXZone = self.ATEXZone(aTEXZone)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if gasGroup is not None and not isinstance(
-                    gasGroup, aas.SubmodelElement
-                ):
+                if gasGroup is not None and not isinstance(gasGroup, aas.SubmodelElement):
                     gasGroup = self.GasGroup(gasGroup)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if temperatureClass is not None and not isinstance(
-                    temperatureClass, aas.SubmodelElement
-                ):
+                if temperatureClass is not None and not isinstance(temperatureClass, aas.SubmodelElement):
                     temperatureClass = self.TemperatureClass(temperatureClass)
 
                 # A str would be split into its characters
                 if isinstance(floodingRequirement, str):
-                    raise TypeError(
-                        "floodingRequirement takes several elements, got a str"
-                    )
+                    raise TypeError("floodingRequirement takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if floodingRequirement:
                     floodingRequirement = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.FloodingRequirement(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.FloodingRequirement(i)
                         for i in floodingRequirement
                     ]
 
                 # A str would be split into its characters
                 if isinstance(lightningExposureRequirement, str):
-                    raise TypeError(
-                        "lightningExposureRequirement takes several elements, got a str"
-                    )
+                    raise TypeError("lightningExposureRequirement takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if lightningExposureRequirement:
                     lightningExposureRequirement = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.LightningExposureRequirement(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.LightningExposureRequirement(i)
                         for i in lightningExposureRequirement
                     ]
 
                 # A str would be split into its characters
                 if isinstance(otherEnvironmentalRequirement, str):
-                    raise TypeError(
-                        "otherEnvironmentalRequirement takes several elements, got a str"
-                    )
+                    raise TypeError("otherEnvironmentalRequirement takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if otherEnvironmentalRequirement:
                     otherEnvironmentalRequirement = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.OtherEnvironmentalRequirement(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.OtherEnvironmentalRequirement(i)
                         for i in otherEnvironmentalRequirement
                     ]
 
@@ -5187,9 +4597,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5229,15 +4637,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"failure mode abbreviation"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"failure mode abbreviation"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -5288,15 +4692,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"failure mode name"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"failure mode name"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -5351,21 +4751,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"failure philosophy"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"failure philosophy"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -5425,21 +4819,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"reference to alarm"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to alarm"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -5464,9 +4852,7 @@ class SISDevice(aas.Submodel):
                 def __init__(
                     self,
                     failurePhilosophy: Union[str, FailurePhilosophy],
-                    referenceToAlarm: Optional[
-                        Iterable[Union[aas.Reference, ReferenceToAlarm]]
-                    ] = None,
+                    referenceToAlarm: Optional[Iterable[Union[aas.Reference, ReferenceToAlarm]]] = None,
                     id_short: Optional[str] = r"SafeAutomaticResponse",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -5483,15 +4869,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"safe automatic response"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"safe automatic response"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -5506,25 +4888,17 @@ class SISDevice(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if failurePhilosophy is not None and not isinstance(
-                        failurePhilosophy, aas.SubmodelElement
-                    ):
+                    if failurePhilosophy is not None and not isinstance(failurePhilosophy, aas.SubmodelElement):
                         failurePhilosophy = self.FailurePhilosophy(failurePhilosophy)
 
                     # A str would be split into its characters
                     if isinstance(referenceToAlarm, str):
-                        raise TypeError(
-                            "referenceToAlarm takes several elements, got a str"
-                        )
+                        raise TypeError("referenceToAlarm takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if referenceToAlarm:
                         referenceToAlarm = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ReferenceToAlarm(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.ReferenceToAlarm(i)
                             for i in referenceToAlarm
                         ]
 
@@ -5541,9 +4915,7 @@ class SISDevice(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5583,9 +4955,7 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -5595,9 +4965,7 @@ class SISDevice(aas.Submodel):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -5643,21 +5011,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"URL of document"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"URL of document"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"gives information about relevant document(s)"
-                                }
+                                dict_={r"en": r"gives information about relevant document(s)"}
                             )
 
                         if qualifier is None:
@@ -5682,9 +5044,7 @@ class SISDevice(aas.Submodel):
 
                 def __init__(
                     self,
-                    manualResponseActionDescription: Union[
-                        str, ManualResponseActionDescription
-                    ],
+                    manualResponseActionDescription: Union[str, ManualResponseActionDescription],
                     document: Optional[Iterable[Document]] = None,
                     id_short: Optional[str] = r"ManualResponse",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -5702,15 +5062,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"manual response"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"manual response"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -5728,10 +5084,8 @@ class SISDevice(aas.Submodel):
                     if manualResponseActionDescription is not None and not isinstance(
                         manualResponseActionDescription, aas.SubmodelElement
                     ):
-                        manualResponseActionDescription = (
-                            self.ManualResponseActionDescription(
-                                manualResponseActionDescription
-                            )
+                        manualResponseActionDescription = self.ManualResponseActionDescription(
+                            manualResponseActionDescription
                         )
 
                     # A str would be split into its characters
@@ -5751,9 +5105,7 @@ class SISDevice(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5790,20 +5142,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"failure mode responses"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"failure mode responses"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -5813,28 +5159,17 @@ class SISDevice(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if failureModeAbbreviation is not None and not isinstance(
-                    failureModeAbbreviation, aas.SubmodelElement
-                ):
-                    failureModeAbbreviation = self.FailureModeAbbreviation(
-                        failureModeAbbreviation
-                    )
+                if failureModeAbbreviation is not None and not isinstance(failureModeAbbreviation, aas.SubmodelElement):
+                    failureModeAbbreviation = self.FailureModeAbbreviation(failureModeAbbreviation)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if failureModeName is not None and not isinstance(
-                    failureModeName, aas.SubmodelElement
-                ):
+                if failureModeName is not None and not isinstance(failureModeName, aas.SubmodelElement):
                     failureModeName = self.FailureModeName(failureModeName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    failureModeAbbreviation,
-                    failureModeName,
-                    safeAutomaticResponse,
-                    manualResponse,
-                ]:
+                for se_arg in [failureModeAbbreviation, failureModeName, safeAutomaticResponse, manualResponse]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -5845,9 +5180,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5889,21 +5222,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"unit of measure for trip point"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"unit of measure for trip point"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"gives information about the device diagnostics"
-                                }
+                                dict_={r"en": r"gives information about the device diagnostics"}
                             )
 
                         if qualifier is None:
@@ -5950,9 +5277,7 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -5962,9 +5287,7 @@ class SISDevice(aas.Submodel):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -6011,9 +5334,7 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -6023,9 +5344,7 @@ class SISDevice(aas.Submodel):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -6072,21 +5391,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"accuracy expressed as percentage"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"accuracy expressed as percentage"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -6133,21 +5446,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"substitute value"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"substitute value"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -6194,15 +5501,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"process measurement"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"process measurement"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -6217,48 +5520,32 @@ class SISDevice(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if unitOfMeasure is not None and not isinstance(
-                        unitOfMeasure, aas.SubmodelElement
-                    ):
+                    if unitOfMeasure is not None and not isinstance(unitOfMeasure, aas.SubmodelElement):
                         unitOfMeasure = self.UnitOfMeasure(unitOfMeasure)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if rangeMin is not None and not isinstance(
-                        rangeMin, aas.SubmodelElement
-                    ):
+                    if rangeMin is not None and not isinstance(rangeMin, aas.SubmodelElement):
                         rangeMin = self.RangeMin(rangeMin)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if rangeMax is not None and not isinstance(
-                        rangeMax, aas.SubmodelElement
-                    ):
+                    if rangeMax is not None and not isinstance(rangeMax, aas.SubmodelElement):
                         rangeMax = self.RangeMax(rangeMax)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if accuracy is not None and not isinstance(
-                        accuracy, aas.SubmodelElement
-                    ):
+                    if accuracy is not None and not isinstance(accuracy, aas.SubmodelElement):
                         accuracy = self.Accuracy(accuracy)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if substistuteValue is not None and not isinstance(
-                        substistuteValue, aas.SubmodelElement
-                    ):
+                    if substistuteValue is not None and not isinstance(substistuteValue, aas.SubmodelElement):
                         substistuteValue = self.SubstistuteValue(substistuteValue)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        unitOfMeasure,
-                        rangeMin,
-                        rangeMax,
-                        accuracy,
-                        substistuteValue,
-                    ]:
+                    for se_arg in [unitOfMeasure, rangeMin, rangeMax, accuracy, substistuteValue]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -6269,9 +5556,7 @@ class SISDevice(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6311,21 +5596,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"designation of trip point"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"designation of trip point"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"gives information about the device diagnostics"
-                                }
+                                dict_={r"en": r"gives information about the device diagnostics"}
                             )
 
                         if qualifier is None:
@@ -6372,21 +5651,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"value of trip point"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"value of trip point"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"gives information about the device diagnostics"
-                                }
+                                dict_={r"en": r"gives information about the device diagnostics"}
                             )
 
                         if qualifier is None:
@@ -6433,21 +5706,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"hysteresis of trip value"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"hysteresis of trip value"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"gives information about the device diagnostics"
-                                }
+                                dict_={r"en": r"gives information about the device diagnostics"}
                             )
 
                         if qualifier is None:
@@ -6504,21 +5771,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"trip dead time"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"trip dead time"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -6563,21 +5824,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"reference to alarm"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to alarm"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -6603,13 +5858,9 @@ class SISDevice(aas.Submodel):
                     self,
                     tripPointName: Union[str, TripPointName],
                     tripPointValue: Union[xsd.Decimal, TripPointValue],
-                    hysteresisOfTripPoint: Optional[
-                        Union[xsd.Decimal, HysteresisOfTripPoint]
-                    ] = None,
+                    hysteresisOfTripPoint: Optional[Union[xsd.Decimal, HysteresisOfTripPoint]] = None,
                     tripDeadTime: Optional[Union[xsd.Decimal, TripDeadTime]] = None,
-                    referenceToAlarm: Optional[
-                        Union[aas.Reference, ReferenceToAlarm]
-                    ] = None,
+                    referenceToAlarm: Optional[Union[aas.Reference, ReferenceToAlarm]] = None,
                     id_short: Optional[str] = r"TripPoint",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -6626,21 +5877,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Trip point"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Trip point"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about the device diagnostics"
-                            }
+                            dict_={r"en": r"gives information about the device diagnostics"}
                         )
 
                     if qualifier is None:
@@ -6651,39 +5896,27 @@ class SISDevice(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tripPointName is not None and not isinstance(
-                        tripPointName, aas.SubmodelElement
-                    ):
+                    if tripPointName is not None and not isinstance(tripPointName, aas.SubmodelElement):
                         tripPointName = self.TripPointName(tripPointName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tripPointValue is not None and not isinstance(
-                        tripPointValue, aas.SubmodelElement
-                    ):
+                    if tripPointValue is not None and not isinstance(tripPointValue, aas.SubmodelElement):
                         tripPointValue = self.TripPointValue(tripPointValue)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if hysteresisOfTripPoint is not None and not isinstance(
-                        hysteresisOfTripPoint, aas.SubmodelElement
-                    ):
-                        hysteresisOfTripPoint = self.HysteresisOfTripPoint(
-                            hysteresisOfTripPoint
-                        )
+                    if hysteresisOfTripPoint is not None and not isinstance(hysteresisOfTripPoint, aas.SubmodelElement):
+                        hysteresisOfTripPoint = self.HysteresisOfTripPoint(hysteresisOfTripPoint)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tripDeadTime is not None and not isinstance(
-                        tripDeadTime, aas.SubmodelElement
-                    ):
+                    if tripDeadTime is not None and not isinstance(tripDeadTime, aas.SubmodelElement):
                         tripDeadTime = self.TripDeadTime(tripDeadTime)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if referenceToAlarm is not None and not isinstance(
-                        referenceToAlarm, aas.SubmodelElement
-                    ):
+                    if referenceToAlarm is not None and not isinstance(referenceToAlarm, aas.SubmodelElement):
                         referenceToAlarm = self.ReferenceToAlarm(referenceToAlarm)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -6705,9 +5938,7 @@ class SISDevice(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6747,21 +5978,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"alarm name"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"alarm name"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -6808,21 +6033,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"alarm value"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"alarm value"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -6879,21 +6098,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"alarm type"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"alarm type"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -6955,21 +6168,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"other alarm type"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"other alarm type"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -7016,21 +6223,15 @@ class SISDevice(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"alarm message"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"alarm message"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"SRS requirement(s) according to IEC 61511"
-                                }
+                                dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
                             )
 
                         if qualifier is None:
@@ -7059,9 +6260,7 @@ class SISDevice(aas.Submodel):
                     alarmName: Union[str, AlarmName],
                     alarmValue: Union[xsd.Decimal, AlarmValue],
                     alarmType: Optional[Iterable[Union[str, AlarmType]]] = None,
-                    otherAlarmType: Optional[
-                        Iterable[Union[str, OtherAlarmType]]
-                    ] = None,
+                    otherAlarmType: Optional[Iterable[Union[str, OtherAlarmType]]] = None,
                     alarmMessage: Optional[Union[str, AlarmMessage]] = None,
                     id_short: Optional[str] = r"DiagnosticAlarm",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -7079,15 +6278,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"diagnostic alarm"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"diagnostic alarm"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -7102,16 +6297,12 @@ class SISDevice(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if alarmName is not None and not isinstance(
-                        alarmName, aas.SubmodelElement
-                    ):
+                    if alarmName is not None and not isinstance(alarmName, aas.SubmodelElement):
                         alarmName = self.AlarmName(alarmName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if alarmValue is not None and not isinstance(
-                        alarmValue, aas.SubmodelElement
-                    ):
+                    if alarmValue is not None and not isinstance(alarmValue, aas.SubmodelElement):
                         alarmValue = self.AlarmValue(alarmValue)
 
                     # A str would be split into its characters
@@ -7120,48 +6311,26 @@ class SISDevice(aas.Submodel):
 
                     # Build submodel elements from raw values passed in the argument
                     if alarmType:
-                        alarmType = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.AlarmType(i)
-                            )
-                            for i in alarmType
-                        ]
+                        alarmType = [i if isinstance(i, aas.SubmodelElement) else self.AlarmType(i) for i in alarmType]
 
                     # A str would be split into its characters
                     if isinstance(otherAlarmType, str):
-                        raise TypeError(
-                            "otherAlarmType takes several elements, got a str"
-                        )
+                        raise TypeError("otherAlarmType takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if otherAlarmType:
                         otherAlarmType = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.OtherAlarmType(i)
-                            )
-                            for i in otherAlarmType
+                            i if isinstance(i, aas.SubmodelElement) else self.OtherAlarmType(i) for i in otherAlarmType
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if alarmMessage is not None and not isinstance(
-                        alarmMessage, aas.SubmodelElement
-                    ):
+                    if alarmMessage is not None and not isinstance(alarmMessage, aas.SubmodelElement):
                         alarmMessage = self.AlarmMessage(alarmMessage)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        alarmName,
-                        alarmValue,
-                        alarmType,
-                        otherAlarmType,
-                        alarmMessage,
-                    ]:
+                    for se_arg in [alarmName, alarmValue, alarmType, otherAlarmType, alarmMessage]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -7172,9 +6341,7 @@ class SISDevice(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -7212,9 +6379,7 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -7271,15 +6436,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"measurement comparison is required"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"measurement comparison is required"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -7312,12 +6473,8 @@ class SISDevice(aas.Submodel):
                 processMeasurement: Optional[ProcessMeasurement] = None,
                 tripPoint: Optional[Iterable[TripPoint]] = None,
                 diagnosticAlarm: Optional[Iterable[DiagnosticAlarm]] = None,
-                alarmResetAfterShutdownIsRequired: Optional[
-                    Union[bool, AlarmResetAfterShutdownIsRequired]
-                ] = None,
-                measurementComparisonIsRequired: Optional[
-                    Union[bool, MeasurementComparisonIsRequired]
-                ] = None,
+                alarmResetAfterShutdownIsRequired: Optional[Union[bool, AlarmResetAfterShutdownIsRequired]] = None,
+                measurementComparisonIsRequired: Optional[Union[bool, MeasurementComparisonIsRequired]] = None,
                 id_short: Optional[str] = r"InputDevice",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -7325,8 +6482,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/InputDevice/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/InputDevice/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -7334,21 +6490,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"input device"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"input device"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the input device subsystem of the SIF"
-                        }
+                        dict_={r"en": r"gives information about the input device subsystem of the SIF"}
                     )
 
                 if qualifier is None:
@@ -7370,10 +6520,8 @@ class SISDevice(aas.Submodel):
                 if alarmResetAfterShutdownIsRequired is not None and not isinstance(
                     alarmResetAfterShutdownIsRequired, aas.SubmodelElement
                 ):
-                    alarmResetAfterShutdownIsRequired = (
-                        self.AlarmResetAfterShutdownIsRequired(
-                            alarmResetAfterShutdownIsRequired
-                        )
+                    alarmResetAfterShutdownIsRequired = self.AlarmResetAfterShutdownIsRequired(
+                        alarmResetAfterShutdownIsRequired
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -7381,10 +6529,8 @@ class SISDevice(aas.Submodel):
                 if measurementComparisonIsRequired is not None and not isinstance(
                     measurementComparisonIsRequired, aas.SubmodelElement
                 ):
-                    measurementComparisonIsRequired = (
-                        self.MeasurementComparisonIsRequired(
-                            measurementComparisonIsRequired
-                        )
+                    measurementComparisonIsRequired = self.MeasurementComparisonIsRequired(
+                        measurementComparisonIsRequired
                     )
 
                 # Add all passed/initialized submodel elements to a single list
@@ -7406,9 +6552,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -7430,9 +6574,7 @@ class SISDevice(aas.Submodel):
                 def __init__(
                     self,
                     value: bool,
-                    id_short: Optional[
-                        str
-                    ] = r"LogicSolverResetAfterShutdownIsRequired",
+                    id_short: Optional[str] = r"LogicSolverResetAfterShutdownIsRequired",
                     value_type: aas.DataTypeDefXsd = bool,
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -7450,16 +6592,12 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"logic solver reset after shutdown is required"
-                            }
+                            dict_={r"en": r"logic solver reset after shutdown is required"}
                         )
 
                     if description is None:
@@ -7500,8 +6638,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/LogicSolver/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/LogicSolver/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -7509,21 +6646,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"logic solver"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"logic solver"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the logic solver subsystem of the SIF"
-                        }
+                        dict_={r"en": r"gives information about the logic solver subsystem of the SIF"}
                     )
 
                 if qualifier is None:
@@ -7534,16 +6665,11 @@ class SISDevice(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    logicSolverResetAfterShutdownIsRequired is not None
-                    and not isinstance(
-                        logicSolverResetAfterShutdownIsRequired, aas.SubmodelElement
-                    )
+                if logicSolverResetAfterShutdownIsRequired is not None and not isinstance(
+                    logicSolverResetAfterShutdownIsRequired, aas.SubmodelElement
                 ):
-                    logicSolverResetAfterShutdownIsRequired = (
-                        self.LogicSolverResetAfterShutdownIsRequired(
-                            logicSolverResetAfterShutdownIsRequired
-                        )
+                    logicSolverResetAfterShutdownIsRequired = self.LogicSolverResetAfterShutdownIsRequired(
+                        logicSolverResetAfterShutdownIsRequired
                     )
 
                 # Add all passed/initialized submodel elements to a single list
@@ -7559,9 +6685,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -7601,15 +6725,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"maximum allowable leakage rate"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"maximum allowable leakage rate"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -7670,15 +6790,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"tight shutoff is required"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"tight shutoff is required"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -7729,15 +6845,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"manual operation is possible"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"manual operation is possible"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -7790,15 +6902,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"reset after shutdown requirement"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"reset after shutdown requirement"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -7871,21 +6979,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"final element function"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"final element function"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives input to the description of the SIS device"
-                            }
+                            dict_={r"en": r"gives input to the description of the SIS device"}
                         )
 
                     if qualifier is None:
@@ -7927,15 +7029,9 @@ class SISDevice(aas.Submodel):
             def __init__(
                 self,
                 manualOperationIsPossible: Union[bool, ManualOperationIsPossible],
-                maximumAllowableLeakageRate: Optional[
-                    Union[str, MaximumAllowableLeakageRate]
-                ] = None,
-                tightShutOffIsRequired: Optional[
-                    Union[bool, TightShutOffIsRequired]
-                ] = None,
-                resetAfterShutdownRequirement: Optional[
-                    Union[str, ResetAfterShutdownRequirement]
-                ] = None,
+                maximumAllowableLeakageRate: Optional[Union[str, MaximumAllowableLeakageRate]] = None,
+                tightShutOffIsRequired: Optional[Union[bool, TightShutOffIsRequired]] = None,
+                resetAfterShutdownRequirement: Optional[Union[str, ResetAfterShutdownRequirement]] = None,
                 finalElementFunction: Optional[Union[str, FinalElementFunction]] = None,
                 id_short: Optional[str] = r"FinalElement",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -7944,8 +7040,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/FinalElement/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/FinalElement/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -7953,21 +7048,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"final element"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"final element"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the final element subsystem of the SIF"
-                        }
+                        dict_={r"en": r"gives information about the final element subsystem of the SIF"}
                     )
 
                 if qualifier is None:
@@ -7981,45 +7070,31 @@ class SISDevice(aas.Submodel):
                 if maximumAllowableLeakageRate is not None and not isinstance(
                     maximumAllowableLeakageRate, aas.SubmodelElement
                 ):
-                    maximumAllowableLeakageRate = self.MaximumAllowableLeakageRate(
-                        maximumAllowableLeakageRate
-                    )
+                    maximumAllowableLeakageRate = self.MaximumAllowableLeakageRate(maximumAllowableLeakageRate)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if tightShutOffIsRequired is not None and not isinstance(
-                    tightShutOffIsRequired, aas.SubmodelElement
-                ):
-                    tightShutOffIsRequired = self.TightShutOffIsRequired(
-                        tightShutOffIsRequired
-                    )
+                if tightShutOffIsRequired is not None and not isinstance(tightShutOffIsRequired, aas.SubmodelElement):
+                    tightShutOffIsRequired = self.TightShutOffIsRequired(tightShutOffIsRequired)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if manualOperationIsPossible is not None and not isinstance(
                     manualOperationIsPossible, aas.SubmodelElement
                 ):
-                    manualOperationIsPossible = self.ManualOperationIsPossible(
-                        manualOperationIsPossible
-                    )
+                    manualOperationIsPossible = self.ManualOperationIsPossible(manualOperationIsPossible)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if resetAfterShutdownRequirement is not None and not isinstance(
                     resetAfterShutdownRequirement, aas.SubmodelElement
                 ):
-                    resetAfterShutdownRequirement = self.ResetAfterShutdownRequirement(
-                        resetAfterShutdownRequirement
-                    )
+                    resetAfterShutdownRequirement = self.ResetAfterShutdownRequirement(resetAfterShutdownRequirement)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if finalElementFunction is not None and not isinstance(
-                    finalElementFunction, aas.SubmodelElement
-                ):
-                    finalElementFunction = self.FinalElementFunction(
-                        finalElementFunction
-                    )
+                if finalElementFunction is not None and not isinstance(finalElementFunction, aas.SubmodelElement):
+                    finalElementFunction = self.FinalElementFunction(finalElementFunction)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -8040,9 +7115,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -8080,20 +7153,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"shared use is allowed"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"shared use is allowed"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -8137,20 +7204,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"reference to SIF"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to SIF"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -8185,8 +7246,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/UsefulLife/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/UsefulLife/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -8194,20 +7254,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"useful life"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"useful life"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -8232,13 +7286,9 @@ class SISDevice(aas.Submodel):
 
         def __init__(
             self,
-            systematicCapabilityRequirement: Union[
-                str, SystematicCapabilityRequirement
-            ],
+            systematicCapabilityRequirement: Union[str, SystematicCapabilityRequirement],
             proofTest: ProofTest,
-            maximumAllowableSISDeviceResponseTime: Union[
-                xsd.Decimal, MaximumAllowableSISDeviceResponseTime
-            ],
+            maximumAllowableSISDeviceResponseTime: Union[xsd.Decimal, MaximumAllowableSISDeviceResponseTime],
             maximumPermittedRepairTime: Union[xsd.Decimal, MaximumPermittedRepairTime],
             bypassRequirements: BypassRequirements,
             tripEnergyMode: Union[str, TripEnergyMode],
@@ -8252,21 +7302,13 @@ class SISDevice(aas.Submodel):
             minimumAllowableSISDeviceResponseTime: Optional[
                 Union[xsd.Decimal, MinimumAllowableSISDeviceResponseTime]
             ] = None,
-            requirementIfEnergizedToTrip: Optional[
-                Iterable[Union[str, RequirementIfEnergizedToTrip]]
-            ] = None,
-            survivabilityRequirement: Optional[
-                Iterable[Union[str, SurvivabilityRequirement]]
-            ] = None,
-            diagnosticRequired: Optional[
-                Iterable[Union[str, DiagnosticRequired]]
-            ] = None,
+            requirementIfEnergizedToTrip: Optional[Iterable[Union[str, RequirementIfEnergizedToTrip]]] = None,
+            survivabilityRequirement: Optional[Iterable[Union[str, SurvivabilityRequirement]]] = None,
+            diagnosticRequired: Optional[Iterable[Union[str, DiagnosticRequired]]] = None,
             additionalDiagnosticRequirementForImplementation: Optional[
                 Iterable[Union[str, AdditionalDiagnosticRequirementForImplementation]]
             ] = None,
-            timeDelayOfAction: Optional[
-                Iterable[Union[xsd.Decimal, TimeDelayOfAction]]
-            ] = None,
+            timeDelayOfAction: Optional[Iterable[Union[xsd.Decimal, TimeDelayOfAction]]] = None,
             environmentalExtremes: Optional[EnvironmentalExtremes] = None,
             failureModeResponses: Optional[Iterable[FailureModeResponses]] = None,
             inputDevice: Optional[InputDevice] = None,
@@ -8280,8 +7322,7 @@ class SISDevice(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/SRSRequirements/1",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/SRSRequirements/1"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -8289,20 +7330,14 @@ class SISDevice(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"SRS requirements"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"SRS requirements"})
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
             if qualifier is None:
                 qualifier = ()
@@ -8315,9 +7350,7 @@ class SISDevice(aas.Submodel):
             if systematicCapabilityRequirement is not None and not isinstance(
                 systematicCapabilityRequirement, aas.SubmodelElement
             ):
-                systematicCapabilityRequirement = self.SystematicCapabilityRequirement(
-                    systematicCapabilityRequirement
-                )
+                systematicCapabilityRequirement = self.SystematicCapabilityRequirement(systematicCapabilityRequirement)
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -8331,22 +7364,16 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if internalHFTRequirement is not None and not isinstance(
-                internalHFTRequirement, aas.SubmodelElement
-            ):
-                internalHFTRequirement = self.InternalHFTRequirement(
-                    internalHFTRequirement
-                )
+            if internalHFTRequirement is not None and not isinstance(internalHFTRequirement, aas.SubmodelElement):
+                internalHFTRequirement = self.InternalHFTRequirement(internalHFTRequirement)
 
             # Build a submodel element if a raw value was passed in the argument
 
             if maximumAllowableSISDeviceResponseTime is not None and not isinstance(
                 maximumAllowableSISDeviceResponseTime, aas.SubmodelElement
             ):
-                maximumAllowableSISDeviceResponseTime = (
-                    self.MaximumAllowableSISDeviceResponseTime(
-                        maximumAllowableSISDeviceResponseTime
-                    )
+                maximumAllowableSISDeviceResponseTime = self.MaximumAllowableSISDeviceResponseTime(
+                    maximumAllowableSISDeviceResponseTime
                 )
 
             # Build a submodel element if a raw value was passed in the argument
@@ -8354,10 +7381,8 @@ class SISDevice(aas.Submodel):
             if minimumAllowableSISDeviceResponseTime is not None and not isinstance(
                 minimumAllowableSISDeviceResponseTime, aas.SubmodelElement
             ):
-                minimumAllowableSISDeviceResponseTime = (
-                    self.MinimumAllowableSISDeviceResponseTime(
-                        minimumAllowableSISDeviceResponseTime
-                    )
+                minimumAllowableSISDeviceResponseTime = self.MinimumAllowableSISDeviceResponseTime(
+                    minimumAllowableSISDeviceResponseTime
                 )
 
             # Build a submodel element if a raw value was passed in the argument
@@ -8365,55 +7390,37 @@ class SISDevice(aas.Submodel):
             if maximumPermittedRepairTime is not None and not isinstance(
                 maximumPermittedRepairTime, aas.SubmodelElement
             ):
-                maximumPermittedRepairTime = self.MaximumPermittedRepairTime(
-                    maximumPermittedRepairTime
-                )
+                maximumPermittedRepairTime = self.MaximumPermittedRepairTime(maximumPermittedRepairTime)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if tripEnergyMode is not None and not isinstance(
-                tripEnergyMode, aas.SubmodelElement
-            ):
+            if tripEnergyMode is not None and not isinstance(tripEnergyMode, aas.SubmodelElement):
                 tripEnergyMode = self.TripEnergyMode(tripEnergyMode)
 
             # A str would be split into its characters
             if isinstance(requirementIfEnergizedToTrip, str):
-                raise TypeError(
-                    "requirementIfEnergizedToTrip takes several elements, got a str"
-                )
+                raise TypeError("requirementIfEnergizedToTrip takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if requirementIfEnergizedToTrip:
                 requirementIfEnergizedToTrip = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.RequirementIfEnergizedToTrip(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.RequirementIfEnergizedToTrip(i)
                     for i in requirementIfEnergizedToTrip
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if tripAction is not None and not isinstance(
-                tripAction, aas.SubmodelElement
-            ):
+            if tripAction is not None and not isinstance(tripAction, aas.SubmodelElement):
                 tripAction = self.TripAction(tripAction)
 
             # A str would be split into its characters
             if isinstance(survivabilityRequirement, str):
-                raise TypeError(
-                    "survivabilityRequirement takes several elements, got a str"
-                )
+                raise TypeError("survivabilityRequirement takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if survivabilityRequirement:
                 survivabilityRequirement = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.SurvivabilityRequirement(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.SurvivabilityRequirement(i)
                     for i in survivabilityRequirement
                 ]
 
@@ -8424,19 +7431,12 @@ class SISDevice(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if diagnosticRequired:
                 diagnosticRequired = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.DiagnosticRequired(i)
-                    )
-                    for i in diagnosticRequired
+                    i if isinstance(i, aas.SubmodelElement) else self.DiagnosticRequired(i) for i in diagnosticRequired
                 ]
 
             # A str would be split into its characters
             if isinstance(additionalDiagnosticRequirementForImplementation, str):
-                raise TypeError(
-                    "additionalDiagnosticRequirementForImplementation takes several elements, got a str"
-                )
+                raise TypeError("additionalDiagnosticRequirementForImplementation takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if additionalDiagnosticRequirementForImplementation:
@@ -8456,39 +7456,26 @@ class SISDevice(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if timeDelayOfAction:
                 timeDelayOfAction = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.TimeDelayOfAction(i)
-                    )
-                    for i in timeDelayOfAction
+                    i if isinstance(i, aas.SubmodelElement) else self.TimeDelayOfAction(i) for i in timeDelayOfAction
                 ]
 
             # A str would be split into its characters
             if isinstance(failureModeResponses, str):
-                raise TypeError(
-                    "failureModeResponses takes several elements, got a str"
-                )
+                raise TypeError("failureModeResponses takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if sharedUseIsAllowed is not None and not isinstance(
-                sharedUseIsAllowed, aas.SubmodelElement
-            ):
+            if sharedUseIsAllowed is not None and not isinstance(sharedUseIsAllowed, aas.SubmodelElement):
                 sharedUseIsAllowed = self.SharedUseIsAllowed(sharedUseIsAllowed)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if referenceToSIF is not None and not isinstance(
-                referenceToSIF, aas.SubmodelElement
-            ):
+            if referenceToSIF is not None and not isinstance(referenceToSIF, aas.SubmodelElement):
                 referenceToSIF = self.ReferenceToSIF(referenceToSIF)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if usefulLife is not None and not isinstance(
-                usefulLife, aas.SubmodelElement
-            ):
+            if usefulLife is not None and not isinstance(usefulLife, aas.SubmodelElement):
                 usefulLife = self.UsefulLife(usefulLife)
 
             # Add all passed/initialized submodel elements to a single list
@@ -8530,9 +7517,7 @@ class SISDevice(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -8571,21 +7556,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"instrument data sheet"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"instrument data sheet"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -8621,8 +7600,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/SafetyManual/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/SafetyManual/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -8630,21 +7608,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"safety manual"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"safety manual"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -8690,21 +7662,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"type name of product"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"type name of product"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -8751,21 +7717,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"family name of product"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"family name of product"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -8812,21 +7772,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"model name of product"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"model name of product"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -8873,21 +7827,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"name of component manufacturer"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"name of component manufacturer"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -8934,21 +7882,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"device description"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"device description"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -8995,21 +7937,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"device boundary"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"device boundary"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -9056,21 +7992,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"maintainable item"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"maintainable item"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -9119,21 +8049,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"systematic capability specified"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"systematic capability specified"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -9197,21 +8121,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"internal HFT specified"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"internal HFT specified"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -9264,8 +8182,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/IsPriorUse/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/IsPriorUse/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -9273,21 +8190,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"is prior use"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"is prior use"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -9334,21 +8245,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"is proven in use"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"is proven in use"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -9395,21 +8300,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"mean time to restoration"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"mean time to restoration"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -9460,21 +8359,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"energize source"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"energize source"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about the model of the device"
-                            }
+                            dict_={r"en": r"gives information about the model of the device"}
                         )
 
                     if qualifier is None:
@@ -9523,8 +8416,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/FinalElement/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/FinalElement/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -9532,21 +8424,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"final element"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"final element"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the final element subsystem of the SIF"
-                        }
+                        dict_={r"en": r"gives information about the final element subsystem of the SIF"}
                     )
 
                 if qualifier is None:
@@ -9557,9 +8443,7 @@ class SISDevice(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if energizeSource is not None and not isinstance(
-                    energizeSource, aas.SubmodelElement
-                ):
+                if energizeSource is not None and not isinstance(energizeSource, aas.SubmodelElement):
                     energizeSource = self.EnergizeSource(energizeSource)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -9575,9 +8459,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -9603,8 +8485,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/LogicSolver/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/LogicSolver/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -9612,21 +8493,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"logic solver"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"logic solver"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the logic solver subsystem of the SIF"
-                        }
+                        dict_={r"en": r"gives information about the logic solver subsystem of the SIF"}
                     )
 
                 if qualifier is None:
@@ -9648,9 +8523,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -9676,8 +8549,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/InputDevice/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/InputDevice/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -9685,21 +8557,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"input device"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"input device"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the input device subsystem of the SIF"
-                        }
+                        dict_={r"en": r"gives information about the input device subsystem of the SIF"}
                     )
 
                 if qualifier is None:
@@ -9721,9 +8587,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -9754,8 +8618,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/TypeAOrB/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/TypeAOrB/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -9763,21 +8626,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"type A or B"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"type A or B"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the model of the device"
-                        }
+                        dict_={r"en": r"gives information about the model of the device"}
                     )
 
                 if qualifier is None:
@@ -9839,21 +8696,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"hardware version"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"hardware version"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the instance of the device"
-                        }
+                        dict_={r"en": r"gives information about the instance of the device"}
                     )
 
                 if qualifier is None:
@@ -9900,21 +8751,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"software version"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"software version"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the instance of the device"
-                        }
+                        dict_={r"en": r"gives information about the instance of the device"}
                     )
 
                 if qualifier is None:
@@ -9976,15 +8821,11 @@ class SISDevice(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"device model specification"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"device model specification"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -9999,44 +8840,32 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if productTypeName is not None and not isinstance(
-                productTypeName, aas.SubmodelElement
-            ):
+            if productTypeName is not None and not isinstance(productTypeName, aas.SubmodelElement):
                 productTypeName = self.ProductTypeName(productTypeName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if productFamilyName is not None and not isinstance(
-                productFamilyName, aas.SubmodelElement
-            ):
+            if productFamilyName is not None and not isinstance(productFamilyName, aas.SubmodelElement):
                 productFamilyName = self.ProductFamilyName(productFamilyName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if productModelName is not None and not isinstance(
-                productModelName, aas.SubmodelElement
-            ):
+            if productModelName is not None and not isinstance(productModelName, aas.SubmodelElement):
                 productModelName = self.ProductModelName(productModelName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if nameOfManufacturer is not None and not isinstance(
-                nameOfManufacturer, aas.SubmodelElement
-            ):
+            if nameOfManufacturer is not None and not isinstance(nameOfManufacturer, aas.SubmodelElement):
                 nameOfManufacturer = self.NameOfManufacturer(nameOfManufacturer)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if deviceDescription is not None and not isinstance(
-                deviceDescription, aas.SubmodelElement
-            ):
+            if deviceDescription is not None and not isinstance(deviceDescription, aas.SubmodelElement):
                 deviceDescription = self.DeviceDescription(deviceDescription)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if deviceBoundary is not None and not isinstance(
-                deviceBoundary, aas.SubmodelElement
-            ):
+            if deviceBoundary is not None and not isinstance(deviceBoundary, aas.SubmodelElement):
                 deviceBoundary = self.DeviceBoundary(deviceBoundary)
 
             # A str would be split into its characters
@@ -10046,12 +8875,7 @@ class SISDevice(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if maintainableItem:
                 maintainableItem = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.MaintainableItem(i)
-                    )
-                    for i in maintainableItem
+                    i if isinstance(i, aas.SubmodelElement) else self.MaintainableItem(i) for i in maintainableItem
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
@@ -10059,39 +8883,27 @@ class SISDevice(aas.Submodel):
             if systematicCapabilitySpecified is not None and not isinstance(
                 systematicCapabilitySpecified, aas.SubmodelElement
             ):
-                systematicCapabilitySpecified = self.SystematicCapabilitySpecified(
-                    systematicCapabilitySpecified
-                )
+                systematicCapabilitySpecified = self.SystematicCapabilitySpecified(systematicCapabilitySpecified)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if internalHFTSpecified is not None and not isinstance(
-                internalHFTSpecified, aas.SubmodelElement
-            ):
+            if internalHFTSpecified is not None and not isinstance(internalHFTSpecified, aas.SubmodelElement):
                 internalHFTSpecified = self.InternalHFTSpecified(internalHFTSpecified)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPriorUse is not None and not isinstance(
-                isPriorUse, aas.SubmodelElement
-            ):
+            if isPriorUse is not None and not isinstance(isPriorUse, aas.SubmodelElement):
                 isPriorUse = self.IsPriorUse(isPriorUse)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isProvenInUse is not None and not isinstance(
-                isProvenInUse, aas.SubmodelElement
-            ):
+            if isProvenInUse is not None and not isinstance(isProvenInUse, aas.SubmodelElement):
                 isProvenInUse = self.IsProvenInUse(isProvenInUse)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if meanTimeToRestoration is not None and not isinstance(
-                meanTimeToRestoration, aas.SubmodelElement
-            ):
-                meanTimeToRestoration = self.MeanTimeToRestoration(
-                    meanTimeToRestoration
-                )
+            if meanTimeToRestoration is not None and not isinstance(meanTimeToRestoration, aas.SubmodelElement):
+                meanTimeToRestoration = self.MeanTimeToRestoration(meanTimeToRestoration)
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -10100,16 +8912,12 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if hardwareVersion is not None and not isinstance(
-                hardwareVersion, aas.SubmodelElement
-            ):
+            if hardwareVersion is not None and not isinstance(hardwareVersion, aas.SubmodelElement):
                 hardwareVersion = self.HardwareVersion(hardwareVersion)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if softwareVersion is not None and not isinstance(
-                softwareVersion, aas.SubmodelElement
-            ):
+            if softwareVersion is not None and not isinstance(softwareVersion, aas.SubmodelElement):
                 softwareVersion = self.SoftwareVersion(softwareVersion)
 
             # Add all passed/initialized submodel elements to a single list
@@ -10146,9 +8954,7 @@ class SISDevice(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -10188,21 +8994,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"mean time between failures"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"mean time between failures"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with design data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with design data value(s)"}
                     )
 
                 if qualifier is None:
@@ -10259,21 +9059,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"lambda DU design"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"lambda DU design"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with design data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with design data value(s)"}
                     )
 
                 if qualifier is None:
@@ -10330,21 +9124,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"lambda DD design"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"lambda DD design"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with design data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with design data value(s)"}
                     )
 
                 if qualifier is None:
@@ -10401,21 +9189,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"lambda SU design"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"lambda SU design"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with design data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with design data value(s)"}
                     )
 
                 if qualifier is None:
@@ -10472,21 +9254,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"lambda SD design"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"lambda SD design"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with design data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with design data value(s)"}
                     )
 
                 if qualifier is None:
@@ -10533,19 +9309,14 @@ class SISDevice(aas.Submodel):
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/Beta/1",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/Beta/1"),
                     ),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -10553,9 +9324,7 @@ class SISDevice(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with design data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with design data value(s)"}
                     )
 
                 if qualifier is None:
@@ -10612,21 +9381,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"safe failure fraction design"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"safe failure fraction design"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with design data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with design data value(s)"}
                     )
 
                 if qualifier is None:
@@ -10683,21 +9446,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"diagnostic coverage design"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"diagnostic coverage design"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with design data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with design data value(s)"}
                     )
 
                 if qualifier is None:
@@ -10745,8 +9502,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/DataSource/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/DataSource/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -10754,15 +9510,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"data source"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"data source"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -10796,9 +9548,7 @@ class SISDevice(aas.Submodel):
             safeFailureFractionDesign: Union[xsd.Decimal, SafeFailureFractionDesign],
             diagnosticCoverageDesign: Union[xsd.Decimal, DiagnosticCoverageDesign],
             dataSource: Iterable[Union[str, DataSource]],
-            meanTimeBetweenFailures: Optional[
-                Union[xsd.Decimal, MeanTimeBetweenFailures]
-            ] = None,
+            meanTimeBetweenFailures: Optional[Union[xsd.Decimal, MeanTimeBetweenFailures]] = None,
             lambdaDDDesign: Optional[Union[float, LambdaDDDesign]] = None,
             lambdaSUDesign: Optional[Union[float, LambdaSUDesign]] = None,
             lambdaSDDesign: Optional[Union[float, LambdaSDDesign]] = None,
@@ -10819,21 +9569,15 @@ class SISDevice(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"reliability data design"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"reliability data design"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"reliability data parameter(s) with design data value(s)"
-                    }
+                    dict_={r"en": r"reliability data parameter(s) with design data value(s)"}
                 )
 
             if qualifier is None:
@@ -10844,39 +9588,27 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if meanTimeBetweenFailures is not None and not isinstance(
-                meanTimeBetweenFailures, aas.SubmodelElement
-            ):
-                meanTimeBetweenFailures = self.MeanTimeBetweenFailures(
-                    meanTimeBetweenFailures
-                )
+            if meanTimeBetweenFailures is not None and not isinstance(meanTimeBetweenFailures, aas.SubmodelElement):
+                meanTimeBetweenFailures = self.MeanTimeBetweenFailures(meanTimeBetweenFailures)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lambdaDUDesign is not None and not isinstance(
-                lambdaDUDesign, aas.SubmodelElement
-            ):
+            if lambdaDUDesign is not None and not isinstance(lambdaDUDesign, aas.SubmodelElement):
                 lambdaDUDesign = self.LambdaDUDesign(lambdaDUDesign)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lambdaDDDesign is not None and not isinstance(
-                lambdaDDDesign, aas.SubmodelElement
-            ):
+            if lambdaDDDesign is not None and not isinstance(lambdaDDDesign, aas.SubmodelElement):
                 lambdaDDDesign = self.LambdaDDDesign(lambdaDDDesign)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lambdaSUDesign is not None and not isinstance(
-                lambdaSUDesign, aas.SubmodelElement
-            ):
+            if lambdaSUDesign is not None and not isinstance(lambdaSUDesign, aas.SubmodelElement):
                 lambdaSUDesign = self.LambdaSUDesign(lambdaSUDesign)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lambdaSDDesign is not None and not isinstance(
-                lambdaSDDesign, aas.SubmodelElement
-            ):
+            if lambdaSDDesign is not None and not isinstance(lambdaSDDesign, aas.SubmodelElement):
                 lambdaSDDesign = self.LambdaSDDesign(lambdaSDDesign)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -10886,21 +9618,13 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if safeFailureFractionDesign is not None and not isinstance(
-                safeFailureFractionDesign, aas.SubmodelElement
-            ):
-                safeFailureFractionDesign = self.SafeFailureFractionDesign(
-                    safeFailureFractionDesign
-                )
+            if safeFailureFractionDesign is not None and not isinstance(safeFailureFractionDesign, aas.SubmodelElement):
+                safeFailureFractionDesign = self.SafeFailureFractionDesign(safeFailureFractionDesign)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if diagnosticCoverageDesign is not None and not isinstance(
-                diagnosticCoverageDesign, aas.SubmodelElement
-            ):
-                diagnosticCoverageDesign = self.DiagnosticCoverageDesign(
-                    diagnosticCoverageDesign
-                )
+            if diagnosticCoverageDesign is not None and not isinstance(diagnosticCoverageDesign, aas.SubmodelElement):
+                diagnosticCoverageDesign = self.DiagnosticCoverageDesign(diagnosticCoverageDesign)
 
             # A str would be split into its characters
             if isinstance(dataSource, str):
@@ -10908,10 +9632,7 @@ class SISDevice(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if dataSource:
-                dataSource = [
-                    i if isinstance(i, aas.SubmodelElement) else self.DataSource(i)
-                    for i in dataSource
-                ]
+                dataSource = [i if isinstance(i, aas.SubmodelElement) else self.DataSource(i) for i in dataSource]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -10936,9 +9657,7 @@ class SISDevice(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -10984,8 +9703,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/Application/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/Application/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -10993,21 +9711,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"application description"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"application description"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability influencing property for the device"
-                        }
+                        dict_={r"en": r"reliability influencing property for the device"}
                     )
 
                 if qualifier is None:
@@ -11048,13 +9760,7 @@ class SISDevice(aas.Submodel):
 
         class ExternalExposure(aas.Property):
 
-            ALLOWED_VALUES = (
-                r"severe",
-                r"moderate",
-                r"shielded",
-                r"indoor",
-                r"outdoor",
-            )
+            ALLOWED_VALUES = (r"severe", r"moderate", r"shielded", r"indoor", r"outdoor")
 
             def __init__(
                 self,
@@ -11077,21 +9783,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"external exposure"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"external exposure"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability influencing property for the device"
-                        }
+                        dict_={r"en": r"reliability influencing property for the device"}
                     )
 
                 if qualifier is None:
@@ -11155,21 +9855,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"fluid severity"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"fluid severity"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability influencing property for the device"
-                        }
+                        dict_={r"en": r"reliability influencing property for the device"}
                     )
 
                 if qualifier is None:
@@ -11221,31 +9915,22 @@ class SISDevice(aas.Submodel):
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/Fluid/1",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/Fluid/1"),
                     ),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"type of fluid"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"type of fluid"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability influencing property for the device"
-                        }
+                        dict_={r"en": r"reliability influencing property for the device"}
                     )
 
                 if qualifier is None:
@@ -11294,21 +9979,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"measuring principle"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"measuring principle"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -11357,21 +10036,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"interface measurement"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"interface measurement"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -11424,8 +10097,7 @@ class SISDevice(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/cds/Function/1",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/Function/1"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -11433,21 +10105,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"function"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"function"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -11483,8 +10149,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/InputDevice/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/InputDevice/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -11492,21 +10157,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"input device"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"input device"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the input device subsystem of the SIF"
-                        }
+                        dict_={r"en": r"gives information about the input device subsystem of the SIF"}
                     )
 
                 if qualifier is None:
@@ -11517,25 +10176,17 @@ class SISDevice(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if measuringPrinciple is not None and not isinstance(
-                    measuringPrinciple, aas.SubmodelElement
-                ):
+                if measuringPrinciple is not None and not isinstance(measuringPrinciple, aas.SubmodelElement):
                     measuringPrinciple = self.MeasuringPrinciple(measuringPrinciple)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if interfaceMeasurement is not None and not isinstance(
-                    interfaceMeasurement, aas.SubmodelElement
-                ):
-                    interfaceMeasurement = self.InterfaceMeasurement(
-                        interfaceMeasurement
-                    )
+                if interfaceMeasurement is not None and not isinstance(interfaceMeasurement, aas.SubmodelElement):
+                    interfaceMeasurement = self.InterfaceMeasurement(interfaceMeasurement)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if function is not None and not isinstance(
-                    function, aas.SubmodelElement
-                ):
+                if function is not None and not isinstance(function, aas.SubmodelElement):
                     function = self.Function(function)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -11551,9 +10202,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -11593,21 +10242,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"design principle"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"design principle"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -11654,21 +10297,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"device type"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"device type"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -11715,21 +10352,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"application description"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"application description"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -11776,21 +10407,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"style of failsafe"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"style of failsafe"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -11827,8 +10452,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/LogicSolver/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/LogicSolver/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -11836,21 +10460,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"logic solver"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"logic solver"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the logic solver subsystem of the SIF"
-                        }
+                        dict_={r"en": r"gives information about the logic solver subsystem of the SIF"}
                     )
 
                 if qualifier is None:
@@ -11861,40 +10479,27 @@ class SISDevice(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if designPrinciple is not None and not isinstance(
-                    designPrinciple, aas.SubmodelElement
-                ):
+                if designPrinciple is not None and not isinstance(designPrinciple, aas.SubmodelElement):
                     designPrinciple = self.DesignPrinciple(designPrinciple)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if deviceType is not None and not isinstance(
-                    deviceType, aas.SubmodelElement
-                ):
+                if deviceType is not None and not isinstance(deviceType, aas.SubmodelElement):
                     deviceType = self.DeviceType(deviceType)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if application is not None and not isinstance(
-                    application, aas.SubmodelElement
-                ):
+                if application is not None and not isinstance(application, aas.SubmodelElement):
                     application = self.Application(application)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if styleOfFailSafe is not None and not isinstance(
-                    styleOfFailSafe, aas.SubmodelElement
-                ):
+                if styleOfFailSafe is not None and not isinstance(styleOfFailSafe, aas.SubmodelElement):
                     styleOfFailSafe = self.StyleOfFailSafe(styleOfFailSafe)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    designPrinciple,
-                    deviceType,
-                    application,
-                    styleOfFailSafe,
-                ]:
+                for se_arg in [designPrinciple, deviceType, application, styleOfFailSafe]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -11905,9 +10510,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -11947,21 +10550,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"device type"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"device type"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -12008,21 +10605,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"design principle"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"design principle"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -12069,21 +10660,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"actuation principle"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"actuation principle"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -12130,21 +10715,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"valve size"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"valve size"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -12201,21 +10780,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"damper length"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"damper length"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -12272,21 +10845,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"damper width"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"damper width"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -12343,21 +10910,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"mounting principle"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"mounting principle"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -12404,21 +10965,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"door has personnel protection system"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"door has personnel protection system"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -12467,21 +11022,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"voltage class"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"voltage class"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"reliability influencing property for the device"
-                            }
+                            dict_={r"en": r"reliability influencing property for the device"}
                         )
 
                     if qualifier is None:
@@ -12529,9 +11078,7 @@ class SISDevice(aas.Submodel):
                 damperLength: Optional[Union[xsd.Decimal, DamperLength]] = None,
                 damperWidth: Optional[Union[xsd.Decimal, DamperWidth]] = None,
                 mountingPrinciple: Optional[Union[str, MountingPrinciple]] = None,
-                doorHasPersonnelProtectionSystem: Optional[
-                    Union[bool, DoorHasPersonnelProtectionSystem]
-                ] = None,
+                doorHasPersonnelProtectionSystem: Optional[Union[bool, DoorHasPersonnelProtectionSystem]] = None,
                 voltageClass: Optional[Union[str, VoltageClass]] = None,
                 id_short: Optional[str] = r"FinalElement",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -12540,8 +11087,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/FinalElement/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/FinalElement/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -12549,21 +11095,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"final element"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"final element"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the final element subsystem of the SIF"
-                        }
+                        dict_={r"en": r"gives information about the final element subsystem of the SIF"}
                     )
 
                 if qualifier is None:
@@ -12574,51 +11114,37 @@ class SISDevice(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if deviceType is not None and not isinstance(
-                    deviceType, aas.SubmodelElement
-                ):
+                if deviceType is not None and not isinstance(deviceType, aas.SubmodelElement):
                     deviceType = self.DeviceType(deviceType)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if designPrinciple is not None and not isinstance(
-                    designPrinciple, aas.SubmodelElement
-                ):
+                if designPrinciple is not None and not isinstance(designPrinciple, aas.SubmodelElement):
                     designPrinciple = self.DesignPrinciple(designPrinciple)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if actuationPrinciple is not None and not isinstance(
-                    actuationPrinciple, aas.SubmodelElement
-                ):
+                if actuationPrinciple is not None and not isinstance(actuationPrinciple, aas.SubmodelElement):
                     actuationPrinciple = self.ActuationPrinciple(actuationPrinciple)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if valveSize is not None and not isinstance(
-                    valveSize, aas.SubmodelElement
-                ):
+                if valveSize is not None and not isinstance(valveSize, aas.SubmodelElement):
                     valveSize = self.ValveSize(valveSize)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if damperLength is not None and not isinstance(
-                    damperLength, aas.SubmodelElement
-                ):
+                if damperLength is not None and not isinstance(damperLength, aas.SubmodelElement):
                     damperLength = self.DamperLength(damperLength)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if damperWidth is not None and not isinstance(
-                    damperWidth, aas.SubmodelElement
-                ):
+                if damperWidth is not None and not isinstance(damperWidth, aas.SubmodelElement):
                     damperWidth = self.DamperWidth(damperWidth)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if mountingPrinciple is not None and not isinstance(
-                    mountingPrinciple, aas.SubmodelElement
-                ):
+                if mountingPrinciple is not None and not isinstance(mountingPrinciple, aas.SubmodelElement):
                     mountingPrinciple = self.MountingPrinciple(mountingPrinciple)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12626,17 +11152,13 @@ class SISDevice(aas.Submodel):
                 if doorHasPersonnelProtectionSystem is not None and not isinstance(
                     doorHasPersonnelProtectionSystem, aas.SubmodelElement
                 ):
-                    doorHasPersonnelProtectionSystem = (
-                        self.DoorHasPersonnelProtectionSystem(
-                            doorHasPersonnelProtectionSystem
-                        )
+                    doorHasPersonnelProtectionSystem = self.DoorHasPersonnelProtectionSystem(
+                        doorHasPersonnelProtectionSystem
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if voltageClass is not None and not isinstance(
-                    voltageClass, aas.SubmodelElement
-                ):
+                if voltageClass is not None and not isinstance(voltageClass, aas.SubmodelElement):
                     voltageClass = self.VoltageClass(voltageClass)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -12662,9 +11184,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -12702,21 +11222,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"internal diagnostic"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"internal diagnostic"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability influencing property for the device"
-                        }
+                        dict_={r"en": r"reliability influencing property for the device"}
                     )
 
                 if qualifier is None:
@@ -12763,21 +11277,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"external diagnostic"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"external diagnostic"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability influencing property for the device"
-                        }
+                        dict_={r"en": r"reliability influencing property for the device"}
                     )
 
                 if qualifier is None:
@@ -12810,12 +11318,8 @@ class SISDevice(aas.Submodel):
             inputDevice: Optional[InputDevice] = None,
             logicSolver: Optional[LogicSolver] = None,
             finalElement: Optional[FinalElement] = None,
-            internalDiagnostic: Optional[
-                Iterable[Union[str, InternalDiagnostic]]
-            ] = None,
-            externalDiagnostic: Optional[
-                Iterable[Union[str, ExternalDiagnostic]]
-            ] = None,
+            internalDiagnostic: Optional[Iterable[Union[str, InternalDiagnostic]]] = None,
+            externalDiagnostic: Optional[Iterable[Union[str, ExternalDiagnostic]]] = None,
             id_short: Optional[str] = r"ReliabilityInfluencingProperties",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -12832,15 +11336,11 @@ class SISDevice(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"reliability influencing property"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"reliability influencing property"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -12859,23 +11359,16 @@ class SISDevice(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if application:
-                application = [
-                    i if isinstance(i, aas.SubmodelElement) else self.Application(i)
-                    for i in application
-                ]
+                application = [i if isinstance(i, aas.SubmodelElement) else self.Application(i) for i in application]
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if externalExposure is not None and not isinstance(
-                externalExposure, aas.SubmodelElement
-            ):
+            if externalExposure is not None and not isinstance(externalExposure, aas.SubmodelElement):
                 externalExposure = self.ExternalExposure(externalExposure)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if fluidSeverity is not None and not isinstance(
-                fluidSeverity, aas.SubmodelElement
-            ):
+            if fluidSeverity is not None and not isinstance(fluidSeverity, aas.SubmodelElement):
                 fluidSeverity = self.FluidSeverity(fluidSeverity)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -12890,12 +11383,7 @@ class SISDevice(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if internalDiagnostic:
                 internalDiagnostic = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.InternalDiagnostic(i)
-                    )
-                    for i in internalDiagnostic
+                    i if isinstance(i, aas.SubmodelElement) else self.InternalDiagnostic(i) for i in internalDiagnostic
                 ]
 
             # A str would be split into its characters
@@ -12905,12 +11393,7 @@ class SISDevice(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if externalDiagnostic:
                 externalDiagnostic = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.ExternalDiagnostic(i)
-                    )
-                    for i in externalDiagnostic
+                    i if isinstance(i, aas.SubmodelElement) else self.ExternalDiagnostic(i) for i in externalDiagnostic
                 ]
 
             # Add all passed/initialized submodel elements to a single list
@@ -12936,9 +11419,7 @@ class SISDevice(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -12978,21 +11459,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"equipment number"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"equipment number"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the instance of the device"
-                        }
+                        dict_={r"en": r"gives information about the instance of the device"}
                     )
 
                 if qualifier is None:
@@ -13030,8 +11505,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/SerialNumber/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/SerialNumber/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -13039,21 +11513,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"serial number"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"serial number"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the instance of the device"
-                        }
+                        dict_={r"en": r"gives information about the instance of the device"}
                     )
 
                 if qualifier is None:
@@ -13100,21 +11568,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"date of manufacture"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"date of manufacture"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the instance of the device"
-                        }
+                        dict_={r"en": r"gives information about the instance of the device"}
                     )
 
                 if qualifier is None:
@@ -13161,21 +11623,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"start date operation"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"start date operation"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the instance of the device"
-                        }
+                        dict_={r"en": r"gives information about the instance of the device"}
                     )
 
                 if qualifier is None:
@@ -13222,21 +11678,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"end date operation"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"end date operation"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the instance of the device"
-                        }
+                        dict_={r"en": r"gives information about the instance of the device"}
                     )
 
                 if qualifier is None:
@@ -13283,21 +11733,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"description of physical location"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"description of physical location"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the tag that the device represents"
-                        }
+                        dict_={r"en": r"gives information about the tag that the device represents"}
                     )
 
                 if qualifier is None:
@@ -13342,21 +11786,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"reference to associated device"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to associated device"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the instance of the device"
-                        }
+                        dict_={r"en": r"gives information about the instance of the device"}
                     )
 
                 if qualifier is None:
@@ -13399,21 +11837,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"reference to model number"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to model number"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives relevant information about the instance that the device represents"
-                        }
+                        dict_={r"en": r"gives relevant information about the instance that the device represents"}
                     )
 
                 if qualifier is None:
@@ -13456,21 +11888,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"reference to tag"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to tag"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the instance of the device"
-                        }
+                        dict_={r"en": r"gives information about the instance of the device"}
                     )
 
                 if qualifier is None:
@@ -13502,9 +11928,7 @@ class SISDevice(aas.Submodel):
             startDateOperation: Optional[Union[xsd.Date, StartDateOperation]] = None,
             endDateOperation: Optional[Union[xsd.Date, EndDateOperation]] = None,
             physicalLocation: Optional[Union[str, PhysicalLocation]] = None,
-            referenceToAssociatedDevice: Optional[
-                Iterable[Union[aas.Reference, ReferenceToAssociatedDevice]]
-            ] = None,
+            referenceToAssociatedDevice: Optional[Iterable[Union[aas.Reference, ReferenceToAssociatedDevice]]] = None,
             id_short: Optional[str] = r"DeviceInstanceSpecification",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -13521,15 +11945,11 @@ class SISDevice(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"device instance specification"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"device instance specification"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -13544,77 +11964,53 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if equipmentNumber is not None and not isinstance(
-                equipmentNumber, aas.SubmodelElement
-            ):
+            if equipmentNumber is not None and not isinstance(equipmentNumber, aas.SubmodelElement):
                 equipmentNumber = self.EquipmentNumber(equipmentNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if serialNumber is not None and not isinstance(
-                serialNumber, aas.SubmodelElement
-            ):
+            if serialNumber is not None and not isinstance(serialNumber, aas.SubmodelElement):
                 serialNumber = self.SerialNumber(serialNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if dateOfProduction is not None and not isinstance(
-                dateOfProduction, aas.SubmodelElement
-            ):
+            if dateOfProduction is not None and not isinstance(dateOfProduction, aas.SubmodelElement):
                 dateOfProduction = self.DateOfProduction(dateOfProduction)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if startDateOperation is not None and not isinstance(
-                startDateOperation, aas.SubmodelElement
-            ):
+            if startDateOperation is not None and not isinstance(startDateOperation, aas.SubmodelElement):
                 startDateOperation = self.StartDateOperation(startDateOperation)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if endDateOperation is not None and not isinstance(
-                endDateOperation, aas.SubmodelElement
-            ):
+            if endDateOperation is not None and not isinstance(endDateOperation, aas.SubmodelElement):
                 endDateOperation = self.EndDateOperation(endDateOperation)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if physicalLocation is not None and not isinstance(
-                physicalLocation, aas.SubmodelElement
-            ):
+            if physicalLocation is not None and not isinstance(physicalLocation, aas.SubmodelElement):
                 physicalLocation = self.PhysicalLocation(physicalLocation)
 
             # A str would be split into its characters
             if isinstance(referenceToAssociatedDevice, str):
-                raise TypeError(
-                    "referenceToAssociatedDevice takes several elements, got a str"
-                )
+                raise TypeError("referenceToAssociatedDevice takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if referenceToAssociatedDevice:
                 referenceToAssociatedDevice = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.ReferenceToAssociatedDevice(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.ReferenceToAssociatedDevice(i)
                     for i in referenceToAssociatedDevice
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if referenceToModelNumber is not None and not isinstance(
-                referenceToModelNumber, aas.SubmodelElement
-            ):
-                referenceToModelNumber = self.ReferenceToModelNumber(
-                    referenceToModelNumber
-                )
+            if referenceToModelNumber is not None and not isinstance(referenceToModelNumber, aas.SubmodelElement):
+                referenceToModelNumber = self.ReferenceToModelNumber(referenceToModelNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if referenceToTag is not None and not isinstance(
-                referenceToTag, aas.SubmodelElement
-            ):
+            if referenceToTag is not None and not isinstance(referenceToTag, aas.SubmodelElement):
                 referenceToTag = self.ReferenceToTag(referenceToTag)
 
             # Add all passed/initialized submodel elements to a single list
@@ -13640,9 +12036,7 @@ class SISDevice(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -13682,15 +12076,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"number of bypasses"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"number of bypasses"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -13741,15 +12131,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"total bypass duration"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"total bypass duration"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -13801,32 +12187,21 @@ class SISDevice(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABN627#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABN627#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"time stamp (date and time)"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"time stamp (date and time)"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"date of the event given within the current SMC"
-                            }
+                            dict_={r"en": r"date of the event given within the current SMC"}
                         )
 
                     if qualifier is None:
@@ -13873,21 +12248,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"bypass description"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"bypass description"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred bypass(es)"
-                            }
+                            dict_={r"en": r"gives information about occurred bypass(es)"}
                         )
 
                     if qualifier is None:
@@ -13934,21 +12303,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"bypass duration"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"bypass duration"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred bypass(es)"
-                            }
+                            dict_={r"en": r"gives information about occurred bypass(es)"}
                         )
 
                     if qualifier is None:
@@ -13994,8 +12357,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/BypassEvent/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/BypassEvent/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -14003,15 +12365,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"bypass event"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"bypass event"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -14026,25 +12384,17 @@ class SISDevice(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if timeStampDateAndTime is not None and not isinstance(
-                    timeStampDateAndTime, aas.SubmodelElement
-                ):
-                    timeStampDateAndTime = self.TimeStampDateAndTime(
-                        timeStampDateAndTime
-                    )
+                if timeStampDateAndTime is not None and not isinstance(timeStampDateAndTime, aas.SubmodelElement):
+                    timeStampDateAndTime = self.TimeStampDateAndTime(timeStampDateAndTime)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if bypassDescription is not None and not isinstance(
-                    bypassDescription, aas.SubmodelElement
-                ):
+                if bypassDescription is not None and not isinstance(bypassDescription, aas.SubmodelElement):
                     bypassDescription = self.BypassDescription(bypassDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if bypassDuration is not None and not isinstance(
-                    bypassDuration, aas.SubmodelElement
-                ):
+                if bypassDuration is not None and not isinstance(bypassDuration, aas.SubmodelElement):
                     bypassDuration = self.BypassDuration(bypassDuration)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -14060,9 +12410,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -14088,28 +12436,21 @@ class SISDevice(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/BypassData/1",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/BypassData/1"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(dict_={r"en": r"bypass data"})
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"gives information about occurred bypass(es)"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about occurred bypass(es)"})
 
             if qualifier is None:
                 qualifier = ()
@@ -14119,16 +12460,12 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if numberOfBypasses is not None and not isinstance(
-                numberOfBypasses, aas.SubmodelElement
-            ):
+            if numberOfBypasses is not None and not isinstance(numberOfBypasses, aas.SubmodelElement):
                 numberOfBypasses = self.NumberOfBypasses(numberOfBypasses)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if totalBypassDuration is not None and not isinstance(
-                totalBypassDuration, aas.SubmodelElement
-            ):
+            if totalBypassDuration is not None and not isinstance(totalBypassDuration, aas.SubmodelElement):
                 totalBypassDuration = self.TotalBypassDuration(totalBypassDuration)
 
             # A str would be split into its characters
@@ -14148,9 +12485,7 @@ class SISDevice(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -14190,15 +12525,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"diagnostic function"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"diagnostic function"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -14280,15 +12611,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"reference to diagnostic alarm"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to diagnostic alarm"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -14340,21 +12667,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"alarm description"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"alarm description"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about the device diagnostics"
-                            }
+                            dict_={r"en": r"gives information about the device diagnostics"}
                         )
 
                     if qualifier is None:
@@ -14390,32 +12711,21 @@ class SISDevice(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABN627#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABN627#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"time stamp (date and time)"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"time stamp (date and time)"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"date of the event given within the current SMC"
-                            }
+                            dict_={r"en": r"date of the event given within the current SMC"}
                         )
 
                     if qualifier is None:
@@ -14464,21 +12774,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"alarm source"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"alarm source"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about the device diagnostics"
-                            }
+                            dict_={r"en": r"gives information about the device diagnostics"}
                         )
 
                     if qualifier is None:
@@ -14549,21 +12853,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"alarm state"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"alarm state"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about the device diagnostics"
-                            }
+                            dict_={r"en": r"gives information about the device diagnostics"}
                         )
 
                     if qualifier is None:
@@ -14627,21 +12925,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"alarm status"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"alarm status"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about the device diagnostics"
-                            }
+                            dict_={r"en": r"gives information about the device diagnostics"}
                         )
 
                     if qualifier is None:
@@ -14701,21 +12993,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"reference to failure event"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to failure event"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred test(s) or alarm(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred test(s) or alarm(s)"}
                         )
 
                     if qualifier is None:
@@ -14744,9 +13030,7 @@ class SISDevice(aas.Submodel):
                 alarmDescription: Optional[Union[str, AlarmDescription]] = None,
                 alarmState: Optional[Union[str, AlarmState]] = None,
                 alarmStatus: Optional[Union[str, AlarmStatus]] = None,
-                referenceToFailureEvent: Optional[
-                    Union[aas.Reference, ReferenceToFailureEvent]
-                ] = None,
+                referenceToFailureEvent: Optional[Union[aas.Reference, ReferenceToFailureEvent]] = None,
                 id_short: Optional[str] = r"AlarmEventData",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -14763,15 +13047,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"alarm event data"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"alarm event data"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -14786,49 +13066,33 @@ class SISDevice(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if alarmDescription is not None and not isinstance(
-                    alarmDescription, aas.SubmodelElement
-                ):
+                if alarmDescription is not None and not isinstance(alarmDescription, aas.SubmodelElement):
                     alarmDescription = self.AlarmDescription(alarmDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if timeStampDateAndTime is not None and not isinstance(
-                    timeStampDateAndTime, aas.SubmodelElement
-                ):
-                    timeStampDateAndTime = self.TimeStampDateAndTime(
-                        timeStampDateAndTime
-                    )
+                if timeStampDateAndTime is not None and not isinstance(timeStampDateAndTime, aas.SubmodelElement):
+                    timeStampDateAndTime = self.TimeStampDateAndTime(timeStampDateAndTime)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if alarmSource is not None and not isinstance(
-                    alarmSource, aas.SubmodelElement
-                ):
+                if alarmSource is not None and not isinstance(alarmSource, aas.SubmodelElement):
                     alarmSource = self.AlarmSource(alarmSource)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if alarmState is not None and not isinstance(
-                    alarmState, aas.SubmodelElement
-                ):
+                if alarmState is not None and not isinstance(alarmState, aas.SubmodelElement):
                     alarmState = self.AlarmState(alarmState)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if alarmStatus is not None and not isinstance(
-                    alarmStatus, aas.SubmodelElement
-                ):
+                if alarmStatus is not None and not isinstance(alarmStatus, aas.SubmodelElement):
                     alarmStatus = self.AlarmStatus(alarmStatus)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if referenceToFailureEvent is not None and not isinstance(
-                    referenceToFailureEvent, aas.SubmodelElement
-                ):
-                    referenceToFailureEvent = self.ReferenceToFailureEvent(
-                        referenceToFailureEvent
-                    )
+                if referenceToFailureEvent is not None and not isinstance(referenceToFailureEvent, aas.SubmodelElement):
+                    referenceToFailureEvent = self.ReferenceToFailureEvent(referenceToFailureEvent)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -14850,9 +13114,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -14870,9 +13132,7 @@ class SISDevice(aas.Submodel):
         def __init__(
             self,
             diagnosticFunction: Union[str, DiagnosticFunction],
-            referenceToDiagnosticAlarm: Optional[
-                Iterable[ReferenceToDiagnosticAlarm]
-            ] = None,
+            referenceToDiagnosticAlarm: Optional[Iterable[ReferenceToDiagnosticAlarm]] = None,
             alarmEventData: Optional[Iterable[AlarmEventData]] = None,
             id_short: Optional[str] = r"Diagnostics",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -14881,8 +13141,7 @@ class SISDevice(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/Diagnostics/1",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/Diagnostics/1"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -14890,9 +13149,7 @@ class SISDevice(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -14911,16 +13168,12 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if diagnosticFunction is not None and not isinstance(
-                diagnosticFunction, aas.SubmodelElement
-            ):
+            if diagnosticFunction is not None and not isinstance(diagnosticFunction, aas.SubmodelElement):
                 diagnosticFunction = self.DiagnosticFunction(diagnosticFunction)
 
             # A str would be split into its characters
             if isinstance(referenceToDiagnosticAlarm, str):
-                raise TypeError(
-                    "referenceToDiagnosticAlarm takes several elements, got a str"
-                )
+                raise TypeError("referenceToDiagnosticAlarm takes several elements, got a str")
 
             # A str would be split into its characters
             if isinstance(alarmEventData, str):
@@ -14928,11 +13181,7 @@ class SISDevice(aas.Submodel):
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                diagnosticFunction,
-                referenceToDiagnosticAlarm,
-                alarmEventData,
-            ]:
+            for se_arg in [diagnosticFunction, referenceToDiagnosticAlarm, alarmEventData]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -14943,9 +13192,7 @@ class SISDevice(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -14985,20 +13232,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"operating time"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"operating time"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"operational data of the device"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"operational data of the device"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -15044,20 +13285,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"surveillance time"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"surveillance time"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"operational data of the device"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"operational data of the device"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -15082,13 +13317,7 @@ class SISDevice(aas.Submodel):
 
         class DeviceOperationalStatus(aas.Property):
 
-            ALLOWED_VALUES = (
-                r"activated / normally running",
-                r"standby",
-                r"blocked",
-                r"degraded",
-                r"failed",
-            )
+            ALLOWED_VALUES = (r"activated / normally running", r"standby", r"blocked", r"degraded", r"failed")
 
             def __init__(
                 self,
@@ -15111,20 +13340,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"device operational status"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"device operational status"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"operational data of the device"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"operational data of the device"})
 
                 if qualifier is None:
                     qualifier = (
@@ -15182,20 +13405,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"condition monitoring data"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"condition monitoring data"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"operational data of the device"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"operational data of the device"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -15216,9 +13433,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -15235,12 +13450,7 @@ class SISDevice(aas.Submodel):
 
         class FailureStatusSignal(aas.Property):
 
-            ALLOWED_VALUES = (
-                r"failure",
-                r"function check",
-                r"out of specificatoin",
-                r"maintenance request",
-            )
+            ALLOWED_VALUES = (r"failure", r"function check", r"out of specificatoin", r"maintenance request")
 
             def __init__(
                 self,
@@ -15263,20 +13473,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"failure status signal"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"failure status signal"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"operational data of the device"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"operational data of the device"})
 
                 if qualifier is None:
                     qualifier = (
@@ -15337,20 +13541,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"present test interval"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"present test interval"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about test(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -15396,15 +13594,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"actual mean repair time"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"actual mean repair time"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -15456,8 +13650,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/MissionTime/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/MissionTime/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -15465,20 +13658,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"mission time"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"mission time"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"operational data of the device"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"operational data of the device"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -15527,21 +13714,15 @@ class SISDevice(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"device operation data"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"device operation data"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"reliability data parameter(s) with operational data value(s)"
-                    }
+                    dict_={r"en": r"reliability data parameter(s) with operational data value(s)"}
                 )
 
             if qualifier is None:
@@ -15552,59 +13733,41 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if operatingTime is not None and not isinstance(
-                operatingTime, aas.SubmodelElement
-            ):
+            if operatingTime is not None and not isinstance(operatingTime, aas.SubmodelElement):
                 operatingTime = self.OperatingTime(operatingTime)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if surveillanceTime is not None and not isinstance(
-                surveillanceTime, aas.SubmodelElement
-            ):
+            if surveillanceTime is not None and not isinstance(surveillanceTime, aas.SubmodelElement):
                 surveillanceTime = self.SurveillanceTime(surveillanceTime)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if deviceOperationalStatus is not None and not isinstance(
-                deviceOperationalStatus, aas.SubmodelElement
-            ):
-                deviceOperationalStatus = self.DeviceOperationalStatus(
-                    deviceOperationalStatus
-                )
+            if deviceOperationalStatus is not None and not isinstance(deviceOperationalStatus, aas.SubmodelElement):
+                deviceOperationalStatus = self.DeviceOperationalStatus(deviceOperationalStatus)
 
             # A str would be split into its characters
             if isinstance(conditionMonitoringData, str):
-                raise TypeError(
-                    "conditionMonitoringData takes several elements, got a str"
-                )
+                raise TypeError("conditionMonitoringData takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if failureStatusSignal is not None and not isinstance(
-                failureStatusSignal, aas.SubmodelElement
-            ):
+            if failureStatusSignal is not None and not isinstance(failureStatusSignal, aas.SubmodelElement):
                 failureStatusSignal = self.FailureStatusSignal(failureStatusSignal)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if presentTestInterval is not None and not isinstance(
-                presentTestInterval, aas.SubmodelElement
-            ):
+            if presentTestInterval is not None and not isinstance(presentTestInterval, aas.SubmodelElement):
                 presentTestInterval = self.PresentTestInterval(presentTestInterval)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if actualMeanRepairTime is not None and not isinstance(
-                actualMeanRepairTime, aas.SubmodelElement
-            ):
+            if actualMeanRepairTime is not None and not isinstance(actualMeanRepairTime, aas.SubmodelElement):
                 actualMeanRepairTime = self.ActualMeanRepairTime(actualMeanRepairTime)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if missionTime is not None and not isinstance(
-                missionTime, aas.SubmodelElement
-            ):
+            if missionTime is not None and not isinstance(missionTime, aas.SubmodelElement):
                 missionTime = self.MissionTime(missionTime)
 
             # Add all passed/initialized submodel elements to a single list
@@ -15629,9 +13792,7 @@ class SISDevice(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -15671,15 +13832,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"operational demand rate"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"operational demand rate"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -15730,15 +13887,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"number of demands"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"number of demands"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -15780,32 +13933,21 @@ class SISDevice(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABN627#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABN627#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"time stamp (date and time)"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"time stamp (date and time)"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"date of the event given within the current SMC"
-                            }
+                            dict_={r"en": r"date of the event given within the current SMC"}
                         )
 
                     if qualifier is None:
@@ -15852,15 +13994,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"demand description"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"demand description"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -15890,12 +14028,7 @@ class SISDevice(aas.Submodel):
 
             class DemandClass(aas.Property):
 
-                ALLOWED_VALUES = (
-                    r"true demand",
-                    r"false demand",
-                    r"nuisance demand",
-                    r"spurious demand",
-                )
+                ALLOWED_VALUES = (r"true demand", r"false demand", r"nuisance demand", r"spurious demand")
 
                 def __init__(
                     self,
@@ -15918,15 +14051,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"demand class"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"demand class"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -15992,15 +14121,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"SIS device response time actual"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"SIS device response time actual"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -16059,21 +14184,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"reference to failure event"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to failure event"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred test(s) or alarm(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred test(s) or alarm(s)"}
                         )
 
                     if qualifier is None:
@@ -16118,15 +14237,11 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"is SIF demand"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"is SIF demand"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -16160,12 +14275,8 @@ class SISDevice(aas.Submodel):
                 isSIFDemand: Union[bool, IsSIFDemand],
                 demandDescription: Optional[Union[str, DemandDescription]] = None,
                 demandClass: Optional[Union[str, DemandClass]] = None,
-                sISDeviceResponseTimeActual: Optional[
-                    Union[xsd.Decimal, SISDeviceResponseTimeActual]
-                ] = None,
-                referenceToFailureEvent: Optional[
-                    Union[aas.Reference, ReferenceToFailureEvent]
-                ] = None,
+                sISDeviceResponseTimeActual: Optional[Union[xsd.Decimal, SISDeviceResponseTimeActual]] = None,
+                referenceToFailureEvent: Optional[Union[aas.Reference, ReferenceToFailureEvent]] = None,
                 id_short: Optional[str] = r"DeviceDemandEvent",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -16182,15 +14293,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"device demand event"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"device demand event"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -16205,25 +14312,17 @@ class SISDevice(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if timeStampDateAndTime is not None and not isinstance(
-                    timeStampDateAndTime, aas.SubmodelElement
-                ):
-                    timeStampDateAndTime = self.TimeStampDateAndTime(
-                        timeStampDateAndTime
-                    )
+                if timeStampDateAndTime is not None and not isinstance(timeStampDateAndTime, aas.SubmodelElement):
+                    timeStampDateAndTime = self.TimeStampDateAndTime(timeStampDateAndTime)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if demandDescription is not None and not isinstance(
-                    demandDescription, aas.SubmodelElement
-                ):
+                if demandDescription is not None and not isinstance(demandDescription, aas.SubmodelElement):
                     demandDescription = self.DemandDescription(demandDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if demandClass is not None and not isinstance(
-                    demandClass, aas.SubmodelElement
-                ):
+                if demandClass is not None and not isinstance(demandClass, aas.SubmodelElement):
                     demandClass = self.DemandClass(demandClass)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -16231,24 +14330,16 @@ class SISDevice(aas.Submodel):
                 if sISDeviceResponseTimeActual is not None and not isinstance(
                     sISDeviceResponseTimeActual, aas.SubmodelElement
                 ):
-                    sISDeviceResponseTimeActual = self.SISDeviceResponseTimeActual(
-                        sISDeviceResponseTimeActual
-                    )
+                    sISDeviceResponseTimeActual = self.SISDeviceResponseTimeActual(sISDeviceResponseTimeActual)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if referenceToFailureEvent is not None and not isinstance(
-                    referenceToFailureEvent, aas.SubmodelElement
-                ):
-                    referenceToFailureEvent = self.ReferenceToFailureEvent(
-                        referenceToFailureEvent
-                    )
+                if referenceToFailureEvent is not None and not isinstance(referenceToFailureEvent, aas.SubmodelElement):
+                    referenceToFailureEvent = self.ReferenceToFailureEvent(referenceToFailureEvent)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if isSIFDemand is not None and not isinstance(
-                    isSIFDemand, aas.SubmodelElement
-                ):
+                if isSIFDemand is not None and not isinstance(isSIFDemand, aas.SubmodelElement):
                     isSIFDemand = self.IsSIFDemand(isSIFDemand)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -16271,9 +14362,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -16299,28 +14388,21 @@ class SISDevice(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/DemandData/1",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/DemandData/1"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(dict_={r"en": r"demand data"})
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"gives information about occurred demand(s)"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about occurred demand(s)"})
 
             if qualifier is None:
                 qualifier = ()
@@ -16330,18 +14412,12 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if operationalDemandRate is not None and not isinstance(
-                operationalDemandRate, aas.SubmodelElement
-            ):
-                operationalDemandRate = self.OperationalDemandRate(
-                    operationalDemandRate
-                )
+            if operationalDemandRate is not None and not isinstance(operationalDemandRate, aas.SubmodelElement):
+                operationalDemandRate = self.OperationalDemandRate(operationalDemandRate)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if numberOfDemands is not None and not isinstance(
-                numberOfDemands, aas.SubmodelElement
-            ):
+            if numberOfDemands is not None and not isinstance(numberOfDemands, aas.SubmodelElement):
                 numberOfDemands = self.NumberOfDemands(numberOfDemands)
 
             # A str would be split into its characters
@@ -16361,9 +14437,7 @@ class SISDevice(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -16403,15 +14477,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"number of failures"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"number of failures"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -16462,15 +14532,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"number of DU failures"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"number of DU failures"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -16521,15 +14587,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"number of spurious trips"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"number of spurious trips"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -16571,32 +14633,21 @@ class SISDevice(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABN627#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABN627#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"time stamp (date and time)"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"time stamp (date and time)"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"date of the event given within the current SMC"
-                            }
+                            dict_={r"en": r"date of the event given within the current SMC"}
                         )
 
                     if qualifier is None:
@@ -16643,21 +14694,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"detection method"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"detection method"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -16716,21 +14761,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"detection mode"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"detection mode"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -16792,21 +14831,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"failure mode"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"failure mode"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -16842,16 +14875,7 @@ class SISDevice(aas.Submodel):
 
             class FailureClass(aas.Property):
 
-                ALLOWED_VALUES = (
-                    r"DU",
-                    r"DD",
-                    r"SU",
-                    r"SD",
-                    r"S",
-                    r"Spurious",
-                    r"NONC",
-                    r"NA",
-                )
+                ALLOWED_VALUES = (r"DU", r"DD", r"SU", r"SD", r"S", r"Spurious", r"NONC", r"NA")
 
                 def __init__(
                     self,
@@ -16874,21 +14898,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"failure class"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"failure class"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -16950,21 +14968,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"is spurious trip"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"is spurious trip"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -17011,21 +15023,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"failure mechanism"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"failure mechanism"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -17074,9 +15080,7 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -17086,9 +15090,7 @@ class SISDevice(aas.Submodel):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -17150,21 +15152,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"failure description"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"failure description"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -17211,21 +15207,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"failure cause"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"failure cause"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -17272,21 +15262,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"failure independency type"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"failure independency type"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -17333,21 +15317,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"is SIF failure"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"is SIF failure"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -17394,21 +15372,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"expected repair time"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"expected repair time"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -17455,21 +15427,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"actual repair time"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"actual repair time"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -17516,21 +15482,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"notification number"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"notification number"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -17577,21 +15537,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"work order number"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"work order number"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -17629,8 +15583,7 @@ class SISDevice(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/cds/Measure/1",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/Measure/1"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -17638,21 +15591,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Measure"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measure"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred failure(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred failure(s)"}
                         )
 
                     if qualifier is None:
@@ -17687,16 +15634,10 @@ class SISDevice(aas.Submodel):
                 notificationNumber: Union[int, NotificationNumber],
                 detectionMethod: Optional[Union[str, DetectionMethod]] = None,
                 failureMode: Optional[Union[str, FailureMode]] = None,
-                failureMechanism: Optional[
-                    Iterable[Union[str, FailureMechanism]]
-                ] = None,
-                isSystematicOrRandomHardwareFailure: Optional[
-                    Union[str, IsSystematicOrRandomHardwareFailure]
-                ] = None,
+                failureMechanism: Optional[Iterable[Union[str, FailureMechanism]]] = None,
+                isSystematicOrRandomHardwareFailure: Optional[Union[str, IsSystematicOrRandomHardwareFailure]] = None,
                 failureCause: Optional[Union[str, FailureCause]] = None,
-                failureIndependencyType: Optional[
-                    Union[str, FailureIndependencyType]
-                ] = None,
+                failureIndependencyType: Optional[Union[str, FailureIndependencyType]] = None,
                 isSIFFailure: Optional[Union[bool, IsSIFFailure]] = None,
                 expectedRepairTime: Optional[Union[float, ExpectedRepairTime]] = None,
                 workOrderNumber: Optional[Union[int, WorkOrderNumber]] = None,
@@ -17708,8 +15649,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/FailureEvent/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/FailureEvent/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -17717,15 +15657,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"failure event"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"failure event"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -17740,63 +15676,42 @@ class SISDevice(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if timeStampDateAndTime is not None and not isinstance(
-                    timeStampDateAndTime, aas.SubmodelElement
-                ):
-                    timeStampDateAndTime = self.TimeStampDateAndTime(
-                        timeStampDateAndTime
-                    )
+                if timeStampDateAndTime is not None and not isinstance(timeStampDateAndTime, aas.SubmodelElement):
+                    timeStampDateAndTime = self.TimeStampDateAndTime(timeStampDateAndTime)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if detectionMethod is not None and not isinstance(
-                    detectionMethod, aas.SubmodelElement
-                ):
+                if detectionMethod is not None and not isinstance(detectionMethod, aas.SubmodelElement):
                     detectionMethod = self.DetectionMethod(detectionMethod)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if detectionMode is not None and not isinstance(
-                    detectionMode, aas.SubmodelElement
-                ):
+                if detectionMode is not None and not isinstance(detectionMode, aas.SubmodelElement):
                     detectionMode = self.DetectionMode(detectionMode)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if failureMode is not None and not isinstance(
-                    failureMode, aas.SubmodelElement
-                ):
+                if failureMode is not None and not isinstance(failureMode, aas.SubmodelElement):
                     failureMode = self.FailureMode(failureMode)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if failureClass is not None and not isinstance(
-                    failureClass, aas.SubmodelElement
-                ):
+                if failureClass is not None and not isinstance(failureClass, aas.SubmodelElement):
                     failureClass = self.FailureClass(failureClass)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if isSpuriousTrip is not None and not isinstance(
-                    isSpuriousTrip, aas.SubmodelElement
-                ):
+                if isSpuriousTrip is not None and not isinstance(isSpuriousTrip, aas.SubmodelElement):
                     isSpuriousTrip = self.IsSpuriousTrip(isSpuriousTrip)
 
                 # A str would be split into its characters
                 if isinstance(failureMechanism, str):
-                    raise TypeError(
-                        "failureMechanism takes several elements, got a str"
-                    )
+                    raise TypeError("failureMechanism takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if failureMechanism:
                     failureMechanism = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.FailureMechanism(i)
-                        )
-                        for i in failureMechanism
+                        i if isinstance(i, aas.SubmodelElement) else self.FailureMechanism(i) for i in failureMechanism
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -17804,78 +15719,54 @@ class SISDevice(aas.Submodel):
                 if isSystematicOrRandomHardwareFailure is not None and not isinstance(
                     isSystematicOrRandomHardwareFailure, aas.SubmodelElement
                 ):
-                    isSystematicOrRandomHardwareFailure = (
-                        self.IsSystematicOrRandomHardwareFailure(
-                            isSystematicOrRandomHardwareFailure
-                        )
+                    isSystematicOrRandomHardwareFailure = self.IsSystematicOrRandomHardwareFailure(
+                        isSystematicOrRandomHardwareFailure
                     )
 
                 # A str would be split into its characters
                 if isinstance(failureDescription, str):
-                    raise TypeError(
-                        "failureDescription takes several elements, got a str"
-                    )
+                    raise TypeError("failureDescription takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if failureDescription:
                     failureDescription = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.FailureDescription(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.FailureDescription(i)
                         for i in failureDescription
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if failureCause is not None and not isinstance(
-                    failureCause, aas.SubmodelElement
-                ):
+                if failureCause is not None and not isinstance(failureCause, aas.SubmodelElement):
                     failureCause = self.FailureCause(failureCause)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if failureIndependencyType is not None and not isinstance(
-                    failureIndependencyType, aas.SubmodelElement
-                ):
-                    failureIndependencyType = self.FailureIndependencyType(
-                        failureIndependencyType
-                    )
+                if failureIndependencyType is not None and not isinstance(failureIndependencyType, aas.SubmodelElement):
+                    failureIndependencyType = self.FailureIndependencyType(failureIndependencyType)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if isSIFFailure is not None and not isinstance(
-                    isSIFFailure, aas.SubmodelElement
-                ):
+                if isSIFFailure is not None and not isinstance(isSIFFailure, aas.SubmodelElement):
                     isSIFFailure = self.IsSIFFailure(isSIFFailure)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if expectedRepairTime is not None and not isinstance(
-                    expectedRepairTime, aas.SubmodelElement
-                ):
+                if expectedRepairTime is not None and not isinstance(expectedRepairTime, aas.SubmodelElement):
                     expectedRepairTime = self.ExpectedRepairTime(expectedRepairTime)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if actualRepairTime is not None and not isinstance(
-                    actualRepairTime, aas.SubmodelElement
-                ):
+                if actualRepairTime is not None and not isinstance(actualRepairTime, aas.SubmodelElement):
                     actualRepairTime = self.ActualRepairTime(actualRepairTime)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if notificationNumber is not None and not isinstance(
-                    notificationNumber, aas.SubmodelElement
-                ):
+                if notificationNumber is not None and not isinstance(notificationNumber, aas.SubmodelElement):
                     notificationNumber = self.NotificationNumber(notificationNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if workOrderNumber is not None and not isinstance(
-                    workOrderNumber, aas.SubmodelElement
-                ):
+                if workOrderNumber is not None and not isinstance(workOrderNumber, aas.SubmodelElement):
                     workOrderNumber = self.WorkOrderNumber(workOrderNumber)
 
                 # A str would be split into its characters
@@ -17884,10 +15775,7 @@ class SISDevice(aas.Submodel):
 
                 # Build submodel elements from raw values passed in the argument
                 if measure:
-                    measure = [
-                        i if isinstance(i, aas.SubmodelElement) else self.Measure(i)
-                        for i in measure
-                    ]
+                    measure = [i if isinstance(i, aas.SubmodelElement) else self.Measure(i) for i in measure]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -17920,9 +15808,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -17950,8 +15836,7 @@ class SISDevice(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/FailureData/1",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/FailureData/1"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -17959,9 +15844,7 @@ class SISDevice(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -17969,9 +15852,7 @@ class SISDevice(aas.Submodel):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"gives relevant information about the occurred failure(s)"
-                    }
+                    dict_={r"en": r"gives relevant information about the occurred failure(s)"}
                 )
 
             if qualifier is None:
@@ -17982,26 +15863,18 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if numberOfFailures is not None and not isinstance(
-                numberOfFailures, aas.SubmodelElement
-            ):
+            if numberOfFailures is not None and not isinstance(numberOfFailures, aas.SubmodelElement):
                 numberOfFailures = self.NumberOfFailures(numberOfFailures)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if numberOfDUFailures is not None and not isinstance(
-                numberOfDUFailures, aas.SubmodelElement
-            ):
+            if numberOfDUFailures is not None and not isinstance(numberOfDUFailures, aas.SubmodelElement):
                 numberOfDUFailures = self.NumberOfDUFailures(numberOfDUFailures)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if numberOfSpuriousTrips is not None and not isinstance(
-                numberOfSpuriousTrips, aas.SubmodelElement
-            ):
-                numberOfSpuriousTrips = self.NumberOfSpuriousTrips(
-                    numberOfSpuriousTrips
-                )
+            if numberOfSpuriousTrips is not None and not isinstance(numberOfSpuriousTrips, aas.SubmodelElement):
+                numberOfSpuriousTrips = self.NumberOfSpuriousTrips(numberOfSpuriousTrips)
 
             # A str would be split into its characters
             if isinstance(failureEvent, str):
@@ -18009,12 +15882,7 @@ class SISDevice(aas.Submodel):
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                numberOfFailures,
-                numberOfDUFailures,
-                numberOfSpuriousTrips,
-                failureEvent,
-            ]:
+            for se_arg in [numberOfFailures, numberOfDUFailures, numberOfSpuriousTrips, failureEvent]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -18025,9 +15893,7 @@ class SISDevice(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -18067,21 +15933,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"lambda DU operational"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"lambda DU operational"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with operational data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with operational data value(s)"}
                     )
 
                 if qualifier is None:
@@ -18138,20 +15998,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"PFH average based on operational data"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"PFH average based on operational data"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"performance measure(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"performance measure(s)"})
 
                 if qualifier is None:
                     qualifier = (
@@ -18207,21 +16061,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"PFD average based on operational data"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"PFD average based on operational data"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with operational data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with operational data value(s)"}
                     )
 
                 if qualifier is None:
@@ -18268,21 +16116,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"lambda DD operational"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"lambda DD operational"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with operational data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with operational data value(s)"}
                     )
 
                 if qualifier is None:
@@ -18339,21 +16181,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"lambda SU operational"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"lambda SU operational"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with operational data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with operational data value(s)"}
                     )
 
                 if qualifier is None:
@@ -18410,15 +16246,11 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"spurious trip rate operational"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"spurious trip rate operational"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -18469,21 +16301,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"lambda SD operatoinal"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"lambda SD operatoinal"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with operational data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with operational data value(s)"}
                     )
 
                 if qualifier is None:
@@ -18540,21 +16366,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"safe failure fraction operational"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"safe failure fraction operational"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with operational data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with operational data value(s)"}
                     )
 
                 if qualifier is None:
@@ -18611,21 +16431,15 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"diagnostic coverage operational"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"diagnostic coverage operational"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"reliability data parameter(s) with operational data value(s)"
-                        }
+                        dict_={r"en": r"reliability data parameter(s) with operational data value(s)"}
                     )
 
                 if qualifier is None:
@@ -18663,21 +16477,13 @@ class SISDevice(aas.Submodel):
             self,
             lambdaDUOperational: Union[float, LambdaDUOperational],
             spuriousTripRateOperational: Union[float, SpuriousTripRateOperational],
-            pFHAverageBasedOnOperationalData: Optional[
-                Union[float, PFHAverageBasedOnOperationalData]
-            ] = None,
-            pFDAverageBasedOnOperationalData: Optional[
-                Union[xsd.Decimal, PFDAverageBasedOnOperationalData]
-            ] = None,
+            pFHAverageBasedOnOperationalData: Optional[Union[float, PFHAverageBasedOnOperationalData]] = None,
+            pFDAverageBasedOnOperationalData: Optional[Union[xsd.Decimal, PFDAverageBasedOnOperationalData]] = None,
             lambdaDDOperational: Optional[Union[float, LambdaDDOperational]] = None,
             lambdaSUOperational: Optional[Union[float, LambdaSUOperational]] = None,
             lambdaSDOperational: Optional[Union[float, LambdaSDOperational]] = None,
-            safeFailureFractionOperational: Optional[
-                Union[xsd.Decimal, SafeFailureFractionOperational]
-            ] = None,
-            diagnosticCoverageOperational: Optional[
-                Union[xsd.Decimal, DiagnosticCoverageOperational]
-            ] = None,
+            safeFailureFractionOperational: Optional[Union[xsd.Decimal, SafeFailureFractionOperational]] = None,
+            diagnosticCoverageOperational: Optional[Union[xsd.Decimal, DiagnosticCoverageOperational]] = None,
             id_short: Optional[str] = r"ReliabilityDataOperational",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -18694,21 +16500,15 @@ class SISDevice(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"reliability data operational"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"reliability data operational"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"reliability data parameter(s) with operational data value(s)"
-                    }
+                    dict_={r"en": r"reliability data parameter(s) with operational data value(s)"}
                 )
 
             if qualifier is None:
@@ -18719,9 +16519,7 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lambdaDUOperational is not None and not isinstance(
-                lambdaDUOperational, aas.SubmodelElement
-            ):
+            if lambdaDUOperational is not None and not isinstance(lambdaDUOperational, aas.SubmodelElement):
                 lambdaDUOperational = self.LambdaDUOperational(lambdaDUOperational)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -18729,10 +16527,8 @@ class SISDevice(aas.Submodel):
             if pFHAverageBasedOnOperationalData is not None and not isinstance(
                 pFHAverageBasedOnOperationalData, aas.SubmodelElement
             ):
-                pFHAverageBasedOnOperationalData = (
-                    self.PFHAverageBasedOnOperationalData(
-                        pFHAverageBasedOnOperationalData
-                    )
+                pFHAverageBasedOnOperationalData = self.PFHAverageBasedOnOperationalData(
+                    pFHAverageBasedOnOperationalData
                 )
 
             # Build a submodel element if a raw value was passed in the argument
@@ -18740,24 +16536,18 @@ class SISDevice(aas.Submodel):
             if pFDAverageBasedOnOperationalData is not None and not isinstance(
                 pFDAverageBasedOnOperationalData, aas.SubmodelElement
             ):
-                pFDAverageBasedOnOperationalData = (
-                    self.PFDAverageBasedOnOperationalData(
-                        pFDAverageBasedOnOperationalData
-                    )
+                pFDAverageBasedOnOperationalData = self.PFDAverageBasedOnOperationalData(
+                    pFDAverageBasedOnOperationalData
                 )
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lambdaDDOperational is not None and not isinstance(
-                lambdaDDOperational, aas.SubmodelElement
-            ):
+            if lambdaDDOperational is not None and not isinstance(lambdaDDOperational, aas.SubmodelElement):
                 lambdaDDOperational = self.LambdaDDOperational(lambdaDDOperational)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lambdaSUOperational is not None and not isinstance(
-                lambdaSUOperational, aas.SubmodelElement
-            ):
+            if lambdaSUOperational is not None and not isinstance(lambdaSUOperational, aas.SubmodelElement):
                 lambdaSUOperational = self.LambdaSUOperational(lambdaSUOperational)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -18765,15 +16555,11 @@ class SISDevice(aas.Submodel):
             if spuriousTripRateOperational is not None and not isinstance(
                 spuriousTripRateOperational, aas.SubmodelElement
             ):
-                spuriousTripRateOperational = self.SpuriousTripRateOperational(
-                    spuriousTripRateOperational
-                )
+                spuriousTripRateOperational = self.SpuriousTripRateOperational(spuriousTripRateOperational)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lambdaSDOperational is not None and not isinstance(
-                lambdaSDOperational, aas.SubmodelElement
-            ):
+            if lambdaSDOperational is not None and not isinstance(lambdaSDOperational, aas.SubmodelElement):
                 lambdaSDOperational = self.LambdaSDOperational(lambdaSDOperational)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -18781,18 +16567,14 @@ class SISDevice(aas.Submodel):
             if safeFailureFractionOperational is not None and not isinstance(
                 safeFailureFractionOperational, aas.SubmodelElement
             ):
-                safeFailureFractionOperational = self.SafeFailureFractionOperational(
-                    safeFailureFractionOperational
-                )
+                safeFailureFractionOperational = self.SafeFailureFractionOperational(safeFailureFractionOperational)
 
             # Build a submodel element if a raw value was passed in the argument
 
             if diagnosticCoverageOperational is not None and not isinstance(
                 diagnosticCoverageOperational, aas.SubmodelElement
             ):
-                diagnosticCoverageOperational = self.DiagnosticCoverageOperational(
-                    diagnosticCoverageOperational
-                )
+                diagnosticCoverageOperational = self.DiagnosticCoverageOperational(diagnosticCoverageOperational)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -18817,9 +16599,7 @@ class SISDevice(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -18852,8 +16632,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/TypeOfTest/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/TypeOfTest/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -18861,20 +16640,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"type of test"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"type of test"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about test(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                 if qualifier is None:
                     qualifier = (
@@ -18935,20 +16708,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"test description"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"test description"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about test(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -18994,20 +16761,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"shutdown is needed for testing"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"shutdown is needed for testing"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about test(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -19053,20 +16814,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"minimum time required for testing"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"minimum time required for testing"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about test(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -19112,20 +16867,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"required resources"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"required resources"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about test(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -19171,20 +16920,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"present test interval"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"present test interval"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about test(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                 if qualifier is None:
                     qualifier = (
@@ -19240,20 +16983,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"source of present test interval"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"source of present test interval"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about test(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                 if qualifier is None:
                     qualifier = (
@@ -19300,8 +17037,7 @@ class SISDevice(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/TestDuration/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/TestDuration/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -19309,20 +17045,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"duration of test"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"duration of test"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about test(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -19368,20 +17098,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"number of performed tests"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"number of performed tests"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about test(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -19427,20 +17151,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"number of failed tests"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"number of failed tests"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about test(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -19484,20 +17202,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"reference to fail criterion"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to fail criterion"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about test(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -19532,32 +17244,21 @@ class SISDevice(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABN627#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABN627#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"time stamp (date and time)"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"time stamp (date and time)"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"date of the event given within the current SMC"
-                            }
+                            dict_={r"en": r"date of the event given within the current SMC"}
                         )
 
                     if qualifier is None:
@@ -19606,20 +17307,14 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"test location"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"test location"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"gives information about test(s)"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                     if qualifier is None:
                         qualifier = (
@@ -19682,20 +17377,14 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"test result failed or passed"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"test result failed or passed"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"gives information about test(s)"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                     if qualifier is None:
                         qualifier = (
@@ -19756,20 +17445,14 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"test result numeric"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"test result numeric"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"gives information about test(s)"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -19815,20 +17498,14 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"test result text"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"test result text"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"gives information about test(s)"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -19874,20 +17551,14 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"comment to test result"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"comment to test result"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"gives information about test(s)"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -19931,21 +17602,15 @@ class SISDevice(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"reference to failure event"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to failure event"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"gives information about occurred test(s) or alarm(s)"
-                            }
+                            dict_={r"en": r"gives information about occurred test(s) or alarm(s)"}
                         )
 
                     if qualifier is None:
@@ -19975,9 +17640,7 @@ class SISDevice(aas.Submodel):
                 testResultNumeric: Optional[Union[xsd.Float, TestResultNumeric]] = None,
                 testResultText: Optional[Union[str, TestResultText]] = None,
                 commentToTestResult: Optional[Union[str, CommentToTestResult]] = None,
-                referenceToFailureEvent: Optional[
-                    Union[aas.Reference, ReferenceToFailureEvent]
-                ] = None,
+                referenceToFailureEvent: Optional[Union[aas.Reference, ReferenceToFailureEvent]] = None,
                 id_short: Optional[str] = r"ProofTestEvent",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -19994,20 +17657,14 @@ class SISDevice(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Proof test event"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Proof test event"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about test(s)"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -20017,18 +17674,12 @@ class SISDevice(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if timeStampDateAndTime is not None and not isinstance(
-                    timeStampDateAndTime, aas.SubmodelElement
-                ):
-                    timeStampDateAndTime = self.TimeStampDateAndTime(
-                        timeStampDateAndTime
-                    )
+                if timeStampDateAndTime is not None and not isinstance(timeStampDateAndTime, aas.SubmodelElement):
+                    timeStampDateAndTime = self.TimeStampDateAndTime(timeStampDateAndTime)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if testLocation is not None and not isinstance(
-                    testLocation, aas.SubmodelElement
-                ):
+                if testLocation is not None and not isinstance(testLocation, aas.SubmodelElement):
                     testLocation = self.TestLocation(testLocation)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -20036,39 +17687,27 @@ class SISDevice(aas.Submodel):
                 if testResultFailedOrPassed is not None and not isinstance(
                     testResultFailedOrPassed, aas.SubmodelElement
                 ):
-                    testResultFailedOrPassed = self.TestResultFailedOrPassed(
-                        testResultFailedOrPassed
-                    )
+                    testResultFailedOrPassed = self.TestResultFailedOrPassed(testResultFailedOrPassed)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if testResultNumeric is not None and not isinstance(
-                    testResultNumeric, aas.SubmodelElement
-                ):
+                if testResultNumeric is not None and not isinstance(testResultNumeric, aas.SubmodelElement):
                     testResultNumeric = self.TestResultNumeric(testResultNumeric)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if testResultText is not None and not isinstance(
-                    testResultText, aas.SubmodelElement
-                ):
+                if testResultText is not None and not isinstance(testResultText, aas.SubmodelElement):
                     testResultText = self.TestResultText(testResultText)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if commentToTestResult is not None and not isinstance(
-                    commentToTestResult, aas.SubmodelElement
-                ):
+                if commentToTestResult is not None and not isinstance(commentToTestResult, aas.SubmodelElement):
                     commentToTestResult = self.CommentToTestResult(commentToTestResult)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if referenceToFailureEvent is not None and not isinstance(
-                    referenceToFailureEvent, aas.SubmodelElement
-                ):
-                    referenceToFailureEvent = self.ReferenceToFailureEvent(
-                        referenceToFailureEvent
-                    )
+                if referenceToFailureEvent is not None and not isinstance(referenceToFailureEvent, aas.SubmodelElement):
+                    referenceToFailureEvent = self.ReferenceToFailureEvent(referenceToFailureEvent)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -20091,9 +17730,7 @@ class SISDevice(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -20113,20 +17750,14 @@ class SISDevice(aas.Submodel):
             typeOfTest: Union[str, TypeOfTest],
             shutdownIsNeededForTesting: Union[bool, ShutdownIsNeededForTesting],
             presentTestInterval: Union[str, PresentTestInterval],
-            sourceOfPresentTestInterval: Iterable[
-                Union[str, SourceOfPresentTestInterval]
-            ],
+            sourceOfPresentTestInterval: Iterable[Union[str, SourceOfPresentTestInterval]],
             numberOfPerformedTests: Union[str, NumberOfPerformedTests],
             numberOfFailedTests: Union[str, NumberOfFailedTests],
             testDescription: Optional[Union[str, TestDescription]] = None,
-            minimumTimeRequiredForTesting: Optional[
-                Union[float, MinimumTimeRequiredForTesting]
-            ] = None,
+            minimumTimeRequiredForTesting: Optional[Union[float, MinimumTimeRequiredForTesting]] = None,
             requiredResources: Optional[Union[str, RequiredResources]] = None,
             testDuration: Optional[Union[float, TestDuration]] = None,
-            referenceToFailCriterion: Optional[
-                Union[aas.Reference, ReferenceToFailCriterion]
-            ] = None,
+            referenceToFailCriterion: Optional[Union[aas.Reference, ReferenceToFailCriterion]] = None,
             proofTestEvent: Optional[Iterable[ProofTestEvent]] = None,
             id_short: Optional[str] = r"ProofTestData",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -20135,8 +17766,7 @@ class SISDevice(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/ProofTestData/1",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/ProofTestData/1"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -20144,20 +17774,14 @@ class SISDevice(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"proof test data"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"proof test data"})
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"gives information about test(s)"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about test(s)"})
 
             if qualifier is None:
                 qualifier = ()
@@ -20167,16 +17791,12 @@ class SISDevice(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if typeOfTest is not None and not isinstance(
-                typeOfTest, aas.SubmodelElement
-            ):
+            if typeOfTest is not None and not isinstance(typeOfTest, aas.SubmodelElement):
                 typeOfTest = self.TypeOfTest(typeOfTest)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if testDescription is not None and not isinstance(
-                testDescription, aas.SubmodelElement
-            ):
+            if testDescription is not None and not isinstance(testDescription, aas.SubmodelElement):
                 testDescription = self.TestDescription(testDescription)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -20184,81 +17804,55 @@ class SISDevice(aas.Submodel):
             if shutdownIsNeededForTesting is not None and not isinstance(
                 shutdownIsNeededForTesting, aas.SubmodelElement
             ):
-                shutdownIsNeededForTesting = self.ShutdownIsNeededForTesting(
-                    shutdownIsNeededForTesting
-                )
+                shutdownIsNeededForTesting = self.ShutdownIsNeededForTesting(shutdownIsNeededForTesting)
 
             # Build a submodel element if a raw value was passed in the argument
 
             if minimumTimeRequiredForTesting is not None and not isinstance(
                 minimumTimeRequiredForTesting, aas.SubmodelElement
             ):
-                minimumTimeRequiredForTesting = self.MinimumTimeRequiredForTesting(
-                    minimumTimeRequiredForTesting
-                )
+                minimumTimeRequiredForTesting = self.MinimumTimeRequiredForTesting(minimumTimeRequiredForTesting)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if requiredResources is not None and not isinstance(
-                requiredResources, aas.SubmodelElement
-            ):
+            if requiredResources is not None and not isinstance(requiredResources, aas.SubmodelElement):
                 requiredResources = self.RequiredResources(requiredResources)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if presentTestInterval is not None and not isinstance(
-                presentTestInterval, aas.SubmodelElement
-            ):
+            if presentTestInterval is not None and not isinstance(presentTestInterval, aas.SubmodelElement):
                 presentTestInterval = self.PresentTestInterval(presentTestInterval)
 
             # A str would be split into its characters
             if isinstance(sourceOfPresentTestInterval, str):
-                raise TypeError(
-                    "sourceOfPresentTestInterval takes several elements, got a str"
-                )
+                raise TypeError("sourceOfPresentTestInterval takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if sourceOfPresentTestInterval:
                 sourceOfPresentTestInterval = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.SourceOfPresentTestInterval(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.SourceOfPresentTestInterval(i)
                     for i in sourceOfPresentTestInterval
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if testDuration is not None and not isinstance(
-                testDuration, aas.SubmodelElement
-            ):
+            if testDuration is not None and not isinstance(testDuration, aas.SubmodelElement):
                 testDuration = self.TestDuration(testDuration)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if numberOfPerformedTests is not None and not isinstance(
-                numberOfPerformedTests, aas.SubmodelElement
-            ):
-                numberOfPerformedTests = self.NumberOfPerformedTests(
-                    numberOfPerformedTests
-                )
+            if numberOfPerformedTests is not None and not isinstance(numberOfPerformedTests, aas.SubmodelElement):
+                numberOfPerformedTests = self.NumberOfPerformedTests(numberOfPerformedTests)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if numberOfFailedTests is not None and not isinstance(
-                numberOfFailedTests, aas.SubmodelElement
-            ):
+            if numberOfFailedTests is not None and not isinstance(numberOfFailedTests, aas.SubmodelElement):
                 numberOfFailedTests = self.NumberOfFailedTests(numberOfFailedTests)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if referenceToFailCriterion is not None and not isinstance(
-                referenceToFailCriterion, aas.SubmodelElement
-            ):
-                referenceToFailCriterion = self.ReferenceToFailCriterion(
-                    referenceToFailCriterion
-                )
+            if referenceToFailCriterion is not None and not isinstance(referenceToFailCriterion, aas.SubmodelElement):
+                referenceToFailCriterion = self.ReferenceToFailCriterion(referenceToFailCriterion)
 
             # A str would be split into its characters
             if isinstance(proofTestEvent, str):
@@ -20290,9 +17884,7 @@ class SISDevice(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -20315,9 +17907,7 @@ class SISDevice(aas.Submodel):
         deviceModelSpecification: DeviceModelSpecification,
         reliabilityDataDesign: ReliabilityDataDesign,
         deviceInstanceSpecification: DeviceInstanceSpecification,
-        reliabilityInfluencingProperties: Optional[
-            ReliabilityInfluencingProperties
-        ] = None,
+        reliabilityInfluencingProperties: Optional[ReliabilityInfluencingProperties] = None,
         bypassData: Optional[BypassData] = None,
         diagnostics: Optional[Iterable[Diagnostics]] = None,
         deviceOperationData: Optional[DeviceOperationData] = None,
@@ -20407,9 +17997,7 @@ class SISDevice(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

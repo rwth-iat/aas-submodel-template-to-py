@@ -17,20 +17,13 @@ class AIDataset(aas.Submodel):
             category: Optional[str] = r"PARAMETER",
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0112/2///61987#ABN590#002 ",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABN590#002 "),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -74,28 +67,18 @@ class AIDataset(aas.Submodel):
             category: Optional[str] = r"PARAMETER",
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-AAS354#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAS354#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Version des Datensatzes",
-                        r"en": r"Version of the dataset",
-                    }
+                    dict_={r"de": r"Version des Datensatzes", r"en": r"Version of the dataset"}
                 )
 
             if qualifier is None:
@@ -140,9 +123,7 @@ class AIDataset(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -185,8 +166,7 @@ class AIDataset(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/AIDataset/Storage/1/0",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/AIDataset/Storage/1/0"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -194,16 +174,12 @@ class AIDataset(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Path to the dataset (e.g. local path, serverpath,...)"
-                    }
+                    dict_={r"en": r"Path to the dataset (e.g. local path, serverpath,...)"}
                 )
 
             if qualifier is None:
@@ -254,16 +230,12 @@ class AIDataset(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Number of the different labels in the dataset"
-                            }
+                            dict_={r"en": r"Number of the different labels in the dataset"}
                         )
 
                     if qualifier is None:
@@ -302,9 +274,7 @@ class AIDataset(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -316,15 +286,11 @@ class AIDataset(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Name of the class"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Name of the class"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -358,9 +324,7 @@ class AIDataset(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -372,16 +336,12 @@ class AIDataset(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Number of occurrences of the label in the dataset"
-                                    }
+                                    dict_={r"en": r"Number of occurrences of the label in the dataset"}
                                 )
 
                             if qualifier is None:
@@ -425,9 +385,7 @@ class AIDataset(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -443,16 +401,12 @@ class AIDataset(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if className is not None and not isinstance(
-                            className, aas.SubmodelElement
-                        ):
+                        if className is not None and not isinstance(className, aas.SubmodelElement):
                             className = self.ClassName(className)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if numberOfSamples is not None and not isinstance(
-                            numberOfSamples, aas.SubmodelElement
-                        ):
+                        if numberOfSamples is not None and not isinstance(numberOfSamples, aas.SubmodelElement):
                             numberOfSamples = self.NumberOfSamples(numberOfSamples)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -468,9 +422,7 @@ class AIDataset(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -504,16 +456,12 @@ class AIDataset(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Every label as a property and the number of samples"
-                            }
+                            dict_={r"en": r"Every label as a property and the number of samples"}
                         )
 
                     if qualifier is None:
@@ -524,9 +472,7 @@ class AIDataset(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(exampleLabel, str):
-                        raise TypeError(
-                            "exampleLabel takes several elements, got a str"
-                        )
+                        raise TypeError("exampleLabel takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -541,9 +487,7 @@ class AIDataset(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -573,9 +517,7 @@ class AIDataset(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -587,15 +529,11 @@ class AIDataset(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Name of the file"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Name of the file"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -628,14 +566,10 @@ class AIDataset(aas.Submodel):
                                 id_short: Optional[str] = r"NumberLabels",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -647,16 +581,12 @@ class AIDataset(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Number of labels in this dataset element"
-                                        }
+                                        dict_={r"en": r"Number of labels in this dataset element"}
                                     )
 
                                 if qualifier is None:
@@ -688,14 +618,10 @@ class AIDataset(aas.Submodel):
                                 id_short: Optional[str] = r"Label",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -707,9 +633,7 @@ class AIDataset(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -748,9 +672,7 @@ class AIDataset(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -762,16 +684,12 @@ class AIDataset(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Collection containing all the labels within the dataset element"
-                                    }
+                                    dict_={r"en": r"Collection containing all the labels within the dataset element"}
                                 )
 
                             if qualifier is None:
@@ -782,27 +700,16 @@ class AIDataset(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if numberLabels is not None and not isinstance(
-                                numberLabels, aas.SubmodelElement
-                            ):
+                            if numberLabels is not None and not isinstance(numberLabels, aas.SubmodelElement):
                                 numberLabels = self.NumberLabels(numberLabels)
 
                             # A str would be split into its characters
                             if isinstance(label, str):
-                                raise TypeError(
-                                    "label takes several elements, got a str"
-                                )
+                                raise TypeError("label takes several elements, got a str")
 
                             # Build submodel elements from raw values passed in the argument
                             if label:
-                                label = [
-                                    (
-                                        i
-                                        if isinstance(i, aas.SubmodelElement)
-                                        else self.Label(i)
-                                    )
-                                    for i in label
-                                ]
+                                label = [i if isinstance(i, aas.SubmodelElement) else self.Label(i) for i in label]
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -845,9 +752,7 @@ class AIDataset(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -859,15 +764,11 @@ class AIDataset(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Path to the dataset element"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Path to the dataset element"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -900,9 +801,7 @@ class AIDataset(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -914,9 +813,7 @@ class AIDataset(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -956,14 +853,10 @@ class AIDataset(aas.Submodel):
                                 id_short: Optional[str] = r"ExampleSingleFileDetail",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -975,16 +868,12 @@ class AIDataset(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"additional information about the dataset element"
-                                        }
+                                        dict_={r"en": r"additional information about the dataset element"}
                                     )
 
                                 if qualifier is None:
@@ -1010,16 +899,12 @@ class AIDataset(aas.Submodel):
 
                         def __init__(
                             self,
-                            exampleSingleFileDetail: Union[
-                                str, ExampleSingleFileDetail
-                            ],
+                            exampleSingleFileDetail: Union[str, ExampleSingleFileDetail],
                             id_short: Optional[str] = r"SingleFileDetails",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1031,9 +916,7 @@ class AIDataset(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -1054,9 +937,7 @@ class AIDataset(aas.Submodel):
                             if exampleSingleFileDetail is not None and not isinstance(
                                 exampleSingleFileDetail, aas.SubmodelElement
                             ):
-                                exampleSingleFileDetail = self.ExampleSingleFileDetail(
-                                    exampleSingleFileDetail
-                                )
+                                exampleSingleFileDetail = self.ExampleSingleFileDetail(exampleSingleFileDetail)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -1111,9 +992,7 @@ class AIDataset(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1131,27 +1010,17 @@ class AIDataset(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if name is not None and not isinstance(
-                            name, aas.SubmodelElement
-                        ):
+                        if name is not None and not isinstance(name, aas.SubmodelElement):
                             name = self.Name(name)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if singleFilePath is not None and not isinstance(
-                            singleFilePath, aas.SubmodelElement
-                        ):
+                        if singleFilePath is not None and not isinstance(singleFilePath, aas.SubmodelElement):
                             singleFilePath = self.SingleFilePath(singleFilePath)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            name,
-                            labels,
-                            singleFilePath,
-                            annotationFile,
-                            singleFileDetails,
-                        ]:
+                        for se_arg in [name, labels, singleFilePath, annotationFile, singleFileDetails]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -1162,9 +1031,7 @@ class AIDataset(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1198,16 +1065,12 @@ class AIDataset(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Collection containing every dataset element individuallly"
-                            }
+                            dict_={r"en": r"Collection containing every dataset element individuallly"}
                         )
 
                     if qualifier is None:
@@ -1218,9 +1081,7 @@ class AIDataset(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(exampleSingleFile, str):
-                        raise TypeError(
-                            "exampleSingleFile takes several elements, got a str"
-                        )
+                        raise TypeError("exampleSingleFile takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1235,9 +1096,7 @@ class AIDataset(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1275,15 +1134,11 @@ class AIDataset(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Balance between the classes"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Balance between the classes"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1328,16 +1183,12 @@ class AIDataset(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Annotation file of the dataset (e.g. CSV,JSON,Path...)"
-                            }
+                            dict_={r"en": r"Annotation file of the dataset (e.g. CSV,JSON,Path...)"}
                         )
 
                     if qualifier is None:
@@ -1383,16 +1234,12 @@ class AIDataset(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Information about labeled data for classification"
-                        }
+                        dict_={r"en": r"Information about labeled data for classification"}
                     )
 
                 if qualifier is None:
@@ -1403,9 +1250,7 @@ class AIDataset(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if numberLables is not None and not isinstance(
-                    numberLables, aas.SubmodelElement
-                ):
+                if numberLables is not None and not isinstance(numberLables, aas.SubmodelElement):
                     numberLables = self.NumberLables(numberLables)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1415,13 +1260,7 @@ class AIDataset(aas.Submodel):
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    numberLables,
-                    labels,
-                    singleFiles,
-                    balance,
-                    annotationFile,
-                ]:
+                for se_arg in [numberLables, labels, singleFiles, balance, annotationFile]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -1432,9 +1271,7 @@ class AIDataset(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1473,15 +1310,11 @@ class AIDataset(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"The meaning of the label"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"The meaning of the label"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1525,15 +1358,11 @@ class AIDataset(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Annotation file of the labeled data"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Annotation file of the labeled data"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1569,9 +1398,7 @@ class AIDataset(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1583,9 +1410,7 @@ class AIDataset(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -1625,14 +1450,10 @@ class AIDataset(aas.Submodel):
                                 id_short: Optional[str] = r"ExampleDetails",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1644,9 +1465,7 @@ class AIDataset(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -1679,16 +1498,12 @@ class AIDataset(aas.Submodel):
 
                         def __init__(
                             self,
-                            exampleDetails: Optional[
-                                Iterable[Union[str, ExampleDetails]]
-                            ] = None,
+                            exampleDetails: Optional[Iterable[Union[str, ExampleDetails]]] = None,
                             id_short: Optional[str] = r"SingleFileDetails",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1700,16 +1515,12 @@ class AIDataset(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Collection to add addtional information about the dataset element"
-                                    }
+                                    dict_={r"en": r"Collection to add addtional information about the dataset element"}
                                 )
 
                             if qualifier is None:
@@ -1720,18 +1531,12 @@ class AIDataset(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(exampleDetails, str):
-                                raise TypeError(
-                                    "exampleDetails takes several elements, got a str"
-                                )
+                                raise TypeError("exampleDetails takes several elements, got a str")
 
                             # Build submodel elements from raw values passed in the argument
                             if exampleDetails:
                                 exampleDetails = [
-                                    (
-                                        i
-                                        if isinstance(i, aas.SubmodelElement)
-                                        else self.ExampleDetails(i)
-                                    )
+                                    i if isinstance(i, aas.SubmodelElement) else self.ExampleDetails(i)
                                     for i in exampleDetails
                                 ]
 
@@ -1785,16 +1590,12 @@ class AIDataset(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Collection for a single annotation of a dataset element"
-                                }
+                                dict_={r"en": r"Collection for a single annotation of a dataset element"}
                             )
 
                         if qualifier is None:
@@ -1816,9 +1617,7 @@ class AIDataset(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1852,16 +1651,12 @@ class AIDataset(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Collection containing every dataset element individually"
-                            }
+                            dict_={r"en": r"Collection containing every dataset element individually"}
                         )
 
                     if qualifier is None:
@@ -1872,9 +1667,7 @@ class AIDataset(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(exampleAnnotation, str):
-                        raise TypeError(
-                            "exampleAnnotation takes several elements, got a str"
-                        )
+                        raise TypeError("exampleAnnotation takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1889,9 +1682,7 @@ class AIDataset(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1927,9 +1718,7 @@ class AIDataset(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1945,9 +1734,7 @@ class AIDataset(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if labeledescription is not None and not isinstance(
-                    labeledescription, aas.SubmodelElement
-                ):
+                if labeledescription is not None and not isinstance(labeledescription, aas.SubmodelElement):
                     labeledescription = self.Labeledescription(labeledescription)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1963,9 +1750,7 @@ class AIDataset(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1991,8 +1776,7 @@ class AIDataset(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/AIDataset/labeled/1/0",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/AIDataset/labeled/1/0"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -2000,16 +1784,12 @@ class AIDataset(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Additional Information typical for labeled datasets"
-                    }
+                    dict_={r"en": r"Additional Information typical for labeled datasets"}
                 )
 
             if qualifier is None:
@@ -2039,9 +1819,7 @@ class AIDataset(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2081,15 +1859,11 @@ class AIDataset(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Number of all samples in the dataset"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Number of all samples in the dataset"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2135,16 +1909,12 @@ class AIDataset(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Number of all dataset elements in the training subset"
-                        }
+                        dict_={r"en": r"Number of all dataset elements in the training subset"}
                     )
 
                 if qualifier is None:
@@ -2191,16 +1961,12 @@ class AIDataset(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Number of all dataset elements in the validation subset"
-                        }
+                        dict_={r"en": r"Number of all dataset elements in the validation subset"}
                     )
 
                 if qualifier is None:
@@ -2247,16 +2013,12 @@ class AIDataset(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Number of all dataset elements in the test subset"
-                        }
+                        dict_={r"en": r"Number of all dataset elements in the test subset"}
                     )
 
                 if qualifier is None:
@@ -2303,9 +2065,7 @@ class AIDataset(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -2359,16 +2119,12 @@ class AIDataset(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection about the number of dataset elements in the dataset and subsets"
-                    }
+                    dict_={r"en": r"Collection about the number of dataset elements in the dataset and subsets"}
                 )
 
             if qualifier is None:
@@ -2379,9 +2135,7 @@ class AIDataset(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if completeSize is not None and not isinstance(
-                completeSize, aas.SubmodelElement
-            ):
+            if completeSize is not None and not isinstance(completeSize, aas.SubmodelElement):
                 completeSize = self.CompleteSize(completeSize)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2401,9 +2155,7 @@ class AIDataset(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if splitRatio is not None and not isinstance(
-                splitRatio, aas.SubmodelElement
-            ):
+            if splitRatio is not None and not isinstance(splitRatio, aas.SubmodelElement):
                 splitRatio = self.SplitRatio(splitRatio)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2419,9 +2171,7 @@ class AIDataset(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2461,16 +2211,12 @@ class AIDataset(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Data type of the dataset elements (e.g. .WAV, .JPEG, ... )"
-                        }
+                        dict_={r"en": r"Data type of the dataset elements (e.g. .WAV, .JPEG, ... )"}
                     )
 
                 if qualifier is None:
@@ -2519,15 +2265,11 @@ class AIDataset(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Meta data information of the dataset"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Meta data information of the dataset"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2569,16 +2311,12 @@ class AIDataset(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Collection of additional meta information of the dataset"
-                        }
+                        dict_={r"en": r"Collection of additional meta information of the dataset"}
                     )
 
                 if qualifier is None:
@@ -2594,8 +2332,7 @@ class AIDataset(aas.Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if exampleInfo:
                     exampleInfo = [
-                        i if isinstance(i, aas.SubmodelElement) else self.ExampleInfo(i)
-                        for i in exampleInfo
+                        i if isinstance(i, aas.SubmodelElement) else self.ExampleInfo(i) for i in exampleInfo
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2611,9 +2348,7 @@ class AIDataset(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2639,8 +2374,7 @@ class AIDataset(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/AIDataset/MetaData/1/0",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/AIDataset/MetaData/1/0"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -2648,16 +2382,12 @@ class AIDataset(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection of meta data information about the dataset"
-                    }
+                    dict_={r"en": r"Collection of meta data information about the dataset"}
                 )
 
             if qualifier is None:
@@ -2672,10 +2402,7 @@ class AIDataset(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if fileType:
-                fileType = [
-                    i if isinstance(i, aas.SubmodelElement) else self.FileType(i)
-                    for i in fileType
-                ]
+                fileType = [i if isinstance(i, aas.SubmodelElement) else self.FileType(i) for i in fileType]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2690,9 +2417,7 @@ class AIDataset(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2732,15 +2457,11 @@ class AIDataset(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"metric of the dataset"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"metric of the dataset"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2773,8 +2494,7 @@ class AIDataset(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/AIDataset/Metrics/1/0",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/AIDataset/Metrics/1/0"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -2782,15 +2502,11 @@ class AIDataset(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Collection of different metrics"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Collection of different metrics"})
 
             if qualifier is None:
                 qualifier = ()
@@ -2800,9 +2516,7 @@ class AIDataset(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if exampleMetric is not None and not isinstance(
-                exampleMetric, aas.SubmodelElement
-            ):
+            if exampleMetric is not None and not isinstance(exampleMetric, aas.SubmodelElement):
                 exampleMetric = self.ExampleMetric(exampleMetric)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2818,9 +2532,7 @@ class AIDataset(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2860,15 +2572,11 @@ class AIDataset(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Reference to the data collector"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Reference to the data collector"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2908,16 +2616,12 @@ class AIDataset(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Information about the datacollector (e.g. a sensor)."
-                        }
+                        dict_={r"en": r"Information about the datacollector (e.g. a sensor)."}
                     )
 
                 if qualifier is None:
@@ -2932,10 +2636,7 @@ class AIDataset(aas.Submodel):
 
                 # Build submodel elements from raw values passed in the argument
                 if collector:
-                    collector = [
-                        i if isinstance(i, aas.SubmodelElement) else self.Collector(i)
-                        for i in collector
-                    ]
+                    collector = [i if isinstance(i, aas.SubmodelElement) else self.Collector(i) for i in collector]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2950,9 +2651,7 @@ class AIDataset(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2992,15 +2691,11 @@ class AIDataset(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Condition about the enviroment"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Condition about the enviroment"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3042,16 +2737,12 @@ class AIDataset(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Collection about environmental conditions the dataset was created with"
-                        }
+                        dict_={r"en": r"Collection about environmental conditions the dataset was created with"}
                     )
 
                 if qualifier is None:
@@ -3062,9 +2753,7 @@ class AIDataset(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if exampleCondition is not None and not isinstance(
-                    exampleCondition, aas.SubmodelElement
-                ):
+                if exampleCondition is not None and not isinstance(exampleCondition, aas.SubmodelElement):
                     exampleCondition = self.ExampleCondition(exampleCondition)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3080,9 +2769,7 @@ class AIDataset(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3119,16 +2806,12 @@ class AIDataset(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Information, if the dataset is synthetic, real or mixed"
-                        }
+                        dict_={r"en": r"Information, if the dataset is synthetic, real or mixed"}
                     )
 
                 if qualifier is None:
@@ -3172,16 +2855,12 @@ class AIDataset(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Boundary conditions in which the dataset was created"
-                    }
+                    dict_={r"en": r"Boundary conditions in which the dataset was created"}
                 )
 
             if qualifier is None:
@@ -3192,9 +2871,7 @@ class AIDataset(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if syntheticData is not None and not isinstance(
-                syntheticData, aas.SubmodelElement
-            ):
+            if syntheticData is not None and not isinstance(syntheticData, aas.SubmodelElement):
                 syntheticData = self.SyntheticData(syntheticData)
 
             # Add all passed/initialized submodel elements to a single list
@@ -3210,9 +2887,7 @@ class AIDataset(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3261,9 +2936,7 @@ class AIDataset(aas.Submodel):
     ):
 
         if description is None:
-            description = aas.MultiLanguageTextType(
-                dict_={r"en": r"Categories and Information of the aidataset@en "}
-            )
+            description = aas.MultiLanguageTextType(dict_={r"en": r"Categories and Information of the aidataset@en "})
 
         if qualifier is None:
             qualifier = ()
@@ -3273,9 +2946,7 @@ class AIDataset(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if uRIOfTheProduct is not None and not isinstance(
-            uRIOfTheProduct, aas.SubmodelElement
-        ):
+        if uRIOfTheProduct is not None and not isinstance(uRIOfTheProduct, aas.SubmodelElement):
             uRIOfTheProduct = self.URIOfTheProduct(uRIOfTheProduct)
 
         # Build a submodel element if a raw value was passed in the argument
@@ -3285,9 +2956,7 @@ class AIDataset(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if contactInformation is not None and not isinstance(
-            contactInformation, aas.SubmodelElement
-        ):
+        if contactInformation is not None and not isinstance(contactInformation, aas.SubmodelElement):
             contactInformation = self.ContactInformation(contactInformation)
 
         # Build a submodel element if a raw value was passed in the argument
@@ -3318,9 +2987,7 @@ class AIDataset(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

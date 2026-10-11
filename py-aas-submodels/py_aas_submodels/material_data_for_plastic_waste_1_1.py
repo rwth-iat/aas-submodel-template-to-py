@@ -30,21 +30,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Data Quality Level (DQL)"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Data Quality Level (DQL)"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"DataQualityLevel (DQL) as per DIN EN 18065, Section 4 and elsewhere"
-                        }
+                        dict_={r"en": r"DataQualityLevel (DQL) as per DIN EN 18065, Section 4 and elsewhere"}
                     )
 
                 if qualifier is None:
@@ -87,18 +81,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(dict_={r"en": r"Data quality"})
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Data Quality Level (DQL) as per EN 18065"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Data Quality Level (DQL) as per EN 18065"})
 
             if qualifier is None:
                 qualifier = ()
@@ -108,9 +98,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if dataQualityLevel is not None and not isinstance(
-                dataQualityLevel, aas.SubmodelElement
-            ):
+            if dataQualityLevel is not None and not isinstance(dataQualityLevel, aas.SubmodelElement):
                 dataQualityLevel = self.DataQualityLevel(dataQualityLevel)
 
             # Add all passed/initialized submodel elements to a single list
@@ -126,9 +114,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -168,20 +154,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Application-specific standard"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Application-specific standard"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Standard or norm"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Standard or norm"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -237,21 +217,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Application-specific standards"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Application-specific standards"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Relevant application-specific standards other than EN 18065"
-                    }
+                    dict_={r"en": r"Relevant application-specific standards other than EN 18065"}
                 )
 
             if qualifier is None:
@@ -262,18 +236,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(applicationspecificstandards_items, str):
-                raise TypeError(
-                    "applicationspecificstandards_items takes several elements, got a str"
-                )
+                raise TypeError("applicationspecificstandards_items takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if applicationspecificstandards_items:
                 applicationspecificstandards_items = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.Applicationspecificstandards_item(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.Applicationspecificstandards_item(i)
                     for i in applicationspecificstandards_items
                 ]
 
@@ -287,9 +255,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -358,10 +324,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -398,21 +361,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Main material type"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Main material type"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Main polymer type according to EN ISO 1043-1 (e.g., PE, PP, PET, ...)"
-                        }
+                        dict_={r"en": r"Main polymer type according to EN ISO 1043-1 (e.g., PE, PP, PET, ...)"}
                     )
 
                 if qualifier is None:
@@ -477,15 +434,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Type of packaging"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Type of packaging"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -556,15 +509,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Color by visual inspection"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Color by visual inspection"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -635,9 +584,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -712,20 +659,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Trade name"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Trade name"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Commercial trade name of the recyclate"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Commercial trade name of the recyclate"})
 
                 if qualifier is None:
                     qualifier = (
@@ -768,10 +709,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
         class RecycledContent(aas.Property):
 
-            ALLOWED_RANGE = (
-                xsd.from_xsd(r"0", xsd.Decimal),
-                xsd.from_xsd(r"100", xsd.Decimal),
-            )
+            ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.Decimal), xsd.from_xsd(r"100", xsd.Decimal))
 
             def __init__(
                 self,
@@ -794,15 +732,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Recycled content"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Recycled content"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -836,9 +770,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     embedded_data_specifications = []
 
                 if value is not None and (
-                    value < self.ALLOWED_RANGE[0]
-                    or self.ALLOWED_RANGE[1] is not None
-                    and value > self.ALLOWED_RANGE[1]
+                    value < self.ALLOWED_RANGE[0] or self.ALLOWED_RANGE[1] is not None and value > self.ALLOWED_RANGE[1]
                 ):
                     raise ValueError(
                         f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
@@ -884,20 +816,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Attribution model"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Attribution model"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Attribution model"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Attribution model"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -943,9 +869,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -982,9 +906,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             def __init__(
                 self,
                 attributionModel: Optional[Union[str, AttributionModel]] = None,
-                relevantEuropeanOrInternationalNorm: Optional[
-                    Union[str, RelevantEuropeanOrInternationalNorm]
-                ] = None,
+                relevantEuropeanOrInternationalNorm: Optional[Union[str, RelevantEuropeanOrInternationalNorm]] = None,
                 id_short: Optional[str] = r"ChainOfCustody",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -1001,15 +923,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Chain of Custody"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Chain of Custody"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -1044,9 +962,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if attributionModel is not None and not isinstance(
-                    attributionModel, aas.SubmodelElement
-                ):
+                if attributionModel is not None and not isinstance(attributionModel, aas.SubmodelElement):
                     attributionModel = self.AttributionModel(attributionModel)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1054,10 +970,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 if relevantEuropeanOrInternationalNorm is not None and not isinstance(
                     relevantEuropeanOrInternationalNorm, aas.SubmodelElement
                 ):
-                    relevantEuropeanOrInternationalNorm = (
-                        self.RelevantEuropeanOrInternationalNorm(
-                            relevantEuropeanOrInternationalNorm
-                        )
+                    relevantEuropeanOrInternationalNorm = self.RelevantEuropeanOrInternationalNorm(
+                        relevantEuropeanOrInternationalNorm
                     )
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1073,9 +987,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1113,21 +1025,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Recycling Method"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Recycling Method"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Information about a mechanical recycling process, solvent-based process, etc."
-                        }
+                        dict_={r"en": r"Information about a mechanical recycling process, solvent-based process, etc."}
                     )
 
                 if qualifier is None:
@@ -1192,9 +1098,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1273,20 +1177,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Filler"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Filler"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Filler type"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Filler type"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1311,10 +1209,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 class FillerMassPercentage(aas.Property):
 
-                    ALLOWED_RANGE = (
-                        xsd.from_xsd(r"0", xsd.Decimal),
-                        xsd.from_xsd(r"100", xsd.Decimal),
-                    )
+                    ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.Decimal), xsd.from_xsd(r"100", xsd.Decimal))
 
                     def __init__(
                         self,
@@ -1337,20 +1232,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Filler Mass Percentage"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Filler Mass Percentage"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Mass percentage of the filler"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Mass percentage of the filler"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1402,20 +1291,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Type of filler"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Type of filler"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Types of fillers and mass percentages"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Types of fillers and mass percentages"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1425,19 +1308,13 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if filler is not None and not isinstance(
-                        filler, aas.SubmodelElement
-                    ):
+                    if filler is not None and not isinstance(filler, aas.SubmodelElement):
                         filler = self.Filler(filler)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if fillerMassPercentage is not None and not isinstance(
-                        fillerMassPercentage, aas.SubmodelElement
-                    ):
-                        fillerMassPercentage = self.FillerMassPercentage(
-                            fillerMassPercentage
-                        )
+                    if fillerMassPercentage is not None and not isinstance(fillerMassPercentage, aas.SubmodelElement):
+                        fillerMassPercentage = self.FillerMassPercentage(fillerMassPercentage)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1452,9 +1329,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1474,9 +1349,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 typesoffillers_items: Optional[Iterable[Typesoffillers_item]] = None,
                 id_short: Optional[str] = r"TypesOfFillers",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                semantic_id_list_element: Optional[
-                    aas.Reference
-                ] = aas.ExternalReference(
+                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1502,20 +1375,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Types of fillers"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Types of fillers"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Types of fillers"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Types of fillers"})
 
                 if qualifier is None:
                     qualifier = (
@@ -1543,9 +1410,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(typesoffillers_items, str):
-                    raise TypeError(
-                        "typesoffillers_items takes several elements, got a str"
-                    )
+                    raise TypeError("typesoffillers_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1557,9 +1422,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1626,15 +1489,9 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -1669,20 +1526,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Lot number"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Lot number"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Batch or lot number for the material"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Batch or lot number for the material"})
 
                 if qualifier is None:
                     qualifier = (
@@ -1748,15 +1599,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Type of Inspection Certificate"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Type of Inspection Certificate"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1808,21 +1655,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Documentation"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Documentation"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Documentation for the certificate of analysis"
-                            }
+                            dict_={r"en": r"Documentation for the certificate of analysis"}
                         )
 
                     if qualifier is None:
@@ -1865,21 +1706,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Certificate of analysis"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Certificate of analysis"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Reference to certificate of analysis according to EN 10204:2005, clause 3.1"
-                        }
+                        dict_={r"en": r"Reference to certificate of analysis according to EN 10204:2005, clause 3.1"}
                     )
 
                 if qualifier is None:
@@ -1911,9 +1746,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 if typeOfInspectionCertificate is not None and not isinstance(
                     typeOfInspectionCertificate, aas.SubmodelElement
                 ):
-                    typeOfInspectionCertificate = self.TypeOfInspectionCertificate(
-                        typeOfInspectionCertificate
-                    )
+                    typeOfInspectionCertificate = self.TypeOfInspectionCertificate(typeOfInspectionCertificate)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1928,9 +1761,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1947,10 +1778,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
         class ContentOfTheMainPlasticType(aas.Property):
 
-            ALLOWED_RANGE = (
-                xsd.from_xsd(r"0", xsd.Decimal),
-                xsd.from_xsd(r"100", xsd.Decimal),
-            )
+            ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.Decimal), xsd.from_xsd(r"100", xsd.Decimal))
 
             def __init__(
                 self,
@@ -1973,21 +1801,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Content of the main plastic type"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Content of the main plastic type"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Content (mass percentage) of the main plastic type in the material"
-                        }
+                        dict_={r"en": r"Content (mass percentage) of the main plastic type in the material"}
                     )
 
                 if qualifier is None:
@@ -2015,9 +1837,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     embedded_data_specifications = []
 
                 if value is not None and (
-                    value < self.ALLOWED_RANGE[0]
-                    or self.ALLOWED_RANGE[1] is not None
-                    and value > self.ALLOWED_RANGE[1]
+                    value < self.ALLOWED_RANGE[0] or self.ALLOWED_RANGE[1] is not None and value > self.ALLOWED_RANGE[1]
                 ):
                     raise ValueError(
                         f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
@@ -2040,10 +1860,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
         class PercentConfidenceOfCertificateOfAnalysis(aas.Property):
 
-            ALLOWED_RANGE = (
-                xsd.from_xsd(r"0", xsd.Decimal),
-                xsd.from_xsd(r"100", xsd.Decimal),
-            )
+            ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.Decimal), xsd.from_xsd(r"100", xsd.Decimal))
 
             def __init__(
                 self,
@@ -2066,9 +1883,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2108,9 +1923,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     embedded_data_specifications = []
 
                 if value is not None and (
-                    value < self.ALLOWED_RANGE[0]
-                    or self.ALLOWED_RANGE[1] is not None
-                    and value > self.ALLOWED_RANGE[1]
+                    value < self.ALLOWED_RANGE[0] or self.ALLOWED_RANGE[1] is not None and value > self.ALLOWED_RANGE[1]
                 ):
                     raise ValueError(
                         f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
@@ -2133,17 +1946,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
         class CoefficientOfVariationWRTCertificateOfAnalysis(aas.Property):
 
-            ALLOWED_RANGE = (
-                xsd.from_xsd(r"0", xsd.Decimal),
-                xsd.from_xsd(r"100", xsd.Decimal),
-            )
+            ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.Decimal), xsd.from_xsd(r"100", xsd.Decimal))
 
             def __init__(
                 self,
                 value: xsd.Decimal,
-                id_short: Optional[
-                    str
-                ] = r"CoefficientOfVariationWRTCertificateOfAnalysis",
+                id_short: Optional[str] = r"CoefficientOfVariationWRTCertificateOfAnalysis",
                 value_type: aas.DataTypeDefXsd = xsd.Decimal,
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2161,16 +1969,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Coefficient of variation with respect to the certificate of analysis"
-                        }
+                        dict_={r"en": r"Coefficient of variation with respect to the certificate of analysis"}
                     )
 
                 if description is None:
@@ -2205,9 +2009,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     embedded_data_specifications = []
 
                 if value is not None and (
-                    value < self.ALLOWED_RANGE[0]
-                    or self.ALLOWED_RANGE[1] is not None
-                    and value > self.ALLOWED_RANGE[1]
+                    value < self.ALLOWED_RANGE[0] or self.ALLOWED_RANGE[1] is not None and value > self.ALLOWED_RANGE[1]
                 ):
                     raise ValueError(
                         f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
@@ -2255,20 +2057,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Modifying additive name"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modifying additive name"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Name of the modifying additive"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Name of the modifying additive"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2314,15 +2110,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Modifying additive CAS number"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modifying additive CAS number"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -2370,20 +2162,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modifying additive"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Modifying additive"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Modifying additive"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Modifying additive"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2393,21 +2179,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if modifyingAdditiveName is not None and not isinstance(
-                        modifyingAdditiveName, aas.SubmodelElement
-                    ):
-                        modifyingAdditiveName = self.ModifyingAdditiveName(
-                            modifyingAdditiveName
-                        )
+                    if modifyingAdditiveName is not None and not isinstance(modifyingAdditiveName, aas.SubmodelElement):
+                        modifyingAdditiveName = self.ModifyingAdditiveName(modifyingAdditiveName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if modifyingAdditiveCASNumber is not None and not isinstance(
                         modifyingAdditiveCASNumber, aas.SubmodelElement
                     ):
-                        modifyingAdditiveCASNumber = self.ModifyingAdditiveCASNumber(
-                            modifyingAdditiveCASNumber
-                        )
+                        modifyingAdditiveCASNumber = self.ModifyingAdditiveCASNumber(modifyingAdditiveCASNumber)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -2422,9 +2202,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2441,14 +2219,10 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
             def __init__(
                 self,
-                presenceofmodifyingadditives_items: Optional[
-                    Iterable[Presenceofmodifyingadditives_item]
-                ] = None,
+                presenceofmodifyingadditives_items: Optional[Iterable[Presenceofmodifyingadditives_item]] = None,
                 id_short: Optional[str] = r"PresenceOfModifyingAdditives",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                semantic_id_list_element: Optional[
-                    aas.Reference
-                ] = aas.ExternalReference(
+                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2474,21 +2248,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Presence of Modifying Additives"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Presence of Modifying Additives"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Stabilizers, plasticizers, flame retardants, etc."
-                        }
+                        dict_={r"en": r"Stabilizers, plasticizers, flame retardants, etc."}
                     )
 
                 if qualifier is None:
@@ -2517,9 +2285,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(presenceofmodifyingadditives_items, str):
-                    raise TypeError(
-                        "presenceofmodifyingadditives_items takes several elements, got a str"
-                    )
+                    raise TypeError("presenceofmodifyingadditives_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2531,9 +2297,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2600,15 +2364,9 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -2643,15 +2401,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Original use of the material"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Original use of the material"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -2722,9 +2476,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2734,9 +2486,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Technology for the conversion of waste-derived feedstock for recycling"
-                        }
+                        dict_={r"en": r"Technology for the conversion of waste-derived feedstock for recycling"}
                     )
 
                 if qualifier is None:
@@ -2782,23 +2532,17 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             self,
             mainMaterialType: Optional[Union[str, MainMaterialType]] = None,
             typeOfPackaging: Optional[Union[str, TypeOfPackaging]] = None,
-            colorByVisualInspection: Optional[
-                Union[str, ColorByVisualInspection]
-            ] = None,
+            colorByVisualInspection: Optional[Union[str, ColorByVisualInspection]] = None,
             form: Optional[Union[str, Form]] = None,
             tradeName: Optional[Union[str, TradeName]] = None,
             recycledContent: Optional[Union[xsd.Decimal, RecycledContent]] = None,
             chainOfCustody: Optional[ChainOfCustody] = None,
             recyclingMethod: Optional[Union[str, RecyclingMethod]] = None,
             source: Optional[Union[str, Source]] = None,
-            typesOfFillers: Optional[
-                Union[Iterable[TypesOfFillers.Typesoffillers_item], TypesOfFillers]
-            ] = None,
+            typesOfFillers: Optional[Union[Iterable[TypesOfFillers.Typesoffillers_item], TypesOfFillers]] = None,
             lotNumber: Optional[Union[str, LotNumber]] = None,
             certificateOfAnalysis: Optional[CertificateOfAnalysis] = None,
-            contentOfTheMainPlasticType: Optional[
-                Union[xsd.Decimal, ContentOfTheMainPlasticType]
-            ] = None,
+            contentOfTheMainPlasticType: Optional[Union[xsd.Decimal, ContentOfTheMainPlasticType]] = None,
             percentConfidenceOfCertificateOfAnalysis: Optional[
                 Union[xsd.Decimal, PercentConfidenceOfCertificateOfAnalysis]
             ] = None,
@@ -2807,16 +2551,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             ] = None,
             presenceOfModifyingAdditives: Optional[
                 Union[
-                    Iterable[
-                        PresenceOfModifyingAdditives.Presenceofmodifyingadditives_item
-                    ],
+                    Iterable[PresenceOfModifyingAdditives.Presenceofmodifyingadditives_item],
                     PresenceOfModifyingAdditives,
                 ]
             ] = None,
             originalUseOfMaterial: Optional[Union[str, OriginalUseOfMaterial]] = None,
-            recyclingFeedstockConversionTechnology: Optional[
-                Union[str, RecyclingFeedstockConversionTechnology]
-            ] = None,
+            recyclingFeedstockConversionTechnology: Optional[Union[str, RecyclingFeedstockConversionTechnology]] = None,
             id_short: Optional[str] = r"InformationCharacteristics",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -2833,15 +2573,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Information characteristics"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Information characteristics"})
 
             if qualifier is None:
                 qualifier = ()
@@ -2851,26 +2587,18 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if mainMaterialType is not None and not isinstance(
-                mainMaterialType, aas.SubmodelElement
-            ):
+            if mainMaterialType is not None and not isinstance(mainMaterialType, aas.SubmodelElement):
                 mainMaterialType = self.MainMaterialType(mainMaterialType)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if typeOfPackaging is not None and not isinstance(
-                typeOfPackaging, aas.SubmodelElement
-            ):
+            if typeOfPackaging is not None and not isinstance(typeOfPackaging, aas.SubmodelElement):
                 typeOfPackaging = self.TypeOfPackaging(typeOfPackaging)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if colorByVisualInspection is not None and not isinstance(
-                colorByVisualInspection, aas.SubmodelElement
-            ):
-                colorByVisualInspection = self.ColorByVisualInspection(
-                    colorByVisualInspection
-                )
+            if colorByVisualInspection is not None and not isinstance(colorByVisualInspection, aas.SubmodelElement):
+                colorByVisualInspection = self.ColorByVisualInspection(colorByVisualInspection)
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -2884,16 +2612,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if recycledContent is not None and not isinstance(
-                recycledContent, aas.SubmodelElement
-            ):
+            if recycledContent is not None and not isinstance(recycledContent, aas.SubmodelElement):
                 recycledContent = self.RecycledContent(recycledContent)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if recyclingMethod is not None and not isinstance(
-                recyclingMethod, aas.SubmodelElement
-            ):
+            if recyclingMethod is not None and not isinstance(recyclingMethod, aas.SubmodelElement):
                 recyclingMethod = self.RecyclingMethod(recyclingMethod)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2907,9 +2631,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if typesOfFillers is not None and not isinstance(
-                typesOfFillers, aas.SubmodelElement
-            ):
+            if typesOfFillers is not None and not isinstance(typesOfFillers, aas.SubmodelElement):
                 typesOfFillers = self.TypesOfFillers(typesOfFillers)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2922,68 +2644,49 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             if contentOfTheMainPlasticType is not None and not isinstance(
                 contentOfTheMainPlasticType, aas.SubmodelElement
             ):
-                contentOfTheMainPlasticType = self.ContentOfTheMainPlasticType(
-                    contentOfTheMainPlasticType
-                )
+                contentOfTheMainPlasticType = self.ContentOfTheMainPlasticType(contentOfTheMainPlasticType)
 
             # Build a submodel element if a raw value was passed in the argument
 
             if percentConfidenceOfCertificateOfAnalysis is not None and not isinstance(
                 percentConfidenceOfCertificateOfAnalysis, aas.SubmodelElement
             ):
-                percentConfidenceOfCertificateOfAnalysis = (
-                    self.PercentConfidenceOfCertificateOfAnalysis(
-                        percentConfidenceOfCertificateOfAnalysis
-                    )
+                percentConfidenceOfCertificateOfAnalysis = self.PercentConfidenceOfCertificateOfAnalysis(
+                    percentConfidenceOfCertificateOfAnalysis
                 )
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if (
-                coefficientOfVariationWRTCertificateOfAnalysis is not None
-                and not isinstance(
-                    coefficientOfVariationWRTCertificateOfAnalysis, aas.SubmodelElement
-                )
+            if coefficientOfVariationWRTCertificateOfAnalysis is not None and not isinstance(
+                coefficientOfVariationWRTCertificateOfAnalysis, aas.SubmodelElement
             ):
-                coefficientOfVariationWRTCertificateOfAnalysis = (
-                    self.CoefficientOfVariationWRTCertificateOfAnalysis(
-                        coefficientOfVariationWRTCertificateOfAnalysis
-                    )
+                coefficientOfVariationWRTCertificateOfAnalysis = self.CoefficientOfVariationWRTCertificateOfAnalysis(
+                    coefficientOfVariationWRTCertificateOfAnalysis
                 )
 
             # A str would be split into its characters
             if isinstance(presenceOfModifyingAdditives, str):
-                raise TypeError(
-                    "presenceOfModifyingAdditives takes several elements, got a str"
-                )
+                raise TypeError("presenceOfModifyingAdditives takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
             if presenceOfModifyingAdditives is not None and not isinstance(
                 presenceOfModifyingAdditives, aas.SubmodelElement
             ):
-                presenceOfModifyingAdditives = self.PresenceOfModifyingAdditives(
-                    presenceOfModifyingAdditives
-                )
+                presenceOfModifyingAdditives = self.PresenceOfModifyingAdditives(presenceOfModifyingAdditives)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if originalUseOfMaterial is not None and not isinstance(
-                originalUseOfMaterial, aas.SubmodelElement
-            ):
-                originalUseOfMaterial = self.OriginalUseOfMaterial(
-                    originalUseOfMaterial
-                )
+            if originalUseOfMaterial is not None and not isinstance(originalUseOfMaterial, aas.SubmodelElement):
+                originalUseOfMaterial = self.OriginalUseOfMaterial(originalUseOfMaterial)
 
             # Build a submodel element if a raw value was passed in the argument
 
             if recyclingFeedstockConversionTechnology is not None and not isinstance(
                 recyclingFeedstockConversionTechnology, aas.SubmodelElement
             ):
-                recyclingFeedstockConversionTechnology = (
-                    self.RecyclingFeedstockConversionTechnology(
-                        recyclingFeedstockConversionTechnology
-                    )
+                recyclingFeedstockConversionTechnology = self.RecyclingFeedstockConversionTechnology(
+                    recyclingFeedstockConversionTechnology
                 )
 
             # Add all passed/initialized submodel elements to a single list
@@ -3018,9 +2721,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3062,20 +2763,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Application-specific standard"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Application-specific standard"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Standard or norm"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Standard or norm"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3123,21 +2818,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Value"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Value"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The value of the of measured sensor output"
-                                }
+                                dict_={r"en": r"The value of the of measured sensor output"}
                             )
 
                         if qualifier is None:
@@ -3173,31 +2862,20 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///62720#UBA000",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Unit"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Unit"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"The unit of the measured value"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"The unit of the measured value"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -3232,41 +2910,25 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///62683#ACI144",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
                             aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0112/2///62683#ACI144",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Kind"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Kind"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Kind of measured value"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Kind of measured value"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -3310,21 +2972,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Measured Value"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measured Value"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"This is the measured value of the sensor output"
-                            }
+                            dict_={r"en": r"This is the measured value of the sensor output"}
                         )
 
                     if qualifier is None:
@@ -3335,9 +2991,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if value_ is not None and not isinstance(
-                        value_, aas.SubmodelElement
-                    ):
+                    if value_ is not None and not isinstance(value_, aas.SubmodelElement):
                         value_ = self.Value(value_)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -3363,9 +3017,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3400,15 +3052,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Viscosity measurements"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Viscosity measurements"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -3443,9 +3091,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if standardOrNorm is not None and not isinstance(
-                    standardOrNorm, aas.SubmodelElement
-                ):
+                if standardOrNorm is not None and not isinstance(standardOrNorm, aas.SubmodelElement):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3461,9 +3107,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3503,20 +3147,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Application-specific standard"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Application-specific standard"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Standard or norm"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Standard or norm"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3564,21 +3202,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Value"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Value"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The value of the of measured sensor output"
-                                }
+                                dict_={r"en": r"The value of the of measured sensor output"}
                             )
 
                         if qualifier is None:
@@ -3614,31 +3246,20 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///62720#UBA000",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Unit"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Unit"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"The unit of the measured value"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"The unit of the measured value"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -3673,41 +3294,25 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///62683#ACI144",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
                             aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0112/2///62683#ACI144",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Kind"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Kind"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Kind of measured value"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Kind of measured value"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -3751,21 +3356,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Measured Value"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measured Value"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"This is the measured value of the sensor output"
-                            }
+                            dict_={r"en": r"This is the measured value of the sensor output"}
                         )
 
                     if qualifier is None:
@@ -3776,9 +3375,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if value_ is not None and not isinstance(
-                        value_, aas.SubmodelElement
-                    ):
+                    if value_ is not None and not isinstance(value_, aas.SubmodelElement):
                         value_ = self.Value(value_)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -3804,9 +3401,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3841,21 +3436,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Ash content measurements"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Ash content measurements"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Measurements of ash content - according to EN ISO 3451 series, or EN ISO 1172"
-                        }
+                        dict_={r"en": r"Measurements of ash content - according to EN ISO 3451 series, or EN ISO 1172"}
                     )
 
                 if qualifier is None:
@@ -3884,9 +3473,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if standardOrNorm is not None and not isinstance(
-                    standardOrNorm, aas.SubmodelElement
-                ):
+                if standardOrNorm is not None and not isinstance(standardOrNorm, aas.SubmodelElement):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3902,9 +3489,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3944,20 +3529,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Application-specific standard"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Application-specific standard"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Standard or norm"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Standard or norm"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4005,21 +3584,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Value"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Value"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The value of the of measured sensor output"
-                                }
+                                dict_={r"en": r"The value of the of measured sensor output"}
                             )
 
                         if qualifier is None:
@@ -4055,31 +3628,20 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///62720#UBA000",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Unit"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Unit"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"The unit of the measured value"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"The unit of the measured value"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -4114,41 +3676,25 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///62683#ACI144",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
                             aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0112/2///62683#ACI144",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Kind"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Kind"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Kind of measured value"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Kind of measured value"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -4192,21 +3738,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Measured Value"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measured Value"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"This is the measured value of the sensor output"
-                            }
+                            dict_={r"en": r"This is the measured value of the sensor output"}
                         )
 
                     if qualifier is None:
@@ -4217,9 +3757,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if value_ is not None and not isinstance(
-                        value_, aas.SubmodelElement
-                    ):
+                    if value_ is not None and not isinstance(value_, aas.SubmodelElement):
                         value_ = self.Value(value_)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -4245,9 +3783,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4282,15 +3818,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Residual moisture content measurements"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Residual moisture content measurements"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -4325,9 +3857,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if standardOrNorm is not None and not isinstance(
-                    standardOrNorm, aas.SubmodelElement
-                ):
+                if standardOrNorm is not None and not isinstance(standardOrNorm, aas.SubmodelElement):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4343,9 +3873,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4385,20 +3913,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Application-specific standard"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Application-specific standard"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Standard or norm"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Standard or norm"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4446,21 +3968,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Value"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Value"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The value of the of measured sensor output"
-                                }
+                                dict_={r"en": r"The value of the of measured sensor output"}
                             )
 
                         if qualifier is None:
@@ -4496,31 +4012,20 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///62720#UBA000",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Unit"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Unit"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"The unit of the measured value"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"The unit of the measured value"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -4555,41 +4060,25 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///62683#ACI144",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
                             aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0112/2///62683#ACI144",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Kind"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Kind"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Kind of measured value"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Kind of measured value"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -4633,21 +4122,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Measured Value"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measured Value"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"This is the measured value of the sensor output"
-                            }
+                            dict_={r"en": r"This is the measured value of the sensor output"}
                         )
 
                     if qualifier is None:
@@ -4658,9 +4141,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if value_ is not None and not isinstance(
-                        value_, aas.SubmodelElement
-                    ):
+                    if value_ is not None and not isinstance(value_, aas.SubmodelElement):
                         value_ = self.Value(value_)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -4686,9 +4167,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4723,21 +4202,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Density measurements"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Density measurements"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Measurements of density - according to EN ISO 1183 series"
-                        }
+                        dict_={r"en": r"Measurements of density - according to EN ISO 1183 series"}
                     )
 
                 if qualifier is None:
@@ -4766,9 +4239,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if standardOrNorm is not None and not isinstance(
-                    standardOrNorm, aas.SubmodelElement
-                ):
+                if standardOrNorm is not None and not isinstance(standardOrNorm, aas.SubmodelElement):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4784,9 +4255,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4826,20 +4295,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Application-specific standard"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Application-specific standard"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Standard or norm"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Standard or norm"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4887,21 +4350,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Value"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Value"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The value of the of measured sensor output"
-                                }
+                                dict_={r"en": r"The value of the of measured sensor output"}
                             )
 
                         if qualifier is None:
@@ -4937,31 +4394,20 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///62720#UBA000",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Unit"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Unit"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"The unit of the measured value"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"The unit of the measured value"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -4996,41 +4442,25 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///62683#ACI144",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
                             aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0112/2///62683#ACI144",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Kind"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Kind"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Kind of measured value"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Kind of measured value"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -5074,21 +4504,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Measured Value"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measured Value"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"This is the measured value of the sensor output"
-                            }
+                            dict_={r"en": r"This is the measured value of the sensor output"}
                         )
 
                     if qualifier is None:
@@ -5099,9 +4523,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if value_ is not None and not isinstance(
-                        value_, aas.SubmodelElement
-                    ):
+                    if value_ is not None and not isinstance(value_, aas.SubmodelElement):
                         value_ = self.Value(value_)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -5127,9 +4549,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5164,15 +4584,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Bulk density measurements"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Bulk density measurements"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -5207,9 +4623,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if standardOrNorm is not None and not isinstance(
-                    standardOrNorm, aas.SubmodelElement
-                ):
+                if standardOrNorm is not None and not isinstance(standardOrNorm, aas.SubmodelElement):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -5225,9 +4639,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5267,20 +4679,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Application-specific standard"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Application-specific standard"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Standard or norm"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Standard or norm"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -5328,21 +4734,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Value"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Value"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The value of the of measured sensor output"
-                                }
+                                dict_={r"en": r"The value of the of measured sensor output"}
                             )
 
                         if qualifier is None:
@@ -5378,31 +4778,20 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///62720#UBA000",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Unit"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Unit"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"The unit of the measured value"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"The unit of the measured value"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -5437,41 +4826,25 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0112/2///62683#ACI144",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
                             aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0112/2///62683#ACI144",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Kind"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Kind"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Kind of measured value"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Kind of measured value"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -5515,21 +4888,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Measured Value"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measured Value"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"This is the measured value of the sensor output"
-                            }
+                            dict_={r"en": r"This is the measured value of the sensor output"}
                         )
 
                     if qualifier is None:
@@ -5540,9 +4907,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if value_ is not None and not isinstance(
-                        value_, aas.SubmodelElement
-                    ):
+                    if value_ is not None and not isinstance(value_, aas.SubmodelElement):
                         value_ = self.Value(value_)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -5568,9 +4933,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5605,15 +4968,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Particle size distribution measurements"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Particle size distribution measurements"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -5648,9 +5007,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if standardOrNorm is not None and not isinstance(
-                    standardOrNorm, aas.SubmodelElement
-                ):
+                if standardOrNorm is not None and not isinstance(standardOrNorm, aas.SubmodelElement):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -5666,9 +5023,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5700,9 +5055,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"VARIABLE",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5714,21 +5067,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Value"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Value"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"The value of the of measured sensor output"
-                                    }
+                                    dict_={r"en": r"The value of the of measured sensor output"}
                                 )
 
                             if qualifier is None:
@@ -5763,29 +5110,18 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0112/2///62720#UBA000",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Unit"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Unit"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -5824,44 +5160,26 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0112/2///62683#ACI144",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
                                 aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0112/2///62683#ACI144",
-                                        ),
-                                    ),
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Kind"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Kind"})
 
                             if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Kind of measured value"}
-                                )
+                                description = aas.MultiLanguageTextType(dict_={r"en": r"Kind of measured value"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -5905,21 +5223,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Measured Value"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measured Value"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"This is the measured value of the sensor output"
-                                }
+                                dict_={r"en": r"This is the measured value of the sensor output"}
                             )
 
                         if qualifier is None:
@@ -5930,23 +5242,17 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if value_ is not None and not isinstance(
-                            value_, aas.SubmodelElement
-                        ):
+                        if value_ is not None and not isinstance(value_, aas.SubmodelElement):
                             value_ = self.Value(value_)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if unit is not None and not isinstance(
-                            unit, aas.SubmodelElement
-                        ):
+                        if unit is not None and not isinstance(unit, aas.SubmodelElement):
                             unit = self.Unit(unit)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if kind is not None and not isinstance(
-                            kind, aas.SubmodelElement
-                        ):
+                        if kind is not None and not isinstance(kind, aas.SubmodelElement):
                             kind = self.Kind(kind)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -5962,9 +5268,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -5984,9 +5288,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     measuredvalues_items: Iterable[Measuredvalues_item],
                     id_short: Optional[str] = r"MeasuredValues",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6012,21 +5314,15 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Measured Values"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measured Values"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Template collection to capture a list of measurement values"
-                            }
+                            dict_={r"en": r"Template collection to capture a list of measurement values"}
                         )
 
                     if qualifier is None:
@@ -6037,9 +5333,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(measuredvalues_items, str):
-                        raise TypeError(
-                            "measuredvalues_items takes several elements, got a str"
-                        )
+                        raise TypeError("measuredvalues_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -6051,9 +5345,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6120,15 +5412,9 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -6163,20 +5449,14 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Application-specific standard"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Application-specific standard"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Standard or norm"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Standard or norm"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -6201,9 +5481,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
             def __init__(
                 self,
-                measuredValues: Union[
-                    Iterable[MeasuredValues.Measuredvalues_item], MeasuredValues
-                ],
+                measuredValues: Union[Iterable[MeasuredValues.Measuredvalues_item], MeasuredValues],
                 standardOrNorm: Optional[Union[str, StandardOrNorm]] = None,
                 id_short: Optional[str] = r"TensileProperties",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -6221,15 +5499,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Tensile properties measurements"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Tensile properties measurements"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -6268,16 +5542,12 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if measuredValues is not None and not isinstance(
-                    measuredValues, aas.SubmodelElement
-                ):
+                if measuredValues is not None and not isinstance(measuredValues, aas.SubmodelElement):
                     measuredValues = self.MeasuredValues(measuredValues)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if standardOrNorm is not None and not isinstance(
-                    standardOrNorm, aas.SubmodelElement
-                ):
+                if standardOrNorm is not None and not isinstance(standardOrNorm, aas.SubmodelElement):
                     standardOrNorm = self.StandardOrNorm(standardOrNorm)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -6293,9 +5563,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -6336,15 +5604,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Documentation"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Documentation"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -6385,9 +5649,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -6395,9 +5657,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Material identification - using IR (database comparison) "
-                            }
+                            dict_={r"en": r"Material identification - using IR (database comparison) "}
                         )
 
                     if qualifier is None:
@@ -6419,9 +5679,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6460,15 +5718,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Documentation"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Documentation"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -6509,9 +5763,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -6532,9 +5784,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(documentation, str):
-                        raise TypeError(
-                            "documentation takes several elements, got a str"
-                        )
+                        raise TypeError("documentation takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -6549,9 +5799,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6586,15 +5834,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Material identification"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Material identification"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -6640,9 +5884,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -6683,15 +5925,11 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Property characteristics"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Property characteristics"})
 
             if qualifier is None:
                 qualifier = ()
@@ -6721,9 +5959,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -6744,12 +5980,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
         dataQuality: Optional[DataQuality] = None,
         applicationSpecificStandards: Optional[
             Union[
-                Iterable[
-                    Union[
-                        str,
-                        ApplicationSpecificStandards.Applicationspecificstandards_item,
-                    ]
-                ],
+                Iterable[Union[str, ApplicationSpecificStandards.Applicationspecificstandards_item]],
                 ApplicationSpecificStandards,
             ]
         ] = None,
@@ -6779,9 +6010,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
         if display_name is None:
             display_name = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"Material data for classification of plastics according to EN 18065"
-                }
+                dict_={r"en": r"Material data for classification of plastics according to EN 18065"}
             )
 
         if description is None:
@@ -6808,27 +6037,18 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
         # A str would be split into its characters
         if isinstance(applicationSpecificStandards, str):
-            raise TypeError(
-                "applicationSpecificStandards takes several elements, got a str"
-            )
+            raise TypeError("applicationSpecificStandards takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
         if applicationSpecificStandards is not None and not isinstance(
             applicationSpecificStandards, aas.SubmodelElement
         ):
-            applicationSpecificStandards = self.ApplicationSpecificStandards(
-                applicationSpecificStandards
-            )
+            applicationSpecificStandards = self.ApplicationSpecificStandards(applicationSpecificStandards)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
-        for se_arg in [
-            dataQuality,
-            applicationSpecificStandards,
-            informationCharacteristics,
-            propertyCharacteristics,
-        ]:
+        for se_arg in [dataQuality, applicationSpecificStandards, informationCharacteristics, propertyCharacteristics]:
             if se_arg is None:
                 continue
             elif isinstance(se_arg, aas.SubmodelElement):
@@ -6839,9 +6059,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

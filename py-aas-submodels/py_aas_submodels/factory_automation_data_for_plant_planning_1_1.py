@@ -18,8 +18,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/automationMLData/1",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/automationMLData/1"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -27,15 +26,11 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"AutomationML Data"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Data"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -87,15 +82,11 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"AutomationML Version"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Version"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -146,15 +137,11 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"AutomationML Element Reference"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Element Reference"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -200,8 +187,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/cds/onOff/1",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/onOff/1"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -209,15 +195,11 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"On/Off"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"On/Off"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -274,13 +256,9 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                                 value=r"https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0",
                             ),
                             aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_LIST,
-                                value=r"AutomationMLAttributeAndInterfaceList",
+                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_LIST, value=r"AutomationMLAttributeAndInterfaceList"
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"0",
-                            ),
+                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"0"),
                             aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"onOff"),
                         ),
                         type_=aas.Property,
@@ -301,9 +279,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -361,16 +337,13 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                     aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/cds/onOff/1",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/onOff/1"
                             ),
                         ),
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -378,9 +351,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Collection of AutomationML Attributes to be published as properties"
-                        }
+                        dict_={r"en": r"Collection of AutomationML Attributes to be published as properties"}
                     )
 
                 if qualifier is None:
@@ -407,9 +378,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -426,9 +395,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
 
         def __init__(
             self,
-            automationmlattributeandinterfacelist_items: Iterable[
-                Automationmlattributeandinterfacelist_item
-            ],
+            automationmlattributeandinterfacelist_items: Iterable[Automationmlattributeandinterfacelist_item],
             id_short: Optional[str] = r"AutomationMLAttributeAndInterfaceList",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
@@ -457,15 +424,11 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"AutomationML Attribute and Interface List"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Attribute and Interface List"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -480,9 +443,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(automationmlattributeandinterfacelist_items, str):
-                raise TypeError(
-                    "automationmlattributeandinterfacelist_items takes several elements, got a str"
-                )
+                raise TypeError("automationmlattributeandinterfacelist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -494,9 +455,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -565,10 +524,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -585,13 +541,9 @@ class FactoryAutomationDataForPlant(aas.Submodel):
         id_: str,
         automationMLData: AutomationMLData,
         automationMLVersion: Union[xsd.PositiveInteger, AutomationMLVersion],
-        automationMLElementReference: Union[
-            aas.Reference, AutomationMLElementReference
-        ],
+        automationMLElementReference: Union[aas.Reference, AutomationMLElementReference],
         automationMLAttributeAndInterfaceList: Union[
-            Iterable[
-                AutomationMLAttributeAndInterfaceList.Automationmlattributeandinterfacelist_item
-            ],
+            Iterable[AutomationMLAttributeAndInterfaceList.Automationmlattributeandinterfacelist_item],
             AutomationMLAttributeAndInterfaceList,
         ],
         id_short: Optional[str] = r"FactoryAutomationDataForPlant",
@@ -617,9 +569,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
     ):
 
         if display_name is None:
-            display_name = aas.MultiLanguageNameType(
-                dict_={r"en": r"Factory Automation Data For Plant"}
-            )
+            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Factory Automation Data For Plant"})
 
         if administration is None:
             administration = aas.AdministrativeInformation(
@@ -638,9 +588,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if automationMLVersion is not None and not isinstance(
-            automationMLVersion, aas.SubmodelElement
-        ):
+        if automationMLVersion is not None and not isinstance(automationMLVersion, aas.SubmodelElement):
             automationMLVersion = self.AutomationMLVersion(automationMLVersion)
 
         # Build a submodel element if a raw value was passed in the argument
@@ -648,25 +596,19 @@ class FactoryAutomationDataForPlant(aas.Submodel):
         if automationMLElementReference is not None and not isinstance(
             automationMLElementReference, aas.SubmodelElement
         ):
-            automationMLElementReference = self.AutomationMLElementReference(
-                automationMLElementReference
-            )
+            automationMLElementReference = self.AutomationMLElementReference(automationMLElementReference)
 
         # A str would be split into its characters
         if isinstance(automationMLAttributeAndInterfaceList, str):
-            raise TypeError(
-                "automationMLAttributeAndInterfaceList takes several elements, got a str"
-            )
+            raise TypeError("automationMLAttributeAndInterfaceList takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
         if automationMLAttributeAndInterfaceList is not None and not isinstance(
             automationMLAttributeAndInterfaceList, aas.SubmodelElement
         ):
-            automationMLAttributeAndInterfaceList = (
-                self.AutomationMLAttributeAndInterfaceList(
-                    automationMLAttributeAndInterfaceList
-                )
+            automationMLAttributeAndInterfaceList = self.AutomationMLAttributeAndInterfaceList(
+                automationMLAttributeAndInterfaceList
             )
 
         # Add all passed/initialized submodel elements to a single list
@@ -687,9 +629,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

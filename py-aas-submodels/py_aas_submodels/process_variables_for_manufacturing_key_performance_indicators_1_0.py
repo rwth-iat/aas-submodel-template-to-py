@@ -30,9 +30,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -40,10 +38,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -90,15 +85,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -151,9 +142,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -161,9 +150,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for actual personnel work time."
-                        }
+                        dict_={r"en": r"Provides optional comments for actual personnel work time."}
                     )
 
                 if qualifier is None:
@@ -207,15 +194,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Actual Personnel Work Time"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Actual Personnel Work Time"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -237,9 +220,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -260,9 +241,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -302,9 +281,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -312,10 +289,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -362,15 +336,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -423,9 +393,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -433,9 +401,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for actual unit processing time."
-                        }
+                        dict_={r"en": r"Provides optional comments for actual unit processing time."}
                     )
 
                 if qualifier is None:
@@ -479,15 +445,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Actual Unit Processing Time"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Actual Unit Processing Time"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -509,9 +471,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -532,9 +492,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -574,9 +532,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -584,10 +540,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -634,15 +587,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -695,9 +644,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -705,9 +652,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for actual unit busy time."
-                        }
+                        dict_={r"en": r"Provides optional comments for actual unit busy time."}
                     )
 
                 if qualifier is None:
@@ -751,15 +696,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Actual Unit Busy Time"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Actual Unit Busy Time"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -781,9 +722,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -804,9 +743,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -846,9 +783,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -856,10 +791,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -906,15 +838,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -967,9 +895,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -977,9 +903,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for actual order execution time."
-                        }
+                        dict_={r"en": r"Provides optional comments for actual order execution time."}
                     )
 
                 if qualifier is None:
@@ -1023,15 +947,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Actual Order Execution Time"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Actual Order Execution Time"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -1053,9 +973,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1076,9 +994,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1118,9 +1034,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1128,10 +1042,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -1178,15 +1089,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -1239,9 +1146,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1249,9 +1154,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for actual personnel attendance time."
-                        }
+                        dict_={r"en": r"Provides optional comments for actual personnel attendance time."}
                     )
 
                 if qualifier is None:
@@ -1295,15 +1198,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Actual Personnel Attendance Time"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Actual Personnel Attendance Time"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -1325,9 +1224,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1348,9 +1245,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1390,9 +1285,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1400,10 +1293,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -1450,15 +1340,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -1511,9 +1397,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1521,9 +1405,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for actual production time."
-                        }
+                        dict_={r"en": r"Provides optional comments for actual production time."}
                     )
 
                 if qualifier is None:
@@ -1567,15 +1449,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Actual Production Time"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Actual Production Time"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -1597,9 +1475,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1620,9 +1496,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1662,9 +1536,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1672,10 +1544,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -1722,15 +1591,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -1783,9 +1648,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1793,9 +1656,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for actual queuing time."
-                        }
+                        dict_={r"en": r"Provides optional comments for actual queuing time."}
                     )
 
                 if qualifier is None:
@@ -1839,15 +1700,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Actual Queuing Time"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Actual Queuing Time"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -1869,9 +1726,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1892,9 +1747,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1934,9 +1787,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1944,10 +1795,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -1994,15 +1842,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -2055,9 +1899,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2065,9 +1907,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for actual unit down time."
-                        }
+                        dict_={r"en": r"Provides optional comments for actual unit down time."}
                     )
 
                 if qualifier is None:
@@ -2111,15 +1951,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Actual Unit Down Time"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Actual Unit Down Time"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -2141,9 +1977,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2164,9 +1998,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2206,9 +2038,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2216,10 +2046,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -2266,15 +2093,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -2327,9 +2150,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2337,9 +2158,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for actual unit delay time."
-                        }
+                        dict_={r"en": r"Provides optional comments for actual unit delay time."}
                     )
 
                 if qualifier is None:
@@ -2383,15 +2202,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Actual Unit Delay Time"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Actual Unit Delay Time"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -2413,9 +2228,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2436,9 +2249,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2478,9 +2289,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2488,10 +2297,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -2538,15 +2344,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -2599,9 +2401,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2609,9 +2409,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for actual unit setup time."
-                        }
+                        dict_={r"en": r"Provides optional comments for actual unit setup time."}
                     )
 
                 if qualifier is None:
@@ -2655,15 +2453,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Actual Unit Setup Time"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Actual Unit Setup Time"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -2685,9 +2479,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2708,9 +2500,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2750,9 +2540,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2760,10 +2548,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -2810,15 +2595,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -2871,9 +2652,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2881,9 +2660,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for actual transport time."
-                        }
+                        dict_={r"en": r"Provides optional comments for actual transport time."}
                     )
 
                 if qualifier is None:
@@ -2927,15 +2704,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Actual Transport Time"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Actual Transport Time"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -2957,9 +2730,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2980,9 +2751,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3022,9 +2791,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -3032,10 +2799,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -3082,15 +2846,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -3143,18 +2903,14 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Provides optional comments for good part."}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Provides optional comments for good part."})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3188,8 +2944,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://www.w3id.org/hsu-aut/ISO22400-2#GoodPart",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://www.w3id.org/hsu-aut/ISO22400-2#GoodPart"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -3197,9 +2952,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -3207,9 +2960,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Groups the data points for good part, including key, current value, and comment."
-                    }
+                    dict_={r"en": r"Groups the data points for good part, including key, current value, and comment."}
                 )
 
             if qualifier is None:
@@ -3225,9 +2976,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -3248,9 +2997,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3290,9 +3037,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -3300,10 +3045,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -3350,15 +3092,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -3411,9 +3149,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -3465,15 +3201,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Inspected Part"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Inspected Part"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -3495,9 +3227,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -3518,9 +3248,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3560,9 +3288,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -3570,10 +3296,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -3620,15 +3343,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -3681,9 +3400,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -3735,15 +3452,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Scrap Quantity"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Scrap Quantity"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -3765,9 +3478,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -3788,9 +3499,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3830,9 +3539,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -3840,10 +3547,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -3890,15 +3594,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -3951,9 +3651,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -4005,15 +3703,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Good Quantity"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Good Quantity"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -4035,9 +3729,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -4058,9 +3750,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4100,9 +3790,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -4110,10 +3798,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -4160,15 +3845,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -4221,9 +3902,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -4231,9 +3910,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for rework quantity."
-                        }
+                        dict_={r"en": r"Provides optional comments for rework quantity."}
                     )
 
                 if qualifier is None:
@@ -4277,15 +3954,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Rework Quantity"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Rework Quantity"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -4307,9 +3980,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -4330,9 +4001,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4372,9 +4041,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -4382,10 +4049,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -4432,15 +4096,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -4493,9 +4153,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -4503,9 +4161,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for produced quantity."
-                        }
+                        dict_={r"en": r"Provides optional comments for produced quantity."}
                     )
 
                 if qualifier is None:
@@ -4549,15 +4205,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Produced Quantity"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Produced Quantity"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -4579,9 +4231,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -4602,9 +4252,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4644,9 +4292,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -4654,10 +4300,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -4704,15 +4347,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -4765,9 +4404,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -4775,9 +4412,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for planned busy time."
-                        }
+                        dict_={r"en": r"Provides optional comments for planned busy time."}
                     )
 
                 if qualifier is None:
@@ -4821,15 +4456,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Planned Busy Time"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Planned Busy Time"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -4851,9 +4482,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -4874,9 +4503,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4916,9 +4543,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -4926,10 +4551,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                            r"en": r"Identifier from ISO 22400-2:2014.",
-                        }
+                        dict_={r"de": r"Bezeichner aus ISO 22400-2:2014.", r"en": r"Identifier from ISO 22400-2:2014."}
                     )
 
                 if qualifier is None:
@@ -4976,15 +4598,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Current Value"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -5037,9 +4655,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -5047,9 +4663,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides optional comments for planned runtime per item."
-                        }
+                        dict_={r"en": r"Provides optional comments for planned runtime per item."}
                     )
 
                 if qualifier is None:
@@ -5093,15 +4707,11 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Planned Runtime Per Item"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Planned Runtime Per Item"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -5123,9 +4733,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if currentValue is not None and not isinstance(
-                currentValue, aas.SubmodelElement
-            ):
+            if currentValue is not None and not isinstance(currentValue, aas.SubmodelElement):
                 currentValue = self.CurrentValue(currentValue)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -5146,9 +4754,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -5221,11 +4827,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -5267,9 +4869,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

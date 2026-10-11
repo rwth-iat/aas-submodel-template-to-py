@@ -28,9 +28,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -64,8 +62,7 @@ class DEXPI(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/dexpi/1/0/SiteReference",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/SiteReference"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -73,9 +70,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -118,9 +113,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -163,9 +156,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -208,9 +199,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -255,9 +244,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -304,9 +291,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -353,9 +338,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -402,9 +385,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -451,9 +432,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -500,9 +479,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -549,9 +526,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -598,9 +573,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -647,9 +620,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -696,9 +667,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -745,9 +714,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -794,9 +761,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -843,9 +808,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -892,9 +855,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -933,9 +894,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -974,9 +933,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1015,9 +972,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1056,9 +1011,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1084,34 +1037,18 @@ class DEXPI(aas.Submodel):
 
         def __init__(
             self,
-            enterpriseReference: Optional[
-                Union[aas.Reference, EnterpriseReference]
-            ] = None,
+            enterpriseReference: Optional[Union[aas.Reference, EnterpriseReference]] = None,
             siteReference: Optional[Union[aas.Reference, SiteReference]] = None,
-            industrialComplexReference: Optional[
-                Union[aas.Reference, IndustrialComplexReference]
-            ] = None,
-            processPlantReference: Optional[
-                Union[aas.Reference, ProcessPlantReference]
-            ] = None,
-            plantSectionReference: Optional[
-                Union[aas.Reference, PlantSectionReference]
-            ] = None,
-            enterpriseIdentificationCode: Optional[
-                Union[str, EnterpriseIdentificationCode]
-            ] = None,
+            industrialComplexReference: Optional[Union[aas.Reference, IndustrialComplexReference]] = None,
+            processPlantReference: Optional[Union[aas.Reference, ProcessPlantReference]] = None,
+            plantSectionReference: Optional[Union[aas.Reference, PlantSectionReference]] = None,
+            enterpriseIdentificationCode: Optional[Union[str, EnterpriseIdentificationCode]] = None,
             enterpriseName: Optional[Union[str, EnterpriseName]] = None,
-            industrialComplexIdentificationCode: Optional[
-                Union[str, IndustrialComplexIdentificationCode]
-            ] = None,
+            industrialComplexIdentificationCode: Optional[Union[str, IndustrialComplexIdentificationCode]] = None,
             industrialComplexName: Optional[Union[str, IndustrialComplexName]] = None,
-            plantSectionIdentificationCode: Optional[
-                Union[str, PlantSectionIdentificationCode]
-            ] = None,
+            plantSectionIdentificationCode: Optional[Union[str, PlantSectionIdentificationCode]] = None,
             plantSectionName: Optional[Union[str, PlantSectionName]] = None,
-            processPlantIdentificationCode: Optional[
-                Union[str, ProcessPlantIdentificationCode]
-            ] = None,
+            processPlantIdentificationCode: Optional[Union[str, ProcessPlantIdentificationCode]] = None,
             processPlantName: Optional[Union[str, ProcessPlantName]] = None,
             projectName: Optional[Union[str, ProjectName]] = None,
             projectNumber: Optional[Union[str, ProjectNumber]] = None,
@@ -1130,8 +1067,7 @@ class DEXPI(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/dexpi/1/0/PlantMetadata",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/PlantMetadata"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -1139,9 +1075,7 @@ class DEXPI(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -1152,16 +1086,12 @@ class DEXPI(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if enterpriseReference is not None and not isinstance(
-                enterpriseReference, aas.SubmodelElement
-            ):
+            if enterpriseReference is not None and not isinstance(enterpriseReference, aas.SubmodelElement):
                 enterpriseReference = self.EnterpriseReference(enterpriseReference)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if siteReference is not None and not isinstance(
-                siteReference, aas.SubmodelElement
-            ):
+            if siteReference is not None and not isinstance(siteReference, aas.SubmodelElement):
                 siteReference = self.SiteReference(siteReference)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1169,42 +1099,28 @@ class DEXPI(aas.Submodel):
             if industrialComplexReference is not None and not isinstance(
                 industrialComplexReference, aas.SubmodelElement
             ):
-                industrialComplexReference = self.IndustrialComplexReference(
-                    industrialComplexReference
-                )
+                industrialComplexReference = self.IndustrialComplexReference(industrialComplexReference)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if processPlantReference is not None and not isinstance(
-                processPlantReference, aas.SubmodelElement
-            ):
-                processPlantReference = self.ProcessPlantReference(
-                    processPlantReference
-                )
+            if processPlantReference is not None and not isinstance(processPlantReference, aas.SubmodelElement):
+                processPlantReference = self.ProcessPlantReference(processPlantReference)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if plantSectionReference is not None and not isinstance(
-                plantSectionReference, aas.SubmodelElement
-            ):
-                plantSectionReference = self.PlantSectionReference(
-                    plantSectionReference
-                )
+            if plantSectionReference is not None and not isinstance(plantSectionReference, aas.SubmodelElement):
+                plantSectionReference = self.PlantSectionReference(plantSectionReference)
 
             # Build a submodel element if a raw value was passed in the argument
 
             if enterpriseIdentificationCode is not None and not isinstance(
                 enterpriseIdentificationCode, aas.SubmodelElement
             ):
-                enterpriseIdentificationCode = self.EnterpriseIdentificationCode(
-                    enterpriseIdentificationCode
-                )
+                enterpriseIdentificationCode = self.EnterpriseIdentificationCode(enterpriseIdentificationCode)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if enterpriseName is not None and not isinstance(
-                enterpriseName, aas.SubmodelElement
-            ):
+            if enterpriseName is not None and not isinstance(enterpriseName, aas.SubmodelElement):
                 enterpriseName = self.EnterpriseName(enterpriseName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1212,35 +1128,25 @@ class DEXPI(aas.Submodel):
             if industrialComplexIdentificationCode is not None and not isinstance(
                 industrialComplexIdentificationCode, aas.SubmodelElement
             ):
-                industrialComplexIdentificationCode = (
-                    self.IndustrialComplexIdentificationCode(
-                        industrialComplexIdentificationCode
-                    )
+                industrialComplexIdentificationCode = self.IndustrialComplexIdentificationCode(
+                    industrialComplexIdentificationCode
                 )
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if industrialComplexName is not None and not isinstance(
-                industrialComplexName, aas.SubmodelElement
-            ):
-                industrialComplexName = self.IndustrialComplexName(
-                    industrialComplexName
-                )
+            if industrialComplexName is not None and not isinstance(industrialComplexName, aas.SubmodelElement):
+                industrialComplexName = self.IndustrialComplexName(industrialComplexName)
 
             # Build a submodel element if a raw value was passed in the argument
 
             if plantSectionIdentificationCode is not None and not isinstance(
                 plantSectionIdentificationCode, aas.SubmodelElement
             ):
-                plantSectionIdentificationCode = self.PlantSectionIdentificationCode(
-                    plantSectionIdentificationCode
-                )
+                plantSectionIdentificationCode = self.PlantSectionIdentificationCode(plantSectionIdentificationCode)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if plantSectionName is not None and not isinstance(
-                plantSectionName, aas.SubmodelElement
-            ):
+            if plantSectionName is not None and not isinstance(plantSectionName, aas.SubmodelElement):
                 plantSectionName = self.PlantSectionName(plantSectionName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1248,39 +1154,27 @@ class DEXPI(aas.Submodel):
             if processPlantIdentificationCode is not None and not isinstance(
                 processPlantIdentificationCode, aas.SubmodelElement
             ):
-                processPlantIdentificationCode = self.ProcessPlantIdentificationCode(
-                    processPlantIdentificationCode
-                )
+                processPlantIdentificationCode = self.ProcessPlantIdentificationCode(processPlantIdentificationCode)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if processPlantName is not None and not isinstance(
-                processPlantName, aas.SubmodelElement
-            ):
+            if processPlantName is not None and not isinstance(processPlantName, aas.SubmodelElement):
                 processPlantName = self.ProcessPlantName(processPlantName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if projectName is not None and not isinstance(
-                projectName, aas.SubmodelElement
-            ):
+            if projectName is not None and not isinstance(projectName, aas.SubmodelElement):
                 projectName = self.ProjectName(projectName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if projectNumber is not None and not isinstance(
-                projectNumber, aas.SubmodelElement
-            ):
+            if projectNumber is not None and not isinstance(projectNumber, aas.SubmodelElement):
                 projectNumber = self.ProjectNumber(projectNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if siteIdentificationCode is not None and not isinstance(
-                siteIdentificationCode, aas.SubmodelElement
-            ):
-                siteIdentificationCode = self.SiteIdentificationCode(
-                    siteIdentificationCode
-                )
+            if siteIdentificationCode is not None and not isinstance(siteIdentificationCode, aas.SubmodelElement):
+                siteIdentificationCode = self.SiteIdentificationCode(siteIdentificationCode)
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -1289,30 +1183,22 @@ class DEXPI(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if subProjectName is not None and not isinstance(
-                subProjectName, aas.SubmodelElement
-            ):
+            if subProjectName is not None and not isinstance(subProjectName, aas.SubmodelElement):
                 subProjectName = self.SubProjectName(subProjectName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if subProjectNumber is not None and not isinstance(
-                subProjectNumber, aas.SubmodelElement
-            ):
+            if subProjectNumber is not None and not isinstance(subProjectNumber, aas.SubmodelElement):
                 subProjectNumber = self.SubProjectNumber(subProjectNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerName is not None and not isinstance(
-                manufacturerName, aas.SubmodelElement
-            ):
+            if manufacturerName is not None and not isinstance(manufacturerName, aas.SubmodelElement):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if dateOfManufacture is not None and not isinstance(
-                dateOfManufacture, aas.SubmodelElement
-            ):
+            if dateOfManufacture is not None and not isinstance(dateOfManufacture, aas.SubmodelElement):
                 dateOfManufacture = self.DateOfManufacture(dateOfManufacture)
 
             # A str would be split into its characters
@@ -1322,12 +1208,7 @@ class DEXPI(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if endProductCASName:
                 endProductCASName = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.EndProductCASName(i)
-                    )
-                    for i in endProductCASName
+                    i if isinstance(i, aas.SubmodelElement) else self.EndProductCASName(i) for i in endProductCASName
                 ]
 
             # A str would be split into its characters
@@ -1337,8 +1218,7 @@ class DEXPI(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if endProductName:
                 endProductName = [
-                    i if isinstance(i, aas.SubmodelElement) else self.EndProductName(i)
-                    for i in endProductName
+                    i if isinstance(i, aas.SubmodelElement) else self.EndProductName(i) for i in endProductName
                 ]
 
             # Add all passed/initialized submodel elements to a single list
@@ -1378,9 +1258,7 @@ class DEXPI(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1422,9 +1300,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1470,9 +1346,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1518,9 +1392,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1567,9 +1439,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1616,9 +1486,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1665,9 +1533,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1714,9 +1580,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1763,9 +1627,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1811,9 +1673,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1859,9 +1719,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1888,21 +1746,15 @@ class DEXPI(aas.Submodel):
             def __init__(
                 self,
                 approvalDate: Optional[Union[xsd.Date, ApprovalDate]] = None,
-                approvalDescription: Optional[
-                    Union[aas.LangStringSet, ApprovalDescription]
-                ] = None,
+                approvalDescription: Optional[Union[aas.LangStringSet, ApprovalDescription]] = None,
                 archiveNumber: Optional[Union[str, ArchiveNumber]] = None,
                 checkerName: Optional[Union[str, CheckerName]] = None,
                 creationDate: Optional[Union[xsd.Date, CreationDate]] = None,
                 creatorName: Optional[Union[str, CreatorName]] = None,
                 designerName: Optional[Union[str, DesignerName]] = None,
                 drawingNumber: Optional[Union[str, DrawingNumber]] = None,
-                drawingSubTitle: Optional[
-                    Union[aas.LangStringSet, DrawingSubTitle]
-                ] = None,
-                lastModificationDate: Optional[
-                    Union[xsd.Date, LastModificationDate]
-                ] = None,
+                drawingSubTitle: Optional[Union[aas.LangStringSet, DrawingSubTitle]] = None,
+                lastModificationDate: Optional[Union[xsd.Date, LastModificationDate]] = None,
                 id_short: Optional[str] = r"ModelMetadata",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -1910,8 +1762,7 @@ class DEXPI(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/dexpi/1/0/ModelMetadata",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/ModelMetadata"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -1919,9 +1770,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1932,75 +1781,53 @@ class DEXPI(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if approvalDate is not None and not isinstance(
-                    approvalDate, aas.SubmodelElement
-                ):
+                if approvalDate is not None and not isinstance(approvalDate, aas.SubmodelElement):
                     approvalDate = self.ApprovalDate(approvalDate)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if approvalDescription is not None and not isinstance(
-                    approvalDescription, aas.SubmodelElement
-                ):
+                if approvalDescription is not None and not isinstance(approvalDescription, aas.SubmodelElement):
                     approvalDescription = self.ApprovalDescription(approvalDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if archiveNumber is not None and not isinstance(
-                    archiveNumber, aas.SubmodelElement
-                ):
+                if archiveNumber is not None and not isinstance(archiveNumber, aas.SubmodelElement):
                     archiveNumber = self.ArchiveNumber(archiveNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if checkerName is not None and not isinstance(
-                    checkerName, aas.SubmodelElement
-                ):
+                if checkerName is not None and not isinstance(checkerName, aas.SubmodelElement):
                     checkerName = self.CheckerName(checkerName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if creationDate is not None and not isinstance(
-                    creationDate, aas.SubmodelElement
-                ):
+                if creationDate is not None and not isinstance(creationDate, aas.SubmodelElement):
                     creationDate = self.CreationDate(creationDate)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if creatorName is not None and not isinstance(
-                    creatorName, aas.SubmodelElement
-                ):
+                if creatorName is not None and not isinstance(creatorName, aas.SubmodelElement):
                     creatorName = self.CreatorName(creatorName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if designerName is not None and not isinstance(
-                    designerName, aas.SubmodelElement
-                ):
+                if designerName is not None and not isinstance(designerName, aas.SubmodelElement):
                     designerName = self.DesignerName(designerName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if drawingNumber is not None and not isinstance(
-                    drawingNumber, aas.SubmodelElement
-                ):
+                if drawingNumber is not None and not isinstance(drawingNumber, aas.SubmodelElement):
                     drawingNumber = self.DrawingNumber(drawingNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if drawingSubTitle is not None and not isinstance(
-                    drawingSubTitle, aas.SubmodelElement
-                ):
+                if drawingSubTitle is not None and not isinstance(drawingSubTitle, aas.SubmodelElement):
                     drawingSubTitle = self.DrawingSubTitle(drawingSubTitle)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if lastModificationDate is not None and not isinstance(
-                    lastModificationDate, aas.SubmodelElement
-                ):
-                    lastModificationDate = self.LastModificationDate(
-                        lastModificationDate
-                    )
+                if lastModificationDate is not None and not isinstance(lastModificationDate, aas.SubmodelElement):
+                    lastModificationDate = self.LastModificationDate(lastModificationDate)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2026,9 +1853,7 @@ class DEXPI(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2065,9 +1890,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2112,9 +1935,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2164,9 +1985,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2204,8 +2023,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -2213,9 +2031,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2262,9 +2078,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2292,19 +2106,14 @@ class DEXPI(aas.Submodel):
 
                     def __init__(
                         self,
-                        id_short: Optional[
-                            str
-                        ] = r"ProcessInstrumentationFunction_1_rel",
+                        id_short: Optional[str] = r"ProcessInstrumentationFunction_1_rel",
                         first: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
                                     type_=aas.KeyTypes.FRAGMENT_REFERENCE,
@@ -2330,9 +2139,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2368,8 +2175,7 @@ class DEXPI(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/dexpi/1/0/TagMapping",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/TagMapping"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -2377,9 +2183,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2390,33 +2194,22 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tagName is not None and not isinstance(
-                        tagName, aas.SubmodelElement
-                    ):
+                    if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        tagName,
-                        class_,
-                        localId,
-                        processInstrumentationFunction_1_rel,
-                    ]:
+                    for se_arg in [tagName, class_, localId, processInstrumentationFunction_1_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -2427,9 +2220,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2469,9 +2260,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2509,8 +2298,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -2518,9 +2306,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2567,9 +2353,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2597,19 +2381,14 @@ class DEXPI(aas.Submodel):
 
                     def __init__(
                         self,
-                        id_short: Optional[
-                            str
-                        ] = r"ProcessInstrumentationFunction_2_rel",
+                        id_short: Optional[str] = r"ProcessInstrumentationFunction_2_rel",
                         first: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
                                     type_=aas.KeyTypes.FRAGMENT_REFERENCE,
@@ -2635,9 +2414,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2673,8 +2450,7 @@ class DEXPI(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/dexpi/1/0/TagMapping",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/TagMapping"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -2682,9 +2458,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2695,33 +2469,22 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tagName is not None and not isinstance(
-                        tagName, aas.SubmodelElement
-                    ):
+                    if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        tagName,
-                        class_,
-                        localId,
-                        processInstrumentationFunction_2_rel,
-                    ]:
+                    for se_arg in [tagName, class_, localId, processInstrumentationFunction_2_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -2732,9 +2495,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2774,9 +2535,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2814,8 +2573,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -2823,9 +2581,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2872,9 +2628,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2902,19 +2656,14 @@ class DEXPI(aas.Submodel):
 
                     def __init__(
                         self,
-                        id_short: Optional[
-                            str
-                        ] = r"ProcessInstrumentationFunction_3_rel",
+                        id_short: Optional[str] = r"ProcessInstrumentationFunction_3_rel",
                         first: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
                                     type_=aas.KeyTypes.FRAGMENT_REFERENCE,
@@ -2940,9 +2689,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2978,8 +2725,7 @@ class DEXPI(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/dexpi/1/0/TagMapping",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/TagMapping"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -2987,9 +2733,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3000,33 +2744,22 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tagName is not None and not isinstance(
-                        tagName, aas.SubmodelElement
-                    ):
+                    if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        tagName,
-                        class_,
-                        localId,
-                        processInstrumentationFunction_3_rel,
-                    ]:
+                    for se_arg in [tagName, class_, localId, processInstrumentationFunction_3_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -3037,9 +2770,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3079,9 +2810,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3119,8 +2848,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -3128,9 +2856,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3177,9 +2903,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3207,19 +2931,14 @@ class DEXPI(aas.Submodel):
 
                     def __init__(
                         self,
-                        id_short: Optional[
-                            str
-                        ] = r"ProcessInstrumentationFunction_4_rel",
+                        id_short: Optional[str] = r"ProcessInstrumentationFunction_4_rel",
                         first: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
                                     type_=aas.KeyTypes.FRAGMENT_REFERENCE,
@@ -3245,9 +2964,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3283,8 +3000,7 @@ class DEXPI(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/dexpi/1/0/TagMapping",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/TagMapping"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -3292,9 +3008,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3305,33 +3019,22 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tagName is not None and not isinstance(
-                        tagName, aas.SubmodelElement
-                    ):
+                    if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        tagName,
-                        class_,
-                        localId,
-                        processInstrumentationFunction_4_rel,
-                    ]:
+                    for se_arg in [tagName, class_, localId, processInstrumentationFunction_4_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -3342,9 +3045,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3384,9 +3085,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3424,8 +3123,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -3433,9 +3131,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3482,9 +3178,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3519,14 +3213,10 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=ActuatingFunction-1",
+                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=ActuatingFunction-1"
                                 ),
                             ),
                             type_=type(None),
@@ -3548,9 +3238,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3586,8 +3274,7 @@ class DEXPI(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/dexpi/1/0/TagMapping",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/TagMapping"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -3595,9 +3282,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3608,23 +3293,17 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tagName is not None and not isinstance(
-                        tagName, aas.SubmodelElement
-                    ):
+                    if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3640,9 +3319,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3682,9 +3359,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3722,8 +3397,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -3731,9 +3405,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3780,9 +3452,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3817,14 +3487,10 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=ActuatingFunction-2",
+                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=ActuatingFunction-2"
                                 ),
                             ),
                             type_=type(None),
@@ -3846,9 +3512,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3884,8 +3548,7 @@ class DEXPI(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/dexpi/1/0/TagMapping",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/TagMapping"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -3893,9 +3556,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3906,23 +3567,17 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tagName is not None and not isinstance(
-                        tagName, aas.SubmodelElement
-                    ):
+                    if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3938,9 +3593,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3980,9 +3633,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4020,8 +3671,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -4029,9 +3679,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4078,9 +3726,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4115,14 +3761,10 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=ActuatingFunction-3",
+                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=ActuatingFunction-3"
                                 ),
                             ),
                             type_=type(None),
@@ -4144,9 +3786,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4182,8 +3822,7 @@ class DEXPI(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/dexpi/1/0/TagMapping",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/TagMapping"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -4191,9 +3830,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4204,23 +3841,17 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tagName is not None and not isinstance(
-                        tagName, aas.SubmodelElement
-                    ):
+                    if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4236,9 +3867,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4278,9 +3907,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4318,8 +3945,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -4327,9 +3953,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4376,9 +4000,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4413,14 +4035,10 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=PlateHeatExchanger-1",
+                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=PlateHeatExchanger-1"
                                 ),
                             ),
                             type_=type(None),
@@ -4442,9 +4060,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4480,8 +4096,7 @@ class DEXPI(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/dexpi/1/0/TagMapping",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/TagMapping"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -4489,9 +4104,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4502,23 +4115,17 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tagName is not None and not isinstance(
-                        tagName, aas.SubmodelElement
-                    ):
+                    if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -4534,9 +4141,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4576,9 +4181,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4616,8 +4219,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -4625,9 +4227,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4674,9 +4274,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4711,14 +4309,10 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=TubularHeatExchanger-1",
+                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=TubularHeatExchanger-1"
                                 ),
                             ),
                             type_=type(None),
@@ -4740,9 +4334,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4778,8 +4370,7 @@ class DEXPI(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/dexpi/1/0/TagMapping",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/TagMapping"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -4787,9 +4378,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4800,33 +4389,22 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tagName is not None and not isinstance(
-                        tagName, aas.SubmodelElement
-                    ):
+                    if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        tagName,
-                        class_,
-                        localId,
-                        tubularHeatExchanger_1_rel,
-                    ]:
+                    for se_arg in [tagName, class_, localId, tubularHeatExchanger_1_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -4837,9 +4415,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4879,9 +4455,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4919,8 +4493,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -4928,9 +4501,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4977,9 +4548,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5014,14 +4583,10 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=CentrifugalPump-1",
+                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=CentrifugalPump-1"
                                 ),
                             ),
                             type_=type(None),
@@ -5030,8 +4595,7 @@ class DEXPI(aas.Submodel):
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/CentrifugalPump-1",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/CentrifugalPump-1"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -5043,9 +4607,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5081,8 +4643,7 @@ class DEXPI(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/dexpi/1/0/TagMapping",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/TagMapping"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -5090,9 +4651,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5103,23 +4662,17 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tagName is not None and not isinstance(
-                        tagName, aas.SubmodelElement
-                    ):
+                    if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5135,9 +4688,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5177,9 +4728,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5217,8 +4766,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -5226,9 +4774,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5275,9 +4821,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5312,14 +4856,10 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=ReciprocatingPump-1",
+                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=ReciprocatingPump-1"
                                 ),
                             ),
                             type_=type(None),
@@ -5341,9 +4881,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5379,8 +4917,7 @@ class DEXPI(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/dexpi/1/0/TagMapping",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/TagMapping"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -5388,9 +4925,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5401,23 +4936,17 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tagName is not None and not isinstance(
-                        tagName, aas.SubmodelElement
-                    ):
+                    if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5433,9 +4962,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5475,9 +5002,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5515,8 +5040,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -5524,9 +5048,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5573,9 +5095,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5610,26 +5130,15 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Tank-1",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Tank-1"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Tank-1",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Tank-1"),),
                             referred_semantic_id=None,
                         ),
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -5639,9 +5148,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5677,8 +5184,7 @@ class DEXPI(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/dexpi/1/0/TagMapping",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/TagMapping"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -5686,9 +5192,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5699,23 +5203,17 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if tagName is not None and not isinstance(
-                        tagName, aas.SubmodelElement
-                    ):
+                    if tagName is not None and not isinstance(tagName, aas.SubmodelElement):
                         tagName = self.TagName(tagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5731,9 +5229,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5773,9 +5269,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5822,9 +5316,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5862,8 +5354,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -5871,9 +5362,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5920,9 +5409,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5957,14 +5444,10 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=ControlledActuator-1",
+                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=ControlledActuator-1"
                                 ),
                             ),
                             type_=type(None),
@@ -5986,9 +5469,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6034,9 +5515,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6047,41 +5526,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        controlledActuator_1_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, controlledActuator_1_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -6092,9 +5557,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6134,9 +5597,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6183,9 +5644,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6223,8 +5682,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -6232,9 +5690,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6281,9 +5737,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6318,10 +5772,7 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
                                     type_=aas.KeyTypes.FRAGMENT_REFERENCE,
@@ -6347,9 +5798,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6395,9 +5844,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6408,41 +5855,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        operatedValveReference_1_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, operatedValveReference_1_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -6453,9 +5886,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6495,9 +5926,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6544,9 +5973,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6584,8 +6011,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -6593,9 +6019,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6642,9 +6066,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6679,14 +6101,10 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=ControlledActuator-2",
+                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=ControlledActuator-2"
                                 ),
                             ),
                             type_=type(None),
@@ -6708,9 +6126,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6756,9 +6172,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6769,41 +6183,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        controlledActuator_2_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, controlledActuator_2_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -6814,9 +6214,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6856,9 +6254,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6905,9 +6301,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6945,8 +6339,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -6954,9 +6347,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7003,9 +6394,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7040,10 +6429,7 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
                                     type_=aas.KeyTypes.FRAGMENT_REFERENCE,
@@ -7069,9 +6455,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7117,9 +6501,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7130,41 +6512,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        operatedValveReference_2_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, operatedValveReference_2_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -7175,9 +6543,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -7217,9 +6583,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7266,9 +6630,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7306,8 +6668,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -7315,9 +6676,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7364,9 +6723,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7401,14 +6758,10 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=ControlledActuator-3",
+                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=ControlledActuator-3"
                                 ),
                             ),
                             type_=type(None),
@@ -7430,9 +6783,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7478,9 +6829,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7491,41 +6840,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        controlledActuator_3_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, controlledActuator_3_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -7536,9 +6871,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -7578,9 +6911,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7627,9 +6958,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7667,8 +6996,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -7676,9 +7004,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7725,9 +7051,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7762,10 +7086,7 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
                                 aas.Key(
                                     type_=aas.KeyTypes.FRAGMENT_REFERENCE,
@@ -7791,9 +7112,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7839,9 +7158,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7852,41 +7169,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        operatedValveReference_3_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, operatedValveReference_3_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -7897,9 +7200,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -7939,9 +7240,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -7988,9 +7287,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8028,8 +7325,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -8037,9 +7333,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8086,9 +7380,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8123,26 +7415,15 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-3",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-3"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-3",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-3"),),
                             referred_semantic_id=None,
                         ),
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -8152,9 +7433,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8200,9 +7479,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8213,41 +7490,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_3_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_3_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -8258,9 +7521,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -8300,9 +7561,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8349,9 +7608,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8389,8 +7646,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -8398,9 +7654,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8447,9 +7701,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8484,26 +7736,15 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-4",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-4"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-4",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-4"),),
                             referred_semantic_id=None,
                         ),
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -8513,9 +7754,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8561,9 +7800,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8574,41 +7811,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_4_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_4_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -8619,9 +7842,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -8661,9 +7882,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8710,9 +7929,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8750,8 +7967,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -8759,9 +7975,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8808,9 +8022,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8845,25 +8057,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-13",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-13"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-13",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-13"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -8874,9 +8077,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -8922,9 +8123,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8935,41 +8134,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_13_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_13_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -8980,9 +8165,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -9022,9 +8205,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9071,9 +8252,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9111,8 +8290,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -9120,9 +8298,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9169,9 +8345,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9206,25 +8380,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-14",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-14"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-14",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-14"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -9235,9 +8400,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9283,9 +8446,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -9296,41 +8457,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_14_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_14_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -9341,9 +8488,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -9383,9 +8528,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9432,9 +8575,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9472,8 +8613,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -9481,9 +8621,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9530,9 +8668,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9567,25 +8703,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Chamber-1",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Chamber-1"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Chamber-1",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Chamber-1"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -9596,9 +8723,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9644,9 +8769,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -9657,41 +8780,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        chamber_1_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, chamber_1_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -9702,9 +8811,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -9744,9 +8851,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9793,9 +8898,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9833,8 +8936,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -9842,9 +8944,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9891,9 +8991,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -9928,25 +9026,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Chamber-2",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Chamber-2"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Chamber-2",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Chamber-2"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -9957,9 +9046,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10005,9 +9092,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10018,41 +9103,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        chamber_2_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, chamber_2_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -10063,9 +9134,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -10105,9 +9174,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10154,9 +9221,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10194,8 +9259,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -10203,9 +9267,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10252,9 +9314,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10289,25 +9349,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-10",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-10"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-10",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-10"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -10318,9 +9369,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10366,9 +9415,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10379,41 +9426,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_10_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_10_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -10424,9 +9457,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -10466,9 +9497,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10515,9 +9544,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10555,8 +9582,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -10564,9 +9590,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10613,9 +9637,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10650,25 +9672,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-11",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-11"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-11",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-11"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -10679,9 +9692,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10727,9 +9738,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10740,41 +9749,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_11_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_11_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -10785,9 +9780,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -10827,9 +9820,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10876,9 +9867,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10916,8 +9905,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -10925,9 +9913,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -10974,9 +9960,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11011,25 +9995,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-16",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-16"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-16",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-16"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -11040,9 +10015,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11088,9 +10061,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11101,41 +10072,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_16_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_16_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -11146,9 +10103,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -11188,9 +10143,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11237,9 +10190,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11277,8 +10228,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -11286,9 +10236,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11335,9 +10283,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11372,25 +10318,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-15",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-15"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-15",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-15"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -11401,9 +10338,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11449,9 +10384,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11462,41 +10395,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_15_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_15_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -11507,9 +10426,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -11549,9 +10466,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11598,9 +10513,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11638,8 +10551,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -11647,9 +10559,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11696,9 +10606,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11733,25 +10641,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Chamber-3",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Chamber-3"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Chamber-3",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Chamber-3"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -11762,9 +10661,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11810,9 +10707,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11823,41 +10718,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        chamber_3_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, chamber_3_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -11868,9 +10749,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -11910,9 +10789,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11959,9 +10836,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -11999,8 +10874,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -12008,9 +10882,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -12057,9 +10929,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -12094,25 +10964,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Chamber-4",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Chamber-4"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Chamber-4",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Chamber-4"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -12123,9 +10984,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -12171,9 +11030,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12184,41 +11041,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        chamber_4_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, chamber_4_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -12229,9 +11072,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -12271,9 +11112,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -12320,9 +11159,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -12360,8 +11197,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -12369,9 +11205,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -12418,9 +11252,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -12455,26 +11287,15 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-1",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-1"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-1",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-1"),),
                             referred_semantic_id=None,
                         ),
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -12484,9 +11305,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -12532,9 +11351,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12545,41 +11362,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_1_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_1_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -12590,9 +11393,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -12632,9 +11433,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -12681,9 +11480,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -12721,8 +11518,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -12730,9 +11526,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -12779,9 +11573,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -12816,26 +11608,15 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-2",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-2"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-2",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-2"),),
                             referred_semantic_id=None,
                         ),
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -12845,9 +11626,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -12893,9 +11672,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12906,41 +11683,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_2_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_2_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -12951,9 +11714,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -12993,9 +11754,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13042,9 +11801,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13082,8 +11839,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -13091,9 +11847,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13140,9 +11894,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13177,26 +11929,15 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-7",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-7"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-7",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-7"),),
                             referred_semantic_id=None,
                         ),
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -13206,9 +11947,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13254,9 +11993,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13267,41 +12004,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_7_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_7_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -13312,9 +12035,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -13354,9 +12075,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13403,9 +12122,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13443,8 +12160,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -13452,9 +12168,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13501,9 +12215,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13538,26 +12250,15 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-9",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-9"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-9",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-9"),),
                             referred_semantic_id=None,
                         ),
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -13567,9 +12268,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13615,9 +12314,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13628,41 +12325,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_9_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_9_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -13673,9 +12356,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -13715,9 +12396,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13764,9 +12443,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13804,8 +12481,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -13813,9 +12489,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13862,9 +12536,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13899,26 +12571,15 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-5",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-5"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-5",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-5"),),
                             referred_semantic_id=None,
                         ),
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -13928,9 +12589,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -13976,9 +12635,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13989,41 +12646,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_5_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_5_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -14034,9 +12677,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -14076,9 +12717,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14125,9 +12764,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14165,8 +12802,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -14174,9 +12810,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14223,9 +12857,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14260,26 +12892,15 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-6",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-6"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-6",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-6"),),
                             referred_semantic_id=None,
                         ),
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -14289,9 +12910,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14337,9 +12956,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -14350,41 +12967,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_6_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_6_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -14395,9 +12998,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -14437,9 +13038,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14486,9 +13085,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14526,8 +13123,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -14535,9 +13131,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14584,9 +13178,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14621,25 +13213,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-18",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-18"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-18",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-18"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -14650,9 +13233,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14698,9 +13279,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -14711,41 +13290,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_18_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_18_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -14756,9 +13321,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -14798,9 +13361,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14847,9 +13408,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14887,8 +13446,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -14896,9 +13454,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14945,9 +13501,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -14982,26 +13536,15 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-8",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-8"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-8",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-8"),),
                             referred_semantic_id=None,
                         ),
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -15011,9 +13554,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -15059,9 +13600,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15072,41 +13611,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_8_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_8_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -15117,9 +13642,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -15159,9 +13682,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -15208,9 +13729,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -15248,8 +13767,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -15257,9 +13775,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -15306,9 +13822,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -15343,25 +13857,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-12",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-12"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-12",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-12"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -15372,9 +13877,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -15420,9 +13923,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15433,41 +13934,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_12_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_12_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -15478,9 +13965,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -15520,9 +14005,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -15569,9 +14052,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -15609,8 +14090,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -15618,9 +14098,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -15667,9 +14145,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -15704,25 +14180,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-17",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-17"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-17",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-17"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -15733,9 +14200,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -15781,9 +14246,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15794,41 +14257,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_17_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_17_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -15839,9 +14288,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -15881,9 +14328,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -15930,9 +14375,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -15970,8 +14413,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -15979,9 +14421,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -16028,9 +14468,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -16065,25 +14503,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Nozzle-19",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Nozzle-19"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Nozzle-19",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Nozzle-19"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -16094,9 +14523,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -16142,9 +14569,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16155,41 +14580,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        nozzle_19_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, nozzle_19_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -16200,9 +14611,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -16242,9 +14651,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -16291,9 +14698,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -16331,8 +14736,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -16340,9 +14744,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -16389,9 +14791,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -16426,25 +14826,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Chamber-7",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Chamber-7"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Chamber-7",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Chamber-7"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -16455,9 +14846,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -16503,9 +14892,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16516,41 +14903,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        chamber_7_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, chamber_7_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -16561,9 +14934,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -16603,9 +14974,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -16652,9 +15021,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -16692,8 +15059,7 @@ class DEXPI(aas.Submodel):
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://admin-shell.io/dexpi/1/0/Class",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Class"
                                 ),
                             ),
                             referred_semantic_id=None,
@@ -16701,9 +15067,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -16750,9 +15114,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -16787,25 +15149,16 @@ class DEXPI(aas.Submodel):
                                     type_=aas.KeyTypes.SUBMODEL,
                                     value=r"https://epc.org/sm_id/9f236679-e52d-4a52-aa85-dea871a89f9b",
                                 ),
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                    value=r"Model01",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Model01"),
                                 aas.Key(type_=aas.KeyTypes.FILE, value=r"ModelFile"),
-                                aas.Key(
-                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                    value=r"ProteusXML@ID=Chamber-8",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.FRAGMENT_REFERENCE, value=r"ProteusXML@ID=Chamber-8"),
                             ),
                             type_=type(None),
                             referred_semantic_id=None,
                         ),
                         second: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://epc.org/role/Chamber-8",
-                                ),
+                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://epc.org/role/Chamber-8"),
                             ),
                             referred_semantic_id=None,
                         ),
@@ -16816,9 +15169,7 @@ class DEXPI(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -16864,9 +15215,7 @@ class DEXPI(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16877,41 +15226,27 @@ class DEXPI(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if subTagName is not None and not isinstance(
-                        subTagName, aas.SubmodelElement
-                    ):
+                    if subTagName is not None and not isinstance(subTagName, aas.SubmodelElement):
                         subTagName = self.SubTagName(subTagName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if parentLocalId is not None and not isinstance(
-                        parentLocalId, aas.SubmodelElement
-                    ):
+                    if parentLocalId is not None and not isinstance(parentLocalId, aas.SubmodelElement):
                         parentLocalId = self.ParentLocalId(parentLocalId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if class_ is not None and not isinstance(
-                        class_, aas.SubmodelElement
-                    ):
+                    if class_ is not None and not isinstance(class_, aas.SubmodelElement):
                         class_ = self.Class(class_)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if localId is not None and not isinstance(
-                        localId, aas.SubmodelElement
-                    ):
+                    if localId is not None and not isinstance(localId, aas.SubmodelElement):
                         localId = self.LocalId(localId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        subTagName,
-                        parentLocalId,
-                        class_,
-                        localId,
-                        chamber_8_rel,
-                    ]:
+                    for se_arg in [subTagName, parentLocalId, class_, localId, chamber_8_rel]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -16922,9 +15257,7 @@ class DEXPI(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -16941,18 +15274,10 @@ class DEXPI(aas.Submodel):
 
             def __init__(
                 self,
-                processInstrumentationFunction_1: Optional[
-                    ProcessInstrumentationFunction_1
-                ] = None,
-                processInstrumentationFunction_2: Optional[
-                    ProcessInstrumentationFunction_2
-                ] = None,
-                processInstrumentationFunction_3: Optional[
-                    ProcessInstrumentationFunction_3
-                ] = None,
-                processInstrumentationFunction_4: Optional[
-                    ProcessInstrumentationFunction_4
-                ] = None,
+                processInstrumentationFunction_1: Optional[ProcessInstrumentationFunction_1] = None,
+                processInstrumentationFunction_2: Optional[ProcessInstrumentationFunction_2] = None,
+                processInstrumentationFunction_3: Optional[ProcessInstrumentationFunction_3] = None,
+                processInstrumentationFunction_4: Optional[ProcessInstrumentationFunction_4] = None,
                 actuatingFunction_1: Optional[ActuatingFunction_1] = None,
                 actuatingFunction_2: Optional[ActuatingFunction_2] = None,
                 actuatingFunction_3: Optional[ActuatingFunction_3] = None,
@@ -17008,9 +15333,7 @@ class DEXPI(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -17076,9 +15399,7 @@ class DEXPI(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -17104,20 +15425,13 @@ class DEXPI(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/dexpi/1/0/Model",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/dexpi/1/0/Model"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -17128,12 +15442,7 @@ class DEXPI(aas.Submodel):
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                modelMetadata,
-                modelFile,
-                modelRepresentation,
-                mappingDirectory,
-            ]:
+            for se_arg in [modelMetadata, modelFile, modelRepresentation, mappingDirectory]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -17144,9 +15453,7 @@ class DEXPI(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -17174,8 +15481,7 @@ class DEXPI(aas.Submodel):
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
                 aas.Key(
-                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                    value=r"https://admin-shell.io/idta/SubmodelTemplate/DEXPI/1/0",
+                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/SubmodelTemplate/DEXPI/1/0"
                 ),
             ),
             referred_semantic_id=None,
@@ -17210,9 +15516,7 @@ class DEXPI(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

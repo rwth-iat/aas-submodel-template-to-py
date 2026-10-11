@@ -32,9 +32,7 @@ class PredictiveMaintenance(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -89,9 +87,7 @@ class PredictiveMaintenance(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -146,9 +142,7 @@ class PredictiveMaintenance(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -203,9 +197,7 @@ class PredictiveMaintenance(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -260,9 +252,7 @@ class PredictiveMaintenance(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -317,9 +307,7 @@ class PredictiveMaintenance(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -360,9 +348,7 @@ class PredictiveMaintenance(aas.Submodel):
                 startDateTime: Optional[Union[xsd.DateTime, StartDateTime]] = None,
                 description_: Optional[Union[str, Description]] = None,
                 id_short: Optional[str] = r"RemainingUsefulLifetime",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.CO_MANAGED_ENTITY,
+                entity_type: Optional[aas.EntityType] = aas.EntityType.CO_MANAGED_ENTITY,
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -380,9 +366,7 @@ class PredictiveMaintenance(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -401,56 +385,37 @@ class PredictiveMaintenance(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if indicationType is not None and not isinstance(
-                    indicationType, aas.SubmodelElement
-                ):
+                if indicationType is not None and not isinstance(indicationType, aas.SubmodelElement):
                     indicationType = self.IndicationType(indicationType)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if durationValue is not None and not isinstance(
-                    durationValue, aas.SubmodelElement
-                ):
+                if durationValue is not None and not isinstance(durationValue, aas.SubmodelElement):
                     durationValue = self.DurationValue(durationValue)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if engineeringUnit is not None and not isinstance(
-                    engineeringUnit, aas.SubmodelElement
-                ):
+                if engineeringUnit is not None and not isinstance(engineeringUnit, aas.SubmodelElement):
                     engineeringUnit = self.EngineeringUnit(engineeringUnit)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if startValue is not None and not isinstance(
-                    startValue, aas.SubmodelElement
-                ):
+                if startValue is not None and not isinstance(startValue, aas.SubmodelElement):
                     startValue = self.StartValue(startValue)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if startDateTime is not None and not isinstance(
-                    startDateTime, aas.SubmodelElement
-                ):
+                if startDateTime is not None and not isinstance(startDateTime, aas.SubmodelElement):
                     startDateTime = self.StartDateTime(startDateTime)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if description_ is not None and not isinstance(
-                    description_, aas.SubmodelElement
-                ):
+                if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                     description_ = self.Description(description_)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    indicationType,
-                    durationValue,
-                    engineeringUnit,
-                    startValue,
-                    startDateTime,
-                    description_,
-                ]:
+                for se_arg in [indicationType, durationValue, engineeringUnit, startValue, startDateTime, description_]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -461,9 +426,7 @@ class PredictiveMaintenance(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -504,9 +467,7 @@ class PredictiveMaintenance(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -561,9 +522,7 @@ class PredictiveMaintenance(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -622,9 +581,7 @@ class PredictiveMaintenance(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -679,9 +636,7 @@ class PredictiveMaintenance(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -736,9 +691,7 @@ class PredictiveMaintenance(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -793,9 +746,7 @@ class PredictiveMaintenance(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -850,17 +801,12 @@ class PredictiveMaintenance(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Drift information of AI model",
-                                    r"de": r"Drift Information of AI Model",
-                                }
+                                dict_={r"en": r"Drift information of AI model", r"de": r"Drift Information of AI Model"}
                             )
 
                         if qualifier is None:
@@ -907,9 +853,7 @@ class PredictiveMaintenance(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -964,9 +908,7 @@ class PredictiveMaintenance(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1021,9 +963,7 @@ class PredictiveMaintenance(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1078,9 +1018,7 @@ class PredictiveMaintenance(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1115,20 +1053,14 @@ class PredictiveMaintenance(aas.Submodel):
                 def __init__(
                     self,
                     conditionName: Union[str, ConditionName],
-                    isBoundaryConditionUsedInModel: Union[
-                        bool, IsBoundaryConditionUsedInModel
-                    ],
+                    isBoundaryConditionUsedInModel: Union[bool, IsBoundaryConditionUsedInModel],
                     boundaryValueRange: Union[float, BoundaryValueRange],
                     boundaryEngineeringUnit: Union[str, BoundaryEngineeringUnit],
-                    driftInfoAIModel: Optional[
-                        Union[Tuple[float, float], DriftInfoAIModel]
-                    ] = None,
+                    driftInfoAIModel: Optional[Union[Tuple[float, float], DriftInfoAIModel]] = None,
                     meanValue: Optional[Union[float, MeanValue]] = None,
                     standarddeviation: Optional[Union[float, Standarddeviation]] = None,
                     skewness: Optional[Union[float, Skewness]] = None,
-                    boundaryDescription: Optional[
-                        Union[str, BoundaryDescription]
-                    ] = None,
+                    boundaryDescription: Optional[Union[str, BoundaryDescription]] = None,
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -1145,9 +1077,7 @@ class PredictiveMaintenance(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1166,9 +1096,7 @@ class PredictiveMaintenance(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if conditionName is not None and not isinstance(
-                        conditionName, aas.SubmodelElement
-                    ):
+                    if conditionName is not None and not isinstance(conditionName, aas.SubmodelElement):
                         conditionName = self.ConditionName(conditionName)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -1176,17 +1104,13 @@ class PredictiveMaintenance(aas.Submodel):
                     if isBoundaryConditionUsedInModel is not None and not isinstance(
                         isBoundaryConditionUsedInModel, aas.SubmodelElement
                     ):
-                        isBoundaryConditionUsedInModel = (
-                            self.IsBoundaryConditionUsedInModel(
-                                isBoundaryConditionUsedInModel
-                            )
+                        isBoundaryConditionUsedInModel = self.IsBoundaryConditionUsedInModel(
+                            isBoundaryConditionUsedInModel
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if boundaryValueRange is not None and not isinstance(
-                        boundaryValueRange, aas.SubmodelElement
-                    ):
+                    if boundaryValueRange is not None and not isinstance(boundaryValueRange, aas.SubmodelElement):
                         boundaryValueRange = self.BoundaryValueRange(boundaryValueRange)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -1194,48 +1118,32 @@ class PredictiveMaintenance(aas.Submodel):
                     if boundaryEngineeringUnit is not None and not isinstance(
                         boundaryEngineeringUnit, aas.SubmodelElement
                     ):
-                        boundaryEngineeringUnit = self.BoundaryEngineeringUnit(
-                            boundaryEngineeringUnit
-                        )
+                        boundaryEngineeringUnit = self.BoundaryEngineeringUnit(boundaryEngineeringUnit)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if driftInfoAIModel is not None and not isinstance(
-                        driftInfoAIModel, aas.SubmodelElement
-                    ):
-                        driftInfoAIModel = self.DriftInfoAIModel(
-                            min=driftInfoAIModel[0], max=driftInfoAIModel[1]
-                        )
+                    if driftInfoAIModel is not None and not isinstance(driftInfoAIModel, aas.SubmodelElement):
+                        driftInfoAIModel = self.DriftInfoAIModel(min=driftInfoAIModel[0], max=driftInfoAIModel[1])
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if meanValue is not None and not isinstance(
-                        meanValue, aas.SubmodelElement
-                    ):
+                    if meanValue is not None and not isinstance(meanValue, aas.SubmodelElement):
                         meanValue = self.MeanValue(meanValue)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if standarddeviation is not None and not isinstance(
-                        standarddeviation, aas.SubmodelElement
-                    ):
+                    if standarddeviation is not None and not isinstance(standarddeviation, aas.SubmodelElement):
                         standarddeviation = self.Standarddeviation(standarddeviation)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if skewness is not None and not isinstance(
-                        skewness, aas.SubmodelElement
-                    ):
+                    if skewness is not None and not isinstance(skewness, aas.SubmodelElement):
                         skewness = self.Skewness(skewness)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if boundaryDescription is not None and not isinstance(
-                        boundaryDescription, aas.SubmodelElement
-                    ):
-                        boundaryDescription = self.BoundaryDescription(
-                            boundaryDescription
-                        )
+                    if boundaryDescription is not None and not isinstance(boundaryDescription, aas.SubmodelElement):
+                        boundaryDescription = self.BoundaryDescription(boundaryDescription)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1260,9 +1168,7 @@ class PredictiveMaintenance(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1279,9 +1185,7 @@ class PredictiveMaintenance(aas.Submodel):
 
             def __init__(
                 self,
-                listrulboundaryconditions_items: Iterable[
-                    Listrulboundaryconditions_item
-                ],
+                listrulboundaryconditions_items: Iterable[Listrulboundaryconditions_item],
                 id_short: Optional[str] = r"ListRULBoundaryConditions",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1302,9 +1206,7 @@ class PredictiveMaintenance(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1323,9 +1225,7 @@ class PredictiveMaintenance(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(listrulboundaryconditions_items, str):
-                    raise TypeError(
-                        "listrulboundaryconditions_items takes several elements, got a str"
-                    )
+                    raise TypeError("listrulboundaryconditions_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1337,9 +1237,7 @@ class PredictiveMaintenance(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1406,15 +1304,9 @@ class PredictiveMaintenance(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -1451,9 +1343,7 @@ class PredictiveMaintenance(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1508,9 +1398,7 @@ class PredictiveMaintenance(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1563,17 +1451,12 @@ class PredictiveMaintenance(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference to AIModelNameplate",
-                                r"de": r"Referenz auf AIModelNameplate",
-                            }
+                            dict_={r"en": r"Reference to AIModelNameplate", r"de": r"Referenz auf AIModelNameplate"}
                         )
 
                     if qualifier is None:
@@ -1599,9 +1482,7 @@ class PredictiveMaintenance(aas.Submodel):
                 self,
                 modelType: Union[str, ModelType],
                 modelDescription: Optional[Union[str, ModelDescription]] = None,
-                sMAIModelNamePlate: Optional[
-                    Union[aas.Reference, SMAIModelNamePlate]
-                ] = None,
+                sMAIModelNamePlate: Optional[Union[aas.Reference, SMAIModelNamePlate]] = None,
                 id_short: Optional[str] = r"PredictionModelInformation",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -1618,9 +1499,7 @@ class PredictiveMaintenance(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1639,23 +1518,17 @@ class PredictiveMaintenance(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if modelType is not None and not isinstance(
-                    modelType, aas.SubmodelElement
-                ):
+                if modelType is not None and not isinstance(modelType, aas.SubmodelElement):
                     modelType = self.ModelType(modelType)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if modelDescription is not None and not isinstance(
-                    modelDescription, aas.SubmodelElement
-                ):
+                if modelDescription is not None and not isinstance(modelDescription, aas.SubmodelElement):
                     modelDescription = self.ModelDescription(modelDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if sMAIModelNamePlate is not None and not isinstance(
-                    sMAIModelNamePlate, aas.SubmodelElement
-                ):
+                if sMAIModelNamePlate is not None and not isinstance(sMAIModelNamePlate, aas.SubmodelElement):
                     sMAIModelNamePlate = self.SMAIModelNamePlate(sMAIModelNamePlate)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1671,9 +1544,7 @@ class PredictiveMaintenance(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1715,9 +1586,7 @@ class PredictiveMaintenance(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1772,9 +1641,7 @@ class PredictiveMaintenance(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1826,9 +1693,7 @@ class PredictiveMaintenance(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1847,16 +1712,12 @@ class PredictiveMaintenance(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if preAlertMessage is not None and not isinstance(
-                        preAlertMessage, aas.SubmodelElement
-                    ):
+                    if preAlertMessage is not None and not isinstance(preAlertMessage, aas.SubmodelElement):
                         preAlertMessage = self.PreAlertMessage(preAlertMessage)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if preAlertValue is not None and not isinstance(
-                        preAlertValue, aas.SubmodelElement
-                    ):
+                    if preAlertValue is not None and not isinstance(preAlertValue, aas.SubmodelElement):
                         preAlertValue = self.PreAlertValue(preAlertValue)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1872,9 +1733,7 @@ class PredictiveMaintenance(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1912,9 +1771,7 @@ class PredictiveMaintenance(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1933,9 +1790,7 @@ class PredictiveMaintenance(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(listprealerts_items, str):
-                    raise TypeError(
-                        "listprealerts_items takes several elements, got a str"
-                    )
+                    raise TypeError("listprealerts_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1947,9 +1802,7 @@ class PredictiveMaintenance(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2016,15 +1869,9 @@ class PredictiveMaintenance(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -2061,9 +1908,7 @@ class PredictiveMaintenance(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2118,17 +1963,12 @@ class PredictiveMaintenance(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maintenance required",
-                                r"de": r"Wartung erforderlich",
-                            }
+                            dict_={r"en": r"Maintenance required", r"de": r"Wartung erforderlich"}
                         )
 
                     if qualifier is None:
@@ -2172,9 +2012,7 @@ class PredictiveMaintenance(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -2193,16 +2031,12 @@ class PredictiveMaintenance(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if alertMessage is not None and not isinstance(
-                    alertMessage, aas.SubmodelElement
-                ):
+                if alertMessage is not None and not isinstance(alertMessage, aas.SubmodelElement):
                     alertMessage = self.AlertMessage(alertMessage)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if maintenanceRequired is not None and not isinstance(
-                    maintenanceRequired, aas.SubmodelElement
-                ):
+                if maintenanceRequired is not None and not isinstance(maintenanceRequired, aas.SubmodelElement):
                     maintenanceRequired = self.MaintenanceRequired(maintenanceRequired)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2218,9 +2052,7 @@ class PredictiveMaintenance(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2240,19 +2072,12 @@ class PredictiveMaintenance(aas.Submodel):
             remainingUsefulLifetime: RemainingUsefulLifetime,
             confidenceInterval: Union[Tuple[float, float], ConfidenceInterval],
             listRULBoundaryConditions: Union[
-                Iterable[ListRULBoundaryConditions.Listrulboundaryconditions_item],
-                ListRULBoundaryConditions,
+                Iterable[ListRULBoundaryConditions.Listrulboundaryconditions_item], ListRULBoundaryConditions
             ],
             predictionModelInformation: PredictionModelInformation,
-            remainingUsfulLifeDateTime: Optional[
-                Union[xsd.DateTime, RemainingUsfulLifeDateTime]
-            ] = None,
-            listPreAlerts: Optional[
-                Union[Iterable[ListPreAlerts.Listprealerts_item], ListPreAlerts]
-            ] = None,
-            alertAfterExceedingRemainingUsableLife: Optional[
-                AlertAfterExceedingRemainingUsableLife
-            ] = None,
+            remainingUsfulLifeDateTime: Optional[Union[xsd.DateTime, RemainingUsfulLifeDateTime]] = None,
+            listPreAlerts: Optional[Union[Iterable[ListPreAlerts.Listprealerts_item], ListPreAlerts]] = None,
+            alertAfterExceedingRemainingUsableLife: Optional[AlertAfterExceedingRemainingUsableLife] = None,
             id_short: Optional[str] = r"RemainingUsefulLifePrediction",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -2269,9 +2094,7 @@ class PredictiveMaintenance(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -2293,33 +2116,21 @@ class PredictiveMaintenance(aas.Submodel):
             if remainingUsfulLifeDateTime is not None and not isinstance(
                 remainingUsfulLifeDateTime, aas.SubmodelElement
             ):
-                remainingUsfulLifeDateTime = self.RemainingUsfulLifeDateTime(
-                    remainingUsfulLifeDateTime
-                )
+                remainingUsfulLifeDateTime = self.RemainingUsfulLifeDateTime(remainingUsfulLifeDateTime)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if confidenceInterval is not None and not isinstance(
-                confidenceInterval, aas.SubmodelElement
-            ):
-                confidenceInterval = self.ConfidenceInterval(
-                    min=confidenceInterval[0], max=confidenceInterval[1]
-                )
+            if confidenceInterval is not None and not isinstance(confidenceInterval, aas.SubmodelElement):
+                confidenceInterval = self.ConfidenceInterval(min=confidenceInterval[0], max=confidenceInterval[1])
 
             # A str would be split into its characters
             if isinstance(listRULBoundaryConditions, str):
-                raise TypeError(
-                    "listRULBoundaryConditions takes several elements, got a str"
-                )
+                raise TypeError("listRULBoundaryConditions takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if listRULBoundaryConditions is not None and not isinstance(
-                listRULBoundaryConditions, aas.SubmodelElement
-            ):
-                listRULBoundaryConditions = self.ListRULBoundaryConditions(
-                    listRULBoundaryConditions
-                )
+            if listRULBoundaryConditions is not None and not isinstance(listRULBoundaryConditions, aas.SubmodelElement):
+                listRULBoundaryConditions = self.ListRULBoundaryConditions(listRULBoundaryConditions)
 
             # A str would be split into its characters
             if isinstance(listPreAlerts, str):
@@ -2327,9 +2138,7 @@ class PredictiveMaintenance(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if listPreAlerts is not None and not isinstance(
-                listPreAlerts, aas.SubmodelElement
-            ):
+            if listPreAlerts is not None and not isinstance(listPreAlerts, aas.SubmodelElement):
                 listPreAlerts = self.ListPreAlerts(listPreAlerts)
 
             # Add all passed/initialized submodel elements to a single list
@@ -2353,9 +2162,7 @@ class PredictiveMaintenance(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2423,9 +2230,7 @@ class PredictiveMaintenance(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

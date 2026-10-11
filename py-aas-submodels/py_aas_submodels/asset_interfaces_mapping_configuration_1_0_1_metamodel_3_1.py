@@ -30,9 +30,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -94,9 +92,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -121,14 +117,10 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
 
                 def __init__(
                     self,
-                    mappingsourcesinkrelations_items: Optional[
-                        Iterable[Mappingsourcesinkrelations_item]
-                    ] = None,
+                    mappingsourcesinkrelations_items: Optional[Iterable[Mappingsourcesinkrelations_item]] = None,
                     id_short: Optional[str] = r"MappingSourceSinkRelations",
                     type_value_list_element: aas.SubmodelElement = aas.RelationshipElement,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -154,9 +146,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -167,9 +157,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(mappingsourcesinkrelations_items, str):
-                        raise TypeError(
-                            "mappingsourcesinkrelations_items takes several elements, got a str"
-                        )
+                        raise TypeError("mappingsourcesinkrelations_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -181,9 +169,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -250,15 +236,9 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -274,10 +254,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                 self,
                 interfaceReference: Union[aas.Reference, InterfaceReference],
                 mappingSourceSinkRelations: Union[
-                    Iterable[
-                        MappingSourceSinkRelations.Mappingsourcesinkrelations_item
-                    ],
-                    MappingSourceSinkRelations,
+                    Iterable[MappingSourceSinkRelations.Mappingsourcesinkrelations_item], MappingSourceSinkRelations
                 ],
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -295,9 +272,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -308,25 +283,19 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if interfaceReference is not None and not isinstance(
-                    interfaceReference, aas.SubmodelElement
-                ):
+                if interfaceReference is not None and not isinstance(interfaceReference, aas.SubmodelElement):
                     interfaceReference = self.InterfaceReference(interfaceReference)
 
                 # A str would be split into its characters
                 if isinstance(mappingSourceSinkRelations, str):
-                    raise TypeError(
-                        "mappingSourceSinkRelations takes several elements, got a str"
-                    )
+                    raise TypeError("mappingSourceSinkRelations takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if mappingSourceSinkRelations is not None and not isinstance(
                     mappingSourceSinkRelations, aas.SubmodelElement
                 ):
-                    mappingSourceSinkRelations = self.MappingSourceSinkRelations(
-                        mappingSourceSinkRelations
-                    )
+                    mappingSourceSinkRelations = self.MappingSourceSinkRelations(mappingSourceSinkRelations)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -341,9 +310,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -360,9 +327,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
 
         def __init__(
             self,
-            mappingconfigurations_items: Optional[
-                Iterable[Mappingconfigurations_item]
-            ] = None,
+            mappingconfigurations_items: Optional[Iterable[Mappingconfigurations_item]] = None,
             id_short: Optional[str] = r"MappingConfigurations",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
@@ -391,9 +356,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -404,9 +367,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(mappingconfigurations_items, str):
-                raise TypeError(
-                    "mappingconfigurations_items takes several elements, got a str"
-                )
+                raise TypeError("mappingconfigurations_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -418,9 +379,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -489,10 +448,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -507,10 +463,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
     def __init__(
         self,
         id_: str,
-        mappingConfigurations: Union[
-            Iterable[MappingConfigurations.Mappingconfigurations_item],
-            MappingConfigurations,
-        ],
+        mappingConfigurations: Union[Iterable[MappingConfigurations.Mappingconfigurations_item], MappingConfigurations],
         id_short: Optional[str] = r"AssetInterfacesMappingConfiguration",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -545,9 +498,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if mappingConfigurations is not None and not isinstance(
-            mappingConfigurations, aas.SubmodelElement
-        ):
+        if mappingConfigurations is not None and not isinstance(mappingConfigurations, aas.SubmodelElement):
             mappingConfigurations = self.MappingConfigurations(mappingConfigurations)
 
         # Add all passed/initialized submodel elements to a single list
@@ -563,9 +514,7 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

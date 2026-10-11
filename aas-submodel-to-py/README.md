@@ -40,12 +40,7 @@ class Nameplate(aas.Submodel):
             id_short: Optional[str] = r"ManufacturerName",
             ...
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0112/2///61987#ABA565#009",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA565#009"),),
                 referred_semantic_id=None,
             ),
             ...
@@ -70,9 +65,7 @@ class Nameplate(aas.Submodel):
 
         if description is None:
             description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Contains the nameplate information attached to the product"
-                }
+                dict_={r"en": r"Contains the nameplate information attached to the product"}
             )
 
         if administration is None:

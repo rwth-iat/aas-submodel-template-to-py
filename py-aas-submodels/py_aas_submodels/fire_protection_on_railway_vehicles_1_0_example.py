@@ -29,15 +29,11 @@ class RailwayFireProtection(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Manufacturer name"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Manufacturer name"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -88,15 +84,11 @@ class RailwayFireProtection(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Manufacturer product designation"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Manufacturer product designation"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -148,15 +140,11 @@ class RailwayFireProtection(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Order code of manufacturer"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Order code of manufacturer"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -209,15 +197,11 @@ class RailwayFireProtection(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Product article number of manufacturer"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Product article number of manufacturer"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -250,13 +234,9 @@ class RailwayFireProtection(aas.Submodel):
         def __init__(
             self,
             manufacturerName: Union[aas.LangStringSet, ManufacturerName],
-            manufacturerProductDesignation: Union[
-                aas.LangStringSet, ManufacturerProductDesignation
-            ],
+            manufacturerProductDesignation: Union[aas.LangStringSet, ManufacturerProductDesignation],
             orderCodeOfManufacturer: Union[str, OrderCodeOfManufacturer],
-            productArticleNumberOfManufacturer: Union[
-                str, ProductArticleNumberOfManufacturer
-            ],
+            productArticleNumberOfManufacturer: Union[str, ProductArticleNumberOfManufacturer],
             id_short: Optional[str] = r"ManufacturerInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -273,15 +253,11 @@ class RailwayFireProtection(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Manufacturer information"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Manufacturer information"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -298,9 +274,7 @@ class RailwayFireProtection(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerName is not None and not isinstance(
-                manufacturerName, aas.SubmodelElement
-            ):
+            if manufacturerName is not None and not isinstance(manufacturerName, aas.SubmodelElement):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -308,28 +282,20 @@ class RailwayFireProtection(aas.Submodel):
             if manufacturerProductDesignation is not None and not isinstance(
                 manufacturerProductDesignation, aas.SubmodelElement
             ):
-                manufacturerProductDesignation = self.ManufacturerProductDesignation(
-                    manufacturerProductDesignation
-                )
+                manufacturerProductDesignation = self.ManufacturerProductDesignation(manufacturerProductDesignation)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if orderCodeOfManufacturer is not None and not isinstance(
-                orderCodeOfManufacturer, aas.SubmodelElement
-            ):
-                orderCodeOfManufacturer = self.OrderCodeOfManufacturer(
-                    orderCodeOfManufacturer
-                )
+            if orderCodeOfManufacturer is not None and not isinstance(orderCodeOfManufacturer, aas.SubmodelElement):
+                orderCodeOfManufacturer = self.OrderCodeOfManufacturer(orderCodeOfManufacturer)
 
             # Build a submodel element if a raw value was passed in the argument
 
             if productArticleNumberOfManufacturer is not None and not isinstance(
                 productArticleNumberOfManufacturer, aas.SubmodelElement
             ):
-                productArticleNumberOfManufacturer = (
-                    self.ProductArticleNumberOfManufacturer(
-                        productArticleNumberOfManufacturer
-                    )
+                productArticleNumberOfManufacturer = self.ProductArticleNumberOfManufacturer(
+                    productArticleNumberOfManufacturer
                 )
 
             # Add all passed/initialized submodel elements to a single list
@@ -350,9 +316,7 @@ class RailwayFireProtection(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -396,15 +360,11 @@ class RailwayFireProtection(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Hazard level"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Hazard level"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -445,9 +405,7 @@ class RailwayFireProtection(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -459,15 +417,11 @@ class RailwayFireProtection(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Report reference"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Report reference"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -497,9 +451,7 @@ class RailwayFireProtection(aas.Submodel):
 
                     def __init__(
                         self,
-                        reportreferences_items: Iterable[
-                            Union[aas.Reference, Reportreferences_item]
-                        ],
+                        reportreferences_items: Iterable[Union[aas.Reference, Reportreferences_item]],
                         id_short: Optional[str] = r"ReportReferences",
                         type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -520,15 +472,11 @@ class RailwayFireProtection(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Report references"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Report references"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -545,18 +493,12 @@ class RailwayFireProtection(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(reportreferences_items, str):
-                            raise TypeError(
-                                "reportreferences_items takes several elements, got a str"
-                            )
+                            raise TypeError("reportreferences_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if reportreferences_items:
                             reportreferences_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Reportreferences_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Reportreferences_item(i)
                                 for i in reportreferences_items
                             ]
 
@@ -570,9 +512,7 @@ class RailwayFireProtection(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -639,15 +579,9 @@ class RailwayFireProtection(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -682,15 +616,11 @@ class RailwayFireProtection(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Requirement"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Requirement"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -724,10 +654,7 @@ class RailwayFireProtection(aas.Submodel):
                     self,
                     hazardLevel: Union[str, HazardLevel],
                     reportReferences: Union[
-                        Iterable[
-                            Union[aas.Reference, ReportReferences.Reportreferences_item]
-                        ],
-                        ReportReferences,
+                        Iterable[Union[aas.Reference, ReportReferences.Reportreferences_item]], ReportReferences
                     ],
                     requirement: Union[str, Requirement],
                     id_short: Optional[str] = None,
@@ -746,15 +673,11 @@ class RailwayFireProtection(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Requirement set"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Requirement set"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -771,29 +694,21 @@ class RailwayFireProtection(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if hazardLevel is not None and not isinstance(
-                        hazardLevel, aas.SubmodelElement
-                    ):
+                    if hazardLevel is not None and not isinstance(hazardLevel, aas.SubmodelElement):
                         hazardLevel = self.HazardLevel(hazardLevel)
 
                     # A str would be split into its characters
                     if isinstance(reportReferences, str):
-                        raise TypeError(
-                            "reportReferences takes several elements, got a str"
-                        )
+                        raise TypeError("reportReferences takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if reportReferences is not None and not isinstance(
-                        reportReferences, aas.SubmodelElement
-                    ):
+                    if reportReferences is not None and not isinstance(reportReferences, aas.SubmodelElement):
                         reportReferences = self.ReportReferences(reportReferences)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if requirement is not None and not isinstance(
-                        requirement, aas.SubmodelElement
-                    ):
+                    if requirement is not None and not isinstance(requirement, aas.SubmodelElement):
                         requirement = self.Requirement(requirement)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -809,9 +724,7 @@ class RailwayFireProtection(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -849,21 +762,15 @@ class RailwayFireProtection(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Reqirements sets"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Reqirements sets"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"list of requirement sets defining applicable fire protection requirements"
-                        }
+                        dict_={r"en": r"list of requirement sets defining applicable fire protection requirements"}
                     )
 
                 if qualifier is None:
@@ -874,9 +781,7 @@ class RailwayFireProtection(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(requirementssets_items, str):
-                    raise TypeError(
-                        "requirementssets_items takes several elements, got a str"
-                    )
+                    raise TypeError("requirementssets_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -888,9 +793,7 @@ class RailwayFireProtection(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -957,15 +860,9 @@ class RailwayFireProtection(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -1003,15 +900,11 @@ class RailwayFireProtection(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Report file"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Report file"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -1052,14 +945,10 @@ class RailwayFireProtection(aas.Submodel):
                                 id_short: Optional[str] = r"TestProcedure",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1071,15 +960,11 @@ class RailwayFireProtection(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Test procedure"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Test procedure"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -1117,14 +1002,10 @@ class RailwayFireProtection(aas.Submodel):
                                 id_short: Optional[str] = r"TestResult",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1136,15 +1017,11 @@ class RailwayFireProtection(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Test result"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Test result"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -1182,14 +1059,10 @@ class RailwayFireProtection(aas.Submodel):
                                 id_short: Optional[str] = r"TestDate",
                                 value_type: aas.DataTypeDefXsd = xsd.Date,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1201,21 +1074,15 @@ class RailwayFireProtection(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Test date"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Test date"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"date on which the fire protection test was performed"
-                                        }
+                                        dict_={r"en": r"date on which the fire protection test was performed"}
                                     )
 
                                 if qualifier is None:
@@ -1247,14 +1114,10 @@ class RailwayFireProtection(aas.Submodel):
                                 id_short: Optional[str] = r"TestReportNumber",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1266,15 +1129,11 @@ class RailwayFireProtection(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Test report number"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Test report number"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -1314,9 +1173,7 @@ class RailwayFireProtection(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1328,21 +1185,15 @@ class RailwayFireProtection(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Test"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Test"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"collection of test-related information"
-                                    }
+                                    dict_={r"en": r"collection of test-related information"}
                                 )
 
                             if qualifier is None:
@@ -1353,42 +1204,27 @@ class RailwayFireProtection(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if testProcedure is not None and not isinstance(
-                                testProcedure, aas.SubmodelElement
-                            ):
+                            if testProcedure is not None and not isinstance(testProcedure, aas.SubmodelElement):
                                 testProcedure = self.TestProcedure(testProcedure)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if testResult is not None and not isinstance(
-                                testResult, aas.SubmodelElement
-                            ):
+                            if testResult is not None and not isinstance(testResult, aas.SubmodelElement):
                                 testResult = self.TestResult(testResult)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if testDate is not None and not isinstance(
-                                testDate, aas.SubmodelElement
-                            ):
+                            if testDate is not None and not isinstance(testDate, aas.SubmodelElement):
                                 testDate = self.TestDate(testDate)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if testReportNumber is not None and not isinstance(
-                                testReportNumber, aas.SubmodelElement
-                            ):
-                                testReportNumber = self.TestReportNumber(
-                                    testReportNumber
-                                )
+                            if testReportNumber is not None and not isinstance(testReportNumber, aas.SubmodelElement):
+                                testReportNumber = self.TestReportNumber(testReportNumber)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in [
-                                testProcedure,
-                                testResult,
-                                testDate,
-                                testReportNumber,
-                            ]:
+                            for se_arg in [testProcedure, testResult, testDate, testReportNumber]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -1439,15 +1275,11 @@ class RailwayFireProtection(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Tests"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Tests"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -1464,9 +1296,7 @@ class RailwayFireProtection(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(tests_items, str):
-                            raise TypeError(
-                                "tests_items takes several elements, got a str"
-                            )
+                            raise TypeError("tests_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -1478,9 +1308,7 @@ class RailwayFireProtection(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1547,15 +1375,9 @@ class RailwayFireProtection(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -1580,9 +1402,7 @@ class RailwayFireProtection(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1594,21 +1414,15 @@ class RailwayFireProtection(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Lab name"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Lab name"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"name of the laboratory that carried out the fire protection test"
-                                    }
+                                    dict_={r"en": r"name of the laboratory that carried out the fire protection test"}
                                 )
 
                             if qualifier is None:
@@ -1642,28 +1456,17 @@ class RailwayFireProtection(aas.Submodel):
                                 id_short: Optional[str] = r"AddressOfAdditionalLink",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAQ326#002",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ326#002"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1694,28 +1497,17 @@ class RailwayFireProtection(aas.Submodel):
                                 value: aas.LangStringSet,
                                 id_short: Optional[str] = r"NationalCode",
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAO134#002",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO134#002"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -1752,28 +1544,17 @@ class RailwayFireProtection(aas.Submodel):
                                 value: aas.LangStringSet,
                                 id_short: Optional[str] = r"CityTown",
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAO132#002",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO132#002"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1803,28 +1584,17 @@ class RailwayFireProtection(aas.Submodel):
                                 value: aas.LangStringSet,
                                 id_short: Optional[str] = r"Company",
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAW001#001",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW001#001"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1856,32 +1626,19 @@ class RailwayFireProtection(aas.Submodel):
                                     value: aas.LangStringSet,
                                     id_short: Optional[str] = r"TelephoneNumber",
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0173-1#02-AAO136#002",
-                                            ),
+                                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO136#002"),
                                         ),
                                         referred_semantic_id=None,
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if description is None:
@@ -1913,18 +1670,12 @@ class RailwayFireProtection(aas.Submodel):
 
                             def __init__(
                                 self,
-                                telephoneNumber: Union[
-                                    aas.LangStringSet, TelephoneNumber
-                                ],
+                                telephoneNumber: Union[aas.LangStringSet, TelephoneNumber],
                                 id_short: Optional[str] = r"Phone",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1936,9 +1687,7 @@ class RailwayFireProtection(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1949,12 +1698,8 @@ class RailwayFireProtection(aas.Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if telephoneNumber is not None and not isinstance(
-                                    telephoneNumber, aas.SubmodelElement
-                                ):
-                                    telephoneNumber = self.TelephoneNumber(
-                                        telephoneNumber
-                                    )
+                                if telephoneNumber is not None and not isinstance(telephoneNumber, aas.SubmodelElement):
+                                    telephoneNumber = self.TelephoneNumber(telephoneNumber)
 
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
@@ -1966,9 +1711,7 @@ class RailwayFireProtection(aas.Submodel):
                                     elif isinstance(se_arg, Iterable):
                                         # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                         for n, element in enumerate(se_arg):
-                                            element.id_short = (
-                                                f"{element.id_short}{n:02d}"
-                                            )
+                                            element.id_short = f"{element.id_short}{n:02d}"
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
@@ -1998,32 +1741,19 @@ class RailwayFireProtection(aas.Submodel):
                                     id_short: Optional[str] = r"EmailAddress",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"0173-1#02-AAO198#002",
-                                            ),
+                                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO198#002"),
                                         ),
                                         referred_semantic_id=None,
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if qualifier is None:
@@ -2051,28 +1781,17 @@ class RailwayFireProtection(aas.Submodel):
                                 self,
                                 emailAddress: Union[str, EmailAddress],
                                 id_short: Optional[str] = r"Email",
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAQ836#005",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ836#005"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -2083,9 +1802,7 @@ class RailwayFireProtection(aas.Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if emailAddress is not None and not isinstance(
-                                    emailAddress, aas.SubmodelElement
-                                ):
+                                if emailAddress is not None and not isinstance(emailAddress, aas.SubmodelElement):
                                     emailAddress = self.EmailAddress(emailAddress)
 
                                 # Add all passed/initialized submodel elements to a single list
@@ -2098,9 +1815,7 @@ class RailwayFireProtection(aas.Submodel):
                                     elif isinstance(se_arg, Iterable):
                                         # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                         for n, element in enumerate(se_arg):
-                                            element.id_short = (
-                                                f"{element.id_short}{n:02d}"
-                                            )
+                                            element.id_short = f"{element.id_short}{n:02d}"
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
@@ -2127,28 +1842,17 @@ class RailwayFireProtection(aas.Submodel):
                                 value: aas.LangStringSet,
                                 id_short: Optional[str] = r"Street",
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAO128#002",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO128#002"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -2178,28 +1882,17 @@ class RailwayFireProtection(aas.Submodel):
                                 value: aas.LangStringSet,
                                 id_short: Optional[str] = r"Zipcode",
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"0173-1#02-AAO129#002",
-                                        ),
-                                    ),
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO129#002"),),
                                     referred_semantic_id=None,
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if description is None:
@@ -2231,15 +1924,9 @@ class RailwayFireProtection(aas.Submodel):
 
                         def __init__(
                             self,
-                            addressOfAdditionalLink: Optional[
-                                Union[str, AddressOfAdditionalLink]
-                            ] = None,
-                            nationalCode: Optional[
-                                Union[aas.LangStringSet, NationalCode]
-                            ] = None,
-                            cityTown: Optional[
-                                Union[aas.LangStringSet, CityTown]
-                            ] = None,
+                            addressOfAdditionalLink: Optional[Union[str, AddressOfAdditionalLink]] = None,
+                            nationalCode: Optional[Union[aas.LangStringSet, NationalCode]] = None,
+                            cityTown: Optional[Union[aas.LangStringSet, CityTown]] = None,
                             company: Optional[Union[aas.LangStringSet, Company]] = None,
                             phone: Optional[Phone] = None,
                             email: Optional[Email] = None,
@@ -2249,9 +1936,7 @@ class RailwayFireProtection(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2273,15 +1958,11 @@ class RailwayFireProtection(aas.Submodel):
                                     referred_semantic_id=None,
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Lab address"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Lab address"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -2301,43 +1982,31 @@ class RailwayFireProtection(aas.Submodel):
                             if addressOfAdditionalLink is not None and not isinstance(
                                 addressOfAdditionalLink, aas.SubmodelElement
                             ):
-                                addressOfAdditionalLink = self.AddressOfAdditionalLink(
-                                    addressOfAdditionalLink
-                                )
+                                addressOfAdditionalLink = self.AddressOfAdditionalLink(addressOfAdditionalLink)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if nationalCode is not None and not isinstance(
-                                nationalCode, aas.SubmodelElement
-                            ):
+                            if nationalCode is not None and not isinstance(nationalCode, aas.SubmodelElement):
                                 nationalCode = self.NationalCode(nationalCode)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if cityTown is not None and not isinstance(
-                                cityTown, aas.SubmodelElement
-                            ):
+                            if cityTown is not None and not isinstance(cityTown, aas.SubmodelElement):
                                 cityTown = self.CityTown(cityTown)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if company is not None and not isinstance(
-                                company, aas.SubmodelElement
-                            ):
+                            if company is not None and not isinstance(company, aas.SubmodelElement):
                                 company = self.Company(company)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if street is not None and not isinstance(
-                                street, aas.SubmodelElement
-                            ):
+                            if street is not None and not isinstance(street, aas.SubmodelElement):
                                 street = self.Street(street)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if zipcode is not None and not isinstance(
-                                zipcode, aas.SubmodelElement
-                            ):
+                            if zipcode is not None and not isinstance(zipcode, aas.SubmodelElement):
                                 zipcode = self.Zipcode(zipcode)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -2390,9 +2059,7 @@ class RailwayFireProtection(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2404,15 +2071,11 @@ class RailwayFireProtection(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Lab accreditation"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Lab accreditation"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -2453,9 +2116,7 @@ class RailwayFireProtection(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2467,15 +2128,11 @@ class RailwayFireProtection(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Report author"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Report author"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -2527,15 +2184,11 @@ class RailwayFireProtection(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Lab information"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Lab information"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -2552,33 +2205,22 @@ class RailwayFireProtection(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if labName is not None and not isinstance(
-                            labName, aas.SubmodelElement
-                        ):
+                        if labName is not None and not isinstance(labName, aas.SubmodelElement):
                             labName = self.LabName(labName)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if labAccreditation is not None and not isinstance(
-                            labAccreditation, aas.SubmodelElement
-                        ):
+                        if labAccreditation is not None and not isinstance(labAccreditation, aas.SubmodelElement):
                             labAccreditation = self.LabAccreditation(labAccreditation)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if reportAuthor is not None and not isinstance(
-                            reportAuthor, aas.SubmodelElement
-                        ):
+                        if reportAuthor is not None and not isinstance(reportAuthor, aas.SubmodelElement):
                             reportAuthor = self.ReportAuthor(reportAuthor)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            labName,
-                            labAddress,
-                            labAccreditation,
-                            reportAuthor,
-                        ]:
+                        for se_arg in [labName, labAddress, labAccreditation, reportAuthor]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -2589,9 +2231,7 @@ class RailwayFireProtection(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2618,8 +2258,7 @@ class RailwayFireProtection(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/cds/Report/1",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/Report/1"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -2627,15 +2266,11 @@ class RailwayFireProtection(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Report"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Report"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -2672,9 +2307,7 @@ class RailwayFireProtection(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2703,8 +2336,7 @@ class RailwayFireProtection(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/Reports/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/Reports/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -2712,9 +2344,7 @@ class RailwayFireProtection(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2747,9 +2377,7 @@ class RailwayFireProtection(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2816,15 +2444,9 @@ class RailwayFireProtection(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -2838,9 +2460,7 @@ class RailwayFireProtection(aas.Submodel):
 
         def __init__(
             self,
-            requirementsSets: Union[
-                Iterable[RequirementsSets.Requirementssets_item], RequirementsSets
-            ],
+            requirementsSets: Union[Iterable[RequirementsSets.Requirementssets_item], RequirementsSets],
             reports: Union[Iterable[Reports.Reports_item], Reports],
             id_short: Optional[str] = r"FireProtectionCertificates",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2858,15 +2478,11 @@ class RailwayFireProtection(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Fire certificate inventory list"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Fire certificate inventory list"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -2887,9 +2503,7 @@ class RailwayFireProtection(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if requirementsSets is not None and not isinstance(
-                requirementsSets, aas.SubmodelElement
-            ):
+            if requirementsSets is not None and not isinstance(requirementsSets, aas.SubmodelElement):
                 requirementsSets = self.RequirementsSets(requirementsSets)
 
             # A str would be split into its characters
@@ -2914,9 +2528,7 @@ class RailwayFireProtection(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2947,8 +2559,7 @@ class RailwayFireProtection(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/MaterialName/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/MaterialName/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -2956,20 +2567,14 @@ class RailwayFireProtection(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Material name"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Material name"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"name of the material used "}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"name of the material used "})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3015,15 +2620,11 @@ class RailwayFireProtection(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Material characteristics"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Material characteristics"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -3078,9 +2679,7 @@ class RailwayFireProtection(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -3134,16 +2733,12 @@ class RailwayFireProtection(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"portion of the material mass per unit that is combustible"
-                            }
+                            dict_={r"en": r"portion of the material mass per unit that is combustible"}
                         )
 
                     if qualifier is None:
@@ -3181,8 +2776,7 @@ class RailwayFireProtection(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/cds/Unit/1",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/Unit/1"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -3190,9 +2784,7 @@ class RailwayFireProtection(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3227,19 +2819,14 @@ class RailwayFireProtection(aas.Submodel):
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/Masses/1",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/Masses/1"),
                     ),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -3250,19 +2837,13 @@ class RailwayFireProtection(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if totalMassPerUnit is not None and not isinstance(
-                    totalMassPerUnit, aas.SubmodelElement
-                ):
+                if totalMassPerUnit is not None and not isinstance(totalMassPerUnit, aas.SubmodelElement):
                     totalMassPerUnit = self.TotalMassPerUnit(totalMassPerUnit)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if combustibleMassPerUnit is not None and not isinstance(
-                    combustibleMassPerUnit, aas.SubmodelElement
-                ):
-                    combustibleMassPerUnit = self.CombustibleMassPerUnit(
-                        combustibleMassPerUnit
-                    )
+                if combustibleMassPerUnit is not None and not isinstance(combustibleMassPerUnit, aas.SubmodelElement):
+                    combustibleMassPerUnit = self.CombustibleMassPerUnit(combustibleMassPerUnit)
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -3282,9 +2863,7 @@ class RailwayFireProtection(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3322,15 +2901,11 @@ class RailwayFireProtection(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Tested material combination description"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Tested material combination description"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -3363,38 +2938,27 @@ class RailwayFireProtection(aas.Submodel):
         def __init__(
             self,
             materialName: Union[str, MaterialName],
-            materialCharacteristics: Union[
-                Tuple[xsd.Int, xsd.Int], MaterialCharacteristics
-            ],
+            materialCharacteristics: Union[Tuple[xsd.Int, xsd.Int], MaterialCharacteristics],
             masses: Masses,
-            testedMaterialCombinationDescription: Union[
-                str, TestedMaterialCombinationDescription
-            ],
+            testedMaterialCombinationDescription: Union[str, TestedMaterialCombinationDescription],
             id_short: Optional[str] = r"Material",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/Material/1",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/Material/1"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Material information"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Material information"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -3411,16 +2975,12 @@ class RailwayFireProtection(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if materialName is not None and not isinstance(
-                materialName, aas.SubmodelElement
-            ):
+            if materialName is not None and not isinstance(materialName, aas.SubmodelElement):
                 materialName = self.MaterialName(materialName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if materialCharacteristics is not None and not isinstance(
-                materialCharacteristics, aas.SubmodelElement
-            ):
+            if materialCharacteristics is not None and not isinstance(materialCharacteristics, aas.SubmodelElement):
                 materialCharacteristics = self.MaterialCharacteristics(
                     min=materialCharacteristics[0], max=materialCharacteristics[1]
                 )
@@ -3430,20 +2990,13 @@ class RailwayFireProtection(aas.Submodel):
             if testedMaterialCombinationDescription is not None and not isinstance(
                 testedMaterialCombinationDescription, aas.SubmodelElement
             ):
-                testedMaterialCombinationDescription = (
-                    self.TestedMaterialCombinationDescription(
-                        testedMaterialCombinationDescription
-                    )
+                testedMaterialCombinationDescription = self.TestedMaterialCombinationDescription(
+                    testedMaterialCombinationDescription
                 )
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                materialName,
-                materialCharacteristics,
-                masses,
-                testedMaterialCombinationDescription,
-            ]:
+            for se_arg in [materialName, materialCharacteristics, masses, testedMaterialCombinationDescription]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -3454,9 +3007,7 @@ class RailwayFireProtection(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3499,24 +3050,16 @@ class RailwayFireProtection(aas.Submodel):
     ):
 
         if display_name is None:
-            display_name = aas.MultiLanguageNameType(
-                dict_={r"en": r"Railway Fire Protection Submodel"}
-            )
+            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Railway Fire Protection Submodel"})
 
         if description is None:
             description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Contains the fire protection information associated with the product or component."
-                }
+                dict_={r"en": r"Contains the fire protection information associated with the product or component."}
             )
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -3538,9 +3081,7 @@ class RailwayFireProtection(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

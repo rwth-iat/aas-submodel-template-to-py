@@ -30,9 +30,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -79,9 +77,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -128,9 +124,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -176,9 +170,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -223,9 +215,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -271,9 +261,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -320,9 +308,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -369,9 +355,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -415,9 +399,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -439,9 +421,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -479,9 +459,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -514,12 +492,8 @@ class PowerDriveTrainSizing(aas.Submodel):
             dateCreated: Union[xsd.DateTime, DateCreated],
             dateChanged: Union[xsd.DateTime, DateChanged],
             contactInformation: Iterable[ContactInformation],
-            sizingProjectAxisReference: Optional[
-                Union[str, SizingProjectAxisReference]
-            ] = None,
-            sizingProjectDescription: Optional[
-                Union[aas.LangStringSet, SizingProjectDescription]
-            ] = None,
+            sizingProjectAxisReference: Optional[Union[str, SizingProjectAxisReference]] = None,
+            sizingProjectDescription: Optional[Union[aas.LangStringSet, SizingProjectDescription]] = None,
             amlDriveConfigVersion: Optional[Union[str, AmlDriveConfigVersion]] = None,
             id_short: Optional[str] = r"SizingProjectInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -537,17 +511,12 @@ class PowerDriveTrainSizing(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Auslegungsprojektinformationen",
-                        r"en": r"Sizing project information",
-                    }
+                    dict_={r"de": r"Auslegungsprojektinformationen", r"en": r"Sizing project information"}
                 )
 
             if qualifier is None:
@@ -558,16 +527,12 @@ class PowerDriveTrainSizing(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if clientName is not None and not isinstance(
-                clientName, aas.SubmodelElement
-            ):
+            if clientName is not None and not isinstance(clientName, aas.SubmodelElement):
                 clientName = self.ClientName(clientName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if sizingProjectName is not None and not isinstance(
-                sizingProjectName, aas.SubmodelElement
-            ):
+            if sizingProjectName is not None and not isinstance(sizingProjectName, aas.SubmodelElement):
                 sizingProjectName = self.SizingProjectName(sizingProjectName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -575,18 +540,12 @@ class PowerDriveTrainSizing(aas.Submodel):
             if sizingProjectAxisReference is not None and not isinstance(
                 sizingProjectAxisReference, aas.SubmodelElement
             ):
-                sizingProjectAxisReference = self.SizingProjectAxisReference(
-                    sizingProjectAxisReference
-                )
+                sizingProjectAxisReference = self.SizingProjectAxisReference(sizingProjectAxisReference)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if sizingProjectDescription is not None and not isinstance(
-                sizingProjectDescription, aas.SubmodelElement
-            ):
-                sizingProjectDescription = self.SizingProjectDescription(
-                    sizingProjectDescription
-                )
+            if sizingProjectDescription is not None and not isinstance(sizingProjectDescription, aas.SubmodelElement):
+                sizingProjectDescription = self.SizingProjectDescription(sizingProjectDescription)
 
             # A str would be split into its characters
             if isinstance(sizingProjectLink, str):
@@ -594,23 +553,17 @@ class PowerDriveTrainSizing(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if sizingToolName is not None and not isinstance(
-                sizingToolName, aas.SubmodelElement
-            ):
+            if sizingToolName is not None and not isinstance(sizingToolName, aas.SubmodelElement):
                 sizingToolName = self.SizingToolName(sizingToolName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if dateCreated is not None and not isinstance(
-                dateCreated, aas.SubmodelElement
-            ):
+            if dateCreated is not None and not isinstance(dateCreated, aas.SubmodelElement):
                 dateCreated = self.DateCreated(dateCreated)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if dateChanged is not None and not isinstance(
-                dateChanged, aas.SubmodelElement
-            ):
+            if dateChanged is not None and not isinstance(dateChanged, aas.SubmodelElement):
                 dateChanged = self.DateChanged(dateChanged)
 
             # A str would be split into its characters
@@ -619,12 +572,8 @@ class PowerDriveTrainSizing(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if amlDriveConfigVersion is not None and not isinstance(
-                amlDriveConfigVersion, aas.SubmodelElement
-            ):
-                amlDriveConfigVersion = self.AmlDriveConfigVersion(
-                    amlDriveConfigVersion
-                )
+            if amlDriveConfigVersion is not None and not isinstance(amlDriveConfigVersion, aas.SubmodelElement):
+                amlDriveConfigVersion = self.AmlDriveConfigVersion(amlDriveConfigVersion)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -650,9 +599,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -694,9 +641,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -735,9 +680,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -749,9 +692,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -796,9 +737,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -810,9 +749,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -847,9 +784,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -861,9 +796,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -908,9 +841,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -922,9 +853,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -959,9 +888,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -973,9 +900,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1020,9 +945,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1034,9 +957,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1071,9 +992,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1085,9 +1004,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1131,14 +1048,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"Time",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1150,9 +1063,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1184,14 +1095,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"AngularPosition",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1203,9 +1110,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1237,14 +1142,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"AngularVelocity",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1256,9 +1157,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1290,14 +1189,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"AngularAcceleration",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1309,9 +1204,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1343,14 +1236,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"AngularJerk",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1362,9 +1251,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1396,14 +1283,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"FrictionTorque",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1415,9 +1298,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1459,14 +1340,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"AxialForce",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1478,9 +1355,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1522,14 +1397,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"RadialForce",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"CONSTANT",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1541,9 +1412,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1585,14 +1454,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"LoadTorque",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"CONSTANT",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1604,9 +1469,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1647,9 +1510,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             angularVelocity: Union[xsd.Long, AngularVelocity],
                             angularAcceleration: Union[xsd.Long, AngularAcceleration],
                             angularJerk: Optional[Union[xsd.Long, AngularJerk]] = None,
-                            frictionTorque: Optional[
-                                Union[xsd.Long, FrictionTorque]
-                            ] = None,
+                            frictionTorque: Optional[Union[xsd.Long, FrictionTorque]] = None,
                             axialForce: Optional[Union[xsd.Long, AxialForce]] = None,
                             radialForce: Optional[Union[xsd.Long, RadialForce]] = None,
                             loadTorque: Optional[Union[xsd.Long, LoadTorque]] = None,
@@ -1657,9 +1518,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1671,9 +1530,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1684,23 +1541,17 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if time is not None and not isinstance(
-                                time, aas.SubmodelElement
-                            ):
+                            if time is not None and not isinstance(time, aas.SubmodelElement):
                                 time = self.Time(time)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if angularPosition is not None and not isinstance(
-                                angularPosition, aas.SubmodelElement
-                            ):
+                            if angularPosition is not None and not isinstance(angularPosition, aas.SubmodelElement):
                                 angularPosition = self.AngularPosition(angularPosition)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if angularVelocity is not None and not isinstance(
-                                angularVelocity, aas.SubmodelElement
-                            ):
+                            if angularVelocity is not None and not isinstance(angularVelocity, aas.SubmodelElement):
                                 angularVelocity = self.AngularVelocity(angularVelocity)
 
                             # Build a submodel element if a raw value was passed in the argument
@@ -1708,43 +1559,31 @@ class PowerDriveTrainSizing(aas.Submodel):
                             if angularAcceleration is not None and not isinstance(
                                 angularAcceleration, aas.SubmodelElement
                             ):
-                                angularAcceleration = self.AngularAcceleration(
-                                    angularAcceleration
-                                )
+                                angularAcceleration = self.AngularAcceleration(angularAcceleration)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if angularJerk is not None and not isinstance(
-                                angularJerk, aas.SubmodelElement
-                            ):
+                            if angularJerk is not None and not isinstance(angularJerk, aas.SubmodelElement):
                                 angularJerk = self.AngularJerk(angularJerk)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if frictionTorque is not None and not isinstance(
-                                frictionTorque, aas.SubmodelElement
-                            ):
+                            if frictionTorque is not None and not isinstance(frictionTorque, aas.SubmodelElement):
                                 frictionTorque = self.FrictionTorque(frictionTorque)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if axialForce is not None and not isinstance(
-                                axialForce, aas.SubmodelElement
-                            ):
+                            if axialForce is not None and not isinstance(axialForce, aas.SubmodelElement):
                                 axialForce = self.AxialForce(axialForce)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if radialForce is not None and not isinstance(
-                                radialForce, aas.SubmodelElement
-                            ):
+                            if radialForce is not None and not isinstance(radialForce, aas.SubmodelElement):
                                 radialForce = self.RadialForce(radialForce)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if loadTorque is not None and not isinstance(
-                                loadTorque, aas.SubmodelElement
-                            ):
+                            if loadTorque is not None and not isinstance(loadTorque, aas.SubmodelElement):
                                 loadTorque = self.LoadTorque(loadTorque)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -1797,9 +1636,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1811,9 +1648,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1839,20 +1674,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     def __init__(
                         self,
                         metadataRotativeMotionFile: MetadataRotativeMotionFile,
-                        frictionTorque: Optional[
-                            Union[xsd.Long, FrictionTorque]
-                        ] = None,
-                        leverArmAxialForce: Optional[
-                            Union[xsd.Long, LeverArmAxialForce]
-                        ] = None,
+                        frictionTorque: Optional[Union[xsd.Long, FrictionTorque]] = None,
+                        leverArmAxialForce: Optional[Union[xsd.Long, LeverArmAxialForce]] = None,
                         axialForce: Optional[Union[xsd.Long, AxialForce]] = None,
-                        leverArmRadialForce: Optional[
-                            Union[xsd.Long, LeverArmRadialForce]
-                        ] = None,
+                        leverArmRadialForce: Optional[Union[xsd.Long, LeverArmRadialForce]] = None,
                         radialForce: Optional[Union[xsd.Long, RadialForce]] = None,
-                        momentOfInertiaOfLoad: Optional[
-                            Union[xsd.Long, MomentOfInertiaOfLoad]
-                        ] = None,
+                        momentOfInertiaOfLoad: Optional[Union[xsd.Long, MomentOfInertiaOfLoad]] = None,
                         loadTorque: Optional[Union[xsd.Long, LoadTorque]] = None,
                         motionSectionFile: Optional[MotionSectionFile] = None,
                         id_short: Optional[str] = r"RotativeSection",
@@ -1871,9 +1698,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1884,41 +1709,27 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if frictionTorque is not None and not isinstance(
-                            frictionTorque, aas.SubmodelElement
-                        ):
+                        if frictionTorque is not None and not isinstance(frictionTorque, aas.SubmodelElement):
                             frictionTorque = self.FrictionTorque(frictionTorque)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if leverArmAxialForce is not None and not isinstance(
-                            leverArmAxialForce, aas.SubmodelElement
-                        ):
-                            leverArmAxialForce = self.LeverArmAxialForce(
-                                leverArmAxialForce
-                            )
+                        if leverArmAxialForce is not None and not isinstance(leverArmAxialForce, aas.SubmodelElement):
+                            leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if axialForce is not None and not isinstance(
-                            axialForce, aas.SubmodelElement
-                        ):
+                        if axialForce is not None and not isinstance(axialForce, aas.SubmodelElement):
                             axialForce = self.AxialForce(axialForce)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if leverArmRadialForce is not None and not isinstance(
-                            leverArmRadialForce, aas.SubmodelElement
-                        ):
-                            leverArmRadialForce = self.LeverArmRadialForce(
-                                leverArmRadialForce
-                            )
+                        if leverArmRadialForce is not None and not isinstance(leverArmRadialForce, aas.SubmodelElement):
+                            leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if radialForce is not None and not isinstance(
-                            radialForce, aas.SubmodelElement
-                        ):
+                        if radialForce is not None and not isinstance(radialForce, aas.SubmodelElement):
                             radialForce = self.RadialForce(radialForce)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -1926,15 +1737,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                         if momentOfInertiaOfLoad is not None and not isinstance(
                             momentOfInertiaOfLoad, aas.SubmodelElement
                         ):
-                            momentOfInertiaOfLoad = self.MomentOfInertiaOfLoad(
-                                momentOfInertiaOfLoad
-                            )
+                            momentOfInertiaOfLoad = self.MomentOfInertiaOfLoad(momentOfInertiaOfLoad)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if loadTorque is not None and not isinstance(
-                            loadTorque, aas.SubmodelElement
-                        ):
+                        if loadTorque is not None and not isinstance(loadTorque, aas.SubmodelElement):
                             loadTorque = self.LoadTorque(loadTorque)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1960,9 +1767,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1990,9 +1795,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2004,9 +1807,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2041,9 +1842,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2055,9 +1854,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2102,9 +1899,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2116,9 +1911,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2163,9 +1956,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2177,9 +1968,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2214,9 +2003,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2228,9 +2015,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2275,9 +2060,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2289,9 +2072,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2325,14 +2106,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"Time",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"VARIABLE",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2344,9 +2121,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -2378,14 +2153,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"Position",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2397,9 +2168,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -2431,14 +2200,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"LinearVelocity",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2450,9 +2215,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -2484,14 +2247,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"LinearAcceleration",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2503,9 +2262,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -2537,14 +2294,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"LinearJerk",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2556,9 +2309,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -2590,14 +2341,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"FrictionForce",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"CONSTANT",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2609,9 +2356,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -2653,14 +2398,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 id_short: Optional[str] = r"LoadSideForce",
                                 value_type: aas.DataTypeDefXsd = xsd.Long,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2672,9 +2413,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -2715,19 +2454,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                             linearVelocity: Union[xsd.Long, LinearVelocity],
                             linearAcceleration: Union[xsd.Long, LinearAcceleration],
                             linearJerk: Optional[Union[xsd.Long, LinearJerk]] = None,
-                            frictionForce: Optional[
-                                Union[xsd.Long, FrictionForce]
-                            ] = None,
-                            loadSideForce: Optional[
-                                Union[xsd.Long, LoadSideForce]
-                            ] = None,
+                            frictionForce: Optional[Union[xsd.Long, FrictionForce]] = None,
+                            loadSideForce: Optional[Union[xsd.Long, LoadSideForce]] = None,
                             id_short: Optional[str] = r"MetadataLinearMotionFile",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2739,9 +2472,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2752,23 +2483,17 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if time is not None and not isinstance(
-                                time, aas.SubmodelElement
-                            ):
+                            if time is not None and not isinstance(time, aas.SubmodelElement):
                                 time = self.Time(time)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if position is not None and not isinstance(
-                                position, aas.SubmodelElement
-                            ):
+                            if position is not None and not isinstance(position, aas.SubmodelElement):
                                 position = self.Position(position)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if linearVelocity is not None and not isinstance(
-                                linearVelocity, aas.SubmodelElement
-                            ):
+                            if linearVelocity is not None and not isinstance(linearVelocity, aas.SubmodelElement):
                                 linearVelocity = self.LinearVelocity(linearVelocity)
 
                             # Build a submodel element if a raw value was passed in the argument
@@ -2776,29 +2501,21 @@ class PowerDriveTrainSizing(aas.Submodel):
                             if linearAcceleration is not None and not isinstance(
                                 linearAcceleration, aas.SubmodelElement
                             ):
-                                linearAcceleration = self.LinearAcceleration(
-                                    linearAcceleration
-                                )
+                                linearAcceleration = self.LinearAcceleration(linearAcceleration)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if linearJerk is not None and not isinstance(
-                                linearJerk, aas.SubmodelElement
-                            ):
+                            if linearJerk is not None and not isinstance(linearJerk, aas.SubmodelElement):
                                 linearJerk = self.LinearJerk(linearJerk)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if frictionForce is not None and not isinstance(
-                                frictionForce, aas.SubmodelElement
-                            ):
+                            if frictionForce is not None and not isinstance(frictionForce, aas.SubmodelElement):
                                 frictionForce = self.FrictionForce(frictionForce)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if loadSideForce is not None and not isinstance(
-                                loadSideForce, aas.SubmodelElement
-                            ):
+                            if loadSideForce is not None and not isinstance(loadSideForce, aas.SubmodelElement):
                                 loadSideForce = self.LoadSideForce(loadSideForce)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -2849,9 +2566,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2863,9 +2578,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -2891,13 +2604,9 @@ class PowerDriveTrainSizing(aas.Submodel):
                     def __init__(
                         self,
                         metadataLinearMotionFile: MetadataLinearMotionFile,
-                        frictionCoefficient: Optional[
-                            Union[xsd.Long, FrictionCoefficient]
-                        ] = None,
+                        frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                         frictionForce: Optional[Union[xsd.Long, FrictionForce]] = None,
-                        compensationForce: Optional[
-                            Union[xsd.Long, CompensationForce]
-                        ] = None,
+                        compensationForce: Optional[Union[xsd.Long, CompensationForce]] = None,
                         loadMass: Optional[Union[xsd.Long, LoadMass]] = None,
                         loadSideForce: Optional[Union[xsd.Long, LoadSideForce]] = None,
                         counterMass: Optional[Union[xsd.Long, CounterMass]] = None,
@@ -2918,9 +2627,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2931,48 +2638,32 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if frictionCoefficient is not None and not isinstance(
-                            frictionCoefficient, aas.SubmodelElement
-                        ):
-                            frictionCoefficient = self.FrictionCoefficient(
-                                frictionCoefficient
-                            )
+                        if frictionCoefficient is not None and not isinstance(frictionCoefficient, aas.SubmodelElement):
+                            frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if frictionForce is not None and not isinstance(
-                            frictionForce, aas.SubmodelElement
-                        ):
+                        if frictionForce is not None and not isinstance(frictionForce, aas.SubmodelElement):
                             frictionForce = self.FrictionForce(frictionForce)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if compensationForce is not None and not isinstance(
-                            compensationForce, aas.SubmodelElement
-                        ):
-                            compensationForce = self.CompensationForce(
-                                compensationForce
-                            )
+                        if compensationForce is not None and not isinstance(compensationForce, aas.SubmodelElement):
+                            compensationForce = self.CompensationForce(compensationForce)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if loadMass is not None and not isinstance(
-                            loadMass, aas.SubmodelElement
-                        ):
+                        if loadMass is not None and not isinstance(loadMass, aas.SubmodelElement):
                             loadMass = self.LoadMass(loadMass)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if loadSideForce is not None and not isinstance(
-                            loadSideForce, aas.SubmodelElement
-                        ):
+                        if loadSideForce is not None and not isinstance(loadSideForce, aas.SubmodelElement):
                             loadSideForce = self.LoadSideForce(loadSideForce)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if counterMass is not None and not isinstance(
-                            counterMass, aas.SubmodelElement
-                        ):
+                        if counterMass is not None and not isinstance(counterMass, aas.SubmodelElement):
                             counterMass = self.CounterMass(counterMass)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -2997,9 +2688,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -3034,9 +2723,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3047,15 +2734,11 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(rotativeSection, str):
-                        raise TypeError(
-                            "rotativeSection takes several elements, got a str"
-                        )
+                        raise TypeError("rotativeSection takes several elements, got a str")
 
                     # A str would be split into its characters
                     if isinstance(linearSection, str):
-                        raise TypeError(
-                            "linearSection takes several elements, got a str"
-                        )
+                        raise TypeError("linearSection takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -3070,9 +2753,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3107,9 +2788,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -3120,9 +2799,7 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if motionPatternName is not None and not isinstance(
-                    motionPatternName, aas.SubmodelElement
-                ):
+                if motionPatternName is not None and not isinstance(motionPatternName, aas.SubmodelElement):
                     motionPatternName = self.MotionPatternName(motionPatternName)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3138,9 +2815,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3169,20 +2844,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAZ614#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ614#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3218,20 +2886,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAR865#004",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAR865#004"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3267,20 +2928,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAR866#004",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAR866#004"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3327,9 +2981,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3376,9 +3028,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3407,12 +3057,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 installationAltitude: Optional[Union[str, InstallationAltitude]] = None,
                 atex2Gas: Optional[Union[str, Atex2Gas]] = None,
                 atex2Dust: Optional[Union[str, Atex2Dust]] = None,
-                ambientTemperatureController: Optional[
-                    Union[Tuple[str, str], AmbientTemperatureController]
-                ] = None,
-                ambientTemperatureMotor: Optional[
-                    Union[Tuple[str, str], AmbientTemperatureMotor]
-                ] = None,
+                ambientTemperatureController: Optional[Union[Tuple[str, str], AmbientTemperatureController]] = None,
+                ambientTemperatureMotor: Optional[Union[Tuple[str, str], AmbientTemperatureMotor]] = None,
                 id_short: Optional[str] = r"Environmental",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -3429,9 +3075,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -3442,25 +3086,17 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if installationAltitude is not None and not isinstance(
-                    installationAltitude, aas.SubmodelElement
-                ):
-                    installationAltitude = self.InstallationAltitude(
-                        installationAltitude
-                    )
+                if installationAltitude is not None and not isinstance(installationAltitude, aas.SubmodelElement):
+                    installationAltitude = self.InstallationAltitude(installationAltitude)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if atex2Gas is not None and not isinstance(
-                    atex2Gas, aas.SubmodelElement
-                ):
+                if atex2Gas is not None and not isinstance(atex2Gas, aas.SubmodelElement):
                     atex2Gas = self.Atex2Gas(atex2Gas)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if atex2Dust is not None and not isinstance(
-                    atex2Dust, aas.SubmodelElement
-                ):
+                if atex2Dust is not None and not isinstance(atex2Dust, aas.SubmodelElement):
                     atex2Dust = self.Atex2Dust(atex2Dust)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -3469,15 +3105,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     ambientTemperatureController, aas.SubmodelElement
                 ):
                     ambientTemperatureController = self.AmbientTemperatureController(
-                        min=ambientTemperatureController[0],
-                        max=ambientTemperatureController[1],
+                        min=ambientTemperatureController[0], max=ambientTemperatureController[1]
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if ambientTemperatureMotor is not None and not isinstance(
-                    ambientTemperatureMotor, aas.SubmodelElement
-                ):
+                if ambientTemperatureMotor is not None and not isinstance(ambientTemperatureMotor, aas.SubmodelElement):
                     ambientTemperatureMotor = self.AmbientTemperatureMotor(
                         min=ambientTemperatureMotor[0], max=ambientTemperatureMotor[1]
                     )
@@ -3501,9 +3134,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3543,9 +3174,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3581,20 +3210,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-BAE085#007",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAE085#007"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3630,20 +3252,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABF822#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABF822#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3679,20 +3294,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAH167#006",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAH167#006"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3728,20 +3336,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAN329#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAN329#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3777,20 +3378,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-BAE122#007",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAE122#007"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3826,20 +3420,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-BAG342#007",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAG342#007"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3875,28 +3462,18 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-BAB392#018",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAB392#018"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Zertifikat/Zulassung",
-                                r"en": r"Certificate/Approval",
-                            }
+                            dict_={r"de": r"Zertifikat/Zulassung", r"en": r"Certificate/Approval"}
                         )
 
                     if qualifier is None:
@@ -3932,27 +3509,18 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABH715#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH715#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"safety integrity level (SIL) according to IEC 61508"
-                            }
+                            dict_={r"en": r"safety integrity level (SIL) according to IEC 61508"}
                         )
 
                     if qualifier is None:
@@ -3982,9 +3550,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 brakePresent: Optional[Union[str, BrakePresent]] = None,
                 mainsConnection: Optional[Union[str, MainsConnection]] = None,
                 mountingType: Optional[Union[str, MountingType]] = None,
-                minSwitchingFrequency: Optional[
-                    Union[str, MinSwitchingFrequency]
-                ] = None,
+                minSwitchingFrequency: Optional[Union[str, MinSwitchingFrequency]] = None,
                 coolingType: Optional[Union[str, CoolingType]] = None,
                 protectionType: Optional[Union[str, ProtectionType]] = None,
                 certificateApproval: Optional[Union[str, CertificateApproval]] = None,
@@ -4005,9 +3571,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -4018,70 +3582,48 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if dcLinkCoupling is not None and not isinstance(
-                    dcLinkCoupling, aas.SubmodelElement
-                ):
+                if dcLinkCoupling is not None and not isinstance(dcLinkCoupling, aas.SubmodelElement):
                     dcLinkCoupling = self.DcLinkCoupling(dcLinkCoupling)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if brakePresent is not None and not isinstance(
-                    brakePresent, aas.SubmodelElement
-                ):
+                if brakePresent is not None and not isinstance(brakePresent, aas.SubmodelElement):
                     brakePresent = self.BrakePresent(brakePresent)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if mainsConnection is not None and not isinstance(
-                    mainsConnection, aas.SubmodelElement
-                ):
+                if mainsConnection is not None and not isinstance(mainsConnection, aas.SubmodelElement):
                     mainsConnection = self.MainsConnection(mainsConnection)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if mountingType is not None and not isinstance(
-                    mountingType, aas.SubmodelElement
-                ):
+                if mountingType is not None and not isinstance(mountingType, aas.SubmodelElement):
                     mountingType = self.MountingType(mountingType)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if minSwitchingFrequency is not None and not isinstance(
-                    minSwitchingFrequency, aas.SubmodelElement
-                ):
-                    minSwitchingFrequency = self.MinSwitchingFrequency(
-                        minSwitchingFrequency
-                    )
+                if minSwitchingFrequency is not None and not isinstance(minSwitchingFrequency, aas.SubmodelElement):
+                    minSwitchingFrequency = self.MinSwitchingFrequency(minSwitchingFrequency)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if coolingType is not None and not isinstance(
-                    coolingType, aas.SubmodelElement
-                ):
+                if coolingType is not None and not isinstance(coolingType, aas.SubmodelElement):
                     coolingType = self.CoolingType(coolingType)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if protectionType is not None and not isinstance(
-                    protectionType, aas.SubmodelElement
-                ):
+                if protectionType is not None and not isinstance(protectionType, aas.SubmodelElement):
                     protectionType = self.ProtectionType(protectionType)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if certificateApproval is not None and not isinstance(
-                    certificateApproval, aas.SubmodelElement
-                ):
+                if certificateApproval is not None and not isinstance(certificateApproval, aas.SubmodelElement):
                     certificateApproval = self.CertificateApproval(certificateApproval)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if safetyIntegrityLevel is not None and not isinstance(
-                    safetyIntegrityLevel, aas.SubmodelElement
-                ):
-                    safetyIntegrityLevel = self.SafetyIntegrityLevel(
-                        safetyIntegrityLevel
-                    )
+                if safetyIntegrityLevel is not None and not isinstance(safetyIntegrityLevel, aas.SubmodelElement):
+                    safetyIntegrityLevel = self.SafetyIntegrityLevel(safetyIntegrityLevel)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -4106,9 +3648,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4148,9 +3688,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4197,9 +3735,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4246,9 +3782,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4293,9 +3827,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -4306,36 +3838,22 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if cyclesPerMinute is not None and not isinstance(
-                    cyclesPerMinute, aas.SubmodelElement
-                ):
+                if cyclesPerMinute is not None and not isinstance(cyclesPerMinute, aas.SubmodelElement):
                     cyclesPerMinute = self.CyclesPerMinute(cyclesPerMinute)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if operatingHoursPerDay is not None and not isinstance(
-                    operatingHoursPerDay, aas.SubmodelElement
-                ):
-                    operatingHoursPerDay = self.OperatingHoursPerDay(
-                        operatingHoursPerDay
-                    )
+                if operatingHoursPerDay is not None and not isinstance(operatingHoursPerDay, aas.SubmodelElement):
+                    operatingHoursPerDay = self.OperatingHoursPerDay(operatingHoursPerDay)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if operatingDaysPerYear is not None and not isinstance(
-                    operatingDaysPerYear, aas.SubmodelElement
-                ):
-                    operatingDaysPerYear = self.OperatingDaysPerYear(
-                        operatingDaysPerYear
-                    )
+                if operatingDaysPerYear is not None and not isinstance(operatingDaysPerYear, aas.SubmodelElement):
+                    operatingDaysPerYear = self.OperatingDaysPerYear(operatingDaysPerYear)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    cyclesPerMinute,
-                    operatingHoursPerDay,
-                    operatingDaysPerYear,
-                ]:
+                for se_arg in [cyclesPerMinute, operatingHoursPerDay, operatingDaysPerYear]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -4346,9 +3864,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4385,17 +3901,12 @@ class PowerDriveTrainSizing(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Applikationsanforderungen",
-                        r"en": r"Application requirements",
-                    }
+                    dict_={r"de": r"Applikationsanforderungen", r"en": r"Application requirements"}
                 )
 
             if qualifier is None:
@@ -4406,12 +3917,7 @@ class PowerDriveTrainSizing(aas.Submodel):
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                motionPattern,
-                environmental,
-                overallSystemRequirements,
-                usageProfile,
-            ]:
+            for se_arg in [motionPattern, environmental, overallSystemRequirements, usageProfile]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -4422,9 +3928,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4466,9 +3970,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4515,9 +4017,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4564,17 +4064,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -4621,17 +4116,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -4678,17 +4168,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Leerlaufdrehmoment",
-                                r"en": r"No-load Torque",
-                            }
+                            dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
                         )
 
                     if qualifier is None:
@@ -4735,9 +4220,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4765,21 +4248,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                 self,
                 efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
                 inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
-                leverArmAxialForce: Optional[
-                    Union[xsd.Long, LeverArmAxialForce]
-                ] = None,
-                leverArmRadialForce: Optional[
-                    Union[xsd.Long, LeverArmRadialForce]
-                ] = None,
+                leverArmAxialForce: Optional[Union[xsd.Long, LeverArmAxialForce]] = None,
+                leverArmRadialForce: Optional[Union[xsd.Long, LeverArmRadialForce]] = None,
                 noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
                 id_short: Optional[str] = r"Fan",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[
-                    str
-                ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
+                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -4796,15 +4271,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Lüfter", r"en": r"Fan"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Lüfter", r"en": r"Fan"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -4814,44 +4285,32 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if efficiency is not None and not isinstance(
-                    efficiency, aas.SubmodelElement
-                ):
+                if efficiency is not None and not isinstance(efficiency, aas.SubmodelElement):
                     efficiency = self.Efficiency(efficiency)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inertiaMotorSide is not None and not isinstance(
-                    inertiaMotorSide, aas.SubmodelElement
-                ):
+                if inertiaMotorSide is not None and not isinstance(inertiaMotorSide, aas.SubmodelElement):
                     inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmAxialForce is not None and not isinstance(
-                    leverArmAxialForce, aas.SubmodelElement
-                ):
+                if leverArmAxialForce is not None and not isinstance(leverArmAxialForce, aas.SubmodelElement):
                     leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmRadialForce is not None and not isinstance(
-                    leverArmRadialForce, aas.SubmodelElement
-                ):
+                if leverArmRadialForce is not None and not isinstance(leverArmRadialForce, aas.SubmodelElement):
                     leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if noLoadTorque is not None and not isinstance(
-                    noLoadTorque, aas.SubmodelElement
-                ):
+                if noLoadTorque is not None and not isinstance(noLoadTorque, aas.SubmodelElement):
                     noLoadTorque = self.NoLoadTorque(noLoadTorque)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inclinationAngle is not None and not isinstance(
-                    inclinationAngle, aas.SubmodelElement
-                ):
+                if inclinationAngle is not None and not isinstance(inclinationAngle, aas.SubmodelElement):
                     inclinationAngle = self.InclinationAngle(inclinationAngle)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4874,9 +4333,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -4919,9 +4376,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4968,9 +4423,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5017,17 +4470,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -5074,17 +4522,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -5131,17 +4574,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Leerlaufdrehmoment",
-                                r"en": r"No-load Torque",
-                            }
+                            dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
                         )
 
                     if qualifier is None:
@@ -5188,9 +4626,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5218,21 +4654,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                 self,
                 efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
                 inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
-                leverArmAxialForce: Optional[
-                    Union[xsd.Long, LeverArmAxialForce]
-                ] = None,
-                leverArmRadialForce: Optional[
-                    Union[xsd.Long, LeverArmRadialForce]
-                ] = None,
+                leverArmAxialForce: Optional[Union[xsd.Long, LeverArmAxialForce]] = None,
+                leverArmRadialForce: Optional[Union[xsd.Long, LeverArmRadialForce]] = None,
                 noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
                 id_short: Optional[str] = r"Pump",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[
-                    str
-                ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
+                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -5249,15 +4677,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Pumpe", r"en": r"Pump"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Pumpe", r"en": r"Pump"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -5267,44 +4691,32 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if efficiency is not None and not isinstance(
-                    efficiency, aas.SubmodelElement
-                ):
+                if efficiency is not None and not isinstance(efficiency, aas.SubmodelElement):
                     efficiency = self.Efficiency(efficiency)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inertiaMotorSide is not None and not isinstance(
-                    inertiaMotorSide, aas.SubmodelElement
-                ):
+                if inertiaMotorSide is not None and not isinstance(inertiaMotorSide, aas.SubmodelElement):
                     inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmAxialForce is not None and not isinstance(
-                    leverArmAxialForce, aas.SubmodelElement
-                ):
+                if leverArmAxialForce is not None and not isinstance(leverArmAxialForce, aas.SubmodelElement):
                     leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmRadialForce is not None and not isinstance(
-                    leverArmRadialForce, aas.SubmodelElement
-                ):
+                if leverArmRadialForce is not None and not isinstance(leverArmRadialForce, aas.SubmodelElement):
                     leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if noLoadTorque is not None and not isinstance(
-                    noLoadTorque, aas.SubmodelElement
-                ):
+                if noLoadTorque is not None and not isinstance(noLoadTorque, aas.SubmodelElement):
                     noLoadTorque = self.NoLoadTorque(noLoadTorque)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inclinationAngle is not None and not isinstance(
-                    inclinationAngle, aas.SubmodelElement
-                ):
+                if inclinationAngle is not None and not isinstance(inclinationAngle, aas.SubmodelElement):
                     inclinationAngle = self.InclinationAngle(inclinationAngle)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -5327,9 +4739,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -5372,9 +4782,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5421,9 +4829,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5470,17 +4876,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -5527,17 +4928,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -5584,17 +4980,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Leerlaufdrehmoment",
-                                r"en": r"No-load Torque",
-                            }
+                            dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
                         )
 
                     if qualifier is None:
@@ -5641,9 +5032,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5691,15 +5080,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Exzentrität", r"en": r"Eccentricity"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"de": r"Exzentrität", r"en": r"Eccentricity"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -5746,17 +5131,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Mittelpunktswinkel",
-                                r"en": r"Centroid angle",
-                            }
+                            dict_={r"de": r"Mittelpunktswinkel", r"en": r"Centroid angle"}
                         )
 
                     if qualifier is None:
@@ -5784,25 +5164,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                 self,
                 efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
                 inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
-                leverArmAxialForce: Optional[
-                    Union[xsd.Long, LeverArmAxialForce]
-                ] = None,
-                leverArmRadialForce: Optional[
-                    Union[xsd.Long, LeverArmRadialForce]
-                ] = None,
+                leverArmAxialForce: Optional[Union[xsd.Long, LeverArmAxialForce]] = None,
+                leverArmRadialForce: Optional[Union[xsd.Long, LeverArmRadialForce]] = None,
                 noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
-                staticEccentricity: Optional[
-                    Union[xsd.Long, StaticEccentricity]
-                ] = None,
+                staticEccentricity: Optional[Union[xsd.Long, StaticEccentricity]] = None,
                 centroidAngle: Optional[Union[xsd.Long, CentroidAngle]] = None,
                 id_short: Optional[str] = r"RotraryTable",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[
-                    str
-                ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
+                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -5819,15 +5189,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Drehtisch", r"en": r"Rotrary table"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Drehtisch", r"en": r"Rotrary table"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -5837,58 +5203,42 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if efficiency is not None and not isinstance(
-                    efficiency, aas.SubmodelElement
-                ):
+                if efficiency is not None and not isinstance(efficiency, aas.SubmodelElement):
                     efficiency = self.Efficiency(efficiency)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inertiaMotorSide is not None and not isinstance(
-                    inertiaMotorSide, aas.SubmodelElement
-                ):
+                if inertiaMotorSide is not None and not isinstance(inertiaMotorSide, aas.SubmodelElement):
                     inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmAxialForce is not None and not isinstance(
-                    leverArmAxialForce, aas.SubmodelElement
-                ):
+                if leverArmAxialForce is not None and not isinstance(leverArmAxialForce, aas.SubmodelElement):
                     leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmRadialForce is not None and not isinstance(
-                    leverArmRadialForce, aas.SubmodelElement
-                ):
+                if leverArmRadialForce is not None and not isinstance(leverArmRadialForce, aas.SubmodelElement):
                     leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if noLoadTorque is not None and not isinstance(
-                    noLoadTorque, aas.SubmodelElement
-                ):
+                if noLoadTorque is not None and not isinstance(noLoadTorque, aas.SubmodelElement):
                     noLoadTorque = self.NoLoadTorque(noLoadTorque)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inclinationAngle is not None and not isinstance(
-                    inclinationAngle, aas.SubmodelElement
-                ):
+                if inclinationAngle is not None and not isinstance(inclinationAngle, aas.SubmodelElement):
                     inclinationAngle = self.InclinationAngle(inclinationAngle)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if staticEccentricity is not None and not isinstance(
-                    staticEccentricity, aas.SubmodelElement
-                ):
+                if staticEccentricity is not None and not isinstance(staticEccentricity, aas.SubmodelElement):
                     staticEccentricity = self.StaticEccentricity(staticEccentricity)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if centroidAngle is not None and not isinstance(
-                    centroidAngle, aas.SubmodelElement
-                ):
+                if centroidAngle is not None and not isinstance(centroidAngle, aas.SubmodelElement):
                     centroidAngle = self.CentroidAngle(centroidAngle)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -5913,9 +5263,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -5958,9 +5306,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6007,9 +5353,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6056,17 +5400,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -6113,17 +5452,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -6170,17 +5504,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Leerlaufdrehmoment",
-                                r"en": r"No-load Torque",
-                            }
+                            dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
                         )
 
                     if qualifier is None:
@@ -6227,9 +5556,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6276,17 +5603,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Reibungskoeffizient",
-                                r"en": r"Coefficient of friction",
-                            }
+                            dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
                         )
 
                     if qualifier is None:
@@ -6333,9 +5655,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -6368,25 +5688,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                 self,
                 efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
                 inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
-                leverArmAxialForce: Optional[
-                    Union[xsd.Long, LeverArmAxialForce]
-                ] = None,
-                leverArmRadialForce: Optional[
-                    Union[xsd.Long, LeverArmRadialForce]
-                ] = None,
+                leverArmAxialForce: Optional[Union[xsd.Long, LeverArmAxialForce]] = None,
+                leverArmRadialForce: Optional[Union[xsd.Long, LeverArmRadialForce]] = None,
                 noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
-                frictionCoefficient: Optional[
-                    Union[xsd.Long, FrictionCoefficient]
-                ] = None,
+                frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                 feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
                 id_short: Optional[str] = r"ChainConveyor",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[
-                    str
-                ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
+                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -6403,15 +5713,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Kettenförderer", r"en": r"Chain conveyor"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Kettenförderer", r"en": r"Chain conveyor"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -6421,58 +5727,42 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if efficiency is not None and not isinstance(
-                    efficiency, aas.SubmodelElement
-                ):
+                if efficiency is not None and not isinstance(efficiency, aas.SubmodelElement):
                     efficiency = self.Efficiency(efficiency)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inertiaMotorSide is not None and not isinstance(
-                    inertiaMotorSide, aas.SubmodelElement
-                ):
+                if inertiaMotorSide is not None and not isinstance(inertiaMotorSide, aas.SubmodelElement):
                     inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmAxialForce is not None and not isinstance(
-                    leverArmAxialForce, aas.SubmodelElement
-                ):
+                if leverArmAxialForce is not None and not isinstance(leverArmAxialForce, aas.SubmodelElement):
                     leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmRadialForce is not None and not isinstance(
-                    leverArmRadialForce, aas.SubmodelElement
-                ):
+                if leverArmRadialForce is not None and not isinstance(leverArmRadialForce, aas.SubmodelElement):
                     leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if noLoadTorque is not None and not isinstance(
-                    noLoadTorque, aas.SubmodelElement
-                ):
+                if noLoadTorque is not None and not isinstance(noLoadTorque, aas.SubmodelElement):
                     noLoadTorque = self.NoLoadTorque(noLoadTorque)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inclinationAngle is not None and not isinstance(
-                    inclinationAngle, aas.SubmodelElement
-                ):
+                if inclinationAngle is not None and not isinstance(inclinationAngle, aas.SubmodelElement):
                     inclinationAngle = self.InclinationAngle(inclinationAngle)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if frictionCoefficient is not None and not isinstance(
-                    frictionCoefficient, aas.SubmodelElement
-                ):
+                if frictionCoefficient is not None and not isinstance(frictionCoefficient, aas.SubmodelElement):
                     frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if feedConstant is not None and not isinstance(
-                    feedConstant, aas.SubmodelElement
-                ):
+                if feedConstant is not None and not isinstance(feedConstant, aas.SubmodelElement):
                     feedConstant = self.FeedConstant(feedConstant)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -6497,9 +5787,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -6542,9 +5830,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6591,9 +5877,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6640,17 +5924,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -6697,17 +5976,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -6754,17 +6028,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Leerlaufdrehmoment",
-                                r"en": r"No-load Torque",
-                            }
+                            dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
                         )
 
                     if qualifier is None:
@@ -6811,9 +6080,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6860,17 +6127,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Reibungskoeffizient",
-                                r"en": r"Coefficient of friction",
-                            }
+                            dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
                         )
 
                     if qualifier is None:
@@ -6917,9 +6179,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -6952,25 +6212,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                 self,
                 efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
                 inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
-                leverArmAxialForce: Optional[
-                    Union[xsd.Long, LeverArmAxialForce]
-                ] = None,
-                leverArmRadialForce: Optional[
-                    Union[xsd.Long, LeverArmRadialForce]
-                ] = None,
+                leverArmAxialForce: Optional[Union[xsd.Long, LeverArmAxialForce]] = None,
+                leverArmRadialForce: Optional[Union[xsd.Long, LeverArmRadialForce]] = None,
                 noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
-                frictionCoefficient: Optional[
-                    Union[xsd.Long, FrictionCoefficient]
-                ] = None,
+                frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                 feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
                 id_short: Optional[str] = r"BeltConveyor",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[
-                    str
-                ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
+                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -6987,15 +6237,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Bandförderer", r"en": r"Belt conveyor"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Bandförderer", r"en": r"Belt conveyor"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -7005,58 +6251,42 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if efficiency is not None and not isinstance(
-                    efficiency, aas.SubmodelElement
-                ):
+                if efficiency is not None and not isinstance(efficiency, aas.SubmodelElement):
                     efficiency = self.Efficiency(efficiency)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inertiaMotorSide is not None and not isinstance(
-                    inertiaMotorSide, aas.SubmodelElement
-                ):
+                if inertiaMotorSide is not None and not isinstance(inertiaMotorSide, aas.SubmodelElement):
                     inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmAxialForce is not None and not isinstance(
-                    leverArmAxialForce, aas.SubmodelElement
-                ):
+                if leverArmAxialForce is not None and not isinstance(leverArmAxialForce, aas.SubmodelElement):
                     leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmRadialForce is not None and not isinstance(
-                    leverArmRadialForce, aas.SubmodelElement
-                ):
+                if leverArmRadialForce is not None and not isinstance(leverArmRadialForce, aas.SubmodelElement):
                     leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if noLoadTorque is not None and not isinstance(
-                    noLoadTorque, aas.SubmodelElement
-                ):
+                if noLoadTorque is not None and not isinstance(noLoadTorque, aas.SubmodelElement):
                     noLoadTorque = self.NoLoadTorque(noLoadTorque)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inclinationAngle is not None and not isinstance(
-                    inclinationAngle, aas.SubmodelElement
-                ):
+                if inclinationAngle is not None and not isinstance(inclinationAngle, aas.SubmodelElement):
                     inclinationAngle = self.InclinationAngle(inclinationAngle)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if frictionCoefficient is not None and not isinstance(
-                    frictionCoefficient, aas.SubmodelElement
-                ):
+                if frictionCoefficient is not None and not isinstance(frictionCoefficient, aas.SubmodelElement):
                     frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if feedConstant is not None and not isinstance(
-                    feedConstant, aas.SubmodelElement
-                ):
+                if feedConstant is not None and not isinstance(feedConstant, aas.SubmodelElement):
                     feedConstant = self.FeedConstant(feedConstant)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -7081,9 +6311,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -7126,9 +6354,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7175,9 +6401,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7224,17 +6448,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -7281,17 +6500,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -7338,17 +6552,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Leerlaufdrehmoment",
-                                r"en": r"No-load Torque",
-                            }
+                            dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
                         )
 
                     if qualifier is None:
@@ -7395,9 +6604,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7444,17 +6651,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Reibungskoeffizient",
-                                r"en": r"Coefficient of friction",
-                            }
+                            dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
                         )
 
                     if qualifier is None:
@@ -7501,9 +6703,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -7536,25 +6736,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                 self,
                 efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
                 inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
-                leverArmAxialForce: Optional[
-                    Union[xsd.Long, LeverArmAxialForce]
-                ] = None,
-                leverArmRadialForce: Optional[
-                    Union[xsd.Long, LeverArmRadialForce]
-                ] = None,
+                leverArmAxialForce: Optional[Union[xsd.Long, LeverArmAxialForce]] = None,
+                leverArmRadialForce: Optional[Union[xsd.Long, LeverArmRadialForce]] = None,
                 noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
-                frictionCoefficient: Optional[
-                    Union[xsd.Long, FrictionCoefficient]
-                ] = None,
+                frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                 feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
                 id_short: Optional[str] = r"RollerConveyor",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[
-                    str
-                ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
+                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -7571,15 +6761,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Rollenbahn", r"en": r"Roller conveyor"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Rollenbahn", r"en": r"Roller conveyor"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -7589,58 +6775,42 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if efficiency is not None and not isinstance(
-                    efficiency, aas.SubmodelElement
-                ):
+                if efficiency is not None and not isinstance(efficiency, aas.SubmodelElement):
                     efficiency = self.Efficiency(efficiency)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inertiaMotorSide is not None and not isinstance(
-                    inertiaMotorSide, aas.SubmodelElement
-                ):
+                if inertiaMotorSide is not None and not isinstance(inertiaMotorSide, aas.SubmodelElement):
                     inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmAxialForce is not None and not isinstance(
-                    leverArmAxialForce, aas.SubmodelElement
-                ):
+                if leverArmAxialForce is not None and not isinstance(leverArmAxialForce, aas.SubmodelElement):
                     leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmRadialForce is not None and not isinstance(
-                    leverArmRadialForce, aas.SubmodelElement
-                ):
+                if leverArmRadialForce is not None and not isinstance(leverArmRadialForce, aas.SubmodelElement):
                     leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if noLoadTorque is not None and not isinstance(
-                    noLoadTorque, aas.SubmodelElement
-                ):
+                if noLoadTorque is not None and not isinstance(noLoadTorque, aas.SubmodelElement):
                     noLoadTorque = self.NoLoadTorque(noLoadTorque)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inclinationAngle is not None and not isinstance(
-                    inclinationAngle, aas.SubmodelElement
-                ):
+                if inclinationAngle is not None and not isinstance(inclinationAngle, aas.SubmodelElement):
                     inclinationAngle = self.InclinationAngle(inclinationAngle)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if frictionCoefficient is not None and not isinstance(
-                    frictionCoefficient, aas.SubmodelElement
-                ):
+                if frictionCoefficient is not None and not isinstance(frictionCoefficient, aas.SubmodelElement):
                     frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if feedConstant is not None and not isinstance(
-                    feedConstant, aas.SubmodelElement
-                ):
+                if feedConstant is not None and not isinstance(feedConstant, aas.SubmodelElement):
                     feedConstant = self.FeedConstant(feedConstant)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -7665,9 +6835,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -7710,9 +6878,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7759,9 +6925,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7808,17 +6972,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -7865,17 +7024,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -7922,17 +7076,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Leerlaufdrehmoment",
-                                r"en": r"No-load Torque",
-                            }
+                            dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
                         )
 
                     if qualifier is None:
@@ -7979,9 +7128,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8028,17 +7175,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Reibungskoeffizient",
-                                r"en": r"Coefficient of friction",
-                            }
+                            dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
                         )
 
                     if qualifier is None:
@@ -8085,9 +7227,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -8120,25 +7260,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                 self,
                 efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
                 inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
-                leverArmAxialForce: Optional[
-                    Union[xsd.Long, LeverArmAxialForce]
-                ] = None,
-                leverArmRadialForce: Optional[
-                    Union[xsd.Long, LeverArmRadialForce]
-                ] = None,
+                leverArmAxialForce: Optional[Union[xsd.Long, LeverArmAxialForce]] = None,
+                leverArmRadialForce: Optional[Union[xsd.Long, LeverArmRadialForce]] = None,
                 noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
-                frictionCoefficient: Optional[
-                    Union[xsd.Long, FrictionCoefficient]
-                ] = None,
+                frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                 feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
                 id_short: Optional[str] = r"BeltDrive",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[
-                    str
-                ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
+                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -8155,15 +7285,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Riemenantrieb", r"en": r"Belt drive"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Riemenantrieb", r"en": r"Belt drive"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -8173,58 +7299,42 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if efficiency is not None and not isinstance(
-                    efficiency, aas.SubmodelElement
-                ):
+                if efficiency is not None and not isinstance(efficiency, aas.SubmodelElement):
                     efficiency = self.Efficiency(efficiency)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inertiaMotorSide is not None and not isinstance(
-                    inertiaMotorSide, aas.SubmodelElement
-                ):
+                if inertiaMotorSide is not None and not isinstance(inertiaMotorSide, aas.SubmodelElement):
                     inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmAxialForce is not None and not isinstance(
-                    leverArmAxialForce, aas.SubmodelElement
-                ):
+                if leverArmAxialForce is not None and not isinstance(leverArmAxialForce, aas.SubmodelElement):
                     leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmRadialForce is not None and not isinstance(
-                    leverArmRadialForce, aas.SubmodelElement
-                ):
+                if leverArmRadialForce is not None and not isinstance(leverArmRadialForce, aas.SubmodelElement):
                     leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if noLoadTorque is not None and not isinstance(
-                    noLoadTorque, aas.SubmodelElement
-                ):
+                if noLoadTorque is not None and not isinstance(noLoadTorque, aas.SubmodelElement):
                     noLoadTorque = self.NoLoadTorque(noLoadTorque)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inclinationAngle is not None and not isinstance(
-                    inclinationAngle, aas.SubmodelElement
-                ):
+                if inclinationAngle is not None and not isinstance(inclinationAngle, aas.SubmodelElement):
                     inclinationAngle = self.InclinationAngle(inclinationAngle)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if frictionCoefficient is not None and not isinstance(
-                    frictionCoefficient, aas.SubmodelElement
-                ):
+                if frictionCoefficient is not None and not isinstance(frictionCoefficient, aas.SubmodelElement):
                     frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if feedConstant is not None and not isinstance(
-                    feedConstant, aas.SubmodelElement
-                ):
+                if feedConstant is not None and not isinstance(feedConstant, aas.SubmodelElement):
                     feedConstant = self.FeedConstant(feedConstant)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -8249,9 +7359,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -8294,9 +7402,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8343,9 +7449,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8392,17 +7496,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -8449,17 +7548,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -8506,17 +7600,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Leerlaufdrehmoment",
-                                r"en": r"No-load Torque",
-                            }
+                            dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
                         )
 
                     if qualifier is None:
@@ -8563,9 +7652,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8612,17 +7699,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Reibungskoeffizient",
-                                r"en": r"Coefficient of friction",
-                            }
+                            dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
                         )
 
                     if qualifier is None:
@@ -8669,9 +7751,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -8704,25 +7784,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                 self,
                 efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
                 inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
-                leverArmAxialForce: Optional[
-                    Union[xsd.Long, LeverArmAxialForce]
-                ] = None,
-                leverArmRadialForce: Optional[
-                    Union[xsd.Long, LeverArmRadialForce]
-                ] = None,
+                leverArmAxialForce: Optional[Union[xsd.Long, LeverArmAxialForce]] = None,
+                leverArmRadialForce: Optional[Union[xsd.Long, LeverArmRadialForce]] = None,
                 noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
-                frictionCoefficient: Optional[
-                    Union[xsd.Long, FrictionCoefficient]
-                ] = None,
+                frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                 feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
                 id_short: Optional[str] = r"TravelingDrive",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[
-                    str
-                ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
+                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -8739,9 +7809,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -8757,58 +7825,42 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if efficiency is not None and not isinstance(
-                    efficiency, aas.SubmodelElement
-                ):
+                if efficiency is not None and not isinstance(efficiency, aas.SubmodelElement):
                     efficiency = self.Efficiency(efficiency)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inertiaMotorSide is not None and not isinstance(
-                    inertiaMotorSide, aas.SubmodelElement
-                ):
+                if inertiaMotorSide is not None and not isinstance(inertiaMotorSide, aas.SubmodelElement):
                     inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmAxialForce is not None and not isinstance(
-                    leverArmAxialForce, aas.SubmodelElement
-                ):
+                if leverArmAxialForce is not None and not isinstance(leverArmAxialForce, aas.SubmodelElement):
                     leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmRadialForce is not None and not isinstance(
-                    leverArmRadialForce, aas.SubmodelElement
-                ):
+                if leverArmRadialForce is not None and not isinstance(leverArmRadialForce, aas.SubmodelElement):
                     leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if noLoadTorque is not None and not isinstance(
-                    noLoadTorque, aas.SubmodelElement
-                ):
+                if noLoadTorque is not None and not isinstance(noLoadTorque, aas.SubmodelElement):
                     noLoadTorque = self.NoLoadTorque(noLoadTorque)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inclinationAngle is not None and not isinstance(
-                    inclinationAngle, aas.SubmodelElement
-                ):
+                if inclinationAngle is not None and not isinstance(inclinationAngle, aas.SubmodelElement):
                     inclinationAngle = self.InclinationAngle(inclinationAngle)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if frictionCoefficient is not None and not isinstance(
-                    frictionCoefficient, aas.SubmodelElement
-                ):
+                if frictionCoefficient is not None and not isinstance(frictionCoefficient, aas.SubmodelElement):
                     frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if feedConstant is not None and not isinstance(
-                    feedConstant, aas.SubmodelElement
-                ):
+                if feedConstant is not None and not isinstance(feedConstant, aas.SubmodelElement):
                     feedConstant = self.FeedConstant(feedConstant)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -8833,9 +7885,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -8878,9 +7928,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8927,9 +7975,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8976,17 +8022,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -9033,17 +8074,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -9090,17 +8126,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Leerlaufdrehmoment",
-                                r"en": r"No-load Torque",
-                            }
+                            dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
                         )
 
                     if qualifier is None:
@@ -9147,9 +8178,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -9196,17 +8225,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Reibungskoeffizient",
-                                r"en": r"Coefficient of friction",
-                            }
+                            dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
                         )
 
                     if qualifier is None:
@@ -9253,9 +8277,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -9308,17 +8330,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Durchmesser Ritzel",
-                                r"en": r"Diameter of pinion",
-                            }
+                            dict_={r"de": r"Durchmesser Ritzel", r"en": r"Diameter of pinion"}
                         )
 
                     if qualifier is None:
@@ -9366,17 +8383,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Schrägungswinkel der Verzahnung",
-                                r"en": r"Helix angle of the toothing",
-                            }
+                            dict_={r"de": r"Schrägungswinkel der Verzahnung", r"en": r"Helix angle of the toothing"}
                         )
 
                     if qualifier is None:
@@ -9424,15 +8436,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Bewegtes Teil", r"en": r"Moving part"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"de": r"Bewegtes Teil", r"en": r"Moving part"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -9459,28 +8467,18 @@ class PowerDriveTrainSizing(aas.Submodel):
                 self,
                 efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
                 inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
-                leverArmAxialForce: Optional[
-                    Union[xsd.Long, LeverArmAxialForce]
-                ] = None,
-                leverArmRadialForce: Optional[
-                    Union[xsd.Long, LeverArmRadialForce]
-                ] = None,
+                leverArmAxialForce: Optional[Union[xsd.Long, LeverArmAxialForce]] = None,
+                leverArmRadialForce: Optional[Union[xsd.Long, LeverArmRadialForce]] = None,
                 noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
-                frictionCoefficient: Optional[
-                    Union[xsd.Long, FrictionCoefficient]
-                ] = None,
+                frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                 feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
                 diameterPinion: Optional[Union[xsd.Long, DiameterPinion]] = None,
                 helixAngle: Optional[Union[xsd.Long, HelixAngle]] = None,
                 movingPart: Optional[Union[xsd.Long, MovingPart]] = None,
                 id_short: Optional[str] = r"RackDrive",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[
-                    str
-                ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
+                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -9497,9 +8495,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -9515,79 +8511,57 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if efficiency is not None and not isinstance(
-                    efficiency, aas.SubmodelElement
-                ):
+                if efficiency is not None and not isinstance(efficiency, aas.SubmodelElement):
                     efficiency = self.Efficiency(efficiency)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inertiaMotorSide is not None and not isinstance(
-                    inertiaMotorSide, aas.SubmodelElement
-                ):
+                if inertiaMotorSide is not None and not isinstance(inertiaMotorSide, aas.SubmodelElement):
                     inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmAxialForce is not None and not isinstance(
-                    leverArmAxialForce, aas.SubmodelElement
-                ):
+                if leverArmAxialForce is not None and not isinstance(leverArmAxialForce, aas.SubmodelElement):
                     leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmRadialForce is not None and not isinstance(
-                    leverArmRadialForce, aas.SubmodelElement
-                ):
+                if leverArmRadialForce is not None and not isinstance(leverArmRadialForce, aas.SubmodelElement):
                     leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if noLoadTorque is not None and not isinstance(
-                    noLoadTorque, aas.SubmodelElement
-                ):
+                if noLoadTorque is not None and not isinstance(noLoadTorque, aas.SubmodelElement):
                     noLoadTorque = self.NoLoadTorque(noLoadTorque)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inclinationAngle is not None and not isinstance(
-                    inclinationAngle, aas.SubmodelElement
-                ):
+                if inclinationAngle is not None and not isinstance(inclinationAngle, aas.SubmodelElement):
                     inclinationAngle = self.InclinationAngle(inclinationAngle)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if frictionCoefficient is not None and not isinstance(
-                    frictionCoefficient, aas.SubmodelElement
-                ):
+                if frictionCoefficient is not None and not isinstance(frictionCoefficient, aas.SubmodelElement):
                     frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if feedConstant is not None and not isinstance(
-                    feedConstant, aas.SubmodelElement
-                ):
+                if feedConstant is not None and not isinstance(feedConstant, aas.SubmodelElement):
                     feedConstant = self.FeedConstant(feedConstant)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if diameterPinion is not None and not isinstance(
-                    diameterPinion, aas.SubmodelElement
-                ):
+                if diameterPinion is not None and not isinstance(diameterPinion, aas.SubmodelElement):
                     diameterPinion = self.DiameterPinion(diameterPinion)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if helixAngle is not None and not isinstance(
-                    helixAngle, aas.SubmodelElement
-                ):
+                if helixAngle is not None and not isinstance(helixAngle, aas.SubmodelElement):
                     helixAngle = self.HelixAngle(helixAngle)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if movingPart is not None and not isinstance(
-                    movingPart, aas.SubmodelElement
-                ):
+                if movingPart is not None and not isinstance(movingPart, aas.SubmodelElement):
                     movingPart = self.MovingPart(movingPart)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -9615,9 +8589,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -9660,9 +8632,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -9709,9 +8679,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -9758,17 +8726,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -9815,17 +8778,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Hebelarm Axialkraft",
-                                r"en": r"Lever arm axial force",
-                            }
+                            dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
                         )
 
                     if qualifier is None:
@@ -9872,17 +8830,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Leerlaufdrehmoment",
-                                r"en": r"No-load Torque",
-                            }
+                            dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
                         )
 
                     if qualifier is None:
@@ -9929,9 +8882,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -9978,17 +8929,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Reibungskoeffizient",
-                                r"en": r"Coefficient of friction",
-                            }
+                            dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
                         )
 
                     if qualifier is None:
@@ -10035,9 +8981,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -10070,25 +9014,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                 self,
                 efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
                 inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
-                leverArmAxialForce: Optional[
-                    Union[xsd.Long, LeverArmAxialForce]
-                ] = None,
-                leverArmRadialForce: Optional[
-                    Union[xsd.Long, LeverArmRadialForce]
-                ] = None,
+                leverArmAxialForce: Optional[Union[xsd.Long, LeverArmAxialForce]] = None,
+                leverArmRadialForce: Optional[Union[xsd.Long, LeverArmRadialForce]] = None,
                 noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
-                frictionCoefficient: Optional[
-                    Union[xsd.Long, FrictionCoefficient]
-                ] = None,
+                frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                 feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
                 id_short: Optional[str] = r"SpindleDrive",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[
-                    str
-                ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
+                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -10105,15 +9039,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Spindelantrieb", r"en": r"Spindle drive"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Spindelantrieb", r"en": r"Spindle drive"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -10123,58 +9053,42 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if efficiency is not None and not isinstance(
-                    efficiency, aas.SubmodelElement
-                ):
+                if efficiency is not None and not isinstance(efficiency, aas.SubmodelElement):
                     efficiency = self.Efficiency(efficiency)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inertiaMotorSide is not None and not isinstance(
-                    inertiaMotorSide, aas.SubmodelElement
-                ):
+                if inertiaMotorSide is not None and not isinstance(inertiaMotorSide, aas.SubmodelElement):
                     inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmAxialForce is not None and not isinstance(
-                    leverArmAxialForce, aas.SubmodelElement
-                ):
+                if leverArmAxialForce is not None and not isinstance(leverArmAxialForce, aas.SubmodelElement):
                     leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if leverArmRadialForce is not None and not isinstance(
-                    leverArmRadialForce, aas.SubmodelElement
-                ):
+                if leverArmRadialForce is not None and not isinstance(leverArmRadialForce, aas.SubmodelElement):
                     leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if noLoadTorque is not None and not isinstance(
-                    noLoadTorque, aas.SubmodelElement
-                ):
+                if noLoadTorque is not None and not isinstance(noLoadTorque, aas.SubmodelElement):
                     noLoadTorque = self.NoLoadTorque(noLoadTorque)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inclinationAngle is not None and not isinstance(
-                    inclinationAngle, aas.SubmodelElement
-                ):
+                if inclinationAngle is not None and not isinstance(inclinationAngle, aas.SubmodelElement):
                     inclinationAngle = self.InclinationAngle(inclinationAngle)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if frictionCoefficient is not None and not isinstance(
-                    frictionCoefficient, aas.SubmodelElement
-                ):
+                if frictionCoefficient is not None and not isinstance(frictionCoefficient, aas.SubmodelElement):
                     frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if feedConstant is not None and not isinstance(
-                    feedConstant, aas.SubmodelElement
-                ):
+                if feedConstant is not None and not isinstance(feedConstant, aas.SubmodelElement):
                     feedConstant = self.FeedConstant(feedConstant)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -10199,9 +9113,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -10247,17 +9159,12 @@ class PowerDriveTrainSizing(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Transformationsmechanismen",
-                        r"en": r"Transformation mechanism",
-                    }
+                    dict_={r"de": r"Transformationsmechanismen", r"en": r"Transformation mechanism"}
                 )
 
             if description is None:
@@ -10297,9 +9204,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -10330,20 +9235,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO677#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10379,20 +9277,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO676#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO676#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10427,20 +9318,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAW338#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW338#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10475,20 +9359,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r" 0173-1#02-AAO227#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r" 0173-1#02-AAO227#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10535,9 +9412,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10584,9 +9459,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10633,9 +9506,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10682,9 +9553,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10731,9 +9600,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10780,9 +9647,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10830,9 +9695,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10859,38 +9722,20 @@ class PowerDriveTrainSizing(aas.Submodel):
             def __init__(
                 self,
                 manufacturerName: Optional[Union[str, ManufacturerName]] = None,
-                manufacturerArticleNumber: Optional[
-                    Union[str, ManufacturerArticleNumber]
-                ] = None,
+                manufacturerArticleNumber: Optional[Union[str, ManufacturerArticleNumber]] = None,
                 manufacturerProductDesignation: Optional[
                     Union[aas.LangStringSet, ManufacturerProductDesignation]
                 ] = None,
-                manufacturerOrderCode: Optional[
-                    Union[str, ManufacturerOrderCode]
-                ] = None,
-                externalMomentOfInertia: Optional[
-                    Union[xsd.Long, ExternalMomentOfInertia]
-                ] = None,
-                internalMomentOfIntertia: Optional[
-                    Union[xsd.Long, InternalMomentOfIntertia]
-                ] = None,
+                manufacturerOrderCode: Optional[Union[str, ManufacturerOrderCode]] = None,
+                externalMomentOfInertia: Optional[Union[xsd.Long, ExternalMomentOfInertia]] = None,
+                internalMomentOfIntertia: Optional[Union[xsd.Long, InternalMomentOfIntertia]] = None,
                 massInertiaRatio: Optional[Union[xsd.Long, MassInertiaRatio]] = None,
-                decelerationForEmergencyStop: Optional[
-                    Union[xsd.Long, DecelerationForEmergencyStop]
-                ] = None,
-                currentForEmergencyStop: Optional[
-                    Union[xsd.Long, CurrentForEmergencyStop]
-                ] = None,
-                displacementDuringEmergencyStop: Optional[
-                    Union[xsd.Long, DisplacementDuringEmergencyStop]
-                ] = None,
-                energyConsumtionPerCycle: Optional[
-                    Union[xsd.Long, EnergyConsumtionPerCycle]
-                ] = None,
+                decelerationForEmergencyStop: Optional[Union[xsd.Long, DecelerationForEmergencyStop]] = None,
+                currentForEmergencyStop: Optional[Union[xsd.Long, CurrentForEmergencyStop]] = None,
+                displacementDuringEmergencyStop: Optional[Union[xsd.Long, DisplacementDuringEmergencyStop]] = None,
+                energyConsumtionPerCycle: Optional[Union[xsd.Long, EnergyConsumtionPerCycle]] = None,
                 id_short: Optional[str] = r"OverallSystem",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.CO_MANAGED_ENTITY,
+                entity_type: Optional[aas.EntityType] = aas.EntityType.CO_MANAGED_ENTITY,
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -10908,15 +9753,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Gesamtsystem", r"en": r"Overall system"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Gesamtsystem", r"en": r"Overall system"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -10926,9 +9767,7 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if manufacturerName is not None and not isinstance(
-                    manufacturerName, aas.SubmodelElement
-                ):
+                if manufacturerName is not None and not isinstance(manufacturerName, aas.SubmodelElement):
                     manufacturerName = self.ManufacturerName(manufacturerName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -10936,53 +9775,35 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if manufacturerArticleNumber is not None and not isinstance(
                     manufacturerArticleNumber, aas.SubmodelElement
                 ):
-                    manufacturerArticleNumber = self.ManufacturerArticleNumber(
-                        manufacturerArticleNumber
-                    )
+                    manufacturerArticleNumber = self.ManufacturerArticleNumber(manufacturerArticleNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if manufacturerProductDesignation is not None and not isinstance(
                     manufacturerProductDesignation, aas.SubmodelElement
                 ):
-                    manufacturerProductDesignation = (
-                        self.ManufacturerProductDesignation(
-                            manufacturerProductDesignation
-                        )
-                    )
+                    manufacturerProductDesignation = self.ManufacturerProductDesignation(manufacturerProductDesignation)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if manufacturerOrderCode is not None and not isinstance(
-                    manufacturerOrderCode, aas.SubmodelElement
-                ):
-                    manufacturerOrderCode = self.ManufacturerOrderCode(
-                        manufacturerOrderCode
-                    )
+                if manufacturerOrderCode is not None and not isinstance(manufacturerOrderCode, aas.SubmodelElement):
+                    manufacturerOrderCode = self.ManufacturerOrderCode(manufacturerOrderCode)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if externalMomentOfInertia is not None and not isinstance(
-                    externalMomentOfInertia, aas.SubmodelElement
-                ):
-                    externalMomentOfInertia = self.ExternalMomentOfInertia(
-                        externalMomentOfInertia
-                    )
+                if externalMomentOfInertia is not None and not isinstance(externalMomentOfInertia, aas.SubmodelElement):
+                    externalMomentOfInertia = self.ExternalMomentOfInertia(externalMomentOfInertia)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if internalMomentOfIntertia is not None and not isinstance(
                     internalMomentOfIntertia, aas.SubmodelElement
                 ):
-                    internalMomentOfIntertia = self.InternalMomentOfIntertia(
-                        internalMomentOfIntertia
-                    )
+                    internalMomentOfIntertia = self.InternalMomentOfIntertia(internalMomentOfIntertia)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if massInertiaRatio is not None and not isinstance(
-                    massInertiaRatio, aas.SubmodelElement
-                ):
+                if massInertiaRatio is not None and not isinstance(massInertiaRatio, aas.SubmodelElement):
                     massInertiaRatio = self.MassInertiaRatio(massInertiaRatio)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -10990,28 +9811,20 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if decelerationForEmergencyStop is not None and not isinstance(
                     decelerationForEmergencyStop, aas.SubmodelElement
                 ):
-                    decelerationForEmergencyStop = self.DecelerationForEmergencyStop(
-                        decelerationForEmergencyStop
-                    )
+                    decelerationForEmergencyStop = self.DecelerationForEmergencyStop(decelerationForEmergencyStop)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if currentForEmergencyStop is not None and not isinstance(
-                    currentForEmergencyStop, aas.SubmodelElement
-                ):
-                    currentForEmergencyStop = self.CurrentForEmergencyStop(
-                        currentForEmergencyStop
-                    )
+                if currentForEmergencyStop is not None and not isinstance(currentForEmergencyStop, aas.SubmodelElement):
+                    currentForEmergencyStop = self.CurrentForEmergencyStop(currentForEmergencyStop)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if displacementDuringEmergencyStop is not None and not isinstance(
                     displacementDuringEmergencyStop, aas.SubmodelElement
                 ):
-                    displacementDuringEmergencyStop = (
-                        self.DisplacementDuringEmergencyStop(
-                            displacementDuringEmergencyStop
-                        )
+                    displacementDuringEmergencyStop = self.DisplacementDuringEmergencyStop(
+                        displacementDuringEmergencyStop
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -11019,9 +9832,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if energyConsumtionPerCycle is not None and not isinstance(
                     energyConsumtionPerCycle, aas.SubmodelElement
                 ):
-                    energyConsumtionPerCycle = self.EnergyConsumtionPerCycle(
-                        energyConsumtionPerCycle
-                    )
+                    energyConsumtionPerCycle = self.EnergyConsumtionPerCycle(energyConsumtionPerCycle)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -11048,9 +9859,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -11094,17 +9903,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Typ der Hauptkomponente",
-                                r"en": r"Main component type",
-                            }
+                            dict_={r"de": r"Typ der Hauptkomponente", r"en": r"Main component type"}
                         )
 
                     if qualifier is None:
@@ -11140,20 +9944,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO677#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11189,20 +9986,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO676#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO676#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11237,20 +10027,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAW338#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW338#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11285,20 +10068,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r" 0173-1#02-AAO227#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r" 0173-1#02-AAO227#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11345,9 +10121,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11394,9 +10168,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11443,9 +10215,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11492,9 +10262,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11541,9 +10309,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11590,9 +10356,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11639,9 +10403,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11688,9 +10450,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11737,9 +10497,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11786,9 +10544,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11835,9 +10591,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11884,9 +10638,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11933,9 +10685,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11982,9 +10732,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12031,9 +10779,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12080,9 +10826,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12129,9 +10873,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12178,9 +10920,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12227,9 +10967,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12276,9 +11014,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12325,9 +11061,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12374,9 +11108,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12423,9 +11155,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12473,9 +11203,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12508,74 +11236,34 @@ class PowerDriveTrainSizing(aas.Submodel):
                 manufacturerProductDesignation: Optional[
                     Union[aas.LangStringSet, ManufacturerProductDesignation]
                 ] = None,
-                maxCurrentUtilizationPercentage: Optional[
-                    Union[xsd.Long, MaxCurrentUtilizationPercentage]
-                ] = None,
-                maxCurrentUtilization: Optional[
-                    Union[xsd.Long, MaxCurrentUtilization]
-                ] = None,
-                maxThermalUtilizationPercentage: Optional[
-                    Union[xsd.Long, MaxThermalUtilizationPercentage]
-                ] = None,
-                maxThermalUtilization: Optional[
-                    Union[xsd.Long, MaxThermalUtilization]
-                ] = None,
-                averagePowerLosses: Optional[
-                    Union[xsd.Long, AveragePowerLosses]
-                ] = None,
-                averageRegenerativePowerDcLink: Optional[
-                    Union[xsd.Long, AverageRegenerativePowerDcLink]
-                ] = None,
-                maxRegenerativePowerDcLink: Optional[
-                    Union[xsd.Long, MaxRegenerativePowerDcLink]
-                ] = None,
-                averageFeedInPowerDcLink: Optional[
-                    Union[xsd.Long, AverageFeedInPowerDcLink]
-                ] = None,
-                averageFeedInPowerMains: Optional[
-                    Union[xsd.Long, AverageFeedInPowerMains]
-                ] = None,
-                maxFeedInPowerMains: Optional[
-                    Union[xsd.Long, MaxFeedInPowerMains]
-                ] = None,
+                maxCurrentUtilizationPercentage: Optional[Union[xsd.Long, MaxCurrentUtilizationPercentage]] = None,
+                maxCurrentUtilization: Optional[Union[xsd.Long, MaxCurrentUtilization]] = None,
+                maxThermalUtilizationPercentage: Optional[Union[xsd.Long, MaxThermalUtilizationPercentage]] = None,
+                maxThermalUtilization: Optional[Union[xsd.Long, MaxThermalUtilization]] = None,
+                averagePowerLosses: Optional[Union[xsd.Long, AveragePowerLosses]] = None,
+                averageRegenerativePowerDcLink: Optional[Union[xsd.Long, AverageRegenerativePowerDcLink]] = None,
+                maxRegenerativePowerDcLink: Optional[Union[xsd.Long, MaxRegenerativePowerDcLink]] = None,
+                averageFeedInPowerDcLink: Optional[Union[xsd.Long, AverageFeedInPowerDcLink]] = None,
+                averageFeedInPowerMains: Optional[Union[xsd.Long, AverageFeedInPowerMains]] = None,
+                maxFeedInPowerMains: Optional[Union[xsd.Long, MaxFeedInPowerMains]] = None,
                 continuousCurrent: Optional[Union[xsd.Long, ContinuousCurrent]] = None,
                 rmsOfPower: Optional[Union[xsd.Long, RmsOfPower]] = None,
-                maxTorqueUtilizationPercentage: Optional[
-                    Union[xsd.Long, MaxTorqueUtilizationPercentage]
-                ] = None,
-                maxTorqueUtilization: Optional[
-                    Union[xsd.Long, MaxTorqueUtilization]
-                ] = None,
+                maxTorqueUtilizationPercentage: Optional[Union[xsd.Long, MaxTorqueUtilizationPercentage]] = None,
+                maxTorqueUtilization: Optional[Union[xsd.Long, MaxTorqueUtilization]] = None,
                 maxRotationSpeedUtilizationPercentage: Optional[
                     Union[xsd.Long, MaxRotationSpeedUtilizationPercentage]
                 ] = None,
-                maxRotationSpeedUtilization: Optional[
-                    Union[xsd.Long, MaxRotationSpeedUtilization]
-                ] = None,
-                effectiveUtilization: Optional[
-                    Union[xsd.Long, EffectiveUtilization]
-                ] = None,
-                calculatedServiceLife: Optional[
-                    Union[xsd.Long, CalculatedServiceLife]
-                ] = None,
+                maxRotationSpeedUtilization: Optional[Union[xsd.Long, MaxRotationSpeedUtilization]] = None,
+                effectiveUtilization: Optional[Union[xsd.Long, EffectiveUtilization]] = None,
+                calculatedServiceLife: Optional[Union[xsd.Long, CalculatedServiceLife]] = None,
                 massInertiaRatio: Optional[Union[xsd.Long, MassInertiaRatio]] = None,
-                frequencyAtMaxSpeed: Optional[
-                    Union[xsd.Long, FrequencyAtMaxSpeed]
-                ] = None,
-                powerInRegenerativeOperation: Optional[
-                    Union[xsd.Long, PowerInRegenerativeOperation]
-                ] = None,
-                powerInMotorOperation: Optional[
-                    Union[xsd.Long, PowerInMotorOperation]
-                ] = None,
+                frequencyAtMaxSpeed: Optional[Union[xsd.Long, FrequencyAtMaxSpeed]] = None,
+                powerInRegenerativeOperation: Optional[Union[xsd.Long, PowerInRegenerativeOperation]] = None,
+                powerInMotorOperation: Optional[Union[xsd.Long, PowerInMotorOperation]] = None,
                 rmsOfMotorTorque: Optional[Union[xsd.Long, RmsOfMotorTorque]] = None,
-                energyConsumtionPerCycle: Optional[
-                    Union[xsd.Long, EnergyConsumtionPerCycle]
-                ] = None,
+                energyConsumtionPerCycle: Optional[Union[xsd.Long, EnergyConsumtionPerCycle]] = None,
                 id_short: Optional[str] = r"MainComponent",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.CO_MANAGED_ENTITY,
+                entity_type: Optional[aas.EntityType] = aas.EntityType.CO_MANAGED_ENTITY,
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -12593,9 +11281,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -12611,26 +11297,18 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(mainComponentType, str):
-                    raise TypeError(
-                        "mainComponentType takes several elements, got a str"
-                    )
+                    raise TypeError("mainComponentType takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if mainComponentType:
                     mainComponentType = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.MainComponentType(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.MainComponentType(i)
                         for i in mainComponentType
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if manufacturerName is not None and not isinstance(
-                    manufacturerName, aas.SubmodelElement
-                ):
+                if manufacturerName is not None and not isinstance(manufacturerName, aas.SubmodelElement):
                     manufacturerName = self.ManufacturerName(manufacturerName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12638,75 +11316,51 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if manufacturerArticleNumber is not None and not isinstance(
                     manufacturerArticleNumber, aas.SubmodelElement
                 ):
-                    manufacturerArticleNumber = self.ManufacturerArticleNumber(
-                        manufacturerArticleNumber
-                    )
+                    manufacturerArticleNumber = self.ManufacturerArticleNumber(manufacturerArticleNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if manufacturerProductDesignation is not None and not isinstance(
                     manufacturerProductDesignation, aas.SubmodelElement
                 ):
-                    manufacturerProductDesignation = (
-                        self.ManufacturerProductDesignation(
-                            manufacturerProductDesignation
-                        )
-                    )
+                    manufacturerProductDesignation = self.ManufacturerProductDesignation(manufacturerProductDesignation)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if manufacturerOrderCode is not None and not isinstance(
-                    manufacturerOrderCode, aas.SubmodelElement
-                ):
-                    manufacturerOrderCode = self.ManufacturerOrderCode(
-                        manufacturerOrderCode
-                    )
+                if manufacturerOrderCode is not None and not isinstance(manufacturerOrderCode, aas.SubmodelElement):
+                    manufacturerOrderCode = self.ManufacturerOrderCode(manufacturerOrderCode)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if maxCurrentUtilizationPercentage is not None and not isinstance(
                     maxCurrentUtilizationPercentage, aas.SubmodelElement
                 ):
-                    maxCurrentUtilizationPercentage = (
-                        self.MaxCurrentUtilizationPercentage(
-                            maxCurrentUtilizationPercentage
-                        )
+                    maxCurrentUtilizationPercentage = self.MaxCurrentUtilizationPercentage(
+                        maxCurrentUtilizationPercentage
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if maxCurrentUtilization is not None and not isinstance(
-                    maxCurrentUtilization, aas.SubmodelElement
-                ):
-                    maxCurrentUtilization = self.MaxCurrentUtilization(
-                        maxCurrentUtilization
-                    )
+                if maxCurrentUtilization is not None and not isinstance(maxCurrentUtilization, aas.SubmodelElement):
+                    maxCurrentUtilization = self.MaxCurrentUtilization(maxCurrentUtilization)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if maxThermalUtilizationPercentage is not None and not isinstance(
                     maxThermalUtilizationPercentage, aas.SubmodelElement
                 ):
-                    maxThermalUtilizationPercentage = (
-                        self.MaxThermalUtilizationPercentage(
-                            maxThermalUtilizationPercentage
-                        )
+                    maxThermalUtilizationPercentage = self.MaxThermalUtilizationPercentage(
+                        maxThermalUtilizationPercentage
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if maxThermalUtilization is not None and not isinstance(
-                    maxThermalUtilization, aas.SubmodelElement
-                ):
-                    maxThermalUtilization = self.MaxThermalUtilization(
-                        maxThermalUtilization
-                    )
+                if maxThermalUtilization is not None and not isinstance(maxThermalUtilization, aas.SubmodelElement):
+                    maxThermalUtilization = self.MaxThermalUtilization(maxThermalUtilization)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if averagePowerLosses is not None and not isinstance(
-                    averagePowerLosses, aas.SubmodelElement
-                ):
+                if averagePowerLosses is not None and not isinstance(averagePowerLosses, aas.SubmodelElement):
                     averagePowerLosses = self.AveragePowerLosses(averagePowerLosses)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12714,58 +11368,40 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if averageRegenerativePowerDcLink is not None and not isinstance(
                     averageRegenerativePowerDcLink, aas.SubmodelElement
                 ):
-                    averageRegenerativePowerDcLink = (
-                        self.AverageRegenerativePowerDcLink(
-                            averageRegenerativePowerDcLink
-                        )
-                    )
+                    averageRegenerativePowerDcLink = self.AverageRegenerativePowerDcLink(averageRegenerativePowerDcLink)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if maxRegenerativePowerDcLink is not None and not isinstance(
                     maxRegenerativePowerDcLink, aas.SubmodelElement
                 ):
-                    maxRegenerativePowerDcLink = self.MaxRegenerativePowerDcLink(
-                        maxRegenerativePowerDcLink
-                    )
+                    maxRegenerativePowerDcLink = self.MaxRegenerativePowerDcLink(maxRegenerativePowerDcLink)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if averageFeedInPowerDcLink is not None and not isinstance(
                     averageFeedInPowerDcLink, aas.SubmodelElement
                 ):
-                    averageFeedInPowerDcLink = self.AverageFeedInPowerDcLink(
-                        averageFeedInPowerDcLink
-                    )
+                    averageFeedInPowerDcLink = self.AverageFeedInPowerDcLink(averageFeedInPowerDcLink)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if averageFeedInPowerMains is not None and not isinstance(
-                    averageFeedInPowerMains, aas.SubmodelElement
-                ):
-                    averageFeedInPowerMains = self.AverageFeedInPowerMains(
-                        averageFeedInPowerMains
-                    )
+                if averageFeedInPowerMains is not None and not isinstance(averageFeedInPowerMains, aas.SubmodelElement):
+                    averageFeedInPowerMains = self.AverageFeedInPowerMains(averageFeedInPowerMains)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if maxFeedInPowerMains is not None and not isinstance(
-                    maxFeedInPowerMains, aas.SubmodelElement
-                ):
+                if maxFeedInPowerMains is not None and not isinstance(maxFeedInPowerMains, aas.SubmodelElement):
                     maxFeedInPowerMains = self.MaxFeedInPowerMains(maxFeedInPowerMains)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if continuousCurrent is not None and not isinstance(
-                    continuousCurrent, aas.SubmodelElement
-                ):
+                if continuousCurrent is not None and not isinstance(continuousCurrent, aas.SubmodelElement):
                     continuousCurrent = self.ContinuousCurrent(continuousCurrent)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if rmsOfPower is not None and not isinstance(
-                    rmsOfPower, aas.SubmodelElement
-                ):
+                if rmsOfPower is not None and not isinstance(rmsOfPower, aas.SubmodelElement):
                     rmsOfPower = self.RmsOfPower(rmsOfPower)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12773,33 +11409,20 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if maxTorqueUtilizationPercentage is not None and not isinstance(
                     maxTorqueUtilizationPercentage, aas.SubmodelElement
                 ):
-                    maxTorqueUtilizationPercentage = (
-                        self.MaxTorqueUtilizationPercentage(
-                            maxTorqueUtilizationPercentage
-                        )
-                    )
+                    maxTorqueUtilizationPercentage = self.MaxTorqueUtilizationPercentage(maxTorqueUtilizationPercentage)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if maxTorqueUtilization is not None and not isinstance(
-                    maxTorqueUtilization, aas.SubmodelElement
-                ):
-                    maxTorqueUtilization = self.MaxTorqueUtilization(
-                        maxTorqueUtilization
-                    )
+                if maxTorqueUtilization is not None and not isinstance(maxTorqueUtilization, aas.SubmodelElement):
+                    maxTorqueUtilization = self.MaxTorqueUtilization(maxTorqueUtilization)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if (
-                    maxRotationSpeedUtilizationPercentage is not None
-                    and not isinstance(
-                        maxRotationSpeedUtilizationPercentage, aas.SubmodelElement
-                    )
+                if maxRotationSpeedUtilizationPercentage is not None and not isinstance(
+                    maxRotationSpeedUtilizationPercentage, aas.SubmodelElement
                 ):
-                    maxRotationSpeedUtilizationPercentage = (
-                        self.MaxRotationSpeedUtilizationPercentage(
-                            maxRotationSpeedUtilizationPercentage
-                        )
+                    maxRotationSpeedUtilizationPercentage = self.MaxRotationSpeedUtilizationPercentage(
+                        maxRotationSpeedUtilizationPercentage
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12807,40 +11430,26 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if maxRotationSpeedUtilization is not None and not isinstance(
                     maxRotationSpeedUtilization, aas.SubmodelElement
                 ):
-                    maxRotationSpeedUtilization = self.MaxRotationSpeedUtilization(
-                        maxRotationSpeedUtilization
-                    )
+                    maxRotationSpeedUtilization = self.MaxRotationSpeedUtilization(maxRotationSpeedUtilization)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if effectiveUtilization is not None and not isinstance(
-                    effectiveUtilization, aas.SubmodelElement
-                ):
-                    effectiveUtilization = self.EffectiveUtilization(
-                        effectiveUtilization
-                    )
+                if effectiveUtilization is not None and not isinstance(effectiveUtilization, aas.SubmodelElement):
+                    effectiveUtilization = self.EffectiveUtilization(effectiveUtilization)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if calculatedServiceLife is not None and not isinstance(
-                    calculatedServiceLife, aas.SubmodelElement
-                ):
-                    calculatedServiceLife = self.CalculatedServiceLife(
-                        calculatedServiceLife
-                    )
+                if calculatedServiceLife is not None and not isinstance(calculatedServiceLife, aas.SubmodelElement):
+                    calculatedServiceLife = self.CalculatedServiceLife(calculatedServiceLife)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if massInertiaRatio is not None and not isinstance(
-                    massInertiaRatio, aas.SubmodelElement
-                ):
+                if massInertiaRatio is not None and not isinstance(massInertiaRatio, aas.SubmodelElement):
                     massInertiaRatio = self.MassInertiaRatio(massInertiaRatio)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if frequencyAtMaxSpeed is not None and not isinstance(
-                    frequencyAtMaxSpeed, aas.SubmodelElement
-                ):
+                if frequencyAtMaxSpeed is not None and not isinstance(frequencyAtMaxSpeed, aas.SubmodelElement):
                     frequencyAtMaxSpeed = self.FrequencyAtMaxSpeed(frequencyAtMaxSpeed)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12848,24 +11457,16 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if powerInRegenerativeOperation is not None and not isinstance(
                     powerInRegenerativeOperation, aas.SubmodelElement
                 ):
-                    powerInRegenerativeOperation = self.PowerInRegenerativeOperation(
-                        powerInRegenerativeOperation
-                    )
+                    powerInRegenerativeOperation = self.PowerInRegenerativeOperation(powerInRegenerativeOperation)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if powerInMotorOperation is not None and not isinstance(
-                    powerInMotorOperation, aas.SubmodelElement
-                ):
-                    powerInMotorOperation = self.PowerInMotorOperation(
-                        powerInMotorOperation
-                    )
+                if powerInMotorOperation is not None and not isinstance(powerInMotorOperation, aas.SubmodelElement):
+                    powerInMotorOperation = self.PowerInMotorOperation(powerInMotorOperation)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if rmsOfMotorTorque is not None and not isinstance(
-                    rmsOfMotorTorque, aas.SubmodelElement
-                ):
+                if rmsOfMotorTorque is not None and not isinstance(rmsOfMotorTorque, aas.SubmodelElement):
                     rmsOfMotorTorque = self.RmsOfMotorTorque(rmsOfMotorTorque)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12873,9 +11474,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if energyConsumtionPerCycle is not None and not isinstance(
                     energyConsumtionPerCycle, aas.SubmodelElement
                 ):
-                    energyConsumtionPerCycle = self.EnergyConsumtionPerCycle(
-                        energyConsumtionPerCycle
-                    )
+                    energyConsumtionPerCycle = self.EnergyConsumtionPerCycle(energyConsumtionPerCycle)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -12920,9 +11519,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -12954,20 +11551,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO677#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13003,20 +11593,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO676#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO676#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13051,20 +11634,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAW338#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW338#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13099,20 +11675,13 @@ class PowerDriveTrainSizing(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r" 0173-1#02-AAO227#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r" 0173-1#02-AAO227#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13159,17 +11728,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Anzahl Einzelteile",
-                                r"en": r"Quantity of parts",
-                            }
+                            dict_={r"de": r"Anzahl Einzelteile", r"en": r"Quantity of parts"}
                         )
 
                     if qualifier is None:
@@ -13216,9 +11780,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13266,9 +11828,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13295,24 +11855,16 @@ class PowerDriveTrainSizing(aas.Submodel):
             def __init__(
                 self,
                 manufacturerName: Optional[Union[str, ManufacturerName]] = None,
-                manufacturerArticleNumber: Optional[
-                    Union[str, ManufacturerArticleNumber]
-                ] = None,
+                manufacturerArticleNumber: Optional[Union[str, ManufacturerArticleNumber]] = None,
                 manufacturerProductDesignation: Optional[
                     Union[aas.LangStringSet, ManufacturerProductDesignation]
                 ] = None,
-                manufacturerOrderCode: Optional[
-                    Union[str, ManufacturerOrderCode]
-                ] = None,
+                manufacturerOrderCode: Optional[Union[str, ManufacturerOrderCode]] = None,
                 quantityOfParts: Optional[Union[int, QuantityOfParts]] = None,
                 bulkCount: Optional[Union[xsd.UnsignedLong, BulkCount]] = None,
-                energyConsumtionPerCycle: Optional[
-                    Union[xsd.Long, EnergyConsumtionPerCycle]
-                ] = None,
+                energyConsumtionPerCycle: Optional[Union[xsd.Long, EnergyConsumtionPerCycle]] = None,
                 id_short: Optional[str] = r"OtherComponent",
-                entity_type: Optional[
-                    aas.EntityType
-                ] = aas.EntityType.CO_MANAGED_ENTITY,
+                entity_type: Optional[aas.EntityType] = aas.EntityType.CO_MANAGED_ENTITY,
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -13330,15 +11882,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Komponente", r"en": r"Component"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Komponente", r"en": r"Component"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -13348,9 +11896,7 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if manufacturerName is not None and not isinstance(
-                    manufacturerName, aas.SubmodelElement
-                ):
+                if manufacturerName is not None and not isinstance(manufacturerName, aas.SubmodelElement):
                     manufacturerName = self.ManufacturerName(manufacturerName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -13358,42 +11904,28 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if manufacturerArticleNumber is not None and not isinstance(
                     manufacturerArticleNumber, aas.SubmodelElement
                 ):
-                    manufacturerArticleNumber = self.ManufacturerArticleNumber(
-                        manufacturerArticleNumber
-                    )
+                    manufacturerArticleNumber = self.ManufacturerArticleNumber(manufacturerArticleNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if manufacturerProductDesignation is not None and not isinstance(
                     manufacturerProductDesignation, aas.SubmodelElement
                 ):
-                    manufacturerProductDesignation = (
-                        self.ManufacturerProductDesignation(
-                            manufacturerProductDesignation
-                        )
-                    )
+                    manufacturerProductDesignation = self.ManufacturerProductDesignation(manufacturerProductDesignation)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if manufacturerOrderCode is not None and not isinstance(
-                    manufacturerOrderCode, aas.SubmodelElement
-                ):
-                    manufacturerOrderCode = self.ManufacturerOrderCode(
-                        manufacturerOrderCode
-                    )
+                if manufacturerOrderCode is not None and not isinstance(manufacturerOrderCode, aas.SubmodelElement):
+                    manufacturerOrderCode = self.ManufacturerOrderCode(manufacturerOrderCode)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if quantityOfParts is not None and not isinstance(
-                    quantityOfParts, aas.SubmodelElement
-                ):
+                if quantityOfParts is not None and not isinstance(quantityOfParts, aas.SubmodelElement):
                     quantityOfParts = self.QuantityOfParts(quantityOfParts)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if bulkCount is not None and not isinstance(
-                    bulkCount, aas.SubmodelElement
-                ):
+                if bulkCount is not None and not isinstance(bulkCount, aas.SubmodelElement):
                     bulkCount = self.BulkCount(bulkCount)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -13401,9 +11933,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if energyConsumtionPerCycle is not None and not isinstance(
                     energyConsumtionPerCycle, aas.SubmodelElement
                 ):
-                    energyConsumtionPerCycle = self.EnergyConsumtionPerCycle(
-                        energyConsumtionPerCycle
-                    )
+                    energyConsumtionPerCycle = self.EnergyConsumtionPerCycle(energyConsumtionPerCycle)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -13426,9 +11956,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -13473,17 +12001,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Kritikalität der Meldung",
-                                    r"en": r"Criticality of message",
-                                }
+                                dict_={r"de": r"Kritikalität der Meldung", r"en": r"Criticality of message"}
                             )
 
                         if qualifier is None:
@@ -13529,17 +12052,12 @@ class PowerDriveTrainSizing(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Nachrichtentext",
-                                    r"en": r"Message text",
-                                }
+                                dict_={r"de": r"Nachrichtentext", r"en": r"Message text"}
                             )
 
                         if qualifier is None:
@@ -13582,15 +12100,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Nachricht", r"en": r"Message"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"de": r"Nachricht", r"en": r"Message"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -13600,18 +12114,12 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if criticalityOfMessage is not None and not isinstance(
-                        criticalityOfMessage, aas.SubmodelElement
-                    ):
-                        criticalityOfMessage = self.CriticalityOfMessage(
-                            criticalityOfMessage
-                        )
+                    if criticalityOfMessage is not None and not isinstance(criticalityOfMessage, aas.SubmodelElement):
+                        criticalityOfMessage = self.CriticalityOfMessage(criticalityOfMessage)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if messageText is not None and not isinstance(
-                        messageText, aas.SubmodelElement
-                    ):
+                    if messageText is not None and not isinstance(messageText, aas.SubmodelElement):
                         messageText = self.MessageText(messageText)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -13627,9 +12135,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -13663,15 +12169,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Nachrichten", r"en": r"Messages"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Nachrichten", r"en": r"Messages"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -13696,9 +12198,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -13735,15 +12235,11 @@ class PowerDriveTrainSizing(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Textaussage", r"en": r"Text statement"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Textaussage", r"en": r"Text statement"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -13788,9 +12284,7 @@ class PowerDriveTrainSizing(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -13814,20 +12308,12 @@ class PowerDriveTrainSizing(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if textStatement is not None and not isinstance(
-                textStatement, aas.SubmodelElement
-            ):
+            if textStatement is not None and not isinstance(textStatement, aas.SubmodelElement):
                 textStatement = self.TextStatement(textStatement)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                overallSystem,
-                mainComponent,
-                otherComponent,
-                messages,
-                textStatement,
-            ]:
+            for se_arg in [overallSystem, mainComponent, otherComponent, messages, textStatement]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -13838,9 +12324,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -13868,12 +12352,7 @@ class PowerDriveTrainSizing(aas.Submodel):
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/1/0",
-                ),
-            ),
+            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/1/0"),),
             type_=aas.Submodel,
             referred_semantic_id=None,
         ),
@@ -13893,11 +12372,7 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -13908,12 +12383,7 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
-        for se_arg in [
-            sizingProjectInformation,
-            applicationRequirements,
-            transformationMechanism,
-            sizingResult,
-        ]:
+        for se_arg in [sizingProjectInformation, applicationRequirements, transformationMechanism, sizingResult]:
             if se_arg is None:
                 continue
             elif isinstance(se_arg, aas.SubmodelElement):
@@ -13924,9 +12394,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

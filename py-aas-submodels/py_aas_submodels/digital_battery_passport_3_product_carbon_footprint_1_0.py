@@ -23,20 +23,13 @@ class CarbonFootprint(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABG854#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG854#003"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -70,20 +63,11 @@ class CarbonFootprint(aas.Submodel):
 
                 def __init__(
                     self,
-                    pcfcalculationmethods_items: Iterable[
-                        Union[str, Pcfcalculationmethods_item]
-                    ],
+                    pcfcalculationmethods_items: Iterable[Union[str, Pcfcalculationmethods_item]],
                     id_short: Optional[str] = r"PcfCalculationMethods",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABG854#003",
-                            ),
-                        ),
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG854#003"),),
                         referred_semantic_id=None,
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
@@ -113,17 +97,12 @@ class CarbonFootprint(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Folgenabschätzungsmethoden",
-                                r"en": r"PCF calculation methods",
-                            }
+                            dict_={r"de": r"Folgenabschätzungsmethoden", r"en": r"PCF calculation methods"}
                         )
 
                     if description is None:
@@ -142,18 +121,12 @@ class CarbonFootprint(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(pcfcalculationmethods_items, str):
-                        raise TypeError(
-                            "pcfcalculationmethods_items takes several elements, got a str"
-                        )
+                        raise TypeError("pcfcalculationmethods_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if pcfcalculationmethods_items:
                         pcfcalculationmethods_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Pcfcalculationmethods_item(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.Pcfcalculationmethods_item(i)
                             for i in pcfcalculationmethods_items
                         ]
 
@@ -167,9 +140,7 @@ class CarbonFootprint(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -236,15 +207,9 @@ class CarbonFootprint(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -268,12 +233,7 @@ class CarbonFootprint(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABG855#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG855#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -289,9 +249,7 @@ class CarbonFootprint(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -301,9 +259,7 @@ class CarbonFootprint(aas.Submodel):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"DIN DKE Spec 99100 chapter reference: 6.3.2"
-                            }
+                            dict_={r"en": r"DIN DKE Spec 99100 chapter reference: 6.3.2"}
                         )
 
                     if qualifier is None:
@@ -339,12 +295,7 @@ class CarbonFootprint(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABG856#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG856#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -360,9 +311,7 @@ class CarbonFootprint(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -413,12 +362,7 @@ class CarbonFootprint(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABG857#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG857#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -434,9 +378,7 @@ class CarbonFootprint(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -489,28 +431,18 @@ class CarbonFootprint(aas.Submodel):
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABG858#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG858#004"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Lebenszyklusphase",
-                                    r"en": r"life cycle phase",
-                                }
+                                dict_={r"de": r"Lebenszyklusphase", r"en": r"life cycle phase"}
                             )
 
                         if qualifier is None:
@@ -539,15 +471,8 @@ class CarbonFootprint(aas.Submodel):
                     lifecyclephases_items: Iterable[Union[str, Lifecyclephases_item]],
                     id_short: Optional[str] = r"LifeCyclePhases",
                     type_value_list_element: aas.SubmodelElement = aas.Property,
-                    semantic_id_list_element: Optional[
-                        aas.Reference
-                    ] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABG858#004",
-                            ),
-                        ),
+                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG858#004"),),
                         referred_semantic_id=None,
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
@@ -577,26 +502,16 @@ class CarbonFootprint(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABG858#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG858#003"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Lebenszyklusphasen",
-                                r"en": r"life cycle phases",
-                            }
+                            dict_={r"de": r"Lebenszyklusphasen", r"en": r"life cycle phases"}
                         )
 
                     if description is None:
@@ -614,18 +529,12 @@ class CarbonFootprint(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(lifecyclephases_items, str):
-                        raise TypeError(
-                            "lifecyclephases_items takes several elements, got a str"
-                        )
+                        raise TypeError("lifecyclephases_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if lifecyclephases_items:
                         lifecyclephases_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Lifecyclephases_item(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.Lifecyclephases_item(i)
                             for i in lifecyclephases_items
                         ]
 
@@ -639,9 +548,7 @@ class CarbonFootprint(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -708,15 +615,9 @@ class CarbonFootprint(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -751,15 +652,11 @@ class CarbonFootprint(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"performance class"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"performance class"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -808,24 +705,15 @@ class CarbonFootprint(aas.Submodel):
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
                             aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO099#004",
-                                    ),
-                                ),
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO099#004"),),
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"document identifier"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -880,9 +768,7 @@ class CarbonFootprint(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -898,9 +784,7 @@ class CarbonFootprint(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(weblinktopubliccarbonfootprintstudy_items, str):
-                        raise TypeError(
-                            "weblinktopubliccarbonfootprintstudy_items takes several elements, got a str"
-                        )
+                        raise TypeError("weblinktopubliccarbonfootprintstudy_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if weblinktopubliccarbonfootprintstudy_items:
@@ -923,9 +807,7 @@ class CarbonFootprint(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -992,15 +874,9 @@ class CarbonFootprint(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -1015,30 +891,15 @@ class CarbonFootprint(aas.Submodel):
             def __init__(
                 self,
                 pcfCalculationMethods: Union[
-                    Iterable[
-                        Union[str, PcfCalculationMethods.Pcfcalculationmethods_item]
-                    ],
-                    PcfCalculationMethods,
+                    Iterable[Union[str, PcfCalculationMethods.Pcfcalculationmethods_item]], PcfCalculationMethods
                 ],
                 pcfCO2eq: Union[xsd.Decimal, PcfCO2eq],
-                referenceImpactUnitForCalculation: Union[
-                    str, ReferenceImpactUnitForCalculation
-                ],
-                quantityOfMeasureForCalculation: Union[
-                    float, QuantityOfMeasureForCalculation
-                ],
-                lifeCyclePhases: Union[
-                    Iterable[Union[str, LifeCyclePhases.Lifecyclephases_item]],
-                    LifeCyclePhases,
-                ],
+                referenceImpactUnitForCalculation: Union[str, ReferenceImpactUnitForCalculation],
+                quantityOfMeasureForCalculation: Union[float, QuantityOfMeasureForCalculation],
+                lifeCyclePhases: Union[Iterable[Union[str, LifeCyclePhases.Lifecyclephases_item]], LifeCyclePhases],
                 performanceClass: Union[str, PerformanceClass],
                 webLinkToPublicCarbonFootprintStudy: Union[
-                    Iterable[
-                        Union[
-                            str,
-                            WebLinkToPublicCarbonFootprintStudy.Weblinktopubliccarbonfootprintstudy_item,
-                        ]
-                    ],
+                    Iterable[Union[str, WebLinkToPublicCarbonFootprintStudy.Weblinktopubliccarbonfootprintstudy_item]],
                     WebLinkToPublicCarbonFootprintStudy,
                 ],
                 id_short: Optional[str] = None,
@@ -1067,17 +928,12 @@ class CarbonFootprint(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Produkt CO2-Fußabdruck",
-                            r"en": r"product carbon footprint",
-                        }
+                        dict_={r"de": r"Produkt CO2-Fußabdruck", r"en": r"product carbon footprint"}
                     )
 
                 if description is None:
@@ -1095,24 +951,16 @@ class CarbonFootprint(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(pcfCalculationMethods, str):
-                    raise TypeError(
-                        "pcfCalculationMethods takes several elements, got a str"
-                    )
+                    raise TypeError("pcfCalculationMethods takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if pcfCalculationMethods is not None and not isinstance(
-                    pcfCalculationMethods, aas.SubmodelElement
-                ):
-                    pcfCalculationMethods = self.PcfCalculationMethods(
-                        pcfCalculationMethods
-                    )
+                if pcfCalculationMethods is not None and not isinstance(pcfCalculationMethods, aas.SubmodelElement):
+                    pcfCalculationMethods = self.PcfCalculationMethods(pcfCalculationMethods)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if pcfCO2eq is not None and not isinstance(
-                    pcfCO2eq, aas.SubmodelElement
-                ):
+                if pcfCO2eq is not None and not isinstance(pcfCO2eq, aas.SubmodelElement):
                     pcfCO2eq = self.PcfCO2eq(pcfCO2eq)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1120,10 +968,8 @@ class CarbonFootprint(aas.Submodel):
                 if referenceImpactUnitForCalculation is not None and not isinstance(
                     referenceImpactUnitForCalculation, aas.SubmodelElement
                 ):
-                    referenceImpactUnitForCalculation = (
-                        self.ReferenceImpactUnitForCalculation(
-                            referenceImpactUnitForCalculation
-                        )
+                    referenceImpactUnitForCalculation = self.ReferenceImpactUnitForCalculation(
+                        referenceImpactUnitForCalculation
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1131,10 +977,8 @@ class CarbonFootprint(aas.Submodel):
                 if quantityOfMeasureForCalculation is not None and not isinstance(
                     quantityOfMeasureForCalculation, aas.SubmodelElement
                 ):
-                    quantityOfMeasureForCalculation = (
-                        self.QuantityOfMeasureForCalculation(
-                            quantityOfMeasureForCalculation
-                        )
+                    quantityOfMeasureForCalculation = self.QuantityOfMeasureForCalculation(
+                        quantityOfMeasureForCalculation
                     )
 
                 # A str would be split into its characters
@@ -1143,33 +987,25 @@ class CarbonFootprint(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if lifeCyclePhases is not None and not isinstance(
-                    lifeCyclePhases, aas.SubmodelElement
-                ):
+                if lifeCyclePhases is not None and not isinstance(lifeCyclePhases, aas.SubmodelElement):
                     lifeCyclePhases = self.LifeCyclePhases(lifeCyclePhases)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if performanceClass is not None and not isinstance(
-                    performanceClass, aas.SubmodelElement
-                ):
+                if performanceClass is not None and not isinstance(performanceClass, aas.SubmodelElement):
                     performanceClass = self.PerformanceClass(performanceClass)
 
                 # A str would be split into its characters
                 if isinstance(webLinkToPublicCarbonFootprintStudy, str):
-                    raise TypeError(
-                        "webLinkToPublicCarbonFootprintStudy takes several elements, got a str"
-                    )
+                    raise TypeError("webLinkToPublicCarbonFootprintStudy takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if webLinkToPublicCarbonFootprintStudy is not None and not isinstance(
                     webLinkToPublicCarbonFootprintStudy, aas.SubmodelElement
                 ):
-                    webLinkToPublicCarbonFootprintStudy = (
-                        self.WebLinkToPublicCarbonFootprintStudy(
-                            webLinkToPublicCarbonFootprintStudy
-                        )
+                    webLinkToPublicCarbonFootprintStudy = self.WebLinkToPublicCarbonFootprintStudy(
+                        webLinkToPublicCarbonFootprintStudy
                     )
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1193,9 +1029,7 @@ class CarbonFootprint(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1251,17 +1085,12 @@ class CarbonFootprint(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Produkt CO2-Fußabdruck",
-                        r"en": r"product carbon footprints",
-                    }
+                    dict_={r"de": r"Produkt CO2-Fußabdruck", r"en": r"product carbon footprints"}
                 )
 
             if description is None:
@@ -1279,9 +1108,7 @@ class CarbonFootprint(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(productcarbonfootprints_items, str):
-                raise TypeError(
-                    "productcarbonfootprints_items takes several elements, got a str"
-                )
+                raise TypeError("productcarbonfootprints_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1293,9 +1120,7 @@ class CarbonFootprint(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1364,10 +1189,7 @@ class CarbonFootprint(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -1383,8 +1205,7 @@ class CarbonFootprint(aas.Submodel):
         self,
         id_: str,
         productCarbonFootprints: Union[
-            Iterable[ProductCarbonFootprints.Productcarbonfootprints_item],
-            ProductCarbonFootprints,
+            Iterable[ProductCarbonFootprints.Productcarbonfootprints_item], ProductCarbonFootprints
         ],
         id_short: Optional[str] = r"CarbonFootprint",
         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -1418,15 +1239,11 @@ class CarbonFootprint(aas.Submodel):
     ):
 
         if display_name is None:
-            display_name = aas.MultiLanguageNameType(
-                dict_={r"de": r"C02 Footprint", r"en": r"carbon footprint"}
-            )
+            display_name = aas.MultiLanguageNameType(dict_={r"de": r"C02 Footprint", r"en": r"carbon footprint"})
 
         if description is None:
             description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The Submodel provides the means to access the Carbon Footprint of the asset."
-                }
+                dict_={r"en": r"The Submodel provides the means to access the Carbon Footprint of the asset."}
             )
 
         if administration is None:
@@ -1450,12 +1267,8 @@ class CarbonFootprint(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if productCarbonFootprints is not None and not isinstance(
-            productCarbonFootprints, aas.SubmodelElement
-        ):
-            productCarbonFootprints = self.ProductCarbonFootprints(
-                productCarbonFootprints
-            )
+        if productCarbonFootprints is not None and not isinstance(productCarbonFootprints, aas.SubmodelElement):
+            productCarbonFootprints = self.ProductCarbonFootprints(productCarbonFootprints)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
@@ -1470,9 +1283,7 @@ class CarbonFootprint(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

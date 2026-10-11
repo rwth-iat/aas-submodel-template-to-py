@@ -30,9 +30,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -78,9 +76,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -125,9 +121,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -173,9 +167,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -222,9 +214,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -271,9 +261,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -320,9 +308,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -369,9 +355,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -417,9 +401,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -466,9 +448,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -493,9 +473,7 @@ class CompanyData(aas.Submodel):
 
             def __init__(
                 self,
-                mainproductgroups_items: Iterable[
-                    Union[aas.LangStringSet, Mainproductgroups_item]
-                ],
+                mainproductgroups_items: Iterable[Union[aas.LangStringSet, Mainproductgroups_item]],
                 id_short: Optional[str] = r"MainProductGroups",
                 type_value_list_element: aas.SubmodelElement = aas.MultiLanguageProperty,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -516,9 +494,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -529,18 +505,12 @@ class CompanyData(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(mainproductgroups_items, str):
-                    raise TypeError(
-                        "mainproductgroups_items takes several elements, got a str"
-                    )
+                    raise TypeError("mainproductgroups_items takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if mainproductgroups_items:
                     mainproductgroups_items = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.Mainproductgroups_item(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.Mainproductgroups_item(i)
                         for i in mainproductgroups_items
                     ]
 
@@ -554,9 +524,7 @@ class CompanyData(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -623,15 +591,9 @@ class CompanyData(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -667,9 +629,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -715,9 +675,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -728,19 +686,12 @@ class CompanyData(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(industries_items, str):
-                    raise TypeError(
-                        "industries_items takes several elements, got a str"
-                    )
+                    raise TypeError("industries_items takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if industries_items:
                     industries_items = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.Industries_item(i)
-                        )
-                        for i in industries_items
+                        i if isinstance(i, aas.SubmodelElement) else self.Industries_item(i) for i in industries_items
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -753,9 +704,7 @@ class CompanyData(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -822,15 +771,9 @@ class CompanyData(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -853,20 +796,13 @@ class CompanyData(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI776#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI776#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -892,33 +828,19 @@ class CompanyData(aas.Submodel):
         def __init__(
             self,
             companyName: Union[str, CompanyName],
-            companyDescription: Optional[
-                Union[aas.LangStringSet, CompanyDescription]
-            ] = None,
+            companyDescription: Optional[Union[aas.LangStringSet, CompanyDescription]] = None,
             homepageURL: Optional[Union[aas.LangStringSet, HomepageURL]] = None,
             vATNumber: Optional[Union[str, VATNumber]] = None,
             taxNumber: Optional[Union[str, TaxNumber]] = None,
             dUNS: Optional[Union[str, DUNS]] = None,
-            commercialRegisterNumber: Optional[
-                Union[str, CommercialRegisterNumber]
-            ] = None,
+            commercialRegisterNumber: Optional[Union[str, CommercialRegisterNumber]] = None,
             foundingYear: Optional[Union[xsd.GYear, FoundingYear]] = None,
             orderCurrency: Optional[Union[aas.LangStringSet, OrderCurrency]] = None,
             mainProductGroups: Optional[
-                Union[
-                    Iterable[
-                        Union[
-                            aas.LangStringSet, MainProductGroups.Mainproductgroups_item
-                        ]
-                    ],
-                    MainProductGroups,
-                ]
+                Union[Iterable[Union[aas.LangStringSet, MainProductGroups.Mainproductgroups_item]], MainProductGroups]
             ] = None,
             industries: Optional[
-                Union[
-                    Iterable[Union[aas.LangStringSet, Industries.Industries_item]],
-                    Industries,
-                ]
+                Union[Iterable[Union[aas.LangStringSet, Industries.Industries_item]], Industries]
             ] = None,
             companyLogo: Optional[CompanyLogo] = None,
             id_short: Optional[str] = r"CompanyIdentification",
@@ -938,9 +860,7 @@ class CompanyData(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -951,23 +871,17 @@ class CompanyData(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if companyName is not None and not isinstance(
-                companyName, aas.SubmodelElement
-            ):
+            if companyName is not None and not isinstance(companyName, aas.SubmodelElement):
                 companyName = self.CompanyName(companyName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if companyDescription is not None and not isinstance(
-                companyDescription, aas.SubmodelElement
-            ):
+            if companyDescription is not None and not isinstance(companyDescription, aas.SubmodelElement):
                 companyDescription = self.CompanyDescription(companyDescription)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if homepageURL is not None and not isinstance(
-                homepageURL, aas.SubmodelElement
-            ):
+            if homepageURL is not None and not isinstance(homepageURL, aas.SubmodelElement):
                 homepageURL = self.HomepageURL(homepageURL)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -987,25 +901,17 @@ class CompanyData(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if commercialRegisterNumber is not None and not isinstance(
-                commercialRegisterNumber, aas.SubmodelElement
-            ):
-                commercialRegisterNumber = self.CommercialRegisterNumber(
-                    commercialRegisterNumber
-                )
+            if commercialRegisterNumber is not None and not isinstance(commercialRegisterNumber, aas.SubmodelElement):
+                commercialRegisterNumber = self.CommercialRegisterNumber(commercialRegisterNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if foundingYear is not None and not isinstance(
-                foundingYear, aas.SubmodelElement
-            ):
+            if foundingYear is not None and not isinstance(foundingYear, aas.SubmodelElement):
                 foundingYear = self.FoundingYear(foundingYear)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if orderCurrency is not None and not isinstance(
-                orderCurrency, aas.SubmodelElement
-            ):
+            if orderCurrency is not None and not isinstance(orderCurrency, aas.SubmodelElement):
                 orderCurrency = self.OrderCurrency(orderCurrency)
 
             # A str would be split into its characters
@@ -1014,9 +920,7 @@ class CompanyData(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if mainProductGroups is not None and not isinstance(
-                mainProductGroups, aas.SubmodelElement
-            ):
+            if mainProductGroups is not None and not isinstance(mainProductGroups, aas.SubmodelElement):
                 mainProductGroups = self.MainProductGroups(mainProductGroups)
 
             # A str would be split into its characters
@@ -1025,9 +929,7 @@ class CompanyData(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if industries is not None and not isinstance(
-                industries, aas.SubmodelElement
-            ):
+            if industries is not None and not isinstance(industries, aas.SubmodelElement):
                 industries = self.Industries(industries)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1056,9 +958,7 @@ class CompanyData(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1094,9 +994,7 @@ class CompanyData(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -1145,9 +1043,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1194,9 +1090,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1243,9 +1137,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1292,9 +1184,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1340,9 +1230,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1353,16 +1241,12 @@ class CompanyData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if accountHolder is not None and not isinstance(
-                    accountHolder, aas.SubmodelElement
-                ):
+                if accountHolder is not None and not isinstance(accountHolder, aas.SubmodelElement):
                     accountHolder = self.AccountHolder(accountHolder)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if bankAccountType is not None and not isinstance(
-                    bankAccountType, aas.SubmodelElement
-                ):
+                if bankAccountType is not None and not isinstance(bankAccountType, aas.SubmodelElement):
                     bankAccountType = self.BankAccountType(bankAccountType)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1388,9 +1272,7 @@ class CompanyData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1436,9 +1318,7 @@ class CompanyData(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -1461,9 +1341,7 @@ class CompanyData(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1532,10 +1410,7 @@ class CompanyData(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -1576,9 +1451,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1625,9 +1498,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1672,9 +1543,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1717,9 +1586,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1730,23 +1597,17 @@ class CompanyData(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if eRPName is not None and not isinstance(
-                        eRPName, aas.SubmodelElement
-                    ):
+                    if eRPName is not None and not isinstance(eRPName, aas.SubmodelElement):
                         eRPName = self.ERPName(eRPName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if eRPVersion is not None and not isinstance(
-                        eRPVersion, aas.SubmodelElement
-                    ):
+                    if eRPVersion is not None and not isinstance(eRPVersion, aas.SubmodelElement):
                         eRPVersion = self.ERPVersion(eRPVersion)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if eRPReference is not None and not isinstance(
-                        eRPReference, aas.SubmodelElement
-                    ):
+                    if eRPReference is not None and not isinstance(eRPReference, aas.SubmodelElement):
                         eRPReference = self.ERPReference(eRPReference)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1762,9 +1623,7 @@ class CompanyData(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1804,9 +1663,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1851,9 +1708,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1878,9 +1733,7 @@ class CompanyData(aas.Submodel):
                 def __init__(
                     self,
                     emailSystemName: Optional[Union[str, EmailSystemName]] = None,
-                    emailSystemReference: Optional[
-                        Union[aas.Reference, EmailSystemReference]
-                    ] = None,
+                    emailSystemReference: Optional[Union[aas.Reference, EmailSystemReference]] = None,
                     id_short: Optional[str] = r"EmailSystem",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -1897,9 +1750,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1910,19 +1761,13 @@ class CompanyData(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if emailSystemName is not None and not isinstance(
-                        emailSystemName, aas.SubmodelElement
-                    ):
+                    if emailSystemName is not None and not isinstance(emailSystemName, aas.SubmodelElement):
                         emailSystemName = self.EmailSystemName(emailSystemName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if emailSystemReference is not None and not isinstance(
-                        emailSystemReference, aas.SubmodelElement
-                    ):
-                        emailSystemReference = self.EmailSystemReference(
-                            emailSystemReference
-                        )
+                    if emailSystemReference is not None and not isinstance(emailSystemReference, aas.SubmodelElement):
+                        emailSystemReference = self.EmailSystemReference(emailSystemReference)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -1937,9 +1782,7 @@ class CompanyData(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1979,9 +1822,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2028,9 +1869,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2041,19 +1880,12 @@ class CompanyData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(cadtools_items, str):
-                        raise TypeError(
-                            "cadtools_items takes several elements, got a str"
-                        )
+                        raise TypeError("cadtools_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if cadtools_items:
                         cadtools_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Cadtools_item(i)
-                            )
-                            for i in cadtools_items
+                            i if isinstance(i, aas.SubmodelElement) else self.Cadtools_item(i) for i in cadtools_items
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2066,9 +1898,7 @@ class CompanyData(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2135,15 +1965,9 @@ class CompanyData(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -2159,9 +1983,7 @@ class CompanyData(aas.Submodel):
                 self,
                 eRPSystem: Optional[ERPSystem] = None,
                 emailSystem: Optional[EmailSystem] = None,
-                cADTools: Optional[
-                    Union[Iterable[Union[str, CADTools.Cadtools_item]], CADTools]
-                ] = None,
+                cADTools: Optional[Union[Iterable[Union[str, CADTools.Cadtools_item]], CADTools]] = None,
                 id_short: Optional[str] = r"CompanySystems",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -2178,9 +2000,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2195,9 +2015,7 @@ class CompanyData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if cADTools is not None and not isinstance(
-                    cADTools, aas.SubmodelElement
-                ):
+                if cADTools is not None and not isinstance(cADTools, aas.SubmodelElement):
                     cADTools = self.CADTools(cADTools)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2213,9 +2031,7 @@ class CompanyData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2255,9 +2071,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2304,9 +2118,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2353,9 +2165,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2402,9 +2212,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2453,9 +2261,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2502,9 +2308,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2515,18 +2319,12 @@ class CompanyData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(cadformats_items, str):
-                        raise TypeError(
-                            "cadformats_items takes several elements, got a str"
-                        )
+                        raise TypeError("cadformats_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if cadformats_items:
                         cadformats_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Cadformats_item(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.Cadformats_item(i)
                             for i in cadformats_items
                         ]
 
@@ -2540,9 +2338,7 @@ class CompanyData(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2609,15 +2405,9 @@ class CompanyData(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -2631,17 +2421,11 @@ class CompanyData(aas.Submodel):
 
             def __init__(
                 self,
-                encryptedDataTransmission: Optional[
-                    Union[bool, EncryptedDataTransmission]
-                ] = None,
-                outgoingEInvoiceFormat: Optional[
-                    Union[str, OutgoingEInvoiceFormat]
-                ] = None,
+                encryptedDataTransmission: Optional[Union[bool, EncryptedDataTransmission]] = None,
+                outgoingEInvoiceFormat: Optional[Union[str, OutgoingEInvoiceFormat]] = None,
                 eDI: Optional[Union[bool, EDI]] = None,
                 webEDI: Optional[Union[bool, WebEDI]] = None,
-                cADFormats: Optional[
-                    Union[Iterable[Union[str, CADFormats.Cadformats_item]], CADFormats]
-                ] = None,
+                cADFormats: Optional[Union[Iterable[Union[str, CADFormats.Cadformats_item]], CADFormats]] = None,
                 id_short: Optional[str] = r"DataExchange",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -2658,9 +2442,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2674,18 +2456,12 @@ class CompanyData(aas.Submodel):
                 if encryptedDataTransmission is not None and not isinstance(
                     encryptedDataTransmission, aas.SubmodelElement
                 ):
-                    encryptedDataTransmission = self.EncryptedDataTransmission(
-                        encryptedDataTransmission
-                    )
+                    encryptedDataTransmission = self.EncryptedDataTransmission(encryptedDataTransmission)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if outgoingEInvoiceFormat is not None and not isinstance(
-                    outgoingEInvoiceFormat, aas.SubmodelElement
-                ):
-                    outgoingEInvoiceFormat = self.OutgoingEInvoiceFormat(
-                        outgoingEInvoiceFormat
-                    )
+                if outgoingEInvoiceFormat is not None and not isinstance(outgoingEInvoiceFormat, aas.SubmodelElement):
+                    outgoingEInvoiceFormat = self.OutgoingEInvoiceFormat(outgoingEInvoiceFormat)
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -2703,20 +2479,12 @@ class CompanyData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if cADFormats is not None and not isinstance(
-                    cADFormats, aas.SubmodelElement
-                ):
+                if cADFormats is not None and not isinstance(cADFormats, aas.SubmodelElement):
                     cADFormats = self.CADFormats(cADFormats)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    encryptedDataTransmission,
-                    outgoingEInvoiceFormat,
-                    eDI,
-                    webEDI,
-                    cADFormats,
-                ]:
+                for se_arg in [encryptedDataTransmission, outgoingEInvoiceFormat, eDI, webEDI, cADFormats]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -2727,9 +2495,7 @@ class CompanyData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2764,9 +2530,7 @@ class CompanyData(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -2788,9 +2552,7 @@ class CompanyData(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2828,9 +2590,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2877,9 +2637,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2926,9 +2684,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2975,9 +2731,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3024,9 +2778,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3073,9 +2825,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3122,9 +2872,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3171,9 +2919,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3222,9 +2968,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3259,9 +3003,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3273,9 +3015,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3308,9 +3048,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3322,9 +3060,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3350,12 +3086,8 @@ class CompanyData(aas.Submodel):
 
                     def __init__(
                         self,
-                        referenceToCustomer: Optional[
-                            Union[aas.Reference, ReferenceToCustomer]
-                        ] = None,
-                        customerWebsite: Optional[
-                            Union[xsd.AnyURI, CustomerWebsite]
-                        ] = None,
+                        referenceToCustomer: Optional[Union[aas.Reference, ReferenceToCustomer]] = None,
+                        customerWebsite: Optional[Union[xsd.AnyURI, CustomerWebsite]] = None,
                         id_short: Optional[str] = r"ReferenceCustomer",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -3372,9 +3104,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3385,18 +3115,12 @@ class CompanyData(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if referenceToCustomer is not None and not isinstance(
-                            referenceToCustomer, aas.SubmodelElement
-                        ):
-                            referenceToCustomer = self.ReferenceToCustomer(
-                                referenceToCustomer
-                            )
+                        if referenceToCustomer is not None and not isinstance(referenceToCustomer, aas.SubmodelElement):
+                            referenceToCustomer = self.ReferenceToCustomer(referenceToCustomer)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if customerWebsite is not None and not isinstance(
-                            customerWebsite, aas.SubmodelElement
-                        ):
+                        if customerWebsite is not None and not isinstance(customerWebsite, aas.SubmodelElement):
                             customerWebsite = self.CustomerWebsite(customerWebsite)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -3412,9 +3136,7 @@ class CompanyData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -3431,9 +3153,7 @@ class CompanyData(aas.Submodel):
 
                 def __init__(
                     self,
-                    totalNumberCustomers: Optional[
-                        Union[xsd.PositiveInteger, TotalNumberCustomers]
-                    ] = None,
+                    totalNumberCustomers: Optional[Union[xsd.PositiveInteger, TotalNumberCustomers]] = None,
                     referenceCustomer: Optional[Iterable[ReferenceCustomer]] = None,
                     id_short: Optional[str] = r"Customers",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3451,9 +3171,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3464,18 +3182,12 @@ class CompanyData(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if totalNumberCustomers is not None and not isinstance(
-                        totalNumberCustomers, aas.SubmodelElement
-                    ):
-                        totalNumberCustomers = self.TotalNumberCustomers(
-                            totalNumberCustomers
-                        )
+                    if totalNumberCustomers is not None and not isinstance(totalNumberCustomers, aas.SubmodelElement):
+                        totalNumberCustomers = self.TotalNumberCustomers(totalNumberCustomers)
 
                     # A str would be split into its characters
                     if isinstance(referenceCustomer, str):
-                        raise TypeError(
-                            "referenceCustomer takes several elements, got a str"
-                        )
+                        raise TypeError("referenceCustomer takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -3490,9 +3202,7 @@ class CompanyData(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3530,9 +3240,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3578,9 +3286,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3613,9 +3319,7 @@ class CompanyData(aas.Submodel):
                 investmentVolume: Optional[Union[str, InvestmentVolume]] = None,
                 equityRatio: Optional[Union[str, EquityRatio]] = None,
                 customers: Optional[Customers] = None,
-                totalEmployees: Optional[
-                    Union[xsd.PositiveInteger, TotalEmployees]
-                ] = None,
+                totalEmployees: Optional[Union[xsd.PositiveInteger, TotalEmployees]] = None,
                 consolidatedDataFile: Optional[ConsolidatedDataFile] = None,
                 id_short: Optional[str] = r"BusinessReportFigure",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3633,9 +3337,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -3646,62 +3348,42 @@ class CompanyData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if financialYear is not None and not isinstance(
-                    financialYear, aas.SubmodelElement
-                ):
+                if financialYear is not None and not isinstance(financialYear, aas.SubmodelElement):
                     financialYear = self.FinancialYear(financialYear)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if beginOfReporttimeFrame is not None and not isinstance(
-                    beginOfReporttimeFrame, aas.SubmodelElement
-                ):
-                    beginOfReporttimeFrame = self.BeginOfReporttimeFrame(
-                        beginOfReporttimeFrame
-                    )
+                if beginOfReporttimeFrame is not None and not isinstance(beginOfReporttimeFrame, aas.SubmodelElement):
+                    beginOfReporttimeFrame = self.BeginOfReporttimeFrame(beginOfReporttimeFrame)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if endOfReporttimeFrame is not None and not isinstance(
-                    endOfReporttimeFrame, aas.SubmodelElement
-                ):
-                    endOfReporttimeFrame = self.EndOfReporttimeFrame(
-                        endOfReporttimeFrame
-                    )
+                if endOfReporttimeFrame is not None and not isinstance(endOfReporttimeFrame, aas.SubmodelElement):
+                    endOfReporttimeFrame = self.EndOfReporttimeFrame(endOfReporttimeFrame)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if yearOfPublication is not None and not isinstance(
-                    yearOfPublication, aas.SubmodelElement
-                ):
+                if yearOfPublication is not None and not isinstance(yearOfPublication, aas.SubmodelElement):
                     yearOfPublication = self.YearOfPublication(yearOfPublication)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if turnover is not None and not isinstance(
-                    turnover, aas.SubmodelElement
-                ):
+                if turnover is not None and not isinstance(turnover, aas.SubmodelElement):
                     turnover = self.Turnover(turnover)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if investmentVolume is not None and not isinstance(
-                    investmentVolume, aas.SubmodelElement
-                ):
+                if investmentVolume is not None and not isinstance(investmentVolume, aas.SubmodelElement):
                     investmentVolume = self.InvestmentVolume(investmentVolume)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if equityRatio is not None and not isinstance(
-                    equityRatio, aas.SubmodelElement
-                ):
+                if equityRatio is not None and not isinstance(equityRatio, aas.SubmodelElement):
                     equityRatio = self.EquityRatio(equityRatio)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if totalEmployees is not None and not isinstance(
-                    totalEmployees, aas.SubmodelElement
-                ):
+                if totalEmployees is not None and not isinstance(totalEmployees, aas.SubmodelElement):
                     totalEmployees = self.TotalEmployees(totalEmployees)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3728,9 +3410,7 @@ class CompanyData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3765,9 +3445,7 @@ class CompanyData(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -3778,16 +3456,12 @@ class CompanyData(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if lastReport is not None and not isinstance(
-                lastReport, aas.SubmodelElement
-            ):
+            if lastReport is not None and not isinstance(lastReport, aas.SubmodelElement):
                 lastReport = self.LastReport(lastReport)
 
             # A str would be split into its characters
             if isinstance(businessReportFigure, str):
-                raise TypeError(
-                    "businessReportFigure takes several elements, got a str"
-                )
+                raise TypeError("businessReportFigure takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -3802,9 +3476,7 @@ class CompanyData(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3844,9 +3516,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3889,9 +3559,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3934,9 +3602,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3961,12 +3627,8 @@ class CompanyData(aas.Submodel):
             def __init__(
                 self,
                 codeOfConduct: Optional[Union[aas.Reference, CodeOfConduct]] = None,
-                generalTermsAndConditions: Optional[
-                    Union[aas.Reference, GeneralTermsAndConditions]
-                ] = None,
-                qualityAssuranceAgreements: Optional[
-                    Union[aas.Reference, QualityAssuranceAgreements]
-                ] = None,
+                generalTermsAndConditions: Optional[Union[aas.Reference, GeneralTermsAndConditions]] = None,
+                qualityAssuranceAgreements: Optional[Union[aas.Reference, QualityAssuranceAgreements]] = None,
                 id_short: Optional[str] = r"CorporatePolicies",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -3983,9 +3645,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -3996,9 +3656,7 @@ class CompanyData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if codeOfConduct is not None and not isinstance(
-                    codeOfConduct, aas.SubmodelElement
-                ):
+                if codeOfConduct is not None and not isinstance(codeOfConduct, aas.SubmodelElement):
                     codeOfConduct = self.CodeOfConduct(codeOfConduct)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -4006,26 +3664,18 @@ class CompanyData(aas.Submodel):
                 if generalTermsAndConditions is not None and not isinstance(
                     generalTermsAndConditions, aas.SubmodelElement
                 ):
-                    generalTermsAndConditions = self.GeneralTermsAndConditions(
-                        generalTermsAndConditions
-                    )
+                    generalTermsAndConditions = self.GeneralTermsAndConditions(generalTermsAndConditions)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if qualityAssuranceAgreements is not None and not isinstance(
                     qualityAssuranceAgreements, aas.SubmodelElement
                 ):
-                    qualityAssuranceAgreements = self.QualityAssuranceAgreements(
-                        qualityAssuranceAgreements
-                    )
+                    qualityAssuranceAgreements = self.QualityAssuranceAgreements(qualityAssuranceAgreements)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    codeOfConduct,
-                    generalTermsAndConditions,
-                    qualityAssuranceAgreements,
-                ]:
+                for se_arg in [codeOfConduct, generalTermsAndConditions, qualityAssuranceAgreements]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -4036,9 +3686,7 @@ class CompanyData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4080,9 +3728,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4129,9 +3775,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4142,18 +3786,12 @@ class CompanyData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(memberships_items, str):
-                        raise TypeError(
-                            "memberships_items takes several elements, got a str"
-                        )
+                        raise TypeError("memberships_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if memberships_items:
                         memberships_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Memberships_item(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.Memberships_item(i)
                             for i in memberships_items
                         ]
 
@@ -4167,9 +3805,7 @@ class CompanyData(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4236,15 +3872,9 @@ class CompanyData(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -4271,9 +3901,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4285,9 +3913,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -4322,9 +3948,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4336,9 +3960,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -4373,9 +3995,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4387,9 +4007,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -4424,9 +4042,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4438,9 +4054,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -4475,9 +4089,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4489,9 +4101,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -4524,9 +4134,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4538,9 +4146,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -4573,9 +4179,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4587,9 +4191,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -4615,21 +4217,13 @@ class CompanyData(aas.Submodel):
 
                     def __init__(
                         self,
-                        certificationStandard: Optional[
-                            Union[str, CertificationStandard]
-                        ] = None,
+                        certificationStandard: Optional[Union[str, CertificationStandard]] = None,
                         approvalAgency: Optional[Union[str, ApprovalAgency]] = None,
-                        certificateNumber: Optional[
-                            Union[str, CertificateNumber]
-                        ] = None,
+                        certificateNumber: Optional[Union[str, CertificateNumber]] = None,
                         issueDate: Optional[Union[xsd.Date, IssueDate]] = None,
                         expiryDate: Optional[Union[xsd.Date, ExpiryDate]] = None,
-                        certificationDocument: Optional[
-                            Iterable[Union[aas.Reference, CertificationDocument]]
-                        ] = None,
-                        certificationURL: Optional[
-                            Union[xsd.AnyURI, CertificationURL]
-                        ] = None,
+                        certificationDocument: Optional[Iterable[Union[aas.Reference, CertificationDocument]]] = None,
+                        certificationURL: Optional[Union[xsd.AnyURI, CertificationURL]] = None,
                         id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -4646,9 +4240,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4662,62 +4254,42 @@ class CompanyData(aas.Submodel):
                         if certificationStandard is not None and not isinstance(
                             certificationStandard, aas.SubmodelElement
                         ):
-                            certificationStandard = self.CertificationStandard(
-                                certificationStandard
-                            )
+                            certificationStandard = self.CertificationStandard(certificationStandard)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if approvalAgency is not None and not isinstance(
-                            approvalAgency, aas.SubmodelElement
-                        ):
+                        if approvalAgency is not None and not isinstance(approvalAgency, aas.SubmodelElement):
                             approvalAgency = self.ApprovalAgency(approvalAgency)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if certificateNumber is not None and not isinstance(
-                            certificateNumber, aas.SubmodelElement
-                        ):
-                            certificateNumber = self.CertificateNumber(
-                                certificateNumber
-                            )
+                        if certificateNumber is not None and not isinstance(certificateNumber, aas.SubmodelElement):
+                            certificateNumber = self.CertificateNumber(certificateNumber)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if issueDate is not None and not isinstance(
-                            issueDate, aas.SubmodelElement
-                        ):
+                        if issueDate is not None and not isinstance(issueDate, aas.SubmodelElement):
                             issueDate = self.IssueDate(issueDate)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if expiryDate is not None and not isinstance(
-                            expiryDate, aas.SubmodelElement
-                        ):
+                        if expiryDate is not None and not isinstance(expiryDate, aas.SubmodelElement):
                             expiryDate = self.ExpiryDate(expiryDate)
 
                         # A str would be split into its characters
                         if isinstance(certificationDocument, str):
-                            raise TypeError(
-                                "certificationDocument takes several elements, got a str"
-                            )
+                            raise TypeError("certificationDocument takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if certificationDocument:
                             certificationDocument = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.CertificationDocument(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.CertificationDocument(i)
                                 for i in certificationDocument
                             ]
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if certificationURL is not None and not isinstance(
-                            certificationURL, aas.SubmodelElement
-                        ):
+                        if certificationURL is not None and not isinstance(certificationURL, aas.SubmodelElement):
                             certificationURL = self.CertificationURL(certificationURL)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -4741,9 +4313,7 @@ class CompanyData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -4781,9 +4351,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4794,9 +4362,7 @@ class CompanyData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(certifications_items, str):
-                        raise TypeError(
-                            "certifications_items takes several elements, got a str"
-                        )
+                        raise TypeError("certifications_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -4808,9 +4374,7 @@ class CompanyData(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4877,15 +4441,9 @@ class CompanyData(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -4899,14 +4457,8 @@ class CompanyData(aas.Submodel):
 
             def __init__(
                 self,
-                memberships: Optional[
-                    Union[
-                        Iterable[Union[str, Memberships.Memberships_item]], Memberships
-                    ]
-                ] = None,
-                certifications: Optional[
-                    Union[Iterable[Certifications.Certifications_item], Certifications]
-                ] = None,
+                memberships: Optional[Union[Iterable[Union[str, Memberships.Memberships_item]], Memberships]] = None,
+                certifications: Optional[Union[Iterable[Certifications.Certifications_item], Certifications]] = None,
                 id_short: Optional[str] = r"IndustryStandards",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -4923,9 +4475,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -4940,9 +4490,7 @@ class CompanyData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if memberships is not None and not isinstance(
-                    memberships, aas.SubmodelElement
-                ):
+                if memberships is not None and not isinstance(memberships, aas.SubmodelElement):
                     memberships = self.Memberships(memberships)
 
                 # A str would be split into its characters
@@ -4951,9 +4499,7 @@ class CompanyData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if certifications is not None and not isinstance(
-                    certifications, aas.SubmodelElement
-                ):
+                if certifications is not None and not isinstance(certifications, aas.SubmodelElement):
                     certifications = self.Certifications(certifications)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4969,9 +4515,7 @@ class CompanyData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5011,9 +4555,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5052,9 +4594,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5066,9 +4606,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -5101,9 +4639,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5115,9 +4651,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -5142,9 +4676,7 @@ class CompanyData(aas.Submodel):
                     def __init__(
                         self,
                         typeOfTraining: Union[str, TypeOfTraining],
-                        trainingDocumentation: Optional[
-                            Union[aas.Reference, TrainingDocumentation]
-                        ] = None,
+                        trainingDocumentation: Optional[Union[aas.Reference, TrainingDocumentation]] = None,
                         id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -5161,9 +4693,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5174,9 +4704,7 @@ class CompanyData(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if typeOfTraining is not None and not isinstance(
-                            typeOfTraining, aas.SubmodelElement
-                        ):
+                        if typeOfTraining is not None and not isinstance(typeOfTraining, aas.SubmodelElement):
                             typeOfTraining = self.TypeOfTraining(typeOfTraining)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -5184,9 +4712,7 @@ class CompanyData(aas.Submodel):
                         if trainingDocumentation is not None and not isinstance(
                             trainingDocumentation, aas.SubmodelElement
                         ):
-                            trainingDocumentation = self.TrainingDocumentation(
-                                trainingDocumentation
-                            )
+                            trainingDocumentation = self.TrainingDocumentation(trainingDocumentation)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -5201,9 +4727,7 @@ class CompanyData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -5241,9 +4765,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5254,9 +4776,7 @@ class CompanyData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(employeetrainings_items, str):
-                        raise TypeError(
-                            "employeetrainings_items takes several elements, got a str"
-                        )
+                        raise TypeError("employeetrainings_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -5268,9 +4788,7 @@ class CompanyData(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5337,15 +4855,9 @@ class CompanyData(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -5382,9 +4894,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5431,9 +4941,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5480,9 +4988,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5529,9 +5035,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5578,9 +5082,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5627,9 +5129,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5676,9 +5176,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5725,9 +5223,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5774,9 +5270,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5823,9 +5317,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5872,9 +5364,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5921,9 +5411,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5970,9 +5458,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -5998,25 +5484,13 @@ class CompanyData(aas.Submodel):
 
                 def __init__(
                     self,
-                    informationSecurityPolicy: Optional[
-                        Union[bool, InformationSecurityPolicy]
-                    ] = None,
-                    dataProtectionPolicy: Optional[
-                        Union[bool, DataProtectionPolicy]
-                    ] = None,
+                    informationSecurityPolicy: Optional[Union[bool, InformationSecurityPolicy]] = None,
+                    dataProtectionPolicy: Optional[Union[bool, DataProtectionPolicy]] = None,
                     passwordPolicy: Optional[Union[bool, PasswordPolicy]] = None,
-                    authorizationConcept: Optional[
-                        Union[bool, AuthorizationConcept]
-                    ] = None,
-                    accessControlProcess: Optional[
-                        Union[bool, AccessControlProcess]
-                    ] = None,
-                    userAccessInventory: Optional[
-                        Union[bool, UserAccessInventory]
-                    ] = None,
-                    permissionDocumentation: Optional[
-                        Union[bool, PermissionDocumentation]
-                    ] = None,
+                    authorizationConcept: Optional[Union[bool, AuthorizationConcept]] = None,
+                    accessControlProcess: Optional[Union[bool, AccessControlProcess]] = None,
+                    userAccessInventory: Optional[Union[bool, UserAccessInventory]] = None,
+                    permissionDocumentation: Optional[Union[bool, PermissionDocumentation]] = None,
                     lockingSystem: Optional[Union[bool, LockingSystem]] = None,
                     keyAllocation: Optional[Union[bool, KeyAllocation]] = None,
                     visitorLog: Optional[Union[bool, VisitorLog]] = None,
@@ -6039,9 +5513,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6055,102 +5527,68 @@ class CompanyData(aas.Submodel):
                     if informationSecurityPolicy is not None and not isinstance(
                         informationSecurityPolicy, aas.SubmodelElement
                     ):
-                        informationSecurityPolicy = self.InformationSecurityPolicy(
-                            informationSecurityPolicy
-                        )
+                        informationSecurityPolicy = self.InformationSecurityPolicy(informationSecurityPolicy)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if dataProtectionPolicy is not None and not isinstance(
-                        dataProtectionPolicy, aas.SubmodelElement
-                    ):
-                        dataProtectionPolicy = self.DataProtectionPolicy(
-                            dataProtectionPolicy
-                        )
+                    if dataProtectionPolicy is not None and not isinstance(dataProtectionPolicy, aas.SubmodelElement):
+                        dataProtectionPolicy = self.DataProtectionPolicy(dataProtectionPolicy)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if passwordPolicy is not None and not isinstance(
-                        passwordPolicy, aas.SubmodelElement
-                    ):
+                    if passwordPolicy is not None and not isinstance(passwordPolicy, aas.SubmodelElement):
                         passwordPolicy = self.PasswordPolicy(passwordPolicy)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if authorizationConcept is not None and not isinstance(
-                        authorizationConcept, aas.SubmodelElement
-                    ):
-                        authorizationConcept = self.AuthorizationConcept(
-                            authorizationConcept
-                        )
+                    if authorizationConcept is not None and not isinstance(authorizationConcept, aas.SubmodelElement):
+                        authorizationConcept = self.AuthorizationConcept(authorizationConcept)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if accessControlProcess is not None and not isinstance(
-                        accessControlProcess, aas.SubmodelElement
-                    ):
-                        accessControlProcess = self.AccessControlProcess(
-                            accessControlProcess
-                        )
+                    if accessControlProcess is not None and not isinstance(accessControlProcess, aas.SubmodelElement):
+                        accessControlProcess = self.AccessControlProcess(accessControlProcess)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if userAccessInventory is not None and not isinstance(
-                        userAccessInventory, aas.SubmodelElement
-                    ):
-                        userAccessInventory = self.UserAccessInventory(
-                            userAccessInventory
-                        )
+                    if userAccessInventory is not None and not isinstance(userAccessInventory, aas.SubmodelElement):
+                        userAccessInventory = self.UserAccessInventory(userAccessInventory)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if permissionDocumentation is not None and not isinstance(
                         permissionDocumentation, aas.SubmodelElement
                     ):
-                        permissionDocumentation = self.PermissionDocumentation(
-                            permissionDocumentation
-                        )
+                        permissionDocumentation = self.PermissionDocumentation(permissionDocumentation)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if lockingSystem is not None and not isinstance(
-                        lockingSystem, aas.SubmodelElement
-                    ):
+                    if lockingSystem is not None and not isinstance(lockingSystem, aas.SubmodelElement):
                         lockingSystem = self.LockingSystem(lockingSystem)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if keyAllocation is not None and not isinstance(
-                        keyAllocation, aas.SubmodelElement
-                    ):
+                    if keyAllocation is not None and not isinstance(keyAllocation, aas.SubmodelElement):
                         keyAllocation = self.KeyAllocation(keyAllocation)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if visitorLog is not None and not isinstance(
-                        visitorLog, aas.SubmodelElement
-                    ):
+                    if visitorLog is not None and not isinstance(visitorLog, aas.SubmodelElement):
                         visitorLog = self.VisitorLog(visitorLog)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if visitorEscort is not None and not isinstance(
-                        visitorEscort, aas.SubmodelElement
-                    ):
+                    if visitorEscort is not None and not isinstance(visitorEscort, aas.SubmodelElement):
                         visitorEscort = self.VisitorEscort(visitorEscort)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if visitorBadge is not None and not isinstance(
-                        visitorBadge, aas.SubmodelElement
-                    ):
+                    if visitorBadge is not None and not isinstance(visitorBadge, aas.SubmodelElement):
                         visitorBadge = self.VisitorBadge(visitorBadge)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if customerAudits is not None and not isinstance(
-                        customerAudits, aas.SubmodelElement
-                    ):
+                    if customerAudits is not None and not isinstance(customerAudits, aas.SubmodelElement):
                         customerAudits = self.CustomerAudits(customerAudits)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -6180,9 +5618,7 @@ class CompanyData(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6212,9 +5648,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6226,9 +5660,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -6263,9 +5695,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6277,9 +5707,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -6314,9 +5742,7 @@ class CompanyData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6328,9 +5754,7 @@ class CompanyData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -6358,9 +5782,7 @@ class CompanyData(aas.Submodel):
                         self,
                         insuranceType: Union[str, InsuranceType],
                         insuranceCompany: Optional[Union[str, InsuranceCompany]] = None,
-                        insuranceSum: Optional[
-                            Union[xsd.PositiveInteger, InsuranceSum]
-                        ] = None,
+                        insuranceSum: Optional[Union[xsd.PositiveInteger, InsuranceSum]] = None,
                         id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -6377,9 +5799,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6390,23 +5810,17 @@ class CompanyData(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if insuranceCompany is not None and not isinstance(
-                            insuranceCompany, aas.SubmodelElement
-                        ):
+                        if insuranceCompany is not None and not isinstance(insuranceCompany, aas.SubmodelElement):
                             insuranceCompany = self.InsuranceCompany(insuranceCompany)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if insuranceType is not None and not isinstance(
-                            insuranceType, aas.SubmodelElement
-                        ):
+                        if insuranceType is not None and not isinstance(insuranceType, aas.SubmodelElement):
                             insuranceType = self.InsuranceType(insuranceType)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if insuranceSum is not None and not isinstance(
-                            insuranceSum, aas.SubmodelElement
-                        ):
+                        if insuranceSum is not None and not isinstance(insuranceSum, aas.SubmodelElement):
                             insuranceSum = self.InsuranceSum(insuranceSum)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -6422,9 +5836,7 @@ class CompanyData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -6462,9 +5874,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6475,9 +5885,7 @@ class CompanyData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(insurances_items, str):
-                        raise TypeError(
-                            "insurances_items takes several elements, got a str"
-                        )
+                        raise TypeError("insurances_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -6489,9 +5897,7 @@ class CompanyData(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6558,15 +5964,9 @@ class CompanyData(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -6580,19 +5980,12 @@ class CompanyData(aas.Submodel):
 
             def __init__(
                 self,
-                businessContinuityPlan: Optional[
-                    Union[bool, BusinessContinuityPlan]
-                ] = None,
+                businessContinuityPlan: Optional[Union[bool, BusinessContinuityPlan]] = None,
                 employeeTrainings: Optional[
-                    Union[
-                        Iterable[EmployeeTrainings.Employeetrainings_item],
-                        EmployeeTrainings,
-                    ]
+                    Union[Iterable[EmployeeTrainings.Employeetrainings_item], EmployeeTrainings]
                 ] = None,
                 securityPolicies: Optional[SecurityPolicies] = None,
-                insurances: Optional[
-                    Union[Iterable[Insurances.Insurances_item], Insurances]
-                ] = None,
+                insurances: Optional[Union[Iterable[Insurances.Insurances_item], Insurances]] = None,
                 id_short: Optional[str] = r"RiskManagement",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -6609,9 +6002,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -6622,24 +6013,16 @@ class CompanyData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if businessContinuityPlan is not None and not isinstance(
-                    businessContinuityPlan, aas.SubmodelElement
-                ):
-                    businessContinuityPlan = self.BusinessContinuityPlan(
-                        businessContinuityPlan
-                    )
+                if businessContinuityPlan is not None and not isinstance(businessContinuityPlan, aas.SubmodelElement):
+                    businessContinuityPlan = self.BusinessContinuityPlan(businessContinuityPlan)
 
                 # A str would be split into its characters
                 if isinstance(employeeTrainings, str):
-                    raise TypeError(
-                        "employeeTrainings takes several elements, got a str"
-                    )
+                    raise TypeError("employeeTrainings takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if employeeTrainings is not None and not isinstance(
-                    employeeTrainings, aas.SubmodelElement
-                ):
+                if employeeTrainings is not None and not isinstance(employeeTrainings, aas.SubmodelElement):
                     employeeTrainings = self.EmployeeTrainings(employeeTrainings)
 
                 # A str would be split into its characters
@@ -6648,19 +6031,12 @@ class CompanyData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if insurances is not None and not isinstance(
-                    insurances, aas.SubmodelElement
-                ):
+                if insurances is not None and not isinstance(insurances, aas.SubmodelElement):
                     insurances = self.Insurances(insurances)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    businessContinuityPlan,
-                    employeeTrainings,
-                    securityPolicies,
-                    insurances,
-                ]:
+                for se_arg in [businessContinuityPlan, employeeTrainings, securityPolicies, insurances]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -6671,9 +6047,7 @@ class CompanyData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -6715,9 +6089,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6763,9 +6135,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6811,9 +6181,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6858,9 +6226,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6904,9 +6270,7 @@ class CompanyData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -6933,15 +6297,9 @@ class CompanyData(aas.Submodel):
                     self,
                     complianceStatus: Union[str, ComplianceStatus],
                     regulationName: Union[aas.LangStringSet, RegulationName],
-                    complianceStatement: Optional[
-                        Union[aas.LangStringSet, ComplianceStatement]
-                    ] = None,
-                    documentationURI: Optional[
-                        Iterable[Union[xsd.AnyURI, DocumentationURI]]
-                    ] = None,
-                    documentationReference: Optional[
-                        Iterable[Union[aas.Reference, DocumentationReference]]
-                    ] = None,
+                    complianceStatement: Optional[Union[aas.LangStringSet, ComplianceStatement]] = None,
+                    documentationURI: Optional[Iterable[Union[xsd.AnyURI, DocumentationURI]]] = None,
+                    documentationReference: Optional[Iterable[Union[aas.Reference, DocumentationReference]]] = None,
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -6958,9 +6316,7 @@ class CompanyData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6971,59 +6327,39 @@ class CompanyData(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if complianceStatus is not None and not isinstance(
-                        complianceStatus, aas.SubmodelElement
-                    ):
+                    if complianceStatus is not None and not isinstance(complianceStatus, aas.SubmodelElement):
                         complianceStatus = self.ComplianceStatus(complianceStatus)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if complianceStatement is not None and not isinstance(
-                        complianceStatement, aas.SubmodelElement
-                    ):
-                        complianceStatement = self.ComplianceStatement(
-                            complianceStatement
-                        )
+                    if complianceStatement is not None and not isinstance(complianceStatement, aas.SubmodelElement):
+                        complianceStatement = self.ComplianceStatement(complianceStatement)
 
                     # A str would be split into its characters
                     if isinstance(documentationURI, str):
-                        raise TypeError(
-                            "documentationURI takes several elements, got a str"
-                        )
+                        raise TypeError("documentationURI takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if documentationURI:
                         documentationURI = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.DocumentationURI(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.DocumentationURI(i)
                             for i in documentationURI
                         ]
 
                     # A str would be split into its characters
                     if isinstance(documentationReference, str):
-                        raise TypeError(
-                            "documentationReference takes several elements, got a str"
-                        )
+                        raise TypeError("documentationReference takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if documentationReference:
                         documentationReference = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.DocumentationReference(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.DocumentationReference(i)
                             for i in documentationReference
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if regulationName is not None and not isinstance(
-                        regulationName, aas.SubmodelElement
-                    ):
+                    if regulationName is not None and not isinstance(regulationName, aas.SubmodelElement):
                         regulationName = self.RegulationName(regulationName)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -7045,9 +6381,7 @@ class CompanyData(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -7085,9 +6419,7 @@ class CompanyData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -7098,9 +6430,7 @@ class CompanyData(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(legalcompliance_items, str):
-                    raise TypeError(
-                        "legalcompliance_items takes several elements, got a str"
-                    )
+                    raise TypeError("legalcompliance_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -7112,9 +6442,7 @@ class CompanyData(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -7181,15 +6509,9 @@ class CompanyData(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -7206,9 +6528,7 @@ class CompanyData(aas.Submodel):
             corporatePolicies: Optional[CorporatePolicies] = None,
             industryStandards: Optional[IndustryStandards] = None,
             riskManagement: Optional[RiskManagement] = None,
-            legalCompliance: Optional[
-                Union[Iterable[LegalCompliance.Legalcompliance_item], LegalCompliance]
-            ] = None,
+            legalCompliance: Optional[Union[Iterable[LegalCompliance.Legalcompliance_item], LegalCompliance]] = None,
             id_short: Optional[str] = r"CompanyGovernance",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -7225,9 +6545,7 @@ class CompanyData(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -7242,19 +6560,12 @@ class CompanyData(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if legalCompliance is not None and not isinstance(
-                legalCompliance, aas.SubmodelElement
-            ):
+            if legalCompliance is not None and not isinstance(legalCompliance, aas.SubmodelElement):
                 legalCompliance = self.LegalCompliance(legalCompliance)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                corporatePolicies,
-                industryStandards,
-                riskManagement,
-                legalCompliance,
-            ]:
+            for se_arg in [corporatePolicies, industryStandards, riskManagement, legalCompliance]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -7265,9 +6576,7 @@ class CompanyData(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -7287,9 +6596,7 @@ class CompanyData(aas.Submodel):
         id_: str,
         companyIdentification: CompanyIdentification,
         mainAccount: Union[aas.Reference, MainAccount],
-        bankAccounts: Optional[
-            Union[Iterable[BankAccounts.Bankaccounts_item], BankAccounts]
-        ] = None,
+        bankAccounts: Optional[Union[Iterable[BankAccounts.Bankaccounts_item], BankAccounts]] = None,
         digitalInterfaces: Optional[DigitalInterfaces] = None,
         businessReportFigures: Optional[BusinessReportFigures] = None,
         companyGovernance: Optional[CompanyGovernance] = None,
@@ -7315,9 +6622,7 @@ class CompanyData(aas.Submodel):
     ):
 
         if description is None:
-            description = aas.MultiLanguageTextType(
-                dict_={r"en": r"Contains information about a company"}
-            )
+            description = aas.MultiLanguageTextType(dict_={r"en": r"Contains information about a company"})
 
         if administration is None:
             administration = aas.AdministrativeInformation(
@@ -7345,9 +6650,7 @@ class CompanyData(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if bankAccounts is not None and not isinstance(
-            bankAccounts, aas.SubmodelElement
-        ):
+        if bankAccounts is not None and not isinstance(bankAccounts, aas.SubmodelElement):
             bankAccounts = self.BankAccounts(bankAccounts)
 
         # Add all passed/initialized submodel elements to a single list
@@ -7370,9 +6673,7 @@ class CompanyData(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

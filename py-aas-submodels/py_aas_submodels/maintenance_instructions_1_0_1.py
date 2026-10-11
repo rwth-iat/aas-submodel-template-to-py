@@ -28,9 +28,7 @@ class MaintenanceInstructions(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -89,17 +87,12 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"ID für diese Wartung ",
-                                r"en": r"ID for this maintenance",
-                            }
+                            dict_={r"de": r"ID für diese Wartung ", r"en": r"ID for this maintenance"}
                         )
 
                     if qualifier is None:
@@ -145,17 +138,12 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Name für diesen Wartung",
-                                r"en": r"Name for this maintenance ",
-                            }
+                            dict_={r"de": r"Name für diesen Wartung", r"en": r"Name for this maintenance "}
                         )
 
                     if qualifier is None:
@@ -200,9 +188,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -258,9 +244,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -315,17 +299,12 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Interval Einheit",
-                                    r"en": r"Interval Unit",
-                                }
+                                dict_={r"de": r"Interval Einheit", r"en": r"Interval Unit"}
                             )
 
                         if qualifier is None:
@@ -351,31 +330,20 @@ class MaintenanceInstructions(aas.Submodel):
 
                 def __init__(
                     self,
-                    maintenanceIntervalValue: Optional[
-                        Union[xsd.Decimal, MaintenanceIntervalValue]
-                    ] = None,
-                    maintenanceIntervalUnit: Optional[
-                        Union[str, MaintenanceIntervalUnit]
-                    ] = None,
+                    maintenanceIntervalValue: Optional[Union[xsd.Decimal, MaintenanceIntervalValue]] = None,
+                    maintenanceIntervalUnit: Optional[Union[str, MaintenanceIntervalUnit]] = None,
                     id_short: Optional[str] = r"IntervalSpecification",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAN911#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAN911#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -397,18 +365,14 @@ class MaintenanceInstructions(aas.Submodel):
                     if maintenanceIntervalValue is not None and not isinstance(
                         maintenanceIntervalValue, aas.SubmodelElement
                     ):
-                        maintenanceIntervalValue = self.MaintenanceIntervalValue(
-                            maintenanceIntervalValue
-                        )
+                        maintenanceIntervalValue = self.MaintenanceIntervalValue(maintenanceIntervalValue)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if maintenanceIntervalUnit is not None and not isinstance(
                         maintenanceIntervalUnit, aas.SubmodelElement
                     ):
-                        maintenanceIntervalUnit = self.MaintenanceIntervalUnit(
-                            maintenanceIntervalUnit
-                        )
+                        maintenanceIntervalUnit = self.MaintenanceIntervalUnit(maintenanceIntervalUnit)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -423,9 +387,7 @@ class MaintenanceInstructions(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -454,9 +416,7 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -468,17 +428,12 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Designation of the alarm.",
-                                        r"de": r"Benennung des Alarms. ",
-                                    }
+                                    dict_={r"en": r"Designation of the alarm.", r"de": r"Benennung des Alarms. "}
                                 )
 
                             if qualifier is None:
@@ -512,9 +467,7 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -526,9 +479,7 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -571,9 +522,7 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -585,9 +534,7 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -622,12 +569,8 @@ class MaintenanceInstructions(aas.Submodel):
                     def __init__(
                         self,
                         alarmName: Optional[Union[aas.LangStringSet, AlarmName]] = None,
-                        warningLimitRelativeValue: Optional[
-                            Union[xsd.Decimal, WarningLimitRelativeValue]
-                        ] = None,
-                        warningLimitSeverity: Optional[
-                            Union[str, WarningLimitSeverity]
-                        ] = None,
+                        warningLimitRelativeValue: Optional[Union[xsd.Decimal, WarningLimitRelativeValue]] = None,
+                        warningLimitSeverity: Optional[Union[str, WarningLimitSeverity]] = None,
                         id_short: Optional[str] = r"Alarm",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
@@ -644,9 +587,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -665,9 +606,7 @@ class MaintenanceInstructions(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if alarmName is not None and not isinstance(
-                            alarmName, aas.SubmodelElement
-                        ):
+                        if alarmName is not None and not isinstance(alarmName, aas.SubmodelElement):
                             alarmName = self.AlarmName(alarmName)
 
                         # Build a submodel element if a raw value was passed in the argument
@@ -675,26 +614,18 @@ class MaintenanceInstructions(aas.Submodel):
                         if warningLimitRelativeValue is not None and not isinstance(
                             warningLimitRelativeValue, aas.SubmodelElement
                         ):
-                            warningLimitRelativeValue = self.WarningLimitRelativeValue(
-                                warningLimitRelativeValue
-                            )
+                            warningLimitRelativeValue = self.WarningLimitRelativeValue(warningLimitRelativeValue)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if warningLimitSeverity is not None and not isinstance(
                             warningLimitSeverity, aas.SubmodelElement
                         ):
-                            warningLimitSeverity = self.WarningLimitSeverity(
-                                warningLimitSeverity
-                            )
+                            warningLimitSeverity = self.WarningLimitSeverity(warningLimitSeverity)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            alarmName,
-                            warningLimitRelativeValue,
-                            warningLimitSeverity,
-                        ]:
+                        for se_arg in [alarmName, warningLimitRelativeValue, warningLimitSeverity]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -705,9 +636,7 @@ class MaintenanceInstructions(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -741,9 +670,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -777,9 +704,7 @@ class MaintenanceInstructions(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -816,9 +741,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -871,9 +794,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -917,26 +838,17 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAW001#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW001#001"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"name of the company"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"name of the company"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -969,20 +881,13 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO127#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO127#003"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1024,27 +929,18 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO204#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO204#003"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"function of a contact person in a process"
-                                }
+                                dict_={r"en": r"function of a contact person in a process"}
                             )
 
                         if qualifier is None:
@@ -1079,20 +975,13 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO208#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO208#003"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1133,27 +1022,18 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO209#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO209#003"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": "academic title preceding a contact person's name"
-                                }
+                                dict_={r"en": "academic title preceding a contact person's name"}
                             )
 
                         if qualifier is None:
@@ -1187,26 +1067,17 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO205#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO205#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"surname of a contact person"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"surname of a contact person"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1239,26 +1110,17 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO206#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO206#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"first name of a contact person"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"first name of a contact person"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1291,26 +1153,17 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO207#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO207#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"middle names of contact person"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"middle names of contact person"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1345,30 +1198,19 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO198#002",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO198#002"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"electronic mail address of a business partner"
-                                    }
+                                    dict_={r"en": r"electronic mail address of a business partner"}
                                 )
 
                             if qualifier is None:
@@ -1402,23 +1244,14 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO200#002",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO200#002"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -1459,23 +1292,14 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO199#003",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO199#003"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -1516,23 +1340,14 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO201#002",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO201#002"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -1566,31 +1381,20 @@ class MaintenanceInstructions(aas.Submodel):
                         self,
                         emailAddress: Optional[Union[str, EmailAddress]] = None,
                         publicKey: Optional[Union[aas.LangStringSet, PublicKey]] = None,
-                        typeOfEmailAddress: Optional[
-                            Union[str, TypeOfEmailAddress]
-                        ] = None,
-                        typeOfPublicKey: Optional[
-                            Union[aas.LangStringSet, TypeOfPublicKey]
-                        ] = None,
+                        typeOfEmailAddress: Optional[Union[str, TypeOfEmailAddress]] = None,
+                        typeOfPublicKey: Optional[Union[aas.LangStringSet, TypeOfPublicKey]] = None,
                         id_short: Optional[str] = r"Email",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAQ836#005",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ836#005"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1606,42 +1410,27 @@ class MaintenanceInstructions(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if emailAddress is not None and not isinstance(
-                            emailAddress, aas.SubmodelElement
-                        ):
+                        if emailAddress is not None and not isinstance(emailAddress, aas.SubmodelElement):
                             emailAddress = self.EmailAddress(emailAddress)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if publicKey is not None and not isinstance(
-                            publicKey, aas.SubmodelElement
-                        ):
+                        if publicKey is not None and not isinstance(publicKey, aas.SubmodelElement):
                             publicKey = self.PublicKey(publicKey)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if typeOfEmailAddress is not None and not isinstance(
-                            typeOfEmailAddress, aas.SubmodelElement
-                        ):
-                            typeOfEmailAddress = self.TypeOfEmailAddress(
-                                typeOfEmailAddress
-                            )
+                        if typeOfEmailAddress is not None and not isinstance(typeOfEmailAddress, aas.SubmodelElement):
+                            typeOfEmailAddress = self.TypeOfEmailAddress(typeOfEmailAddress)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if typeOfPublicKey is not None and not isinstance(
-                            typeOfPublicKey, aas.SubmodelElement
-                        ):
+                        if typeOfPublicKey is not None and not isinstance(typeOfPublicKey, aas.SubmodelElement):
                             typeOfPublicKey = self.TypeOfPublicKey(typeOfPublicKey)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            emailAddress,
-                            publicKey,
-                            typeOfEmailAddress,
-                            typeOfPublicKey,
-                        ]:
+                        for se_arg in [emailAddress, publicKey, typeOfEmailAddress, typeOfPublicKey]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -1652,9 +1441,7 @@ class MaintenanceInstructions(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1681,30 +1468,19 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO136#002",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO136#002"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"complete telephone number to be called to reach a business partner"
-                                    }
+                                    dict_={r"en": r"complete telephone number to be called to reach a business partner"}
                                 )
 
                             if qualifier is None:
@@ -1738,30 +1514,19 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO137#003",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO137#003"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"characterization of a telephone according to its location or usage"
-                                    }
+                                    dict_={r"en": r"characterization of a telephone according to its location or usage"}
                                 )
 
                             if qualifier is None:
@@ -1795,9 +1560,7 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1809,16 +1572,12 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Specification of the available time window"
-                                    }
+                                    dict_={r"en": r"Specification of the available time window"}
                                 )
 
                             if qualifier is None:
@@ -1843,13 +1602,9 @@ class MaintenanceInstructions(aas.Submodel):
 
                     def __init__(
                         self,
-                        telephoneNumber: Optional[
-                            Union[aas.LangStringSet, TelephoneNumber]
-                        ] = None,
+                        telephoneNumber: Optional[Union[aas.LangStringSet, TelephoneNumber]] = None,
                         typeOfTelephone: Optional[Union[str, TypeOfTelephone]] = None,
-                        availableTime: Optional[
-                            Union[aas.LangStringSet, AvailableTime]
-                        ] = None,
+                        availableTime: Optional[Union[aas.LangStringSet, AvailableTime]] = None,
                         id_short: Optional[str] = r"Phone",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -1866,15 +1621,11 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Phone number including type"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Phone number including type"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1884,23 +1635,17 @@ class MaintenanceInstructions(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if telephoneNumber is not None and not isinstance(
-                            telephoneNumber, aas.SubmodelElement
-                        ):
+                        if telephoneNumber is not None and not isinstance(telephoneNumber, aas.SubmodelElement):
                             telephoneNumber = self.TelephoneNumber(telephoneNumber)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if typeOfTelephone is not None and not isinstance(
-                            typeOfTelephone, aas.SubmodelElement
-                        ):
+                        if typeOfTelephone is not None and not isinstance(typeOfTelephone, aas.SubmodelElement):
                             typeOfTelephone = self.TypeOfTelephone(typeOfTelephone)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if availableTime is not None and not isinstance(
-                            availableTime, aas.SubmodelElement
-                        ):
+                        if availableTime is not None and not isinstance(availableTime, aas.SubmodelElement):
                             availableTime = self.AvailableTime(availableTime)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -1916,9 +1661,7 @@ class MaintenanceInstructions(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1945,23 +1688,14 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO195#002",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO195#002"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -2002,30 +1736,19 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO196#003",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO196#003"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"characterization of the fax according its location or usage"
-                                    }
+                                    dict_={r"en": r"characterization of the fax according its location or usage"}
                                 )
 
                             if qualifier is None:
@@ -2058,26 +1781,17 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAQ834#005",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ834#005"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Fax number including type"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Fax number including type"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2087,16 +1801,12 @@ class MaintenanceInstructions(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if faxNumber is not None and not isinstance(
-                            faxNumber, aas.SubmodelElement
-                        ):
+                        if faxNumber is not None and not isinstance(faxNumber, aas.SubmodelElement):
                             faxNumber = self.FaxNumber(faxNumber)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if typeOfFaxNumber is not None and not isinstance(
-                            typeOfFaxNumber, aas.SubmodelElement
-                        ):
+                        if typeOfFaxNumber is not None and not isinstance(typeOfFaxNumber, aas.SubmodelElement):
                             typeOfFaxNumber = self.TypeOfFaxNumber(typeOfFaxNumber)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -2112,9 +1822,7 @@ class MaintenanceInstructions(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2140,26 +1848,17 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO128#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO128#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"street name and house number"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"street name and house number"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2192,26 +1891,17 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO129#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO129#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"ZIP code of address"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"ZIP code of address"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2244,26 +1934,17 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO132#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO132#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"town or city"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"town or city"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2296,20 +1977,13 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO134#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO134#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2350,26 +2024,17 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO133#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO133#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"federal state a part of a state"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"federal state a part of a state"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -2402,27 +2067,18 @@ class MaintenanceInstructions(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO210#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO210#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"additional information of the contact person"
-                                }
+                                dict_={r"en": r"additional information of the contact person"}
                             )
 
                         if qualifier is None:
@@ -2449,16 +2105,10 @@ class MaintenanceInstructions(aas.Submodel):
                     self,
                     company: Optional[Union[aas.LangStringSet, Company]] = None,
                     department: Optional[Union[aas.LangStringSet, Department]] = None,
-                    roleOfContactPerson: Optional[
-                        Union[str, RoleOfContactPerson]
-                    ] = None,
+                    roleOfContactPerson: Optional[Union[str, RoleOfContactPerson]] = None,
                     title: Optional[Union[aas.LangStringSet, Title]] = None,
-                    academicTitle: Optional[
-                        Union[aas.LangStringSet, AcademicTitle]
-                    ] = None,
-                    nameOfContact: Optional[
-                        Union[aas.LangStringSet, NameOfContact]
-                    ] = None,
+                    academicTitle: Optional[Union[aas.LangStringSet, AcademicTitle]] = None,
+                    nameOfContact: Optional[Union[aas.LangStringSet, NameOfContact]] = None,
                     firstName: Optional[Union[aas.LangStringSet, FirstName]] = None,
                     middleNames: Optional[Union[aas.LangStringSet, MiddleNames]] = None,
                     email: Optional[Email] = None,
@@ -2467,13 +2117,9 @@ class MaintenanceInstructions(aas.Submodel):
                     street: Optional[Union[aas.LangStringSet, Street]] = None,
                     zipcode: Optional[Union[aas.LangStringSet, Zipcode]] = None,
                     cityTown: Optional[Union[aas.LangStringSet, CityTown]] = None,
-                    nationalCode: Optional[
-                        Union[aas.LangStringSet, NationalCode]
-                    ] = None,
+                    nationalCode: Optional[Union[aas.LangStringSet, NationalCode]] = None,
                     stateCounty: Optional[Union[aas.LangStringSet, StateCounty]] = None,
-                    furtherDetailsOfContact: Optional[
-                        Union[aas.LangStringSet, FurtherDetailsOfContact]
-                    ] = None,
+                    furtherDetailsOfContact: Optional[Union[aas.LangStringSet, FurtherDetailsOfContact]] = None,
                     id_short: Optional[str] = r"ContactForMaintenanceAuthorization",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
@@ -2490,9 +2136,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2511,26 +2155,18 @@ class MaintenanceInstructions(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if company is not None and not isinstance(
-                        company, aas.SubmodelElement
-                    ):
+                    if company is not None and not isinstance(company, aas.SubmodelElement):
                         company = self.Company(company)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if department is not None and not isinstance(
-                        department, aas.SubmodelElement
-                    ):
+                    if department is not None and not isinstance(department, aas.SubmodelElement):
                         department = self.Department(department)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if roleOfContactPerson is not None and not isinstance(
-                        roleOfContactPerson, aas.SubmodelElement
-                    ):
-                        roleOfContactPerson = self.RoleOfContactPerson(
-                            roleOfContactPerson
-                        )
+                    if roleOfContactPerson is not None and not isinstance(roleOfContactPerson, aas.SubmodelElement):
+                        roleOfContactPerson = self.RoleOfContactPerson(roleOfContactPerson)
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -2539,65 +2175,47 @@ class MaintenanceInstructions(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if academicTitle is not None and not isinstance(
-                        academicTitle, aas.SubmodelElement
-                    ):
+                    if academicTitle is not None and not isinstance(academicTitle, aas.SubmodelElement):
                         academicTitle = self.AcademicTitle(academicTitle)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if nameOfContact is not None and not isinstance(
-                        nameOfContact, aas.SubmodelElement
-                    ):
+                    if nameOfContact is not None and not isinstance(nameOfContact, aas.SubmodelElement):
                         nameOfContact = self.NameOfContact(nameOfContact)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if firstName is not None and not isinstance(
-                        firstName, aas.SubmodelElement
-                    ):
+                    if firstName is not None and not isinstance(firstName, aas.SubmodelElement):
                         firstName = self.FirstName(firstName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if middleNames is not None and not isinstance(
-                        middleNames, aas.SubmodelElement
-                    ):
+                    if middleNames is not None and not isinstance(middleNames, aas.SubmodelElement):
                         middleNames = self.MiddleNames(middleNames)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if street is not None and not isinstance(
-                        street, aas.SubmodelElement
-                    ):
+                    if street is not None and not isinstance(street, aas.SubmodelElement):
                         street = self.Street(street)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if zipcode is not None and not isinstance(
-                        zipcode, aas.SubmodelElement
-                    ):
+                    if zipcode is not None and not isinstance(zipcode, aas.SubmodelElement):
                         zipcode = self.Zipcode(zipcode)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if cityTown is not None and not isinstance(
-                        cityTown, aas.SubmodelElement
-                    ):
+                    if cityTown is not None and not isinstance(cityTown, aas.SubmodelElement):
                         cityTown = self.CityTown(cityTown)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if nationalCode is not None and not isinstance(
-                        nationalCode, aas.SubmodelElement
-                    ):
+                    if nationalCode is not None and not isinstance(nationalCode, aas.SubmodelElement):
                         nationalCode = self.NationalCode(nationalCode)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if stateCounty is not None and not isinstance(
-                        stateCounty, aas.SubmodelElement
-                    ):
+                    if stateCounty is not None and not isinstance(stateCounty, aas.SubmodelElement):
                         stateCounty = self.StateCounty(stateCounty)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -2605,9 +2223,7 @@ class MaintenanceInstructions(aas.Submodel):
                     if furtherDetailsOfContact is not None and not isinstance(
                         furtherDetailsOfContact, aas.SubmodelElement
                     ):
-                        furtherDetailsOfContact = self.FurtherDetailsOfContact(
-                            furtherDetailsOfContact
-                        )
+                        furtherDetailsOfContact = self.FurtherDetailsOfContact(furtherDetailsOfContact)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -2640,9 +2256,7 @@ class MaintenanceInstructions(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2679,9 +2293,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2715,23 +2327,17 @@ class MaintenanceInstructions(aas.Submodel):
             def __init__(
                 self,
                 maintenanceID: Optional[Union[str, MaintenanceID]] = None,
-                nameOfMaintenance: Optional[
-                    Union[aas.LangStringSet, NameOfMaintenance]
-                ] = None,
+                nameOfMaintenance: Optional[Union[aas.LangStringSet, NameOfMaintenance]] = None,
                 sourceOfMaintenanceInstructions: Optional[
                     Union[aas.LangStringSet, SourceOfMaintenanceInstructions]
                 ] = None,
                 intervalSpecification: Optional[IntervalSpecification] = None,
                 alarmValues: Optional[AlarmValues] = None,
-                flowChartOfMaintenanceSteps: Optional[
-                    FlowChartOfMaintenanceSteps
-                ] = None,
+                flowChartOfMaintenanceSteps: Optional[FlowChartOfMaintenanceSteps] = None,
                 relatedStandardsLawsRegulations: Optional[
                     Iterable[Union[aas.LangStringSet, RelatedStandardsLawsRegulations]]
                 ] = None,
-                contactForMaintenanceAuthorization: Optional[
-                    Iterable[ContactForMaintenanceAuthorization]
-                ] = None,
+                contactForMaintenanceAuthorization: Optional[Iterable[ContactForMaintenanceAuthorization]] = None,
                 safetyRegulationsToBeObserved: Optional[
                     Iterable[Union[aas.LangStringSet, SafetyRegulationsToBeObserved]]
                 ] = None,
@@ -2751,9 +2357,7 @@ class MaintenanceInstructions(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -2772,16 +2376,12 @@ class MaintenanceInstructions(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if maintenanceID is not None and not isinstance(
-                    maintenanceID, aas.SubmodelElement
-                ):
+                if maintenanceID is not None and not isinstance(maintenanceID, aas.SubmodelElement):
                     maintenanceID = self.MaintenanceID(maintenanceID)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if nameOfMaintenance is not None and not isinstance(
-                    nameOfMaintenance, aas.SubmodelElement
-                ):
+                if nameOfMaintenance is not None and not isinstance(nameOfMaintenance, aas.SubmodelElement):
                     nameOfMaintenance = self.NameOfMaintenance(nameOfMaintenance)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -2789,49 +2389,33 @@ class MaintenanceInstructions(aas.Submodel):
                 if sourceOfMaintenanceInstructions is not None and not isinstance(
                     sourceOfMaintenanceInstructions, aas.SubmodelElement
                 ):
-                    sourceOfMaintenanceInstructions = (
-                        self.SourceOfMaintenanceInstructions(
-                            sourceOfMaintenanceInstructions
-                        )
+                    sourceOfMaintenanceInstructions = self.SourceOfMaintenanceInstructions(
+                        sourceOfMaintenanceInstructions
                     )
 
                 # A str would be split into its characters
                 if isinstance(relatedStandardsLawsRegulations, str):
-                    raise TypeError(
-                        "relatedStandardsLawsRegulations takes several elements, got a str"
-                    )
+                    raise TypeError("relatedStandardsLawsRegulations takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if relatedStandardsLawsRegulations:
                     relatedStandardsLawsRegulations = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.RelatedStandardsLawsRegulations(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.RelatedStandardsLawsRegulations(i)
                         for i in relatedStandardsLawsRegulations
                     ]
 
                 # A str would be split into its characters
                 if isinstance(contactForMaintenanceAuthorization, str):
-                    raise TypeError(
-                        "contactForMaintenanceAuthorization takes several elements, got a str"
-                    )
+                    raise TypeError("contactForMaintenanceAuthorization takes several elements, got a str")
 
                 # A str would be split into its characters
                 if isinstance(safetyRegulationsToBeObserved, str):
-                    raise TypeError(
-                        "safetyRegulationsToBeObserved takes several elements, got a str"
-                    )
+                    raise TypeError("safetyRegulationsToBeObserved takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if safetyRegulationsToBeObserved:
                     safetyRegulationsToBeObserved = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.SafetyRegulationsToBeObserved(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.SafetyRegulationsToBeObserved(i)
                         for i in safetyRegulationsToBeObserved
                     ]
 
@@ -2858,9 +2442,7 @@ class MaintenanceInstructions(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2900,9 +2482,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2945,20 +2525,13 @@ class MaintenanceInstructions(aas.Submodel):
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-BAF831#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAF831#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -3014,9 +2587,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3071,9 +2642,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3107,12 +2676,8 @@ class MaintenanceInstructions(aas.Submodel):
 
                 def __init__(
                     self,
-                    valueTotalEstimatedWorkingTime: Union[
-                        xsd.Decimal, ValueTotalEstimatedWorkingTime
-                    ],
-                    unitValueTotalEstimatedWorkingTime: Union[
-                        str, UnitValueTotalEstimatedWorkingTime
-                    ],
+                    valueTotalEstimatedWorkingTime: Union[xsd.Decimal, ValueTotalEstimatedWorkingTime],
+                    unitValueTotalEstimatedWorkingTime: Union[str, UnitValueTotalEstimatedWorkingTime],
                     id_short: Optional[str] = r"EstimatedTotalWorkingTime",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
@@ -3129,9 +2694,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -3153,32 +2716,22 @@ class MaintenanceInstructions(aas.Submodel):
                     if valueTotalEstimatedWorkingTime is not None and not isinstance(
                         valueTotalEstimatedWorkingTime, aas.SubmodelElement
                     ):
-                        valueTotalEstimatedWorkingTime = (
-                            self.ValueTotalEstimatedWorkingTime(
-                                valueTotalEstimatedWorkingTime
-                            )
+                        valueTotalEstimatedWorkingTime = self.ValueTotalEstimatedWorkingTime(
+                            valueTotalEstimatedWorkingTime
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if (
-                        unitValueTotalEstimatedWorkingTime is not None
-                        and not isinstance(
-                            unitValueTotalEstimatedWorkingTime, aas.SubmodelElement
-                        )
+                    if unitValueTotalEstimatedWorkingTime is not None and not isinstance(
+                        unitValueTotalEstimatedWorkingTime, aas.SubmodelElement
                     ):
-                        unitValueTotalEstimatedWorkingTime = (
-                            self.UnitValueTotalEstimatedWorkingTime(
-                                unitValueTotalEstimatedWorkingTime
-                            )
+                        unitValueTotalEstimatedWorkingTime = self.UnitValueTotalEstimatedWorkingTime(
+                            unitValueTotalEstimatedWorkingTime
                         )
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        valueTotalEstimatedWorkingTime,
-                        unitValueTotalEstimatedWorkingTime,
-                    ]:
+                    for se_arg in [valueTotalEstimatedWorkingTime, unitValueTotalEstimatedWorkingTime]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -3189,9 +2742,7 @@ class MaintenanceInstructions(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3208,12 +2759,8 @@ class MaintenanceInstructions(aas.Submodel):
 
             def __init__(
                 self,
-                numberOfRequiredTechnicians: Optional[
-                    Union[xsd.Decimal, NumberOfRequiredTechnicians]
-                ] = None,
-                requiredQualification: Optional[
-                    Iterable[Union[aas.LangStringSet, RequiredQualification]]
-                ] = None,
+                numberOfRequiredTechnicians: Optional[Union[xsd.Decimal, NumberOfRequiredTechnicians]] = None,
+                requiredQualification: Optional[Iterable[Union[aas.LangStringSet, RequiredQualification]]] = None,
                 estimatedTotalWorkingTime: Optional[EstimatedTotalWorkingTime] = None,
                 id_short: Optional[str] = r"MaintenanceTechnicians",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3231,9 +2778,7 @@ class MaintenanceInstructions(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -3255,34 +2800,22 @@ class MaintenanceInstructions(aas.Submodel):
                 if numberOfRequiredTechnicians is not None and not isinstance(
                     numberOfRequiredTechnicians, aas.SubmodelElement
                 ):
-                    numberOfRequiredTechnicians = self.NumberOfRequiredTechnicians(
-                        numberOfRequiredTechnicians
-                    )
+                    numberOfRequiredTechnicians = self.NumberOfRequiredTechnicians(numberOfRequiredTechnicians)
 
                 # A str would be split into its characters
                 if isinstance(requiredQualification, str):
-                    raise TypeError(
-                        "requiredQualification takes several elements, got a str"
-                    )
+                    raise TypeError("requiredQualification takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if requiredQualification:
                     requiredQualification = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.RequiredQualification(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.RequiredQualification(i)
                         for i in requiredQualification
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    numberOfRequiredTechnicians,
-                    requiredQualification,
-                    estimatedTotalWorkingTime,
-                ]:
+                for se_arg in [numberOfRequiredTechnicians, requiredQualification, estimatedTotalWorkingTime]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -3293,9 +2826,7 @@ class MaintenanceInstructions(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3337,9 +2868,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3393,9 +2922,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3448,9 +2975,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3486,9 +3011,7 @@ class MaintenanceInstructions(aas.Submodel):
                     def __init__(
                         self,
                         value: aas.Reference,
-                        id_short: Optional[
-                            str
-                        ] = r"LinkSMMaintenanceComponentModuleMachine",
+                        id_short: Optional[str] = r"LinkSMMaintenanceComponentModuleMachine",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -3504,9 +3027,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3557,9 +3078,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3611,9 +3130,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3649,9 +3166,7 @@ class MaintenanceInstructions(aas.Submodel):
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[
-                            str
-                        ] = r"RelatedDocumentOrFileMaintenanceStep",
+                        id_short: Optional[str] = r"RelatedDocumentOrFileMaintenanceStep",
                         content_type: Optional[str] = r"application/pdf",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
@@ -3668,9 +3183,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3722,9 +3235,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3759,9 +3270,7 @@ class MaintenanceInstructions(aas.Submodel):
                     def __init__(
                         self,
                         value: xsd.Decimal,
-                        id_short: Optional[
-                            str
-                        ] = r"QuantityOfSparePartForMaintenanceStep",
+                        id_short: Optional[str] = r"QuantityOfSparePartForMaintenanceStep",
                         value_type: aas.DataTypeDefXsd = xsd.Decimal,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3779,9 +3288,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3834,9 +3341,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3871,9 +3376,7 @@ class MaintenanceInstructions(aas.Submodel):
                     def __init__(
                         self,
                         value: xsd.Decimal,
-                        id_short: Optional[
-                            str
-                        ] = r"QuantityOfConsumablesForMaintenanceStep",
+                        id_short: Optional[str] = r"QuantityOfConsumablesForMaintenanceStep",
                         value_type: aas.DataTypeDefXsd = xsd.Decimal,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3891,9 +3394,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -3930,9 +3431,7 @@ class MaintenanceInstructions(aas.Submodel):
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[
-                            str
-                        ] = r"UnitForQuantityOfConsumablesForMaintenanceStep",
+                        id_short: Optional[str] = r"UnitForQuantityOfConsumablesForMaintenanceStep",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3950,9 +3449,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4005,9 +3502,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4060,9 +3555,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4117,9 +3610,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4151,26 +3642,20 @@ class MaintenanceInstructions(aas.Submodel):
                             embedded_data_specifications=embedded_data_specifications,
                         )
 
-                class EstimatedDurationTimeMaintenanceStep(
-                    aas.SubmodelElementCollection
-                ):
+                class EstimatedDurationTimeMaintenanceStep(aas.SubmodelElementCollection):
 
                     class ValueEstimatedDurationTimeMaintenanceStep(aas.Property):
 
                         def __init__(
                             self,
                             value: xsd.Decimal,
-                            id_short: Optional[
-                                str
-                            ] = r"ValueEstimatedDurationTimeMaintenanceStep",
+                            id_short: Optional[str] = r"ValueEstimatedDurationTimeMaintenanceStep",
                             value_type: aas.DataTypeDefXsd = xsd.Decimal,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4182,9 +3667,7 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -4221,17 +3704,13 @@ class MaintenanceInstructions(aas.Submodel):
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[
-                                str
-                            ] = r"UnitEstimatedDurationTimeMaintenanceStep",
+                            id_short: Optional[str] = r"UnitEstimatedDurationTimeMaintenanceStep",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4243,9 +3722,7 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -4280,16 +3757,12 @@ class MaintenanceInstructions(aas.Submodel):
                     def __init__(
                         self,
                         valueEstimatedDurationTimeMaintenanceStep: Optional[
-                            Union[
-                                xsd.Decimal, ValueEstimatedDurationTimeMaintenanceStep
-                            ]
+                            Union[xsd.Decimal, ValueEstimatedDurationTimeMaintenanceStep]
                         ] = None,
                         unitEstimatedDurationTimeMaintenanceStep: Optional[
                             Union[str, UnitEstimatedDurationTimeMaintenanceStep]
                         ] = None,
-                        id_short: Optional[
-                            str
-                        ] = r"EstimatedDurationTimeMaintenanceStep",
+                        id_short: Optional[str] = r"EstimatedDurationTimeMaintenanceStep",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -4305,9 +3778,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4326,32 +3797,20 @@ class MaintenanceInstructions(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if (
-                            valueEstimatedDurationTimeMaintenanceStep is not None
-                            and not isinstance(
-                                valueEstimatedDurationTimeMaintenanceStep,
-                                aas.SubmodelElement,
-                            )
+                        if valueEstimatedDurationTimeMaintenanceStep is not None and not isinstance(
+                            valueEstimatedDurationTimeMaintenanceStep, aas.SubmodelElement
                         ):
-                            valueEstimatedDurationTimeMaintenanceStep = (
-                                self.ValueEstimatedDurationTimeMaintenanceStep(
-                                    valueEstimatedDurationTimeMaintenanceStep
-                                )
+                            valueEstimatedDurationTimeMaintenanceStep = self.ValueEstimatedDurationTimeMaintenanceStep(
+                                valueEstimatedDurationTimeMaintenanceStep
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if (
-                            unitEstimatedDurationTimeMaintenanceStep is not None
-                            and not isinstance(
-                                unitEstimatedDurationTimeMaintenanceStep,
-                                aas.SubmodelElement,
-                            )
+                        if unitEstimatedDurationTimeMaintenanceStep is not None and not isinstance(
+                            unitEstimatedDurationTimeMaintenanceStep, aas.SubmodelElement
                         ):
-                            unitEstimatedDurationTimeMaintenanceStep = (
-                                self.UnitEstimatedDurationTimeMaintenanceStep(
-                                    unitEstimatedDurationTimeMaintenanceStep
-                                )
+                            unitEstimatedDurationTimeMaintenanceStep = self.UnitEstimatedDurationTimeMaintenanceStep(
+                                unitEstimatedDurationTimeMaintenanceStep
                             )
 
                         # Add all passed/initialized submodel elements to a single list
@@ -4370,9 +3829,7 @@ class MaintenanceInstructions(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -4409,9 +3866,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4463,9 +3918,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4517,9 +3970,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4571,9 +4022,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4626,9 +4075,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -4663,21 +4110,13 @@ class MaintenanceInstructions(aas.Submodel):
                 def __init__(
                     self,
                     maintenanceStepID: Optional[Union[str, MaintenanceStepID]] = None,
-                    maintenanceStepName: Optional[
-                        Union[aas.LangStringSet, MaintenanceStepName]
-                    ] = None,
-                    localizationDescription: Optional[
-                        Union[aas.LangStringSet, LocalizationDescription]
-                    ] = None,
+                    maintenanceStepName: Optional[Union[aas.LangStringSet, MaintenanceStepName]] = None,
+                    localizationDescription: Optional[Union[aas.LangStringSet, LocalizationDescription]] = None,
                     linkSMMaintenanceComponentModuleMachine: Optional[
                         Union[aas.Reference, LinkSMMaintenanceComponentModuleMachine]
                     ] = None,
-                    linkAASComponentModuleMachine: Optional[
-                        Union[aas.Reference, LinkAASComponentModuleMachine]
-                    ] = None,
-                    instructionMaintenanceStep: Optional[
-                        Union[aas.LangStringSet, InstructionMaintenanceStep]
-                    ] = None,
+                    linkAASComponentModuleMachine: Optional[Union[aas.Reference, LinkAASComponentModuleMachine]] = None,
+                    instructionMaintenanceStep: Optional[Union[aas.LangStringSet, InstructionMaintenanceStep]] = None,
                     relatedDocumentOrFileMaintenanceStep: Optional[
                         Iterable[RelatedDocumentOrFileMaintenanceStep]
                     ] = None,
@@ -4691,35 +4130,23 @@ class MaintenanceInstructions(aas.Submodel):
                         Iterable[Union[aas.Reference, ConsumablesForMaintenanceStep]]
                     ] = None,
                     quantityOfConsumablesForMaintenanceStep: Optional[
-                        Iterable[
-                            Union[xsd.Decimal, QuantityOfConsumablesForMaintenanceStep]
-                        ]
+                        Iterable[Union[xsd.Decimal, QuantityOfConsumablesForMaintenanceStep]]
                     ] = None,
                     unitForQuantityOfConsumablesForMaintenanceStep: Optional[
                         Union[str, UnitForQuantityOfConsumablesForMaintenanceStep]
                     ] = None,
-                    toolsForMaintenanceStep: Optional[
-                        Iterable[Union[aas.Reference, ToolsForMaintenanceStep]]
-                    ] = None,
+                    toolsForMaintenanceStep: Optional[Iterable[Union[aas.Reference, ToolsForMaintenanceStep]]] = None,
                     quantityOfToolsForMaintenanceStep: Optional[
                         Union[xsd.Decimal, QuantityOfToolsForMaintenanceStep]
                     ] = None,
-                    documentationSignatureMandatory: Optional[
-                        Union[bool, DocumentationSignatureMandatory]
-                    ] = None,
-                    estimatedDurationTimeMaintenanceStep: Optional[
-                        EstimatedDurationTimeMaintenanceStep
-                    ] = None,
+                    documentationSignatureMandatory: Optional[Union[bool, DocumentationSignatureMandatory]] = None,
+                    estimatedDurationTimeMaintenanceStep: Optional[EstimatedDurationTimeMaintenanceStep] = None,
                     conditionForNextMaintenanceStep: Optional[
                         Union[aas.LangStringSet, ConditionForNextMaintenanceStep]
                     ] = None,
-                    nextMaintenanceStep: Optional[
-                        Union[aas.Reference, NextMaintenanceStep]
-                    ] = None,
+                    nextMaintenanceStep: Optional[Union[aas.Reference, NextMaintenanceStep]] = None,
                     conditionForAlternativeNextStep: Optional[
-                        Iterable[
-                            Union[aas.LangStringSet, ConditionForAlternativeNextStep]
-                        ]
+                        Iterable[Union[aas.LangStringSet, ConditionForAlternativeNextStep]]
                     ] = None,
                     alternativeNextMaintenanceStep: Optional[
                         Iterable[Union[aas.Reference, AlternativeNextMaintenanceStep]]
@@ -4741,9 +4168,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -4762,41 +4187,28 @@ class MaintenanceInstructions(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if maintenanceStepID is not None and not isinstance(
-                        maintenanceStepID, aas.SubmodelElement
-                    ):
+                    if maintenanceStepID is not None and not isinstance(maintenanceStepID, aas.SubmodelElement):
                         maintenanceStepID = self.MaintenanceStepID(maintenanceStepID)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if maintenanceStepName is not None and not isinstance(
-                        maintenanceStepName, aas.SubmodelElement
-                    ):
-                        maintenanceStepName = self.MaintenanceStepName(
-                            maintenanceStepName
-                        )
+                    if maintenanceStepName is not None and not isinstance(maintenanceStepName, aas.SubmodelElement):
+                        maintenanceStepName = self.MaintenanceStepName(maintenanceStepName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if localizationDescription is not None and not isinstance(
                         localizationDescription, aas.SubmodelElement
                     ):
-                        localizationDescription = self.LocalizationDescription(
-                            localizationDescription
-                        )
+                        localizationDescription = self.LocalizationDescription(localizationDescription)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if (
-                        linkSMMaintenanceComponentModuleMachine is not None
-                        and not isinstance(
-                            linkSMMaintenanceComponentModuleMachine, aas.SubmodelElement
-                        )
+                    if linkSMMaintenanceComponentModuleMachine is not None and not isinstance(
+                        linkSMMaintenanceComponentModuleMachine, aas.SubmodelElement
                     ):
-                        linkSMMaintenanceComponentModuleMachine = (
-                            self.LinkSMMaintenanceComponentModuleMachine(
-                                linkSMMaintenanceComponentModuleMachine
-                            )
+                        linkSMMaintenanceComponentModuleMachine = self.LinkSMMaintenanceComponentModuleMachine(
+                            linkSMMaintenanceComponentModuleMachine
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -4804,10 +4216,8 @@ class MaintenanceInstructions(aas.Submodel):
                     if linkAASComponentModuleMachine is not None and not isinstance(
                         linkAASComponentModuleMachine, aas.SubmodelElement
                     ):
-                        linkAASComponentModuleMachine = (
-                            self.LinkAASComponentModuleMachine(
-                                linkAASComponentModuleMachine
-                            )
+                        linkAASComponentModuleMachine = self.LinkAASComponentModuleMachine(
+                            linkAASComponentModuleMachine
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -4815,89 +4225,58 @@ class MaintenanceInstructions(aas.Submodel):
                     if instructionMaintenanceStep is not None and not isinstance(
                         instructionMaintenanceStep, aas.SubmodelElement
                     ):
-                        instructionMaintenanceStep = self.InstructionMaintenanceStep(
-                            instructionMaintenanceStep
-                        )
+                        instructionMaintenanceStep = self.InstructionMaintenanceStep(instructionMaintenanceStep)
 
                     # A str would be split into its characters
                     if isinstance(relatedDocumentOrFileMaintenanceStep, str):
-                        raise TypeError(
-                            "relatedDocumentOrFileMaintenanceStep takes several elements, got a str"
-                        )
+                        raise TypeError("relatedDocumentOrFileMaintenanceStep takes several elements, got a str")
 
                     # A str would be split into its characters
                     if isinstance(sparePartForMaintenanceStep, str):
-                        raise TypeError(
-                            "sparePartForMaintenanceStep takes several elements, got a str"
-                        )
+                        raise TypeError("sparePartForMaintenanceStep takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if sparePartForMaintenanceStep:
                         sparePartForMaintenanceStep = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.SparePartForMaintenanceStep(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.SparePartForMaintenanceStep(i)
                             for i in sparePartForMaintenanceStep
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if (
-                        quantityOfSparePartForMaintenanceStep is not None
-                        and not isinstance(
-                            quantityOfSparePartForMaintenanceStep, aas.SubmodelElement
-                        )
+                    if quantityOfSparePartForMaintenanceStep is not None and not isinstance(
+                        quantityOfSparePartForMaintenanceStep, aas.SubmodelElement
                     ):
-                        quantityOfSparePartForMaintenanceStep = (
-                            self.QuantityOfSparePartForMaintenanceStep(
-                                quantityOfSparePartForMaintenanceStep
-                            )
+                        quantityOfSparePartForMaintenanceStep = self.QuantityOfSparePartForMaintenanceStep(
+                            quantityOfSparePartForMaintenanceStep
                         )
 
                     # A str would be split into its characters
                     if isinstance(consumablesForMaintenanceStep, str):
-                        raise TypeError(
-                            "consumablesForMaintenanceStep takes several elements, got a str"
-                        )
+                        raise TypeError("consumablesForMaintenanceStep takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if consumablesForMaintenanceStep:
                         consumablesForMaintenanceStep = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ConsumablesForMaintenanceStep(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.ConsumablesForMaintenanceStep(i)
                             for i in consumablesForMaintenanceStep
                         ]
 
                     # A str would be split into its characters
                     if isinstance(quantityOfConsumablesForMaintenanceStep, str):
-                        raise TypeError(
-                            "quantityOfConsumablesForMaintenanceStep takes several elements, got a str"
-                        )
+                        raise TypeError("quantityOfConsumablesForMaintenanceStep takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if quantityOfConsumablesForMaintenanceStep:
                         quantityOfConsumablesForMaintenanceStep = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.QuantityOfConsumablesForMaintenanceStep(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.QuantityOfConsumablesForMaintenanceStep(i)
                             for i in quantityOfConsumablesForMaintenanceStep
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if (
-                        unitForQuantityOfConsumablesForMaintenanceStep is not None
-                        and not isinstance(
-                            unitForQuantityOfConsumablesForMaintenanceStep,
-                            aas.SubmodelElement,
-                        )
+                    if unitForQuantityOfConsumablesForMaintenanceStep is not None and not isinstance(
+                        unitForQuantityOfConsumablesForMaintenanceStep, aas.SubmodelElement
                     ):
                         unitForQuantityOfConsumablesForMaintenanceStep = (
                             self.UnitForQuantityOfConsumablesForMaintenanceStep(
@@ -4907,33 +4286,22 @@ class MaintenanceInstructions(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(toolsForMaintenanceStep, str):
-                        raise TypeError(
-                            "toolsForMaintenanceStep takes several elements, got a str"
-                        )
+                        raise TypeError("toolsForMaintenanceStep takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if toolsForMaintenanceStep:
                         toolsForMaintenanceStep = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ToolsForMaintenanceStep(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.ToolsForMaintenanceStep(i)
                             for i in toolsForMaintenanceStep
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if (
-                        quantityOfToolsForMaintenanceStep is not None
-                        and not isinstance(
-                            quantityOfToolsForMaintenanceStep, aas.SubmodelElement
-                        )
+                    if quantityOfToolsForMaintenanceStep is not None and not isinstance(
+                        quantityOfToolsForMaintenanceStep, aas.SubmodelElement
                     ):
-                        quantityOfToolsForMaintenanceStep = (
-                            self.QuantityOfToolsForMaintenanceStep(
-                                quantityOfToolsForMaintenanceStep
-                            )
+                        quantityOfToolsForMaintenanceStep = self.QuantityOfToolsForMaintenanceStep(
+                            quantityOfToolsForMaintenanceStep
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -4941,10 +4309,8 @@ class MaintenanceInstructions(aas.Submodel):
                     if documentationSignatureMandatory is not None and not isinstance(
                         documentationSignatureMandatory, aas.SubmodelElement
                     ):
-                        documentationSignatureMandatory = (
-                            self.DocumentationSignatureMandatory(
-                                documentationSignatureMandatory
-                            )
+                        documentationSignatureMandatory = self.DocumentationSignatureMandatory(
+                            documentationSignatureMandatory
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -4952,60 +4318,40 @@ class MaintenanceInstructions(aas.Submodel):
                     if conditionForNextMaintenanceStep is not None and not isinstance(
                         conditionForNextMaintenanceStep, aas.SubmodelElement
                     ):
-                        conditionForNextMaintenanceStep = (
-                            self.ConditionForNextMaintenanceStep(
-                                conditionForNextMaintenanceStep
-                            )
+                        conditionForNextMaintenanceStep = self.ConditionForNextMaintenanceStep(
+                            conditionForNextMaintenanceStep
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if nextMaintenanceStep is not None and not isinstance(
-                        nextMaintenanceStep, aas.SubmodelElement
-                    ):
-                        nextMaintenanceStep = self.NextMaintenanceStep(
-                            nextMaintenanceStep
-                        )
+                    if nextMaintenanceStep is not None and not isinstance(nextMaintenanceStep, aas.SubmodelElement):
+                        nextMaintenanceStep = self.NextMaintenanceStep(nextMaintenanceStep)
 
                     # A str would be split into its characters
                     if isinstance(conditionForAlternativeNextStep, str):
-                        raise TypeError(
-                            "conditionForAlternativeNextStep takes several elements, got a str"
-                        )
+                        raise TypeError("conditionForAlternativeNextStep takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if conditionForAlternativeNextStep:
                         conditionForAlternativeNextStep = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ConditionForAlternativeNextStep(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.ConditionForAlternativeNextStep(i)
                             for i in conditionForAlternativeNextStep
                         ]
 
                     # A str would be split into its characters
                     if isinstance(alternativeNextMaintenanceStep, str):
-                        raise TypeError(
-                            "alternativeNextMaintenanceStep takes several elements, got a str"
-                        )
+                        raise TypeError("alternativeNextMaintenanceStep takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if alternativeNextMaintenanceStep:
                         alternativeNextMaintenanceStep = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.AlternativeNextMaintenanceStep(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.AlternativeNextMaintenanceStep(i)
                             for i in alternativeNextMaintenanceStep
                         ]
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if endOfMaintenance is not None and not isinstance(
-                        endOfMaintenance, aas.SubmodelElement
-                    ):
+                    if endOfMaintenance is not None and not isinstance(endOfMaintenance, aas.SubmodelElement):
                         endOfMaintenance = self.EndOfMaintenance(endOfMaintenance)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5043,9 +4389,7 @@ class MaintenanceInstructions(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5079,9 +4423,7 @@ class MaintenanceInstructions(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -5115,9 +4457,7 @@ class MaintenanceInstructions(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5153,9 +4493,7 @@ class MaintenanceInstructions(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -5174,11 +4512,7 @@ class MaintenanceInstructions(aas.Submodel):
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                basicMaintenanceInformation,
-                maintenanceTechnicians,
-                listMaintenanceSteps,
-            ]:
+            for se_arg in [basicMaintenanceInformation, maintenanceTechnicians, listMaintenanceSteps]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -5189,9 +4523,7 @@ class MaintenanceInstructions(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -5233,9 +4565,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -5289,9 +4619,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -5324,9 +4652,7 @@ class MaintenanceInstructions(aas.Submodel):
 
             class CollectionMaxQuantityOfTool(aas.SubmodelElementCollection):
 
-                class CollectionMaxQuantityOfToolForSpecificInterval(
-                    aas.SubmodelElementCollection
-                ):
+                class CollectionMaxQuantityOfToolForSpecificInterval(aas.SubmodelElementCollection):
 
                     class MaxQuantityOfTool(aas.Property):
 
@@ -5339,9 +4665,7 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5353,9 +4677,7 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -5396,9 +4718,7 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5410,9 +4730,7 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -5451,9 +4769,7 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5465,9 +4781,7 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -5499,18 +4813,10 @@ class MaintenanceInstructions(aas.Submodel):
 
                     def __init__(
                         self,
-                        maxQuantityOfTool: Optional[
-                            Union[xsd.Decimal, MaxQuantityOfTool]
-                        ] = None,
-                        referenceToMaintenanceID: Optional[
-                            Union[aas.Reference, ReferenceToMaintenanceID]
-                        ] = None,
-                        referenceNameOfMaintenance: Optional[
-                            Union[aas.Reference, ReferenceNameOfMaintenance]
-                        ] = None,
-                        id_short: Optional[
-                            str
-                        ] = r"CollectionMaxQuantityOfToolForSpecificInterval",
+                        maxQuantityOfTool: Optional[Union[xsd.Decimal, MaxQuantityOfTool]] = None,
+                        referenceToMaintenanceID: Optional[Union[aas.Reference, ReferenceToMaintenanceID]] = None,
+                        referenceNameOfMaintenance: Optional[Union[aas.Reference, ReferenceNameOfMaintenance]] = None,
+                        id_short: Optional[str] = r"CollectionMaxQuantityOfToolForSpecificInterval",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -5526,9 +4832,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -5547,40 +4851,26 @@ class MaintenanceInstructions(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if maxQuantityOfTool is not None and not isinstance(
-                            maxQuantityOfTool, aas.SubmodelElement
-                        ):
-                            maxQuantityOfTool = self.MaxQuantityOfTool(
-                                maxQuantityOfTool
-                            )
+                        if maxQuantityOfTool is not None and not isinstance(maxQuantityOfTool, aas.SubmodelElement):
+                            maxQuantityOfTool = self.MaxQuantityOfTool(maxQuantityOfTool)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if referenceToMaintenanceID is not None and not isinstance(
                             referenceToMaintenanceID, aas.SubmodelElement
                         ):
-                            referenceToMaintenanceID = self.ReferenceToMaintenanceID(
-                                referenceToMaintenanceID
-                            )
+                            referenceToMaintenanceID = self.ReferenceToMaintenanceID(referenceToMaintenanceID)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if referenceNameOfMaintenance is not None and not isinstance(
                             referenceNameOfMaintenance, aas.SubmodelElement
                         ):
-                            referenceNameOfMaintenance = (
-                                self.ReferenceNameOfMaintenance(
-                                    referenceNameOfMaintenance
-                                )
-                            )
+                            referenceNameOfMaintenance = self.ReferenceNameOfMaintenance(referenceNameOfMaintenance)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            maxQuantityOfTool,
-                            referenceToMaintenanceID,
-                            referenceNameOfMaintenance,
-                        ]:
+                        for se_arg in [maxQuantityOfTool, referenceToMaintenanceID, referenceNameOfMaintenance]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -5591,9 +4881,7 @@ class MaintenanceInstructions(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -5629,9 +4917,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -5661,9 +4947,7 @@ class MaintenanceInstructions(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5700,17 +4984,12 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Name des Werkzeugherstellers",
-                                r"en": r"Name of the tool manufacturer",
-                            }
+                            dict_={r"de": r"Name des Werkzeugherstellers", r"en": r"Name of the tool manufacturer"}
                         )
 
                     if qualifier is None:
@@ -5745,30 +5024,18 @@ class MaintenanceInstructions(aas.Submodel):
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABA950#008",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA950#008"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO227#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO227#004"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -5822,9 +5089,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -5867,20 +5132,13 @@ class MaintenanceInstructions(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAQ326#004",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ326#004"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -5915,21 +5173,11 @@ class MaintenanceInstructions(aas.Submodel):
                 self,
                 toolID: Optional[Union[str, ToolID]] = None,
                 toolName: Optional[Union[aas.LangStringSet, ToolName]] = None,
-                collectionMaxQuantityOfTool: Optional[
-                    CollectionMaxQuantityOfTool
-                ] = None,
-                companyNameToolSupplier: Optional[
-                    Union[aas.LangStringSet, CompanyNameToolSupplier]
-                ] = None,
-                orderCodeToolOfManufacturer: Optional[
-                    Union[str, OrderCodeToolOfManufacturer]
-                ] = None,
-                toolDescription: Optional[
-                    Iterable[Union[aas.LangStringSet, ToolDescription]]
-                ] = None,
-                addressOfAdditionalLinkTool: Optional[
-                    Iterable[Union[str, AddressOfAdditionalLinkTool]]
-                ] = None,
+                collectionMaxQuantityOfTool: Optional[CollectionMaxQuantityOfTool] = None,
+                companyNameToolSupplier: Optional[Union[aas.LangStringSet, CompanyNameToolSupplier]] = None,
+                orderCodeToolOfManufacturer: Optional[Union[str, OrderCodeToolOfManufacturer]] = None,
+                toolDescription: Optional[Iterable[Union[aas.LangStringSet, ToolDescription]]] = None,
+                addressOfAdditionalLinkTool: Optional[Iterable[Union[str, AddressOfAdditionalLinkTool]]] = None,
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
@@ -5946,9 +5194,7 @@ class MaintenanceInstructions(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -5972,28 +5218,20 @@ class MaintenanceInstructions(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if toolName is not None and not isinstance(
-                    toolName, aas.SubmodelElement
-                ):
+                if toolName is not None and not isinstance(toolName, aas.SubmodelElement):
                     toolName = self.ToolName(toolName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if companyNameToolSupplier is not None and not isinstance(
-                    companyNameToolSupplier, aas.SubmodelElement
-                ):
-                    companyNameToolSupplier = self.CompanyNameToolSupplier(
-                        companyNameToolSupplier
-                    )
+                if companyNameToolSupplier is not None and not isinstance(companyNameToolSupplier, aas.SubmodelElement):
+                    companyNameToolSupplier = self.CompanyNameToolSupplier(companyNameToolSupplier)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if orderCodeToolOfManufacturer is not None and not isinstance(
                     orderCodeToolOfManufacturer, aas.SubmodelElement
                 ):
-                    orderCodeToolOfManufacturer = self.OrderCodeToolOfManufacturer(
-                        orderCodeToolOfManufacturer
-                    )
+                    orderCodeToolOfManufacturer = self.OrderCodeToolOfManufacturer(orderCodeToolOfManufacturer)
 
                 # A str would be split into its characters
                 if isinstance(toolDescription, str):
@@ -6002,28 +5240,17 @@ class MaintenanceInstructions(aas.Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if toolDescription:
                     toolDescription = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ToolDescription(i)
-                        )
-                        for i in toolDescription
+                        i if isinstance(i, aas.SubmodelElement) else self.ToolDescription(i) for i in toolDescription
                     ]
 
                 # A str would be split into its characters
                 if isinstance(addressOfAdditionalLinkTool, str):
-                    raise TypeError(
-                        "addressOfAdditionalLinkTool takes several elements, got a str"
-                    )
+                    raise TypeError("addressOfAdditionalLinkTool takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if addressOfAdditionalLinkTool:
                     addressOfAdditionalLinkTool = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.AddressOfAdditionalLinkTool(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.AddressOfAdditionalLinkTool(i)
                         for i in addressOfAdditionalLinkTool
                     ]
 
@@ -6048,9 +5275,7 @@ class MaintenanceInstructions(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -6067,9 +5292,7 @@ class MaintenanceInstructions(aas.Submodel):
 
         def __init__(
             self,
-            maintenancetoollist_items: Optional[
-                Iterable[Maintenancetoollist_item]
-            ] = None,
+            maintenancetoollist_items: Optional[Iterable[Maintenancetoollist_item]] = None,
             id_short: Optional[str] = r"MaintenanceToolList",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -6090,9 +5313,7 @@ class MaintenanceInstructions(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -6111,9 +5332,7 @@ class MaintenanceInstructions(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(maintenancetoollist_items, str):
-                raise TypeError(
-                    "maintenancetoollist_items takes several elements, got a str"
-                )
+                raise TypeError("maintenancetoollist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -6125,9 +5344,7 @@ class MaintenanceInstructions(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -6196,10 +5413,7 @@ class MaintenanceInstructions(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -6238,9 +5452,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -6293,9 +5505,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -6327,9 +5537,7 @@ class MaintenanceInstructions(aas.Submodel):
 
             class CollectionQuantityOfConsumable(aas.SubmodelElementCollection):
 
-                class QuantityOfConsumableForSpecificInterval(
-                    aas.SubmodelElementCollection
-                ):
+                class QuantityOfConsumableForSpecificInterval(aas.SubmodelElementCollection):
 
                     class QuantityOfConsumable(aas.Property):
 
@@ -6342,9 +5550,7 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6356,9 +5562,7 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -6399,9 +5603,7 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6413,9 +5615,7 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -6454,9 +5654,7 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6468,9 +5666,7 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -6502,18 +5698,10 @@ class MaintenanceInstructions(aas.Submodel):
 
                     def __init__(
                         self,
-                        quantityOfConsumable: Optional[
-                            Union[xsd.Decimal, QuantityOfConsumable]
-                        ] = None,
-                        referenceNameOfMaintenance: Optional[
-                            Union[aas.Reference, ReferenceNameOfMaintenance]
-                        ] = None,
-                        referenceToMaintenanceID: Optional[
-                            Union[aas.Reference, ReferenceToMaintenanceID]
-                        ] = None,
-                        id_short: Optional[
-                            str
-                        ] = r"QuantityOfConsumableForSpecificInterval",
+                        quantityOfConsumable: Optional[Union[xsd.Decimal, QuantityOfConsumable]] = None,
+                        referenceNameOfMaintenance: Optional[Union[aas.Reference, ReferenceNameOfMaintenance]] = None,
+                        referenceToMaintenanceID: Optional[Union[aas.Reference, ReferenceToMaintenanceID]] = None,
+                        id_short: Optional[str] = r"QuantityOfConsumableForSpecificInterval",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -6529,9 +5717,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -6553,37 +5739,25 @@ class MaintenanceInstructions(aas.Submodel):
                         if quantityOfConsumable is not None and not isinstance(
                             quantityOfConsumable, aas.SubmodelElement
                         ):
-                            quantityOfConsumable = self.QuantityOfConsumable(
-                                quantityOfConsumable
-                            )
+                            quantityOfConsumable = self.QuantityOfConsumable(quantityOfConsumable)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if referenceNameOfMaintenance is not None and not isinstance(
                             referenceNameOfMaintenance, aas.SubmodelElement
                         ):
-                            referenceNameOfMaintenance = (
-                                self.ReferenceNameOfMaintenance(
-                                    referenceNameOfMaintenance
-                                )
-                            )
+                            referenceNameOfMaintenance = self.ReferenceNameOfMaintenance(referenceNameOfMaintenance)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if referenceToMaintenanceID is not None and not isinstance(
                             referenceToMaintenanceID, aas.SubmodelElement
                         ):
-                            referenceToMaintenanceID = self.ReferenceToMaintenanceID(
-                                referenceToMaintenanceID
-                            )
+                            referenceToMaintenanceID = self.ReferenceToMaintenanceID(referenceToMaintenanceID)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            quantityOfConsumable,
-                            referenceNameOfMaintenance,
-                            referenceToMaintenanceID,
-                        ]:
+                        for se_arg in [quantityOfConsumable, referenceNameOfMaintenance, referenceToMaintenanceID]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -6594,9 +5768,7 @@ class MaintenanceInstructions(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -6613,9 +5785,7 @@ class MaintenanceInstructions(aas.Submodel):
 
                 def __init__(
                     self,
-                    quantityOfConsumableForSpecificInterval: Optional[
-                        QuantityOfConsumableForSpecificInterval
-                    ] = None,
+                    quantityOfConsumableForSpecificInterval: Optional[QuantityOfConsumableForSpecificInterval] = None,
                     id_short: Optional[str] = r"CollectionQuantityOfConsumable",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
@@ -6632,9 +5802,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -6664,9 +5832,7 @@ class MaintenanceInstructions(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6704,9 +5870,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -6760,9 +5924,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -6805,30 +5967,18 @@ class MaintenanceInstructions(aas.Submodel):
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABA950#008",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA950#008"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO227#004",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO227#004"),),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -6881,9 +6031,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -6936,9 +6084,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -6981,20 +6127,13 @@ class MaintenanceInstructions(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAQ326#004",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ326#004"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -7028,28 +6167,14 @@ class MaintenanceInstructions(aas.Submodel):
             def __init__(
                 self,
                 consumableID: Optional[Union[str, ConsumableID]] = None,
-                consumableName: Optional[
-                    Union[aas.LangStringSet, ConsumableName]
-                ] = None,
-                collectionQuantityOfConsumable: Optional[
-                    CollectionQuantityOfConsumable
-                ] = None,
-                unitMaxQuantityOfConsumable: Optional[
-                    Union[str, UnitMaxQuantityOfConsumable]
-                ] = None,
-                companyNameSupplierConsumable: Optional[
-                    Union[aas.LangStringSet, CompanyNameSupplierConsumable]
-                ] = None,
-                orderCodeConsumableOfManufacturer: Optional[
-                    Union[str, OrderCodeConsumableOfManufacturer]
-                ] = None,
-                consumableDescription: Optional[
-                    Iterable[Union[aas.LangStringSet, ConsumableDescription]]
-                ] = None,
+                consumableName: Optional[Union[aas.LangStringSet, ConsumableName]] = None,
+                collectionQuantityOfConsumable: Optional[CollectionQuantityOfConsumable] = None,
+                unitMaxQuantityOfConsumable: Optional[Union[str, UnitMaxQuantityOfConsumable]] = None,
+                companyNameSupplierConsumable: Optional[Union[aas.LangStringSet, CompanyNameSupplierConsumable]] = None,
+                orderCodeConsumableOfManufacturer: Optional[Union[str, OrderCodeConsumableOfManufacturer]] = None,
+                consumableDescription: Optional[Iterable[Union[aas.LangStringSet, ConsumableDescription]]] = None,
                 disposalInstructionsForConsumable: Optional[
-                    Iterable[
-                        Union[aas.LangStringSet, DisposalInstructionsForConsumable]
-                    ]
+                    Iterable[Union[aas.LangStringSet, DisposalInstructionsForConsumable]]
                 ] = None,
                 addressOfAdditionalLinkConsumable: Optional[
                     Iterable[Union[str, AddressOfAdditionalLinkConsumable]]
@@ -7070,9 +6195,7 @@ class MaintenanceInstructions(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -7091,16 +6214,12 @@ class MaintenanceInstructions(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if consumableID is not None and not isinstance(
-                    consumableID, aas.SubmodelElement
-                ):
+                if consumableID is not None and not isinstance(consumableID, aas.SubmodelElement):
                     consumableID = self.ConsumableID(consumableID)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if consumableName is not None and not isinstance(
-                    consumableName, aas.SubmodelElement
-                ):
+                if consumableName is not None and not isinstance(consumableName, aas.SubmodelElement):
                     consumableName = self.ConsumableName(consumableName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -7108,78 +6227,54 @@ class MaintenanceInstructions(aas.Submodel):
                 if unitMaxQuantityOfConsumable is not None and not isinstance(
                     unitMaxQuantityOfConsumable, aas.SubmodelElement
                 ):
-                    unitMaxQuantityOfConsumable = self.UnitMaxQuantityOfConsumable(
-                        unitMaxQuantityOfConsumable
-                    )
+                    unitMaxQuantityOfConsumable = self.UnitMaxQuantityOfConsumable(unitMaxQuantityOfConsumable)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if companyNameSupplierConsumable is not None and not isinstance(
                     companyNameSupplierConsumable, aas.SubmodelElement
                 ):
-                    companyNameSupplierConsumable = self.CompanyNameSupplierConsumable(
-                        companyNameSupplierConsumable
-                    )
+                    companyNameSupplierConsumable = self.CompanyNameSupplierConsumable(companyNameSupplierConsumable)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if orderCodeConsumableOfManufacturer is not None and not isinstance(
                     orderCodeConsumableOfManufacturer, aas.SubmodelElement
                 ):
-                    orderCodeConsumableOfManufacturer = (
-                        self.OrderCodeConsumableOfManufacturer(
-                            orderCodeConsumableOfManufacturer
-                        )
+                    orderCodeConsumableOfManufacturer = self.OrderCodeConsumableOfManufacturer(
+                        orderCodeConsumableOfManufacturer
                     )
 
                 # A str would be split into its characters
                 if isinstance(consumableDescription, str):
-                    raise TypeError(
-                        "consumableDescription takes several elements, got a str"
-                    )
+                    raise TypeError("consumableDescription takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if consumableDescription:
                     consumableDescription = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ConsumableDescription(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.ConsumableDescription(i)
                         for i in consumableDescription
                     ]
 
                 # A str would be split into its characters
                 if isinstance(disposalInstructionsForConsumable, str):
-                    raise TypeError(
-                        "disposalInstructionsForConsumable takes several elements, got a str"
-                    )
+                    raise TypeError("disposalInstructionsForConsumable takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if disposalInstructionsForConsumable:
                     disposalInstructionsForConsumable = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.DisposalInstructionsForConsumable(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.DisposalInstructionsForConsumable(i)
                         for i in disposalInstructionsForConsumable
                     ]
 
                 # A str would be split into its characters
                 if isinstance(addressOfAdditionalLinkConsumable, str):
-                    raise TypeError(
-                        "addressOfAdditionalLinkConsumable takes several elements, got a str"
-                    )
+                    raise TypeError("addressOfAdditionalLinkConsumable takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if addressOfAdditionalLinkConsumable:
                     addressOfAdditionalLinkConsumable = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.AddressOfAdditionalLinkConsumable(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.AddressOfAdditionalLinkConsumable(i)
                         for i in addressOfAdditionalLinkConsumable
                     ]
 
@@ -7206,9 +6301,7 @@ class MaintenanceInstructions(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -7225,9 +6318,7 @@ class MaintenanceInstructions(aas.Submodel):
 
         def __init__(
             self,
-            maintenanceconsumableslist_items: Optional[
-                Iterable[Maintenanceconsumableslist_item]
-            ] = None,
+            maintenanceconsumableslist_items: Optional[Iterable[Maintenanceconsumableslist_item]] = None,
             id_short: Optional[str] = r"MaintenanceConsumablesList",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -7248,9 +6339,7 @@ class MaintenanceInstructions(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -7269,9 +6358,7 @@ class MaintenanceInstructions(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(maintenanceconsumableslist_items, str):
-                raise TypeError(
-                    "maintenanceconsumableslist_items takes several elements, got a str"
-                )
+                raise TypeError("maintenanceconsumableslist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -7283,9 +6370,7 @@ class MaintenanceInstructions(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -7354,10 +6439,7 @@ class MaintenanceInstructions(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -7396,9 +6478,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -7451,9 +6531,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -7486,9 +6564,7 @@ class MaintenanceInstructions(aas.Submodel):
 
             class CollectionQuantityOfSparePart(aas.SubmodelElementCollection):
 
-                class CollectionQuantityOfSparepartForSpecificInterval(
-                    aas.SubmodelElementCollection
-                ):
+                class CollectionQuantityOfSparepartForSpecificInterval(aas.SubmodelElementCollection):
 
                     class QuantityOfSparePart(aas.Property):
 
@@ -7501,9 +6577,7 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7515,9 +6589,7 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -7558,9 +6630,7 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7572,9 +6642,7 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -7613,9 +6681,7 @@ class MaintenanceInstructions(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -7627,9 +6693,7 @@ class MaintenanceInstructions(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -7661,18 +6725,10 @@ class MaintenanceInstructions(aas.Submodel):
 
                     def __init__(
                         self,
-                        quantityOfSparePart: Optional[
-                            Union[xsd.Decimal, QuantityOfSparePart]
-                        ] = None,
-                        referenceNameOfMaintenance: Optional[
-                            Union[aas.Reference, ReferenceNameOfMaintenance]
-                        ] = None,
-                        referenceToMaintenanceID: Optional[
-                            Union[aas.Reference, ReferenceToMaintenanceID]
-                        ] = None,
-                        id_short: Optional[
-                            str
-                        ] = r"CollectionQuantityOfSparepartForSpecificInterval",
+                        quantityOfSparePart: Optional[Union[xsd.Decimal, QuantityOfSparePart]] = None,
+                        referenceNameOfMaintenance: Optional[Union[aas.Reference, ReferenceNameOfMaintenance]] = None,
+                        referenceToMaintenanceID: Optional[Union[aas.Reference, ReferenceToMaintenanceID]] = None,
+                        id_short: Optional[str] = r"CollectionQuantityOfSparepartForSpecificInterval",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
                         description: Optional[aas.MultiLanguageTextType] = None,
@@ -7688,9 +6744,7 @@ class MaintenanceInstructions(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -7709,40 +6763,26 @@ class MaintenanceInstructions(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if quantityOfSparePart is not None and not isinstance(
-                            quantityOfSparePart, aas.SubmodelElement
-                        ):
-                            quantityOfSparePart = self.QuantityOfSparePart(
-                                quantityOfSparePart
-                            )
+                        if quantityOfSparePart is not None and not isinstance(quantityOfSparePart, aas.SubmodelElement):
+                            quantityOfSparePart = self.QuantityOfSparePart(quantityOfSparePart)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if referenceNameOfMaintenance is not None and not isinstance(
                             referenceNameOfMaintenance, aas.SubmodelElement
                         ):
-                            referenceNameOfMaintenance = (
-                                self.ReferenceNameOfMaintenance(
-                                    referenceNameOfMaintenance
-                                )
-                            )
+                            referenceNameOfMaintenance = self.ReferenceNameOfMaintenance(referenceNameOfMaintenance)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if referenceToMaintenanceID is not None and not isinstance(
                             referenceToMaintenanceID, aas.SubmodelElement
                         ):
-                            referenceToMaintenanceID = self.ReferenceToMaintenanceID(
-                                referenceToMaintenanceID
-                            )
+                            referenceToMaintenanceID = self.ReferenceToMaintenanceID(referenceToMaintenanceID)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            quantityOfSparePart,
-                            referenceNameOfMaintenance,
-                            referenceToMaintenanceID,
-                        ]:
+                        for se_arg in [quantityOfSparePart, referenceNameOfMaintenance, referenceToMaintenanceID]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -7753,9 +6793,7 @@ class MaintenanceInstructions(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -7791,9 +6829,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -7823,9 +6859,7 @@ class MaintenanceInstructions(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -7862,9 +6896,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -7907,20 +6939,13 @@ class MaintenanceInstructions(aas.Submodel):
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABA950#008",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA950#008"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -7973,17 +6998,12 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Beschreibung des Ersatzteils.",
-                                r"en": r"Description of the spare part.",
-                            }
+                            dict_={r"de": r"Beschreibung des Ersatzteils.", r"en": r"Description of the spare part."}
                         )
 
                     if qualifier is None:
@@ -8028,9 +7048,7 @@ class MaintenanceInstructions(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -8073,20 +7091,13 @@ class MaintenanceInstructions(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAQ326#004",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ326#004"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -8121,18 +7132,10 @@ class MaintenanceInstructions(aas.Submodel):
                 self,
                 sparePartID: Optional[Union[str, SparePartID]] = None,
                 sparePartName: Optional[Union[aas.LangStringSet, SparePartName]] = None,
-                collectionQuantityOfSparePart: Optional[
-                    CollectionQuantityOfSparePart
-                ] = None,
-                companyNameSupplierSparePart: Optional[
-                    Union[aas.LangStringSet, CompanyNameSupplierSparePart]
-                ] = None,
-                orderCodeSparePartOfManufacturer: Optional[
-                    Union[str, OrderCodeSparePartOfManufacturer]
-                ] = None,
-                sparePartDescription: Optional[
-                    Iterable[Union[aas.LangStringSet, SparePartDescription]]
-                ] = None,
+                collectionQuantityOfSparePart: Optional[CollectionQuantityOfSparePart] = None,
+                companyNameSupplierSparePart: Optional[Union[aas.LangStringSet, CompanyNameSupplierSparePart]] = None,
+                orderCodeSparePartOfManufacturer: Optional[Union[str, OrderCodeSparePartOfManufacturer]] = None,
+                sparePartDescription: Optional[Iterable[Union[aas.LangStringSet, SparePartDescription]]] = None,
                 disposalInstructionsForSparePart: Optional[
                     Iterable[Union[aas.LangStringSet, DisposalInstructionsForSparePart]]
                 ] = None,
@@ -8155,9 +7158,7 @@ class MaintenanceInstructions(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -8176,16 +7177,12 @@ class MaintenanceInstructions(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if sparePartID is not None and not isinstance(
-                    sparePartID, aas.SubmodelElement
-                ):
+                if sparePartID is not None and not isinstance(sparePartID, aas.SubmodelElement):
                     sparePartID = self.SparePartID(sparePartID)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if sparePartName is not None and not isinstance(
-                    sparePartName, aas.SubmodelElement
-                ):
+                if sparePartName is not None and not isinstance(sparePartName, aas.SubmodelElement):
                     sparePartName = self.SparePartName(sparePartName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -8193,69 +7190,47 @@ class MaintenanceInstructions(aas.Submodel):
                 if companyNameSupplierSparePart is not None and not isinstance(
                     companyNameSupplierSparePart, aas.SubmodelElement
                 ):
-                    companyNameSupplierSparePart = self.CompanyNameSupplierSparePart(
-                        companyNameSupplierSparePart
-                    )
+                    companyNameSupplierSparePart = self.CompanyNameSupplierSparePart(companyNameSupplierSparePart)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if orderCodeSparePartOfManufacturer is not None and not isinstance(
                     orderCodeSparePartOfManufacturer, aas.SubmodelElement
                 ):
-                    orderCodeSparePartOfManufacturer = (
-                        self.OrderCodeSparePartOfManufacturer(
-                            orderCodeSparePartOfManufacturer
-                        )
+                    orderCodeSparePartOfManufacturer = self.OrderCodeSparePartOfManufacturer(
+                        orderCodeSparePartOfManufacturer
                     )
 
                 # A str would be split into its characters
                 if isinstance(sparePartDescription, str):
-                    raise TypeError(
-                        "sparePartDescription takes several elements, got a str"
-                    )
+                    raise TypeError("sparePartDescription takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if sparePartDescription:
                     sparePartDescription = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.SparePartDescription(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.SparePartDescription(i)
                         for i in sparePartDescription
                     ]
 
                 # A str would be split into its characters
                 if isinstance(disposalInstructionsForSparePart, str):
-                    raise TypeError(
-                        "disposalInstructionsForSparePart takes several elements, got a str"
-                    )
+                    raise TypeError("disposalInstructionsForSparePart takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if disposalInstructionsForSparePart:
                     disposalInstructionsForSparePart = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.DisposalInstructionsForSparePart(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.DisposalInstructionsForSparePart(i)
                         for i in disposalInstructionsForSparePart
                     ]
 
                 # A str would be split into its characters
                 if isinstance(addressOfAdditionalLinkSparePart, str):
-                    raise TypeError(
-                        "addressOfAdditionalLinkSparePart takes several elements, got a str"
-                    )
+                    raise TypeError("addressOfAdditionalLinkSparePart takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if addressOfAdditionalLinkSparePart:
                     addressOfAdditionalLinkSparePart = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.AddressOfAdditionalLinkSparePart(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.AddressOfAdditionalLinkSparePart(i)
                         for i in addressOfAdditionalLinkSparePart
                     ]
 
@@ -8281,9 +7256,7 @@ class MaintenanceInstructions(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -8300,9 +7273,7 @@ class MaintenanceInstructions(aas.Submodel):
 
         def __init__(
             self,
-            maintenancesparepartlist_items: Optional[
-                Iterable[Maintenancesparepartlist_item]
-            ] = None,
+            maintenancesparepartlist_items: Optional[Iterable[Maintenancesparepartlist_item]] = None,
             id_short: Optional[str] = r"MaintenanceSparePartList",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -8323,9 +7294,7 @@ class MaintenanceInstructions(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -8344,9 +7313,7 @@ class MaintenanceInstructions(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(maintenancesparepartlist_items, str):
-                raise TypeError(
-                    "maintenancesparepartlist_items takes several elements, got a str"
-                )
+                raise TypeError("maintenancesparepartlist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -8358,9 +7325,7 @@ class MaintenanceInstructions(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -8429,10 +7394,7 @@ class MaintenanceInstructions(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -8452,22 +7414,13 @@ class MaintenanceInstructions(aas.Submodel):
             Iterable[MaintenanceInstructionsForSpecificInterval]
         ] = None,
         maintenanceToolList: Optional[
-            Union[
-                Iterable[MaintenanceToolList.Maintenancetoollist_item],
-                MaintenanceToolList,
-            ]
+            Union[Iterable[MaintenanceToolList.Maintenancetoollist_item], MaintenanceToolList]
         ] = None,
         maintenanceConsumablesList: Optional[
-            Union[
-                Iterable[MaintenanceConsumablesList.Maintenanceconsumableslist_item],
-                MaintenanceConsumablesList,
-            ]
+            Union[Iterable[MaintenanceConsumablesList.Maintenanceconsumableslist_item], MaintenanceConsumablesList]
         ] = None,
         maintenanceSparePartList: Optional[
-            Union[
-                Iterable[MaintenanceSparePartList.Maintenancesparepartlist_item],
-                MaintenanceSparePartList,
-            ]
+            Union[Iterable[MaintenanceSparePartList.Maintenancesparepartlist_item], MaintenanceSparePartList]
         ] = None,
         id_short: Optional[str] = r"MaintenanceInstructions",
         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -8516,16 +7469,12 @@ class MaintenanceInstructions(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if maintenanceFreeAsset is not None and not isinstance(
-            maintenanceFreeAsset, aas.SubmodelElement
-        ):
+        if maintenanceFreeAsset is not None and not isinstance(maintenanceFreeAsset, aas.SubmodelElement):
             maintenanceFreeAsset = self.MaintenanceFreeAsset(maintenanceFreeAsset)
 
         # A str would be split into its characters
         if isinstance(maintenanceInstructionsForSpecificInterval, str):
-            raise TypeError(
-                "maintenanceInstructionsForSpecificInterval takes several elements, got a str"
-            )
+            raise TypeError("maintenanceInstructionsForSpecificInterval takes several elements, got a str")
 
         # A str would be split into its characters
         if isinstance(maintenanceToolList, str):
@@ -8533,40 +7482,26 @@ class MaintenanceInstructions(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if maintenanceToolList is not None and not isinstance(
-            maintenanceToolList, aas.SubmodelElement
-        ):
+        if maintenanceToolList is not None and not isinstance(maintenanceToolList, aas.SubmodelElement):
             maintenanceToolList = self.MaintenanceToolList(maintenanceToolList)
 
         # A str would be split into its characters
         if isinstance(maintenanceConsumablesList, str):
-            raise TypeError(
-                "maintenanceConsumablesList takes several elements, got a str"
-            )
+            raise TypeError("maintenanceConsumablesList takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if maintenanceConsumablesList is not None and not isinstance(
-            maintenanceConsumablesList, aas.SubmodelElement
-        ):
-            maintenanceConsumablesList = self.MaintenanceConsumablesList(
-                maintenanceConsumablesList
-            )
+        if maintenanceConsumablesList is not None and not isinstance(maintenanceConsumablesList, aas.SubmodelElement):
+            maintenanceConsumablesList = self.MaintenanceConsumablesList(maintenanceConsumablesList)
 
         # A str would be split into its characters
         if isinstance(maintenanceSparePartList, str):
-            raise TypeError(
-                "maintenanceSparePartList takes several elements, got a str"
-            )
+            raise TypeError("maintenanceSparePartList takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if maintenanceSparePartList is not None and not isinstance(
-            maintenanceSparePartList, aas.SubmodelElement
-        ):
-            maintenanceSparePartList = self.MaintenanceSparePartList(
-                maintenanceSparePartList
-            )
+        if maintenanceSparePartList is not None and not isinstance(maintenanceSparePartList, aas.SubmodelElement):
+            maintenanceSparePartList = self.MaintenanceSparePartList(maintenanceSparePartList)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
@@ -8587,9 +7522,7 @@ class MaintenanceInstructions(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

@@ -17,24 +17,14 @@ class BatteryNameplate(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0112/2///61987#ABN590#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABN590#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABH173#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH173#003"),),
                     referred_semantic_id=None,
                 ),
                 aas.ExternalReference(
@@ -47,15 +37,11 @@ class BatteryNameplate(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"URI of the product"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"URI of the product"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -96,24 +82,14 @@ class BatteryNameplate(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0112/2///61987#ABA565#009",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA565#009"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO677#004",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#004"),),
                     referred_semantic_id=None,
                 ),
                 aas.ExternalReference(
@@ -126,15 +102,11 @@ class BatteryNameplate(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"manufacturer name"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"manufacturer name"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -193,19 +165,13 @@ class BatteryNameplate(aas.Submodel):
                     referred_semantic_id=None,
                 ),
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///61360_7#AAS002#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_7#AAS002#001"),),
                     referred_semantic_id=None,
                 ),
                 aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAQ837#008/0173-1#01-ADR448#008",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ837#008/0173-1#01-ADR448#008"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -220,15 +186,11 @@ class BatteryNameplate(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"address information"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"address information"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -256,9 +218,7 @@ class BatteryNameplate(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -285,24 +245,14 @@ class BatteryNameplate(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0112/2///61987#ABA951#009",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA951#009"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAM556#004",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAM556#004"),),
                     referred_semantic_id=None,
                 ),
                 aas.ExternalReference(
@@ -315,15 +265,11 @@ class BatteryNameplate(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"serial number"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"serial number"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -365,24 +311,14 @@ class BatteryNameplate(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0112/2///61987#ABB757#007",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABB757#007"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAR972#004",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAR972#004"),),
                     referred_semantic_id=None,
                 ),
                 aas.ExternalReference(
@@ -395,15 +331,11 @@ class BatteryNameplate(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"date of manufacture"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"date of manufacture"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -456,15 +388,11 @@ class BatteryNameplate(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"date of putting into service"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"date of putting into service"})
 
             if qualifier is None:
                 qualifier = ()
@@ -520,24 +448,15 @@ class BatteryNameplate(aas.Submodel):
                     referred_semantic_id=None,
                 ),
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV646#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV646#003"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"unique facility identifier"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"unique facility identifier"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -579,12 +498,7 @@ class BatteryNameplate(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABL841#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL841#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -600,15 +514,11 @@ class BatteryNameplate(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"life cycle stage"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"life cycle stage"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -661,15 +571,11 @@ class BatteryNameplate(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"operator identifier"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"operator identifier"})
 
             if qualifier is None:
                 qualifier = ()
@@ -715,15 +621,11 @@ class BatteryNameplate(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"manufacturer identifier"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"manufacturer identifier"})
 
             if qualifier is None:
                 qualifier = ()
@@ -762,24 +664,14 @@ class BatteryNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABA231#009",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA231#009"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABI190#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI190#003"),),
                             referred_semantic_id=None,
                         ),
                         aas.ExternalReference(
@@ -792,15 +684,11 @@ class BatteryNameplate(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"marking name"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"marking name"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -842,24 +730,14 @@ class BatteryNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABH783#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABH783#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABI975#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI975#002"),),
                             referred_semantic_id=None,
                         ),
                         aas.ExternalReference(
@@ -872,9 +750,7 @@ class BatteryNameplate(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -922,24 +798,14 @@ class BatteryNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABO097#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABO097#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABL774#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL774#001"),),
                             referred_semantic_id=None,
                         ),
                         aas.ExternalReference(
@@ -952,15 +818,11 @@ class BatteryNameplate(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"issue date"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"issue date"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1002,24 +864,14 @@ class BatteryNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABH830#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABH830#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABL775#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL775#001"),),
                             referred_semantic_id=None,
                         ),
                         aas.ExternalReference(
@@ -1032,15 +884,11 @@ class BatteryNameplate(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"expiry date"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"expiry date"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1081,24 +929,14 @@ class BatteryNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABO100#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABO100#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABI191#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI191#003"),),
                             referred_semantic_id=None,
                         ),
                         aas.ExternalReference(
@@ -1111,15 +949,11 @@ class BatteryNameplate(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"marking file"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"marking file"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1153,24 +987,14 @@ class BatteryNameplate(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0112/2///61987#ABB146#007",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABB146#007"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
                         aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABI192#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI192#003"),),
                             referred_semantic_id=None,
                         ),
                         aas.ExternalReference(
@@ -1183,15 +1007,11 @@ class BatteryNameplate(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"marking additional text"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"marking additional text"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1224,26 +1044,17 @@ class BatteryNameplate(aas.Submodel):
             def __init__(
                 self,
                 markingName: Union[str, MarkingName],
-                designationOfCertificateOrApproval: Optional[
-                    Union[str, DesignationOfCertificateOrApproval]
-                ] = None,
+                designationOfCertificateOrApproval: Optional[Union[str, DesignationOfCertificateOrApproval]] = None,
                 issueDate: Optional[Union[xsd.Date, IssueDate]] = None,
                 expiryDate: Optional[Union[xsd.Date, ExpiryDate]] = None,
                 markingFile: Optional[MarkingFile] = None,
-                markingAdditionalText: Optional[
-                    Iterable[Union[str, MarkingAdditionalText]]
-                ] = None,
+                markingAdditionalText: Optional[Iterable[Union[str, MarkingAdditionalText]]] = None,
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///61360_7#AAS009#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_7#AAS009#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -1252,8 +1063,7 @@ class BatteryNameplate(aas.Submodel):
                     aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABI564#003/0173-1#01-AHF850#003",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI564#003/0173-1#01-AHF850#003"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -1268,15 +1078,11 @@ class BatteryNameplate(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"markings 00"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"markings 00"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -1293,9 +1099,7 @@ class BatteryNameplate(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if markingName is not None and not isinstance(
-                    markingName, aas.SubmodelElement
-                ):
+                if markingName is not None and not isinstance(markingName, aas.SubmodelElement):
                     markingName = self.MarkingName(markingName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1303,40 +1107,28 @@ class BatteryNameplate(aas.Submodel):
                 if designationOfCertificateOrApproval is not None and not isinstance(
                     designationOfCertificateOrApproval, aas.SubmodelElement
                 ):
-                    designationOfCertificateOrApproval = (
-                        self.DesignationOfCertificateOrApproval(
-                            designationOfCertificateOrApproval
-                        )
+                    designationOfCertificateOrApproval = self.DesignationOfCertificateOrApproval(
+                        designationOfCertificateOrApproval
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if issueDate is not None and not isinstance(
-                    issueDate, aas.SubmodelElement
-                ):
+                if issueDate is not None and not isinstance(issueDate, aas.SubmodelElement):
                     issueDate = self.IssueDate(issueDate)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if expiryDate is not None and not isinstance(
-                    expiryDate, aas.SubmodelElement
-                ):
+                if expiryDate is not None and not isinstance(expiryDate, aas.SubmodelElement):
                     expiryDate = self.ExpiryDate(expiryDate)
 
                 # A str would be split into its characters
                 if isinstance(markingAdditionalText, str):
-                    raise TypeError(
-                        "markingAdditionalText takes several elements, got a str"
-                    )
+                    raise TypeError("markingAdditionalText takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if markingAdditionalText:
                     markingAdditionalText = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.MarkingAdditionalText(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.MarkingAdditionalText(i)
                         for i in markingAdditionalText
                     ]
 
@@ -1360,9 +1152,7 @@ class BatteryNameplate(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1389,12 +1179,7 @@ class BatteryNameplate(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0112/2///61360_7#AAS006",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_7#AAS006"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -1403,8 +1188,7 @@ class BatteryNameplate(aas.Submodel):
                 aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI563#003/0173-1#01-AHF849#003",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI563#003/0173-1#01-AHF849#003"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -1419,9 +1203,7 @@ class BatteryNameplate(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -1454,9 +1236,7 @@ class BatteryNameplate(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1525,10 +1305,7 @@ class BatteryNameplate(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -1565,15 +1342,11 @@ class BatteryNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"document identifier"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -1605,9 +1378,7 @@ class BatteryNameplate(aas.Submodel):
 
         def __init__(
             self,
-            eudeclarationofconformity_items: Iterable[
-                Union[str, Eudeclarationofconformity_item]
-            ],
+            eudeclarationofconformity_items: Iterable[Union[str, Eudeclarationofconformity_item]],
             id_short: Optional[str] = r"EUDeclarationOfConformity",
             type_value_list_element: aas.SubmodelElement = aas.Property,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1629,30 +1400,19 @@ class BatteryNameplate(aas.Submodel):
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABA889#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABA889#003"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"EU declaration of conformity"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"EU declaration of conformity"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "EU declaration of conformity\n\nDIN DKE Spec 99100 chapter reference: 6.2.7"
-                    }
+                    dict_={r"en": "EU declaration of conformity\n\nDIN DKE Spec 99100 chapter reference: 6.2.7"}
                 )
 
             if qualifier is None:
@@ -1663,18 +1423,12 @@ class BatteryNameplate(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(eudeclarationofconformity_items, str):
-                raise TypeError(
-                    "eudeclarationofconformity_items takes several elements, got a str"
-                )
+                raise TypeError("eudeclarationofconformity_items takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if eudeclarationofconformity_items:
                 eudeclarationofconformity_items = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.Eudeclarationofconformity_item(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.Eudeclarationofconformity_item(i)
                     for i in eudeclarationofconformity_items
                 ]
 
@@ -1688,9 +1442,7 @@ class BatteryNameplate(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1759,10 +1511,7 @@ class BatteryNameplate(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -1799,15 +1548,11 @@ class BatteryNameplate(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"document identifier"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -1863,24 +1608,15 @@ class BatteryNameplate(aas.Submodel):
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
                 aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABA705#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABA705#003"),),
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"results of test reports proving compliance"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"results of test reports proving compliance"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -1897,18 +1633,12 @@ class BatteryNameplate(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(resultsoftestreportsprovingcompliance_items, str):
-                raise TypeError(
-                    "resultsoftestreportsprovingcompliance_items takes several elements, got a str"
-                )
+                raise TypeError("resultsoftestreportsprovingcompliance_items takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if resultsoftestreportsprovingcompliance_items:
                 resultsoftestreportsprovingcompliance_items = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.Resultsoftestreportsprovingcompliance_item(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.Resultsoftestreportsprovingcompliance_item(i)
                     for i in resultsoftestreportsprovingcompliance_items
                 ]
 
@@ -1922,9 +1652,7 @@ class BatteryNameplate(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1993,10 +1721,7 @@ class BatteryNameplate(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -2021,23 +1746,13 @@ class BatteryNameplate(aas.Submodel):
         manufacturerIdentifier: Union[str, ManufacturerIdentifier],
         markings: Union[Iterable[Markings.Markings_item], Markings],
         eUDeclarationOfConformity: Union[
-            Iterable[
-                Union[str, EUDeclarationOfConformity.Eudeclarationofconformity_item]
-            ],
-            EUDeclarationOfConformity,
+            Iterable[Union[str, EUDeclarationOfConformity.Eudeclarationofconformity_item]], EUDeclarationOfConformity
         ],
         resultsOfTestReportsProvingCompliance: Union[
-            Iterable[
-                Union[
-                    str,
-                    ResultsOfTestReportsProvingCompliance.Resultsoftestreportsprovingcompliance_item,
-                ]
-            ],
+            Iterable[Union[str, ResultsOfTestReportsProvingCompliance.Resultsoftestreportsprovingcompliance_item]],
             ResultsOfTestReportsProvingCompliance,
         ],
-        dateOfPuttingIntoService: Optional[
-            Union[xsd.Date, DateOfPuttingIntoService]
-        ] = None,
+        dateOfPuttingIntoService: Optional[Union[xsd.Date, DateOfPuttingIntoService]] = None,
         operatorIdentifier: Optional[Union[str, OperatorIdentifier]] = None,
         id_short: Optional[str] = r"BatteryNameplate",
         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2089,15 +1804,11 @@ class BatteryNameplate(aas.Submodel):
     ):
 
         if display_name is None:
-            display_name = aas.MultiLanguageNameType(
-                dict_={r"en": r"battery nameplate"}
-            )
+            display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery nameplate"})
 
         if description is None:
             description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Contains the static nameplate attributes attached to the battery."
-                }
+                dict_={r"en": r"Contains the static nameplate attributes attached to the battery."}
             )
 
         if administration is None:
@@ -2117,69 +1828,47 @@ class BatteryNameplate(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if uRIOfTheProduct is not None and not isinstance(
-            uRIOfTheProduct, aas.SubmodelElement
-        ):
+        if uRIOfTheProduct is not None and not isinstance(uRIOfTheProduct, aas.SubmodelElement):
             uRIOfTheProduct = self.URIOfTheProduct(uRIOfTheProduct)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if manufacturerName is not None and not isinstance(
-            manufacturerName, aas.SubmodelElement
-        ):
+        if manufacturerName is not None and not isinstance(manufacturerName, aas.SubmodelElement):
             manufacturerName = self.ManufacturerName(manufacturerName)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if serialNumber is not None and not isinstance(
-            serialNumber, aas.SubmodelElement
-        ):
+        if serialNumber is not None and not isinstance(serialNumber, aas.SubmodelElement):
             serialNumber = self.SerialNumber(serialNumber)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if dateOfManufacture is not None and not isinstance(
-            dateOfManufacture, aas.SubmodelElement
-        ):
+        if dateOfManufacture is not None and not isinstance(dateOfManufacture, aas.SubmodelElement):
             dateOfManufacture = self.DateOfManufacture(dateOfManufacture)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if dateOfPuttingIntoService is not None and not isinstance(
-            dateOfPuttingIntoService, aas.SubmodelElement
-        ):
-            dateOfPuttingIntoService = self.DateOfPuttingIntoService(
-                dateOfPuttingIntoService
-            )
+        if dateOfPuttingIntoService is not None and not isinstance(dateOfPuttingIntoService, aas.SubmodelElement):
+            dateOfPuttingIntoService = self.DateOfPuttingIntoService(dateOfPuttingIntoService)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if uniqueFacilityIdentifier is not None and not isinstance(
-            uniqueFacilityIdentifier, aas.SubmodelElement
-        ):
-            uniqueFacilityIdentifier = self.UniqueFacilityIdentifier(
-                uniqueFacilityIdentifier
-            )
+        if uniqueFacilityIdentifier is not None and not isinstance(uniqueFacilityIdentifier, aas.SubmodelElement):
+            uniqueFacilityIdentifier = self.UniqueFacilityIdentifier(uniqueFacilityIdentifier)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if lifeCycleStage is not None and not isinstance(
-            lifeCycleStage, aas.SubmodelElement
-        ):
+        if lifeCycleStage is not None and not isinstance(lifeCycleStage, aas.SubmodelElement):
             lifeCycleStage = self.LifeCycleStage(lifeCycleStage)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if operatorIdentifier is not None and not isinstance(
-            operatorIdentifier, aas.SubmodelElement
-        ):
+        if operatorIdentifier is not None and not isinstance(operatorIdentifier, aas.SubmodelElement):
             operatorIdentifier = self.OperatorIdentifier(operatorIdentifier)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if manufacturerIdentifier is not None and not isinstance(
-            manufacturerIdentifier, aas.SubmodelElement
-        ):
+        if manufacturerIdentifier is not None and not isinstance(manufacturerIdentifier, aas.SubmodelElement):
             manufacturerIdentifier = self.ManufacturerIdentifier(manufacturerIdentifier)
 
         # A str would be split into its characters
@@ -2193,34 +1882,24 @@ class BatteryNameplate(aas.Submodel):
 
         # A str would be split into its characters
         if isinstance(eUDeclarationOfConformity, str):
-            raise TypeError(
-                "eUDeclarationOfConformity takes several elements, got a str"
-            )
+            raise TypeError("eUDeclarationOfConformity takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if eUDeclarationOfConformity is not None and not isinstance(
-            eUDeclarationOfConformity, aas.SubmodelElement
-        ):
-            eUDeclarationOfConformity = self.EUDeclarationOfConformity(
-                eUDeclarationOfConformity
-            )
+        if eUDeclarationOfConformity is not None and not isinstance(eUDeclarationOfConformity, aas.SubmodelElement):
+            eUDeclarationOfConformity = self.EUDeclarationOfConformity(eUDeclarationOfConformity)
 
         # A str would be split into its characters
         if isinstance(resultsOfTestReportsProvingCompliance, str):
-            raise TypeError(
-                "resultsOfTestReportsProvingCompliance takes several elements, got a str"
-            )
+            raise TypeError("resultsOfTestReportsProvingCompliance takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
         if resultsOfTestReportsProvingCompliance is not None and not isinstance(
             resultsOfTestReportsProvingCompliance, aas.SubmodelElement
         ):
-            resultsOfTestReportsProvingCompliance = (
-                self.ResultsOfTestReportsProvingCompliance(
-                    resultsOfTestReportsProvingCompliance
-                )
+            resultsOfTestReportsProvingCompliance = self.ResultsOfTestReportsProvingCompliance(
+                resultsOfTestReportsProvingCompliance
             )
 
         # Add all passed/initialized submodel elements to a single list
@@ -2250,9 +1929,7 @@ class BatteryNameplate(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

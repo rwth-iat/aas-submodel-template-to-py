@@ -21,8 +21,7 @@ class EquipmentUnderControl(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/TagName/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/TagName/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -30,9 +29,7 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -40,9 +37,7 @@ class EquipmentUnderControl(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the tag that the device represents"
-                        }
+                        dict_={r"en": r"gives information about the tag that the device represents"}
                     )
 
                 if qualifier is None:
@@ -80,8 +75,7 @@ class EquipmentUnderControl(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/PIDName/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/PIDName/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -89,9 +83,7 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -99,9 +91,7 @@ class EquipmentUnderControl(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the EUC that the SIF protects"
-                        }
+                        dict_={r"en": r"gives information about the EUC that the SIF protects"}
                     )
 
                 if qualifier is None:
@@ -148,21 +138,15 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"tag description"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"tag description"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives relevant information about the tag that the device represents"
-                        }
+                        dict_={r"en": r"gives relevant information about the tag that the device represents"}
                     )
 
                 if qualifier is None:
@@ -209,21 +193,15 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"EUC boundary"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"EUC boundary"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the EUC that the SIF protects"
-                        }
+                        dict_={r"en": r"gives information about the EUC that the SIF protects"}
                     )
 
                 if qualifier is None:
@@ -270,21 +248,15 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"EUC control system"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"EUC control system"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the EUC that the SIF protects"
-                        }
+                        dict_={r"en": r"gives information about the EUC that the SIF protects"}
                     )
 
                 if qualifier is None:
@@ -331,21 +303,15 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"process safety time"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"process safety time"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the EUC that the SIF protects"
-                        }
+                        dict_={r"en": r"gives information about the EUC that the SIF protects"}
                     )
 
                 if qualifier is None:
@@ -400,20 +366,14 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"reference to SIF"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to SIF"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -450,8 +410,7 @@ class EquipmentUnderControl(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/EUCSpecification/1",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/EUCSpecification/1"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -459,21 +418,15 @@ class EquipmentUnderControl(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"EUC specification"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"EUC specification"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"gives information about the EUC that the SIF protects"
-                    }
+                    dict_={r"en": r"gives information about the EUC that the SIF protects"}
                 )
 
             if qualifier is None:
@@ -494,9 +447,7 @@ class EquipmentUnderControl(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if tagDescription is not None and not isinstance(
-                tagDescription, aas.SubmodelElement
-            ):
+            if tagDescription is not None and not isinstance(tagDescription, aas.SubmodelElement):
                 tagDescription = self.TagDescription(tagDescription)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -511,19 +462,12 @@ class EquipmentUnderControl(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if eUCControlSystem:
                 eUCControlSystem = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.EUCControlSystem(i)
-                    )
-                    for i in eUCControlSystem
+                    i if isinstance(i, aas.SubmodelElement) else self.EUCControlSystem(i) for i in eUCControlSystem
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if processSafetyTime is not None and not isinstance(
-                processSafetyTime, aas.SubmodelElement
-            ):
+            if processSafetyTime is not None and not isinstance(processSafetyTime, aas.SubmodelElement):
                 processSafetyTime = self.ProcessSafetyTime(processSafetyTime)
 
             # A str would be split into its characters
@@ -532,22 +476,11 @@ class EquipmentUnderControl(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if linkedSIF:
-                linkedSIF = [
-                    i if isinstance(i, aas.SubmodelElement) else self.LinkedSIF(i)
-                    for i in linkedSIF
-                ]
+                linkedSIF = [i if isinstance(i, aas.SubmodelElement) else self.LinkedSIF(i) for i in linkedSIF]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                tagName,
-                pIDName,
-                tagDescription,
-                boundary,
-                eUCControlSystem,
-                processSafetyTime,
-                linkedSIF,
-            ]:
+            for se_arg in [tagName, pIDName, tagDescription, boundary, eUCControlSystem, processSafetyTime, linkedSIF]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -558,9 +491,7 @@ class EquipmentUnderControl(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -600,21 +531,15 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"hazardous event description"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous event description"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the hazardous event related to the SIF"
-                        }
+                        dict_={r"en": r"gives information about the hazardous event related to the SIF"}
                     )
 
                 if qualifier is None:
@@ -652,8 +577,7 @@ class EquipmentUnderControl(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/HazardID/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/HazardID/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -661,21 +585,15 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"hazard ID"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazard ID"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the hazardous event related to the SIF"
-                        }
+                        dict_={r"en": r"gives information about the hazardous event related to the SIF"}
                     )
 
                 if qualifier is None:
@@ -722,21 +640,15 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"independent protection layer"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"independent protection layer"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the hazardous event related to the SIF"
-                        }
+                        dict_={r"en": r"gives information about the hazardous event related to the SIF"}
                     )
 
                 if qualifier is None:
@@ -764,9 +676,7 @@ class EquipmentUnderControl(aas.Submodel):
             self,
             hazardousEventDescription: Union[str, HazardousEventDescription],
             hazardID: Union[str, HazardID],
-            independentProtectionLayer: Optional[
-                Iterable[Union[str, IndependentProtectionLayer]]
-            ] = None,
+            independentProtectionLayer: Optional[Iterable[Union[str, IndependentProtectionLayer]]] = None,
             id_short: Optional[str] = r"HazardousEvent",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -774,8 +684,7 @@ class EquipmentUnderControl(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/HazardousEvent/1",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/HazardousEvent/1"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -783,21 +692,15 @@ class EquipmentUnderControl(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"hazardous event"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous event"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"gives information about the EUC that the SIF protects"
-                    }
+                    dict_={r"en": r"gives information about the EUC that the SIF protects"}
                 )
 
             if qualifier is None:
@@ -808,12 +711,8 @@ class EquipmentUnderControl(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if hazardousEventDescription is not None and not isinstance(
-                hazardousEventDescription, aas.SubmodelElement
-            ):
-                hazardousEventDescription = self.HazardousEventDescription(
-                    hazardousEventDescription
-                )
+            if hazardousEventDescription is not None and not isinstance(hazardousEventDescription, aas.SubmodelElement):
+                hazardousEventDescription = self.HazardousEventDescription(hazardousEventDescription)
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -822,28 +721,18 @@ class EquipmentUnderControl(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(independentProtectionLayer, str):
-                raise TypeError(
-                    "independentProtectionLayer takes several elements, got a str"
-                )
+                raise TypeError("independentProtectionLayer takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if independentProtectionLayer:
                 independentProtectionLayer = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.IndependentProtectionLayer(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.IndependentProtectionLayer(i)
                     for i in independentProtectionLayer
                 ]
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                hazardousEventDescription,
-                hazardID,
-                independentProtectionLayer,
-            ]:
+            for se_arg in [hazardousEventDescription, hazardID, independentProtectionLayer]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -854,9 +743,7 @@ class EquipmentUnderControl(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -896,21 +783,15 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"hazardous event description"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous event description"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the hazardous event related to the SIF"
-                        }
+                        dict_={r"en": r"gives information about the hazardous event related to the SIF"}
                     )
 
                 if qualifier is None:
@@ -948,8 +829,7 @@ class EquipmentUnderControl(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/HazardID/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/HazardID/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -957,21 +837,15 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"hazard ID"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazard ID"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the hazardous event related to the SIF"
-                        }
+                        dict_={r"en": r"gives information about the hazardous event related to the SIF"}
                     )
 
                 if qualifier is None:
@@ -1000,9 +874,7 @@ class EquipmentUnderControl(aas.Submodel):
             def __init__(
                 self,
                 value: str,
-                id_short: Optional[
-                    str
-                ] = r"MeasuresToAvoidHazardFromCombinedSafeProcessStates",
+                id_short: Optional[str] = r"MeasuresToAvoidHazardFromCombinedSafeProcessStates",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -1020,23 +892,17 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"measure to avoid hazard from combined safe process states"
-                        }
+                        dict_={r"en": r"measure to avoid hazard from combined safe process states"}
                     )
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the hazardous event related to the SIF"
-                        }
+                        dict_={r"en": r"gives information about the hazardous event related to the SIF"}
                     )
 
                 if qualifier is None:
@@ -1081,20 +947,14 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"reference to hazardous event"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"reference to hazardous event"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about the SIF"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives information about the SIF"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -1138,21 +998,15 @@ class EquipmentUnderControl(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"independent protection layer"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"independent protection layer"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"gives information about the hazardous event related to the SIF"
-                        }
+                        dict_={r"en": r"gives information about the hazardous event related to the SIF"}
                     )
 
                 if qualifier is None:
@@ -1180,15 +1034,11 @@ class EquipmentUnderControl(aas.Submodel):
             self,
             hazardousEventDescription: Union[str, HazardousEventDescription],
             hazardID: Union[str, HazardID],
-            referenceToHazardousEvent: Iterable[
-                Union[aas.Reference, ReferenceToHazardousEvent]
-            ],
+            referenceToHazardousEvent: Iterable[Union[aas.Reference, ReferenceToHazardousEvent]],
             measuresToAvoidHazardFromCombinedSafeProcessStates: Optional[
                 Iterable[Union[str, MeasuresToAvoidHazardFromCombinedSafeProcessStates]]
             ] = None,
-            independentProtectionLayer: Optional[
-                Iterable[Union[str, IndependentProtectionLayer]]
-            ] = None,
+            independentProtectionLayer: Optional[Iterable[Union[str, IndependentProtectionLayer]]] = None,
             id_short: Optional[str] = r"HazardFromCombinedSafeProcessStates",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -1205,21 +1055,15 @@ class EquipmentUnderControl(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"hazard from combined safe process states"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazard from combined safe process states"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"gives information about the EUC that the SIF protects"
-                    }
+                    dict_={r"en": r"gives information about the EUC that the SIF protects"}
                 )
 
             if qualifier is None:
@@ -1230,12 +1074,8 @@ class EquipmentUnderControl(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if hazardousEventDescription is not None and not isinstance(
-                hazardousEventDescription, aas.SubmodelElement
-            ):
-                hazardousEventDescription = self.HazardousEventDescription(
-                    hazardousEventDescription
-                )
+            if hazardousEventDescription is not None and not isinstance(hazardousEventDescription, aas.SubmodelElement):
+                hazardousEventDescription = self.HazardousEventDescription(hazardousEventDescription)
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -1244,9 +1084,7 @@ class EquipmentUnderControl(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(measuresToAvoidHazardFromCombinedSafeProcessStates, str):
-                raise TypeError(
-                    "measuresToAvoidHazardFromCombinedSafeProcessStates takes several elements, got a str"
-                )
+                raise TypeError("measuresToAvoidHazardFromCombinedSafeProcessStates takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if measuresToAvoidHazardFromCombinedSafeProcessStates:
@@ -1261,35 +1099,23 @@ class EquipmentUnderControl(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(referenceToHazardousEvent, str):
-                raise TypeError(
-                    "referenceToHazardousEvent takes several elements, got a str"
-                )
+                raise TypeError("referenceToHazardousEvent takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if referenceToHazardousEvent:
                 referenceToHazardousEvent = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.ReferenceToHazardousEvent(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.ReferenceToHazardousEvent(i)
                     for i in referenceToHazardousEvent
                 ]
 
             # A str would be split into its characters
             if isinstance(independentProtectionLayer, str):
-                raise TypeError(
-                    "independentProtectionLayer takes several elements, got a str"
-                )
+                raise TypeError("independentProtectionLayer takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if independentProtectionLayer:
                 independentProtectionLayer = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.IndependentProtectionLayer(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.IndependentProtectionLayer(i)
                     for i in independentProtectionLayer
                 ]
 
@@ -1312,9 +1138,7 @@ class EquipmentUnderControl(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1351,21 +1175,15 @@ class EquipmentUnderControl(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"SIL allocation report"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"SIL allocation report"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"gives information about the EUC that the SIF protects"
-                    }
+                    dict_={r"en": r"gives information about the EUC that the SIF protects"}
                 )
 
             if qualifier is None:
@@ -1410,21 +1228,15 @@ class EquipmentUnderControl(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"hazard and risk assessment report"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazard and risk assessment report"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"gives information about the EUC that the SIF protects"
-                    }
+                    dict_={r"en": r"gives information about the EUC that the SIF protects"}
                 )
 
             if qualifier is None:
@@ -1452,13 +1264,9 @@ class EquipmentUnderControl(aas.Submodel):
         id_: str,
         eUCSpecification: EUCSpecification,
         hazardousEvent: Iterable[HazardousEvent],
-        hazardFromCombinedSafeProcessStates: Iterable[
-            HazardFromCombinedSafeProcessStates
-        ],
+        hazardFromCombinedSafeProcessStates: Iterable[HazardFromCombinedSafeProcessStates],
         sILAllocationReport: Optional[Iterable[SILAllocationReport]] = None,
-        hazardAndRiskAssessmentReport: Optional[
-            Iterable[HazardAndRiskAssessmentReport]
-        ] = None,
+        hazardAndRiskAssessmentReport: Optional[Iterable[HazardAndRiskAssessmentReport]] = None,
         id_short: Optional[str] = r"EquipmentUnderControl",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -1508,9 +1316,7 @@ class EquipmentUnderControl(aas.Submodel):
 
         # A str would be split into its characters
         if isinstance(hazardFromCombinedSafeProcessStates, str):
-            raise TypeError(
-                "hazardFromCombinedSafeProcessStates takes several elements, got a str"
-            )
+            raise TypeError("hazardFromCombinedSafeProcessStates takes several elements, got a str")
 
         # A str would be split into its characters
         if isinstance(sILAllocationReport, str):
@@ -1518,9 +1324,7 @@ class EquipmentUnderControl(aas.Submodel):
 
         # A str would be split into its characters
         if isinstance(hazardAndRiskAssessmentReport, str):
-            raise TypeError(
-                "hazardAndRiskAssessmentReport takes several elements, got a str"
-            )
+            raise TypeError("hazardAndRiskAssessmentReport takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
@@ -1541,9 +1345,7 @@ class EquipmentUnderControl(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

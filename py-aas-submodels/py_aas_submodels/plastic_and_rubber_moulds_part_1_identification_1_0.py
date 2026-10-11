@@ -17,27 +17,18 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABA682#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABA682#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The month in which the manufacturing process of the machine has been completed"
-                    }
+                    dict_={r"en": r"The month in which the manufacturing process of the machine has been completed"}
                 )
 
             if qualifier is None:
@@ -73,27 +64,18 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABA683#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABA683#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The first time, the mould gets on the machine and switched on (dry cycle)"
-                    }
+                    dict_={r"en": r"The first time, the mould gets on the machine and switched on (dry cycle)"}
                 )
 
             if qualifier is None:
@@ -140,9 +122,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -196,16 +176,12 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The date, when the MouldItem was transfered to series production the first time"
-                    }
+                    dict_={r"en": r"The date, when the MouldItem was transfered to series production the first time"}
                 )
 
             if qualifier is None:
@@ -252,16 +228,12 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"A globally unique identifier of the manufacturer of the MachineryItem."
-                    }
+                    dict_={r"en": r"A globally unique identifier of the manufacturer of the MachineryItem."}
                 )
 
             if qualifier is None:
@@ -297,20 +269,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r" 0173-1#02-ABA684#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r" 0173-1#02-ABA684#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -364,16 +329,12 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"name of the machine controller as used in OPC 40083"
-                    }
+                    dict_={r"en": r"name of the machine controller as used in OPC 40083"}
                 )
 
             if qualifier is None:
@@ -420,9 +381,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -476,16 +435,12 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Name of the plastic part, which is produced with the mould"
-                    }
+                    dict_={r"en": r"Name of the plastic part, which is produced with the mould"}
                 )
 
             if qualifier is None:
@@ -523,20 +478,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO204#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO204#003"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -578,20 +526,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO134#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO134#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -644,9 +585,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -700,9 +639,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -744,20 +681,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO132#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO132#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -798,20 +728,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAW001#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW001#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -845,20 +768,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO127#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO127#003"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -894,20 +810,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO136#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO136#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -949,20 +858,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO137#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO137#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1015,9 +917,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1061,9 +961,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1074,23 +972,17 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if telephoneNumber is not None and not isinstance(
-                    telephoneNumber, aas.SubmodelElement
-                ):
+                if telephoneNumber is not None and not isinstance(telephoneNumber, aas.SubmodelElement):
                     telephoneNumber = self.TelephoneNumber(telephoneNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if typeOfTelephone is not None and not isinstance(
-                    typeOfTelephone, aas.SubmodelElement
-                ):
+                if typeOfTelephone is not None and not isinstance(typeOfTelephone, aas.SubmodelElement):
                     typeOfTelephone = self.TypeOfTelephone(typeOfTelephone)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if availableTime is not None and not isinstance(
-                    availableTime, aas.SubmodelElement
-                ):
+                if availableTime is not None and not isinstance(availableTime, aas.SubmodelElement):
                     availableTime = self.AvailableTime(availableTime)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1106,9 +998,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1136,20 +1026,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO195#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO195#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1191,20 +1074,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO196#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO196#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1244,20 +1120,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAQ834#005",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ834#005"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1268,16 +1137,12 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if faxNumber is not None and not isinstance(
-                    faxNumber, aas.SubmodelElement
-                ):
+                if faxNumber is not None and not isinstance(faxNumber, aas.SubmodelElement):
                     faxNumber = self.FaxNumber(faxNumber)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if typeOfFaxNumber is not None and not isinstance(
-                    typeOfFaxNumber, aas.SubmodelElement
-                ):
+                if typeOfFaxNumber is not None and not isinstance(typeOfFaxNumber, aas.SubmodelElement):
                     typeOfFaxNumber = self.TypeOfFaxNumber(typeOfFaxNumber)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1293,9 +1158,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1324,20 +1187,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO198#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO198#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1372,20 +1228,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO200#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO200#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1427,20 +1276,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO199#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO199#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1482,20 +1324,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO201#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO201#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1523,28 +1358,19 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 emailAddress: Union[str, EmailAddress],
                 publicKey: Optional[Union[aas.LangStringSet, PublicKey]] = None,
                 typeOfEmailAddress: Optional[Union[str, TypeOfEmailAddress]] = None,
-                typeOfPublicKey: Optional[
-                    Union[aas.LangStringSet, TypeOfPublicKey]
-                ] = None,
+                typeOfPublicKey: Optional[Union[aas.LangStringSet, TypeOfPublicKey]] = None,
                 id_short: Optional[str] = r"Email",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAQ836#005",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ836#005"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1555,40 +1381,27 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if emailAddress is not None and not isinstance(
-                    emailAddress, aas.SubmodelElement
-                ):
+                if emailAddress is not None and not isinstance(emailAddress, aas.SubmodelElement):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if publicKey is not None and not isinstance(
-                    publicKey, aas.SubmodelElement
-                ):
+                if publicKey is not None and not isinstance(publicKey, aas.SubmodelElement):
                     publicKey = self.PublicKey(publicKey)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if typeOfEmailAddress is not None and not isinstance(
-                    typeOfEmailAddress, aas.SubmodelElement
-                ):
+                if typeOfEmailAddress is not None and not isinstance(typeOfEmailAddress, aas.SubmodelElement):
                     typeOfEmailAddress = self.TypeOfEmailAddress(typeOfEmailAddress)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if typeOfPublicKey is not None and not isinstance(
-                    typeOfPublicKey, aas.SubmodelElement
-                ):
+                if typeOfPublicKey is not None and not isinstance(typeOfPublicKey, aas.SubmodelElement):
                     typeOfPublicKey = self.TypeOfPublicKey(typeOfPublicKey)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    emailAddress,
-                    publicKey,
-                    typeOfEmailAddress,
-                    typeOfPublicKey,
-                ]:
+                for se_arg in [emailAddress, publicKey, typeOfEmailAddress, typeOfPublicKey]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -1599,9 +1412,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1630,20 +1441,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAQ326#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ326#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1690,9 +1494,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1738,9 +1540,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1784,9 +1584,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1797,34 +1595,22 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if addressOfAdditionalLink is not None and not isinstance(
-                    addressOfAdditionalLink, aas.SubmodelElement
-                ):
-                    addressOfAdditionalLink = self.AddressOfAdditionalLink(
-                        addressOfAdditionalLink
-                    )
+                if addressOfAdditionalLink is not None and not isinstance(addressOfAdditionalLink, aas.SubmodelElement):
+                    addressOfAdditionalLink = self.AddressOfAdditionalLink(addressOfAdditionalLink)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if typeOfCommunication is not None and not isinstance(
-                    typeOfCommunication, aas.SubmodelElement
-                ):
+                if typeOfCommunication is not None and not isinstance(typeOfCommunication, aas.SubmodelElement):
                     typeOfCommunication = self.TypeOfCommunication(typeOfCommunication)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if availableTime is not None and not isinstance(
-                    availableTime, aas.SubmodelElement
-                ):
+                if availableTime is not None and not isinstance(availableTime, aas.SubmodelElement):
                     availableTime = self.AvailableTime(availableTime)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    addressOfAdditionalLink,
-                    typeOfCommunication,
-                    availableTime,
-                ]:
+                for se_arg in [addressOfAdditionalLink, typeOfCommunication, availableTime]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -1835,9 +1621,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1863,20 +1647,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO128#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO128#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1917,20 +1694,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO129#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO129#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1971,20 +1741,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO130#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO130#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2018,20 +1781,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO131#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO131#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -2072,20 +1828,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO133#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO133#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2119,20 +1868,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO205#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO205#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2166,20 +1908,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO206#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO206#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2213,20 +1948,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO207#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO207#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2260,20 +1988,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO208#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO208#003"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2307,20 +2028,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO209#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO209#003"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2354,20 +2068,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO210#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO210#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2402,20 +2109,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAQ326#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ326#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2462,12 +2162,8 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             middleNames: Optional[Union[aas.LangStringSet, MiddleNames]] = None,
             title: Optional[Union[aas.LangStringSet, Title]] = None,
             academicTitle: Optional[Union[aas.LangStringSet, AcademicTitle]] = None,
-            furtherDetailsOfContact: Optional[
-                Union[aas.LangStringSet, FurtherDetailsOfContact]
-            ] = None,
-            addressOfAdditionalLink: Optional[
-                Union[str, AddressOfAdditionalLink]
-            ] = None,
+            furtherDetailsOfContact: Optional[Union[aas.LangStringSet, FurtherDetailsOfContact]] = None,
+            addressOfAdditionalLink: Optional[Union[str, AddressOfAdditionalLink]] = None,
             id_short: Optional[str] = r"Affiliation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -2484,9 +2180,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -2504,16 +2198,12 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if roleOfContactPerson is not None and not isinstance(
-                roleOfContactPerson, aas.SubmodelElement
-            ):
+            if roleOfContactPerson is not None and not isinstance(roleOfContactPerson, aas.SubmodelElement):
                 roleOfContactPerson = self.RoleOfContactPerson(roleOfContactPerson)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if nationalCode is not None and not isinstance(
-                nationalCode, aas.SubmodelElement
-            ):
+            if nationalCode is not None and not isinstance(nationalCode, aas.SubmodelElement):
                 nationalCode = self.NationalCode(nationalCode)
 
             # A str would be split into its characters
@@ -2522,10 +2212,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if language:
-                language = [
-                    i if isinstance(i, aas.SubmodelElement) else self.Language(i)
-                    for i in language
-                ]
+                language = [i if isinstance(i, aas.SubmodelElement) else self.Language(i) for i in language]
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -2544,9 +2231,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if department is not None and not isinstance(
-                department, aas.SubmodelElement
-            ):
+            if department is not None and not isinstance(department, aas.SubmodelElement):
                 department = self.Department(department)
 
             # A str would be split into its characters
@@ -2570,23 +2255,17 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if zipCodeOfPOBox is not None and not isinstance(
-                zipCodeOfPOBox, aas.SubmodelElement
-            ):
+            if zipCodeOfPOBox is not None and not isinstance(zipCodeOfPOBox, aas.SubmodelElement):
                 zipCodeOfPOBox = self.ZipCodeOfPOBox(zipCodeOfPOBox)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if stateCounty is not None and not isinstance(
-                stateCounty, aas.SubmodelElement
-            ):
+            if stateCounty is not None and not isinstance(stateCounty, aas.SubmodelElement):
                 stateCounty = self.StateCounty(stateCounty)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if nameOfContact is not None and not isinstance(
-                nameOfContact, aas.SubmodelElement
-            ):
+            if nameOfContact is not None and not isinstance(nameOfContact, aas.SubmodelElement):
                 nameOfContact = self.NameOfContact(nameOfContact)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2596,9 +2275,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if middleNames is not None and not isinstance(
-                middleNames, aas.SubmodelElement
-            ):
+            if middleNames is not None and not isinstance(middleNames, aas.SubmodelElement):
                 middleNames = self.MiddleNames(middleNames)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2608,28 +2285,18 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if academicTitle is not None and not isinstance(
-                academicTitle, aas.SubmodelElement
-            ):
+            if academicTitle is not None and not isinstance(academicTitle, aas.SubmodelElement):
                 academicTitle = self.AcademicTitle(academicTitle)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if furtherDetailsOfContact is not None and not isinstance(
-                furtherDetailsOfContact, aas.SubmodelElement
-            ):
-                furtherDetailsOfContact = self.FurtherDetailsOfContact(
-                    furtherDetailsOfContact
-                )
+            if furtherDetailsOfContact is not None and not isinstance(furtherDetailsOfContact, aas.SubmodelElement):
+                furtherDetailsOfContact = self.FurtherDetailsOfContact(furtherDetailsOfContact)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if addressOfAdditionalLink is not None and not isinstance(
-                addressOfAdditionalLink, aas.SubmodelElement
-            ):
-                addressOfAdditionalLink = self.AddressOfAdditionalLink(
-                    addressOfAdditionalLink
-                )
+            if addressOfAdditionalLink is not None and not isinstance(addressOfAdditionalLink, aas.SubmodelElement):
+                addressOfAdditionalLink = self.AddressOfAdditionalLink(addressOfAdditionalLink)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2668,9 +2335,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2696,20 +2361,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABA685#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABA685#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -2750,27 +2408,18 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABJ035#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABJ035#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"To be used by end users to store comments in a scheme specific to the end user."
-                    }
+                    dict_={r"en": r"To be used by end users to store comments in a scheme specific to the end user."}
                 )
 
             if qualifier is None:
@@ -2804,20 +2453,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABA686#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABA686#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -2899,37 +2541,27 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if monthOfConstruction is not None and not isinstance(
-            monthOfConstruction, aas.SubmodelElement
-        ):
+        if monthOfConstruction is not None and not isinstance(monthOfConstruction, aas.SubmodelElement):
             monthOfConstruction = self.MonthOfConstruction(monthOfConstruction)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if initialOperationDate is not None and not isinstance(
-            initialOperationDate, aas.SubmodelElement
-        ):
+        if initialOperationDate is not None and not isinstance(initialOperationDate, aas.SubmodelElement):
             initialOperationDate = self.InitialOperationDate(initialOperationDate)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if initialSamplingDate is not None and not isinstance(
-            initialSamplingDate, aas.SubmodelElement
-        ):
+        if initialSamplingDate is not None and not isinstance(initialSamplingDate, aas.SubmodelElement):
             initialSamplingDate = self.InitialSamplingDate(initialSamplingDate)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if initialProductionDate is not None and not isinstance(
-            initialProductionDate, aas.SubmodelElement
-        ):
+        if initialProductionDate is not None and not isinstance(initialProductionDate, aas.SubmodelElement):
             initialProductionDate = self.InitialProductionDate(initialProductionDate)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if manufacturerURI is not None and not isinstance(
-            manufacturerURI, aas.SubmodelElement
-        ):
+        if manufacturerURI is not None and not isinstance(manufacturerURI, aas.SubmodelElement):
             manufacturerURI = self.ManufacturerURI(manufacturerURI)
 
         # Build a submodel element if a raw value was passed in the argument
@@ -2939,9 +2571,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if controllerName is not None and not isinstance(
-            controllerName, aas.SubmodelElement
-        ):
+        if controllerName is not None and not isinstance(controllerName, aas.SubmodelElement):
             controllerName = self.ControllerName(controllerName)
 
         # A str would be split into its characters
@@ -2950,10 +2580,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
         # Build submodel elements from raw values passed in the argument
         if articleID:
-            articleID = [
-                i if isinstance(i, aas.SubmodelElement) else self.ArticleID(i)
-                for i in articleID
-            ]
+            articleID = [i if isinstance(i, aas.SubmodelElement) else self.ArticleID(i) for i in articleID]
 
         # A str would be split into its characters
         if isinstance(articleName, str):
@@ -2961,16 +2588,11 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
         # Build submodel elements from raw values passed in the argument
         if articleName:
-            articleName = [
-                i if isinstance(i, aas.SubmodelElement) else self.ArticleName(i)
-                for i in articleName
-            ]
+            articleName = [i if isinstance(i, aas.SubmodelElement) else self.ArticleName(i) for i in articleName]
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if componentName is not None and not isinstance(
-            componentName, aas.SubmodelElement
-        ):
+        if componentName is not None and not isinstance(componentName, aas.SubmodelElement):
             componentName = self.ComponentName(componentName)
 
         # A str would be split into its characters
@@ -2979,10 +2601,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
         # Build submodel elements from raw values passed in the argument
         if comments:
-            comments = [
-                i if isinstance(i, aas.SubmodelElement) else self.Comments(i)
-                for i in comments
-            ]
+            comments = [i if isinstance(i, aas.SubmodelElement) else self.Comments(i) for i in comments]
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -3016,9 +2635,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

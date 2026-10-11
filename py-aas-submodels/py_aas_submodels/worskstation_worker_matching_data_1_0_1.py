@@ -32,23 +32,16 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Workstation name",
-                                r"de": r"Name der Arbeitsstation",
-                            }
+                            dict_={r"en": r"Workstation name", r"de": r"Name der Arbeitsstation"}
                         )
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Workstation name"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Workstation name"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -95,17 +88,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Workstation ID",
-                                r"de": r"Arbeitsstation ID",
-                            }
+                            dict_={r"en": r"Workstation ID", r"de": r"Arbeitsstation ID"}
                         )
 
                     if qualifier is None:
@@ -152,17 +140,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Organizational name",
-                                r"de": r"Organisationsname",
-                            }
+                            dict_={r"en": r"Organizational name", r"de": r"Organisationsname"}
                         )
 
                     if qualifier is None:
@@ -208,17 +191,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Workstation type",
-                                r"de": r"Arbeitsstationsart",
-                            }
+                            dict_={r"en": r"Workstation type", r"de": r"Arbeitsstationsart"}
                         )
 
                     if qualifier is None:
@@ -263,23 +241,16 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Worker assistance information",
-                                r"de": r"Informationen zur Werkerassistenz",
-                            }
+                            dict_={r"en": r"Worker assistance information", r"de": r"Informationen zur Werkerassistenz"}
                         )
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Worker assistance information"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Worker assistance information"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -324,9 +295,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -338,9 +307,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         )
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Required personal safety equipment"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Required personal safety equipment"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -385,17 +352,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Necessary personal tools",
-                                r"de": r"Notwendige persönliche Werkzeuge",
-                            }
+                            dict_={r"en": r"Necessary personal tools", r"de": r"Notwendige persönliche Werkzeuge"}
                         )
 
                     if qualifier is None:
@@ -440,17 +402,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Personal data processing ",
-                                r"de": r"Verarbeitung persönlicher Daten",
-                            }
+                            dict_={r"en": r"Personal data processing ", r"de": r"Verarbeitung persönlicher Daten"}
                         )
 
                     if qualifier is None:
@@ -496,17 +453,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Location description",
-                                r"de": r"Ortsbeschreibung",
-                            }
+                            dict_={r"en": r"Location description", r"de": r"Ortsbeschreibung"}
                         )
 
                     if qualifier is None:
@@ -552,9 +504,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -587,24 +537,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 workstationId: Union[str, WorkstationId],
                 workstationName: Optional[Union[str, WorkstationName]] = None,
                 orgName: Optional[Union[aas.LangStringSet, OrgName]] = None,
-                typeOfWorkstation: Optional[
-                    Union[aas.LangStringSet, TypeOfWorkstation]
-                ] = None,
-                workerAssistanceInformation: Optional[
-                    Union[aas.LangStringSet, WorkerAssistanceInformation]
-                ] = None,
+                typeOfWorkstation: Optional[Union[aas.LangStringSet, TypeOfWorkstation]] = None,
+                workerAssistanceInformation: Optional[Union[aas.LangStringSet, WorkerAssistanceInformation]] = None,
                 requiredPersonalSafetyEquipment: Optional[
                     Union[aas.LangStringSet, RequiredPersonalSafetyEquipment]
                 ] = None,
-                necessaryPersonalTools: Optional[
-                    Union[aas.LangStringSet, NecessaryPersonalTools]
-                ] = None,
-                personalDataProcessing: Optional[
-                    Union[aas.LangStringSet, PersonalDataProcessing]
-                ] = None,
-                locationDescription: Optional[
-                    Union[aas.LangStringSet, LocationDescription]
-                ] = None,
+                necessaryPersonalTools: Optional[Union[aas.LangStringSet, NecessaryPersonalTools]] = None,
+                personalDataProcessing: Optional[Union[aas.LangStringSet, PersonalDataProcessing]] = None,
+                locationDescription: Optional[Union[aas.LangStringSet, LocationDescription]] = None,
                 directions: Optional[Union[aas.LangStringSet, Directions]] = None,
                 id_short: Optional[str] = r"WorkstationInformation",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -622,9 +562,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -651,16 +589,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if workstationName is not None and not isinstance(
-                    workstationName, aas.SubmodelElement
-                ):
+                if workstationName is not None and not isinstance(workstationName, aas.SubmodelElement):
                     workstationName = self.WorkstationName(workstationName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if workstationId is not None and not isinstance(
-                    workstationId, aas.SubmodelElement
-                ):
+                if workstationId is not None and not isinstance(workstationId, aas.SubmodelElement):
                     workstationId = self.WorkstationId(workstationId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -670,9 +604,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if typeOfWorkstation is not None and not isinstance(
-                    typeOfWorkstation, aas.SubmodelElement
-                ):
+                if typeOfWorkstation is not None and not isinstance(typeOfWorkstation, aas.SubmodelElement):
                     typeOfWorkstation = self.TypeOfWorkstation(typeOfWorkstation)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -680,51 +612,35 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 if workerAssistanceInformation is not None and not isinstance(
                     workerAssistanceInformation, aas.SubmodelElement
                 ):
-                    workerAssistanceInformation = self.WorkerAssistanceInformation(
-                        workerAssistanceInformation
-                    )
+                    workerAssistanceInformation = self.WorkerAssistanceInformation(workerAssistanceInformation)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if requiredPersonalSafetyEquipment is not None and not isinstance(
                     requiredPersonalSafetyEquipment, aas.SubmodelElement
                 ):
-                    requiredPersonalSafetyEquipment = (
-                        self.RequiredPersonalSafetyEquipment(
-                            requiredPersonalSafetyEquipment
-                        )
+                    requiredPersonalSafetyEquipment = self.RequiredPersonalSafetyEquipment(
+                        requiredPersonalSafetyEquipment
                     )
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if necessaryPersonalTools is not None and not isinstance(
-                    necessaryPersonalTools, aas.SubmodelElement
-                ):
-                    necessaryPersonalTools = self.NecessaryPersonalTools(
-                        necessaryPersonalTools
-                    )
+                if necessaryPersonalTools is not None and not isinstance(necessaryPersonalTools, aas.SubmodelElement):
+                    necessaryPersonalTools = self.NecessaryPersonalTools(necessaryPersonalTools)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if personalDataProcessing is not None and not isinstance(
-                    personalDataProcessing, aas.SubmodelElement
-                ):
-                    personalDataProcessing = self.PersonalDataProcessing(
-                        personalDataProcessing
-                    )
+                if personalDataProcessing is not None and not isinstance(personalDataProcessing, aas.SubmodelElement):
+                    personalDataProcessing = self.PersonalDataProcessing(personalDataProcessing)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if locationDescription is not None and not isinstance(
-                    locationDescription, aas.SubmodelElement
-                ):
+                if locationDescription is not None and not isinstance(locationDescription, aas.SubmodelElement):
                     locationDescription = self.LocationDescription(locationDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if directions is not None and not isinstance(
-                    directions, aas.SubmodelElement
-                ):
+                if directions is not None and not isinstance(directions, aas.SubmodelElement):
                     directions = self.Directions(directions)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -751,9 +667,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -796,9 +710,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -854,17 +766,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Qualification (ID)",
-                                    r"de": r"Qualifikation (ID)",
-                                }
+                                dict_={r"en": r"Qualification (ID)", r"de": r"Qualifikation (ID)"}
                             )
 
                         if qualifier is None:
@@ -911,17 +818,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Exception rules",
-                                    r"de": r"Ausnahmeregelungen",
-                                }
+                                dict_={r"en": r"Exception rules", r"de": r"Ausnahmeregelungen"}
                             )
 
                         if qualifier is None:
@@ -946,13 +848,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 def __init__(
                     self,
-                    qualificationClassificationId: Union[
-                        str, QualificationClassificationId
-                    ],
+                    qualificationClassificationId: Union[str, QualificationClassificationId],
                     qualificationId: Union[str, QualificationId],
-                    exceptionRules: Optional[
-                        Union[aas.LangStringSet, ExceptionRules]
-                    ] = None,
+                    exceptionRules: Optional[Union[aas.LangStringSet, ExceptionRules]] = None,
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -969,23 +867,17 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Worker qualification that is required to work at the workstation"
-                            }
+                            dict_={r"en": r"Worker qualification that is required to work at the workstation"}
                         )
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Worker qualification that is required to work at the workstation"
-                            }
+                            dict_={r"en": r"Worker qualification that is required to work at the workstation"}
                         )
 
                     if qualifier is None:
@@ -999,33 +891,23 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     if qualificationClassificationId is not None and not isinstance(
                         qualificationClassificationId, aas.SubmodelElement
                     ):
-                        qualificationClassificationId = (
-                            self.QualificationClassificationId(
-                                qualificationClassificationId
-                            )
+                        qualificationClassificationId = self.QualificationClassificationId(
+                            qualificationClassificationId
                         )
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if qualificationId is not None and not isinstance(
-                        qualificationId, aas.SubmodelElement
-                    ):
+                    if qualificationId is not None and not isinstance(qualificationId, aas.SubmodelElement):
                         qualificationId = self.QualificationId(qualificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if exceptionRules is not None and not isinstance(
-                        exceptionRules, aas.SubmodelElement
-                    ):
+                    if exceptionRules is not None and not isinstance(exceptionRules, aas.SubmodelElement):
                         exceptionRules = self.ExceptionRules(exceptionRules)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        qualificationClassificationId,
-                        qualificationId,
-                        exceptionRules,
-                    ]:
+                    for se_arg in [qualificationClassificationId, qualificationId, exceptionRules]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -1036,9 +918,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1055,9 +935,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             def __init__(
                 self,
-                generalqualificationdemand_items: Optional[
-                    Iterable[Generalqualificationdemand_item]
-                ] = None,
+                generalqualificationdemand_items: Optional[Iterable[Generalqualificationdemand_item]] = None,
                 id_short: Optional[str] = r"GeneralQualificationDemand",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1078,17 +956,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"General qualification demand",
-                            r"de": r"Allgemeine Qualifikationsanforderungen",
-                        }
+                        dict_={r"en": r"General qualification demand", r"de": r"Allgemeine Qualifikationsanforderungen"}
                     )
 
                 if description is None:
@@ -1107,9 +980,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(generalqualificationdemand_items, str):
-                    raise TypeError(
-                        "generalqualificationdemand_items takes several elements, got a str"
-                    )
+                    raise TypeError("generalqualificationdemand_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1121,9 +992,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1190,15 +1059,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -1238,17 +1101,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Skill classification (ID)",
-                                    r"de": r"Fähigkeitenklassifizierung (ID)",
-                                }
+                                dict_={r"en": r"Skill classification (ID)", r"de": r"Fähigkeitenklassifizierung (ID)"}
                             )
 
                         if qualifier is None:
@@ -1296,9 +1154,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -1354,17 +1210,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Skill level (ID)",
-                                    r"de": r"Fähigkeitenstufe (ID)",
-                                }
+                                dict_={r"en": r"Skill level (ID)", r"de": r"Fähigkeitenstufe (ID)"}
                             )
 
                         if qualifier is None:
@@ -1412,9 +1263,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -1465,17 +1314,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Exception rules",
-                                    r"de": r"Ausnahmeregelungen",
-                                }
+                                dict_={r"en": r"Exception rules", r"de": r"Ausnahmeregelungen"}
                             )
 
                         if qualifier is None:
@@ -1502,13 +1346,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     self,
                     skillClassificationId: Union[str, SkillClassificationId],
                     skillId: Union[str, SkillId],
-                    skillLevelClassificationId: Optional[
-                        Union[str, SkillLevelClassificationId]
-                    ] = None,
+                    skillLevelClassificationId: Optional[Union[str, SkillLevelClassificationId]] = None,
                     skillLevelId: Optional[Union[str, SkillLevelId]] = None,
-                    exceptionRules: Optional[
-                        Union[aas.LangStringSet, ExceptionRules]
-                    ] = None,
+                    exceptionRules: Optional[Union[aas.LangStringSet, ExceptionRules]] = None,
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -1525,16 +1365,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Worker skill that is required in order to work at the workstation"
-                            }
+                            dict_={r"en": r"Worker skill that is required in order to work at the workstation"}
                         )
 
                     if qualifier is None:
@@ -1545,41 +1381,29 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if skillClassificationId is not None and not isinstance(
-                        skillClassificationId, aas.SubmodelElement
-                    ):
-                        skillClassificationId = self.SkillClassificationId(
-                            skillClassificationId
-                        )
+                    if skillClassificationId is not None and not isinstance(skillClassificationId, aas.SubmodelElement):
+                        skillClassificationId = self.SkillClassificationId(skillClassificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
                     if skillLevelClassificationId is not None and not isinstance(
                         skillLevelClassificationId, aas.SubmodelElement
                     ):
-                        skillLevelClassificationId = self.SkillLevelClassificationId(
-                            skillLevelClassificationId
-                        )
+                        skillLevelClassificationId = self.SkillLevelClassificationId(skillLevelClassificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if skillLevelId is not None and not isinstance(
-                        skillLevelId, aas.SubmodelElement
-                    ):
+                    if skillLevelId is not None and not isinstance(skillLevelId, aas.SubmodelElement):
                         skillLevelId = self.SkillLevelId(skillLevelId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if skillId is not None and not isinstance(
-                        skillId, aas.SubmodelElement
-                    ):
+                    if skillId is not None and not isinstance(skillId, aas.SubmodelElement):
                         skillId = self.SkillId(skillId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if exceptionRules is not None and not isinstance(
-                        exceptionRules, aas.SubmodelElement
-                    ):
+                    if exceptionRules is not None and not isinstance(exceptionRules, aas.SubmodelElement):
                         exceptionRules = self.ExceptionRules(exceptionRules)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1601,9 +1425,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1620,9 +1442,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             def __init__(
                 self,
-                generalskilldemand_items: Optional[
-                    Iterable[Generalskilldemand_item]
-                ] = None,
+                generalskilldemand_items: Optional[Iterable[Generalskilldemand_item]] = None,
                 id_short: Optional[str] = r"GeneralSkillDemand",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1643,17 +1463,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"General skill demand",
-                            r"de": r"Allgemeine Fähigkeitsanforderungen",
-                        }
+                        dict_={r"en": r"General skill demand", r"de": r"Allgemeine Fähigkeitsanforderungen"}
                     )
 
                 if description is None:
@@ -1672,9 +1487,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(generalskilldemand_items, str):
-                    raise TypeError(
-                        "generalskilldemand_items takes several elements, got a str"
-                    )
+                    raise TypeError("generalskilldemand_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1686,9 +1499,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1755,15 +1566,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -1779,18 +1584,10 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             self,
             workstationInformation: WorkstationInformation,
             generalQualificationDemand: Optional[
-                Union[
-                    Iterable[
-                        GeneralQualificationDemand.Generalqualificationdemand_item
-                    ],
-                    GeneralQualificationDemand,
-                ]
+                Union[Iterable[GeneralQualificationDemand.Generalqualificationdemand_item], GeneralQualificationDemand]
             ] = None,
             generalSkillDemand: Optional[
-                Union[
-                    Iterable[GeneralSkillDemand.Generalskilldemand_item],
-                    GeneralSkillDemand,
-                ]
+                Union[Iterable[GeneralSkillDemand.Generalskilldemand_item], GeneralSkillDemand]
             ] = None,
             id_short: Optional[str] = r"GeneralWorkstationData",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -1808,9 +1605,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -1829,18 +1624,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(generalQualificationDemand, str):
-                raise TypeError(
-                    "generalQualificationDemand takes several elements, got a str"
-                )
+                raise TypeError("generalQualificationDemand takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
             if generalQualificationDemand is not None and not isinstance(
                 generalQualificationDemand, aas.SubmodelElement
             ):
-                generalQualificationDemand = self.GeneralQualificationDemand(
-                    generalQualificationDemand
-                )
+                generalQualificationDemand = self.GeneralQualificationDemand(generalQualificationDemand)
 
             # A str would be split into its characters
             if isinstance(generalSkillDemand, str):
@@ -1848,18 +1639,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if generalSkillDemand is not None and not isinstance(
-                generalSkillDemand, aas.SubmodelElement
-            ):
+            if generalSkillDemand is not None and not isinstance(generalSkillDemand, aas.SubmodelElement):
                 generalSkillDemand = self.GeneralSkillDemand(generalSkillDemand)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                workstationInformation,
-                generalQualificationDemand,
-                generalSkillDemand,
-            ]:
+            for se_arg in [workstationInformation, generalQualificationDemand, generalSkillDemand]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -1870,9 +1655,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1913,17 +1696,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Max. lifting weight",
-                            r"de": r"Max. Hebegewicht",
-                        }
+                        dict_={r"en": r"Max. lifting weight", r"de": r"Max. Hebegewicht"}
                     )
 
                 if qualifier is None:
@@ -1971,17 +1749,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Minimum worker height ",
-                            r"de": r"Minimale Mitarbeitergröße ",
-                        }
+                        dict_={r"en": r"Minimum worker height ", r"de": r"Minimale Mitarbeitergröße "}
                     )
 
                 if qualifier is None:
@@ -2032,9 +1805,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -2090,17 +1861,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Personal limitation (ID)",
-                                    r"de": r"Persönliche Einschränkung (ID)",
-                                }
+                                dict_={r"en": r"Personal limitation (ID)", r"de": r"Persönliche Einschränkung (ID)"}
                             )
 
                         if qualifier is None:
@@ -2144,9 +1910,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2167,18 +1931,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     if limitationClassificationId is not None and not isinstance(
                         limitationClassificationId, aas.SubmodelElement
                     ):
-                        limitationClassificationId = self.LimitationClassificationId(
-                            limitationClassificationId
-                        )
+                        limitationClassificationId = self.LimitationClassificationId(limitationClassificationId)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if personalLimitationId is not None and not isinstance(
-                        personalLimitationId, aas.SubmodelElement
-                    ):
-                        personalLimitationId = self.PersonalLimitationId(
-                            personalLimitationId
-                        )
+                    if personalLimitationId is not None and not isinstance(personalLimitationId, aas.SubmodelElement):
+                        personalLimitationId = self.PersonalLimitationId(personalLimitationId)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -2193,9 +1951,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2212,9 +1968,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             def __init__(
                 self,
-                allowedpersonallimitations_items: Iterable[
-                    Allowedpersonallimitations_item
-                ],
+                allowedpersonallimitations_items: Iterable[Allowedpersonallimitations_item],
                 id_short: Optional[str] = r"AllowedPersonalLimitations",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -2235,17 +1989,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Allowed personal limitations",
-                            r"de": r"Akzeptierte Mitarbeitereinschränkungen",
-                        }
+                        dict_={r"en": r"Allowed personal limitations", r"de": r"Akzeptierte Mitarbeitereinschränkungen"}
                     )
 
                 if description is None:
@@ -2264,9 +2013,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(allowedpersonallimitations_items, str):
-                    raise TypeError(
-                        "allowedpersonallimitations_items takes several elements, got a str"
-                    )
+                    raise TypeError("allowedpersonallimitations_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2278,9 +2025,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2347,15 +2092,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -2372,12 +2111,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             maxLiftingWeight: Optional[Union[int, MaxLiftingWeight]] = None,
             minWorkerHeight: Optional[Union[int, MinWorkerHeight]] = None,
             allowedPersonalLimitations: Optional[
-                Union[
-                    Iterable[
-                        AllowedPersonalLimitations.Allowedpersonallimitations_item
-                    ],
-                    AllowedPersonalLimitations,
-                ]
+                Union[Iterable[AllowedPersonalLimitations.Allowedpersonallimitations_item], AllowedPersonalLimitations]
             ] = None,
             id_short: Optional[str] = r"ErgonomicWorkstationProfile",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -2395,17 +2129,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Ergonomic workstation profile",
-                        r"de": r"Ergonomisches Arbeitsplatzprofil",
-                    }
+                    dict_={r"en": r"Ergonomic workstation profile", r"de": r"Ergonomisches Arbeitsplatzprofil"}
                 )
 
             if description is None:
@@ -2424,40 +2153,28 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if maxLiftingWeight is not None and not isinstance(
-                maxLiftingWeight, aas.SubmodelElement
-            ):
+            if maxLiftingWeight is not None and not isinstance(maxLiftingWeight, aas.SubmodelElement):
                 maxLiftingWeight = self.MaxLiftingWeight(maxLiftingWeight)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if minWorkerHeight is not None and not isinstance(
-                minWorkerHeight, aas.SubmodelElement
-            ):
+            if minWorkerHeight is not None and not isinstance(minWorkerHeight, aas.SubmodelElement):
                 minWorkerHeight = self.MinWorkerHeight(minWorkerHeight)
 
             # A str would be split into its characters
             if isinstance(allowedPersonalLimitations, str):
-                raise TypeError(
-                    "allowedPersonalLimitations takes several elements, got a str"
-                )
+                raise TypeError("allowedPersonalLimitations takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
             if allowedPersonalLimitations is not None and not isinstance(
                 allowedPersonalLimitations, aas.SubmodelElement
             ):
-                allowedPersonalLimitations = self.AllowedPersonalLimitations(
-                    allowedPersonalLimitations
-                )
+                allowedPersonalLimitations = self.AllowedPersonalLimitations(allowedPersonalLimitations)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                maxLiftingWeight,
-                minWorkerHeight,
-                allowedPersonalLimitations,
-            ]:
+            for se_arg in [maxLiftingWeight, minWorkerHeight, allowedPersonalLimitations]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -2468,9 +2185,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2513,15 +2228,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Worker (ID)", r"de": r"Werker (ID)"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Worker (ID)", r"de": r"Werker (ID)"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2567,9 +2278,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -2622,15 +2331,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Access end", r"de": r"Zugriffsende"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Access end", r"de": r"Zugriffsende"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -2676,17 +2381,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Preferred height",
-                                r"de": r"Bevorzugte Höhe",
-                            }
+                            dict_={r"en": r"Preferred height", r"de": r"Bevorzugte Höhe"}
                         )
 
                     if qualifier is None:
@@ -2738,17 +2438,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Configuation name",
-                                        r"de": r"Konfigurationsname",
-                                    }
+                                    dict_={r"en": r"Configuation name", r"de": r"Konfigurationsname"}
                                 )
 
                             if qualifier is None:
@@ -2796,17 +2491,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Configuration value",
-                                        r"de": r"Konfigurationswert",
-                                    }
+                                    dict_={r"en": r"Configuration value", r"de": r"Konfigurationswert"}
                                 )
 
                             if qualifier is None:
@@ -2850,16 +2540,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Proprietary worker-depending configuration"
-                                }
+                                dict_={r"en": r"Proprietary worker-depending configuration"}
                             )
 
                         if qualifier is None:
@@ -2870,21 +2556,13 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if configurationName is not None and not isinstance(
-                            configurationName, aas.SubmodelElement
-                        ):
-                            configurationName = self.ConfigurationName(
-                                configurationName
-                            )
+                        if configurationName is not None and not isinstance(configurationName, aas.SubmodelElement):
+                            configurationName = self.ConfigurationName(configurationName)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if configurationValue is not None and not isinstance(
-                            configurationValue, aas.SubmodelElement
-                        ):
-                            configurationValue = self.ConfigurationValue(
-                                configurationValue
-                            )
+                        if configurationValue is not None and not isinstance(configurationValue, aas.SubmodelElement):
+                            configurationValue = self.ConfigurationValue(configurationValue)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -2899,9 +2577,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2918,9 +2594,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 def __init__(
                     self,
-                    proprietaryconfigurations_items: Iterable[
-                        Proprietaryconfigurations_item
-                    ],
+                    proprietaryconfigurations_items: Iterable[Proprietaryconfigurations_item],
                     id_short: Optional[str] = r"ProprietaryConfigurations",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                     semantic_id_list_element: Optional[aas.Reference] = None,
@@ -2941,17 +2615,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Proprietary configurations",
-                                r"de": r"Proprietäre Konfigurationen",
-                            }
+                            dict_={r"en": r"Proprietary configurations", r"de": r"Proprietäre Konfigurationen"}
                         )
 
                     if description is None:
@@ -2970,9 +2639,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(proprietaryconfigurations_items, str):
-                        raise TypeError(
-                            "proprietaryconfigurations_items takes several elements, got a str"
-                        )
+                        raise TypeError("proprietaryconfigurations_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -2984,9 +2651,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3053,15 +2718,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -3080,12 +2739,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 accessEnd: Optional[Union[xsd.DateTime, AccessEnd]] = None,
                 preferredHeight: Optional[Union[int, PreferredHeight]] = None,
                 proprietaryConfigurations: Optional[
-                    Union[
-                        Iterable[
-                            ProprietaryConfigurations.Proprietaryconfigurations_item
-                        ],
-                        ProprietaryConfigurations,
-                    ]
+                    Union[Iterable[ProprietaryConfigurations.Proprietaryconfigurations_item], ProprietaryConfigurations]
                 ] = None,
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3103,16 +2757,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Worker specific configuration options of a workstation"
-                        }
+                        dict_={r"en": r"Worker specific configuration options of a workstation"}
                     )
 
                 if qualifier is None:
@@ -3123,56 +2773,38 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if workerId is not None and not isinstance(
-                    workerId, aas.SubmodelElement
-                ):
+                if workerId is not None and not isinstance(workerId, aas.SubmodelElement):
                     workerId = self.WorkerId(workerId)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if accessStart is not None and not isinstance(
-                    accessStart, aas.SubmodelElement
-                ):
+                if accessStart is not None and not isinstance(accessStart, aas.SubmodelElement):
                     accessStart = self.AccessStart(accessStart)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if accessEnd is not None and not isinstance(
-                    accessEnd, aas.SubmodelElement
-                ):
+                if accessEnd is not None and not isinstance(accessEnd, aas.SubmodelElement):
                     accessEnd = self.AccessEnd(accessEnd)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if preferredHeight is not None and not isinstance(
-                    preferredHeight, aas.SubmodelElement
-                ):
+                if preferredHeight is not None and not isinstance(preferredHeight, aas.SubmodelElement):
                     preferredHeight = self.PreferredHeight(preferredHeight)
 
                 # A str would be split into its characters
                 if isinstance(proprietaryConfigurations, str):
-                    raise TypeError(
-                        "proprietaryConfigurations takes several elements, got a str"
-                    )
+                    raise TypeError("proprietaryConfigurations takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if proprietaryConfigurations is not None and not isinstance(
                     proprietaryConfigurations, aas.SubmodelElement
                 ):
-                    proprietaryConfigurations = self.ProprietaryConfigurations(
-                        proprietaryConfigurations
-                    )
+                    proprietaryConfigurations = self.ProprietaryConfigurations(proprietaryConfigurations)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    workerId,
-                    accessStart,
-                    accessEnd,
-                    preferredHeight,
-                    proprietaryConfigurations,
-                ]:
+                for se_arg in [workerId, accessStart, accessEnd, preferredHeight, proprietaryConfigurations]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -3183,9 +2815,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3202,9 +2832,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
         def __init__(
             self,
-            workstationconfigurationrecords_items: Iterable[
-                Workstationconfigurationrecords_item
-            ],
+            workstationconfigurationrecords_items: Iterable[Workstationconfigurationrecords_item],
             id_short: Optional[str] = r"WorkstationConfigurationRecords",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -3225,9 +2853,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -3254,9 +2880,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(workstationconfigurationrecords_items, str):
-                raise TypeError(
-                    "workstationconfigurationrecords_items takes several elements, got a str"
-                )
+                raise TypeError("workstationconfigurationrecords_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -3268,9 +2892,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3339,10 +2961,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -3381,17 +3000,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Interval description",
-                                r"de": r"Intervallbeschreibung",
-                            }
+                            dict_={r"en": r"Interval description", r"de": r"Intervallbeschreibung"}
                         )
 
                     if qualifier is None:
@@ -3438,9 +3052,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -3493,9 +3105,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -3539,9 +3149,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3553,9 +3161,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
@@ -3598,9 +3204,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3612,17 +3216,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Qualification (ID)",
-                                        r"de": r"Qualifikation (ID)",
-                                    }
+                                    dict_={r"en": r"Qualification (ID)", r"de": r"Qualifikation (ID)"}
                                 )
 
                             if qualifier is None:
@@ -3656,9 +3255,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3670,17 +3267,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Exception rules",
-                                        r"de": r"Ausnahmeregelungen",
-                                    }
+                                    dict_={r"en": r"Exception rules", r"de": r"Ausnahmeregelungen"}
                                 )
 
                             if qualifier is None:
@@ -3730,9 +3322,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3744,17 +3334,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Demand kind",
-                                        r"de": r"Bedarfsquelle",
-                                    }
+                                    dict_={r"en": r"Demand kind", r"de": r"Bedarfsquelle"}
                                 )
 
                             if qualifier is None:
@@ -3802,9 +3387,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
@@ -3857,15 +3440,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"End time", r"de": r"Endzeit"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"End time", r"de": r"Endzeit"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -3912,17 +3491,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Process time",
-                                        r"de": r"Prozesszeit",
-                                    }
+                                    dict_={r"en": r"Process time", r"de": r"Prozesszeit"}
                                 )
 
                             if qualifier is None:
@@ -3948,16 +3522,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                     def __init__(
                         self,
-                        qualificationClassificationId: Union[
-                            str, QualificationClassificationId
-                        ],
+                        qualificationClassificationId: Union[str, QualificationClassificationId],
                         qualificationId: Union[str, QualificationId],
                         startTime: Union[xsd.DateTime, StartTime],
                         endTime: Union[xsd.DateTime, EndTime],
                         processTime: Union[int, ProcessTime],
-                        exceptionRules: Optional[
-                            Union[aas.LangStringSet, ExceptionRules]
-                        ] = None,
+                        exceptionRules: Optional[Union[aas.LangStringSet, ExceptionRules]] = None,
                         demandKind: Optional[Union[str, DemandKind]] = None,
                         id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3975,16 +3545,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Worker qualification that is required to work at the workstation"
-                                }
+                                dict_={r"en": r"Worker qualification that is required to work at the workstation"}
                             )
 
                         if qualifier is None:
@@ -3995,58 +3561,41 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if (
-                            qualificationClassificationId is not None
-                            and not isinstance(
-                                qualificationClassificationId, aas.SubmodelElement
-                            )
+                        if qualificationClassificationId is not None and not isinstance(
+                            qualificationClassificationId, aas.SubmodelElement
                         ):
-                            qualificationClassificationId = (
-                                self.QualificationClassificationId(
-                                    qualificationClassificationId
-                                )
+                            qualificationClassificationId = self.QualificationClassificationId(
+                                qualificationClassificationId
                             )
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if qualificationId is not None and not isinstance(
-                            qualificationId, aas.SubmodelElement
-                        ):
+                        if qualificationId is not None and not isinstance(qualificationId, aas.SubmodelElement):
                             qualificationId = self.QualificationId(qualificationId)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if exceptionRules is not None and not isinstance(
-                            exceptionRules, aas.SubmodelElement
-                        ):
+                        if exceptionRules is not None and not isinstance(exceptionRules, aas.SubmodelElement):
                             exceptionRules = self.ExceptionRules(exceptionRules)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if demandKind is not None and not isinstance(
-                            demandKind, aas.SubmodelElement
-                        ):
+                        if demandKind is not None and not isinstance(demandKind, aas.SubmodelElement):
                             demandKind = self.DemandKind(demandKind)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if startTime is not None and not isinstance(
-                            startTime, aas.SubmodelElement
-                        ):
+                        if startTime is not None and not isinstance(startTime, aas.SubmodelElement):
                             startTime = self.StartTime(startTime)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if endTime is not None and not isinstance(
-                            endTime, aas.SubmodelElement
-                        ):
+                        if endTime is not None and not isinstance(endTime, aas.SubmodelElement):
                             endTime = self.EndTime(endTime)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if processTime is not None and not isinstance(
-                            processTime, aas.SubmodelElement
-                        ):
+                        if processTime is not None and not isinstance(processTime, aas.SubmodelElement):
                             processTime = self.ProcessTime(processTime)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -4070,9 +3619,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -4089,9 +3636,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 def __init__(
                     self,
-                    qualificationdemandrecords_items: Iterable[
-                        Qualificationdemandrecords_item
-                    ],
+                    qualificationdemandrecords_items: Iterable[Qualificationdemandrecords_item],
                     id_short: Optional[str] = r"QualificationDemandRecords",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                     semantic_id_list_element: Optional[aas.Reference] = None,
@@ -4112,9 +3657,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -4133,9 +3676,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(qualificationdemandrecords_items, str):
-                        raise TypeError(
-                            "qualificationdemandrecords_items takes several elements, got a str"
-                        )
+                        raise TypeError("qualificationdemandrecords_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -4147,9 +3688,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4216,15 +3755,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -4238,17 +3771,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             def __init__(
                 self,
-                intervalDescription: Optional[
-                    Union[aas.LangStringSet, IntervalDescription]
-                ] = None,
+                intervalDescription: Optional[Union[aas.LangStringSet, IntervalDescription]] = None,
                 intervalStart: Optional[Union[xsd.DateTime, IntervalStart]] = None,
                 intervalEnd: Optional[Union[xsd.DateTime, IntervalEnd]] = None,
                 qualificationDemandRecords: Optional[
                     Union[
-                        Iterable[
-                            QualificationDemandRecords.Qualificationdemandrecords_item
-                        ],
-                        QualificationDemandRecords,
+                        Iterable[QualificationDemandRecords.Qualificationdemandrecords_item], QualificationDemandRecords
                     ]
                 ] = None,
                 id_short: Optional[str] = None,
@@ -4267,16 +3795,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Production plan depending planned qualification demand at a workstation"
-                        }
+                        dict_={r"en": r"Production plan depending planned qualification demand at a workstation"}
                     )
 
                 if qualifier is None:
@@ -4287,48 +3811,33 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if intervalDescription is not None and not isinstance(
-                    intervalDescription, aas.SubmodelElement
-                ):
+                if intervalDescription is not None and not isinstance(intervalDescription, aas.SubmodelElement):
                     intervalDescription = self.IntervalDescription(intervalDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if intervalStart is not None and not isinstance(
-                    intervalStart, aas.SubmodelElement
-                ):
+                if intervalStart is not None and not isinstance(intervalStart, aas.SubmodelElement):
                     intervalStart = self.IntervalStart(intervalStart)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if intervalEnd is not None and not isinstance(
-                    intervalEnd, aas.SubmodelElement
-                ):
+                if intervalEnd is not None and not isinstance(intervalEnd, aas.SubmodelElement):
                     intervalEnd = self.IntervalEnd(intervalEnd)
 
                 # A str would be split into its characters
                 if isinstance(qualificationDemandRecords, str):
-                    raise TypeError(
-                        "qualificationDemandRecords takes several elements, got a str"
-                    )
+                    raise TypeError("qualificationDemandRecords takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if qualificationDemandRecords is not None and not isinstance(
                     qualificationDemandRecords, aas.SubmodelElement
                 ):
-                    qualificationDemandRecords = self.QualificationDemandRecords(
-                        qualificationDemandRecords
-                    )
+                    qualificationDemandRecords = self.QualificationDemandRecords(qualificationDemandRecords)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    intervalDescription,
-                    intervalStart,
-                    intervalEnd,
-                    qualificationDemandRecords,
-                ]:
+                for se_arg in [intervalDescription, intervalStart, intervalEnd, qualificationDemandRecords]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -4339,9 +3848,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4358,9 +3865,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
         def __init__(
             self,
-            plannedqualificationdemand_items: Optional[
-                Iterable[Plannedqualificationdemand_item]
-            ] = None,
+            plannedqualificationdemand_items: Optional[Iterable[Plannedqualificationdemand_item]] = None,
             id_short: Optional[str] = r"PlannedQualificationDemand",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -4381,17 +3886,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Planned qualification demand",
-                        r"de": r"Geplanter Qualifikationsbedarf",
-                    }
+                    dict_={r"en": r"Planned qualification demand", r"de": r"Geplanter Qualifikationsbedarf"}
                 )
 
             if description is None:
@@ -4410,9 +3910,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(plannedqualificationdemand_items, str):
-                raise TypeError(
-                    "plannedqualificationdemand_items takes several elements, got a str"
-                )
+                raise TypeError("plannedqualificationdemand_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -4424,9 +3922,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4495,10 +3991,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -4537,17 +4030,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Interval description",
-                                r"de": r"Intervallbeschreibung",
-                            }
+                            dict_={r"en": r"Interval description", r"de": r"Intervallbeschreibung"}
                         )
 
                     if qualifier is None:
@@ -4594,9 +4082,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -4649,9 +4135,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -4695,9 +4179,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4709,9 +4191,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
@@ -4754,9 +4234,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4768,9 +4246,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
@@ -4813,9 +4289,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4827,17 +4301,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Skill level (ID)",
-                                        r"de": r"Fähigkeitenstufe (ID)",
-                                    }
+                                    dict_={r"en": r"Skill level (ID)", r"de": r"Fähigkeitenstufe (ID)"}
                                 )
 
                             if qualifier is None:
@@ -4872,9 +4341,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4886,17 +4353,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Skill (ID)",
-                                        r"de": r"Fähigkeit (ID)",
-                                    }
+                                    dict_={r"en": r"Skill (ID)", r"de": r"Fähigkeit (ID)"}
                                 )
 
                             if qualifier is None:
@@ -4930,9 +4392,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4944,17 +4404,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Exception rules",
-                                        r"de": r"Ausnahmeregelungen",
-                                    }
+                                    dict_={r"en": r"Exception rules", r"de": r"Ausnahmeregelungen"}
                                 )
 
                             if qualifier is None:
@@ -5004,9 +4459,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5018,17 +4471,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Demand kind",
-                                        r"de": r"Bedarfsquelle",
-                                    }
+                                    dict_={r"en": r"Demand kind", r"de": r"Bedarfsquelle"}
                                 )
 
                             if qualifier is None:
@@ -5076,9 +4524,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
@@ -5131,15 +4577,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"End time", r"de": r"Endzeit"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"End time", r"de": r"Endzeit"})
 
                             if qualifier is None:
                                 qualifier = ()
@@ -5186,17 +4628,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
                                 display_name = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Process time",
-                                        r"de": r"Prozesszeit",
-                                    }
+                                    dict_={r"en": r"Process time", r"de": r"Prozesszeit"}
                                 )
 
                             if qualifier is None:
@@ -5227,13 +4664,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         startTime: Union[xsd.DateTime, StartTime],
                         endTime: Union[xsd.DateTime, EndTime],
                         processTime: Union[int, ProcessTime],
-                        skillLevelClassificationId: Optional[
-                            Union[str, SkillLevelClassificationId]
-                        ] = None,
+                        skillLevelClassificationId: Optional[Union[str, SkillLevelClassificationId]] = None,
                         skillLevelId: Optional[Union[str, SkillLevelId]] = None,
-                        exceptionRules: Optional[
-                            Union[aas.LangStringSet, ExceptionRules]
-                        ] = None,
+                        exceptionRules: Optional[Union[aas.LangStringSet, ExceptionRules]] = None,
                         demandKind: Optional[Union[str, DemandKind]] = None,
                         id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -5251,16 +4684,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Worker skill that is required in order to work at the workstation"
-                                }
+                                dict_={r"en": r"Worker skill that is required in order to work at the workstation"}
                             )
 
                         if qualifier is None:
@@ -5274,68 +4703,48 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         if skillClassificationId is not None and not isinstance(
                             skillClassificationId, aas.SubmodelElement
                         ):
-                            skillClassificationId = self.SkillClassificationId(
-                                skillClassificationId
-                            )
+                            skillClassificationId = self.SkillClassificationId(skillClassificationId)
 
                         # Build a submodel element if a raw value was passed in the argument
 
                         if skillLevelClassificationId is not None and not isinstance(
                             skillLevelClassificationId, aas.SubmodelElement
                         ):
-                            skillLevelClassificationId = (
-                                self.SkillLevelClassificationId(
-                                    skillLevelClassificationId
-                                )
-                            )
+                            skillLevelClassificationId = self.SkillLevelClassificationId(skillLevelClassificationId)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if skillLevelId is not None and not isinstance(
-                            skillLevelId, aas.SubmodelElement
-                        ):
+                        if skillLevelId is not None and not isinstance(skillLevelId, aas.SubmodelElement):
                             skillLevelId = self.SkillLevelId(skillLevelId)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if skillId is not None and not isinstance(
-                            skillId, aas.SubmodelElement
-                        ):
+                        if skillId is not None and not isinstance(skillId, aas.SubmodelElement):
                             skillId = self.SkillId(skillId)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if exceptionRules is not None and not isinstance(
-                            exceptionRules, aas.SubmodelElement
-                        ):
+                        if exceptionRules is not None and not isinstance(exceptionRules, aas.SubmodelElement):
                             exceptionRules = self.ExceptionRules(exceptionRules)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if demandKind is not None and not isinstance(
-                            demandKind, aas.SubmodelElement
-                        ):
+                        if demandKind is not None and not isinstance(demandKind, aas.SubmodelElement):
                             demandKind = self.DemandKind(demandKind)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if startTime is not None and not isinstance(
-                            startTime, aas.SubmodelElement
-                        ):
+                        if startTime is not None and not isinstance(startTime, aas.SubmodelElement):
                             startTime = self.StartTime(startTime)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if endTime is not None and not isinstance(
-                            endTime, aas.SubmodelElement
-                        ):
+                        if endTime is not None and not isinstance(endTime, aas.SubmodelElement):
                             endTime = self.EndTime(endTime)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if processTime is not None and not isinstance(
-                            processTime, aas.SubmodelElement
-                        ):
+                        if processTime is not None and not isinstance(processTime, aas.SubmodelElement):
                             processTime = self.ProcessTime(processTime)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -5361,9 +4770,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -5401,9 +4808,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -5422,9 +4827,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(skilldemandrecords_items, str):
-                        raise TypeError(
-                            "skilldemandrecords_items takes several elements, got a str"
-                        )
+                        raise TypeError("skilldemandrecords_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -5436,9 +4839,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5505,15 +4906,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -5527,13 +4922,8 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             def __init__(
                 self,
-                skillDemandRecords: Union[
-                    Iterable[SkillDemandRecords.Skilldemandrecords_item],
-                    SkillDemandRecords,
-                ],
-                intervalDescription: Optional[
-                    Union[aas.LangStringSet, IntervalDescription]
-                ] = None,
+                skillDemandRecords: Union[Iterable[SkillDemandRecords.Skilldemandrecords_item], SkillDemandRecords],
+                intervalDescription: Optional[Union[aas.LangStringSet, IntervalDescription]] = None,
                 intervalStart: Optional[Union[xsd.DateTime, IntervalStart]] = None,
                 intervalEnd: Optional[Union[xsd.DateTime, IntervalEnd]] = None,
                 id_short: Optional[str] = None,
@@ -5552,16 +4942,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Production plan depending planned skill demand at a workstation"
-                        }
+                        dict_={r"en": r"Production plan depending planned skill demand at a workstation"}
                     )
 
                 if qualifier is None:
@@ -5572,46 +4958,31 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if intervalDescription is not None and not isinstance(
-                    intervalDescription, aas.SubmodelElement
-                ):
+                if intervalDescription is not None and not isinstance(intervalDescription, aas.SubmodelElement):
                     intervalDescription = self.IntervalDescription(intervalDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if intervalStart is not None and not isinstance(
-                    intervalStart, aas.SubmodelElement
-                ):
+                if intervalStart is not None and not isinstance(intervalStart, aas.SubmodelElement):
                     intervalStart = self.IntervalStart(intervalStart)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if intervalEnd is not None and not isinstance(
-                    intervalEnd, aas.SubmodelElement
-                ):
+                if intervalEnd is not None and not isinstance(intervalEnd, aas.SubmodelElement):
                     intervalEnd = self.IntervalEnd(intervalEnd)
 
                 # A str would be split into its characters
                 if isinstance(skillDemandRecords, str):
-                    raise TypeError(
-                        "skillDemandRecords takes several elements, got a str"
-                    )
+                    raise TypeError("skillDemandRecords takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if skillDemandRecords is not None and not isinstance(
-                    skillDemandRecords, aas.SubmodelElement
-                ):
+                if skillDemandRecords is not None and not isinstance(skillDemandRecords, aas.SubmodelElement):
                     skillDemandRecords = self.SkillDemandRecords(skillDemandRecords)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    intervalDescription,
-                    intervalStart,
-                    intervalEnd,
-                    skillDemandRecords,
-                ]:
+                for se_arg in [intervalDescription, intervalStart, intervalEnd, skillDemandRecords]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -5622,9 +4993,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5641,9 +5010,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
         def __init__(
             self,
-            plannedskilldemand_items: Optional[
-                Iterable[Plannedskilldemand_item]
-            ] = None,
+            plannedskilldemand_items: Optional[Iterable[Plannedskilldemand_item]] = None,
             id_short: Optional[str] = r"PlannedSkillDemand",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -5664,17 +5031,12 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Planned skill demand",
-                        r"de": r"Geplanter Fähigkeitenbedarf",
-                    }
+                    dict_={r"en": r"Planned skill demand", r"de": r"Geplanter Fähigkeitenbedarf"}
                 )
 
             if description is None:
@@ -5693,9 +5055,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(plannedskilldemand_items, str):
-                raise TypeError(
-                    "plannedskilldemand_items takes several elements, got a str"
-                )
+                raise TypeError("plannedskilldemand_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -5707,9 +5067,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -5778,10 +5136,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -5798,22 +5153,15 @@ class WorkstationWorkerMatchingData(aas.Submodel):
         id_: str,
         generalWorkstationData: GeneralWorkstationData,
         workstationConfigurationRecords: Union[
-            Iterable[
-                WorkstationConfigurationRecords.Workstationconfigurationrecords_item
-            ],
+            Iterable[WorkstationConfigurationRecords.Workstationconfigurationrecords_item],
             WorkstationConfigurationRecords,
         ],
         ergonomicWorkstationProfile: Optional[ErgonomicWorkstationProfile] = None,
         plannedQualificationDemand: Optional[
-            Union[
-                Iterable[PlannedQualificationDemand.Plannedqualificationdemand_item],
-                PlannedQualificationDemand,
-            ]
+            Union[Iterable[PlannedQualificationDemand.Plannedqualificationdemand_item], PlannedQualificationDemand]
         ] = None,
         plannedSkillDemand: Optional[
-            Union[
-                Iterable[PlannedSkillDemand.Plannedskilldemand_item], PlannedSkillDemand
-            ]
+            Union[Iterable[PlannedSkillDemand.Plannedskilldemand_item], PlannedSkillDemand]
         ] = None,
         id_short: Optional[str] = r"WorkstationWorkerMatchingData",
         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -5823,8 +5171,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"https://admin-shell.io/idta/sm/workstationworkermatchingdata",
+                    type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/sm/workstationworkermatchingdata"
                 ),
             ),
             type_=aas.Submodel,
@@ -5839,10 +5186,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
         if display_name is None:
             display_name = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"Workstation Worker Matching Data",
-                    r"de": r"Daten für die Mitarbeitereinsatzplanung",
-                }
+                dict_={r"en": r"Workstation Worker Matching Data", r"de": r"Daten für die Mitarbeitereinsatzplanung"}
             )
 
         if description is None:
@@ -5855,11 +5199,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -5870,33 +5210,23 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
         # A str would be split into its characters
         if isinstance(workstationConfigurationRecords, str):
-            raise TypeError(
-                "workstationConfigurationRecords takes several elements, got a str"
-            )
+            raise TypeError("workstationConfigurationRecords takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
         if workstationConfigurationRecords is not None and not isinstance(
             workstationConfigurationRecords, aas.SubmodelElement
         ):
-            workstationConfigurationRecords = self.WorkstationConfigurationRecords(
-                workstationConfigurationRecords
-            )
+            workstationConfigurationRecords = self.WorkstationConfigurationRecords(workstationConfigurationRecords)
 
         # A str would be split into its characters
         if isinstance(plannedQualificationDemand, str):
-            raise TypeError(
-                "plannedQualificationDemand takes several elements, got a str"
-            )
+            raise TypeError("plannedQualificationDemand takes several elements, got a str")
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if plannedQualificationDemand is not None and not isinstance(
-            plannedQualificationDemand, aas.SubmodelElement
-        ):
-            plannedQualificationDemand = self.PlannedQualificationDemand(
-                plannedQualificationDemand
-            )
+        if plannedQualificationDemand is not None and not isinstance(plannedQualificationDemand, aas.SubmodelElement):
+            plannedQualificationDemand = self.PlannedQualificationDemand(plannedQualificationDemand)
 
         # A str would be split into its characters
         if isinstance(plannedSkillDemand, str):
@@ -5904,9 +5234,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if plannedSkillDemand is not None and not isinstance(
-            plannedSkillDemand, aas.SubmodelElement
-        ):
+        if plannedSkillDemand is not None and not isinstance(plannedSkillDemand, aas.SubmodelElement):
             plannedSkillDemand = self.PlannedSkillDemand(plannedSkillDemand)
 
         # Add all passed/initialized submodel elements to a single list
@@ -5928,9 +5256,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

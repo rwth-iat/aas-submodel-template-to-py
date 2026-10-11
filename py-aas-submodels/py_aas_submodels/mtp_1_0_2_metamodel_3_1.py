@@ -17,20 +17,13 @@ class AssetIdentification(aas.Submodel):
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-AAO677#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -79,9 +72,7 @@ class AssetIdentification(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if manufacturer is not None and not isinstance(
-            manufacturer, aas.SubmodelElement
-        ):
+        if manufacturer is not None and not isinstance(manufacturer, aas.SubmodelElement):
             manufacturer = self.Manufacturer(manufacturer)
 
         # Add all passed/initialized submodel elements to a single list
@@ -97,9 +88,7 @@ class AssetIdentification(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,
@@ -145,9 +134,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -194,9 +181,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -243,9 +228,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -292,9 +275,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -341,9 +322,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -392,9 +371,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -441,9 +418,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -489,9 +464,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -536,9 +509,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -583,9 +554,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -631,9 +600,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -680,9 +647,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -729,9 +694,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -778,9 +741,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -827,9 +788,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -875,9 +834,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -929,9 +886,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -942,16 +897,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -966,9 +917,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -978,9 +927,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -990,9 +937,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1000,9 +945,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -1029,9 +972,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1060,19 +1001,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -1083,30 +1019,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1114,9 +1042,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1138,9 +1064,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1180,9 +1104,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1229,9 +1151,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1278,9 +1198,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1327,9 +1245,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1376,9 +1292,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1427,9 +1341,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1476,9 +1388,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1524,9 +1434,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1571,9 +1479,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1618,9 +1524,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1666,9 +1570,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1715,9 +1617,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1764,9 +1664,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1813,9 +1711,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1862,9 +1758,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1910,9 +1804,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1964,9 +1856,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1977,16 +1867,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -2001,9 +1887,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -2013,9 +1897,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -2025,9 +1907,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -2035,9 +1915,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2064,9 +1942,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2095,19 +1971,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -2118,30 +1989,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -2149,9 +2012,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -2173,9 +2034,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2215,9 +2074,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2264,9 +2121,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2313,9 +2168,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2362,9 +2215,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2411,9 +2262,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2462,9 +2311,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2511,9 +2358,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2559,9 +2404,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2606,9 +2449,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2653,9 +2494,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2701,9 +2540,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2750,9 +2587,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2799,9 +2634,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2848,9 +2681,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2897,9 +2728,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2945,9 +2774,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2999,9 +2826,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -3012,16 +2837,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -3036,9 +2857,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -3048,9 +2867,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -3060,9 +2877,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -3070,9 +2885,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -3099,9 +2912,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3130,19 +2941,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -3153,30 +2959,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -3184,9 +2982,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -3208,9 +3004,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3250,9 +3044,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -3299,9 +3091,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -3348,9 +3138,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -3397,9 +3185,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -3446,9 +3232,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -3497,9 +3281,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3546,9 +3328,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3594,9 +3374,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3641,9 +3419,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3688,9 +3464,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3736,9 +3510,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3785,9 +3557,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3834,9 +3604,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3883,9 +3651,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3932,9 +3698,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3980,9 +3744,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4034,9 +3796,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -4047,16 +3807,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -4071,9 +3827,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -4083,9 +3837,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -4095,9 +3847,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -4105,9 +3855,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -4134,9 +3882,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4165,19 +3911,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -4188,30 +3929,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -4219,9 +3952,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -4243,9 +3974,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4285,9 +4014,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -4334,9 +4061,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -4383,9 +4108,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -4432,9 +4155,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -4481,9 +4202,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -4532,9 +4251,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4581,9 +4298,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4629,9 +4344,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4676,9 +4389,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4723,9 +4434,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4771,9 +4480,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4820,9 +4527,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4869,9 +4574,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4918,9 +4621,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4967,9 +4668,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5015,9 +4714,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5069,9 +4766,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -5082,16 +4777,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -5106,9 +4797,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -5118,9 +4807,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -5130,9 +4817,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -5140,9 +4825,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -5169,9 +4852,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5200,19 +4881,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -5223,30 +4899,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -5254,9 +4922,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -5278,9 +4944,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -5320,9 +4984,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -5369,9 +5031,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -5418,9 +5078,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -5467,9 +5125,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -5516,9 +5172,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -5567,9 +5221,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5616,9 +5268,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5664,9 +5314,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5711,9 +5359,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5758,9 +5404,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5806,9 +5450,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5855,9 +5497,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5904,9 +5544,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -5953,9 +5591,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6002,9 +5638,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6050,9 +5684,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6104,9 +5736,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -6117,16 +5747,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -6141,9 +5767,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -6153,9 +5777,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -6165,9 +5787,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -6175,9 +5795,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -6204,9 +5822,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -6235,19 +5851,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -6258,30 +5869,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -6289,9 +5892,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -6313,9 +5914,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -6355,9 +5954,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -6404,9 +6001,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -6453,9 +6048,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -6502,9 +6095,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -6551,9 +6142,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -6602,9 +6191,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6651,9 +6238,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6700,9 +6285,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6748,9 +6331,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6795,9 +6376,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6842,9 +6421,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6890,9 +6467,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6939,9 +6514,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -6988,9 +6561,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7037,9 +6608,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7086,9 +6655,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7134,9 +6701,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7189,9 +6754,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -7202,23 +6765,17 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language02 is not None and not isinstance(
-                    language02, aas.SubmodelElement
-                ):
+                if language02 is not None and not isinstance(language02, aas.SubmodelElement):
                     language02 = self.Language02(language02)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -7233,9 +6790,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -7245,9 +6800,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -7257,9 +6810,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -7267,9 +6818,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -7297,9 +6846,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -7328,19 +6875,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -7351,30 +6893,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -7382,9 +6916,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -7406,9 +6938,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -7448,9 +6978,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -7497,9 +7025,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -7546,9 +7072,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -7595,9 +7119,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -7644,9 +7166,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -7695,9 +7215,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7744,9 +7262,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7792,9 +7308,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7839,9 +7353,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7886,9 +7398,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7934,9 +7444,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -7983,9 +7491,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8032,9 +7538,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8081,9 +7585,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8130,9 +7632,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8178,9 +7678,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8232,9 +7730,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -8245,16 +7741,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -8269,9 +7761,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -8281,9 +7771,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -8293,9 +7781,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -8303,9 +7789,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -8332,9 +7816,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -8363,19 +7845,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -8386,30 +7863,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -8417,9 +7886,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -8441,9 +7908,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -8483,9 +7948,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -8532,9 +7995,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -8581,9 +8042,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -8630,9 +8089,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -8679,9 +8136,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -8730,9 +8185,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8779,9 +8232,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8827,9 +8278,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8874,9 +8323,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8921,9 +8368,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -8969,9 +8414,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -9018,9 +8461,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -9067,9 +8508,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -9116,9 +8555,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -9165,9 +8602,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -9213,9 +8648,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -9267,9 +8700,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -9280,16 +8711,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -9304,9 +8731,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -9316,9 +8741,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -9328,9 +8751,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -9338,9 +8759,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -9367,9 +8786,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -9398,19 +8815,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -9421,30 +8833,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -9452,9 +8856,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -9476,9 +8878,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -9511,12 +8911,7 @@ class Documentation(aas.Submodel):
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"http://admin-shell.io/vdi/2770/1/0/Documentation",
-                ),
-            ),
+            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"http://admin-shell.io/vdi/2770/1/0/Documentation"),),
             type_=aas.Submodel,
             referred_semantic_id=None,
         ),
@@ -9556,9 +8951,7 @@ class Documentation(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,
@@ -9602,9 +8995,7 @@ class AssetIdentification(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -9640,20 +9031,13 @@ class AssetIdentification(aas.Submodel):
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-AAO677#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -9703,16 +9087,12 @@ class AssetIdentification(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if serialNumber is not None and not isinstance(
-            serialNumber, aas.SubmodelElement
-        ):
+        if serialNumber is not None and not isinstance(serialNumber, aas.SubmodelElement):
             serialNumber = self.SerialNumber(serialNumber)
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if manufacturer is not None and not isinstance(
-            manufacturer, aas.SubmodelElement
-        ):
+        if manufacturer is not None and not isinstance(manufacturer, aas.SubmodelElement):
             manufacturer = self.Manufacturer(manufacturer)
 
         # Add all passed/initialized submodel elements to a single list
@@ -9728,9 +9108,7 @@ class AssetIdentification(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,
@@ -9773,9 +9151,7 @@ class ModuleTypePackage(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -9807,10 +9183,7 @@ class ModuleTypePackage(aas.Submodel):
                 id_short: Optional[str] = r"M0013_Datasheet",
                 first: Optional[aas.Reference] = aas.ModelReference(
                     key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.SUBMODEL,
-                            value=r"www.vendor.com/ids/sm/6233_9041_1002_7102",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"www.vendor.com/ids/sm/6233_9041_1002_7102"),
                         aas.Key(type_=aas.KeyTypes.FILE, value=r"MTPFile"),
                         aas.Key(
                             type_=aas.KeyTypes.FRAGMENT_REFERENCE,
@@ -9826,10 +9199,7 @@ class ModuleTypePackage(aas.Submodel):
                             type_=aas.KeyTypes.SUBMODEL,
                             value=r"http://example.com/id/instance/99920200206160529000012810",
                         ),
-                        aas.Key(
-                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                            value=r"Document01",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document01"),
                     ),
                     type_=aas.SubmodelElementCollection,
                     referred_semantic_id=None,
@@ -9849,9 +9219,7 @@ class ModuleTypePackage(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -9884,8 +9252,7 @@ class ModuleTypePackage(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/vdi/2658/1/0/MTPReferences",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/vdi/2658/1/0/MTPReferences"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -9893,9 +9260,7 @@ class ModuleTypePackage(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -9921,9 +9286,7 @@ class ModuleTypePackage(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -9949,8 +9312,7 @@ class ModuleTypePackage(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/vdi/2658/1/0/MTPReferences",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/vdi/2658/1/0/MTPReferences"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -9958,9 +9320,7 @@ class ModuleTypePackage(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -9982,9 +9342,7 @@ class ModuleTypePackage(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -10011,12 +9369,7 @@ class ModuleTypePackage(aas.Submodel):
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"https://admin-shell.io/vdi/2658/1/0/MTPSubmodel",
-                ),
-            ),
+            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/vdi/2658/1/0/MTPSubmodel"),),
             type_=aas.Submodel,
             referred_semantic_id=None,
         ),
@@ -10029,11 +9382,7 @@ class ModuleTypePackage(aas.Submodel):
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -10063,9 +9412,7 @@ class ModuleTypePackage(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,
@@ -10108,9 +9455,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -10160,9 +9505,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10209,9 +9552,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -10255,9 +9596,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -10273,12 +9612,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if discoveryUrl:
                     discoveryUrl = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.DiscoveryUrl(i)
-                        )
-                        for i in discoveryUrl
+                        i if isinstance(i, aas.SubmodelElement) else self.DiscoveryUrl(i) for i in discoveryUrl
                     ]
 
                 # A str would be split into its characters
@@ -10288,12 +9622,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if applicationUri:
                     applicationUri = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ApplicationUri(i)
-                        )
-                        for i in applicationUri
+                        i if isinstance(i, aas.SubmodelElement) else self.ApplicationUri(i) for i in applicationUri
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -10309,9 +9638,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -10345,9 +9672,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -10373,9 +9698,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -10412,9 +9735,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -10459,9 +9780,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -10493,10 +9812,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                 id_short: Optional[str] = r"M0013_FAT_Protocol",
                 first: Optional[aas.Reference] = aas.ModelReference(
                     key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.SUBMODEL,
-                            value=r"www.vendor.com/ids/sm/6233_9041_1002_7102",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"www.vendor.com/ids/sm/6233_9041_1002_7102"),
                         aas.Key(type_=aas.KeyTypes.FILE, value=r"MTPFile"),
                         aas.Key(
                             type_=aas.KeyTypes.FRAGMENT_REFERENCE,
@@ -10508,14 +9824,8 @@ class ProcessEquipmentAssembly(aas.Submodel):
                 ),
                 second: Optional[aas.Reference] = aas.ModelReference(
                     key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.SUBMODEL,
-                            value=r"https://example.com/ids/sm/0455_7003_3012_9891",
-                        ),
-                        aas.Key(
-                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                            value=r"Document03",
-                        ),
+                        aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/0455_7003_3012_9891"),
+                        aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document03"),
                     ),
                     type_=aas.SubmodelElementCollection,
                     referred_semantic_id=None,
@@ -10535,9 +9845,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -10570,8 +9878,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/vdi/2658/1/0/MTPReferences",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/vdi/2658/1/0/MTPReferences"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -10579,9 +9886,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -10607,9 +9912,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -10638,12 +9941,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"https://admin-shell.io/vdi/2658/1/0/PEASubmodel",
-                ),
-            ),
+            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/vdi/2658/1/0/PEASubmodel"),),
             type_=aas.Submodel,
             referred_semantic_id=None,
         ),
@@ -10656,11 +9954,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -10676,20 +9970,12 @@ class ProcessEquipmentAssembly(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if description_ is not None and not isinstance(
-            description_, aas.SubmodelElement
-        ):
+        if description_ is not None and not isinstance(description_, aas.SubmodelElement):
             description_ = self.Description(description_)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
-        for se_arg in [
-            mTPFile,
-            sourceList,
-            displayName,
-            description_,
-            documentationReferences,
-        ]:
+        for se_arg in [mTPFile, sourceList, displayName, description_, documentationReferences]:
             if se_arg is None:
                 continue
             elif isinstance(se_arg, aas.SubmodelElement):
@@ -10700,9 +9986,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,
@@ -10748,9 +10032,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -10797,9 +10079,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -10846,9 +10126,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -10895,9 +10173,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -10944,9 +10220,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -10995,9 +10269,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11044,9 +10316,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11092,9 +10362,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11139,9 +10407,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11186,9 +10452,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11234,9 +10498,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11283,9 +10545,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11332,9 +10592,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11381,9 +10639,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11430,9 +10686,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11478,9 +10732,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -11532,9 +10784,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -11545,16 +10795,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -11569,9 +10815,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -11581,9 +10825,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -11593,9 +10835,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -11603,9 +10843,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -11632,9 +10870,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -11663,19 +10899,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -11686,30 +10917,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -11717,9 +10940,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -11741,9 +10962,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -11783,9 +11002,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -11832,9 +11049,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -11881,9 +11096,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -11930,9 +11143,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -11979,9 +11190,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -12030,9 +11239,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12079,9 +11286,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12127,9 +11332,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12174,9 +11377,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12221,9 +11422,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12269,9 +11468,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12318,9 +11515,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12367,9 +11562,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12416,9 +11609,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12465,9 +11656,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12513,9 +11702,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -12567,9 +11754,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -12580,16 +11765,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12604,9 +11785,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12616,9 +11795,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12628,9 +11805,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -12638,9 +11813,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -12667,9 +11840,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -12698,19 +11869,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -12721,30 +11887,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -12752,9 +11910,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -12776,9 +11932,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -12818,9 +11972,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -12867,9 +12019,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -12916,9 +12066,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -12965,9 +12113,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -13014,9 +12160,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -13065,9 +12209,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13114,9 +12256,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13162,9 +12302,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13209,9 +12347,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13256,9 +12392,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13304,9 +12438,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13353,9 +12485,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13402,9 +12532,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13451,9 +12579,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13500,9 +12626,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13548,9 +12672,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -13602,9 +12724,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -13615,16 +12735,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -13639,9 +12755,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -13651,9 +12765,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -13663,9 +12775,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -13673,9 +12783,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -13702,9 +12810,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -13733,19 +12839,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -13756,30 +12857,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -13787,9 +12880,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -13811,9 +12902,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -13853,9 +12942,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -13902,9 +12989,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -13951,9 +13036,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -14000,9 +13083,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -14049,9 +13130,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -14100,9 +13179,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -14149,9 +13226,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -14197,9 +13272,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -14244,9 +13317,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -14291,9 +13362,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -14339,9 +13408,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -14388,9 +13455,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -14437,9 +13502,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -14486,9 +13549,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -14535,9 +13596,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -14583,9 +13642,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -14637,9 +13694,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -14650,16 +13705,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -14674,9 +13725,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -14686,9 +13735,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -14698,9 +13745,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -14708,9 +13753,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -14737,9 +13780,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -14768,19 +13809,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -14791,30 +13827,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -14822,9 +13850,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -14846,9 +13872,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -14888,9 +13912,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -14937,9 +13959,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -14986,9 +14006,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -15035,9 +14053,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -15084,9 +14100,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -15135,9 +14149,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15184,9 +14196,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15232,9 +14242,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15279,9 +14287,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15326,9 +14332,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15374,9 +14378,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15423,9 +14425,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15472,9 +14472,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15521,9 +14519,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15570,9 +14566,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15618,9 +14612,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -15672,9 +14664,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -15685,16 +14675,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -15709,9 +14695,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -15721,9 +14705,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -15733,9 +14715,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -15743,9 +14723,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -15772,9 +14750,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -15803,19 +14779,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -15826,30 +14797,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -15857,9 +14820,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -15881,9 +14842,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -15923,9 +14882,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -15972,9 +14929,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -16021,9 +14976,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -16070,9 +15023,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -16119,9 +15070,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -16170,9 +15119,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16219,9 +15166,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16267,9 +15212,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16314,9 +15257,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16361,9 +15302,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16409,9 +15348,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16458,9 +15395,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16507,9 +15442,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16556,9 +15489,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16605,9 +15536,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16653,9 +15582,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -16707,9 +15634,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -16720,16 +15645,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -16744,9 +15665,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -16756,9 +15675,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -16768,9 +15685,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -16778,9 +15693,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -16807,9 +15720,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -16838,19 +15749,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -16861,30 +15767,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -16892,9 +15790,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -16916,9 +15812,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -16958,9 +15852,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -17007,9 +15899,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -17056,9 +15946,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -17105,9 +15993,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -17154,9 +16040,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -17205,9 +16089,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17254,9 +16136,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17303,9 +16183,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17351,9 +16229,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17398,9 +16274,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17445,9 +16319,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17493,9 +16365,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17542,9 +16412,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17591,9 +16459,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17640,9 +16506,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17689,9 +16553,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17737,9 +16599,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -17792,9 +16652,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -17805,23 +16663,17 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language02 is not None and not isinstance(
-                    language02, aas.SubmodelElement
-                ):
+                if language02 is not None and not isinstance(language02, aas.SubmodelElement):
                     language02 = self.Language02(language02)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -17836,9 +16688,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -17848,9 +16698,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -17860,9 +16708,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -17870,9 +16716,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -17900,9 +16744,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -17931,19 +16773,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -17954,30 +16791,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -17985,9 +16814,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -18009,9 +16836,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -18051,9 +16876,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -18100,9 +16923,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -18149,9 +16970,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -18198,9 +17017,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -18247,9 +17064,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -18298,9 +17113,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -18347,9 +17160,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -18395,9 +17206,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -18442,9 +17251,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -18489,9 +17296,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -18537,9 +17342,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -18586,9 +17389,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -18635,9 +17436,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -18684,9 +17483,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -18733,9 +17530,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -18781,9 +17576,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -18835,9 +17628,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -18848,16 +17639,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -18872,9 +17659,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -18884,9 +17669,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -18896,9 +17679,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -18906,9 +17687,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -18935,9 +17714,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -18966,19 +17743,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -18989,30 +17761,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -19020,9 +17784,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -19044,9 +17806,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -19086,9 +17846,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -19135,9 +17893,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -19184,9 +17940,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -19233,9 +17987,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -19282,9 +18034,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -19333,9 +18083,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -19382,9 +18130,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -19430,9 +18176,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -19477,9 +18221,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -19524,9 +18266,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -19572,9 +18312,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -19621,9 +18359,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -19670,9 +18406,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -19719,9 +18453,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -19768,9 +18500,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -19816,9 +18546,7 @@ class Documentation(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -19870,9 +18598,7 @@ class Documentation(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -19883,16 +18609,12 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language01 is not None and not isinstance(
-                    language01, aas.SubmodelElement
-                ):
+                if language01 is not None and not isinstance(language01, aas.SubmodelElement):
                     language01 = self.Language01(language01)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersionId is not None and not isinstance(
-                    documentVersionId, aas.SubmodelElement
-                ):
+                if documentVersionId is not None and not isinstance(documentVersionId, aas.SubmodelElement):
                     documentVersionId = self.DocumentVersionId(documentVersionId)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -19907,9 +18629,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if keyWords is not None and not isinstance(
-                    keyWords, aas.SubmodelElement
-                ):
+                if keyWords is not None and not isinstance(keyWords, aas.SubmodelElement):
                     keyWords = self.KeyWords(keyWords)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -19919,9 +18639,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -19931,9 +18649,7 @@ class Documentation(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationName is not None and not isinstance(
-                    organizationName, aas.SubmodelElement
-                ):
+                if organizationName is not None and not isinstance(organizationName, aas.SubmodelElement):
                     organizationName = self.OrganizationName(organizationName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -19941,9 +18657,7 @@ class Documentation(aas.Submodel):
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -19970,9 +18684,7 @@ class Documentation(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -20001,19 +18713,14 @@ class Documentation(aas.Submodel):
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://admin-shell.io/vdi/2770/1/0/Document",
-                    ),
+                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
                 ),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -20024,30 +18731,22 @@ class Documentation(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentId is not None and not isinstance(
-                documentId, aas.SubmodelElement
-            ):
+            if documentId is not None and not isinstance(documentId, aas.SubmodelElement):
                 documentId = self.DocumentId(documentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if isPrimaryDocumentId is not None and not isinstance(
-                isPrimaryDocumentId, aas.SubmodelElement
-            ):
+            if isPrimaryDocumentId is not None and not isinstance(isPrimaryDocumentId, aas.SubmodelElement):
                 isPrimaryDocumentId = self.IsPrimaryDocumentId(isPrimaryDocumentId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassId is not None and not isinstance(
-                documentClassId, aas.SubmodelElement
-            ):
+            if documentClassId is not None and not isinstance(documentClassId, aas.SubmodelElement):
                 documentClassId = self.DocumentClassId(documentClassId)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if documentClassName is not None and not isinstance(
-                documentClassName, aas.SubmodelElement
-            ):
+            if documentClassName is not None and not isinstance(documentClassName, aas.SubmodelElement):
                 documentClassName = self.DocumentClassName(documentClassName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -20055,9 +18754,7 @@ class Documentation(aas.Submodel):
             if documentClassificationSystem is not None and not isinstance(
                 documentClassificationSystem, aas.SubmodelElement
             ):
-                documentClassificationSystem = self.DocumentClassificationSystem(
-                    documentClassificationSystem
-                )
+                documentClassificationSystem = self.DocumentClassificationSystem(documentClassificationSystem)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -20079,9 +18776,7 @@ class Documentation(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -20114,12 +18809,7 @@ class Documentation(aas.Submodel):
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"http://admin-shell.io/vdi/2770/1/0/Documentation",
-                ),
-            ),
+            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"http://admin-shell.io/vdi/2770/1/0/Documentation"),),
             type_=aas.Submodel,
             referred_semantic_id=None,
         ),
@@ -20159,9 +18849,7 @@ class Documentation(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

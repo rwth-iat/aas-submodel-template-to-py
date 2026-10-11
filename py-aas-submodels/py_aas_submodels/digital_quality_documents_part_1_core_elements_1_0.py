@@ -21,12 +21,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABH994#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH994#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -42,15 +37,11 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Document Domain Id"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Document Domain Id"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -92,12 +83,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO099#004",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO099#004"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -113,21 +99,15 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Document Identifier"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Document Identifier"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Alphanumeric character sequence uniquely identifying a document"
-                            }
+                            dict_={r"en": r"Alphanumeric character sequence uniquely identifying a document"}
                         )
 
                     if qualifier is None:
@@ -163,12 +143,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABH995#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH995#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -184,15 +159,11 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Document Is Primary"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Document Is Primary"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -234,8 +205,7 @@ class DigitalQualityDocuments(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI501#003/0173-1#01-AHF580#003",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI501#003/0173-1#01-AHF580#003"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -253,21 +223,15 @@ class DigitalQualityDocuments(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Document Id"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Document Id"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Information about a document identification entity"
-                        }
+                        dict_={r"en": r"Information about a document identification entity"}
                     )
 
                 if qualifier is None:
@@ -278,23 +242,17 @@ class DigitalQualityDocuments(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentDomainId is not None and not isinstance(
-                    documentDomainId, aas.SubmodelElement
-                ):
+                if documentDomainId is not None and not isinstance(documentDomainId, aas.SubmodelElement):
                     documentDomainId = self.DocumentDomainId(documentDomainId)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentIdentifier is not None and not isinstance(
-                    documentIdentifier, aas.SubmodelElement
-                ):
+                if documentIdentifier is not None and not isinstance(documentIdentifier, aas.SubmodelElement):
                     documentIdentifier = self.DocumentIdentifier(documentIdentifier)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentIsPrimary is not None and not isinstance(
-                    documentIsPrimary, aas.SubmodelElement
-                ):
+                if documentIsPrimary is not None and not isinstance(documentIsPrimary, aas.SubmodelElement):
                     documentIsPrimary = self.DocumentIsPrimary(documentIsPrimary)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -310,9 +268,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -339,12 +295,7 @@ class DigitalQualityDocuments(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABI501#003",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI501#003"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -360,9 +311,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -395,9 +344,7 @@ class DigitalQualityDocuments(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -466,10 +413,7 @@ class DigitalQualityDocuments(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -497,12 +441,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABH996#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH996#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -518,21 +457,15 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Class Id"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Class Id"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Unique ID of the document class within a classficationsystem"
-                            }
+                            dict_={r"en": r"Unique ID of the document class within a classficationsystem"}
                         )
 
                     if qualifier is None:
@@ -567,12 +500,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABJ219#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABJ219#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -588,21 +516,15 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Class Name"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Class Name"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Name of the class in the classification system"
-                            }
+                            dict_={r"en": r"Name of the class in the classification system"}
                         )
 
                     if qualifier is None:
@@ -637,12 +559,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABH997#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH997#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -658,21 +575,15 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Classification System"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Classification System"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Identification of the classification system "
-                            }
+                            dict_={r"en": r"Identification of the classification system "}
                         )
 
                     if qualifier is None:
@@ -708,8 +619,7 @@ class DigitalQualityDocuments(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI502#003/0173-1#01-AHF581#003",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI502#003/0173-1#01-AHF581#003"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -717,15 +627,11 @@ class DigitalQualityDocuments(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Document Classification"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Document Classification"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -747,19 +653,13 @@ class DigitalQualityDocuments(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if className is not None and not isinstance(
-                    className, aas.SubmodelElement
-                ):
+                if className is not None and not isinstance(className, aas.SubmodelElement):
                     className = self.ClassName(className)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if classificationSystem is not None and not isinstance(
-                    classificationSystem, aas.SubmodelElement
-                ):
-                    classificationSystem = self.ClassificationSystem(
-                        classificationSystem
-                    )
+                if classificationSystem is not None and not isinstance(classificationSystem, aas.SubmodelElement):
+                    classificationSystem = self.ClassificationSystem(classificationSystem)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -774,9 +674,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -803,12 +701,7 @@ class DigitalQualityDocuments(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABI502#003",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI502#003"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -824,15 +717,11 @@ class DigitalQualityDocuments(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Document Classifications"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Document Classifications"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -849,9 +738,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(documentclassifications_items, str):
-                raise TypeError(
-                    "documentclassifications_items takes several elements, got a str"
-                )
+                raise TypeError("documentclassifications_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -863,9 +750,7 @@ class DigitalQualityDocuments(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -934,10 +819,7 @@ class DigitalQualityDocuments(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -967,31 +849,20 @@ class DigitalQualityDocuments(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAN468#008",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAN468#008"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Language"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Language"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Language of the document"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"Language of the document"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1026,31 +897,20 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r" 0173-1#02-AAN468#008",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r" 0173-1#02-AAN468#008"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Language"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Language"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Language of the document instance."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Language of the document instance."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1060,19 +920,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(language_items, str):
-                        raise TypeError(
-                            "language_items takes several elements, got a str"
-                        )
+                        raise TypeError("language_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if language_items:
                         language_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Language_item(i)
-                            )
-                            for i in language_items
+                            i if isinstance(i, aas.SubmodelElement) else self.Language_item(i) for i in language_items
                         ]
 
                     # Add all passed/initialized submodel elements to a single list
@@ -1085,9 +938,7 @@ class DigitalQualityDocuments(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1154,15 +1005,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -1186,12 +1031,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAP003#005",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAP003#005"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -1207,20 +1047,14 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Version"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Version"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Version of the document"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Version of the document"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1254,12 +1088,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABG940#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG940#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -1275,20 +1104,14 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Title"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Title"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Name of the document"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Name of the document"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -1321,12 +1144,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAN466#004",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAN466#004"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -1342,15 +1160,11 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Description"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Description"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1391,12 +1205,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABI000#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI000#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -1412,15 +1221,11 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Status Set Date"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Status Set Date"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1462,12 +1267,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABI001#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI001#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -1483,15 +1283,11 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Status Value"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Status Value"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1544,21 +1340,15 @@ class DigitalQualityDocuments(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Organization Short Name"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Organization Short Name"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Short name of the organization that issued the quality document instance"
-                            }
+                            dict_={r"en": r"Short name of the organization that issued the quality document instance"}
                         )
 
                     if qualifier is None:
@@ -1594,12 +1384,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABI004#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI004#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -1615,21 +1400,15 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Organization Official Name"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Organization Official Name"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Official name of the organization that issued the document"
-                            }
+                            dict_={r"en": r"Official name of the organization that issued the document"}
                         )
 
                     if qualifier is None:
@@ -1665,26 +1444,17 @@ class DigitalQualityDocuments(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABK288#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK288#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Refers To Entity"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Refers To Entity"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -1714,9 +1484,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                 def __init__(
                     self,
-                    referstoentities_items: Iterable[
-                        Union[aas.Reference, Referstoentities_item]
-                    ],
+                    referstoentities_items: Iterable[Union[aas.Reference, Referstoentities_item]],
                     id_short: Optional[str] = r"RefersToEntities",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                     semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1726,12 +1494,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABK288#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK288#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -1747,15 +1510,11 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Refers To Entities"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Refers To Entities"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1772,18 +1531,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(referstoentities_items, str):
-                        raise TypeError(
-                            "referstoentities_items takes several elements, got a str"
-                        )
+                        raise TypeError("referstoentities_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if referstoentities_items:
                         referstoentities_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Referstoentities_item(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.Referstoentities_item(i)
                             for i in referstoentities_items
                         ]
 
@@ -1797,9 +1550,7 @@ class DigitalQualityDocuments(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1866,15 +1617,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -1901,20 +1646,14 @@ class DigitalQualityDocuments(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Based On Reference"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Based On Reference"})
 
                         if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"BasedOnReference"}
-                            )
+                            description = aas.MultiLanguageTextType(dict_={r"en": r"BasedOnReference"})
 
                         if qualifier is None:
                             qualifier = ()
@@ -1937,9 +1676,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                 def __init__(
                     self,
-                    basedonreferences_items: Iterable[
-                        Union[aas.Reference, Basedonreferences_item]
-                    ],
+                    basedonreferences_items: Iterable[Union[aas.Reference, Basedonreferences_item]],
                     id_short: Optional[str] = r"BasedOnReferences",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
                     semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1949,12 +1686,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABK289#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK289#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -1970,21 +1702,15 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Based On References"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Based On References"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Forms a based on-relationship to another document or document instance"
-                            }
+                            dict_={r"en": r"Forms a based on-relationship to another document or document instance"}
                         )
 
                     if qualifier is None:
@@ -1995,18 +1721,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(basedonreferences_items, str):
-                        raise TypeError(
-                            "basedonreferences_items takes several elements, got a str"
-                        )
+                        raise TypeError("basedonreferences_items takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if basedonreferences_items:
                         basedonreferences_items = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Basedonreferences_item(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.Basedonreferences_item(i)
                             for i in basedonreferences_items
                         ]
 
@@ -2020,9 +1740,7 @@ class DigitalQualityDocuments(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2089,15 +1807,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -2122,32 +1834,21 @@ class DigitalQualityDocuments(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABK126#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK126#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Digital File"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Digital File"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"MIME-Type, file name and file contents given by the file"
-                                }
+                                dict_={r"en": r"MIME-Type, file name and file contents given by the file"}
                             )
 
                         if qualifier is None:
@@ -2182,12 +1883,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABK126#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK126#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -2203,15 +1899,11 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Digital Files"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Digital Files"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -2228,9 +1920,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(digitalfiles_items, str):
-                        raise TypeError(
-                            "digitalfiles_items takes several elements, got a str"
-                        )
+                        raise TypeError("digitalfiles_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -2242,9 +1932,7 @@ class DigitalQualityDocuments(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2311,15 +1999,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -2342,12 +2024,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABK127#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK127#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -2363,15 +2040,11 @@ class DigitalQualityDocuments(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Preview File"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Preview File"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -2415,9 +2088,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2429,15 +2100,11 @@ class DigitalQualityDocuments(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Unique Identifier"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Unique Identifier"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -2478,16 +2145,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value: aas.LangStringSet,
                                     id_short: Optional[str] = r"IdentificationName",
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2498,18 +2159,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
-                                        display_name = aas.MultiLanguageNameType(
-                                            dict_={r"en": r"Identification Name"}
-                                        )
+                                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Identification Name"})
 
                                     if description is None:
                                         description = aas.MultiLanguageTextType(
@@ -2544,16 +2199,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     id_short: Optional[str] = r"IdentificationIssuer",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2564,12 +2213,8 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
@@ -2613,16 +2258,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     id_short: Optional[str] = r"IdentificationValue",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2633,18 +2272,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
-                                        display_name = aas.MultiLanguageNameType(
-                                            dict_={r"en": r"Identification Value"}
-                                        )
+                                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Identification Value"})
 
                                     if description is None:
                                         description = aas.MultiLanguageTextType(
@@ -2682,16 +2315,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     id_short: Optional[str] = r"ID",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2702,18 +2329,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
-                                        display_name = aas.MultiLanguageNameType(
-                                            dict_={r"en": r"ID"}
-                                        )
+                                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"ID"})
 
                                     if description is None:
                                         description = aas.MultiLanguageTextType(
@@ -2751,16 +2372,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     id_short: Optional[str] = r"RefID",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2771,24 +2386,16 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
-                                        display_name = aas.MultiLanguageNameType(
-                                            dict_={r"en": r"Ref ID"}
-                                        )
+                                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Ref ID"})
 
                                     if description is None:
                                         description = aas.MultiLanguageTextType(
-                                            dict_={
-                                                r"en": r"Reference to an existing ID within the quality document"
-                                            }
+                                            dict_={r"en": r"Reference to an existing ID within the quality document"}
                                         )
 
                                     if qualifier is None:
@@ -2820,16 +2427,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     id_short: Optional[str] = r"RefType",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2840,18 +2441,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
-                                        display_name = aas.MultiLanguageNameType(
-                                            dict_={r"en": r"Ref Type"}
-                                        )
+                                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Ref Type"})
 
                                     if description is None:
                                         description = aas.MultiLanguageTextType(
@@ -2883,27 +2478,17 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             def __init__(
                                 self,
-                                identificationName: Optional[
-                                    Union[aas.LangStringSet, IdentificationName]
-                                ] = None,
-                                identificationIssuer: Optional[
-                                    Union[str, IdentificationIssuer]
-                                ] = None,
-                                identificationValue: Optional[
-                                    Union[str, IdentificationValue]
-                                ] = None,
+                                identificationName: Optional[Union[aas.LangStringSet, IdentificationName]] = None,
+                                identificationIssuer: Optional[Union[str, IdentificationIssuer]] = None,
+                                identificationValue: Optional[Union[str, IdentificationValue]] = None,
                                 iD: Optional[Union[str, ID]] = None,
                                 refID: Optional[Iterable[Union[str, RefID]]] = None,
                                 refType: Optional[Union[str, RefType]] = None,
                                 id_short: Optional[str] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2915,20 +2500,14 @@ class DigitalQualityDocuments(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Identification"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Identification"})
 
                                 if description is None:
-                                    description = aas.MultiLanguageTextType(
-                                        dict_={r"en": r"Identification"}
-                                    )
+                                    description = aas.MultiLanguageTextType(dict_={r"en": r"Identification"})
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -2941,57 +2520,38 @@ class DigitalQualityDocuments(aas.Submodel):
                                 if identificationName is not None and not isinstance(
                                     identificationName, aas.SubmodelElement
                                 ):
-                                    identificationName = self.IdentificationName(
-                                        identificationName
-                                    )
+                                    identificationName = self.IdentificationName(identificationName)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
                                 if identificationIssuer is not None and not isinstance(
                                     identificationIssuer, aas.SubmodelElement
                                 ):
-                                    identificationIssuer = self.IdentificationIssuer(
-                                        identificationIssuer
-                                    )
+                                    identificationIssuer = self.IdentificationIssuer(identificationIssuer)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
                                 if identificationValue is not None and not isinstance(
                                     identificationValue, aas.SubmodelElement
                                 ):
-                                    identificationValue = self.IdentificationValue(
-                                        identificationValue
-                                    )
+                                    identificationValue = self.IdentificationValue(identificationValue)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if iD is not None and not isinstance(
-                                    iD, aas.SubmodelElement
-                                ):
+                                if iD is not None and not isinstance(iD, aas.SubmodelElement):
                                     iD = self.ID(iD)
 
                                 # A str would be split into its characters
                                 if isinstance(refID, str):
-                                    raise TypeError(
-                                        "refID takes several elements, got a str"
-                                    )
+                                    raise TypeError("refID takes several elements, got a str")
 
                                 # Build submodel elements from raw values passed in the argument
                                 if refID:
-                                    refID = [
-                                        (
-                                            i
-                                            if isinstance(i, aas.SubmodelElement)
-                                            else self.RefID(i)
-                                        )
-                                        for i in refID
-                                    ]
+                                    refID = [i if isinstance(i, aas.SubmodelElement) else self.RefID(i) for i in refID]
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if refType is not None and not isinstance(
-                                    refType, aas.SubmodelElement
-                                ):
+                                if refType is not None and not isinstance(refType, aas.SubmodelElement):
                                     refType = self.RefType(refType)
 
                                 # Add all passed/initialized submodel elements to a single list
@@ -3011,9 +2571,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                     elif isinstance(se_arg, Iterable):
                                         # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                         for n, element in enumerate(se_arg):
-                                            element.id_short = (
-                                                f"{element.id_short}{n:02d}"
-                                            )
+                                            element.id_short = f"{element.id_short}{n:02d}"
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
@@ -3039,16 +2597,12 @@ class DigitalQualityDocuments(aas.Submodel):
                             id_short: Optional[str] = r"Identifications",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                             semantic_id_list_element: Optional[aas.Reference] = None,
-                            value_type_list_element: Optional[
-                                aas.DataTypeDefXsd
-                            ] = None,
+                            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3060,15 +2614,11 @@ class DigitalQualityDocuments(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Identifications"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Identifications"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -3085,9 +2635,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(identifications_items, str):
-                                raise TypeError(
-                                    "identifications_items takes several elements, got a str"
-                                )
+                                raise TypeError("identifications_items takes several elements, got a str")
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -3155,8 +2703,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             # is either Property or Range. Thus, `new` must have the value_type property.
                             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                             if (
-                                self.type_value_list_element
-                                in (aas.Property, aas.Range)
+                                self.type_value_list_element in (aas.Property, aas.Range)
                                 and new.value_type is not self.value_type_list_element
                             ):  # type: ignore
                                 raise aas.AASConstraintViolation(
@@ -3169,15 +2716,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                            if (
-                                new.semantic_id is not None
-                                and self.semantic_id_list_element is None
-                            ):
+                            if new.semantic_id is not None and self.semantic_id_list_element is None:
                                 for item in existing:
-                                    if (
-                                        item.semantic_id is not None
-                                        and new.semantic_id != item.semantic_id
-                                    ):
+                                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                         raise aas.AASConstraintViolation(
                                             114,
                                             f"Element to be added {new!r} has semantic_id "
@@ -3200,35 +2741,22 @@ class DigitalQualityDocuments(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-ABI000#001",
-                                    ),
-                                ),
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI000#001"),),
                                 referred_semantic_id=None,
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Issue Date"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Issue Date"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Date when the document has been officially issued"
-                                    }
+                                    dict_={r"en": r"Date when the document has been officially issued"}
                                 )
 
                             if qualifier is None:
@@ -3256,10 +2784,7 @@ class DigitalQualityDocuments(aas.Submodel):
                         self,
                         uniqueIdentifier: Union[str, UniqueIdentifier],
                         identifications: Optional[
-                            Union[
-                                Iterable[Identifications.Identifications_item],
-                                Identifications,
-                            ]
+                            Union[Iterable[Identifications.Identifications_item], Identifications]
                         ] = None,
                         issueDate: Optional[Union[xsd.DateTime, IssueDate]] = None,
                         id_short: Optional[str] = r"CoreData",
@@ -3278,21 +2803,15 @@ class DigitalQualityDocuments(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Core Data"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Core Data"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Contains essential administrative information for the quality document"
-                                }
+                                dict_={r"en": r"Contains essential administrative information for the quality document"}
                             )
 
                         if qualifier is None:
@@ -3303,29 +2822,21 @@ class DigitalQualityDocuments(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if uniqueIdentifier is not None and not isinstance(
-                            uniqueIdentifier, aas.SubmodelElement
-                        ):
+                        if uniqueIdentifier is not None and not isinstance(uniqueIdentifier, aas.SubmodelElement):
                             uniqueIdentifier = self.UniqueIdentifier(uniqueIdentifier)
 
                         # A str would be split into its characters
                         if isinstance(identifications, str):
-                            raise TypeError(
-                                "identifications takes several elements, got a str"
-                            )
+                            raise TypeError("identifications takes several elements, got a str")
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if identifications is not None and not isinstance(
-                            identifications, aas.SubmodelElement
-                        ):
+                        if identifications is not None and not isinstance(identifications, aas.SubmodelElement):
                             identifications = self.Identifications(identifications)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if issueDate is not None and not isinstance(
-                            issueDate, aas.SubmodelElement
-                        ):
+                        if issueDate is not None and not isinstance(issueDate, aas.SubmodelElement):
                             issueDate = self.IssueDate(issueDate)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -3341,9 +2852,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -3371,16 +2880,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value: aas.LangStringSet,
                                     id_short: Optional[str] = r"IdentificationName",
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3391,18 +2894,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
-                                        display_name = aas.MultiLanguageNameType(
-                                            dict_={r"en": r"Identification Name"}
-                                        )
+                                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Identification Name"})
 
                                     if description is None:
                                         description = aas.MultiLanguageTextType(
@@ -3437,16 +2934,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     id_short: Optional[str] = r"IdentificationIssuer",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3457,12 +2948,8 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
@@ -3506,16 +2993,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     id_short: Optional[str] = r"IdentificationValue",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3526,18 +3007,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
-                                        display_name = aas.MultiLanguageNameType(
-                                            dict_={r"en": r"Identification Value"}
-                                        )
+                                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Identification Value"})
 
                                     if description is None:
                                         description = aas.MultiLanguageTextType(
@@ -3575,16 +3050,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     id_short: Optional[str] = r"ID",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3595,18 +3064,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
-                                        display_name = aas.MultiLanguageNameType(
-                                            dict_={r"en": r"ID"}
-                                        )
+                                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"ID"})
 
                                     if description is None:
                                         description = aas.MultiLanguageTextType(
@@ -3644,16 +3107,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     id_short: Optional[str] = r"RefID",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3664,24 +3121,16 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
-                                        display_name = aas.MultiLanguageNameType(
-                                            dict_={r"en": r"Ref ID"}
-                                        )
+                                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Ref ID"})
 
                                     if description is None:
                                         description = aas.MultiLanguageTextType(
-                                            dict_={
-                                                r"en": r"Reference to an existing ID within the quality document"
-                                            }
+                                            dict_={r"en": r"Reference to an existing ID within the quality document"}
                                         )
 
                                     if qualifier is None:
@@ -3713,16 +3162,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                     id_short: Optional[str] = r"RefType",
                                     value_type: aas.DataTypeDefXsd = str,
                                     value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3733,18 +3176,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
-                                        display_name = aas.MultiLanguageNameType(
-                                            dict_={r"en": r"Ref Type"}
-                                        )
+                                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Ref Type"})
 
                                     if description is None:
                                         description = aas.MultiLanguageTextType(
@@ -3776,27 +3213,17 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             def __init__(
                                 self,
-                                identificationName: Optional[
-                                    Union[aas.LangStringSet, IdentificationName]
-                                ] = None,
-                                identificationIssuer: Optional[
-                                    Union[str, IdentificationIssuer]
-                                ] = None,
-                                identificationValue: Optional[
-                                    Union[str, IdentificationValue]
-                                ] = None,
+                                identificationName: Optional[Union[aas.LangStringSet, IdentificationName]] = None,
+                                identificationIssuer: Optional[Union[str, IdentificationIssuer]] = None,
+                                identificationValue: Optional[Union[str, IdentificationValue]] = None,
                                 iD: Optional[Union[str, ID]] = None,
                                 refID: Optional[Iterable[Union[str, RefID]]] = None,
                                 refType: Optional[Union[str, RefType]] = None,
                                 id_short: Optional[str] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3808,20 +3235,14 @@ class DigitalQualityDocuments(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Identification"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Identification"})
 
                                 if description is None:
-                                    description = aas.MultiLanguageTextType(
-                                        dict_={r"en": r"Identification"}
-                                    )
+                                    description = aas.MultiLanguageTextType(dict_={r"en": r"Identification"})
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -3834,57 +3255,38 @@ class DigitalQualityDocuments(aas.Submodel):
                                 if identificationName is not None and not isinstance(
                                     identificationName, aas.SubmodelElement
                                 ):
-                                    identificationName = self.IdentificationName(
-                                        identificationName
-                                    )
+                                    identificationName = self.IdentificationName(identificationName)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
                                 if identificationIssuer is not None and not isinstance(
                                     identificationIssuer, aas.SubmodelElement
                                 ):
-                                    identificationIssuer = self.IdentificationIssuer(
-                                        identificationIssuer
-                                    )
+                                    identificationIssuer = self.IdentificationIssuer(identificationIssuer)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
                                 if identificationValue is not None and not isinstance(
                                     identificationValue, aas.SubmodelElement
                                 ):
-                                    identificationValue = self.IdentificationValue(
-                                        identificationValue
-                                    )
+                                    identificationValue = self.IdentificationValue(identificationValue)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if iD is not None and not isinstance(
-                                    iD, aas.SubmodelElement
-                                ):
+                                if iD is not None and not isinstance(iD, aas.SubmodelElement):
                                     iD = self.ID(iD)
 
                                 # A str would be split into its characters
                                 if isinstance(refID, str):
-                                    raise TypeError(
-                                        "refID takes several elements, got a str"
-                                    )
+                                    raise TypeError("refID takes several elements, got a str")
 
                                 # Build submodel elements from raw values passed in the argument
                                 if refID:
-                                    refID = [
-                                        (
-                                            i
-                                            if isinstance(i, aas.SubmodelElement)
-                                            else self.RefID(i)
-                                        )
-                                        for i in refID
-                                    ]
+                                    refID = [i if isinstance(i, aas.SubmodelElement) else self.RefID(i) for i in refID]
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if refType is not None and not isinstance(
-                                    refType, aas.SubmodelElement
-                                ):
+                                if refType is not None and not isinstance(refType, aas.SubmodelElement):
                                     refType = self.RefType(refType)
 
                                 # Add all passed/initialized submodel elements to a single list
@@ -3904,9 +3306,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                     elif isinstance(se_arg, Iterable):
                                         # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                         for n, element in enumerate(se_arg):
-                                            element.id_short = (
-                                                f"{element.id_short}{n:02d}"
-                                            )
+                                            element.id_short = f"{element.id_short}{n:02d}"
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
@@ -3937,9 +3337,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3951,15 +3349,11 @@ class DigitalQualityDocuments(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Identifications"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Identifications"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
@@ -3976,9 +3370,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(identifications_items, str):
-                                raise TypeError(
-                                    "identifications_items takes several elements, got a str"
-                                )
+                                raise TypeError("identifications_items takes several elements, got a str")
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -4046,8 +3438,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             # is either Property or Range. Thus, `new` must have the value_type property.
                             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                             if (
-                                self.type_value_list_element
-                                in (aas.Property, aas.Range)
+                                self.type_value_list_element in (aas.Property, aas.Range)
                                 and new.value_type is not self.value_type_list_element
                             ):  # type: ignore
                                 raise aas.AASConstraintViolation(
@@ -4060,15 +3451,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                            if (
-                                new.semantic_id is not None
-                                and self.semantic_id_list_element is None
-                            ):
+                            if new.semantic_id is not None and self.semantic_id_list_element is None:
                                 for item in existing:
-                                    if (
-                                        item.semantic_id is not None
-                                        and new.semantic_id != item.semantic_id
-                                    ):
+                                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                         raise aas.AASConstraintViolation(
                                             114,
                                             f"Element to be added {new!r} has semantic_id "
@@ -4086,29 +3471,19 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             class Identifications(aas.SubmodelElementList):
 
-                                class Identifications_item(
-                                    aas.SubmodelElementCollection
-                                ):
+                                class Identifications_item(aas.SubmodelElementCollection):
 
                                     class IdentificationName(aas.MultiLanguageProperty):
 
                                         def __init__(
                                             self,
                                             value: aas.LangStringSet,
-                                            id_short: Optional[
-                                                str
-                                            ] = r"IdentificationName",
+                                            id_short: Optional[str] = r"IdentificationName",
                                             value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[
-                                                aas.MultiLanguageNameType
-                                            ] = None,
+                                            display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
-                                            description: Optional[
-                                                aas.MultiLanguageTextType
-                                            ] = None,
-                                            semantic_id: Optional[
-                                                aas.Reference
-                                            ] = aas.ExternalReference(
+                                            description: Optional[aas.MultiLanguageTextType] = None,
+                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                                 key=(
                                                     aas.Key(
                                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4119,9 +3494,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[
-                                                aas.Reference
-                                            ] = (),
+                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                                             embedded_data_specifications: Iterable[
                                                 aas.EmbeddedDataSpecification
                                             ] = None,
@@ -4129,16 +3502,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                                             if display_name is None:
                                                 display_name = aas.MultiLanguageNameType(
-                                                    dict_={
-                                                        r"en": r"Identification Name"
-                                                    }
+                                                    dict_={r"en": r"Identification Name"}
                                                 )
 
                                             if description is None:
                                                 description = aas.MultiLanguageTextType(
-                                                    dict_={
-                                                        r"en": r"Name of the identification"
-                                                    }
+                                                    dict_={r"en": r"Name of the identification"}
                                                 )
 
                                             if qualifier is None:
@@ -4166,21 +3535,13 @@ class DigitalQualityDocuments(aas.Submodel):
                                         def __init__(
                                             self,
                                             value: str,
-                                            id_short: Optional[
-                                                str
-                                            ] = r"IdentificationIssuer",
+                                            id_short: Optional[str] = r"IdentificationIssuer",
                                             value_type: aas.DataTypeDefXsd = str,
                                             value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[
-                                                aas.MultiLanguageNameType
-                                            ] = None,
+                                            display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
-                                            description: Optional[
-                                                aas.MultiLanguageTextType
-                                            ] = None,
-                                            semantic_id: Optional[
-                                                aas.Reference
-                                            ] = aas.ExternalReference(
+                                            description: Optional[aas.MultiLanguageTextType] = None,
+                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                                 key=(
                                                     aas.Key(
                                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4191,9 +3552,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[
-                                                aas.Reference
-                                            ] = (),
+                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                                             embedded_data_specifications: Iterable[
                                                 aas.EmbeddedDataSpecification
                                             ] = None,
@@ -4201,9 +3560,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                                             if display_name is None:
                                                 display_name = aas.MultiLanguageNameType(
-                                                    dict_={
-                                                        r"en": r"Identification Issuer"
-                                                    }
+                                                    dict_={r"en": r"Identification Issuer"}
                                                 )
 
                                             if description is None:
@@ -4239,21 +3596,13 @@ class DigitalQualityDocuments(aas.Submodel):
                                         def __init__(
                                             self,
                                             value: str,
-                                            id_short: Optional[
-                                                str
-                                            ] = r"IdentificationValue",
+                                            id_short: Optional[str] = r"IdentificationValue",
                                             value_type: aas.DataTypeDefXsd = str,
                                             value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[
-                                                aas.MultiLanguageNameType
-                                            ] = None,
+                                            display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
-                                            description: Optional[
-                                                aas.MultiLanguageTextType
-                                            ] = None,
-                                            semantic_id: Optional[
-                                                aas.Reference
-                                            ] = aas.ExternalReference(
+                                            description: Optional[aas.MultiLanguageTextType] = None,
+                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                                 key=(
                                                     aas.Key(
                                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4264,9 +3613,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[
-                                                aas.Reference
-                                            ] = (),
+                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                                             embedded_data_specifications: Iterable[
                                                 aas.EmbeddedDataSpecification
                                             ] = None,
@@ -4274,9 +3621,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                                             if display_name is None:
                                                 display_name = aas.MultiLanguageNameType(
-                                                    dict_={
-                                                        r"en": r"Identification Value"
-                                                    }
+                                                    dict_={r"en": r"Identification Value"}
                                                 )
 
                                             if description is None:
@@ -4315,16 +3660,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                             id_short: Optional[str] = r"ID",
                                             value_type: aas.DataTypeDefXsd = str,
                                             value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[
-                                                aas.MultiLanguageNameType
-                                            ] = None,
+                                            display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
-                                            description: Optional[
-                                                aas.MultiLanguageTextType
-                                            ] = None,
-                                            semantic_id: Optional[
-                                                aas.Reference
-                                            ] = aas.ExternalReference(
+                                            description: Optional[aas.MultiLanguageTextType] = None,
+                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                                 key=(
                                                     aas.Key(
                                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4335,20 +3674,14 @@ class DigitalQualityDocuments(aas.Submodel):
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[
-                                                aas.Reference
-                                            ] = (),
+                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                                             embedded_data_specifications: Iterable[
                                                 aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
 
                                             if display_name is None:
-                                                display_name = (
-                                                    aas.MultiLanguageNameType(
-                                                        dict_={r"en": r"ID"}
-                                                    )
-                                                )
+                                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"ID"})
 
                                             if description is None:
                                                 description = aas.MultiLanguageTextType(
@@ -4386,16 +3719,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                             id_short: Optional[str] = r"RefID",
                                             value_type: aas.DataTypeDefXsd = str,
                                             value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[
-                                                aas.MultiLanguageNameType
-                                            ] = None,
+                                            display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
-                                            description: Optional[
-                                                aas.MultiLanguageTextType
-                                            ] = None,
-                                            semantic_id: Optional[
-                                                aas.Reference
-                                            ] = aas.ExternalReference(
+                                            description: Optional[aas.MultiLanguageTextType] = None,
+                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                                 key=(
                                                     aas.Key(
                                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4406,20 +3733,14 @@ class DigitalQualityDocuments(aas.Submodel):
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[
-                                                aas.Reference
-                                            ] = (),
+                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                                             embedded_data_specifications: Iterable[
                                                 aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
 
                                             if display_name is None:
-                                                display_name = (
-                                                    aas.MultiLanguageNameType(
-                                                        dict_={r"en": r"Ref ID"}
-                                                    )
-                                                )
+                                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Ref ID"})
 
                                             if description is None:
                                                 description = aas.MultiLanguageTextType(
@@ -4457,16 +3778,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                             id_short: Optional[str] = r"RefType",
                                             value_type: aas.DataTypeDefXsd = str,
                                             value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[
-                                                aas.MultiLanguageNameType
-                                            ] = None,
+                                            display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
-                                            description: Optional[
-                                                aas.MultiLanguageTextType
-                                            ] = None,
-                                            semantic_id: Optional[
-                                                aas.Reference
-                                            ] = aas.ExternalReference(
+                                            description: Optional[aas.MultiLanguageTextType] = None,
+                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                                 key=(
                                                     aas.Key(
                                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4477,20 +3792,14 @@ class DigitalQualityDocuments(aas.Submodel):
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[
-                                                aas.Reference
-                                            ] = (),
+                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
                                             embedded_data_specifications: Iterable[
                                                 aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
 
                                             if display_name is None:
-                                                display_name = (
-                                                    aas.MultiLanguageNameType(
-                                                        dict_={r"en": r"Ref Type"}
-                                                    )
-                                                )
+                                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Ref Type"})
 
                                             if description is None:
                                                 description = aas.MultiLanguageTextType(
@@ -4525,28 +3834,16 @@ class DigitalQualityDocuments(aas.Submodel):
                                         identificationName: Optional[
                                             Union[aas.LangStringSet, IdentificationName]
                                         ] = None,
-                                        identificationIssuer: Optional[
-                                            Union[str, IdentificationIssuer]
-                                        ] = None,
-                                        identificationValue: Optional[
-                                            Union[str, IdentificationValue]
-                                        ] = None,
+                                        identificationIssuer: Optional[Union[str, IdentificationIssuer]] = None,
+                                        identificationValue: Optional[Union[str, IdentificationValue]] = None,
                                         iD: Optional[Union[str, ID]] = None,
-                                        refID: Optional[
-                                            Iterable[Union[str, RefID]]
-                                        ] = None,
+                                        refID: Optional[Iterable[Union[str, RefID]]] = None,
                                         refType: Optional[Union[str, RefType]] = None,
                                         id_short: Optional[str] = None,
-                                        display_name: Optional[
-                                            aas.MultiLanguageNameType
-                                        ] = None,
+                                        display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
-                                        description: Optional[
-                                            aas.MultiLanguageTextType
-                                        ] = None,
-                                        semantic_id: Optional[
-                                            aas.Reference
-                                        ] = aas.ExternalReference(
+                                        description: Optional[aas.MultiLanguageTextType] = None,
+                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                             key=(
                                                 aas.Key(
                                                     type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4557,23 +3854,15 @@ class DigitalQualityDocuments(aas.Submodel):
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[
-                                            aas.Reference
-                                        ] = (),
-                                        embedded_data_specifications: Iterable[
-                                            aas.EmbeddedDataSpecification
-                                        ] = None,
+                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
 
                                         if display_name is None:
-                                            display_name = aas.MultiLanguageNameType(
-                                                dict_={r"en": r"Identification"}
-                                            )
+                                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Identification"})
 
                                         if description is None:
-                                            description = aas.MultiLanguageTextType(
-                                                dict_={r"en": r"Identification"}
-                                            )
+                                            description = aas.MultiLanguageTextType(dict_={r"en": r"Identification"})
 
                                         if qualifier is None:
                                             qualifier = ()
@@ -4583,78 +3872,44 @@ class DigitalQualityDocuments(aas.Submodel):
 
                                         # Build a submodel element if a raw value was passed in the argument
 
-                                        if (
-                                            identificationName is not None
-                                            and not isinstance(
-                                                identificationName, aas.SubmodelElement
-                                            )
+                                        if identificationName is not None and not isinstance(
+                                            identificationName, aas.SubmodelElement
                                         ):
-                                            identificationName = (
-                                                self.IdentificationName(
-                                                    identificationName
-                                                )
-                                            )
+                                            identificationName = self.IdentificationName(identificationName)
 
                                         # Build a submodel element if a raw value was passed in the argument
 
-                                        if (
-                                            identificationIssuer is not None
-                                            and not isinstance(
-                                                identificationIssuer,
-                                                aas.SubmodelElement,
-                                            )
+                                        if identificationIssuer is not None and not isinstance(
+                                            identificationIssuer, aas.SubmodelElement
                                         ):
-                                            identificationIssuer = (
-                                                self.IdentificationIssuer(
-                                                    identificationIssuer
-                                                )
-                                            )
+                                            identificationIssuer = self.IdentificationIssuer(identificationIssuer)
 
                                         # Build a submodel element if a raw value was passed in the argument
 
-                                        if (
-                                            identificationValue is not None
-                                            and not isinstance(
-                                                identificationValue, aas.SubmodelElement
-                                            )
+                                        if identificationValue is not None and not isinstance(
+                                            identificationValue, aas.SubmodelElement
                                         ):
-                                            identificationValue = (
-                                                self.IdentificationValue(
-                                                    identificationValue
-                                                )
-                                            )
+                                            identificationValue = self.IdentificationValue(identificationValue)
 
                                         # Build a submodel element if a raw value was passed in the argument
 
-                                        if iD is not None and not isinstance(
-                                            iD, aas.SubmodelElement
-                                        ):
+                                        if iD is not None and not isinstance(iD, aas.SubmodelElement):
                                             iD = self.ID(iD)
 
                                         # A str would be split into its characters
                                         if isinstance(refID, str):
-                                            raise TypeError(
-                                                "refID takes several elements, got a str"
-                                            )
+                                            raise TypeError("refID takes several elements, got a str")
 
                                         # Build submodel elements from raw values passed in the argument
                                         if refID:
                                             refID = [
-                                                (
-                                                    i
-                                                    if isinstance(
-                                                        i, aas.SubmodelElement
-                                                    )
-                                                    else self.RefID(i)
-                                                )
+                                                i if isinstance(i, aas.SubmodelElement) else self.RefID(i)
                                                 for i in refID
                                             ]
 
                                         # Build a submodel element if a raw value was passed in the argument
 
-                                        if refType is not None and not isinstance(
-                                            refType, aas.SubmodelElement
-                                        ):
+                                        if refType is not None and not isinstance(refType, aas.SubmodelElement):
                                             refType = self.RefType(refType)
 
                                         # Add all passed/initialized submodel elements to a single list
@@ -4669,21 +3924,13 @@ class DigitalQualityDocuments(aas.Submodel):
                                         ]:
                                             if se_arg is None:
                                                 continue
-                                            elif isinstance(
-                                                se_arg, aas.SubmodelElement
-                                            ):
-                                                embedded_submodel_elements.append(
-                                                    se_arg
-                                                )
+                                            elif isinstance(se_arg, aas.SubmodelElement):
+                                                embedded_submodel_elements.append(se_arg)
                                             elif isinstance(se_arg, Iterable):
                                                 # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                                 for n, element in enumerate(se_arg):
-                                                    element.id_short = (
-                                                        f"{element.id_short}{n:02d}"
-                                                    )
-                                                    embedded_submodel_elements.append(
-                                                        element
-                                                    )
+                                                    element.id_short = f"{element.id_short}{n:02d}"
+                                                    embedded_submodel_elements.append(element)
                                             else:
                                                 raise TypeError(
                                                     f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
@@ -4704,28 +3951,16 @@ class DigitalQualityDocuments(aas.Submodel):
 
                                 def __init__(
                                     self,
-                                    identifications_items: Iterable[
-                                        Identifications_item
-                                    ],
+                                    identifications_items: Iterable[Identifications_item],
                                     id_short: Optional[str] = r"Identifications",
                                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                                    semantic_id_list_element: Optional[
-                                        aas.Reference
-                                    ] = None,
-                                    value_type_list_element: Optional[
-                                        aas.DataTypeDefXsd
-                                    ] = None,
+                                    semantic_id_list_element: Optional[aas.Reference] = None,
+                                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                                     order_relevant: bool = True,
-                                    display_name: Optional[
-                                        aas.MultiLanguageNameType
-                                    ] = None,
+                                    display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
-                                    description: Optional[
-                                        aas.MultiLanguageTextType
-                                    ] = None,
-                                    semantic_id: Optional[
-                                        aas.Reference
-                                    ] = aas.ExternalReference(
+                                    description: Optional[aas.MultiLanguageTextType] = None,
+                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                         key=(
                                             aas.Key(
                                                 type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4736,18 +3971,12 @@ class DigitalQualityDocuments(aas.Submodel):
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[
-                                        aas.Reference
-                                    ] = (),
-                                    embedded_data_specifications: Iterable[
-                                        aas.EmbeddedDataSpecification
-                                    ] = None,
+                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
 
                                     if display_name is None:
-                                        display_name = aas.MultiLanguageNameType(
-                                            dict_={r"en": r"Identifications"}
-                                        )
+                                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Identifications"})
 
                                     if description is None:
                                         description = aas.MultiLanguageTextType(
@@ -4764,9 +3993,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                                     # A str would be split into its characters
                                     if isinstance(identifications_items, str):
-                                        raise TypeError(
-                                            "identifications_items takes several elements, got a str"
-                                        )
+                                        raise TypeError("identifications_items takes several elements, got a str")
 
                                     # Add all passed/initialized submodel elements to a single list
                                     embedded_submodel_elements = []
@@ -4806,9 +4033,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                     new.id_short = None
 
                                     # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-                                    if not isinstance(
-                                        new, self.type_value_list_element
-                                    ):
+                                    if not isinstance(new, self.type_value_list_element):
                                         raise aas.AASConstraintViolation(
                                             108,
                                             "All first level elements must be of the type specified in "
@@ -4819,8 +4044,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                     if (
                                         self.semantic_id_list_element is not None
                                         and new.semantic_id is not None
-                                        and new.semantic_id
-                                        != self.semantic_id_list_element
+                                        and new.semantic_id != self.semantic_id_list_element
                                     ):
                                         # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
                                         # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
@@ -4837,10 +4061,8 @@ class DigitalQualityDocuments(aas.Submodel):
                                     # is either Property or Range. Thus, `new` must have the value_type property.
                                     # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                                     if (
-                                        self.type_value_list_element
-                                        in (aas.Property, aas.Range)
-                                        and new.value_type
-                                        is not self.value_type_list_element
+                                        self.type_value_list_element in (aas.Property, aas.Range)
+                                        and new.value_type is not self.value_type_list_element
                                     ):  # type: ignore
                                         raise aas.AASConstraintViolation(
                                             109,
@@ -4852,15 +4074,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                                    if (
-                                        new.semantic_id is not None
-                                        and self.semantic_id_list_element is None
-                                    ):
+                                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                                         for item in existing:
-                                            if (
-                                                item.semantic_id is not None
-                                                and new.semantic_id != item.semantic_id
-                                            ):
+                                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                                 raise aas.AASConstraintViolation(
                                                     114,
                                                     f"Element to be added {new!r} has semantic_id "
@@ -4874,19 +4090,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             def __init__(
                                 self,
-                                identifications: Union[
-                                    Iterable[Identifications.Identifications_item],
-                                    Identifications,
-                                ],
+                                identifications: Union[Iterable[Identifications.Identifications_item], Identifications],
                                 id_short: Optional[str] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4898,20 +4107,14 @@ class DigitalQualityDocuments(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Item"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Item"})
 
                                 if description is None:
-                                    description = aas.MultiLanguageTextType(
-                                        dict_={r"en": r"Item"}
-                                    )
+                                    description = aas.MultiLanguageTextType(dict_={r"en": r"Item"})
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -4921,18 +4124,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                                 # A str would be split into its characters
                                 if isinstance(identifications, str):
-                                    raise TypeError(
-                                        "identifications takes several elements, got a str"
-                                    )
+                                    raise TypeError("identifications takes several elements, got a str")
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if identifications is not None and not isinstance(
-                                    identifications, aas.SubmodelElement
-                                ):
-                                    identifications = self.Identifications(
-                                        identifications
-                                    )
+                                if identifications is not None and not isinstance(identifications, aas.SubmodelElement):
+                                    identifications = self.Identifications(identifications)
 
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
@@ -4944,9 +4141,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                     elif isinstance(se_arg, Iterable):
                                         # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                         for n, element in enumerate(se_arg):
-                                            element.id_short = (
-                                                f"{element.id_short}{n:02d}"
-                                            )
+                                            element.id_short = f"{element.id_short}{n:02d}"
                                             embedded_submodel_elements.append(element)
                                     else:
                                         raise TypeError(
@@ -4972,16 +4167,12 @@ class DigitalQualityDocuments(aas.Submodel):
                             id_short: Optional[str] = r"Item",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                             semantic_id_list_element: Optional[aas.Reference] = None,
-                            value_type_list_element: Optional[
-                                aas.DataTypeDefXsd
-                            ] = None,
+                            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -4993,21 +4184,15 @@ class DigitalQualityDocuments(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Item"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Item"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Item of calibration, conformity assessment or other"
-                                    }
+                                    dict_={r"en": r"Item of calibration, conformity assessment or other"}
                                 )
 
                             if qualifier is None:
@@ -5018,9 +4203,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             # A str would be split into its characters
                             if isinstance(item_items, str):
-                                raise TypeError(
-                                    "item_items takes several elements, got a str"
-                                )
+                                raise TypeError("item_items takes several elements, got a str")
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
@@ -5088,8 +4271,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             # is either Property or Range. Thus, `new` must have the value_type property.
                             # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
                             if (
-                                self.type_value_list_element
-                                in (aas.Property, aas.Range)
+                                self.type_value_list_element in (aas.Property, aas.Range)
                                 and new.value_type is not self.value_type_list_element
                             ):  # type: ignore
                                 raise aas.AASConstraintViolation(
@@ -5102,15 +4284,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                            if (
-                                new.semantic_id is not None
-                                and self.semantic_id_list_element is None
-                            ):
+                            if new.semantic_id is not None and self.semantic_id_list_element is None:
                                 for item in existing:
-                                    if (
-                                        item.semantic_id is not None
-                                        and new.semantic_id != item.semantic_id
-                                    ):
+                                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                         raise aas.AASConstraintViolation(
                                             114,
                                             f"Element to be added {new!r} has semantic_id "
@@ -5124,10 +4300,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     def __init__(
                         self,
-                        identifications: Union[
-                            Iterable[Identifications.Identifications_item],
-                            Identifications,
-                        ],
+                        identifications: Union[Iterable[Identifications.Identifications_item], Identifications],
                         item: Union[Iterable[Item.Item_item], Item],
                         id_short: Optional[str] = r"Items",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -5145,15 +4318,11 @@ class DigitalQualityDocuments(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Items"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Items"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -5170,15 +4339,11 @@ class DigitalQualityDocuments(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(identifications, str):
-                            raise TypeError(
-                                "identifications takes several elements, got a str"
-                            )
+                            raise TypeError("identifications takes several elements, got a str")
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if identifications is not None and not isinstance(
-                            identifications, aas.SubmodelElement
-                        ):
+                        if identifications is not None and not isinstance(identifications, aas.SubmodelElement):
                             identifications = self.Identifications(identifications)
 
                         # A str would be split into its characters
@@ -5187,9 +4352,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if item is not None and not isinstance(
-                            item, aas.SubmodelElement
-                        ):
+                        if item is not None and not isinstance(item, aas.SubmodelElement):
                             item = self.Item(item)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -5205,9 +4368,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -5234,14 +4395,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                 id_short: Optional[str] = r"DateOfStatement",
                                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5253,20 +4410,14 @@ class DigitalQualityDocuments(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Date Of Statement"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Date Of Statement"})
 
                                 if description is None:
-                                    description = aas.MultiLanguageTextType(
-                                        dict_={r"en": r"Date of statement"}
-                                    )
+                                    description = aas.MultiLanguageTextType(dict_={r"en": r"Date of statement"})
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -5297,14 +4448,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                 id_short: Optional[str] = r"StatementReference",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5316,15 +4463,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Statement Reference"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Statement Reference"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -5361,14 +4504,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                 value: aas.LangStringSet,
                                 id_short: Optional[str] = r"Declaration",
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5380,21 +4519,15 @@ class DigitalQualityDocuments(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Declaration"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Declaration"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Additional information providing context for the statement"
-                                        }
+                                        dict_={r"en": r"Additional information providing context for the statement"}
                                     )
 
                                 if qualifier is None:
@@ -5419,15 +4552,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                         def __init__(
                             self,
-                            dateOfStatement: Optional[
-                                Union[xsd.DateTime, DateOfStatement]
-                            ] = None,
-                            statementReference: Optional[
-                                Union[str, StatementReference]
-                            ] = None,
-                            declaration: Optional[
-                                Union[aas.LangStringSet, Declaration]
-                            ] = None,
+                            dateOfStatement: Optional[Union[xsd.DateTime, DateOfStatement]] = None,
+                            statementReference: Optional[Union[str, StatementReference]] = None,
+                            declaration: Optional[Union[aas.LangStringSet, Declaration]] = None,
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
@@ -5436,21 +4563,15 @@ class DigitalQualityDocuments(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Statement"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Statement"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"statement records regarding the quality assessment"
-                                    }
+                                    dict_={r"en": r"statement records regarding the quality assessment"}
                                 )
 
                             if qualifier is None:
@@ -5461,9 +4582,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if dateOfStatement is not None and not isinstance(
-                                dateOfStatement, aas.SubmodelElement
-                            ):
+                            if dateOfStatement is not None and not isinstance(dateOfStatement, aas.SubmodelElement):
                                 dateOfStatement = self.DateOfStatement(dateOfStatement)
 
                             # Build a submodel element if a raw value was passed in the argument
@@ -5471,24 +4590,16 @@ class DigitalQualityDocuments(aas.Submodel):
                             if statementReference is not None and not isinstance(
                                 statementReference, aas.SubmodelElement
                             ):
-                                statementReference = self.StatementReference(
-                                    statementReference
-                                )
+                                statementReference = self.StatementReference(statementReference)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if declaration is not None and not isinstance(
-                                declaration, aas.SubmodelElement
-                            ):
+                            if declaration is not None and not isinstance(declaration, aas.SubmodelElement):
                                 declaration = self.Declaration(declaration)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in [
-                                dateOfStatement,
-                                statementReference,
-                                declaration,
-                            ]:
+                            for se_arg in [dateOfStatement, statementReference, declaration]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -5539,21 +4650,15 @@ class DigitalQualityDocuments(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Statements"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Statements"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Contains list of statement records regarding the quality assessment"
-                                }
+                                dict_={r"en": r"Contains list of statement records regarding the quality assessment"}
                             )
 
                         if qualifier is None:
@@ -5564,9 +4669,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(statements_items, str):
-                            raise TypeError(
-                                "statements_items takes several elements, got a str"
-                            )
+                            raise TypeError("statements_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -5578,9 +4681,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -5647,15 +4748,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -5671,9 +4766,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     self,
                     coreData: CoreData,
                     items: Optional[Items] = None,
-                    statements: Optional[
-                        Union[Iterable[Statements.Statements_item], Statements]
-                    ] = None,
+                    statements: Optional[Union[Iterable[Statements.Statements_item], Statements]] = None,
                     id_short: Optional[str] = r"AdministrativeData",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -5690,15 +4783,11 @@ class DigitalQualityDocuments(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Administrative Data"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Administrative Data"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -5719,9 +4808,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if statements is not None and not isinstance(
-                        statements, aas.SubmodelElement
-                    ):
+                    if statements is not None and not isinstance(statements, aas.SubmodelElement):
                         statements = self.Statements(statements)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -5737,9 +4824,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5769,9 +4854,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5783,21 +4866,15 @@ class DigitalQualityDocuments(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Canonicalization Method"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Canonicalization Method"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Information about the signature and the algorithms used"
-                                    }
+                                    dict_={r"en": r"Information about the signature and the algorithms used"}
                                 )
 
                             if qualifier is None:
@@ -5832,9 +4909,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5846,21 +4921,15 @@ class DigitalQualityDocuments(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Signature Method"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Signature Method"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Information about the method used for creating the signature"
-                                    }
+                                    dict_={r"en": r"Information about the method used for creating the signature"}
                                 )
 
                             if qualifier is None:
@@ -5894,14 +4963,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                 id_short: Optional[str] = r"Transforms",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5913,15 +4978,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Transforms"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Transforms"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -5959,14 +5020,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                 id_short: Optional[str] = r"DigestMethod",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -5978,21 +5035,15 @@ class DigitalQualityDocuments(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Digest Method"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Digest Method"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Specifies the hash algorithm before applying the hash"
-                                        }
+                                        dict_={r"en": r"Specifies the hash algorithm before applying the hash"}
                                     )
 
                                 if qualifier is None:
@@ -6024,14 +5075,10 @@ class DigitalQualityDocuments(aas.Submodel):
                                 id_short: Optional[str] = r"DigestValue",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6043,15 +5090,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Digest Value"}
-                                    )
+                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Digest Value"})
 
                                 if description is None:
                                     description = aas.MultiLanguageTextType(
@@ -6090,9 +5133,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -6104,21 +5145,15 @@ class DigitalQualityDocuments(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Signature Reference"}
-                                )
+                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Signature Reference"})
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Additional information for processing the signature"
-                                    }
+                                    dict_={r"en": r"Additional information for processing the signature"}
                                 )
 
                             if qualifier is None:
@@ -6129,23 +5164,17 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if transforms is not None and not isinstance(
-                                transforms, aas.SubmodelElement
-                            ):
+                            if transforms is not None and not isinstance(transforms, aas.SubmodelElement):
                                 transforms = self.Transforms(transforms)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if digestMethod is not None and not isinstance(
-                                digestMethod, aas.SubmodelElement
-                            ):
+                            if digestMethod is not None and not isinstance(digestMethod, aas.SubmodelElement):
                                 digestMethod = self.DigestMethod(digestMethod)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if digestValue is not None and not isinstance(
-                                digestValue, aas.SubmodelElement
-                            ):
+                            if digestValue is not None and not isinstance(digestValue, aas.SubmodelElement):
                                 digestValue = self.DigestValue(digestValue)
 
                             # Add all passed/initialized submodel elements to a single list
@@ -6199,21 +5228,15 @@ class DigitalQualityDocuments(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Signed Info"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Signed Info"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Information about the signature and the algorithms used"
-                                }
+                                dict_={r"en": r"Information about the signature and the algorithms used"}
                             )
 
                         if qualifier is None:
@@ -6227,30 +5250,20 @@ class DigitalQualityDocuments(aas.Submodel):
                         if canonicalizationMethod is not None and not isinstance(
                             canonicalizationMethod, aas.SubmodelElement
                         ):
-                            canonicalizationMethod = self.CanonicalizationMethod(
-                                canonicalizationMethod
-                            )
+                            canonicalizationMethod = self.CanonicalizationMethod(canonicalizationMethod)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if signatureMethod is not None and not isinstance(
-                            signatureMethod, aas.SubmodelElement
-                        ):
+                        if signatureMethod is not None and not isinstance(signatureMethod, aas.SubmodelElement):
                             signatureMethod = self.SignatureMethod(signatureMethod)
 
                         # A str would be split into its characters
                         if isinstance(signatureReference, str):
-                            raise TypeError(
-                                "signatureReference takes several elements, got a str"
-                            )
+                            raise TypeError("signatureReference takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            canonicalizationMethod,
-                            signatureMethod,
-                            signatureReference,
-                        ]:
+                        for se_arg in [canonicalizationMethod, signatureMethod, signatureReference]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -6261,9 +5274,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -6301,15 +5312,11 @@ class DigitalQualityDocuments(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Signature Value"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Signature Value"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -6362,15 +5369,11 @@ class DigitalQualityDocuments(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Key Info"}
-                            )
+                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key Info"})
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
@@ -6424,22 +5427,17 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.ExternalReference(
                             key=(
                                 aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"http://www.w3.org/TR/xmldsig-core1/",
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://www.w3.org/TR/xmldsig-core1/"
                                 ),
                             ),
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Document Signature"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Document Signature"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -6456,16 +5454,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if signatureValue is not None and not isinstance(
-                        signatureValue, aas.SubmodelElement
-                    ):
+                    if signatureValue is not None and not isinstance(signatureValue, aas.SubmodelElement):
                         signatureValue = self.SignatureValue(signatureValue)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if keyInfo is not None and not isinstance(
-                        keyInfo, aas.SubmodelElement
-                    ):
+                    if keyInfo is not None and not isinstance(keyInfo, aas.SubmodelElement):
                         keyInfo = self.KeyInfo(keyInfo)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -6481,9 +5475,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -6508,27 +5500,13 @@ class DigitalQualityDocuments(aas.Submodel):
                 statusValue: Union[str, StatusValue],
                 organizationShortName: Union[str, OrganizationShortName],
                 organizationOfficialName: Union[str, OrganizationOfficialName],
-                digitalFiles: Union[
-                    Iterable[DigitalFiles.Digitalfiles_item], DigitalFiles
-                ],
+                digitalFiles: Union[Iterable[DigitalFiles.Digitalfiles_item], DigitalFiles],
                 administrativeData: AdministrativeData,
                 refersToEntities: Optional[
-                    Union[
-                        Iterable[
-                            Union[aas.Reference, RefersToEntities.Referstoentities_item]
-                        ],
-                        RefersToEntities,
-                    ]
+                    Union[Iterable[Union[aas.Reference, RefersToEntities.Referstoentities_item]], RefersToEntities]
                 ] = None,
                 basedOnReferences: Optional[
-                    Union[
-                        Iterable[
-                            Union[
-                                aas.Reference, BasedOnReferences.Basedonreferences_item
-                            ]
-                        ],
-                        BasedOnReferences,
-                    ]
+                    Union[Iterable[Union[aas.Reference, BasedOnReferences.Basedonreferences_item]], BasedOnReferences]
                 ] = None,
                 previewFile: Optional[PreviewFile] = None,
                 documentSignature: Optional[Iterable[DocumentSignature]] = None,
@@ -6539,8 +5517,7 @@ class DigitalQualityDocuments(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI503#003/0173-1#01-AHF582#003",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI503#003/0173-1#01-AHF582#003"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -6548,15 +5525,11 @@ class DigitalQualityDocuments(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Document Instance"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Document Instance"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -6577,9 +5550,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if language is not None and not isinstance(
-                    language, aas.SubmodelElement
-                ):
+                if language is not None and not isinstance(language, aas.SubmodelElement):
                     language = self.Language(language)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -6594,67 +5565,47 @@ class DigitalQualityDocuments(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if description_ is not None and not isinstance(
-                    description_, aas.SubmodelElement
-                ):
+                if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusSetDate is not None and not isinstance(
-                    statusSetDate, aas.SubmodelElement
-                ):
+                if statusSetDate is not None and not isinstance(statusSetDate, aas.SubmodelElement):
                     statusSetDate = self.StatusSetDate(statusSetDate)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusValue is not None and not isinstance(
-                    statusValue, aas.SubmodelElement
-                ):
+                if statusValue is not None and not isinstance(statusValue, aas.SubmodelElement):
                     statusValue = self.StatusValue(statusValue)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if organizationShortName is not None and not isinstance(
-                    organizationShortName, aas.SubmodelElement
-                ):
-                    organizationShortName = self.OrganizationShortName(
-                        organizationShortName
-                    )
+                if organizationShortName is not None and not isinstance(organizationShortName, aas.SubmodelElement):
+                    organizationShortName = self.OrganizationShortName(organizationShortName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if organizationOfficialName is not None and not isinstance(
                     organizationOfficialName, aas.SubmodelElement
                 ):
-                    organizationOfficialName = self.OrganizationOfficialName(
-                        organizationOfficialName
-                    )
+                    organizationOfficialName = self.OrganizationOfficialName(organizationOfficialName)
 
                 # A str would be split into its characters
                 if isinstance(refersToEntities, str):
-                    raise TypeError(
-                        "refersToEntities takes several elements, got a str"
-                    )
+                    raise TypeError("refersToEntities takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if refersToEntities is not None and not isinstance(
-                    refersToEntities, aas.SubmodelElement
-                ):
+                if refersToEntities is not None and not isinstance(refersToEntities, aas.SubmodelElement):
                     refersToEntities = self.RefersToEntities(refersToEntities)
 
                 # A str would be split into its characters
                 if isinstance(basedOnReferences, str):
-                    raise TypeError(
-                        "basedOnReferences takes several elements, got a str"
-                    )
+                    raise TypeError("basedOnReferences takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if basedOnReferences is not None and not isinstance(
-                    basedOnReferences, aas.SubmodelElement
-                ):
+                if basedOnReferences is not None and not isinstance(basedOnReferences, aas.SubmodelElement):
                     basedOnReferences = self.BasedOnReferences(basedOnReferences)
 
                 # A str would be split into its characters
@@ -6663,16 +5614,12 @@ class DigitalQualityDocuments(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if digitalFiles is not None and not isinstance(
-                    digitalFiles, aas.SubmodelElement
-                ):
+                if digitalFiles is not None and not isinstance(digitalFiles, aas.SubmodelElement):
                     digitalFiles = self.DigitalFiles(digitalFiles)
 
                 # A str would be split into its characters
                 if isinstance(documentSignature, str):
-                    raise TypeError(
-                        "documentSignature takes several elements, got a str"
-                    )
+                    raise TypeError("documentSignature takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -6702,9 +5649,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -6731,12 +5676,7 @@ class DigitalQualityDocuments(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABI503#003",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI503#003"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -6752,15 +5692,11 @@ class DigitalQualityDocuments(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Document Instances"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Document Instances"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -6777,9 +5713,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(documentinstances_items, str):
-                raise TypeError(
-                    "documentinstances_items takes several elements, got a str"
-                )
+                raise TypeError("documentinstances_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -6791,9 +5725,7 @@ class DigitalQualityDocuments(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -6862,10 +5794,7 @@ class DigitalQualityDocuments(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -6882,12 +5811,9 @@ class DigitalQualityDocuments(aas.Submodel):
         id_: str,
         documentIds: Union[Iterable[DocumentIds.Documentids_item], DocumentIds],
         documentClassifications: Union[
-            Iterable[DocumentClassifications.Documentclassifications_item],
-            DocumentClassifications,
+            Iterable[DocumentClassifications.Documentclassifications_item], DocumentClassifications
         ],
-        documentInstances: Union[
-            Iterable[DocumentInstances.Documentinstances_item], DocumentInstances
-        ],
+        documentInstances: Union[Iterable[DocumentInstances.Documentinstances_item], DocumentInstances],
         id_short: Optional[str] = r"DigitalQualityDocuments",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -6910,14 +5836,10 @@ class DigitalQualityDocuments(aas.Submodel):
     ):
 
         if display_name is None:
-            display_name = aas.MultiLanguageNameType(
-                dict_={r"en": r"Digital Quality Documents"}
-            )
+            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Digital Quality Documents"})
 
         if description is None:
-            description = aas.MultiLanguageTextType(
-                dict_={r"en": r"Template submodel for Digital Quality Documents."}
-            )
+            description = aas.MultiLanguageTextType(dict_={r"en": r"Template submodel for Digital Quality Documents."})
 
         if qualifier is None:
             qualifier = ()
@@ -6940,12 +5862,8 @@ class DigitalQualityDocuments(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if documentClassifications is not None and not isinstance(
-            documentClassifications, aas.SubmodelElement
-        ):
-            documentClassifications = self.DocumentClassifications(
-                documentClassifications
-            )
+        if documentClassifications is not None and not isinstance(documentClassifications, aas.SubmodelElement):
+            documentClassifications = self.DocumentClassifications(documentClassifications)
 
         # A str would be split into its characters
         if isinstance(documentInstances, str):
@@ -6953,9 +5871,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if documentInstances is not None and not isinstance(
-            documentInstances, aas.SubmodelElement
-        ):
+        if documentInstances is not None and not isinstance(documentInstances, aas.SubmodelElement):
             documentInstances = self.DocumentInstances(documentInstances)
 
         # Add all passed/initialized submodel elements to a single list
@@ -6971,9 +5887,7 @@ class DigitalQualityDocuments(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

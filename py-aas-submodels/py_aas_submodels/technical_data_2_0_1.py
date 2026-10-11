@@ -19,12 +19,7 @@ class TechnicalData(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO677#004",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#004"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -40,9 +35,7 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -82,12 +75,7 @@ class TechnicalData(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABI776#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI776#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -103,15 +91,11 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Company logo", r"de": r"Firmenlogo"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Company logo", r"de": r"Firmenlogo"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -144,12 +128,7 @@ class TechnicalData(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAW338#003",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW338#003"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -165,17 +144,12 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Manufacturer product designation",
-                            r"de": r"Herstellerproduktbezeichnung",
-                        }
+                        dict_={r"en": r"Manufacturer product designation", r"de": r"Herstellerproduktbezeichnung"}
                     )
 
                 if qualifier is None:
@@ -210,12 +184,7 @@ class TechnicalData(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO676#005",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO676#005"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -231,17 +200,12 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Manufacturer article number",
-                            r"de": r"Herstellerartikelnummer",
-                        }
+                        dict_={r"en": r"Manufacturer article number", r"de": r"Herstellerartikelnummer"}
                     )
 
                 if qualifier is None:
@@ -277,12 +241,7 @@ class TechnicalData(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO227#004",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO227#004"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -298,17 +257,12 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Manufacturer order code",
-                            r"de": r"Bestellcode des Herstellers",
-                        }
+                        dict_={r"en": r"Manufacturer order code", r"de": r"Bestellcode des Herstellers"}
                     )
 
                 if qualifier is None:
@@ -347,28 +301,18 @@ class TechnicalData(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABK291#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK291#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
                             display_name = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Product image",
-                                    r"de": r"Bildname Sachaufnahme",
-                                }
+                                dict_={r"en": r"Product image", r"de": r"Bildname Sachaufnahme"}
                             )
 
                         if qualifier is None:
@@ -402,12 +346,7 @@ class TechnicalData(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABL423#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL423#001"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
@@ -423,9 +362,7 @@ class TechnicalData(aas.Submodel):
                                 referred_semantic_id=None,
                             ),
                         ),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if display_name is None:
@@ -464,8 +401,7 @@ class TechnicalData(aas.Submodel):
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001",
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001"
                             ),
                         ),
                         referred_semantic_id=None,
@@ -487,15 +423,11 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Product image", r"de": r"Produktbild"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Product image", r"de": r"Produktbild"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -505,9 +437,7 @@ class TechnicalData(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if imageNote is not None and not isinstance(
-                        imageNote, aas.SubmodelElement
-                    ):
+                    if imageNote is not None and not isinstance(imageNote, aas.SubmodelElement):
                         imageNote = self.ImageNote(imageNote)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -523,9 +453,7 @@ class TechnicalData(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -545,13 +473,10 @@ class TechnicalData(aas.Submodel):
                 productimages_items: Iterable[Productimages_item],
                 id_short: Optional[str] = r"ProductImages",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                semantic_id_list_element: Optional[
-                    aas.Reference
-                ] = aas.ExternalReference(
+                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -562,12 +487,7 @@ class TechnicalData(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABM220#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM220#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -583,15 +503,11 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Product images", r"de": r"Produktbilder"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Product images", r"de": r"Produktbilder"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -601,9 +517,7 @@ class TechnicalData(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(productimages_items, str):
-                    raise TypeError(
-                        "productimages_items takes several elements, got a str"
-                    )
+                    raise TypeError("productimages_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -615,9 +529,7 @@ class TechnicalData(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -684,15 +596,9 @@ class TechnicalData(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -707,26 +613,17 @@ class TechnicalData(aas.Submodel):
         def __init__(
             self,
             manufacturerName: Union[str, ManufacturerName],
-            manufacturerProductDesignation: Union[
-                aas.LangStringSet, ManufacturerProductDesignation
-            ],
+            manufacturerProductDesignation: Union[aas.LangStringSet, ManufacturerProductDesignation],
             manufacturerArticleNumber: Union[str, ManufacturerArticleNumber],
             manufacturerOrderCode: Union[str, ManufacturerOrderCode],
             companyLogo: Optional[CompanyLogo] = None,
-            productImages: Optional[
-                Union[Iterable[ProductImages.Productimages_item], ProductImages]
-            ] = None,
+            productImages: Optional[Union[Iterable[ProductImages.Productimages_item], ProductImages]] = None,
             id_short: Optional[str] = r"GeneralInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABK161#002/0173-1#01-AHX838#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK161#002/0173-1#01-AHX838#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -742,17 +639,12 @@ class TechnicalData(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"General information",
-                        r"de": r"Allgemeine Informationen",
-                    }
+                    dict_={r"en": r"General information", r"de": r"Allgemeine Informationen"}
                 )
 
             if qualifier is None:
@@ -763,9 +655,7 @@ class TechnicalData(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerName is not None and not isinstance(
-                manufacturerName, aas.SubmodelElement
-            ):
+            if manufacturerName is not None and not isinstance(manufacturerName, aas.SubmodelElement):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -773,27 +663,17 @@ class TechnicalData(aas.Submodel):
             if manufacturerProductDesignation is not None and not isinstance(
                 manufacturerProductDesignation, aas.SubmodelElement
             ):
-                manufacturerProductDesignation = self.ManufacturerProductDesignation(
-                    manufacturerProductDesignation
-                )
+                manufacturerProductDesignation = self.ManufacturerProductDesignation(manufacturerProductDesignation)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerArticleNumber is not None and not isinstance(
-                manufacturerArticleNumber, aas.SubmodelElement
-            ):
-                manufacturerArticleNumber = self.ManufacturerArticleNumber(
-                    manufacturerArticleNumber
-                )
+            if manufacturerArticleNumber is not None and not isinstance(manufacturerArticleNumber, aas.SubmodelElement):
+                manufacturerArticleNumber = self.ManufacturerArticleNumber(manufacturerArticleNumber)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerOrderCode is not None and not isinstance(
-                manufacturerOrderCode, aas.SubmodelElement
-            ):
-                manufacturerOrderCode = self.ManufacturerOrderCode(
-                    manufacturerOrderCode
-                )
+            if manufacturerOrderCode is not None and not isinstance(manufacturerOrderCode, aas.SubmodelElement):
+                manufacturerOrderCode = self.ManufacturerOrderCode(manufacturerOrderCode)
 
             # A str would be split into its characters
             if isinstance(productImages, str):
@@ -801,9 +681,7 @@ class TechnicalData(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if productImages is not None and not isinstance(
-                productImages, aas.SubmodelElement
-            ):
+            if productImages is not None and not isinstance(productImages, aas.SubmodelElement):
                 productImages = self.ProductImages(productImages)
 
             # Add all passed/initialized submodel elements to a single list
@@ -826,9 +704,7 @@ class TechnicalData(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -859,12 +735,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABL424#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL424#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -880,17 +751,12 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Classification system",
-                                r"de": r"Klassifikationssystem",
-                            }
+                            dict_={r"en": r"Classification system", r"de": r"Klassifikationssystem"}
                         )
 
                     if qualifier is None:
@@ -926,12 +792,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAR710#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAR710#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -947,17 +808,12 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Classification system version",
-                                r"de": r"Version der Klassifikationssystem",
-                            }
+                            dict_={r"en": r"Classification system version", r"de": r"Version der Klassifikationssystem"}
                         )
 
                     if qualifier is None:
@@ -1004,17 +860,12 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Classification system URL",
-                                r"de": r"URL des Klassifikationssystems",
-                            }
+                            dict_={r"en": r"Classification system URL", r"de": r"URL des Klassifikationssystems"}
                         )
 
                     if qualifier is None:
@@ -1050,12 +901,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABG776#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG776#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -1071,17 +917,12 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Product class ID",
-                                r"de": r"Produktklassen ID",
-                            }
+                            dict_={r"en": r"Product class ID", r"de": r"Produktklassen ID"}
                         )
 
                     if qualifier is None:
@@ -1117,12 +958,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABK128#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK128#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -1138,17 +974,12 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Product Class Coded Name",
-                                r"de": r"Produktklasse Coded Name",
-                            }
+                            dict_={r"en": r"Product Class Coded Name", r"de": r"Produktklasse Coded Name"}
                         )
 
                     if qualifier is None:
@@ -1183,12 +1014,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABK273#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK273#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -1204,17 +1030,12 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Product class name",
-                                r"de": r"Produktklasse Name",
-                            }
+                            dict_={r"en": r"Product class name", r"de": r"Produktklasse Name"}
                         )
 
                     if qualifier is None:
@@ -1247,12 +1068,7 @@ class TechnicalData(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABL358#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
@@ -1268,9 +1084,7 @@ class TechnicalData(aas.Submodel):
                             referred_semantic_id=None,
                         ),
                     ),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -1305,15 +1119,9 @@ class TechnicalData(aas.Submodel):
                 classificationSystem: Union[str, ClassificationSystem],
                 productClassId: Union[str, ProductClassId],
                 productClassCodedName: Union[str, ProductClassCodedName],
-                classificationSystemVersion: Optional[
-                    Union[str, ClassificationSystemVersion]
-                ] = None,
-                classificationSystemUrl: Optional[
-                    Union[str, ClassificationSystemUrl]
-                ] = None,
-                productClassName: Optional[
-                    Union[aas.LangStringSet, ProductClassName]
-                ] = None,
+                classificationSystemVersion: Optional[Union[str, ClassificationSystemVersion]] = None,
+                classificationSystemUrl: Optional[Union[str, ClassificationSystemUrl]] = None,
+                productClassName: Optional[Union[aas.LangStringSet, ProductClassName]] = None,
                 referenceToTechnicalPropertyArea: Optional[
                     Union[aas.Reference, ReferenceToTechnicalPropertyArea]
                 ] = None,
@@ -1324,8 +1132,7 @@ class TechnicalData(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABK162#002/0173-1#01-AHX839#002",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK162#002/0173-1#01-AHX839#002"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -1347,17 +1154,12 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Produkt classification",
-                            r"de": r"Produktklassifikation",
-                        }
+                        dict_={r"en": r"Produkt classification", r"de": r"Produktklassifikation"}
                     )
 
                 if qualifier is None:
@@ -1368,52 +1170,34 @@ class TechnicalData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if classificationSystem is not None and not isinstance(
-                    classificationSystem, aas.SubmodelElement
-                ):
-                    classificationSystem = self.ClassificationSystem(
-                        classificationSystem
-                    )
+                if classificationSystem is not None and not isinstance(classificationSystem, aas.SubmodelElement):
+                    classificationSystem = self.ClassificationSystem(classificationSystem)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if classificationSystemVersion is not None and not isinstance(
                     classificationSystemVersion, aas.SubmodelElement
                 ):
-                    classificationSystemVersion = self.ClassificationSystemVersion(
-                        classificationSystemVersion
-                    )
+                    classificationSystemVersion = self.ClassificationSystemVersion(classificationSystemVersion)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if classificationSystemUrl is not None and not isinstance(
-                    classificationSystemUrl, aas.SubmodelElement
-                ):
-                    classificationSystemUrl = self.ClassificationSystemUrl(
-                        classificationSystemUrl
-                    )
+                if classificationSystemUrl is not None and not isinstance(classificationSystemUrl, aas.SubmodelElement):
+                    classificationSystemUrl = self.ClassificationSystemUrl(classificationSystemUrl)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if productClassId is not None and not isinstance(
-                    productClassId, aas.SubmodelElement
-                ):
+                if productClassId is not None and not isinstance(productClassId, aas.SubmodelElement):
                     productClassId = self.ProductClassId(productClassId)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if productClassCodedName is not None and not isinstance(
-                    productClassCodedName, aas.SubmodelElement
-                ):
-                    productClassCodedName = self.ProductClassCodedName(
-                        productClassCodedName
-                    )
+                if productClassCodedName is not None and not isinstance(productClassCodedName, aas.SubmodelElement):
+                    productClassCodedName = self.ProductClassCodedName(productClassCodedName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if productClassName is not None and not isinstance(
-                    productClassName, aas.SubmodelElement
-                ):
+                if productClassName is not None and not isinstance(productClassName, aas.SubmodelElement):
                     productClassName = self.ProductClassName(productClassName)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -1421,10 +1205,8 @@ class TechnicalData(aas.Submodel):
                 if referenceToTechnicalPropertyArea is not None and not isinstance(
                     referenceToTechnicalPropertyArea, aas.SubmodelElement
                 ):
-                    referenceToTechnicalPropertyArea = (
-                        self.ReferenceToTechnicalPropertyArea(
-                            referenceToTechnicalPropertyArea
-                        )
+                    referenceToTechnicalPropertyArea = self.ReferenceToTechnicalPropertyArea(
+                        referenceToTechnicalPropertyArea
                     )
 
                 # Add all passed/initialized submodel elements to a single list
@@ -1448,9 +1230,7 @@ class TechnicalData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1471,12 +1251,7 @@ class TechnicalData(aas.Submodel):
             id_short: Optional[str] = r"ProductClassifications",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABK162#002/0173-1#01-AHX839#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK162#002/0173-1#01-AHX839#002"),),
                 referred_semantic_id=None,
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
@@ -1485,12 +1260,7 @@ class TechnicalData(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABK162#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK162#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -1506,17 +1276,12 @@ class TechnicalData(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Product classifications",
-                        r"de": r"Produktklassifikationen",
-                    }
+                    dict_={r"en": r"Product classifications", r"de": r"Produktklassifikationen"}
                 )
 
             if qualifier is None:
@@ -1527,9 +1292,7 @@ class TechnicalData(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(productclassifications_items, str):
-                raise TypeError(
-                    "productclassifications_items takes several elements, got a str"
-                )
+                raise TypeError("productclassifications_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -1541,9 +1304,7 @@ class TechnicalData(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1612,10 +1373,7 @@ class TechnicalData(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -1653,9 +1411,7 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1677,9 +1433,7 @@ class TechnicalData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1714,16 +1468,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -1745,9 +1495,7 @@ class TechnicalData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1766,9 +1514,7 @@ class TechnicalData(aas.Submodel):
 
                     def __init__(
                         self,
-                        arbitrarysml_items: Optional[
-                            Iterable[aas.SubmodelElement]
-                        ] = None,
+                        arbitrarysml_items: Optional[Iterable[aas.SubmodelElement]] = None,
                         id_short: Optional[str] = r"ArbitrarySML",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1789,16 +1535,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -1809,9 +1551,7 @@ class TechnicalData(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(arbitrarysml_items, str):
-                            raise TypeError(
-                                "arbitrarysml_items takes several elements, got a str"
-                            )
+                            raise TypeError("arbitrarysml_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -1823,9 +1563,7 @@ class TechnicalData(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1892,15 +1630,9 @@ class TechnicalData(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -1935,9 +1667,7 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1983,9 +1713,7 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2031,9 +1759,7 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2061,18 +1787,10 @@ class TechnicalData(aas.Submodel):
                     self,
                     section: Optional[Iterable[Section]] = None,
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
-                    arbitrarySML: Optional[
-                        Union[Iterable[aas.SubmodelElement], ArbitrarySML]
-                    ] = None,
-                    arbitraryProperty: Optional[
-                        Iterable[Union[str, ArbitraryProperty]]
-                    ] = None,
-                    arbitraryMLP: Optional[
-                        Iterable[Union[aas.LangStringSet, ArbitraryMLP]]
-                    ] = None,
-                    arbitraryRange: Optional[
-                        Iterable[Union[Tuple[str, str], ArbitraryRange]]
-                    ] = None,
+                    arbitrarySML: Optional[Union[Iterable[aas.SubmodelElement], ArbitrarySML]] = None,
+                    arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
+                    arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+                    arbitraryRange: Optional[Iterable[Union[Tuple[str, str], ArbitraryRange]]] = None,
                     id_short: Optional[str] = r"Section",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -2089,9 +1807,7 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2111,71 +1827,46 @@ class TechnicalData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(arbitrarySMC, str):
-                        raise TypeError(
-                            "arbitrarySMC takes several elements, got a str"
-                        )
+                        raise TypeError("arbitrarySMC takes several elements, got a str")
 
                     # A str would be split into its characters
                     if isinstance(arbitrarySML, str):
-                        raise TypeError(
-                            "arbitrarySML takes several elements, got a str"
-                        )
+                        raise TypeError("arbitrarySML takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if arbitrarySML is not None and not isinstance(
-                        arbitrarySML, aas.SubmodelElement
-                    ):
+                    if arbitrarySML is not None and not isinstance(arbitrarySML, aas.SubmodelElement):
                         arbitrarySML = self.ArbitrarySML(arbitrarySML)
 
                     # A str would be split into its characters
                     if isinstance(arbitraryProperty, str):
-                        raise TypeError(
-                            "arbitraryProperty takes several elements, got a str"
-                        )
+                        raise TypeError("arbitraryProperty takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryProperty:
                         arbitraryProperty = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitraryProperty(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.ArbitraryProperty(i)
                             for i in arbitraryProperty
                         ]
 
                     # A str would be split into its characters
                     if isinstance(arbitraryMLP, str):
-                        raise TypeError(
-                            "arbitraryMLP takes several elements, got a str"
-                        )
+                        raise TypeError("arbitraryMLP takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryMLP:
                         arbitraryMLP = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitraryMLP(i)
-                            )
-                            for i in arbitraryMLP
+                            i if isinstance(i, aas.SubmodelElement) else self.ArbitraryMLP(i) for i in arbitraryMLP
                         ]
 
                     # A str would be split into its characters
                     if isinstance(arbitraryRange, str):
-                        raise TypeError(
-                            "arbitraryRange takes several elements, got a str"
-                        )
+                        raise TypeError("arbitraryRange takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryRange:
                         arbitraryRange = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitraryRange(min=i[0], max=i[1])
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.ArbitraryRange(min=i[0], max=i[1])
                             for i in arbitraryRange
                         ]
 
@@ -2199,9 +1890,7 @@ class TechnicalData(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2238,9 +1927,7 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2262,9 +1949,7 @@ class TechnicalData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2299,16 +1984,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -2330,9 +2011,7 @@ class TechnicalData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2351,9 +2030,7 @@ class TechnicalData(aas.Submodel):
 
                     def __init__(
                         self,
-                        arbitrarysml_items: Optional[
-                            Iterable[aas.SubmodelElement]
-                        ] = None,
+                        arbitrarysml_items: Optional[Iterable[aas.SubmodelElement]] = None,
                         id_short: Optional[str] = r"ArbitrarySML",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -2374,16 +2051,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -2394,9 +2067,7 @@ class TechnicalData(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(arbitrarysml_items, str):
-                            raise TypeError(
-                                "arbitrarysml_items takes several elements, got a str"
-                            )
+                            raise TypeError("arbitrarysml_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -2408,9 +2079,7 @@ class TechnicalData(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2477,15 +2146,9 @@ class TechnicalData(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -2520,9 +2183,7 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2568,9 +2229,7 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2616,9 +2275,7 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2646,18 +2303,10 @@ class TechnicalData(aas.Submodel):
                     self,
                     section: Optional[Iterable[Section]] = None,
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
-                    arbitrarySML: Optional[
-                        Union[Iterable[aas.SubmodelElement], ArbitrarySML]
-                    ] = None,
-                    arbitraryProperty: Optional[
-                        Iterable[Union[str, ArbitraryProperty]]
-                    ] = None,
-                    arbitraryMLP: Optional[
-                        Iterable[Union[aas.LangStringSet, ArbitraryMLP]]
-                    ] = None,
-                    arbitraryRange: Optional[
-                        Iterable[Union[Tuple[str, str], ArbitraryRange]]
-                    ] = None,
+                    arbitrarySML: Optional[Union[Iterable[aas.SubmodelElement], ArbitrarySML]] = None,
+                    arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
+                    arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+                    arbitraryRange: Optional[Iterable[Union[Tuple[str, str], ArbitraryRange]]] = None,
                     id_short: Optional[str] = r"ArbitrarySMC",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -2674,16 +2323,12 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: The use of a displayName is recommended."
-                            }
+                            dict_={r"en": r"Note: The use of a displayName is recommended."}
                         )
 
                     if qualifier is None:
@@ -2698,71 +2343,46 @@ class TechnicalData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(arbitrarySMC, str):
-                        raise TypeError(
-                            "arbitrarySMC takes several elements, got a str"
-                        )
+                        raise TypeError("arbitrarySMC takes several elements, got a str")
 
                     # A str would be split into its characters
                     if isinstance(arbitrarySML, str):
-                        raise TypeError(
-                            "arbitrarySML takes several elements, got a str"
-                        )
+                        raise TypeError("arbitrarySML takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if arbitrarySML is not None and not isinstance(
-                        arbitrarySML, aas.SubmodelElement
-                    ):
+                    if arbitrarySML is not None and not isinstance(arbitrarySML, aas.SubmodelElement):
                         arbitrarySML = self.ArbitrarySML(arbitrarySML)
 
                     # A str would be split into its characters
                     if isinstance(arbitraryProperty, str):
-                        raise TypeError(
-                            "arbitraryProperty takes several elements, got a str"
-                        )
+                        raise TypeError("arbitraryProperty takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryProperty:
                         arbitraryProperty = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitraryProperty(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.ArbitraryProperty(i)
                             for i in arbitraryProperty
                         ]
 
                     # A str would be split into its characters
                     if isinstance(arbitraryMLP, str):
-                        raise TypeError(
-                            "arbitraryMLP takes several elements, got a str"
-                        )
+                        raise TypeError("arbitraryMLP takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryMLP:
                         arbitraryMLP = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitraryMLP(i)
-                            )
-                            for i in arbitraryMLP
+                            i if isinstance(i, aas.SubmodelElement) else self.ArbitraryMLP(i) for i in arbitraryMLP
                         ]
 
                     # A str would be split into its characters
                     if isinstance(arbitraryRange, str):
-                        raise TypeError(
-                            "arbitraryRange takes several elements, got a str"
-                        )
+                        raise TypeError("arbitraryRange takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryRange:
                         arbitraryRange = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitraryRange(min=i[0], max=i[1])
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.ArbitraryRange(min=i[0], max=i[1])
                             for i in arbitraryRange
                         ]
 
@@ -2786,9 +2406,7 @@ class TechnicalData(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2828,16 +2446,12 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: The use of a displayName is recommended."
-                            }
+                            dict_={r"en": r"Note: The use of a displayName is recommended."}
                         )
 
                     if qualifier is None:
@@ -2848,9 +2462,7 @@ class TechnicalData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(arbitrarysml_items, str):
-                        raise TypeError(
-                            "arbitrarysml_items takes several elements, got a str"
-                        )
+                        raise TypeError("arbitrarysml_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -2862,9 +2474,7 @@ class TechnicalData(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2931,15 +2541,9 @@ class TechnicalData(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -2974,16 +2578,12 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: The use of a displayName is recommended."
-                            }
+                            dict_={r"en": r"Note: The use of a displayName is recommended."}
                         )
 
                     if qualifier is None:
@@ -3029,16 +2629,12 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: The use of a displayName is recommended."
-                            }
+                            dict_={r"en": r"Note: The use of a displayName is recommended."}
                         )
 
                     if qualifier is None:
@@ -3084,16 +2680,12 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: The use of a displayName is recommended."
-                            }
+                            dict_={r"en": r"Note: The use of a displayName is recommended."}
                         )
 
                     if qualifier is None:
@@ -3121,18 +2713,10 @@ class TechnicalData(aas.Submodel):
                 self,
                 section: Optional[Iterable[Section]] = None,
                 arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
-                arbitrarySML: Optional[
-                    Union[Iterable[aas.SubmodelElement], ArbitrarySML]
-                ] = None,
-                arbitraryProperty: Optional[
-                    Iterable[Union[str, ArbitraryProperty]]
-                ] = None,
-                arbitraryMLP: Optional[
-                    Iterable[Union[aas.LangStringSet, ArbitraryMLP]]
-                ] = None,
-                arbitraryRange: Optional[
-                    Iterable[Union[Tuple[str, str], ArbitraryRange]]
-                ] = None,
+                arbitrarySML: Optional[Union[Iterable[aas.SubmodelElement], ArbitrarySML]] = None,
+                arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
+                arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+                arbitraryRange: Optional[Iterable[Union[Tuple[str, str], ArbitraryRange]]] = None,
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -3140,8 +2724,7 @@ class TechnicalData(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -3163,17 +2746,12 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Technical property area",
-                            r"de": r"Technischer Merkmalsbereich",
-                        }
+                        dict_={r"en": r"Technical property area", r"de": r"Technischer Merkmalsbereich"}
                     )
 
                 if qualifier is None:
@@ -3196,25 +2774,17 @@ class TechnicalData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if arbitrarySML is not None and not isinstance(
-                    arbitrarySML, aas.SubmodelElement
-                ):
+                if arbitrarySML is not None and not isinstance(arbitrarySML, aas.SubmodelElement):
                     arbitrarySML = self.ArbitrarySML(arbitrarySML)
 
                 # A str would be split into its characters
                 if isinstance(arbitraryProperty, str):
-                    raise TypeError(
-                        "arbitraryProperty takes several elements, got a str"
-                    )
+                    raise TypeError("arbitraryProperty takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryProperty:
                     arbitraryProperty = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ArbitraryProperty(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.ArbitraryProperty(i)
                         for i in arbitraryProperty
                     ]
 
@@ -3225,12 +2795,7 @@ class TechnicalData(aas.Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryMLP:
                     arbitraryMLP = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ArbitraryMLP(i)
-                        )
-                        for i in arbitraryMLP
+                        i if isinstance(i, aas.SubmodelElement) else self.ArbitraryMLP(i) for i in arbitraryMLP
                     ]
 
                 # A str would be split into its characters
@@ -3240,24 +2805,13 @@ class TechnicalData(aas.Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryRange:
                     arbitraryRange = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ArbitraryRange(min=i[0], max=i[1])
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.ArbitraryRange(min=i[0], max=i[1])
                         for i in arbitraryRange
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    section,
-                    arbitrarySMC,
-                    arbitrarySML,
-                    arbitraryProperty,
-                    arbitraryMLP,
-                    arbitraryRange,
-                ]:
+                for se_arg in [section, arbitrarySMC, arbitrarySML, arbitraryProperty, arbitraryMLP, arbitraryRange]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -3268,9 +2822,7 @@ class TechnicalData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3291,12 +2843,7 @@ class TechnicalData(aas.Submodel):
             id_short: Optional[str] = r"TechnicalPropertyAreas",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"),),
                 referred_semantic_id=None,
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
@@ -3305,12 +2852,7 @@ class TechnicalData(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABK163#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK163#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -3326,17 +2868,12 @@ class TechnicalData(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Technical property areas",
-                        r"de": r"Technsiche Merkmalsbereiche",
-                    }
+                    dict_={r"en": r"Technical property areas", r"de": r"Technsiche Merkmalsbereiche"}
                 )
 
             if qualifier is None:
@@ -3347,9 +2884,7 @@ class TechnicalData(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(technicalpropertyareas_items, str):
-                raise TypeError(
-                    "technicalpropertyareas_items takes several elements, got a str"
-                )
+                raise TypeError("technicalpropertyareas_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -3361,9 +2896,7 @@ class TechnicalData(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3432,10 +2965,7 @@ class TechnicalData(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -3460,12 +2990,7 @@ class TechnicalData(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABK134#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK134#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -3481,9 +3006,7 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -3523,12 +3046,7 @@ class TechnicalData(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABL775#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL775#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
@@ -3544,15 +3062,11 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Validity date", r"de": r"Verfallsdatum"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Validity date", r"de": r"Verfallsdatum"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -3578,20 +3092,13 @@ class TechnicalData(aas.Submodel):
         def __init__(
             self,
             validDate: Union[xsd.Date, ValidDate],
-            textStatement: Optional[
-                Iterable[Union[aas.LangStringSet, TextStatement]]
-            ] = None,
+            textStatement: Optional[Iterable[Union[aas.LangStringSet, TextStatement]]] = None,
             id_short: Optional[str] = r"FurtherInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABK164#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK164#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -3607,17 +3114,12 @@ class TechnicalData(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Further information",
-                        r"de": r"Weitere Informationen",
-                    }
+                    dict_={r"en": r"Further information", r"de": r"Weitere Informationen"}
                 )
 
             if qualifier is None:
@@ -3633,8 +3135,7 @@ class TechnicalData(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if textStatement:
                 textStatement = [
-                    i if isinstance(i, aas.SubmodelElement) else self.TextStatement(i)
-                    for i in textStatement
+                    i if isinstance(i, aas.SubmodelElement) else self.TextStatement(i) for i in textStatement
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
@@ -3655,9 +3156,7 @@ class TechnicalData(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3698,16 +3197,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -3729,9 +3224,7 @@ class TechnicalData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -3766,16 +3259,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -3797,9 +3286,7 @@ class TechnicalData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -3818,9 +3305,7 @@ class TechnicalData(aas.Submodel):
 
                     def __init__(
                         self,
-                        arbitrarysml_items: Optional[
-                            Iterable[aas.SubmodelElement]
-                        ] = None,
+                        arbitrarysml_items: Optional[Iterable[aas.SubmodelElement]] = None,
                         id_short: Optional[str] = r"ArbitrarySML",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -3841,16 +3326,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -3861,9 +3342,7 @@ class TechnicalData(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(arbitrarysml_items, str):
-                            raise TypeError(
-                                "arbitrarysml_items takes several elements, got a str"
-                            )
+                            raise TypeError("arbitrarysml_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -3875,9 +3354,7 @@ class TechnicalData(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -3944,15 +3421,9 @@ class TechnicalData(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -3987,16 +3458,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -4042,16 +3509,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -4097,16 +3560,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -4134,18 +3593,10 @@ class TechnicalData(aas.Submodel):
                     self,
                     section: Optional[Iterable[Section]] = None,
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
-                    arbitrarySML: Optional[
-                        Union[Iterable[aas.SubmodelElement], ArbitrarySML]
-                    ] = None,
-                    arbitraryProperty: Optional[
-                        Iterable[Union[str, ArbitraryProperty]]
-                    ] = None,
-                    arbitraryMLP: Optional[
-                        Iterable[Union[aas.LangStringSet, ArbitraryMLP]]
-                    ] = None,
-                    arbitraryRange: Optional[
-                        Iterable[Union[Tuple[str, str], ArbitraryRange]]
-                    ] = None,
+                    arbitrarySML: Optional[Union[Iterable[aas.SubmodelElement], ArbitrarySML]] = None,
+                    arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
+                    arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+                    arbitraryRange: Optional[Iterable[Union[Tuple[str, str], ArbitraryRange]]] = None,
                     id_short: Optional[str] = r"Section",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -4162,9 +3613,7 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -4184,71 +3633,46 @@ class TechnicalData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(arbitrarySMC, str):
-                        raise TypeError(
-                            "arbitrarySMC takes several elements, got a str"
-                        )
+                        raise TypeError("arbitrarySMC takes several elements, got a str")
 
                     # A str would be split into its characters
                     if isinstance(arbitrarySML, str):
-                        raise TypeError(
-                            "arbitrarySML takes several elements, got a str"
-                        )
+                        raise TypeError("arbitrarySML takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if arbitrarySML is not None and not isinstance(
-                        arbitrarySML, aas.SubmodelElement
-                    ):
+                    if arbitrarySML is not None and not isinstance(arbitrarySML, aas.SubmodelElement):
                         arbitrarySML = self.ArbitrarySML(arbitrarySML)
 
                     # A str would be split into its characters
                     if isinstance(arbitraryProperty, str):
-                        raise TypeError(
-                            "arbitraryProperty takes several elements, got a str"
-                        )
+                        raise TypeError("arbitraryProperty takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryProperty:
                         arbitraryProperty = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitraryProperty(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.ArbitraryProperty(i)
                             for i in arbitraryProperty
                         ]
 
                     # A str would be split into its characters
                     if isinstance(arbitraryMLP, str):
-                        raise TypeError(
-                            "arbitraryMLP takes several elements, got a str"
-                        )
+                        raise TypeError("arbitraryMLP takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryMLP:
                         arbitraryMLP = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitraryMLP(i)
-                            )
-                            for i in arbitraryMLP
+                            i if isinstance(i, aas.SubmodelElement) else self.ArbitraryMLP(i) for i in arbitraryMLP
                         ]
 
                     # A str would be split into its characters
                     if isinstance(arbitraryRange, str):
-                        raise TypeError(
-                            "arbitraryRange takes several elements, got a str"
-                        )
+                        raise TypeError("arbitraryRange takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryRange:
                         arbitraryRange = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitraryRange(min=i[0], max=i[1])
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.ArbitraryRange(min=i[0], max=i[1])
                             for i in arbitraryRange
                         ]
 
@@ -4272,9 +3696,7 @@ class TechnicalData(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4311,16 +3733,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -4342,9 +3760,7 @@ class TechnicalData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -4379,16 +3795,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -4410,9 +3822,7 @@ class TechnicalData(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -4431,9 +3841,7 @@ class TechnicalData(aas.Submodel):
 
                     def __init__(
                         self,
-                        arbitrarysml_items: Optional[
-                            Iterable[aas.SubmodelElement]
-                        ] = None,
+                        arbitrarysml_items: Optional[Iterable[aas.SubmodelElement]] = None,
                         id_short: Optional[str] = r"ArbitrarySML",
                         type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -4454,16 +3862,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -4474,9 +3878,7 @@ class TechnicalData(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(arbitrarysml_items, str):
-                            raise TypeError(
-                                "arbitrarysml_items takes several elements, got a str"
-                            )
+                            raise TypeError("arbitrarysml_items takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -4488,9 +3890,7 @@ class TechnicalData(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -4557,15 +3957,9 @@ class TechnicalData(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -4600,16 +3994,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -4655,16 +4045,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -4710,16 +4096,12 @@ class TechnicalData(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: The use of a displayName is recommended."
-                                }
+                                dict_={r"en": r"Note: The use of a displayName is recommended."}
                             )
 
                         if qualifier is None:
@@ -4747,18 +4129,10 @@ class TechnicalData(aas.Submodel):
                     self,
                     section: Optional[Iterable[Section]] = None,
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
-                    arbitrarySML: Optional[
-                        Union[Iterable[aas.SubmodelElement], ArbitrarySML]
-                    ] = None,
-                    arbitraryProperty: Optional[
-                        Iterable[Union[str, ArbitraryProperty]]
-                    ] = None,
-                    arbitraryMLP: Optional[
-                        Iterable[Union[aas.LangStringSet, ArbitraryMLP]]
-                    ] = None,
-                    arbitraryRange: Optional[
-                        Iterable[Union[Tuple[str, str], ArbitraryRange]]
-                    ] = None,
+                    arbitrarySML: Optional[Union[Iterable[aas.SubmodelElement], ArbitrarySML]] = None,
+                    arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
+                    arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+                    arbitraryRange: Optional[Iterable[Union[Tuple[str, str], ArbitraryRange]]] = None,
                     id_short: Optional[str] = r"ArbitrarySMC",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -4775,16 +4149,12 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: The use of a displayName is recommended."
-                            }
+                            dict_={r"en": r"Note: The use of a displayName is recommended."}
                         )
 
                     if qualifier is None:
@@ -4799,71 +4169,46 @@ class TechnicalData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(arbitrarySMC, str):
-                        raise TypeError(
-                            "arbitrarySMC takes several elements, got a str"
-                        )
+                        raise TypeError("arbitrarySMC takes several elements, got a str")
 
                     # A str would be split into its characters
                     if isinstance(arbitrarySML, str):
-                        raise TypeError(
-                            "arbitrarySML takes several elements, got a str"
-                        )
+                        raise TypeError("arbitrarySML takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if arbitrarySML is not None and not isinstance(
-                        arbitrarySML, aas.SubmodelElement
-                    ):
+                    if arbitrarySML is not None and not isinstance(arbitrarySML, aas.SubmodelElement):
                         arbitrarySML = self.ArbitrarySML(arbitrarySML)
 
                     # A str would be split into its characters
                     if isinstance(arbitraryProperty, str):
-                        raise TypeError(
-                            "arbitraryProperty takes several elements, got a str"
-                        )
+                        raise TypeError("arbitraryProperty takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryProperty:
                         arbitraryProperty = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitraryProperty(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.ArbitraryProperty(i)
                             for i in arbitraryProperty
                         ]
 
                     # A str would be split into its characters
                     if isinstance(arbitraryMLP, str):
-                        raise TypeError(
-                            "arbitraryMLP takes several elements, got a str"
-                        )
+                        raise TypeError("arbitraryMLP takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryMLP:
                         arbitraryMLP = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitraryMLP(i)
-                            )
-                            for i in arbitraryMLP
+                            i if isinstance(i, aas.SubmodelElement) else self.ArbitraryMLP(i) for i in arbitraryMLP
                         ]
 
                     # A str would be split into its characters
                     if isinstance(arbitraryRange, str):
-                        raise TypeError(
-                            "arbitraryRange takes several elements, got a str"
-                        )
+                        raise TypeError("arbitraryRange takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if arbitraryRange:
                         arbitraryRange = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.ArbitraryRange(min=i[0], max=i[1])
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.ArbitraryRange(min=i[0], max=i[1])
                             for i in arbitraryRange
                         ]
 
@@ -4887,9 +4232,7 @@ class TechnicalData(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4929,16 +4272,12 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: The use of a displayName is recommended."
-                            }
+                            dict_={r"en": r"Note: The use of a displayName is recommended."}
                         )
 
                     if qualifier is None:
@@ -4949,9 +4288,7 @@ class TechnicalData(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(arbitrarysml_items, str):
-                        raise TypeError(
-                            "arbitrarysml_items takes several elements, got a str"
-                        )
+                        raise TypeError("arbitrarysml_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -4963,9 +4300,7 @@ class TechnicalData(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5032,15 +4367,9 @@ class TechnicalData(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -5075,16 +4404,12 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: The use of a displayName is recommended."
-                            }
+                            dict_={r"en": r"Note: The use of a displayName is recommended."}
                         )
 
                     if qualifier is None:
@@ -5130,16 +4455,12 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: The use of a displayName is recommended."
-                            }
+                            dict_={r"en": r"Note: The use of a displayName is recommended."}
                         )
 
                     if qualifier is None:
@@ -5185,16 +4506,12 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: The use of a displayName is recommended."
-                            }
+                            dict_={r"en": r"Note: The use of a displayName is recommended."}
                         )
 
                     if qualifier is None:
@@ -5222,18 +4539,10 @@ class TechnicalData(aas.Submodel):
                 self,
                 section: Optional[Iterable[Section]] = None,
                 arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
-                arbitrarySML: Optional[
-                    Union[Iterable[aas.SubmodelElement], ArbitrarySML]
-                ] = None,
-                arbitraryProperty: Optional[
-                    Iterable[Union[str, ArbitraryProperty]]
-                ] = None,
-                arbitraryMLP: Optional[
-                    Iterable[Union[aas.LangStringSet, ArbitraryMLP]]
-                ] = None,
-                arbitraryRange: Optional[
-                    Iterable[Union[Tuple[str, str], ArbitraryRange]]
-                ] = None,
+                arbitrarySML: Optional[Union[Iterable[aas.SubmodelElement], ArbitrarySML]] = None,
+                arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
+                arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+                arbitraryRange: Optional[Iterable[Union[Tuple[str, str], ArbitraryRange]]] = None,
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -5241,8 +4550,7 @@ class TechnicalData(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-ABM221#001/0173-1#01-AHY912#001",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM221#001/0173-1#01-AHY912#001"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -5264,17 +4572,12 @@ class TechnicalData(aas.Submodel):
                         referred_semantic_id=None,
                     ),
                 ),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Specific description",
-                            r"de": r"Spezifische Beschreibung",
-                        }
+                        dict_={r"en": r"Specific description", r"de": r"Spezifische Beschreibung"}
                     )
 
                 if qualifier is None:
@@ -5315,25 +4618,17 @@ class TechnicalData(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if arbitrarySML is not None and not isinstance(
-                    arbitrarySML, aas.SubmodelElement
-                ):
+                if arbitrarySML is not None and not isinstance(arbitrarySML, aas.SubmodelElement):
                     arbitrarySML = self.ArbitrarySML(arbitrarySML)
 
                 # A str would be split into its characters
                 if isinstance(arbitraryProperty, str):
-                    raise TypeError(
-                        "arbitraryProperty takes several elements, got a str"
-                    )
+                    raise TypeError("arbitraryProperty takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryProperty:
                     arbitraryProperty = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ArbitraryProperty(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.ArbitraryProperty(i)
                         for i in arbitraryProperty
                     ]
 
@@ -5344,12 +4639,7 @@ class TechnicalData(aas.Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryMLP:
                     arbitraryMLP = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ArbitraryMLP(i)
-                        )
-                        for i in arbitraryMLP
+                        i if isinstance(i, aas.SubmodelElement) else self.ArbitraryMLP(i) for i in arbitraryMLP
                     ]
 
                 # A str would be split into its characters
@@ -5359,24 +4649,13 @@ class TechnicalData(aas.Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if arbitraryRange:
                     arbitraryRange = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ArbitraryRange(min=i[0], max=i[1])
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.ArbitraryRange(min=i[0], max=i[1])
                         for i in arbitraryRange
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    section,
-                    arbitrarySMC,
-                    arbitrarySML,
-                    arbitraryProperty,
-                    arbitraryMLP,
-                    arbitraryRange,
-                ]:
+                for se_arg in [section, arbitrarySMC, arbitrarySML, arbitraryProperty, arbitraryMLP, arbitraryRange]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -5387,9 +4666,7 @@ class TechnicalData(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5410,12 +4687,7 @@ class TechnicalData(aas.Submodel):
             id_short: Optional[str] = r"SpecificDescriptions",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABM221#001/0173-1#01-AHY912#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM221#001/0173-1#01-AHY912#001"),),
                 referred_semantic_id=None,
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
@@ -5424,12 +4696,7 @@ class TechnicalData(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#02-ABM221#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM221#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
@@ -5445,17 +4712,12 @@ class TechnicalData(aas.Submodel):
                     referred_semantic_id=None,
                 ),
             ),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Specific description",
-                        r"de": r"Spezifische Beschreibung",
-                    }
+                    dict_={r"en": r"Specific description", r"de": r"Spezifische Beschreibung"}
                 )
 
             if qualifier is None:
@@ -5466,9 +4728,7 @@ class TechnicalData(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(specificdescriptions_items, str):
-                raise TypeError(
-                    "specificdescriptions_items takes several elements, got a str"
-                )
+                raise TypeError("specificdescriptions_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -5480,9 +4740,7 @@ class TechnicalData(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -5551,10 +4809,7 @@ class TechnicalData(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -5571,23 +4826,14 @@ class TechnicalData(aas.Submodel):
         id_: str,
         generalInformation: GeneralInformation,
         productClassifications: Optional[
-            Union[
-                Iterable[ProductClassifications.Productclassifications_item],
-                ProductClassifications,
-            ]
+            Union[Iterable[ProductClassifications.Productclassifications_item], ProductClassifications]
         ] = None,
         technicalPropertyAreas: Optional[
-            Union[
-                Iterable[TechnicalPropertyAreas.Technicalpropertyareas_item],
-                TechnicalPropertyAreas,
-            ]
+            Union[Iterable[TechnicalPropertyAreas.Technicalpropertyareas_item], TechnicalPropertyAreas]
         ] = None,
         furtherInformation: Optional[FurtherInformation] = None,
         specificDescriptions: Optional[
-            Union[
-                Iterable[SpecificDescriptions.Specificdescriptions_item],
-                SpecificDescriptions,
-            ]
+            Union[Iterable[SpecificDescriptions.Specificdescriptions_item], SpecificDescriptions]
         ] = None,
         id_short: Optional[str] = r"TechnicalData",
         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -5606,8 +4852,7 @@ class TechnicalData(aas.Submodel):
             aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://api.eclass-cdp.com/0173-1-01-AHX837-002",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://api.eclass-cdp.com/0173-1-01-AHX837-002"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -5645,9 +4890,7 @@ class TechnicalData(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if productClassifications is not None and not isinstance(
-            productClassifications, aas.SubmodelElement
-        ):
+        if productClassifications is not None and not isinstance(productClassifications, aas.SubmodelElement):
             productClassifications = self.ProductClassifications(productClassifications)
 
         # A str would be split into its characters
@@ -5656,9 +4899,7 @@ class TechnicalData(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if technicalPropertyAreas is not None and not isinstance(
-            technicalPropertyAreas, aas.SubmodelElement
-        ):
+        if technicalPropertyAreas is not None and not isinstance(technicalPropertyAreas, aas.SubmodelElement):
             technicalPropertyAreas = self.TechnicalPropertyAreas(technicalPropertyAreas)
 
         # A str would be split into its characters
@@ -5667,9 +4908,7 @@ class TechnicalData(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if specificDescriptions is not None and not isinstance(
-            specificDescriptions, aas.SubmodelElement
-        ):
+        if specificDescriptions is not None and not isinstance(specificDescriptions, aas.SubmodelElement):
             specificDescriptions = self.SpecificDescriptions(specificDescriptions)
 
         # Add all passed/initialized submodel elements to a single list
@@ -5691,9 +4930,7 @@ class TechnicalData(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

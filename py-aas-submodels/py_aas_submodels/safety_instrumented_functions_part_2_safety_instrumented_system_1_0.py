@@ -17,29 +17,20 @@ class SafetyInstrumentedSystem(aas.Submodel):
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/SISName/1",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/SISName/1"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(dict_={r"en": r"SIS name"})
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"gives relevant information about the SIS"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"gives relevant information about the SIS"})
 
             if qualifier is None:
                 qualifier = ()
@@ -87,20 +78,14 @@ class SafetyInstrumentedSystem(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"survivability requirement"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"survivability requirement"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -146,9 +131,7 @@ class SafetyInstrumentedSystem(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -157,9 +140,7 @@ class SafetyInstrumentedSystem(aas.Submodel):
                     )
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -207,15 +188,11 @@ class SafetyInstrumentedSystem(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Interfacing system"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Interfacing system"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -268,15 +245,11 @@ class SafetyInstrumentedSystem(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"type of network"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"type of network"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -344,15 +317,11 @@ class SafetyInstrumentedSystem(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"type of links"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"type of links"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -399,9 +368,7 @@ class SafetyInstrumentedSystem(aas.Submodel):
                 self,
                 interfacingSystem: Union[str, InterfacingSystem],
                 networkType: Union[str, NetworkType],
-                typeOfLinksHardwiredOrSoftware: Union[
-                    str, TypeOfLinksHardwiredOrSoftware
-                ],
+                typeOfLinksHardwiredOrSoftware: Union[str, TypeOfLinksHardwiredOrSoftware],
                 id_short: Optional[str] = r"InterfacingSystemSpecification",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -418,20 +385,14 @@ class SafetyInstrumentedSystem(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"interfacing system specification"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"interfacing system specification"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives relevant information about the SIS"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives relevant information about the SIS"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -441,16 +402,12 @@ class SafetyInstrumentedSystem(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if interfacingSystem is not None and not isinstance(
-                    interfacingSystem, aas.SubmodelElement
-                ):
+                if interfacingSystem is not None and not isinstance(interfacingSystem, aas.SubmodelElement):
                     interfacingSystem = self.InterfacingSystem(interfacingSystem)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if networkType is not None and not isinstance(
-                    networkType, aas.SubmodelElement
-                ):
+                if networkType is not None and not isinstance(networkType, aas.SubmodelElement):
                     networkType = self.NetworkType(networkType)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -458,19 +415,11 @@ class SafetyInstrumentedSystem(aas.Submodel):
                 if typeOfLinksHardwiredOrSoftware is not None and not isinstance(
                     typeOfLinksHardwiredOrSoftware, aas.SubmodelElement
                 ):
-                    typeOfLinksHardwiredOrSoftware = (
-                        self.TypeOfLinksHardwiredOrSoftware(
-                            typeOfLinksHardwiredOrSoftware
-                        )
-                    )
+                    typeOfLinksHardwiredOrSoftware = self.TypeOfLinksHardwiredOrSoftware(typeOfLinksHardwiredOrSoftware)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    interfacingSystem,
-                    networkType,
-                    typeOfLinksHardwiredOrSoftware,
-                ]:
+                for se_arg in [interfacingSystem, networkType, typeOfLinksHardwiredOrSoftware]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -481,9 +430,7 @@ class SafetyInstrumentedSystem(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -520,20 +467,14 @@ class SafetyInstrumentedSystem(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"performance standard"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"performance standard"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives relevant information about the SIS"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives relevant information about the SIS"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -577,20 +518,14 @@ class SafetyInstrumentedSystem(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"application program safety requirements"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"application program safety requirements"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -625,8 +560,7 @@ class SafetyInstrumentedSystem(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/DALSpec/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/DALSpec/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -634,18 +568,14 @@ class SafetyInstrumentedSystem(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(dict_={r"en": r"DAL spec"})
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
                 if qualifier is None:
                     qualifier = ()
@@ -680,8 +610,7 @@ class SafetyInstrumentedSystem(aas.Submodel):
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/cds/Document/1",
+                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/Document/1"
                         ),
                     ),
                     referred_semantic_id=None,
@@ -689,15 +618,11 @@ class SafetyInstrumentedSystem(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"URL of document"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"URL of document"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -726,19 +651,13 @@ class SafetyInstrumentedSystem(aas.Submodel):
 
         def __init__(
             self,
-            survivabilityRequirement: Optional[
-                Iterable[Union[str, SurvivabilityRequirement]]
-            ] = None,
+            survivabilityRequirement: Optional[Iterable[Union[str, SurvivabilityRequirement]]] = None,
             requirementForStartingUpAndRestartingSIS: Optional[
                 Iterable[Union[str, RequirementForStartingUpAndRestartingSIS]]
             ] = None,
-            interfacingSystemSpecification: Optional[
-                Iterable[InterfacingSystemSpecification]
-            ] = None,
+            interfacingSystemSpecification: Optional[Iterable[InterfacingSystemSpecification]] = None,
             performanceStandard: Optional[Iterable[PerformanceStandard]] = None,
-            applicationProgramSafetyRequirements: Optional[
-                ApplicationProgramSafetyRequirements
-            ] = None,
+            applicationProgramSafetyRequirements: Optional[ApplicationProgramSafetyRequirements] = None,
             dALSpec: Optional[DALSpec] = None,
             document: Optional[Iterable[Document]] = None,
             id_short: Optional[str] = r"SRSRequirements",
@@ -748,8 +667,7 @@ class SafetyInstrumentedSystem(aas.Submodel):
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/cds/SRSRequirements/1",
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/cds/SRSRequirements/1"
                     ),
                 ),
                 referred_semantic_id=None,
@@ -757,20 +675,14 @@ class SafetyInstrumentedSystem(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"SRS requirements"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"SRS requirements"})
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
 
             if qualifier is None:
                 qualifier = ()
@@ -780,43 +692,29 @@ class SafetyInstrumentedSystem(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(survivabilityRequirement, str):
-                raise TypeError(
-                    "survivabilityRequirement takes several elements, got a str"
-                )
+                raise TypeError("survivabilityRequirement takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if survivabilityRequirement:
                 survivabilityRequirement = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.SurvivabilityRequirement(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.SurvivabilityRequirement(i)
                     for i in survivabilityRequirement
                 ]
 
             # A str would be split into its characters
             if isinstance(requirementForStartingUpAndRestartingSIS, str):
-                raise TypeError(
-                    "requirementForStartingUpAndRestartingSIS takes several elements, got a str"
-                )
+                raise TypeError("requirementForStartingUpAndRestartingSIS takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if requirementForStartingUpAndRestartingSIS:
                 requirementForStartingUpAndRestartingSIS = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.RequirementForStartingUpAndRestartingSIS(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.RequirementForStartingUpAndRestartingSIS(i)
                     for i in requirementForStartingUpAndRestartingSIS
                 ]
 
             # A str would be split into its characters
             if isinstance(interfacingSystemSpecification, str):
-                raise TypeError(
-                    "interfacingSystemSpecification takes several elements, got a str"
-                )
+                raise TypeError("interfacingSystemSpecification takes several elements, got a str")
 
             # A str would be split into its characters
             if isinstance(performanceStandard, str):
@@ -847,9 +745,7 @@ class SafetyInstrumentedSystem(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -930,9 +826,7 @@ class SafetyInstrumentedSystem(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

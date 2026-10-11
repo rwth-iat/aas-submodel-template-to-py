@@ -32,15 +32,11 @@ class ProcessParameters(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Describes the ID of the process"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Describes the ID of the process"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -86,15 +82,11 @@ class ProcessParameters(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Describes the Name of the Process"}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Describes the Name of the Process"})
 
                     if qualifier is None:
                         qualifier = ()
@@ -139,15 +131,11 @@ class ProcessParameters(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Describes the process."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Describes the process."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -192,16 +180,12 @@ class ProcessParameters(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Planned processing time for process execution (without set-up time)"
-                            }
+                            dict_={r"en": r"Planned processing time for process execution (without set-up time)"}
                         )
 
                     if qualifier is None:
@@ -245,16 +229,12 @@ class ProcessParameters(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Mandatory product parameters for process execution"
-                            }
+                            dict_={r"en": r"Mandatory product parameters for process execution"}
                         )
 
                     if qualifier is None:
@@ -276,9 +256,7 @@ class ProcessParameters(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -313,16 +291,12 @@ class ProcessParameters(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Mandatory process parameters for process execution"
-                            }
+                            dict_={r"en": r"Mandatory process parameters for process execution"}
                         )
 
                     if qualifier is None:
@@ -344,9 +318,7 @@ class ProcessParameters(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -381,16 +353,12 @@ class ProcessParameters(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Mandatory resource parameters for process execution"
-                            }
+                            dict_={r"en": r"Mandatory resource parameters for process execution"}
                         )
 
                     if qualifier is None:
@@ -412,9 +380,7 @@ class ProcessParameters(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -449,9 +415,7 @@ class ProcessParameters(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -480,9 +444,7 @@ class ProcessParameters(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -523,16 +485,12 @@ class ProcessParameters(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The processes to be executed are described individually in the SMC Process."
-                        }
+                        dict_={r"en": r"The processes to be executed are described individually in the SMC Process."}
                     )
 
                 if qualifier is None:
@@ -543,30 +501,22 @@ class ProcessParameters(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if processId is not None and not isinstance(
-                    processId, aas.SubmodelElement
-                ):
+                if processId is not None and not isinstance(processId, aas.SubmodelElement):
                     processId = self.ProcessId(processId)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if processName is not None and not isinstance(
-                    processName, aas.SubmodelElement
-                ):
+                if processName is not None and not isinstance(processName, aas.SubmodelElement):
                     processName = self.ProcessName(processName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if processDescription is not None and not isinstance(
-                    processDescription, aas.SubmodelElement
-                ):
+                if processDescription is not None and not isinstance(processDescription, aas.SubmodelElement):
                     processDescription = self.ProcessDescription(processDescription)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if plannedProcessTime is not None and not isinstance(
-                    plannedProcessTime, aas.SubmodelElement
-                ):
+                if plannedProcessTime is not None and not isinstance(plannedProcessTime, aas.SubmodelElement):
                     plannedProcessTime = self.PlannedProcessTime(plannedProcessTime)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -591,9 +541,7 @@ class ProcessParameters(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -627,9 +575,7 @@ class ProcessParameters(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -662,9 +608,7 @@ class ProcessParameters(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -739,9 +683,7 @@ class ProcessParameters(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

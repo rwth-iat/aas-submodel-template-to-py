@@ -31,9 +31,7 @@ class UAServerDataSheet(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -86,9 +84,7 @@ class UAServerDataSheet(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -118,9 +114,7 @@ class UAServerDataSheet(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -187,15 +181,9 @@ class UAServerDataSheet(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -230,9 +218,7 @@ class UAServerDataSheet(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -286,16 +272,12 @@ class UAServerDataSheet(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Indicates to the client application that a server supports none security mode."
-                        }
+                        dict_={r"en": r"Indicates to the client application that a server supports none security mode."}
                     )
 
                 if qualifier is None:
@@ -342,16 +324,12 @@ class UAServerDataSheet(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Indicates to the client application that a server supports sign security mode"
-                        }
+                        dict_={r"en": r"Indicates to the client application that a server supports sign security mode"}
                     )
 
                 if qualifier is None:
@@ -398,9 +376,7 @@ class UAServerDataSheet(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -456,9 +432,7 @@ class UAServerDataSheet(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -491,9 +465,7 @@ class UAServerDataSheet(aas.Submodel):
 
             def __init__(
                 self,
-                supportsecuritypolicyuris_items: Optional[
-                    Iterable[Union[str, Supportsecuritypolicyuris_item]]
-                ] = None,
+                supportsecuritypolicyuris_items: Optional[Iterable[Union[str, Supportsecuritypolicyuris_item]]] = None,
                 id_short: Optional[str] = r"SupportSecurityPolicyUris",
                 type_value_list_element: aas.SubmodelElement = aas.Property,
                 semantic_id_list_element: Optional[aas.Reference] = None,
@@ -514,16 +486,12 @@ class UAServerDataSheet(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides a container for list of security policies that the server supports."
-                        }
+                        dict_={r"en": r"Provides a container for list of security policies that the server supports."}
                     )
 
                 if qualifier is None:
@@ -534,18 +502,12 @@ class UAServerDataSheet(aas.Submodel):
 
                 # A str would be split into its characters
                 if isinstance(supportsecuritypolicyuris_items, str):
-                    raise TypeError(
-                        "supportsecuritypolicyuris_items takes several elements, got a str"
-                    )
+                    raise TypeError("supportsecuritypolicyuris_items takes several elements, got a str")
 
                 # Build submodel elements from raw values passed in the argument
                 if supportsecuritypolicyuris_items:
                     supportsecuritypolicyuris_items = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.Supportsecuritypolicyuris_item(i)
-                        )
+                        i if isinstance(i, aas.SubmodelElement) else self.Supportsecuritypolicyuris_item(i)
                         for i in supportsecuritypolicyuris_items
                     ]
 
@@ -559,9 +521,7 @@ class UAServerDataSheet(aas.Submodel):
                     elif isinstance(se_arg, Iterable):
                         embedded_submodel_elements.extend(se_arg)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -628,15 +588,9 @@ class UAServerDataSheet(aas.Submodel):
 
                 # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                 # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if (
-                    new.semantic_id is not None
-                    and self.semantic_id_list_element is None
-                ):
+                if new.semantic_id is not None and self.semantic_id_list_element is None:
                     for item in existing:
-                        if (
-                            item.semantic_id is not None
-                            and new.semantic_id != item.semantic_id
-                        ):
+                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                             raise aas.AASConstraintViolation(
                                 114,
                                 f"Element to be added {new!r} has semantic_id "
@@ -671,9 +625,7 @@ class UAServerDataSheet(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -706,27 +658,14 @@ class UAServerDataSheet(aas.Submodel):
 
         def __init__(
             self,
-            nodeSets: Optional[
-                Union[Iterable[NodeSets.Nodesets_item], NodeSets]
-            ] = None,
+            nodeSets: Optional[Union[Iterable[NodeSets.Nodesets_item], NodeSets]] = None,
             allowAnonymousUser: Optional[Union[bool, AllowAnonymousUser]] = None,
-            supportSecurityModeNone: Optional[
-                Union[int, SupportSecurityModeNone]
-            ] = None,
-            supportSecurityModeSign: Optional[
-                Union[int, SupportSecurityModeSign]
-            ] = None,
-            supportSecurityModeSignEncrypt: Optional[
-                Union[int, SupportSecurityModeSignEncrypt]
-            ] = None,
+            supportSecurityModeNone: Optional[Union[int, SupportSecurityModeNone]] = None,
+            supportSecurityModeSign: Optional[Union[int, SupportSecurityModeSign]] = None,
+            supportSecurityModeSignEncrypt: Optional[Union[int, SupportSecurityModeSignEncrypt]] = None,
             supportSecurityPolicyUris: Optional[
                 Union[
-                    Iterable[
-                        Union[
-                            str,
-                            SupportSecurityPolicyUris.Supportsecuritypolicyuris_item,
-                        ]
-                    ],
+                    Iterable[Union[str, SupportSecurityPolicyUris.Supportsecuritypolicyuris_item]],
                     SupportSecurityPolicyUris,
                 ]
             ] = None,
@@ -747,9 +686,7 @@ class UAServerDataSheet(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -776,58 +713,38 @@ class UAServerDataSheet(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if allowAnonymousUser is not None and not isinstance(
-                allowAnonymousUser, aas.SubmodelElement
-            ):
+            if allowAnonymousUser is not None and not isinstance(allowAnonymousUser, aas.SubmodelElement):
                 allowAnonymousUser = self.AllowAnonymousUser(allowAnonymousUser)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if supportSecurityModeNone is not None and not isinstance(
-                supportSecurityModeNone, aas.SubmodelElement
-            ):
-                supportSecurityModeNone = self.SupportSecurityModeNone(
-                    supportSecurityModeNone
-                )
+            if supportSecurityModeNone is not None and not isinstance(supportSecurityModeNone, aas.SubmodelElement):
+                supportSecurityModeNone = self.SupportSecurityModeNone(supportSecurityModeNone)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if supportSecurityModeSign is not None and not isinstance(
-                supportSecurityModeSign, aas.SubmodelElement
-            ):
-                supportSecurityModeSign = self.SupportSecurityModeSign(
-                    supportSecurityModeSign
-                )
+            if supportSecurityModeSign is not None and not isinstance(supportSecurityModeSign, aas.SubmodelElement):
+                supportSecurityModeSign = self.SupportSecurityModeSign(supportSecurityModeSign)
 
             # Build a submodel element if a raw value was passed in the argument
 
             if supportSecurityModeSignEncrypt is not None and not isinstance(
                 supportSecurityModeSignEncrypt, aas.SubmodelElement
             ):
-                supportSecurityModeSignEncrypt = self.SupportSecurityModeSignEncrypt(
-                    supportSecurityModeSignEncrypt
-                )
+                supportSecurityModeSignEncrypt = self.SupportSecurityModeSignEncrypt(supportSecurityModeSignEncrypt)
 
             # A str would be split into its characters
             if isinstance(supportSecurityPolicyUris, str):
-                raise TypeError(
-                    "supportSecurityPolicyUris takes several elements, got a str"
-                )
+                raise TypeError("supportSecurityPolicyUris takes several elements, got a str")
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if supportSecurityPolicyUris is not None and not isinstance(
-                supportSecurityPolicyUris, aas.SubmodelElement
-            ):
-                supportSecurityPolicyUris = self.SupportSecurityPolicyUris(
-                    supportSecurityPolicyUris
-                )
+            if supportSecurityPolicyUris is not None and not isinstance(supportSecurityPolicyUris, aas.SubmodelElement):
+                supportSecurityPolicyUris = self.SupportSecurityPolicyUris(supportSecurityPolicyUris)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if supportRedundancy is not None and not isinstance(
-                supportRedundancy, aas.SubmodelElement
-            ):
+            if supportRedundancy is not None and not isinstance(supportRedundancy, aas.SubmodelElement):
                 supportRedundancy = self.SupportRedundancy(supportRedundancy)
 
             # Add all passed/initialized submodel elements to a single list
@@ -851,9 +768,7 @@ class UAServerDataSheet(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -882,27 +797,18 @@ class UAServerDataSheet(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAY811#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAY811#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"This is a URI that identifies the OPC UA server."
-                        }
+                        dict_={r"en": r"This is a URI that identifies the OPC UA server."}
                     )
 
                 if qualifier is None:
@@ -938,27 +844,18 @@ class UAServerDataSheet(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAO677#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Indicates the name of the OPC UA Server application manufacturer."
-                        }
+                        dict_={r"en": r"Indicates the name of the OPC UA Server application manufacturer."}
                     )
 
                 if qualifier is None:
@@ -1005,16 +902,12 @@ class UAServerDataSheet(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Indicates the name of the OPC UA Server application."
-                        }
+                        dict_={r"en": r"Indicates the name of the OPC UA Server application."}
                     )
 
                 if qualifier is None:
@@ -1050,27 +943,18 @@ class UAServerDataSheet(aas.Submodel):
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0112/2///61987#ABA601#008",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA601#008"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Indicates the software version of the OPC UA server application."
-                        }
+                        dict_={r"en": r"Indicates the software version of the OPC UA server application."}
                     )
 
                 if qualifier is None:
@@ -1117,16 +1001,12 @@ class UAServerDataSheet(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Indicates the build number of the OPC UA server application."
-                        }
+                        dict_={r"en": r"Indicates the build number of the OPC UA server application."}
                     )
 
                 if qualifier is None:
@@ -1173,9 +1053,7 @@ class UAServerDataSheet(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
@@ -1230,9 +1108,7 @@ class UAServerDataSheet(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -1250,37 +1126,27 @@ class UAServerDataSheet(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if productUri is not None and not isinstance(
-                productUri, aas.SubmodelElement
-            ):
+            if productUri is not None and not isinstance(productUri, aas.SubmodelElement):
                 productUri = self.ProductUri(productUri)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if manufacturerName is not None and not isinstance(
-                manufacturerName, aas.SubmodelElement
-            ):
+            if manufacturerName is not None and not isinstance(manufacturerName, aas.SubmodelElement):
                 manufacturerName = self.ManufacturerName(manufacturerName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if productName is not None and not isinstance(
-                productName, aas.SubmodelElement
-            ):
+            if productName is not None and not isinstance(productName, aas.SubmodelElement):
                 productName = self.ProductName(productName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if softwareVersion is not None and not isinstance(
-                softwareVersion, aas.SubmodelElement
-            ):
+            if softwareVersion is not None and not isinstance(softwareVersion, aas.SubmodelElement):
                 softwareVersion = self.SoftwareVersion(softwareVersion)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if buildNumber is not None and not isinstance(
-                buildNumber, aas.SubmodelElement
-            ):
+            if buildNumber is not None and not isinstance(buildNumber, aas.SubmodelElement):
                 buildNumber = self.BuildNumber(buildNumber)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1290,14 +1156,7 @@ class UAServerDataSheet(aas.Submodel):
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                productUri,
-                manufacturerName,
-                productName,
-                softwareVersion,
-                buildNumber,
-                buildDate,
-            ]:
+            for se_arg in [productUri, manufacturerName, productName, softwareVersion, buildNumber, buildDate]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -1308,9 +1167,7 @@ class UAServerDataSheet(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1352,9 +1209,7 @@ class UAServerDataSheet(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -1408,16 +1263,12 @@ class UAServerDataSheet(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Defines a URI that uniquely identifies the application instance. "
-                                }
+                                dict_={r"en": r"Defines a URI that uniquely identifies the application instance. "}
                             )
 
                         if qualifier is None:
@@ -1453,27 +1304,18 @@ class UAServerDataSheet(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAY811#001",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAY811#001"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"This is a URI that identifies the OPC UA server."
-                                }
+                                dict_={r"en": r"This is a URI that identifies the OPC UA server."}
                             )
 
                         if qualifier is None:
@@ -1519,16 +1361,12 @@ class UAServerDataSheet(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Defines a localized descriptive name for the server application."
-                                }
+                                dict_={r"en": r"Defines a localized descriptive name for the server application."}
                             )
 
                         if qualifier is None:
@@ -1574,9 +1412,7 @@ class UAServerDataSheet(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1630,9 +1466,7 @@ class UAServerDataSheet(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1686,9 +1520,7 @@ class UAServerDataSheet(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -1732,9 +1564,7 @@ class UAServerDataSheet(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1746,16 +1576,12 @@ class UAServerDataSheet(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
                                 description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Defines the discovery Url of the server application."
-                                    }
+                                    dict_={r"en": r"Defines the discovery Url of the server application."}
                                 )
 
                             if qualifier is None:
@@ -1781,9 +1607,7 @@ class UAServerDataSheet(aas.Submodel):
 
                     def __init__(
                         self,
-                        discoveryurls_items: Optional[
-                            Iterable[Union[str, Discoveryurls_item]]
-                        ] = None,
+                        discoveryurls_items: Optional[Iterable[Union[str, Discoveryurls_item]]] = None,
                         id_short: Optional[str] = r"DiscoveryUrls",
                         type_value_list_element: aas.SubmodelElement = aas.Property,
                         semantic_id_list_element: Optional[aas.Reference] = None,
@@ -1804,16 +1628,12 @@ class UAServerDataSheet(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
                             description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Provides a list of discovery endpoints used by the server application."
-                                }
+                                dict_={r"en": r"Provides a list of discovery endpoints used by the server application."}
                             )
 
                         if qualifier is None:
@@ -1824,18 +1644,12 @@ class UAServerDataSheet(aas.Submodel):
 
                         # A str would be split into its characters
                         if isinstance(discoveryurls_items, str):
-                            raise TypeError(
-                                "discoveryurls_items takes several elements, got a str"
-                            )
+                            raise TypeError("discoveryurls_items takes several elements, got a str")
 
                         # Build submodel elements from raw values passed in the argument
                         if discoveryurls_items:
                             discoveryurls_items = [
-                                (
-                                    i
-                                    if isinstance(i, aas.SubmodelElement)
-                                    else self.Discoveryurls_item(i)
-                                )
+                                i if isinstance(i, aas.SubmodelElement) else self.Discoveryurls_item(i)
                                 for i in discoveryurls_items
                             ]
 
@@ -1849,9 +1663,7 @@ class UAServerDataSheet(aas.Submodel):
                             elif isinstance(se_arg, Iterable):
                                 embedded_submodel_elements.extend(se_arg)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1918,15 +1730,9 @@ class UAServerDataSheet(aas.Submodel):
 
                         # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                         # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                        if (
-                            new.semantic_id is not None
-                            and self.semantic_id_list_element is None
-                        ):
+                        if new.semantic_id is not None and self.semantic_id_list_element is None:
                             for item in existing:
-                                if (
-                                    item.semantic_id is not None
-                                    and new.semantic_id != item.semantic_id
-                                ):
+                                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                     raise aas.AASConstraintViolation(
                                         114,
                                         f"Element to be added {new!r} has semantic_id "
@@ -1942,19 +1748,12 @@ class UAServerDataSheet(aas.Submodel):
                     self,
                     applicationUri: Union[str, ApplicationUri],
                     productUri: Optional[Union[str, ProductUri]] = None,
-                    applicationName: Optional[
-                        Union[aas.LangStringSet, ApplicationName]
-                    ] = None,
+                    applicationName: Optional[Union[aas.LangStringSet, ApplicationName]] = None,
                     applicationType: Optional[Union[str, ApplicationType]] = None,
                     gatewayServerUri: Optional[Union[str, GatewayServerUri]] = None,
-                    discoveryProfileUri: Optional[
-                        Union[str, DiscoveryProfileUri]
-                    ] = None,
+                    discoveryProfileUri: Optional[Union[str, DiscoveryProfileUri]] = None,
                     discoveryUrls: Optional[
-                        Union[
-                            Iterable[Union[str, DiscoveryUrls.Discoveryurls_item]],
-                            DiscoveryUrls,
-                        ]
+                        Union[Iterable[Union[str, DiscoveryUrls.Discoveryurls_item]], DiscoveryUrls]
                     ] = None,
                     id_short: Optional[str] = r"Server",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -1972,16 +1771,12 @@ class UAServerDataSheet(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Defines the description of the server that the endpoint belongs to. "
-                            }
+                            dict_={r"en": r"Defines the description of the server that the endpoint belongs to. "}
                         )
 
                     if qualifier is None:
@@ -1992,59 +1787,41 @@ class UAServerDataSheet(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if applicationUri is not None and not isinstance(
-                        applicationUri, aas.SubmodelElement
-                    ):
+                    if applicationUri is not None and not isinstance(applicationUri, aas.SubmodelElement):
                         applicationUri = self.ApplicationUri(applicationUri)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if productUri is not None and not isinstance(
-                        productUri, aas.SubmodelElement
-                    ):
+                    if productUri is not None and not isinstance(productUri, aas.SubmodelElement):
                         productUri = self.ProductUri(productUri)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if applicationName is not None and not isinstance(
-                        applicationName, aas.SubmodelElement
-                    ):
+                    if applicationName is not None and not isinstance(applicationName, aas.SubmodelElement):
                         applicationName = self.ApplicationName(applicationName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if applicationType is not None and not isinstance(
-                        applicationType, aas.SubmodelElement
-                    ):
+                    if applicationType is not None and not isinstance(applicationType, aas.SubmodelElement):
                         applicationType = self.ApplicationType(applicationType)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if gatewayServerUri is not None and not isinstance(
-                        gatewayServerUri, aas.SubmodelElement
-                    ):
+                    if gatewayServerUri is not None and not isinstance(gatewayServerUri, aas.SubmodelElement):
                         gatewayServerUri = self.GatewayServerUri(gatewayServerUri)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if discoveryProfileUri is not None and not isinstance(
-                        discoveryProfileUri, aas.SubmodelElement
-                    ):
-                        discoveryProfileUri = self.DiscoveryProfileUri(
-                            discoveryProfileUri
-                        )
+                    if discoveryProfileUri is not None and not isinstance(discoveryProfileUri, aas.SubmodelElement):
+                        discoveryProfileUri = self.DiscoveryProfileUri(discoveryProfileUri)
 
                     # A str would be split into its characters
                     if isinstance(discoveryUrls, str):
-                        raise TypeError(
-                            "discoveryUrls takes several elements, got a str"
-                        )
+                        raise TypeError("discoveryUrls takes several elements, got a str")
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if discoveryUrls is not None and not isinstance(
-                        discoveryUrls, aas.SubmodelElement
-                    ):
+                    if discoveryUrls is not None and not isinstance(discoveryUrls, aas.SubmodelElement):
                         discoveryUrls = self.DiscoveryUrls(discoveryUrls)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -2068,9 +1845,7 @@ class UAServerDataSheet(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2107,9 +1882,7 @@ class UAServerDataSheet(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2162,9 +1935,7 @@ class UAServerDataSheet(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2218,16 +1989,12 @@ class UAServerDataSheet(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Defines the security policy to use when securing messages."
-                            }
+                            dict_={r"en": r"Defines the security policy to use when securing messages."}
                         )
 
                     if qualifier is None:
@@ -2266,9 +2033,7 @@ class UAServerDataSheet(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2280,9 +2045,7 @@ class UAServerDataSheet(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -2324,9 +2087,7 @@ class UAServerDataSheet(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2338,9 +2099,7 @@ class UAServerDataSheet(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -2382,9 +2141,7 @@ class UAServerDataSheet(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2396,9 +2153,7 @@ class UAServerDataSheet(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -2440,9 +2195,7 @@ class UAServerDataSheet(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2454,9 +2207,7 @@ class UAServerDataSheet(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -2498,9 +2249,7 @@ class UAServerDataSheet(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -2512,9 +2261,7 @@ class UAServerDataSheet(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if description is None:
@@ -2550,12 +2297,8 @@ class UAServerDataSheet(aas.Submodel):
                         policyId: Optional[Union[str, PolicyId]] = None,
                         tokenType: Optional[Union[str, TokenType]] = None,
                         issuedTokenType: Optional[Union[str, IssuedTokenType]] = None,
-                        issuerEndpointUri: Optional[
-                            Union[str, IssuerEndpointUri]
-                        ] = None,
-                        securityPolicyUri: Optional[
-                            Union[str, SecurityPolicyUri]
-                        ] = None,
+                        issuerEndpointUri: Optional[Union[str, IssuerEndpointUri]] = None,
+                        securityPolicyUri: Optional[Union[str, SecurityPolicyUri]] = None,
                         id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -2572,9 +2315,7 @@ class UAServerDataSheet(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if description is None:
@@ -2592,52 +2333,32 @@ class UAServerDataSheet(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if policyId is not None and not isinstance(
-                            policyId, aas.SubmodelElement
-                        ):
+                        if policyId is not None and not isinstance(policyId, aas.SubmodelElement):
                             policyId = self.PolicyId(policyId)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if tokenType is not None and not isinstance(
-                            tokenType, aas.SubmodelElement
-                        ):
+                        if tokenType is not None and not isinstance(tokenType, aas.SubmodelElement):
                             tokenType = self.TokenType(tokenType)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if issuedTokenType is not None and not isinstance(
-                            issuedTokenType, aas.SubmodelElement
-                        ):
+                        if issuedTokenType is not None and not isinstance(issuedTokenType, aas.SubmodelElement):
                             issuedTokenType = self.IssuedTokenType(issuedTokenType)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if issuerEndpointUri is not None and not isinstance(
-                            issuerEndpointUri, aas.SubmodelElement
-                        ):
-                            issuerEndpointUri = self.IssuerEndpointUri(
-                                issuerEndpointUri
-                            )
+                        if issuerEndpointUri is not None and not isinstance(issuerEndpointUri, aas.SubmodelElement):
+                            issuerEndpointUri = self.IssuerEndpointUri(issuerEndpointUri)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if securityPolicyUri is not None and not isinstance(
-                            securityPolicyUri, aas.SubmodelElement
-                        ):
-                            securityPolicyUri = self.SecurityPolicyUri(
-                                securityPolicyUri
-                            )
+                        if securityPolicyUri is not None and not isinstance(securityPolicyUri, aas.SubmodelElement):
+                            securityPolicyUri = self.SecurityPolicyUri(securityPolicyUri)
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
-                        for se_arg in [
-                            policyId,
-                            tokenType,
-                            issuedTokenType,
-                            issuerEndpointUri,
-                            securityPolicyUri,
-                        ]:
+                        for se_arg in [policyId, tokenType, issuedTokenType, issuerEndpointUri, securityPolicyUri]:
                             if se_arg is None:
                                 continue
                             elif isinstance(se_arg, aas.SubmodelElement):
@@ -2648,9 +2369,7 @@ class UAServerDataSheet(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2667,9 +2386,7 @@ class UAServerDataSheet(aas.Submodel):
 
                 def __init__(
                     self,
-                    useridentitytokens_items: Optional[
-                        Iterable[Useridentitytokens_item]
-                    ] = None,
+                    useridentitytokens_items: Optional[Iterable[Useridentitytokens_item]] = None,
                     id_short: Optional[str] = r"UserIdentityTokens",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
                     semantic_id_list_element: Optional[aas.Reference] = None,
@@ -2690,16 +2407,12 @@ class UAServerDataSheet(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Defines the list of user identity tokens that the server will accept."
-                            }
+                            dict_={r"en": r"Defines the list of user identity tokens that the server will accept."}
                         )
 
                     if qualifier is None:
@@ -2710,9 +2423,7 @@ class UAServerDataSheet(aas.Submodel):
 
                     # A str would be split into its characters
                     if isinstance(useridentitytokens_items, str):
-                        raise TypeError(
-                            "useridentitytokens_items takes several elements, got a str"
-                        )
+                        raise TypeError("useridentitytokens_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -2724,9 +2435,7 @@ class UAServerDataSheet(aas.Submodel):
                         elif isinstance(se_arg, Iterable):
                             embedded_submodel_elements.extend(se_arg)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2793,15 +2502,9 @@ class UAServerDataSheet(aas.Submodel):
 
                     # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
                     # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if (
-                        new.semantic_id is not None
-                        and self.semantic_id_list_element is None
-                    ):
+                    if new.semantic_id is not None and self.semantic_id_list_element is None:
                         for item in existing:
-                            if (
-                                item.semantic_id is not None
-                                and new.semantic_id != item.semantic_id
-                            ):
+                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                                 raise aas.AASConstraintViolation(
                                     114,
                                     f"Element to be added {new!r} has semantic_id "
@@ -2836,9 +2539,7 @@ class UAServerDataSheet(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2892,9 +2593,7 @@ class UAServerDataSheet(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if description is None:
@@ -2933,10 +2632,7 @@ class UAServerDataSheet(aas.Submodel):
                 securityMode: Optional[Union[str, SecurityMode]] = None,
                 securityPolicyUri: Optional[Union[str, SecurityPolicyUri]] = None,
                 userIdentityTokens: Optional[
-                    Union[
-                        Iterable[UserIdentityTokens.Useridentitytokens_item],
-                        UserIdentityTokens,
-                    ]
+                    Union[Iterable[UserIdentityTokens.Useridentitytokens_item], UserIdentityTokens]
                 ] = None,
                 transportProfileUri: Optional[Union[str, TransportProfileUri]] = None,
                 securityLevel: Optional[Union[int, SecurityLevel]] = None,
@@ -2956,16 +2652,12 @@ class UAServerDataSheet(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides information on how to access an OPC UA server. "
-                        }
+                        dict_={r"en": r"Provides information on how to access an OPC UA server. "}
                     )
 
                 if qualifier is None:
@@ -2976,50 +2668,36 @@ class UAServerDataSheet(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if endpointUri is not None and not isinstance(
-                    endpointUri, aas.SubmodelElement
-                ):
+                if endpointUri is not None and not isinstance(endpointUri, aas.SubmodelElement):
                     endpointUri = self.EndpointUri(endpointUri)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if securityMode is not None and not isinstance(
-                    securityMode, aas.SubmodelElement
-                ):
+                if securityMode is not None and not isinstance(securityMode, aas.SubmodelElement):
                     securityMode = self.SecurityMode(securityMode)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if securityPolicyUri is not None and not isinstance(
-                    securityPolicyUri, aas.SubmodelElement
-                ):
+                if securityPolicyUri is not None and not isinstance(securityPolicyUri, aas.SubmodelElement):
                     securityPolicyUri = self.SecurityPolicyUri(securityPolicyUri)
 
                 # A str would be split into its characters
                 if isinstance(userIdentityTokens, str):
-                    raise TypeError(
-                        "userIdentityTokens takes several elements, got a str"
-                    )
+                    raise TypeError("userIdentityTokens takes several elements, got a str")
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if userIdentityTokens is not None and not isinstance(
-                    userIdentityTokens, aas.SubmodelElement
-                ):
+                if userIdentityTokens is not None and not isinstance(userIdentityTokens, aas.SubmodelElement):
                     userIdentityTokens = self.UserIdentityTokens(userIdentityTokens)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if transportProfileUri is not None and not isinstance(
-                    transportProfileUri, aas.SubmodelElement
-                ):
+                if transportProfileUri is not None and not isinstance(transportProfileUri, aas.SubmodelElement):
                     transportProfileUri = self.TransportProfileUri(transportProfileUri)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if securityLevel is not None and not isinstance(
-                    securityLevel, aas.SubmodelElement
-                ):
+                if securityLevel is not None and not isinstance(securityLevel, aas.SubmodelElement):
                     securityLevel = self.SecurityLevel(securityLevel)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -3044,9 +2722,7 @@ class UAServerDataSheet(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3063,9 +2739,7 @@ class UAServerDataSheet(aas.Submodel):
 
         def __init__(
             self,
-            endpointdescriptions_items: Optional[
-                Iterable[Endpointdescriptions_item]
-            ] = None,
+            endpointdescriptions_items: Optional[Iterable[Endpointdescriptions_item]] = None,
             id_short: Optional[str] = r"EndpointDescriptions",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -3086,9 +2760,7 @@ class UAServerDataSheet(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
@@ -3106,9 +2778,7 @@ class UAServerDataSheet(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(endpointdescriptions_items, str):
-                raise TypeError(
-                    "endpointdescriptions_items takes several elements, got a str"
-                )
+                raise TypeError("endpointdescriptions_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -3120,9 +2790,7 @@ class UAServerDataSheet(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3191,10 +2859,7 @@ class UAServerDataSheet(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -3231,16 +2896,12 @@ class UAServerDataSheet(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Defines the discovery Url of the server application."
-                        }
+                        dict_={r"en": r"Defines the discovery Url of the server application."}
                     )
 
                 if qualifier is None:
@@ -3266,9 +2927,7 @@ class UAServerDataSheet(aas.Submodel):
 
         def __init__(
             self,
-            discoveryurls_items: Optional[
-                Iterable[Union[str, Discoveryurls_item]]
-            ] = None,
+            discoveryurls_items: Optional[Iterable[Union[str, Discoveryurls_item]]] = None,
             id_short: Optional[str] = r"DiscoveryUrls",
             type_value_list_element: aas.SubmodelElement = aas.Property,
             semantic_id_list_element: Optional[aas.Reference] = None,
@@ -3289,16 +2948,12 @@ class UAServerDataSheet(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides a list of discovery endpoints used by the server application."
-                    }
+                    dict_={r"en": r"Provides a list of discovery endpoints used by the server application."}
                 )
 
             if qualifier is None:
@@ -3314,12 +2969,7 @@ class UAServerDataSheet(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if discoveryurls_items:
                 discoveryurls_items = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.Discoveryurls_item(i)
-                    )
-                    for i in discoveryurls_items
+                    i if isinstance(i, aas.SubmodelElement) else self.Discoveryurls_item(i) for i in discoveryurls_items
                 ]
 
             # Add all passed/initialized submodel elements to a single list
@@ -3332,9 +2982,7 @@ class UAServerDataSheet(aas.Submodel):
                 elif isinstance(se_arg, Iterable):
                     embedded_submodel_elements.extend(se_arg)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3403,10 +3051,7 @@ class UAServerDataSheet(aas.Submodel):
             # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
             if new.semantic_id is not None and self.semantic_id_list_element is None:
                 for item in existing:
-                    if (
-                        item.semantic_id is not None
-                        and new.semantic_id != item.semantic_id
-                    ):
+                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
                         raise aas.AASConstraintViolation(
                             114,
                             f"Element to be added {new!r} has semantic_id "
@@ -3424,14 +3069,9 @@ class UAServerDataSheet(aas.Submodel):
         configuration: Configuration,
         identification: Identification,
         endpointDescriptions: Optional[
-            Union[
-                Iterable[EndpointDescriptions.Endpointdescriptions_item],
-                EndpointDescriptions,
-            ]
+            Union[Iterable[EndpointDescriptions.Endpointdescriptions_item], EndpointDescriptions]
         ] = None,
-        discoveryUrls: Optional[
-            Union[Iterable[Union[str, DiscoveryUrls.Discoveryurls_item]], DiscoveryUrls]
-        ] = None,
+        discoveryUrls: Optional[Union[Iterable[Union[str, DiscoveryUrls.Discoveryurls_item]], DiscoveryUrls]] = None,
         id_short: Optional[str] = r"UAServerDataSheet",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
@@ -3456,18 +3096,12 @@ class UAServerDataSheet(aas.Submodel):
 
         if description is None:
             description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Definition of the Submodel OPC UA Server Datasheet identified by its semanticId. "
-                }
+                dict_={r"en": r"Definition of the Submodel OPC UA Server Datasheet identified by its semanticId. "}
             )
 
         if administration is None:
             administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=None,
-                embedded_data_specifications=[],
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
             )
 
         if qualifier is None:
@@ -3482,9 +3116,7 @@ class UAServerDataSheet(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if endpointDescriptions is not None and not isinstance(
-            endpointDescriptions, aas.SubmodelElement
-        ):
+        if endpointDescriptions is not None and not isinstance(endpointDescriptions, aas.SubmodelElement):
             endpointDescriptions = self.EndpointDescriptions(endpointDescriptions)
 
         # A str would be split into its characters
@@ -3493,19 +3125,12 @@ class UAServerDataSheet(aas.Submodel):
 
         # Build a submodel element if a raw value was passed in the argument
 
-        if discoveryUrls is not None and not isinstance(
-            discoveryUrls, aas.SubmodelElement
-        ):
+        if discoveryUrls is not None and not isinstance(discoveryUrls, aas.SubmodelElement):
             discoveryUrls = self.DiscoveryUrls(discoveryUrls)
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
-        for se_arg in [
-            configuration,
-            identification,
-            endpointDescriptions,
-            discoveryUrls,
-        ]:
+        for se_arg in [configuration, identification, endpointDescriptions, discoveryUrls]:
             if se_arg is None:
                 continue
             elif isinstance(se_arg, aas.SubmodelElement):
@@ -3516,9 +3141,7 @@ class UAServerDataSheet(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

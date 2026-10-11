@@ -21,20 +21,13 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV929#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV929#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -47,9 +40,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Unique identifier for the PAM specification sheet."
-                        }
+                        dict_={r"en": r"Unique identifier for the PAM specification sheet."}
                     )
 
                 if qualifier is None:
@@ -85,28 +76,18 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV939#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV939#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Asset Type Class",
-                            r"de": r"Allgemeiner Asset-Typ",
-                        }
+                        dict_={r"en": r"Asset Type Class", r"de": r"Allgemeiner Asset-Typ"}
                     )
 
                 if description is None:
@@ -149,20 +130,13 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV940#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV940#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -175,9 +149,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Unique identifier for a general asset type's PAM specification sheet."
-                        }
+                        dict_={r"en": "Unique identifier for a general asset type's PAM specification sheet."}
                     )
 
                 if qualifier is None:
@@ -203,9 +175,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
         def __init__(
             self,
-            pAMSpecificationSheetIdentification: Union[
-                str, PAMSpecificationSheetIdentification
-            ],
+            pAMSpecificationSheetIdentification: Union[str, PAMSpecificationSheetIdentification],
             assetTypeClass: Union[str, AssetTypeClass],
             assetTypeIdentification: Union[str, AssetTypeIdentification],
             id_short: Optional[str] = r"DocumentHeader",
@@ -213,32 +183,21 @@ class PAMSpecificationSheet(aas.Submodel):
             category: Optional[str] = r"PARAMETER",
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#01-AGC974#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGC974#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Document Header", r"de": r"Dokumentenkopf"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Document Header", r"de": r"Dokumentenkopf"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Identifier for the asset type and associated PAM specification sheet."
-                    }
+                    dict_={r"en": r"Identifier for the asset type and associated PAM specification sheet."}
                 )
 
             if qualifier is None:
@@ -252,35 +211,23 @@ class PAMSpecificationSheet(aas.Submodel):
             if pAMSpecificationSheetIdentification is not None and not isinstance(
                 pAMSpecificationSheetIdentification, aas.SubmodelElement
             ):
-                pAMSpecificationSheetIdentification = (
-                    self.PAMSpecificationSheetIdentification(
-                        pAMSpecificationSheetIdentification
-                    )
+                pAMSpecificationSheetIdentification = self.PAMSpecificationSheetIdentification(
+                    pAMSpecificationSheetIdentification
                 )
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if assetTypeClass is not None and not isinstance(
-                assetTypeClass, aas.SubmodelElement
-            ):
+            if assetTypeClass is not None and not isinstance(assetTypeClass, aas.SubmodelElement):
                 assetTypeClass = self.AssetTypeClass(assetTypeClass)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if assetTypeIdentification is not None and not isinstance(
-                assetTypeIdentification, aas.SubmodelElement
-            ):
-                assetTypeIdentification = self.AssetTypeIdentification(
-                    assetTypeIdentification
-                )
+            if assetTypeIdentification is not None and not isinstance(assetTypeIdentification, aas.SubmodelElement):
+                assetTypeIdentification = self.AssetTypeIdentification(assetTypeIdentification)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
-            for se_arg in [
-                pAMSpecificationSheetIdentification,
-                assetTypeClass,
-                assetTypeIdentification,
-            ]:
+            for se_arg in [pAMSpecificationSheetIdentification, assetTypeClass, assetTypeIdentification]:
                 if se_arg is None:
                     continue
                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -291,9 +238,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -322,28 +267,18 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV946#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV946#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"FunctionalLocation",
-                            r"de": r"Technischer Platz",
-                        }
+                        dict_={r"en": r"FunctionalLocation", r"de": r"Technischer Platz"}
                     )
 
                 if description is None:
@@ -386,20 +321,13 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV947#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV947#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -409,9 +337,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Specifies the actual location of the asset within the plant."
-                        }
+                        dict_={r"en": r"Specifies the actual location of the asset within the plant."}
                     )
 
                 if qualifier is None:
@@ -447,32 +373,21 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV948#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV948#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Description", r"de": r"Beschreibung"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Description", r"de": r"Beschreibung"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Offers a concise explanation of the asset's primary function."
-                        }
+                        dict_={r"en": "Offers a concise explanation of the asset's primary function."}
                     )
 
                 if qualifier is None:
@@ -508,26 +423,17 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV949#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV949#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Asset Subtype", r"de": r"Asset-Typ"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Asset Subtype", r"de": r"Asset-Typ"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
@@ -567,20 +473,13 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV952#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV952#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -593,9 +492,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Reference to the technical specification sheet accompanying the asset."
-                        }
+                        dict_={r"en": r"Reference to the technical specification sheet accompanying the asset."}
                     )
 
                 if qualifier is None:
@@ -633,20 +530,13 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV950#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV950#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -656,9 +546,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Denotes whether the asset is part of a safety equipment."
-                        }
+                        dict_={r"en": r"Denotes whether the asset is part of a safety equipment."}
                     )
 
                 if qualifier is None:
@@ -701,35 +589,23 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV951#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV951#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Redundant Assets",
-                            r"de": r"Redundanz vorhanden",
-                        }
+                        dict_={r"en": r"Redundant Assets", r"de": r"Redundanz vorhanden"}
                     )
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"References zero (if empty), one or more backup assets for redundancy purposes."
-                        }
+                        dict_={r"en": r"References zero (if empty), one or more backup assets for redundancy purposes."}
                     )
 
                 if qualifier is None:
@@ -780,32 +656,21 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV930#002",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV930#002"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"en": r"SIL Category", r"de": r"SIL Kategorie"}
-                    )
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"SIL Category", r"de": r"SIL Kategorie"})
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Denotes the safety integrity level (SIL), categorized into four levels."
-                        }
+                        dict_={r"en": r"Denotes the safety integrity level (SIL), categorized into four levels."}
                     )
 
                 if qualifier is None:
@@ -856,28 +721,18 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"VARIABLE",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV942#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV942#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"FailureProbability",
-                            r"de": r"Fehlerwahrscheinlichkeit",
-                        }
+                        dict_={r"en": r"FailureProbability", r"de": r"Fehlerwahrscheinlichkeit"}
                     )
 
                 if description is None:
@@ -915,12 +770,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
         class FailureSeverity(aas.Property):
 
-            ALLOWED_VALUES = (
-                r"no impact",
-                r"potential",
-                r"measureable",
-                r"significant",
-            )
+            ALLOWED_VALUES = (r"no impact", r"potential", r"measureable", r"significant")
 
             def __init__(
                 self,
@@ -940,20 +790,13 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"VARIABLE",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV943#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV943#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -1016,28 +859,18 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"VARIABLE",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV941#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV941#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Criticality Category",
-                            r"de": r"Kritikalitätskategorie",
-                        }
+                        dict_={r"en": r"Criticality Category", r"de": r"Kritikalitätskategorie"}
                     )
 
                 if description is None:
@@ -1085,35 +918,23 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAW617#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW617#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"FurtherInformation",
-                            r"de": r"Weitere Angaben nach Bedarf",
-                        }
+                        dict_={r"en": r"FurtherInformation", r"de": r"Weitere Angaben nach Bedarf"}
                     )
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Additional relevant details about the asset, such as maintenance schedules."
-                        }
+                        dict_={r"en": r"Additional relevant details about the asset, such as maintenance schedules."}
                     )
 
                 if qualifier is None:
@@ -1160,24 +981,17 @@ class PAMSpecificationSheet(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Further Information Reference",
-                            r"de": r"Referenz auf weitere Informationen",
-                        }
+                        dict_={r"en": r"Further Information Reference", r"de": r"Referenz auf weitere Informationen"}
                     )
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"A field for including references to supplementary information"
-                        }
+                        dict_={r"en": r"A field for including references to supplementary information"}
                     )
 
                 if qualifier is None:
@@ -1213,28 +1027,18 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV956#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV956#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"General Task",
-                            r"de": r"Allgemeine Aufgabenstellung",
-                        }
+                        dict_={r"en": r"General Task", r"de": r"Allgemeine Aufgabenstellung"}
                     )
 
                 if description is None:
@@ -1272,40 +1076,27 @@ class PAMSpecificationSheet(aas.Submodel):
             technicalLocation: Optional[Union[str, TechnicalLocation]] = None,
             description_: Optional[Union[str, Description]] = None,
             assetSubtype: Optional[Union[str, AssetSubtype]] = None,
-            specificationSheetReference: Optional[
-                Union[str, SpecificationSheetReference]
-            ] = None,
+            specificationSheetReference: Optional[Union[str, SpecificationSheetReference]] = None,
             safetyMeasure: Optional[Union[str, SafetyMeasure]] = None,
             redundantAssets: Optional[Union[str, RedundantAssets]] = None,
             failureProbability: Optional[Union[str, FailureProbability]] = None,
             failureSeverity: Optional[Union[str, FailureSeverity]] = None,
             criticalityCategory: Optional[Union[str, CriticalityCategory]] = None,
-            furtherInformation: Optional[
-                Iterable[Union[str, FurtherInformation]]
-            ] = None,
-            furtherInformationReference: Optional[
-                Iterable[Union[str, FurtherInformationReference]]
-            ] = None,
+            furtherInformation: Optional[Iterable[Union[str, FurtherInformation]]] = None,
+            furtherInformationReference: Optional[Iterable[Union[str, FurtherInformationReference]]] = None,
             generalTask: Optional[Union[str, GeneralTask]] = None,
             id_short: Optional[str] = r"GeneralInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#01-AGC975#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGC975#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -1314,9 +1105,7 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Provides details about the specific asset."}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Provides details about the specific asset."})
 
             if qualifier is None:
                 qualifier = ()
@@ -1326,30 +1115,22 @@ class PAMSpecificationSheet(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if functionalLocation is not None and not isinstance(
-                functionalLocation, aas.SubmodelElement
-            ):
+            if functionalLocation is not None and not isinstance(functionalLocation, aas.SubmodelElement):
                 functionalLocation = self.FunctionalLocation(functionalLocation)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if technicalLocation is not None and not isinstance(
-                technicalLocation, aas.SubmodelElement
-            ):
+            if technicalLocation is not None and not isinstance(technicalLocation, aas.SubmodelElement):
                 technicalLocation = self.TechnicalLocation(technicalLocation)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if description_ is not None and not isinstance(
-                description_, aas.SubmodelElement
-            ):
+            if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                 description_ = self.Description(description_)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if assetSubtype is not None and not isinstance(
-                assetSubtype, aas.SubmodelElement
-            ):
+            if assetSubtype is not None and not isinstance(assetSubtype, aas.SubmodelElement):
                 assetSubtype = self.AssetSubtype(assetSubtype)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -1357,50 +1138,36 @@ class PAMSpecificationSheet(aas.Submodel):
             if specificationSheetReference is not None and not isinstance(
                 specificationSheetReference, aas.SubmodelElement
             ):
-                specificationSheetReference = self.SpecificationSheetReference(
-                    specificationSheetReference
-                )
+                specificationSheetReference = self.SpecificationSheetReference(specificationSheetReference)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if safetyMeasure is not None and not isinstance(
-                safetyMeasure, aas.SubmodelElement
-            ):
+            if safetyMeasure is not None and not isinstance(safetyMeasure, aas.SubmodelElement):
                 safetyMeasure = self.SafetyMeasure(safetyMeasure)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if redundantAssets is not None and not isinstance(
-                redundantAssets, aas.SubmodelElement
-            ):
+            if redundantAssets is not None and not isinstance(redundantAssets, aas.SubmodelElement):
                 redundantAssets = self.RedundantAssets(redundantAssets)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if sILCategory is not None and not isinstance(
-                sILCategory, aas.SubmodelElement
-            ):
+            if sILCategory is not None and not isinstance(sILCategory, aas.SubmodelElement):
                 sILCategory = self.SILCategory(sILCategory)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if failureProbability is not None and not isinstance(
-                failureProbability, aas.SubmodelElement
-            ):
+            if failureProbability is not None and not isinstance(failureProbability, aas.SubmodelElement):
                 failureProbability = self.FailureProbability(failureProbability)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if failureSeverity is not None and not isinstance(
-                failureSeverity, aas.SubmodelElement
-            ):
+            if failureSeverity is not None and not isinstance(failureSeverity, aas.SubmodelElement):
                 failureSeverity = self.FailureSeverity(failureSeverity)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if criticalityCategory is not None and not isinstance(
-                criticalityCategory, aas.SubmodelElement
-            ):
+            if criticalityCategory is not None and not isinstance(criticalityCategory, aas.SubmodelElement):
                 criticalityCategory = self.CriticalityCategory(criticalityCategory)
 
             # A str would be split into its characters
@@ -1410,36 +1177,23 @@ class PAMSpecificationSheet(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if furtherInformation:
                 furtherInformation = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.FurtherInformation(i)
-                    )
-                    for i in furtherInformation
+                    i if isinstance(i, aas.SubmodelElement) else self.FurtherInformation(i) for i in furtherInformation
                 ]
 
             # A str would be split into its characters
             if isinstance(furtherInformationReference, str):
-                raise TypeError(
-                    "furtherInformationReference takes several elements, got a str"
-                )
+                raise TypeError("furtherInformationReference takes several elements, got a str")
 
             # Build submodel elements from raw values passed in the argument
             if furtherInformationReference:
                 furtherInformationReference = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.FurtherInformationReference(i)
-                    )
+                    i if isinstance(i, aas.SubmodelElement) else self.FurtherInformationReference(i)
                     for i in furtherInformationReference
                 ]
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if generalTask is not None and not isinstance(
-                generalTask, aas.SubmodelElement
-            ):
+            if generalTask is not None and not isinstance(generalTask, aas.SubmodelElement):
                 generalTask = self.GeneralTask(generalTask)
 
             # Add all passed/initialized submodel elements to a single list
@@ -1470,9 +1224,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1503,28 +1255,18 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV958#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV958#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Status Condition Name",
-                                r"de": r"Zustands- und Fehlerbild",
-                            }
+                            dict_={r"en": r"Status Condition Name", r"de": r"Zustands- und Fehlerbild"}
                         )
 
                     if description is None:
@@ -1569,35 +1311,23 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV959#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV959#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Monitoring Required",
-                                r"de": r"Überwachung benötigt",
-                            }
+                            dict_={r"en": r"Monitoring Required", r"de": r"Überwachung benötigt"}
                         )
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Specifies whether the user is requiring monitoring."
-                            }
+                            dict_={r"en": r"Specifies whether the user is requiring monitoring."}
                         )
 
                     if qualifier is None:
@@ -1638,26 +1368,17 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV960#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV960#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Description", r"de": r"Beschreibung"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Description", r"de": r"Beschreibung"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -1699,20 +1420,13 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV961#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV961#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -1750,12 +1464,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             class NE107Status(aas.Property):
 
-                ALLOWED_VALUES = (
-                    r"failure",
-                    r"function check",
-                    r"out of specification",
-                    r"maintenance request",
-                )
+                ALLOWED_VALUES = (r"failure", r"function check", r"out of specification", r"maintenance request")
 
                 def __init__(
                     self,
@@ -1775,35 +1484,23 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV962#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV962#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"NE107Status",
-                                r"de": r"Status nach NAMUR-Empfehlung NE 107",
-                            }
+                            dict_={r"en": r"NE107Status", r"de": r"Status nach NAMUR-Empfehlung NE 107"}
                         )
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Status according to NAMUR recommendation NE 107."
-                            }
+                            dict_={r"en": r"Status according to NAMUR recommendation NE 107."}
                         )
 
                     if qualifier is None:
@@ -1834,11 +1531,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             class NE129AlarmCategory(aas.Property):
 
-                ALLOWED_VALUES = (
-                    r"Asset-Alarm",
-                    r"Asset-Notification",
-                    r"Asset-State Chance",
-                )
+                ALLOWED_VALUES = (r"Asset-Alarm", r"Asset-Notification", r"Asset-State Chance")
 
                 def __init__(
                     self,
@@ -1858,20 +1551,13 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV963#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV963#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -1884,9 +1570,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Alarm/signaling category according to NAMUR recommendation NE 129."
-                            }
+                            dict_={r"en": r"Alarm/signaling category according to NAMUR recommendation NE 129."}
                         )
 
                     if qualifier is None:
@@ -1928,35 +1612,23 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#01-AGC980#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGC980#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Status Condition",
-                            r"de": r"Zustands- und Fehlerbild",
-                        }
+                        dict_={r"en": r"Status Condition", r"de": r"Zustands- und Fehlerbild"}
                     )
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Characteristics of the asset's operational and failure states."
-                        }
+                        dict_={r"en": "Characteristics of the asset's operational and failure states."}
                     )
 
                 if qualifier is None:
@@ -1967,44 +1639,32 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusConditionName is not None and not isinstance(
-                    statusConditionName, aas.SubmodelElement
-                ):
+                if statusConditionName is not None and not isinstance(statusConditionName, aas.SubmodelElement):
                     statusConditionName = self.StatusConditionName(statusConditionName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if monitoringRequired is not None and not isinstance(
-                    monitoringRequired, aas.SubmodelElement
-                ):
+                if monitoringRequired is not None and not isinstance(monitoringRequired, aas.SubmodelElement):
                     monitoringRequired = self.MonitoringRequired(monitoringRequired)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if description_ is not None and not isinstance(
-                    description_, aas.SubmodelElement
-                ):
+                if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if methodAbbreviation is not None and not isinstance(
-                    methodAbbreviation, aas.SubmodelElement
-                ):
+                if methodAbbreviation is not None and not isinstance(methodAbbreviation, aas.SubmodelElement):
                     methodAbbreviation = self.MethodAbbreviation(methodAbbreviation)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if nE107Status is not None and not isinstance(
-                    nE107Status, aas.SubmodelElement
-                ):
+                if nE107Status is not None and not isinstance(nE107Status, aas.SubmodelElement):
                     nE107Status = self.NE107Status(nE107Status)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if nE129AlarmCategory is not None and not isinstance(
-                    nE129AlarmCategory, aas.SubmodelElement
-                ):
+                if nE129AlarmCategory is not None and not isinstance(nE129AlarmCategory, aas.SubmodelElement):
                     nE129AlarmCategory = self.NE129AlarmCategory(nE129AlarmCategory)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2027,9 +1687,7 @@ class PAMSpecificationSheet(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2052,26 +1710,17 @@ class PAMSpecificationSheet(aas.Submodel):
             category: Optional[str] = r"PARAMETER",
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#01-AGC979#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGC979#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Complete System", r"de": r"Komplettsystem"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Complete System", r"de": r"Komplettsystem"})
 
             if description is None:
                 description = aas.MultiLanguageTextType(
@@ -2103,9 +1752,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -2134,20 +1781,13 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV965#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV965#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2156,9 +1796,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Specifies the name of the subsystem."}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"Specifies the name of the subsystem."})
 
                 if qualifier is None:
                     qualifier = ()
@@ -2193,28 +1831,18 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV946#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV946#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Functional Location",
-                            r"de": r"Technischer Platz",
-                        }
+                        dict_={r"en": r"Functional Location", r"de": r"Technischer Platz"}
                     )
 
                 if description is None:
@@ -2257,20 +1885,13 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV947#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV947#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2280,9 +1901,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Specifies the actual location of the subsystem in the plant."
-                        }
+                        dict_={r"en": r"Specifies the actual location of the subsystem in the plant."}
                     )
 
                 if qualifier is None:
@@ -2320,28 +1939,18 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV958#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV958#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Status Condition Name",
-                                r"de": r"Zustands- und Fehlerbild",
-                            }
+                            dict_={r"en": r"Status Condition Name", r"de": r"Zustands- und Fehlerbild"}
                         )
 
                     if description is None:
@@ -2386,35 +1995,23 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV959#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV959#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Monitoring Required",
-                                r"de": r"Überwachung benötigt",
-                            }
+                            dict_={r"en": r"Monitoring Required", r"de": r"Überwachung benötigt"}
                         )
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Specifies whether the user is requiring monitoring."
-                            }
+                            dict_={r"en": r"Specifies whether the user is requiring monitoring."}
                         )
 
                     if qualifier is None:
@@ -2455,26 +2052,17 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV960#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV960#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Description", r"de": r"Beschreibung"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Description", r"de": r"Beschreibung"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -2516,20 +2104,13 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV961#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV961#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -2567,12 +2148,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             class NE107Status(aas.Property):
 
-                ALLOWED_VALUES = (
-                    r"failure",
-                    r"function check",
-                    r"out of specification",
-                    r"maintenance request",
-                )
+                ALLOWED_VALUES = (r"failure", r"function check", r"out of specification", r"maintenance request")
 
                 def __init__(
                     self,
@@ -2592,35 +2168,23 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV962#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV962#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"NE 107 Status",
-                                r"de": r"Status nach NAMUR-Empfehlung NE 107",
-                            }
+                            dict_={r"en": r"NE 107 Status", r"de": r"Status nach NAMUR-Empfehlung NE 107"}
                         )
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Status according to NAMUR recommendation NE 107."
-                            }
+                            dict_={r"en": r"Status according to NAMUR recommendation NE 107."}
                         )
 
                     if qualifier is None:
@@ -2651,11 +2215,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             class NE129AlarmCategory(aas.Property):
 
-                ALLOWED_VALUES = (
-                    r"Asset-Alarm",
-                    r"Asset-Notification",
-                    r"Asset-State Chance",
-                )
+                ALLOWED_VALUES = (r"Asset-Alarm", r"Asset-Notification", r"Asset-State Chance")
 
                 def __init__(
                     self,
@@ -2675,20 +2235,13 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV963#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV963#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -2701,9 +2254,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Alarm/signaling category according to NAMUR recommendation NE 129."
-                            }
+                            dict_={r"en": r"Alarm/signaling category according to NAMUR recommendation NE 129."}
                         )
 
                     if qualifier is None:
@@ -2745,35 +2296,23 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#01-AGC980#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGC980#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Status Condition",
-                            r"de": r"Zustands- und Fehlerbild",
-                        }
+                        dict_={r"en": r"Status Condition", r"de": r"Zustands- und Fehlerbild"}
                     )
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Characteristics of the subsystems's operational and failure states."
-                        }
+                        dict_={r"en": "Characteristics of the subsystems's operational and failure states."}
                     )
 
                 if qualifier is None:
@@ -2784,44 +2323,32 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if statusConditionName is not None and not isinstance(
-                    statusConditionName, aas.SubmodelElement
-                ):
+                if statusConditionName is not None and not isinstance(statusConditionName, aas.SubmodelElement):
                     statusConditionName = self.StatusConditionName(statusConditionName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if monitoringRequired is not None and not isinstance(
-                    monitoringRequired, aas.SubmodelElement
-                ):
+                if monitoringRequired is not None and not isinstance(monitoringRequired, aas.SubmodelElement):
                     monitoringRequired = self.MonitoringRequired(monitoringRequired)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if description_ is not None and not isinstance(
-                    description_, aas.SubmodelElement
-                ):
+                if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if methodAbbreviation is not None and not isinstance(
-                    methodAbbreviation, aas.SubmodelElement
-                ):
+                if methodAbbreviation is not None and not isinstance(methodAbbreviation, aas.SubmodelElement):
                     methodAbbreviation = self.MethodAbbreviation(methodAbbreviation)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if nE107Status is not None and not isinstance(
-                    nE107Status, aas.SubmodelElement
-                ):
+                if nE107Status is not None and not isinstance(nE107Status, aas.SubmodelElement):
                     nE107Status = self.NE107Status(nE107Status)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if nE129AlarmCategory is not None and not isinstance(
-                    nE129AlarmCategory, aas.SubmodelElement
-                ):
+                if nE129AlarmCategory is not None and not isinstance(nE129AlarmCategory, aas.SubmodelElement):
                     nE129AlarmCategory = self.NE129AlarmCategory(nE129AlarmCategory)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -2844,9 +2371,7 @@ class PAMSpecificationSheet(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2881,35 +2406,23 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAW622#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW622#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Subsystem Reference",
-                            r"de": r"Subsystem Referenze",
-                        }
+                        dict_={r"en": r"Subsystem Reference", r"de": r"Subsystem Referenze"}
                     )
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Additional references associated to the subsystem."
-                        }
+                        dict_={r"en": r"Additional references associated to the subsystem."}
                     )
 
                 if qualifier is None:
@@ -2953,20 +2466,13 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV929#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV929#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
@@ -2979,9 +2485,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The distinct identifier for the PAM specification sheet for the subsystem."
-                        }
+                        dict_={r"en": r"The distinct identifier for the PAM specification sheet for the subsystem."}
                     )
 
                 if qualifier is None:
@@ -3025,35 +2529,23 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#02-AAV967#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV967#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"PAM Specification Sheet Reference",
-                            r"de": r"PAM Spezifikationsblatt Referenz",
-                        }
+                        dict_={r"en": r"PAM Specification Sheet Reference", r"de": r"PAM Spezifikationsblatt Referenz"}
                     )
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Links to relevant PAM specification documentation for the subsystem."
-                        }
+                        dict_={r"en": r"Links to relevant PAM specification documentation for the subsystem."}
                     )
 
                 if qualifier is None:
@@ -3084,42 +2576,27 @@ class PAMSpecificationSheet(aas.Submodel):
             technicalLocation: Optional[Union[str, TechnicalLocation]] = None,
             statusCondition: Optional[Iterable[StatusCondition]] = None,
             subSystemReference: Optional[Union[str, SubSystemReference]] = None,
-            pAMSpecificationSheetIdentification: Optional[
-                Union[str, PAMSpecificationSheetIdentification]
-            ] = None,
-            pAMSpecificationSheetReference: Optional[
-                Union[str, PAMSpecificationSheetReference]
-            ] = None,
+            pAMSpecificationSheetIdentification: Optional[Union[str, PAMSpecificationSheetIdentification]] = None,
+            pAMSpecificationSheetReference: Optional[Union[str, PAMSpecificationSheetReference]] = None,
             id_short: Optional[str] = r"SubSystem",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#01-AGC981#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGC981#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Subsystem", r"de": r"Teilsystem"}
-                )
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Subsystem", r"de": r"Teilsystem"})
 
             if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Properties of the subsystem."}
-                )
+                description = aas.MultiLanguageTextType(dict_={r"en": r"Properties of the subsystem."})
 
             if qualifier is None:
                 qualifier = ()
@@ -3129,23 +2606,17 @@ class PAMSpecificationSheet(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if subSystemName is not None and not isinstance(
-                subSystemName, aas.SubmodelElement
-            ):
+            if subSystemName is not None and not isinstance(subSystemName, aas.SubmodelElement):
                 subSystemName = self.SubSystemName(subSystemName)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if functionalLocation is not None and not isinstance(
-                functionalLocation, aas.SubmodelElement
-            ):
+            if functionalLocation is not None and not isinstance(functionalLocation, aas.SubmodelElement):
                 functionalLocation = self.FunctionalLocation(functionalLocation)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if technicalLocation is not None and not isinstance(
-                technicalLocation, aas.SubmodelElement
-            ):
+            if technicalLocation is not None and not isinstance(technicalLocation, aas.SubmodelElement):
                 technicalLocation = self.TechnicalLocation(technicalLocation)
 
             # A str would be split into its characters
@@ -3154,9 +2625,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if subSystemReference is not None and not isinstance(
-                subSystemReference, aas.SubmodelElement
-            ):
+            if subSystemReference is not None and not isinstance(subSystemReference, aas.SubmodelElement):
                 subSystemReference = self.SubSystemReference(subSystemReference)
 
             # Build a submodel element if a raw value was passed in the argument
@@ -3164,10 +2633,8 @@ class PAMSpecificationSheet(aas.Submodel):
             if pAMSpecificationSheetIdentification is not None and not isinstance(
                 pAMSpecificationSheetIdentification, aas.SubmodelElement
             ):
-                pAMSpecificationSheetIdentification = (
-                    self.PAMSpecificationSheetIdentification(
-                        pAMSpecificationSheetIdentification
-                    )
+                pAMSpecificationSheetIdentification = self.PAMSpecificationSheetIdentification(
+                    pAMSpecificationSheetIdentification
                 )
 
             # Build a submodel element if a raw value was passed in the argument
@@ -3175,9 +2642,7 @@ class PAMSpecificationSheet(aas.Submodel):
             if pAMSpecificationSheetReference is not None and not isinstance(
                 pAMSpecificationSheetReference, aas.SubmodelElement
             ):
-                pAMSpecificationSheetReference = self.PAMSpecificationSheetReference(
-                    pAMSpecificationSheetReference
-                )
+                pAMSpecificationSheetReference = self.PAMSpecificationSheetReference(pAMSpecificationSheetReference)
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -3200,9 +2665,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3233,20 +2696,13 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV978#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV978#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
@@ -3255,9 +2711,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Name of method parameter."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Name of method parameter."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3292,32 +2746,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV979#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV979#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Description", r"de": r"Beschreibung"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Description", r"de": r"Beschreibung"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "Provides a concise explanation of the parameter's purpose."
-                            }
+                            dict_={r"en": "Provides a concise explanation of the parameter's purpose."}
                         )
 
                     if qualifier is None:
@@ -3353,28 +2796,18 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV980#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV980#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Static Parameter Value",
-                                r"de": r"Statischer Parameter Wert",
-                            }
+                            dict_={r"en": r"Static Parameter Value", r"de": r"Statischer Parameter Wert"}
                         )
 
                     if description is None:
@@ -3425,32 +2858,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV981#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV981#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"PhysicalUnit", r"de": r"Einheit"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"PhysicalUnit", r"de": r"Einheit"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Specifies the physical unit of the static parameter."
-                            }
+                            dict_={r"en": r"Specifies the physical unit of the static parameter."}
                         )
 
                     if qualifier is None:
@@ -3485,35 +2907,23 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#01-AGC984#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGC984#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Static Parameters",
-                            r"de": r"Statische Parameter",
-                        }
+                        dict_={r"en": r"Static Parameters", r"de": r"Statische Parameter"}
                     )
 
                 if description is None:
                     description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"List of static parameters such as trigger limits."
-                        }
+                        dict_={r"en": r"List of static parameters such as trigger limits."}
                     )
 
                 if qualifier is None:
@@ -3524,42 +2934,27 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if parameterName is not None and not isinstance(
-                    parameterName, aas.SubmodelElement
-                ):
+                if parameterName is not None and not isinstance(parameterName, aas.SubmodelElement):
                     parameterName = self.ParameterName(parameterName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if description_ is not None and not isinstance(
-                    description_, aas.SubmodelElement
-                ):
+                if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if staticParameterValue is not None and not isinstance(
-                    staticParameterValue, aas.SubmodelElement
-                ):
-                    staticParameterValue = self.StaticParameterValue(
-                        staticParameterValue
-                    )
+                if staticParameterValue is not None and not isinstance(staticParameterValue, aas.SubmodelElement):
+                    staticParameterValue = self.StaticParameterValue(staticParameterValue)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if physicalUnit is not None and not isinstance(
-                    physicalUnit, aas.SubmodelElement
-                ):
+                if physicalUnit is not None and not isinstance(physicalUnit, aas.SubmodelElement):
                     physicalUnit = self.PhysicalUnit(physicalUnit)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    parameterName,
-                    description_,
-                    staticParameterValue,
-                    physicalUnit,
-                ]:
+                for se_arg in [parameterName, description_, staticParameterValue, physicalUnit]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -3570,9 +2965,7 @@ class PAMSpecificationSheet(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3601,31 +2994,20 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV983#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV983#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Signal Name", r"de": r"Signalname"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Signal Name", r"de": r"Signalname"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Name of the generated signal."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Name of the generated signal."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -3660,32 +3042,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV984#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV984#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Description", r"de": r"Beschreibung"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Description", r"de": r"Beschreibung"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Provides a concise explanation of the generated signal."
-                            }
+                            dict_={r"en": r"Provides a concise explanation of the generated signal."}
                         )
 
                     if qualifier is None:
@@ -3721,32 +3092,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV985#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV985#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Wertebereich"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Wertebereich"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Specifies the possible range of values for the generated signal."
-                            }
+                            dict_={r"en": r"Specifies the possible range of values for the generated signal."}
                         )
 
                     if qualifier is None:
@@ -3790,26 +3150,17 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV981#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV981#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"PhysicalUnit", r"de": r"Einheit"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"PhysicalUnit", r"de": r"Einheit"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -3851,28 +3202,18 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV986#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV986#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Recording Required",
-                                r"de": r"Aufzeichnung im PAM-System",
-                            }
+                            dict_={r"en": r"Recording Required", r"de": r"Aufzeichnung im PAM-System"}
                         )
 
                     if description is None:
@@ -3922,26 +3263,17 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV987#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV987#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Signal Type", r"de": r"Signalart"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Signal Type", r"de": r"Signalart"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -3989,34 +3321,22 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#01-AGC985#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGC985#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Generated Signals",
-                            r"de": r"Generiertes Signal aus Methode",
-                        }
+                        dict_={r"en": r"Generated Signals", r"de": r"Generiertes Signal aus Methode"}
                     )
 
                 if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"List of generated signals."}
-                    )
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"List of generated signals."})
 
                 if qualifier is None:
                     qualifier = ()
@@ -4026,56 +3346,37 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if signalName is not None and not isinstance(
-                    signalName, aas.SubmodelElement
-                ):
+                if signalName is not None and not isinstance(signalName, aas.SubmodelElement):
                     signalName = self.SignalName(signalName)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if description_ is not None and not isinstance(
-                    description_, aas.SubmodelElement
-                ):
+                if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if valueRange is not None and not isinstance(
-                    valueRange, aas.SubmodelElement
-                ):
+                if valueRange is not None and not isinstance(valueRange, aas.SubmodelElement):
                     valueRange = self.ValueRange(valueRange)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if physicalUnit is not None and not isinstance(
-                    physicalUnit, aas.SubmodelElement
-                ):
+                if physicalUnit is not None and not isinstance(physicalUnit, aas.SubmodelElement):
                     physicalUnit = self.PhysicalUnit(physicalUnit)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if recordingRequired is not None and not isinstance(
-                    recordingRequired, aas.SubmodelElement
-                ):
+                if recordingRequired is not None and not isinstance(recordingRequired, aas.SubmodelElement):
                     recordingRequired = self.RecordingRequired(recordingRequired)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if signalType is not None and not isinstance(
-                    signalType, aas.SubmodelElement
-                ):
+                if signalType is not None and not isinstance(signalType, aas.SubmodelElement):
                     signalType = self.SignalType(signalType)
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    signalName,
-                    description_,
-                    valueRange,
-                    physicalUnit,
-                    recordingRequired,
-                    signalType,
-                ]:
+                for se_arg in [signalName, description_, valueRange, physicalUnit, recordingRequired, signalType]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -4086,9 +3387,7 @@ class PAMSpecificationSheet(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4117,31 +3416,20 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV989#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV989#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Name", r"de": r"Eingangssignal-Name"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Name", r"de": r"Eingangssignal-Name"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Name of the required input signal."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Name of the required input signal."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4176,32 +3464,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV990#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV990#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Description", r"de": r"Beschreibung"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Description", r"de": r"Beschreibung"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Provides a concise explanation of the input signal."
-                            }
+                            dict_={r"en": r"Provides a concise explanation of the input signal."}
                         )
 
                     if qualifier is None:
@@ -4237,32 +3514,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV991#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV991#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Value Range", r"de": r"Wertebereich"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Value Range", r"de": r"Wertebereich"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Specifies the value range of the input signal."
-                            }
+                            dict_={r"en": r"Specifies the value range of the input signal."}
                         )
 
                     if qualifier is None:
@@ -4306,31 +3572,20 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV981#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV981#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Physical Unit", r"de": r"Einheit"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Physical Unit", r"de": r"Einheit"})
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Physical unit of the input signal."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": r"Physical unit of the input signal."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -4367,32 +3622,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV992#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV992#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Required", r"de": r"Benötigt"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Required", r"de": r"Benötigt"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Specifies whether the input signal is required for the method."
-                            }
+                            dict_={r"en": r"Specifies whether the input signal is required for the method."}
                         )
 
                     if qualifier is None:
@@ -4435,26 +3679,17 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV993#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV993#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Input Available", r"de": r"Vorhanden"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Input Available", r"de": r"Vorhanden"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -4501,28 +3736,18 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV946#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV946#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Functional Location",
-                                r"de": r"Technischer Platz",
-                            }
+                            dict_={r"en": r"Functional Location", r"de": r"Technischer Platz"}
                         )
 
                     if description is None:
@@ -4569,28 +3794,18 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV994#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV994#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Recording Required",
-                                r"de": r"Aufzeichnung im PAM-System",
-                            }
+                            dict_={r"en": r"Recording Required", r"de": r"Aufzeichnung im PAM-System"}
                         )
 
                     if description is None:
@@ -4611,9 +3826,7 @@ class PAMSpecificationSheet(aas.Submodel):
                             f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
                         )
 
-                    if value is not None and not re.fullmatch(
-                        self.ALLOWED_PATTERN, xsd.xsd_repr(value)
-                    ):
+                    if value is not None and not re.fullmatch(self.ALLOWED_PATTERN, xsd.xsd_repr(value)):
                         raise ValueError(
                             f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_PATTERN}"
                         )
@@ -4648,28 +3861,18 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#01-AGC986#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGC986#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Required Input Signals",
-                            r"de": r"Vorhandene, benötigte Sensoren, Geräte",
-                        }
+                        dict_={r"en": r"Required Input Signals", r"de": r"Vorhandene, benötigte Sensoren, Geräte"}
                     )
 
                 if description is None:
@@ -4690,51 +3893,37 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if description_ is not None and not isinstance(
-                    description_, aas.SubmodelElement
-                ):
+                if description_ is not None and not isinstance(description_, aas.SubmodelElement):
                     description_ = self.Description(description_)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if valueRange is not None and not isinstance(
-                    valueRange, aas.SubmodelElement
-                ):
+                if valueRange is not None and not isinstance(valueRange, aas.SubmodelElement):
                     valueRange = self.ValueRange(valueRange)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if physicalUnit is not None and not isinstance(
-                    physicalUnit, aas.SubmodelElement
-                ):
+                if physicalUnit is not None and not isinstance(physicalUnit, aas.SubmodelElement):
                     physicalUnit = self.PhysicalUnit(physicalUnit)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if required is not None and not isinstance(
-                    required, aas.SubmodelElement
-                ):
+                if required is not None and not isinstance(required, aas.SubmodelElement):
                     required = self.Required(required)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if inputAvailable is not None and not isinstance(
-                    inputAvailable, aas.SubmodelElement
-                ):
+                if inputAvailable is not None and not isinstance(inputAvailable, aas.SubmodelElement):
                     inputAvailable = self.InputAvailable(inputAvailable)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if functionalLocation is not None and not isinstance(
-                    functionalLocation, aas.SubmodelElement
-                ):
+                if functionalLocation is not None and not isinstance(functionalLocation, aas.SubmodelElement):
                     functionalLocation = self.FunctionalLocation(functionalLocation)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if recordingRequired is not None and not isinstance(
-                    recordingRequired, aas.SubmodelElement
-                ):
+                if recordingRequired is not None and not isinstance(recordingRequired, aas.SubmodelElement):
                     recordingRequired = self.RecordingRequired(recordingRequired)
 
                 # Add all passed/initialized submodel elements to a single list
@@ -4759,9 +3948,7 @@ class PAMSpecificationSheet(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4786,20 +3973,13 @@ class PAMSpecificationSheet(aas.Submodel):
             category: Optional[str] = r"PARAMETER",
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"0173-1#01-AGC983#002",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGC983#002"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
@@ -4809,9 +3989,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Characteristics of the method used for state or fault detection."
-                    }
+                    dict_={r"en": r"Characteristics of the method used for state or fault detection."}
                 )
 
             if qualifier is None:
@@ -4830,9 +4008,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(requiredInputSignals, str):
-                raise TypeError(
-                    "requiredInputSignals takes several elements, got a str"
-                )
+                raise TypeError("requiredInputSignals takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -4847,9 +4023,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4888,32 +4062,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAR969#002",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAR969#002"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Datum"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Datum"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Date of revision of the PAM specification sheet."
-                            }
+                            dict_={r"en": r"Date of revision of the PAM specification sheet."}
                         )
 
                     if qualifier is None:
@@ -4949,32 +4112,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV997#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV997#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Author", r"de": r"Verfasser"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Author", r"de": r"Verfasser"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "The individual responsible for the document's revision."
-                            }
+                            dict_={r"en": "The individual responsible for the document's revision."}
                         )
 
                     if qualifier is None:
@@ -5010,26 +4162,17 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV999#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV999#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Checked", r"de": r"Geprüft"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Checked", r"de": r"Geprüft"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
@@ -5069,32 +4212,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAV998#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV998#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Released", r"de": r"Genehmigt"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Released", r"de": r"Genehmigt"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The individual who has authorized the document for release."
-                            }
+                            dict_={r"en": r"The individual who has authorized the document for release."}
                         )
 
                     if qualifier is None:
@@ -5130,34 +4262,22 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAW000#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW000#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
                         display_name = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Document Version",
-                                r"de": r"Dokumentenidentifikation",
-                            }
+                            dict_={r"en": r"Document Version", r"de": r"Dokumentenidentifikation"}
                         )
 
                     if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": "Identifier for the document's version."}
-                        )
+                        description = aas.MultiLanguageTextType(dict_={r"en": "Identifier for the document's version."})
 
                     if qualifier is None:
                         qualifier = ()
@@ -5192,32 +4312,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAW001#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW001#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Company", r"de": r"Firma"}
-                        )
+                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Company", r"de": r"Firma"})
 
                     if description is None:
                         description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The name of the company associated with the confirmation of the document."
-                            }
+                            dict_={r"en": r"The name of the company associated with the confirmation of the document."}
                         )
 
                     if qualifier is None:
@@ -5254,28 +4363,18 @@ class PAMSpecificationSheet(aas.Submodel):
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"0173-1#01-AGC988#001",
-                        ),
-                    ),
+                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AGC988#001"),),
                     referred_semantic_id=None,
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Document Confirmation",
-                            r"de": r"Dokument Bestätigung",
-                        }
+                        dict_={r"en": r"Document Confirmation", r"de": r"Dokument Bestätigung"}
                     )
 
                 if description is None:
@@ -5308,16 +4407,12 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if released is not None and not isinstance(
-                    released, aas.SubmodelElement
-                ):
+                if released is not None and not isinstance(released, aas.SubmodelElement):
                     released = self.Released(released)
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if documentVersion is not None and not isinstance(
-                    documentVersion, aas.SubmodelElement
-                ):
+                if documentVersion is not None and not isinstance(documentVersion, aas.SubmodelElement):
                     documentVersion = self.DocumentVersion(documentVersion)
 
                 # Build a submodel element if a raw value was passed in the argument
@@ -5327,14 +4422,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
-                for se_arg in [
-                    date,
-                    author,
-                    checked,
-                    released,
-                    documentVersion,
-                    company,
-                ]:
+                for se_arg in [date, author, checked, released, documentVersion, company]:
                     if se_arg is None:
                         continue
                     elif isinstance(se_arg, aas.SubmodelElement):
@@ -5345,9 +4433,7 @@ class PAMSpecificationSheet(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5370,35 +4456,23 @@ class PAMSpecificationSheet(aas.Submodel):
             category: Optional[str] = r"PARAMETER",
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"173-1#02-AAW627#001",
-                    ),
-                ),
+                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"173-1#02-AAW627#001"),),
                 referred_semantic_id=None,
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if display_name is None:
                 display_name = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Document Footer",
-                        r"de": r"Dokumentenfuß Anwender und Anbieter",
-                    }
+                    dict_={r"en": r"Document Footer", r"de": r"Dokumentenfuß Anwender und Anbieter"}
                 )
 
             if description is None:
                 description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Release information related to the complete PAM specification sheet."
-                    }
+                    dict_={r"en": r"Release information related to the complete PAM specification sheet."}
                 )
 
             if qualifier is None:
@@ -5409,9 +4483,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             # A str would be split into its characters
             if isinstance(documentConfirmation, str):
-                raise TypeError(
-                    "documentConfirmation takes several elements, got a str"
-                )
+                raise TypeError("documentConfirmation takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -5426,9 +4498,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -5471,10 +4541,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
         if display_name is None:
             display_name = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"PAM Specification Sheet",
-                    r"de": r"PAM Spezificationsblatt",
-                }
+                dict_={r"en": r"PAM Specification Sheet", r"de": r"PAM Spezificationsblatt"}
             )
 
         if description is None:
@@ -5510,14 +4577,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
         # Add all passed/initialized submodel elements to a single list
         embedded_submodel_elements = []
-        for se_arg in [
-            documentHeader,
-            generalInformation,
-            completeSystem,
-            subSystem,
-            applicableMethod,
-            documentFooter,
-        ]:
+        for se_arg in [documentHeader, generalInformation, completeSystem, subSystem, applicableMethod, documentFooter]:
             if se_arg is None:
                 continue
             elif isinstance(se_arg, aas.SubmodelElement):
@@ -5528,9 +4588,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

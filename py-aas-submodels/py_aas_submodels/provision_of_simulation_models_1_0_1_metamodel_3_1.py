@@ -29,9 +29,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -93,9 +91,7 @@ class SimulationModels(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -161,9 +157,7 @@ class SimulationModels(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -212,9 +206,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -230,12 +222,7 @@ class SimulationModels(aas.Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if posSimPurpose:
                     posSimPurpose = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.PosSimPurpose(i)
-                        )
-                        for i in posSimPurpose
+                        i if isinstance(i, aas.SubmodelElement) else self.PosSimPurpose(i) for i in posSimPurpose
                     ]
 
                 # A str would be split into its characters
@@ -245,12 +232,7 @@ class SimulationModels(aas.Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if negSimPurpose:
                     negSimPurpose = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.NegSimPurpose(i)
-                        )
-                        for i in negSimPurpose
+                        i if isinstance(i, aas.SubmodelElement) else self.NegSimPurpose(i) for i in negSimPurpose
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
@@ -266,9 +248,7 @@ class SimulationModels(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -315,9 +295,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -379,9 +357,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -435,9 +411,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -504,9 +478,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -560,9 +532,7 @@ class SimulationModels(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -609,9 +579,7 @@ class SimulationModels(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -657,9 +625,7 @@ class SimulationModels(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -707,9 +673,7 @@ class SimulationModels(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -763,9 +727,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -812,9 +774,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -861,9 +821,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -902,9 +860,7 @@ class SimulationModels(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -916,9 +872,7 @@ class SimulationModels(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -958,9 +912,7 @@ class SimulationModels(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -972,9 +924,7 @@ class SimulationModels(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1011,9 +961,7 @@ class SimulationModels(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1025,9 +973,7 @@ class SimulationModels(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1069,9 +1015,7 @@ class SimulationModels(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1083,9 +1027,7 @@ class SimulationModels(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1124,14 +1066,10 @@ class SimulationModels(aas.Submodel):
                                 id_short: Optional[str] = r"SolverAlgorithm",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1143,9 +1081,7 @@ class SimulationModels(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1174,19 +1110,13 @@ class SimulationModels(aas.Submodel):
                             def __init__(
                                 self,
                                 value: str,
-                                id_short: Optional[
-                                    str
-                                ] = r"ToolSolverFurtherDescription",
+                                id_short: Optional[str] = r"ToolSolverFurtherDescription",
                                 value_type: aas.DataTypeDefXsd = str,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1198,9 +1128,7 @@ class SimulationModels(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1232,14 +1160,10 @@ class SimulationModels(aas.Submodel):
                                 id_short: Optional[str] = r"Tolerance",
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[
-                                    aas.MultiLanguageNameType
-                                ] = None,
+                                display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[
-                                    aas.Reference
-                                ] = aas.ExternalReference(
+                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                     key=(
                                         aas.Key(
                                             type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1251,9 +1175,7 @@ class SimulationModels(aas.Submodel):
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[
-                                    aas.EmbeddedDataSpecification
-                                ] = None,
+                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
 
                                 if qualifier is None:
@@ -1280,17 +1202,13 @@ class SimulationModels(aas.Submodel):
                         def __init__(
                             self,
                             solverAlgorithm: Union[str, SolverAlgorithm],
-                            toolSolverFurtherDescription: Optional[
-                                Union[str, ToolSolverFurtherDescription]
-                            ] = None,
+                            toolSolverFurtherDescription: Optional[Union[str, ToolSolverFurtherDescription]] = None,
                             tolerance: Optional[Union[xsd.Float, Tolerance]] = None,
                             id_short: Optional[str] = r"TestedToolSolverAlgorithm",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -1302,9 +1220,7 @@ class SimulationModels(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -1315,39 +1231,26 @@ class SimulationModels(aas.Submodel):
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if solverAlgorithm is not None and not isinstance(
-                                solverAlgorithm, aas.SubmodelElement
-                            ):
+                            if solverAlgorithm is not None and not isinstance(solverAlgorithm, aas.SubmodelElement):
                                 solverAlgorithm = self.SolverAlgorithm(solverAlgorithm)
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if (
-                                toolSolverFurtherDescription is not None
-                                and not isinstance(
-                                    toolSolverFurtherDescription, aas.SubmodelElement
-                                )
+                            if toolSolverFurtherDescription is not None and not isinstance(
+                                toolSolverFurtherDescription, aas.SubmodelElement
                             ):
-                                toolSolverFurtherDescription = (
-                                    self.ToolSolverFurtherDescription(
-                                        toolSolverFurtherDescription
-                                    )
+                                toolSolverFurtherDescription = self.ToolSolverFurtherDescription(
+                                    toolSolverFurtherDescription
                                 )
 
                             # Build a submodel element if a raw value was passed in the argument
 
-                            if tolerance is not None and not isinstance(
-                                tolerance, aas.SubmodelElement
-                            ):
+                            if tolerance is not None and not isinstance(tolerance, aas.SubmodelElement):
                                 tolerance = self.Tolerance(tolerance)
 
                             # Add all passed/initialized submodel elements to a single list
                             embedded_submodel_elements = []
-                            for se_arg in [
-                                solverAlgorithm,
-                                toolSolverFurtherDescription,
-                                tolerance,
-                            ]:
+                            for se_arg in [solverAlgorithm, toolSolverFurtherDescription, tolerance]:
                                 if se_arg is None:
                                     continue
                                 elif isinstance(se_arg, aas.SubmodelElement):
@@ -1381,9 +1284,7 @@ class SimulationModels(aas.Submodel):
                         stiffSolverNeeded: Union[bool, StiffSolverNeeded],
                         solverIncluded: Union[bool, SolverIncluded],
                         fixedStepSize: Optional[Union[xsd.Float, FixedStepSize]] = None,
-                        testedToolSolverAlgorithm: Optional[
-                            Iterable[TestedToolSolverAlgorithm]
-                        ] = None,
+                        testedToolSolverAlgorithm: Optional[Iterable[TestedToolSolverAlgorithm]] = None,
                         id_short: Optional[str] = r"SolverAndTolerances",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
@@ -1400,9 +1301,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1416,38 +1315,26 @@ class SimulationModels(aas.Submodel):
                         if stepSizeControlNeeded is not None and not isinstance(
                             stepSizeControlNeeded, aas.SubmodelElement
                         ):
-                            stepSizeControlNeeded = self.StepSizeControlNeeded(
-                                stepSizeControlNeeded
-                            )
+                            stepSizeControlNeeded = self.StepSizeControlNeeded(stepSizeControlNeeded)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if fixedStepSize is not None and not isinstance(
-                            fixedStepSize, aas.SubmodelElement
-                        ):
+                        if fixedStepSize is not None and not isinstance(fixedStepSize, aas.SubmodelElement):
                             fixedStepSize = self.FixedStepSize(fixedStepSize)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if stiffSolverNeeded is not None and not isinstance(
-                            stiffSolverNeeded, aas.SubmodelElement
-                        ):
-                            stiffSolverNeeded = self.StiffSolverNeeded(
-                                stiffSolverNeeded
-                            )
+                        if stiffSolverNeeded is not None and not isinstance(stiffSolverNeeded, aas.SubmodelElement):
+                            stiffSolverNeeded = self.StiffSolverNeeded(stiffSolverNeeded)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if solverIncluded is not None and not isinstance(
-                            solverIncluded, aas.SubmodelElement
-                        ):
+                        if solverIncluded is not None and not isinstance(solverIncluded, aas.SubmodelElement):
                             solverIncluded = self.SolverIncluded(solverIncluded)
 
                         # A str would be split into its characters
                         if isinstance(testedToolSolverAlgorithm, str):
-                            raise TypeError(
-                                "testedToolSolverAlgorithm takes several elements, got a str"
-                            )
+                            raise TypeError("testedToolSolverAlgorithm takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
                         embedded_submodel_elements = []
@@ -1468,9 +1355,7 @@ class SimulationModels(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1489,9 +1374,7 @@ class SimulationModels(aas.Submodel):
                     self,
                     simToolName: Union[str, SimToolName],
                     solverAndTolerances: SolverAndTolerances,
-                    dependencySimTool: Optional[
-                        Iterable[Union[str, DependencySimTool]]
-                    ] = None,
+                    dependencySimTool: Optional[Iterable[Union[str, DependencySimTool]]] = None,
                     compiler: Optional[Iterable[Union[str, Compiler]]] = None,
                     id_short: Optional[str] = r"SimulationTool",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -1509,9 +1392,7 @@ class SimulationModels(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1522,25 +1403,17 @@ class SimulationModels(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if simToolName is not None and not isinstance(
-                        simToolName, aas.SubmodelElement
-                    ):
+                    if simToolName is not None and not isinstance(simToolName, aas.SubmodelElement):
                         simToolName = self.SimToolName(simToolName)
 
                     # A str would be split into its characters
                     if isinstance(dependencySimTool, str):
-                        raise TypeError(
-                            "dependencySimTool takes several elements, got a str"
-                        )
+                        raise TypeError("dependencySimTool takes several elements, got a str")
 
                     # Build submodel elements from raw values passed in the argument
                     if dependencySimTool:
                         dependencySimTool = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.DependencySimTool(i)
-                            )
+                            i if isinstance(i, aas.SubmodelElement) else self.DependencySimTool(i)
                             for i in dependencySimTool
                         ]
 
@@ -1550,23 +1423,11 @@ class SimulationModels(aas.Submodel):
 
                     # Build submodel elements from raw values passed in the argument
                     if compiler:
-                        compiler = [
-                            (
-                                i
-                                if isinstance(i, aas.SubmodelElement)
-                                else self.Compiler(i)
-                            )
-                            for i in compiler
-                        ]
+                        compiler = [i if isinstance(i, aas.SubmodelElement) else self.Compiler(i) for i in compiler]
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        simToolName,
-                        dependencySimTool,
-                        compiler,
-                        solverAndTolerances,
-                    ]:
+                    for se_arg in [simToolName, dependencySimTool, compiler, solverAndTolerances]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -1577,9 +1438,7 @@ class SimulationModels(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1599,12 +1458,8 @@ class SimulationModels(aas.Submodel):
                 operatingSystem: Union[str, OperatingSystem],
                 simulationTool: Iterable[SimulationTool],
                 toolEnvironment: Optional[Iterable[Union[str, ToolEnvironment]]] = None,
-                dependencyEnvironment: Optional[
-                    Union[aas.LangStringSet, DependencyEnvironment]
-                ] = None,
-                visualizationInformation: Optional[
-                    Union[str, VisualizationInformation]
-                ] = None,
+                dependencyEnvironment: Optional[Union[aas.LangStringSet, DependencyEnvironment]] = None,
+                visualizationInformation: Optional[Union[str, VisualizationInformation]] = None,
                 id_short: Optional[str] = r"Environment",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
@@ -1621,9 +1476,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1634,9 +1487,7 @@ class SimulationModels(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if operatingSystem is not None and not isinstance(
-                    operatingSystem, aas.SubmodelElement
-                ):
+                if operatingSystem is not None and not isinstance(operatingSystem, aas.SubmodelElement):
                     operatingSystem = self.OperatingSystem(operatingSystem)
 
                 # A str would be split into its characters
@@ -1646,31 +1497,20 @@ class SimulationModels(aas.Submodel):
                 # Build submodel elements from raw values passed in the argument
                 if toolEnvironment:
                     toolEnvironment = [
-                        (
-                            i
-                            if isinstance(i, aas.SubmodelElement)
-                            else self.ToolEnvironment(i)
-                        )
-                        for i in toolEnvironment
+                        i if isinstance(i, aas.SubmodelElement) else self.ToolEnvironment(i) for i in toolEnvironment
                     ]
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if dependencyEnvironment is not None and not isinstance(
-                    dependencyEnvironment, aas.SubmodelElement
-                ):
-                    dependencyEnvironment = self.DependencyEnvironment(
-                        dependencyEnvironment
-                    )
+                if dependencyEnvironment is not None and not isinstance(dependencyEnvironment, aas.SubmodelElement):
+                    dependencyEnvironment = self.DependencyEnvironment(dependencyEnvironment)
 
                 # Build a submodel element if a raw value was passed in the argument
 
                 if visualizationInformation is not None and not isinstance(
                     visualizationInformation, aas.SubmodelElement
                 ):
-                    visualizationInformation = self.VisualizationInformation(
-                        visualizationInformation
-                    )
+                    visualizationInformation = self.VisualizationInformation(visualizationInformation)
 
                 # A str would be split into its characters
                 if isinstance(simulationTool, str):
@@ -1695,9 +1535,7 @@ class SimulationModels(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1734,9 +1572,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -1784,9 +1620,7 @@ class SimulationModels(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -1835,9 +1669,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1883,9 +1715,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1930,9 +1760,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -1977,9 +1805,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2024,9 +1850,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2054,12 +1878,8 @@ class SimulationModels(aas.Submodel):
                     modelVersionId: Union[str, ModelVersionId],
                     digitalFile: DigitalFile,
                     modelPreviewImage: Optional[ModelPreviewImage] = None,
-                    modelFileReleaseNotesTxt: Optional[
-                        Union[aas.LangStringSet, ModelFileReleaseNotesTxt]
-                    ] = None,
-                    modelFileReleaseNotesFile: Optional[
-                        ModelFileReleaseNotesFile
-                    ] = None,
+                    modelFileReleaseNotesTxt: Optional[Union[aas.LangStringSet, ModelFileReleaseNotesTxt]] = None,
+                    modelFileReleaseNotesFile: Optional[ModelFileReleaseNotesFile] = None,
                     id_short: Optional[str] = r"ModelFileVersion",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
@@ -2076,9 +1896,7 @@ class SimulationModels(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2089,9 +1907,7 @@ class SimulationModels(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if modelVersionId is not None and not isinstance(
-                        modelVersionId, aas.SubmodelElement
-                    ):
+                    if modelVersionId is not None and not isinstance(modelVersionId, aas.SubmodelElement):
                         modelVersionId = self.ModelVersionId(modelVersionId)
 
                     # Build a submodel element if a raw value was passed in the argument
@@ -2099,9 +1915,7 @@ class SimulationModels(aas.Submodel):
                     if modelFileReleaseNotesTxt is not None and not isinstance(
                         modelFileReleaseNotesTxt, aas.SubmodelElement
                     ):
-                        modelFileReleaseNotesTxt = self.ModelFileReleaseNotesTxt(
-                            modelFileReleaseNotesTxt
-                        )
+                        modelFileReleaseNotesTxt = self.ModelFileReleaseNotesTxt(modelFileReleaseNotesTxt)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -2122,9 +1936,7 @@ class SimulationModels(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2159,9 +1971,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2172,16 +1982,12 @@ class SimulationModels(aas.Submodel):
 
                 # Build a submodel element if a raw value was passed in the argument
 
-                if modelFileType is not None and not isinstance(
-                    modelFileType, aas.SubmodelElement
-                ):
+                if modelFileType is not None and not isinstance(modelFileType, aas.SubmodelElement):
                     modelFileType = self.ModelFileType(modelFileType)
 
                 # A str would be split into its characters
                 if isinstance(modelFileVersion, str):
-                    raise TypeError(
-                        "modelFileVersion takes several elements, got a str"
-                    )
+                    raise TypeError("modelFileVersion takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -2196,9 +2002,7 @@ class SimulationModels(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2246,9 +2050,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2299,9 +2101,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2356,9 +2156,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2409,9 +2207,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2457,9 +2253,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -2497,20 +2291,13 @@ class SimulationModels(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAW001#001",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW001#001"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2546,20 +2333,13 @@ class SimulationModels(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAO895#003",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO895#003"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2597,20 +2377,13 @@ class SimulationModels(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO199#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO199#003"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2646,20 +2419,13 @@ class SimulationModels(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO198#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO198#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2695,20 +2461,13 @@ class SimulationModels(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO201#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO201#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2744,20 +2503,13 @@ class SimulationModels(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO200#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO200#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2792,20 +2544,13 @@ class SimulationModels(aas.Submodel):
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-AAQ836#005",
-                            ),
-                        ),
+                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ836#005"),),
                         referred_semantic_id=None,
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -2816,40 +2561,27 @@ class SimulationModels(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if typeOfEmailAddress is not None and not isinstance(
-                        typeOfEmailAddress, aas.SubmodelElement
-                    ):
+                    if typeOfEmailAddress is not None and not isinstance(typeOfEmailAddress, aas.SubmodelElement):
                         typeOfEmailAddress = self.TypeOfEmailAddress(typeOfEmailAddress)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if emailAddress is not None and not isinstance(
-                        emailAddress, aas.SubmodelElement
-                    ):
+                    if emailAddress is not None and not isinstance(emailAddress, aas.SubmodelElement):
                         emailAddress = self.EmailAddress(emailAddress)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if typeOfPublicKey is not None and not isinstance(
-                        typeOfPublicKey, aas.SubmodelElement
-                    ):
+                    if typeOfPublicKey is not None and not isinstance(typeOfPublicKey, aas.SubmodelElement):
                         typeOfPublicKey = self.TypeOfPublicKey(typeOfPublicKey)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if publicKey is not None and not isinstance(
-                        publicKey, aas.SubmodelElement
-                    ):
+                    if publicKey is not None and not isinstance(publicKey, aas.SubmodelElement):
                         publicKey = self.PublicKey(publicKey)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
-                    for se_arg in [
-                        typeOfEmailAddress,
-                        emailAddress,
-                        typeOfPublicKey,
-                        publicKey,
-                    ]:
+                    for se_arg in [typeOfEmailAddress, emailAddress, typeOfPublicKey, publicKey]:
                         if se_arg is None:
                             continue
                         elif isinstance(se_arg, aas.SubmodelElement):
@@ -2860,9 +2592,7 @@ class SimulationModels(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2891,20 +2621,13 @@ class SimulationModels(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO137#003",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO137#003"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -2940,20 +2663,13 @@ class SimulationModels(aas.Submodel):
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-AAO136#002",
-                                ),
-                            ),
+                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO136#002"),),
                             referred_semantic_id=None,
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3000,9 +2716,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3047,9 +2761,7 @@ class SimulationModels(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3060,23 +2772,17 @@ class SimulationModels(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if typeOfTelephone is not None and not isinstance(
-                        typeOfTelephone, aas.SubmodelElement
-                    ):
+                    if typeOfTelephone is not None and not isinstance(typeOfTelephone, aas.SubmodelElement):
                         typeOfTelephone = self.TypeOfTelephone(typeOfTelephone)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if telephoneNumber is not None and not isinstance(
-                        telephoneNumber, aas.SubmodelElement
-                    ):
+                    if telephoneNumber is not None and not isinstance(telephoneNumber, aas.SubmodelElement):
                         telephoneNumber = self.TelephoneNumber(telephoneNumber)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if availableTime is not None and not isinstance(
-                        availableTime, aas.SubmodelElement
-                    ):
+                    if availableTime is not None and not isinstance(availableTime, aas.SubmodelElement):
                         availableTime = self.AvailableTime(availableTime)
 
                     # Add all passed/initialized submodel elements to a single list
@@ -3092,9 +2798,7 @@ class SimulationModels(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3131,9 +2835,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -3153,10 +2855,7 @@ class SimulationModels(aas.Submodel):
 
                 # Build submodel elements from raw values passed in the argument
                 if language:
-                    language = [
-                        i if isinstance(i, aas.SubmodelElement) else self.Language(i)
-                        for i in language
-                    ]
+                    language = [i if isinstance(i, aas.SubmodelElement) else self.Language(i) for i in language]
 
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
@@ -3171,9 +2870,7 @@ class SimulationModels(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3215,9 +2912,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3263,9 +2958,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3301,9 +2994,7 @@ class SimulationModels(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3315,9 +3006,7 @@ class SimulationModels(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3352,9 +3041,7 @@ class SimulationModels(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3366,9 +3053,7 @@ class SimulationModels(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3394,13 +3079,7 @@ class SimulationModels(aas.Submodel):
 
                     class VariableType(aas.Property):
 
-                        ALLOWED_VALUES = (
-                            r"Real",
-                            r"Integer",
-                            r"Boolean",
-                            r"String",
-                            r"ENUM",
-                        )
+                        ALLOWED_VALUES = (r"Real", r"Integer", r"Boolean", r"String", r"ENUM")
 
                         def __init__(
                             self,
@@ -3411,9 +3090,7 @@ class SimulationModels(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3425,9 +3102,7 @@ class SimulationModels(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3466,9 +3141,7 @@ class SimulationModels(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3480,9 +3153,7 @@ class SimulationModels(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3507,18 +3178,7 @@ class SimulationModels(aas.Submodel):
 
                     class UnitList(aas.Property):
 
-                        ALLOWED_VALUES = (
-                            r"s",
-                            r"m",
-                            r"kg",
-                            r"N",
-                            r"m/s",
-                            r"m/s^2",
-                            r"V",
-                            r"A",
-                            r"K",
-                            r"none",
-                        )
+                        ALLOWED_VALUES = (r"s", r"m", r"kg", r"N", r"m/s", r"m/s^2", r"V", r"A", r"K", r"none")
 
                         def __init__(
                             self,
@@ -3529,9 +3189,7 @@ class SimulationModels(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3543,9 +3201,7 @@ class SimulationModels(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3584,9 +3240,7 @@ class SimulationModels(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3598,9 +3252,7 @@ class SimulationModels(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3636,9 +3288,7 @@ class SimulationModels(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3650,9 +3300,7 @@ class SimulationModels(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3694,9 +3342,7 @@ class SimulationModels(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[
-                                aas.Reference
-                            ] = aas.ExternalReference(
+                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                                 key=(
                                     aas.Key(
                                         type_=aas.KeyTypes.GLOBAL_REFERENCE,
@@ -3708,9 +3354,7 @@ class SimulationModels(aas.Submodel):
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[
-                                aas.EmbeddedDataSpecification
-                            ] = None,
+                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
                             if qualifier is None:
@@ -3746,12 +3390,8 @@ class SimulationModels(aas.Submodel):
                         unitList: Union[str, UnitList],
                         variableCausality: Union[str, VariableCausality],
                         range: Optional[Union[str, Range]] = None,
-                        variableDescription: Optional[
-                            Union[aas.LangStringSet, VariableDescription]
-                        ] = None,
-                        unitDescription: Optional[
-                            Union[aas.LangStringSet, UnitDescription]
-                        ] = None,
+                        variableDescription: Optional[Union[aas.LangStringSet, VariableDescription]] = None,
+                        unitDescription: Optional[Union[aas.LangStringSet, UnitDescription]] = None,
                         variablePrefix: Optional[Union[str, VariablePrefix]] = None,
                         id_short: Optional[str] = r"Variable",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3769,9 +3409,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -3782,62 +3420,42 @@ class SimulationModels(aas.Submodel):
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if variableName is not None and not isinstance(
-                            variableName, aas.SubmodelElement
-                        ):
+                        if variableName is not None and not isinstance(variableName, aas.SubmodelElement):
                             variableName = self.VariableName(variableName)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if range is not None and not isinstance(
-                            range, aas.SubmodelElement
-                        ):
+                        if range is not None and not isinstance(range, aas.SubmodelElement):
                             range = self.Range(range)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if variableType is not None and not isinstance(
-                            variableType, aas.SubmodelElement
-                        ):
+                        if variableType is not None and not isinstance(variableType, aas.SubmodelElement):
                             variableType = self.VariableType(variableType)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if variableDescription is not None and not isinstance(
-                            variableDescription, aas.SubmodelElement
-                        ):
-                            variableDescription = self.VariableDescription(
-                                variableDescription
-                            )
+                        if variableDescription is not None and not isinstance(variableDescription, aas.SubmodelElement):
+                            variableDescription = self.VariableDescription(variableDescription)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if unitList is not None and not isinstance(
-                            unitList, aas.SubmodelElement
-                        ):
+                        if unitList is not None and not isinstance(unitList, aas.SubmodelElement):
                             unitList = self.UnitList(unitList)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if unitDescription is not None and not isinstance(
-                            unitDescription, aas.SubmodelElement
-                        ):
+                        if unitDescription is not None and not isinstance(unitDescription, aas.SubmodelElement):
                             unitDescription = self.UnitDescription(unitDescription)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if variableCausality is not None and not isinstance(
-                            variableCausality, aas.SubmodelElement
-                        ):
-                            variableCausality = self.VariableCausality(
-                                variableCausality
-                            )
+                        if variableCausality is not None and not isinstance(variableCausality, aas.SubmodelElement):
+                            variableCausality = self.VariableCausality(variableCausality)
 
                         # Build a submodel element if a raw value was passed in the argument
 
-                        if variablePrefix is not None and not isinstance(
-                            variablePrefix, aas.SubmodelElement
-                        ):
+                        if variablePrefix is not None and not isinstance(variablePrefix, aas.SubmodelElement):
                             variablePrefix = self.VariablePrefix(variablePrefix)
 
                         # Add all passed/initialized submodel elements to a single list
@@ -3862,9 +3480,7 @@ class SimulationModels(aas.Submodel):
                                     element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
-                                raise TypeError(
-                                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                )
+                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -3882,9 +3498,7 @@ class SimulationModels(aas.Submodel):
                 def __init__(
                     self,
                     portConnectorName: Union[str, PortConnectorName],
-                    portConDescription: Optional[
-                        Union[aas.LangStringSet, PortConDescription]
-                    ] = None,
+                    portConDescription: Optional[Union[aas.LangStringSet, PortConDescription]] = None,
                     variable: Optional[Iterable[Variable]] = None,
                     id_short: Optional[str] = r"PortsConnector",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -3902,9 +3516,7 @@ class SimulationModels(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -3915,16 +3527,12 @@ class SimulationModels(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if portConnectorName is not None and not isinstance(
-                        portConnectorName, aas.SubmodelElement
-                    ):
+                    if portConnectorName is not None and not isinstance(portConnectorName, aas.SubmodelElement):
                         portConnectorName = self.PortConnectorName(portConnectorName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if portConDescription is not None and not isinstance(
-                        portConDescription, aas.SubmodelElement
-                    ):
+                    if portConDescription is not None and not isinstance(portConDescription, aas.SubmodelElement):
                         portConDescription = self.PortConDescription(portConDescription)
 
                     # A str would be split into its characters
@@ -3944,9 +3552,7 @@ class SimulationModels(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3986,9 +3592,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4034,9 +3638,7 @@ class SimulationModels(aas.Submodel):
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[
-                            aas.EmbeddedDataSpecification
-                        ] = None,
+                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
                         if qualifier is None:
@@ -4062,9 +3664,7 @@ class SimulationModels(aas.Submodel):
                 def __init__(
                     self,
                     binaryConName: Union[str, BinaryConName],
-                    binaryConDescription: Optional[
-                        Union[aas.LangStringSet, BinaryConDescription]
-                    ] = None,
+                    binaryConDescription: Optional[Union[aas.LangStringSet, BinaryConDescription]] = None,
                     id_short: Optional[str] = r"BinaryConnector",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
@@ -4081,9 +3681,7 @@ class SimulationModels(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[
-                        aas.EmbeddedDataSpecification
-                    ] = None,
+                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
                     if qualifier is None:
@@ -4094,19 +3692,13 @@ class SimulationModels(aas.Submodel):
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if binaryConName is not None and not isinstance(
-                        binaryConName, aas.SubmodelElement
-                    ):
+                    if binaryConName is not None and not isinstance(binaryConName, aas.SubmodelElement):
                         binaryConName = self.BinaryConName(binaryConName)
 
                     # Build a submodel element if a raw value was passed in the argument
 
-                    if binaryConDescription is not None and not isinstance(
-                        binaryConDescription, aas.SubmodelElement
-                    ):
-                        binaryConDescription = self.BinaryConDescription(
-                            binaryConDescription
-                        )
+                    if binaryConDescription is not None and not isinstance(binaryConDescription, aas.SubmodelElement):
+                        binaryConDescription = self.BinaryConDescription(binaryConDescription)
 
                     # Add all passed/initialized submodel elements to a single list
                     embedded_submodel_elements = []
@@ -4121,9 +3713,7 @@ class SimulationModels(aas.Submodel):
                                 element.id_short = f"{element.id_short}{n:02d}"
                                 embedded_submodel_elements.append(element)
                         else:
-                            raise TypeError(
-                                f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                            )
+                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -4158,9 +3748,7 @@ class SimulationModels(aas.Submodel):
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[
-                    aas.EmbeddedDataSpecification
-                ] = None,
+                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
                 if qualifier is None:
@@ -4190,9 +3778,7 @@ class SimulationModels(aas.Submodel):
                             element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
-                        raise TypeError(
-                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                        )
+                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4223,9 +3809,7 @@ class SimulationModels(aas.Submodel):
             paramFile: Optional[ParamFile] = None,
             initStateFile: Optional[InitStateFile] = None,
             defaultSimTime: Optional[Union[xsd.Float, DefaultSimTime]] = None,
-            simModManufacturerInformation: Optional[
-                Iterable[SimModManufacturerInformation]
-            ] = None,
+            simModManufacturerInformation: Optional[Iterable[SimModManufacturerInformation]] = None,
             ports: Optional[Ports] = None,
             id_short: Optional[str] = r"SimulationModel",
             display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -4243,9 +3827,7 @@ class SimulationModels(aas.Submodel):
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[
-                aas.EmbeddedDataSpecification
-            ] = None,
+            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
             if qualifier is None:
@@ -4265,10 +3847,7 @@ class SimulationModels(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if typeOfModel:
-                typeOfModel = [
-                    i if isinstance(i, aas.SubmodelElement) else self.TypeOfModel(i)
-                    for i in typeOfModel
-                ]
+                typeOfModel = [i if isinstance(i, aas.SubmodelElement) else self.TypeOfModel(i) for i in typeOfModel]
 
             # A str would be split into its characters
             if isinstance(scopeOfModel, str):
@@ -4276,16 +3855,11 @@ class SimulationModels(aas.Submodel):
 
             # Build submodel elements from raw values passed in the argument
             if scopeOfModel:
-                scopeOfModel = [
-                    i if isinstance(i, aas.SubmodelElement) else self.ScopeOfModel(i)
-                    for i in scopeOfModel
-                ]
+                scopeOfModel = [i if isinstance(i, aas.SubmodelElement) else self.ScopeOfModel(i) for i in scopeOfModel]
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if licenseModel is not None and not isinstance(
-                licenseModel, aas.SubmodelElement
-            ):
+            if licenseModel is not None and not isinstance(licenseModel, aas.SubmodelElement):
                 licenseModel = self.LicenseModel(licenseModel)
 
             # A str would be split into its characters
@@ -4295,12 +3869,7 @@ class SimulationModels(aas.Submodel):
             # Build submodel elements from raw values passed in the argument
             if engineeringDomain:
                 engineeringDomain = [
-                    (
-                        i
-                        if isinstance(i, aas.SubmodelElement)
-                        else self.EngineeringDomain(i)
-                    )
-                    for i in engineeringDomain
+                    i if isinstance(i, aas.SubmodelElement) else self.EngineeringDomain(i) for i in engineeringDomain
                 ]
 
             # A str would be split into its characters
@@ -4313,30 +3882,22 @@ class SimulationModels(aas.Submodel):
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if paramMethod is not None and not isinstance(
-                paramMethod, aas.SubmodelElement
-            ):
+            if paramMethod is not None and not isinstance(paramMethod, aas.SubmodelElement):
                 paramMethod = self.ParamMethod(paramMethod)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if initStateMethod is not None and not isinstance(
-                initStateMethod, aas.SubmodelElement
-            ):
+            if initStateMethod is not None and not isinstance(initStateMethod, aas.SubmodelElement):
                 initStateMethod = self.InitStateMethod(initStateMethod)
 
             # Build a submodel element if a raw value was passed in the argument
 
-            if defaultSimTime is not None and not isinstance(
-                defaultSimTime, aas.SubmodelElement
-            ):
+            if defaultSimTime is not None and not isinstance(defaultSimTime, aas.SubmodelElement):
                 defaultSimTime = self.DefaultSimTime(defaultSimTime)
 
             # A str would be split into its characters
             if isinstance(simModManufacturerInformation, str):
-                raise TypeError(
-                    "simModManufacturerInformation takes several elements, got a str"
-                )
+                raise TypeError("simModManufacturerInformation takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
             embedded_submodel_elements = []
@@ -4368,9 +3929,7 @@ class SimulationModels(aas.Submodel):
                         element.id_short = f"{element.id_short}{n:02d}"
                         embedded_submodel_elements.append(element)
                 else:
-                    raise TypeError(
-                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                    )
+                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4434,9 +3993,7 @@ class SimulationModels(aas.Submodel):
                     element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
-                raise TypeError(
-                    f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                )
+                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
 
         super().__init__(
             submodel_element=embedded_submodel_elements,
