@@ -8,6 +8,93 @@ def global_ref(value: str) -> aas.ExternalReference:
     return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
 
 
+def collect_submodel_elements(*elements: Any, number_repeated: bool = True) -> list[aas.SubmodelElement]:
+    """Collect the submodel elements passed to an init in one list: single elements, unless None,
+    and the elements of iterables, whose idShorts get an index if `number_repeated` (e.g. Keyword00)"""
+    collected = []
+    for element in elements:
+        if element is None:
+            continue
+        elif isinstance(element, aas.SubmodelElement):
+            collected.append(element)
+        elif isinstance(element, Iterable):
+            for n, item in enumerate(element):
+                if number_repeated:
+                    # Number with two digits at least, as the placeholders {00} and __00__ of templates
+                    item.id_short = f"{item.id_short}{n:02d}"
+                collected.append(item)
+        else:
+            raise TypeError(f"Expected a submodel element or an iterable of them, got {element.__class__}")
+    return collected
+
+
+class GeneratedSubmodelElementList(aas.SubmodelElementList):
+    """SubmodelElementList, whose items may be instances of subclasses of type_value_list_element,
+    such as the generated classes of its items"""
+
+    def _check_constraints(self, new, existing) -> None:
+        # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+        # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+        saved_id_short = new.id_short
+        new.id_short = None
+
+        # We relax constraint AASd-108 here: It is allowed to add subclasses of the specified in type_value_list_element
+        if not isinstance(new, self.type_value_list_element):
+            raise aas.AASConstraintViolation(
+                108,
+                "All first level elements must be of the type specified in "
+                f"type_value_list_element={self.type_value_list_element.__name__}, "
+                f"got {new!r}",
+            )
+
+        if (
+            self.semantic_id_list_element is not None
+            and new.semantic_id is not None
+            and new.semantic_id != self.semantic_id_list_element
+        ):
+            # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+            # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+            # Not really a constraint...
+            # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+            raise aas.AASConstraintViolation(
+                107,
+                f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                "is specified all first level children must have the same "
+                f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+            )
+
+        # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+        # is either Property or Range. Thus, `new` must have the value_type property.
+        # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+        if (
+            self.type_value_list_element in (aas.Property, aas.Range)
+            and new.value_type is not self.value_type_list_element
+        ):  # type: ignore
+            raise aas.AASConstraintViolation(
+                109,
+                "All first level elements must have the value_type "  # type: ignore
+                "specified by value_type_list_element="
+                f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                f"{new!r} with value_type={new.value_type.__name__}",
+            )  # type: ignore
+
+        # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+        # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+        if new.semantic_id is not None and self.semantic_id_list_element is None:
+            for item in existing:
+                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
+                    raise aas.AASConstraintViolation(
+                        114,
+                        f"Element to be added {new!r} has semantic_id "
+                        f"{new.semantic_id!r}, while already contained element "
+                        f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                        "aren't equal.",
+                    )
+
+        # Re-assign id_short
+        new.id_short = saved_id_short
+
+
 class PowerDriveTrainSizing(aas.Submodel):
 
     class SizingProjectInformation(aas.SubmodelElementCollection):
@@ -360,19 +447,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in []:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements()
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -515,8 +591,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 amlDriveConfigVersion = self.AmlDriveConfigVersion(amlDriveConfigVersion)
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [
+
+            embedded_submodel_elements = collect_submodel_elements(
                 clientName,
                 sizingProjectName,
                 sizingProjectAxisReference,
@@ -527,18 +603,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 dateChanged,
                 contactInformation,
                 amlDriveConfigVersion,
-            ]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n:02d}"
-                        embedded_submodel_elements.append(element)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+            )
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -1418,8 +1483,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 loadTorque = self.LoadTorque(loadTorque)
 
                             # Add all passed/initialized submodel elements to a single list
-                            embedded_submodel_elements = []
-                            for se_arg in [
+
+                            embedded_submodel_elements = collect_submodel_elements(
                                 time,
                                 angularPosition,
                                 angularVelocity,
@@ -1429,20 +1494,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 axialForce,
                                 radialForce,
                                 loadTorque,
-                            ]:
-                                if se_arg is None:
-                                    continue
-                                elif isinstance(se_arg, aas.SubmodelElement):
-                                    embedded_submodel_elements.append(se_arg)
-                                elif isinstance(se_arg, Iterable):
-                                    # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n:02d}"
-                                        embedded_submodel_elements.append(element)
-                                else:
-                                    raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                    )
+                            )
 
                             super().__init__(
                                 value=embedded_submodel_elements,
@@ -1564,8 +1616,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             loadTorque = self.LoadTorque(loadTorque)
 
                         # Add all passed/initialized submodel elements to a single list
-                        embedded_submodel_elements = []
-                        for se_arg in [
+
+                        embedded_submodel_elements = collect_submodel_elements(
                             frictionTorque,
                             leverArmAxialForce,
                             axialForce,
@@ -1575,18 +1627,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             loadTorque,
                             metadataRotativeMotionFile,
                             motionSectionFile,
-                        ]:
-                            if se_arg is None:
-                                continue
-                            elif isinstance(se_arg, aas.SubmodelElement):
-                                embedded_submodel_elements.append(se_arg)
-                            elif isinstance(se_arg, Iterable):
-                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n:02d}"
-                                    embedded_submodel_elements.append(element)
-                            else:
-                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                        )
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2254,8 +2295,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 loadSideForce = self.LoadSideForce(loadSideForce)
 
                             # Add all passed/initialized submodel elements to a single list
-                            embedded_submodel_elements = []
-                            for se_arg in [
+
+                            embedded_submodel_elements = collect_submodel_elements(
                                 time,
                                 position,
                                 linearVelocity,
@@ -2263,20 +2304,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 linearJerk,
                                 frictionForce,
                                 loadSideForce,
-                            ]:
-                                if se_arg is None:
-                                    continue
-                                elif isinstance(se_arg, aas.SubmodelElement):
-                                    embedded_submodel_elements.append(se_arg)
-                                elif isinstance(se_arg, Iterable):
-                                    # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n:02d}"
-                                        embedded_submodel_elements.append(element)
-                                else:
-                                    raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                    )
+                            )
 
                             super().__init__(
                                 value=embedded_submodel_elements,
@@ -2390,8 +2418,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             counterMass = self.CounterMass(counterMass)
 
                         # Add all passed/initialized submodel elements to a single list
-                        embedded_submodel_elements = []
-                        for se_arg in [
+
+                        embedded_submodel_elements = collect_submodel_elements(
                             frictionCoefficient,
                             frictionForce,
                             compensationForce,
@@ -2400,18 +2428,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                             counterMass,
                             metadataLinearMotionFile,
                             motionSectionFile,
-                        ]:
-                            if se_arg is None:
-                                continue
-                            elif isinstance(se_arg, aas.SubmodelElement):
-                                embedded_submodel_elements.append(se_arg)
-                            elif isinstance(se_arg, Iterable):
-                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n:02d}"
-                                    embedded_submodel_elements.append(element)
-                            else:
-                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                        )
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -2458,19 +2475,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                         raise TypeError("linearSection takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [rotativeSection, linearSection]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(rotativeSection, linearSection)
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2514,19 +2520,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     motionPatternName = self.MotionPatternName(motionPatternName)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [motionPatternName, motionPatternSections]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(motionPatternName, motionPatternSections)
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2800,25 +2795,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                     )
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
-                    installationAltitude,
-                    atex2Gas,
-                    atex2Dust,
-                    ambientTemperatureController,
-                    ambientTemperatureMotor,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(
+                    installationAltitude, atex2Gas, atex2Dust, ambientTemperatureController, ambientTemperatureMotor
+                )
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3274,8 +3254,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     safetyIntegrityLevel = self.SafetyIntegrityLevel(safetyIntegrityLevel)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     dcLinkCoupling,
                     brakePresent,
                     mainsConnection,
@@ -3285,18 +3265,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     protectionType,
                     certificateApproval,
                     safetyIntegrityLevel,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3476,19 +3445,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                     operatingDaysPerYear = self.OperatingDaysPerYear(operatingDaysPerYear)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [cyclesPerMinute, operatingHoursPerDay, operatingDaysPerYear]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(
+                    cyclesPerMinute, operatingHoursPerDay, operatingDaysPerYear
+                )
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3534,19 +3494,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                 embedded_data_specifications = []
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [motionPattern, environmental, overallSystemRequirements, usageProfile]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n:02d}"
-                        embedded_submodel_elements.append(element)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+            embedded_submodel_elements = collect_submodel_elements(
+                motionPattern, environmental, overallSystemRequirements, usageProfile
+            )
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -3890,26 +3841,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                     inclinationAngle = self.InclinationAngle(inclinationAngle)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     efficiency,
                     inertiaMotorSide,
                     leverArmAxialForce,
                     leverArmRadialForce,
                     noLoadTorque,
                     inclinationAngle,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -4254,26 +4194,15 @@ class PowerDriveTrainSizing(aas.Submodel):
                     inclinationAngle = self.InclinationAngle(inclinationAngle)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     efficiency,
                     inertiaMotorSide,
                     leverArmAxialForce,
                     leverArmRadialForce,
                     noLoadTorque,
                     inclinationAngle,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -4734,8 +4663,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     centroidAngle = self.CentroidAngle(centroidAngle)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     efficiency,
                     inertiaMotorSide,
                     leverArmAxialForce,
@@ -4744,18 +4673,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     inclinationAngle,
                     staticEccentricity,
                     centroidAngle,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -5204,8 +5122,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     feedConstant = self.FeedConstant(feedConstant)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     efficiency,
                     inertiaMotorSide,
                     leverArmAxialForce,
@@ -5214,18 +5132,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     inclinationAngle,
                     frictionCoefficient,
                     feedConstant,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -5674,8 +5581,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     feedConstant = self.FeedConstant(feedConstant)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     efficiency,
                     inertiaMotorSide,
                     leverArmAxialForce,
@@ -5684,18 +5591,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     inclinationAngle,
                     frictionCoefficient,
                     feedConstant,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -6144,8 +6040,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     feedConstant = self.FeedConstant(feedConstant)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     efficiency,
                     inertiaMotorSide,
                     leverArmAxialForce,
@@ -6154,18 +6050,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     inclinationAngle,
                     frictionCoefficient,
                     feedConstant,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -6614,8 +6499,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     feedConstant = self.FeedConstant(feedConstant)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     efficiency,
                     inertiaMotorSide,
                     leverArmAxialForce,
@@ -6624,18 +6509,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     inclinationAngle,
                     frictionCoefficient,
                     feedConstant,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -7086,8 +6960,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     feedConstant = self.FeedConstant(feedConstant)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     efficiency,
                     inertiaMotorSide,
                     leverArmAxialForce,
@@ -7096,18 +6970,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     inclinationAngle,
                     frictionCoefficient,
                     feedConstant,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -7733,8 +7596,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     movingPart = self.MovingPart(movingPart)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     efficiency,
                     inertiaMotorSide,
                     leverArmAxialForce,
@@ -7746,18 +7609,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     diameterPinion,
                     helixAngle,
                     movingPart,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -8206,8 +8058,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     feedConstant = self.FeedConstant(feedConstant)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     efficiency,
                     inertiaMotorSide,
                     leverArmAxialForce,
@@ -8216,18 +8068,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     inclinationAngle,
                     frictionCoefficient,
                     feedConstant,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -8289,8 +8130,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 embedded_data_specifications = []
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [
+
+            embedded_submodel_elements = collect_submodel_elements(
                 fan,
                 pump,
                 rotraryTable,
@@ -8301,18 +8142,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 travelingDrive,
                 rackDrive,
                 spindleDrive,
-            ]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n:02d}"
-                        embedded_submodel_elements.append(element)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+            )
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -8889,8 +8719,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     energyConsumtionPerCycle = self.EnergyConsumtionPerCycle(energyConsumtionPerCycle)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     manufacturerName,
                     manufacturerArticleNumber,
                     manufacturerProductDesignation,
@@ -8902,18 +8732,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     currentForEmergencyStop,
                     displacementDuringEmergencyStop,
                     energyConsumtionPerCycle,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -10375,8 +10194,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     energyConsumtionPerCycle = self.EnergyConsumtionPerCycle(energyConsumtionPerCycle)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     mainComponentType,
                     manufacturerName,
                     manufacturerArticleNumber,
@@ -10406,18 +10225,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     powerInMotorOperation,
                     rmsOfMotorTorque,
                     energyConsumtionPerCycle,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -10804,8 +10612,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     energyConsumtionPerCycle = self.EnergyConsumtionPerCycle(energyConsumtionPerCycle)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     manufacturerName,
                     manufacturerArticleNumber,
                     manufacturerProductDesignation,
@@ -10813,18 +10621,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     quantityOfParts,
                     bulkCount,
                     energyConsumtionPerCycle,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -10973,19 +10770,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                         messageText = self.MessageText(messageText)
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [criticalityOfMessage, messageText]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(criticalityOfMessage, messageText)
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -11030,19 +10816,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     raise TypeError("message takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [message]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(message)
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -11144,19 +10919,10 @@ class PowerDriveTrainSizing(aas.Submodel):
                 textStatement = self.TextStatement(textStatement)
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [overallSystem, mainComponent, otherComponent, messages, textStatement]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n:02d}"
-                        embedded_submodel_elements.append(element)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+            embedded_submodel_elements = collect_submodel_elements(
+                overallSystem, mainComponent, otherComponent, messages, textStatement
+            )
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -11214,19 +10980,10 @@ class PowerDriveTrainSizing(aas.Submodel):
             embedded_data_specifications = []
 
         # Add all passed/initialized submodel elements to a single list
-        embedded_submodel_elements = []
-        for se_arg in [sizingProjectInformation, applicationRequirements, transformationMechanism, sizingResult]:
-            if se_arg is None:
-                continue
-            elif isinstance(se_arg, aas.SubmodelElement):
-                embedded_submodel_elements.append(se_arg)
-            elif isinstance(se_arg, Iterable):
-                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                for n, element in enumerate(se_arg):
-                    element.id_short = f"{element.id_short}{n:02d}"
-                    embedded_submodel_elements.append(element)
-            else:
-                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+        embedded_submodel_elements = collect_submodel_elements(
+            sizingProjectInformation, applicationRequirements, transformationMechanism, sizingResult
+        )
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

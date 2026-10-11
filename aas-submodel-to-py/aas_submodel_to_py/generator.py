@@ -73,7 +73,7 @@ class SubmodelCodegen:
         # Modules imported by the generated classes, besides the standard imports
         self.imported_modules = set()
         classes = "\n\n".join(self.gen_cls_for_submodel(submodel) for submodel in submodels)
-        result = f"\n{self.generate_imports(self.imported_modules)}\n\n{classes}"
+        result = f"\n{self.generate_imports(self.imported_modules)}\n\n{self.generate_helpers()}\n\n{classes}"
 
         try:
             # Format the rendered class using Black
@@ -88,6 +88,9 @@ class SubmodelCodegen:
         template = self.env.get_template("imports.pyi")
         imports = template.render(typing_imports=TYPING_IMPORTS, modules=sorted(modules))
         return imports
+
+    def generate_helpers(self) -> str:
+        return self.env.get_template("helpers.pyi").render()
 
     def get_raw_value_typehint(self, se: SubmodelElement) -> Optional[str]:
         """Return the typehint of a raw value the specific class of `se` can be built from,
@@ -289,7 +292,7 @@ class SubmodelCodegen:
             render_kwargs["before_init_content"] = self.gen_cls_for_se(list_item)
         # Don't append an index to idShorts of items: they are None by default, explicit ones are kept
         render_kwargs.update(args_for_submodel_elements=[list_items_arg], args_taking_several=[list_items_arg],
-                             index_id_shorts=False)
+                             index_id_shorts=False, parent_cls_name=util.LIST_BASE_CLS)
         return self.render_cls_with_template(template, **render_kwargs)
 
     def gen_cls_for_se_collection(self,

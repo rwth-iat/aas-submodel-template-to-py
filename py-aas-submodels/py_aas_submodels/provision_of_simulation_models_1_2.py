@@ -8,6 +8,93 @@ def global_ref(value: str) -> aas.ExternalReference:
     return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
 
 
+def collect_submodel_elements(*elements: Any, number_repeated: bool = True) -> list[aas.SubmodelElement]:
+    """Collect the submodel elements passed to an init in one list: single elements, unless None,
+    and the elements of iterables, whose idShorts get an index if `number_repeated` (e.g. Keyword00)"""
+    collected = []
+    for element in elements:
+        if element is None:
+            continue
+        elif isinstance(element, aas.SubmodelElement):
+            collected.append(element)
+        elif isinstance(element, Iterable):
+            for n, item in enumerate(element):
+                if number_repeated:
+                    # Number with two digits at least, as the placeholders {00} and __00__ of templates
+                    item.id_short = f"{item.id_short}{n:02d}"
+                collected.append(item)
+        else:
+            raise TypeError(f"Expected a submodel element or an iterable of them, got {element.__class__}")
+    return collected
+
+
+class GeneratedSubmodelElementList(aas.SubmodelElementList):
+    """SubmodelElementList, whose items may be instances of subclasses of type_value_list_element,
+    such as the generated classes of its items"""
+
+    def _check_constraints(self, new, existing) -> None:
+        # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+        # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+        saved_id_short = new.id_short
+        new.id_short = None
+
+        # We relax constraint AASd-108 here: It is allowed to add subclasses of the specified in type_value_list_element
+        if not isinstance(new, self.type_value_list_element):
+            raise aas.AASConstraintViolation(
+                108,
+                "All first level elements must be of the type specified in "
+                f"type_value_list_element={self.type_value_list_element.__name__}, "
+                f"got {new!r}",
+            )
+
+        if (
+            self.semantic_id_list_element is not None
+            and new.semantic_id is not None
+            and new.semantic_id != self.semantic_id_list_element
+        ):
+            # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+            # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+            # Not really a constraint...
+            # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+            raise aas.AASConstraintViolation(
+                107,
+                f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                "is specified all first level children must have the same "
+                f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+            )
+
+        # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+        # is either Property or Range. Thus, `new` must have the value_type property.
+        # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+        if (
+            self.type_value_list_element in (aas.Property, aas.Range)
+            and new.value_type is not self.value_type_list_element
+        ):  # type: ignore
+            raise aas.AASConstraintViolation(
+                109,
+                "All first level elements must have the value_type "  # type: ignore
+                "specified by value_type_list_element="
+                f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                f"{new!r} with value_type={new.value_type.__name__}",
+            )  # type: ignore
+
+        # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+        # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+        if new.semantic_id is not None and self.semantic_id_list_element is None:
+            for item in existing:
+                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
+                    raise aas.AASConstraintViolation(
+                        114,
+                        f"Element to be added {new!r} has semantic_id "
+                        f"{new.semantic_id!r}, while already contained element "
+                        f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                        "aren't equal.",
+                    )
+
+        # Re-assign id_short
+        new.id_short = saved_id_short
+
+
 class SimulationModels(aas.Submodel):
 
     class SimulationModel(aas.SubmodelElementCollection):
@@ -251,19 +338,8 @@ class SimulationModels(aas.Submodel):
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [posSimPurpose, negSimPurpose]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(posSimPurpose, negSimPurpose)
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -1302,21 +1378,10 @@ class SimulationModels(aas.Submodel):
                                 tolerance = self.Tolerance(tolerance)
 
                             # Add all passed/initialized submodel elements to a single list
-                            embedded_submodel_elements = []
-                            for se_arg in [solverAlgorithm, toolSolverFurtherDescription, tolerance]:
-                                if se_arg is None:
-                                    continue
-                                elif isinstance(se_arg, aas.SubmodelElement):
-                                    embedded_submodel_elements.append(se_arg)
-                                elif isinstance(se_arg, Iterable):
-                                    # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                    for n, element in enumerate(se_arg):
-                                        element.id_short = f"{element.id_short}{n:02d}"
-                                        embedded_submodel_elements.append(element)
-                                else:
-                                    raise TypeError(
-                                        f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
-                                    )
+
+                            embedded_submodel_elements = collect_submodel_elements(
+                                solverAlgorithm, toolSolverFurtherDescription, tolerance
+                            )
 
                             super().__init__(
                                 value=embedded_submodel_elements,
@@ -1394,25 +1459,14 @@ class SimulationModels(aas.Submodel):
                             raise TypeError("testedToolSolverAlgorithm takes several elements, got a str")
 
                         # Add all passed/initialized submodel elements to a single list
-                        embedded_submodel_elements = []
-                        for se_arg in [
+
+                        embedded_submodel_elements = collect_submodel_elements(
                             stepSizeControlNeeded,
                             fixedStepSize,
                             stiffSolverNeeded,
                             solverIncluded,
                             testedToolSolverAlgorithm,
-                        ]:
-                            if se_arg is None:
-                                continue
-                            elif isinstance(se_arg, aas.SubmodelElement):
-                                embedded_submodel_elements.append(se_arg)
-                            elif isinstance(se_arg, Iterable):
-                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n:02d}"
-                                    embedded_submodel_elements.append(element)
-                            else:
-                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                        )
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -1485,19 +1539,10 @@ class SimulationModels(aas.Submodel):
                         compiler = [i if isinstance(i, aas.SubmodelElement) else self.Compiler(i) for i in compiler]
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [simToolName, dependencySimTool, compiler, solverAndTolerances]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(
+                        simToolName, dependencySimTool, compiler, solverAndTolerances
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -1580,25 +1625,10 @@ class SimulationModels(aas.Submodel):
                     raise TypeError("simulationTool takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
-                    operatingSystem,
-                    toolEnvironment,
-                    dependencyEnvironment,
-                    visualizationInformation,
-                    simulationTool,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(
+                    operatingSystem, toolEnvironment, dependencyEnvironment, visualizationInformation, simulationTool
+                )
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2001,25 +2031,14 @@ class SimulationModels(aas.Submodel):
                         modelFileReleaseNotesTxt = self.ModelFileReleaseNotesTxt(modelFileReleaseNotesTxt)
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [
+
+                    embedded_submodel_elements = collect_submodel_elements(
                         modelVersionId,
                         modelPreviewImage,
                         digitalFile,
                         modelFileReleaseNotesTxt,
                         modelFileReleaseNotesFile,
-                    ]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2077,19 +2096,8 @@ class SimulationModels(aas.Submodel):
                     raise TypeError("modelFileVersion takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [modelFileType, modelFileVersion]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(modelFileType, modelFileVersion)
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2716,19 +2724,10 @@ class SimulationModels(aas.Submodel):
                         publicKey = self.PublicKey(publicKey)
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [typeOfEmailAddress, emailAddress, typeOfPublicKey, publicKey]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(
+                        typeOfEmailAddress, emailAddress, typeOfPublicKey, publicKey
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2934,19 +2933,10 @@ class SimulationModels(aas.Submodel):
                         availableTime = self.AvailableTime(availableTime)
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [typeOfTelephone, telephoneNumber, availableTime]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(
+                        typeOfTelephone, telephoneNumber, availableTime
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3010,19 +3000,8 @@ class SimulationModels(aas.Submodel):
                     language = [i if isinstance(i, aas.SubmodelElement) else self.Language(i) for i in language]
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [company, language, email, phone]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(company, language, email, phone)
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3633,8 +3612,8 @@ class SimulationModels(aas.Submodel):
                             variablePrefix = self.VariablePrefix(variablePrefix)
 
                         # Add all passed/initialized submodel elements to a single list
-                        embedded_submodel_elements = []
-                        for se_arg in [
+
+                        embedded_submodel_elements = collect_submodel_elements(
                             variableName,
                             range,
                             variableType,
@@ -3643,18 +3622,7 @@ class SimulationModels(aas.Submodel):
                             unitDescription,
                             variableCausality,
                             variablePrefix,
-                        ]:
-                            if se_arg is None:
-                                continue
-                            elif isinstance(se_arg, aas.SubmodelElement):
-                                embedded_submodel_elements.append(se_arg)
-                            elif isinstance(se_arg, Iterable):
-                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n:02d}"
-                                    embedded_submodel_elements.append(element)
-                            else:
-                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                        )
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -3718,19 +3686,10 @@ class SimulationModels(aas.Submodel):
                         raise TypeError("variable takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [portConnectorName, portConDescription, variable]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(
+                        portConnectorName, portConDescription, variable
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3883,19 +3842,8 @@ class SimulationModels(aas.Submodel):
                         binaryConDescription = self.BinaryConDescription(binaryConDescription)
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [binaryConName, binaryConDescription]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(binaryConName, binaryConDescription)
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3952,19 +3900,8 @@ class SimulationModels(aas.Submodel):
                     raise TypeError("binaryConnector takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [portsConnector, binaryConnector]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(portsConnector, binaryConnector)
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4289,19 +4226,10 @@ class SimulationModels(aas.Submodel):
                     evaluationPerspective = self.EvaluationPerspective(evaluationPerspective)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [usability, architecture, validation, qualityMetricFile, evaluationPerspective]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(
+                    usability, architecture, validation, qualityMetricFile, evaluationPerspective
+                )
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4428,8 +4356,8 @@ class SimulationModels(aas.Submodel):
                 raise TypeError("quality takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [
+
+            embedded_submodel_elements = collect_submodel_elements(
                 summary,
                 simPurpose,
                 typeOfModel,
@@ -4447,18 +4375,7 @@ class SimulationModels(aas.Submodel):
                 simModManufacturerInformation,
                 ports,
                 quality,
-            ]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n:02d}"
-                        embedded_submodel_elements.append(element)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+            )
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4516,19 +4433,8 @@ class SimulationModels(aas.Submodel):
             raise TypeError("simulationModel takes several elements, got a str")
 
         # Add all passed/initialized submodel elements to a single list
-        embedded_submodel_elements = []
-        for se_arg in [simulationModel]:
-            if se_arg is None:
-                continue
-            elif isinstance(se_arg, aas.SubmodelElement):
-                embedded_submodel_elements.append(se_arg)
-            elif isinstance(se_arg, Iterable):
-                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                for n, element in enumerate(se_arg):
-                    element.id_short = f"{element.id_short}{n:02d}"
-                    embedded_submodel_elements.append(element)
-            else:
-                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+        embedded_submodel_elements = collect_submodel_elements(simulationModel)
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

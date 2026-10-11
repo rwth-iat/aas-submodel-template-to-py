@@ -19,7 +19,7 @@ Here's a snippet of the classes generated from the
 submodel template (`...` marks omitted lines). Each submodel element gets a class nested in the class of
 its submodel or collection, with the semantic IDs, descriptions and other metadata of the template as defaults.
 The classes build instances (`kind=Instance`), so template qualifiers like `SMT/Cardinality`, which are only
-allowed in templates, aren't taken over:
+allowed in templates, aren't taken over. Each module starts with a few helpers its classes share:
 
 ```python
 from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
@@ -30,6 +30,18 @@ from basyx.aas.model import datatypes as xsd
 def global_ref(value: str) -> aas.ExternalReference:
     """External reference to the global identifier `value`, e.g. a semantic ID"""
     return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
+def collect_submodel_elements(*elements: Any, number_repeated: bool = True) -> list[aas.SubmodelElement]:
+    """Collect the submodel elements passed to an init in one list: single elements, unless None,
+    and the elements of iterables, whose idShorts get an index if `number_repeated` (e.g. Keyword00)"""
+    ...
+
+
+class GeneratedSubmodelElementList(aas.SubmodelElementList):
+    """SubmodelElementList, whose items may be instances of subclasses of type_value_list_element,
+    such as the generated classes of its items"""
+    ...
 
 
 class Nameplate(aas.Submodel):
@@ -48,6 +60,11 @@ class Nameplate(aas.Submodel):
             ...
         ):
             ...
+
+    ...
+
+    class Markings(GeneratedSubmodelElementList):
+        ...
 
     ...
 

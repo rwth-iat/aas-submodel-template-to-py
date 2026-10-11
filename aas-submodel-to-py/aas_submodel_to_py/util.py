@@ -19,13 +19,18 @@ MODEL_ALIAS = "aas"
 DATATYPES_ALIAS = "xsd"
 # Names generated modules import from typing
 TYPING_IMPORTS = ("Any", "ForwardRef", "Iterable", "Optional", "Tuple", "Union")
-# Names generated code uses unqualified, which generated classes must not shadow
-RESERVED_CLS_NAMES = frozenset(TYPING_IMPORTS) | frozenset(dir(builtins)) | frozenset(keyword.kwlist)
-# Helper of generated modules creating references to global identifiers (see code_templates/imports.pyi)
+# Helpers each generated module defines (see code_templates/helpers.pyi): creating references to global
+# identifiers, collecting the submodel elements passed to inits and the base class of list classes
 GLOBAL_REF_HELPER = "global_ref"
+COLLECT_HELPER = "collect_submodel_elements"
+LIST_BASE_CLS = "GeneratedSubmodelElementList"
+# Names generated code uses unqualified, which generated classes must not shadow
+RESERVED_CLS_NAMES = (frozenset(TYPING_IMPORTS) | frozenset(dir(builtins)) | frozenset(keyword.kwlist)
+                      | frozenset((LIST_BASE_CLS,)))
 # Init arguments must not shadow the module aliases used in the init body
-# (and the module re, used for checking allowed values, and the helper global_ref)
-RESERVED_ARG_NAMES = frozenset((MODEL_ALIAS, DATATYPES_ALIAS, "re", GLOBAL_REF_HELPER)) | frozenset(keyword.kwlist)
+# (and the module re, used for checking allowed values, and the helpers)
+RESERVED_ARG_NAMES = (frozenset((MODEL_ALIAS, DATATYPES_ALIAS, "re", GLOBAL_REF_HELPER, COLLECT_HELPER))
+                      | frozenset(keyword.kwlist))
 
 # Collections rendered as tuples in generated code (see StringHandler.reprify)
 TUPLE_TYPES = (tuple, NamespaceSet, ConstrainedList)

@@ -8,6 +8,93 @@ def global_ref(value: str) -> aas.ExternalReference:
     return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
 
 
+def collect_submodel_elements(*elements: Any, number_repeated: bool = True) -> list[aas.SubmodelElement]:
+    """Collect the submodel elements passed to an init in one list: single elements, unless None,
+    and the elements of iterables, whose idShorts get an index if `number_repeated` (e.g. Keyword00)"""
+    collected = []
+    for element in elements:
+        if element is None:
+            continue
+        elif isinstance(element, aas.SubmodelElement):
+            collected.append(element)
+        elif isinstance(element, Iterable):
+            for n, item in enumerate(element):
+                if number_repeated:
+                    # Number with two digits at least, as the placeholders {00} and __00__ of templates
+                    item.id_short = f"{item.id_short}{n:02d}"
+                collected.append(item)
+        else:
+            raise TypeError(f"Expected a submodel element or an iterable of them, got {element.__class__}")
+    return collected
+
+
+class GeneratedSubmodelElementList(aas.SubmodelElementList):
+    """SubmodelElementList, whose items may be instances of subclasses of type_value_list_element,
+    such as the generated classes of its items"""
+
+    def _check_constraints(self, new, existing) -> None:
+        # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
+        # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
+        saved_id_short = new.id_short
+        new.id_short = None
+
+        # We relax constraint AASd-108 here: It is allowed to add subclasses of the specified in type_value_list_element
+        if not isinstance(new, self.type_value_list_element):
+            raise aas.AASConstraintViolation(
+                108,
+                "All first level elements must be of the type specified in "
+                f"type_value_list_element={self.type_value_list_element.__name__}, "
+                f"got {new!r}",
+            )
+
+        if (
+            self.semantic_id_list_element is not None
+            and new.semantic_id is not None
+            and new.semantic_id != self.semantic_id_list_element
+        ):
+            # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
+            # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
+            # Not really a constraint...
+            # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
+            raise aas.AASConstraintViolation(
+                107,
+                f"If semantic_id_list_element={self.semantic_id_list_element!r} "
+                "is specified all first level children must have the same "
+                f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
+            )
+
+        # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
+        # is either Property or Range. Thus, `new` must have the value_type property.
+        # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
+        if (
+            self.type_value_list_element in (aas.Property, aas.Range)
+            and new.value_type is not self.value_type_list_element
+        ):  # type: ignore
+            raise aas.AASConstraintViolation(
+                109,
+                "All first level elements must have the value_type "  # type: ignore
+                "specified by value_type_list_element="
+                f"{self.value_type_list_element.__name__}, got "  # type: ignore
+                f"{new!r} with value_type={new.value_type.__name__}",
+            )  # type: ignore
+
+        # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
+        # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
+        if new.semantic_id is not None and self.semantic_id_list_element is None:
+            for item in existing:
+                if item.semantic_id is not None and new.semantic_id != item.semantic_id:
+                    raise aas.AASConstraintViolation(
+                        114,
+                        f"Element to be added {new!r} has semantic_id "
+                        f"{new.semantic_id!r}, while already contained element "
+                        f"{item!r} has semantic_id {item.semantic_id!r}, which "
+                        "aren't equal.",
+                    )
+
+        # Re-assign id_short
+        new.id_short = saved_id_short
+
+
 class PurchaseOrder(aas.Submodel):
 
     class PurchaseOrderInformation(aas.SubmodelElementCollection):
@@ -1848,7 +1935,7 @@ class PurchaseOrder(aas.Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class BuyerTrackingCodeList(aas.SubmodelElementList):
+        class BuyerTrackingCodeList(GeneratedSubmodelElementList):
 
             class Buyertrackingcodelist_item(aas.SubmodelElementCollection):
 
@@ -1992,19 +2079,8 @@ class PurchaseOrder(aas.Submodel):
                         code = self.Code(code)
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [codeType, code]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(codeType, code)
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2058,16 +2134,10 @@ class PurchaseOrder(aas.Submodel):
                     raise TypeError("buyertrackingcodelist_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [buyertrackingcodelist_items]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        embedded_submodel_elements.extend(se_arg)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(
+                    buyertrackingcodelist_items, number_repeated=False
+                )
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2086,69 +2156,7 @@ class PurchaseOrder(aas.Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-            def _check_constraints(self, new, existing) -> None:
-                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-                saved_id_short = new.id_short
-                new.id_short = None
-
-                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-                if not isinstance(new, self.type_value_list_element):
-                    raise aas.AASConstraintViolation(
-                        108,
-                        "All first level elements must be of the type specified in "
-                        f"type_value_list_element={self.type_value_list_element.__name__}, "
-                        f"got {new!r}",
-                    )
-
-                if (
-                    self.semantic_id_list_element is not None
-                    and new.semantic_id is not None
-                    and new.semantic_id != self.semantic_id_list_element
-                ):
-                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                    # Not really a constraint...
-                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                    raise aas.AASConstraintViolation(
-                        107,
-                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                        "is specified all first level children must have the same "
-                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                    )
-
-                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-                # is either Property or Range. Thus, `new` must have the value_type property.
-                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-                if (
-                    self.type_value_list_element in (aas.Property, aas.Range)
-                    and new.value_type is not self.value_type_list_element
-                ):  # type: ignore
-                    raise aas.AASConstraintViolation(
-                        109,
-                        "All first level elements must have the value_type "  # type: ignore
-                        "specified by value_type_list_element="
-                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                        f"{new!r} with value_type={new.value_type.__name__}",
-                    )  # type: ignore
-
-                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if new.semantic_id is not None and self.semantic_id_list_element is None:
-                    for item in existing:
-                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                            raise aas.AASConstraintViolation(
-                                114,
-                                f"Element to be added {new!r} has semantic_id "
-                                f"{new.semantic_id!r}, while already contained element "
-                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                                "aren't equal.",
-                            )
-
-                # Re-assign id_short
-                new.id_short = saved_id_short
-
-        class TaxDetailsTotalList(aas.SubmodelElementList):
+        class TaxDetailsTotalList(GeneratedSubmodelElementList):
 
             class Taxdetailstotallist_item(aas.SubmodelElementCollection):
 
@@ -2622,8 +2630,8 @@ class PurchaseOrder(aas.Submodel):
                         jurisdiction = self.Jurisdiction(jurisdiction)
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [
+
+                    embedded_submodel_elements = collect_submodel_elements(
                         calculationSequence,
                         taxCategory,
                         taxType,
@@ -2632,18 +2640,7 @@ class PurchaseOrder(aas.Submodel):
                         taxBase,
                         exemptionReason,
                         jurisdiction,
-                    ]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -2697,16 +2694,8 @@ class PurchaseOrder(aas.Submodel):
                     raise TypeError("taxdetailstotallist_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [taxdetailstotallist_items]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        embedded_submodel_elements.extend(se_arg)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(taxdetailstotallist_items, number_repeated=False)
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -2724,68 +2713,6 @@ class PurchaseOrder(aas.Submodel):
                     supplemental_semantic_id=supplemental_semantic_id,
                     embedded_data_specifications=embedded_data_specifications,
                 )
-
-            def _check_constraints(self, new, existing) -> None:
-                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-                saved_id_short = new.id_short
-                new.id_short = None
-
-                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-                if not isinstance(new, self.type_value_list_element):
-                    raise aas.AASConstraintViolation(
-                        108,
-                        "All first level elements must be of the type specified in "
-                        f"type_value_list_element={self.type_value_list_element.__name__}, "
-                        f"got {new!r}",
-                    )
-
-                if (
-                    self.semantic_id_list_element is not None
-                    and new.semantic_id is not None
-                    and new.semantic_id != self.semantic_id_list_element
-                ):
-                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                    # Not really a constraint...
-                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                    raise aas.AASConstraintViolation(
-                        107,
-                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                        "is specified all first level children must have the same "
-                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                    )
-
-                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-                # is either Property or Range. Thus, `new` must have the value_type property.
-                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-                if (
-                    self.type_value_list_element in (aas.Property, aas.Range)
-                    and new.value_type is not self.value_type_list_element
-                ):  # type: ignore
-                    raise aas.AASConstraintViolation(
-                        109,
-                        "All first level elements must have the value_type "  # type: ignore
-                        "specified by value_type_list_element="
-                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                        f"{new!r} with value_type={new.value_type.__name__}",
-                    )  # type: ignore
-
-                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if new.semantic_id is not None and self.semantic_id_list_element is None:
-                    for item in existing:
-                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                            raise aas.AASConstraintViolation(
-                                114,
-                                f"Element to be added {new!r} has semantic_id "
-                                f"{new.semantic_id!r}, while already contained element "
-                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                                "aren't equal.",
-                            )
-
-                # Re-assign id_short
-                new.id_short = saved_id_short
 
         class ReferenceSubmodelTollDocuments(aas.ReferenceElement):
 
@@ -3147,7 +3074,7 @@ class PurchaseOrder(aas.Submodel):
                     embedded_data_specifications=embedded_data_specifications,
                 )
 
-        class DeliveryDateList(aas.SubmodelElementList):
+        class DeliveryDateList(GeneratedSubmodelElementList):
 
             class Deliverydatelist_item(aas.SubmodelElementCollection):
 
@@ -3586,8 +3513,8 @@ class PurchaseOrder(aas.Submodel):
                         scopeOfDelivery = self.ScopeOfDelivery(scopeOfDelivery)
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [
+
+                    embedded_submodel_elements = collect_submodel_elements(
                         deliveryStartDate,
                         deliveryEndDate,
                         fixedDeliveryDate,
@@ -3595,18 +3522,7 @@ class PurchaseOrder(aas.Submodel):
                         openingHoursEnd,
                         plannedDeliveryDurationInDays,
                         scopeOfDelivery,
-                    ]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -3660,16 +3576,8 @@ class PurchaseOrder(aas.Submodel):
                     raise TypeError("deliverydatelist_items takes several elements, got a str")
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [deliverydatelist_items]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        embedded_submodel_elements.extend(se_arg)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(deliverydatelist_items, number_repeated=False)
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -3687,68 +3595,6 @@ class PurchaseOrder(aas.Submodel):
                     supplemental_semantic_id=supplemental_semantic_id,
                     embedded_data_specifications=embedded_data_specifications,
                 )
-
-            def _check_constraints(self, new, existing) -> None:
-                # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-                # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-                saved_id_short = new.id_short
-                new.id_short = None
-
-                # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-                if not isinstance(new, self.type_value_list_element):
-                    raise aas.AASConstraintViolation(
-                        108,
-                        "All first level elements must be of the type specified in "
-                        f"type_value_list_element={self.type_value_list_element.__name__}, "
-                        f"got {new!r}",
-                    )
-
-                if (
-                    self.semantic_id_list_element is not None
-                    and new.semantic_id is not None
-                    and new.semantic_id != self.semantic_id_list_element
-                ):
-                    # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                    # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                    # Not really a constraint...
-                    # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                    raise aas.AASConstraintViolation(
-                        107,
-                        f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                        "is specified all first level children must have the same "
-                        f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                    )
-
-                # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-                # is either Property or Range. Thus, `new` must have the value_type property.
-                # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-                if (
-                    self.type_value_list_element in (aas.Property, aas.Range)
-                    and new.value_type is not self.value_type_list_element
-                ):  # type: ignore
-                    raise aas.AASConstraintViolation(
-                        109,
-                        "All first level elements must have the value_type "  # type: ignore
-                        "specified by value_type_list_element="
-                        f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                        f"{new!r} with value_type={new.value_type.__name__}",
-                    )  # type: ignore
-
-                # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-                # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                if new.semantic_id is not None and self.semantic_id_list_element is None:
-                    for item in existing:
-                        if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                            raise aas.AASConstraintViolation(
-                                114,
-                                f"Element to be added {new!r} has semantic_id "
-                                f"{new.semantic_id!r}, while already contained element "
-                                f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                                "aren't equal.",
-                            )
-
-                # Re-assign id_short
-                new.id_short = saved_id_short
 
         def __init__(
             self,
@@ -4157,8 +4003,8 @@ class PurchaseOrder(aas.Submodel):
                 deliveryDateList = self.DeliveryDateList(deliveryDateList)
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [
+
+            embedded_submodel_elements = collect_submodel_elements(
                 documentType,
                 purchaseRequestResponseReferene,
                 purchaseRequestNotificationReference,
@@ -4207,18 +4053,7 @@ class PurchaseOrder(aas.Submodel):
                 specialTreatmentClassRef,
                 mediaRef,
                 deliveryDateList,
-            ]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n:02d}"
-                        embedded_submodel_elements.append(element)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+            )
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4233,7 +4068,7 @@ class PurchaseOrder(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class CatalogueReferenceList(aas.SubmodelElementList):
+    class CatalogueReferenceList(GeneratedSubmodelElementList):
 
         class Cataloguereferencelist_item(aas.SubmodelElementCollection):
 
@@ -4484,19 +4319,10 @@ class PurchaseOrder(aas.Submodel):
                     aASCatalogReferenceID = self.AASCatalogReferenceID(aASCatalogReferenceID)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [catalogID, catalogVersion, catalogName, aASCatalogReferenceID]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(
+                    catalogID, catalogVersion, catalogName, aASCatalogReferenceID
+                )
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -4550,16 +4376,8 @@ class PurchaseOrder(aas.Submodel):
                 raise TypeError("cataloguereferencelist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [cataloguereferencelist_items]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    embedded_submodel_elements.extend(se_arg)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+            embedded_submodel_elements = collect_submodel_elements(cataloguereferencelist_items, number_repeated=False)
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -4578,69 +4396,7 @@ class PurchaseOrder(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-        def _check_constraints(self, new, existing) -> None:
-            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-            saved_id_short = new.id_short
-            new.id_short = None
-
-            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-            if not isinstance(new, self.type_value_list_element):
-                raise aas.AASConstraintViolation(
-                    108,
-                    "All first level elements must be of the type specified in "
-                    f"type_value_list_element={self.type_value_list_element.__name__}, "
-                    f"got {new!r}",
-                )
-
-            if (
-                self.semantic_id_list_element is not None
-                and new.semantic_id is not None
-                and new.semantic_id != self.semantic_id_list_element
-            ):
-                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                # Not really a constraint...
-                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise aas.AASConstraintViolation(
-                    107,
-                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                    "is specified all first level children must have the same "
-                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                )
-
-            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-            # is either Property or Range. Thus, `new` must have the value_type property.
-            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-            if (
-                self.type_value_list_element in (aas.Property, aas.Range)
-                and new.value_type is not self.value_type_list_element
-            ):  # type: ignore
-                raise aas.AASConstraintViolation(
-                    109,
-                    "All first level elements must have the value_type "  # type: ignore
-                    "specified by value_type_list_element="
-                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                    f"{new!r} with value_type={new.value_type.__name__}",
-                )  # type: ignore
-
-            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-            if new.semantic_id is not None and self.semantic_id_list_element is None:
-                for item in existing:
-                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                        raise aas.AASConstraintViolation(
-                            114,
-                            f"Element to be added {new!r} has semantic_id "
-                            f"{new.semantic_id!r}, while already contained element "
-                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                            "aren't equal.",
-                        )
-
-            # Re-assign id_short
-            new.id_short = saved_id_short
-
-    class ModeOfPaymentList(aas.SubmodelElementList):
+    class ModeOfPaymentList(GeneratedSubmodelElementList):
 
         class Modeofpaymentlist_item(aas.SubmodelElementCollection):
 
@@ -4788,19 +4544,8 @@ class PurchaseOrder(aas.Submodel):
                         referencePaymentProvider = self.ReferencePaymentProvider(referencePaymentProvider)
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [cardType, referencePaymentProvider]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(cardType, referencePaymentProvider)
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5116,19 +4861,10 @@ class PurchaseOrder(aas.Submodel):
                         bankCountry = self.BankCountry(bankCountry)
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [holder, accountNumber, bankCode, bankName, bankCountry]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(
+                        holder, accountNumber, bankCode, bankName, bankCountry
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -5670,8 +5406,8 @@ class PurchaseOrder(aas.Submodel):
                     discountDays = self.DiscountDays(discountDays)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     cardPayment,
                     bankAccount,
                     debit,
@@ -5683,18 +5419,7 @@ class PurchaseOrder(aas.Submodel):
                     paymentDays,
                     discountPercent,
                     discountDays,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -5748,16 +5473,8 @@ class PurchaseOrder(aas.Submodel):
                 raise TypeError("modeofpaymentlist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [modeofpaymentlist_items]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    embedded_submodel_elements.extend(se_arg)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+            embedded_submodel_elements = collect_submodel_elements(modeofpaymentlist_items, number_repeated=False)
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -5776,69 +5493,7 @@ class PurchaseOrder(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-        def _check_constraints(self, new, existing) -> None:
-            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-            saved_id_short = new.id_short
-            new.id_short = None
-
-            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-            if not isinstance(new, self.type_value_list_element):
-                raise aas.AASConstraintViolation(
-                    108,
-                    "All first level elements must be of the type specified in "
-                    f"type_value_list_element={self.type_value_list_element.__name__}, "
-                    f"got {new!r}",
-                )
-
-            if (
-                self.semantic_id_list_element is not None
-                and new.semantic_id is not None
-                and new.semantic_id != self.semantic_id_list_element
-            ):
-                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                # Not really a constraint...
-                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise aas.AASConstraintViolation(
-                    107,
-                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                    "is specified all first level children must have the same "
-                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                )
-
-            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-            # is either Property or Range. Thus, `new` must have the value_type property.
-            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-            if (
-                self.type_value_list_element in (aas.Property, aas.Range)
-                and new.value_type is not self.value_type_list_element
-            ):  # type: ignore
-                raise aas.AASConstraintViolation(
-                    109,
-                    "All first level elements must have the value_type "  # type: ignore
-                    "specified by value_type_list_element="
-                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                    f"{new!r} with value_type={new.value_type.__name__}",
-                )  # type: ignore
-
-            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-            if new.semantic_id is not None and self.semantic_id_list_element is None:
-                for item in existing:
-                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                        raise aas.AASConstraintViolation(
-                            114,
-                            f"Element to be added {new!r} has semantic_id "
-                            f"{new.semantic_id!r}, while already contained element "
-                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                            "aren't equal.",
-                        )
-
-            # Re-assign id_short
-            new.id_short = saved_id_short
-
-    class IncotermsList(aas.SubmodelElementList):
+    class IncotermsList(GeneratedSubmodelElementList):
 
         class Incotermslist_item(aas.SubmodelElementCollection):
 
@@ -6196,19 +5851,10 @@ class PurchaseOrder(aas.Submodel):
                     transportRemark = self.TransportRemark(transportRemark)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [incoterm, location1, location2, location3, transferLocation, transportRemark]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(
+                    incoterm, location1, location2, location3, transferLocation, transportRemark
+                )
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -6262,16 +5908,8 @@ class PurchaseOrder(aas.Submodel):
                 raise TypeError("incotermslist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [incotermslist_items]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    embedded_submodel_elements.extend(se_arg)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+            embedded_submodel_elements = collect_submodel_elements(incotermslist_items, number_repeated=False)
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -6290,69 +5928,7 @@ class PurchaseOrder(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-        def _check_constraints(self, new, existing) -> None:
-            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-            saved_id_short = new.id_short
-            new.id_short = None
-
-            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-            if not isinstance(new, self.type_value_list_element):
-                raise aas.AASConstraintViolation(
-                    108,
-                    "All first level elements must be of the type specified in "
-                    f"type_value_list_element={self.type_value_list_element.__name__}, "
-                    f"got {new!r}",
-                )
-
-            if (
-                self.semantic_id_list_element is not None
-                and new.semantic_id is not None
-                and new.semantic_id != self.semantic_id_list_element
-            ):
-                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                # Not really a constraint...
-                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise aas.AASConstraintViolation(
-                    107,
-                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                    "is specified all first level children must have the same "
-                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                )
-
-            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-            # is either Property or Range. Thus, `new` must have the value_type property.
-            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-            if (
-                self.type_value_list_element in (aas.Property, aas.Range)
-                and new.value_type is not self.value_type_list_element
-            ):  # type: ignore
-                raise aas.AASConstraintViolation(
-                    109,
-                    "All first level elements must have the value_type "  # type: ignore
-                    "specified by value_type_list_element="
-                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                    f"{new!r} with value_type={new.value_type.__name__}",
-                )  # type: ignore
-
-            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-            if new.semantic_id is not None and self.semantic_id_list_element is None:
-                for item in existing:
-                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                        raise aas.AASConstraintViolation(
-                            114,
-                            f"Element to be added {new!r} has semantic_id "
-                            f"{new.semantic_id!r}, while already contained element "
-                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                            "aren't equal.",
-                        )
-
-            # Re-assign id_short
-            new.id_short = saved_id_short
-
-    class InternationalRestrictionList(aas.SubmodelElementList):
+    class InternationalRestrictionList(GeneratedSubmodelElementList):
 
         class Internationalrestrictionlist_item(aas.SubmodelElementCollection):
 
@@ -6685,25 +6261,14 @@ class PurchaseOrder(aas.Submodel):
                     ]
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     restrictionType,
                     countryCodeEmbargoImposing,
                     countryCodeEmbargoTarget,
                     regionCodeEmbargoImposing,
                     regionCodeEmbargoTarget,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -6757,16 +6322,10 @@ class PurchaseOrder(aas.Submodel):
                 raise TypeError("internationalrestrictionlist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [internationalrestrictionlist_items]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    embedded_submodel_elements.extend(se_arg)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+            embedded_submodel_elements = collect_submodel_elements(
+                internationalrestrictionlist_items, number_repeated=False
+            )
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -6785,69 +6344,7 @@ class PurchaseOrder(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-        def _check_constraints(self, new, existing) -> None:
-            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-            saved_id_short = new.id_short
-            new.id_short = None
-
-            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-            if not isinstance(new, self.type_value_list_element):
-                raise aas.AASConstraintViolation(
-                    108,
-                    "All first level elements must be of the type specified in "
-                    f"type_value_list_element={self.type_value_list_element.__name__}, "
-                    f"got {new!r}",
-                )
-
-            if (
-                self.semantic_id_list_element is not None
-                and new.semantic_id is not None
-                and new.semantic_id != self.semantic_id_list_element
-            ):
-                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                # Not really a constraint...
-                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise aas.AASConstraintViolation(
-                    107,
-                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                    "is specified all first level children must have the same "
-                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                )
-
-            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-            # is either Property or Range. Thus, `new` must have the value_type property.
-            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-            if (
-                self.type_value_list_element in (aas.Property, aas.Range)
-                and new.value_type is not self.value_type_list_element
-            ):  # type: ignore
-                raise aas.AASConstraintViolation(
-                    109,
-                    "All first level elements must have the value_type "  # type: ignore
-                    "specified by value_type_list_element="
-                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                    f"{new!r} with value_type={new.value_type.__name__}",
-                )  # type: ignore
-
-            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-            if new.semantic_id is not None and self.semantic_id_list_element is None:
-                for item in existing:
-                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                        raise aas.AASConstraintViolation(
-                            114,
-                            f"Element to be added {new!r} has semantic_id "
-                            f"{new.semantic_id!r}, while already contained element "
-                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                            "aren't equal.",
-                        )
-
-            # Re-assign id_short
-            new.id_short = saved_id_short
-
-    class RequestedCertificationsList(aas.SubmodelElementList):
+    class RequestedCertificationsList(GeneratedSubmodelElementList):
 
         class Requestedcertificationslist_item(aas.SubmodelElementCollection):
 
@@ -6999,19 +6496,8 @@ class PurchaseOrder(aas.Submodel):
                     certificationRegulation = self.CertificationRegulation(certificationRegulation)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [certificationType, certificationRegulation]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(certificationType, certificationRegulation)
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -7065,16 +6551,10 @@ class PurchaseOrder(aas.Submodel):
                 raise TypeError("requestedcertificationslist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [requestedcertificationslist_items]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    embedded_submodel_elements.extend(se_arg)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+            embedded_submodel_elements = collect_submodel_elements(
+                requestedcertificationslist_items, number_repeated=False
+            )
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -7093,69 +6573,7 @@ class PurchaseOrder(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-        def _check_constraints(self, new, existing) -> None:
-            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-            saved_id_short = new.id_short
-            new.id_short = None
-
-            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-            if not isinstance(new, self.type_value_list_element):
-                raise aas.AASConstraintViolation(
-                    108,
-                    "All first level elements must be of the type specified in "
-                    f"type_value_list_element={self.type_value_list_element.__name__}, "
-                    f"got {new!r}",
-                )
-
-            if (
-                self.semantic_id_list_element is not None
-                and new.semantic_id is not None
-                and new.semantic_id != self.semantic_id_list_element
-            ):
-                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                # Not really a constraint...
-                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise aas.AASConstraintViolation(
-                    107,
-                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                    "is specified all first level children must have the same "
-                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                )
-
-            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-            # is either Property or Range. Thus, `new` must have the value_type property.
-            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-            if (
-                self.type_value_list_element in (aas.Property, aas.Range)
-                and new.value_type is not self.value_type_list_element
-            ):  # type: ignore
-                raise aas.AASConstraintViolation(
-                    109,
-                    "All first level elements must have the value_type "  # type: ignore
-                    "specified by value_type_list_element="
-                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                    f"{new!r} with value_type={new.value_type.__name__}",
-                )  # type: ignore
-
-            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-            if new.semantic_id is not None and self.semantic_id_list_element is None:
-                for item in existing:
-                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                        raise aas.AASConstraintViolation(
-                            114,
-                            f"Element to be added {new!r} has semantic_id "
-                            f"{new.semantic_id!r}, while already contained element "
-                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                            "aren't equal.",
-                        )
-
-            # Re-assign id_short
-            new.id_short = saved_id_short
-
-    class SpecialTreatmentClassList(aas.SubmodelElementList):
+    class SpecialTreatmentClassList(GeneratedSubmodelElementList):
 
         class Specialtreatmentclasslist_item(aas.SubmodelElementCollection):
 
@@ -7189,19 +6607,8 @@ class PurchaseOrder(aas.Submodel):
                     embedded_data_specifications = []
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in []:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements()
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -7255,16 +6662,10 @@ class PurchaseOrder(aas.Submodel):
                 raise TypeError("specialtreatmentclasslist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [specialtreatmentclasslist_items]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    embedded_submodel_elements.extend(se_arg)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+            embedded_submodel_elements = collect_submodel_elements(
+                specialtreatmentclasslist_items, number_repeated=False
+            )
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -7282,68 +6683,6 @@ class PurchaseOrder(aas.Submodel):
                 supplemental_semantic_id=supplemental_semantic_id,
                 embedded_data_specifications=embedded_data_specifications,
             )
-
-        def _check_constraints(self, new, existing) -> None:
-            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-            saved_id_short = new.id_short
-            new.id_short = None
-
-            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-            if not isinstance(new, self.type_value_list_element):
-                raise aas.AASConstraintViolation(
-                    108,
-                    "All first level elements must be of the type specified in "
-                    f"type_value_list_element={self.type_value_list_element.__name__}, "
-                    f"got {new!r}",
-                )
-
-            if (
-                self.semantic_id_list_element is not None
-                and new.semantic_id is not None
-                and new.semantic_id != self.semantic_id_list_element
-            ):
-                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                # Not really a constraint...
-                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise aas.AASConstraintViolation(
-                    107,
-                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                    "is specified all first level children must have the same "
-                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                )
-
-            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-            # is either Property or Range. Thus, `new` must have the value_type property.
-            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-            if (
-                self.type_value_list_element in (aas.Property, aas.Range)
-                and new.value_type is not self.value_type_list_element
-            ):  # type: ignore
-                raise aas.AASConstraintViolation(
-                    109,
-                    "All first level elements must have the value_type "  # type: ignore
-                    "specified by value_type_list_element="
-                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                    f"{new!r} with value_type={new.value_type.__name__}",
-                )  # type: ignore
-
-            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-            if new.semantic_id is not None and self.semantic_id_list_element is None:
-                for item in existing:
-                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                        raise aas.AASConstraintViolation(
-                            114,
-                            f"Element to be added {new!r} has semantic_id "
-                            f"{new.semantic_id!r}, while already contained element "
-                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                            "aren't equal.",
-                        )
-
-            # Re-assign id_short
-            new.id_short = saved_id_short
 
     class InvolvedParties(aas.SubmodelElementCollection):
 
@@ -9171,8 +8510,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -9204,18 +8543,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -11057,8 +10385,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -11090,18 +10418,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -12943,8 +12260,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -12976,18 +12293,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -14832,8 +14138,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -14865,18 +14171,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -16718,8 +16013,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -16751,18 +16046,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -18607,8 +17891,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -18640,18 +17924,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -20493,8 +19766,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -20526,18 +19799,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -22379,8 +21641,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -22412,18 +21674,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -24268,8 +23519,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -24301,18 +23552,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -26154,8 +25394,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -26187,18 +25427,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -28040,8 +27269,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -28073,18 +27302,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -29926,8 +29144,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -29959,18 +29177,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -31812,8 +31019,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -31845,18 +31052,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -33698,8 +32894,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -33731,18 +32927,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -35587,8 +34772,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -35620,18 +34805,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -37473,8 +36647,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -37506,18 +36680,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -39362,8 +38525,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -39395,18 +38558,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -41251,8 +40403,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -41284,18 +40436,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -43137,8 +42278,8 @@ class PurchaseOrder(aas.Submodel):
                     emailAddress = self.EmailAddress(emailAddress)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     buyerReferenceID,
                     sellerReferenceID,
                     agentReferenceID,
@@ -43170,18 +42311,7 @@ class PurchaseOrder(aas.Submodel):
                     telephoneNumber,
                     faxNumber,
                     emailAddress,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     statement=embedded_submodel_elements,
@@ -43248,8 +42378,8 @@ class PurchaseOrder(aas.Submodel):
                 embedded_data_specifications = []
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [
+
+            embedded_submodel_elements = collect_submodel_elements(
                 partyBuyer,
                 partySeller,
                 partyCarrier,
@@ -43269,18 +42399,7 @@ class PurchaseOrder(aas.Submodel):
                 partyTrustedThirdParty,
                 partyInternalRoutingLocation,
                 partyOthers,
-            ]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                    for n, element in enumerate(se_arg):
-                        element.id_short = f"{element.id_short}{n:02d}"
-                        embedded_submodel_elements.append(element)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+            )
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -43295,7 +42414,7 @@ class PurchaseOrder(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-    class CostCentersList(aas.SubmodelElementList):
+    class CostCentersList(GeneratedSubmodelElementList):
 
         class Costcenterslist_item(aas.SubmodelElementCollection):
 
@@ -43873,8 +42992,8 @@ class PurchaseOrder(aas.Submodel):
                     billingCenterName = self.BillingCenterName(billingCenterName)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     costCenterCode,
                     costCenterName,
                     costReasonCode,
@@ -43885,18 +43004,7 @@ class PurchaseOrder(aas.Submodel):
                     projectName,
                     billingCenterCode,
                     billingCenterName,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -43950,16 +43058,8 @@ class PurchaseOrder(aas.Submodel):
                 raise TypeError("costcenterslist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [costcenterslist_items]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    embedded_submodel_elements.extend(se_arg)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+            embedded_submodel_elements = collect_submodel_elements(costcenterslist_items, number_repeated=False)
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -43978,69 +43078,7 @@ class PurchaseOrder(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-        def _check_constraints(self, new, existing) -> None:
-            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-            saved_id_short = new.id_short
-            new.id_short = None
-
-            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-            if not isinstance(new, self.type_value_list_element):
-                raise aas.AASConstraintViolation(
-                    108,
-                    "All first level elements must be of the type specified in "
-                    f"type_value_list_element={self.type_value_list_element.__name__}, "
-                    f"got {new!r}",
-                )
-
-            if (
-                self.semantic_id_list_element is not None
-                and new.semantic_id is not None
-                and new.semantic_id != self.semantic_id_list_element
-            ):
-                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                # Not really a constraint...
-                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise aas.AASConstraintViolation(
-                    107,
-                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                    "is specified all first level children must have the same "
-                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                )
-
-            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-            # is either Property or Range. Thus, `new` must have the value_type property.
-            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-            if (
-                self.type_value_list_element in (aas.Property, aas.Range)
-                and new.value_type is not self.value_type_list_element
-            ):  # type: ignore
-                raise aas.AASConstraintViolation(
-                    109,
-                    "All first level elements must have the value_type "  # type: ignore
-                    "specified by value_type_list_element="
-                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                    f"{new!r} with value_type={new.value_type.__name__}",
-                )  # type: ignore
-
-            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-            if new.semantic_id is not None and self.semantic_id_list_element is None:
-                for item in existing:
-                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                        raise aas.AASConstraintViolation(
-                            114,
-                            f"Element to be added {new!r} has semantic_id "
-                            f"{new.semantic_id!r}, while already contained element "
-                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                            "aren't equal.",
-                        )
-
-            # Re-assign id_short
-            new.id_short = saved_id_short
-
-    class AttachedMediaList(aas.SubmodelElementList):
+    class AttachedMediaList(GeneratedSubmodelElementList):
 
         class Attachedmedialist_item(aas.SubmodelElementCollection):
 
@@ -44294,19 +43332,8 @@ class PurchaseOrder(aas.Submodel):
                     comment = self.Comment(comment)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [file, mimeType, mimePurpose, comment]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                embedded_submodel_elements = collect_submodel_elements(file, mimeType, mimePurpose, comment)
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -44360,16 +43387,8 @@ class PurchaseOrder(aas.Submodel):
                 raise TypeError("attachedmedialist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [attachedmedialist_items]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    embedded_submodel_elements.extend(se_arg)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+            embedded_submodel_elements = collect_submodel_elements(attachedmedialist_items, number_repeated=False)
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -44388,69 +43407,7 @@ class PurchaseOrder(aas.Submodel):
                 embedded_data_specifications=embedded_data_specifications,
             )
 
-        def _check_constraints(self, new, existing) -> None:
-            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-            saved_id_short = new.id_short
-            new.id_short = None
-
-            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-            if not isinstance(new, self.type_value_list_element):
-                raise aas.AASConstraintViolation(
-                    108,
-                    "All first level elements must be of the type specified in "
-                    f"type_value_list_element={self.type_value_list_element.__name__}, "
-                    f"got {new!r}",
-                )
-
-            if (
-                self.semantic_id_list_element is not None
-                and new.semantic_id is not None
-                and new.semantic_id != self.semantic_id_list_element
-            ):
-                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                # Not really a constraint...
-                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise aas.AASConstraintViolation(
-                    107,
-                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                    "is specified all first level children must have the same "
-                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                )
-
-            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-            # is either Property or Range. Thus, `new` must have the value_type property.
-            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-            if (
-                self.type_value_list_element in (aas.Property, aas.Range)
-                and new.value_type is not self.value_type_list_element
-            ):  # type: ignore
-                raise aas.AASConstraintViolation(
-                    109,
-                    "All first level elements must have the value_type "  # type: ignore
-                    "specified by value_type_list_element="
-                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                    f"{new!r} with value_type={new.value_type.__name__}",
-                )  # type: ignore
-
-            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-            if new.semantic_id is not None and self.semantic_id_list_element is None:
-                for item in existing:
-                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                        raise aas.AASConstraintViolation(
-                            114,
-                            f"Element to be added {new!r} has semantic_id "
-                            f"{new.semantic_id!r}, while already contained element "
-                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                            "aren't equal.",
-                        )
-
-            # Re-assign id_short
-            new.id_short = saved_id_short
-
-    class ItemList(aas.SubmodelElementList):
+    class ItemList(GeneratedSubmodelElementList):
 
         class Itemlist_item(aas.SubmodelElementCollection):
 
@@ -47530,8 +46487,8 @@ class PurchaseOrder(aas.Submodel):
                             jurisdiction = self.Jurisdiction(jurisdiction)
 
                         # Add all passed/initialized submodel elements to a single list
-                        embedded_submodel_elements = []
-                        for se_arg in [
+
+                        embedded_submodel_elements = collect_submodel_elements(
                             calculationSequence,
                             taxCategory,
                             taxType,
@@ -47540,18 +46497,7 @@ class PurchaseOrder(aas.Submodel):
                             taxBase,
                             exemptionReason,
                             jurisdiction,
-                        ]:
-                            if se_arg is None:
-                                continue
-                            elif isinstance(se_arg, aas.SubmodelElement):
-                                embedded_submodel_elements.append(se_arg)
-                            elif isinstance(se_arg, Iterable):
-                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n:02d}"
-                                    embedded_submodel_elements.append(element)
-                            else:
-                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                        )
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -47678,8 +46624,8 @@ class PurchaseOrder(aas.Submodel):
                         raise TypeError("taxDetails takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [
+
+                    embedded_submodel_elements = collect_submodel_elements(
                         minPrice,
                         maxPrice,
                         price,
@@ -47693,18 +46639,7 @@ class PurchaseOrder(aas.Submodel):
                         shipping,
                         shippingTax,
                         taxDetails,
-                    ]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                            for n, element in enumerate(se_arg):
-                                element.id_short = f"{element.id_short}{n:02d}"
-                                embedded_submodel_elements.append(element)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -47719,7 +46654,7 @@ class PurchaseOrder(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class PartialDeliveryList(aas.SubmodelElementList):
+            class PartialDeliveryList(GeneratedSubmodelElementList):
 
                 class Partialdeliverylist_item(aas.SubmodelElementCollection):
 
@@ -47805,19 +46740,8 @@ class PurchaseOrder(aas.Submodel):
                             orderQuantity = self.OrderQuantity(orderQuantity)
 
                         # Add all passed/initialized submodel elements to a single list
-                        embedded_submodel_elements = []
-                        for se_arg in [orderQuantity]:
-                            if se_arg is None:
-                                continue
-                            elif isinstance(se_arg, aas.SubmodelElement):
-                                embedded_submodel_elements.append(se_arg)
-                            elif isinstance(se_arg, Iterable):
-                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n:02d}"
-                                    embedded_submodel_elements.append(element)
-                            else:
-                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                        embedded_submodel_elements = collect_submodel_elements(orderQuantity)
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -47871,16 +46795,10 @@ class PurchaseOrder(aas.Submodel):
                         raise TypeError("partialdeliverylist_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [partialdeliverylist_items]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            embedded_submodel_elements.extend(se_arg)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(
+                        partialdeliverylist_items, number_repeated=False
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -47899,69 +46817,7 @@ class PurchaseOrder(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-                def _check_constraints(self, new, existing) -> None:
-                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-                    saved_id_short = new.id_short
-                    new.id_short = None
-
-                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-                    if not isinstance(new, self.type_value_list_element):
-                        raise aas.AASConstraintViolation(
-                            108,
-                            "All first level elements must be of the type specified in "
-                            f"type_value_list_element={self.type_value_list_element.__name__}, "
-                            f"got {new!r}",
-                        )
-
-                    if (
-                        self.semantic_id_list_element is not None
-                        and new.semantic_id is not None
-                        and new.semantic_id != self.semantic_id_list_element
-                    ):
-                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                        # Not really a constraint...
-                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise aas.AASConstraintViolation(
-                            107,
-                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                            "is specified all first level children must have the same "
-                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                        )
-
-                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-                    # is either Property or Range. Thus, `new` must have the value_type property.
-                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-                    if (
-                        self.type_value_list_element in (aas.Property, aas.Range)
-                        and new.value_type is not self.value_type_list_element
-                    ):  # type: ignore
-                        raise aas.AASConstraintViolation(
-                            109,
-                            "All first level elements must have the value_type "  # type: ignore
-                            "specified by value_type_list_element="
-                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                            f"{new!r} with value_type={new.value_type.__name__}",
-                        )  # type: ignore
-
-                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if new.semantic_id is not None and self.semantic_id_list_element is None:
-                        for item in existing:
-                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                                raise aas.AASConstraintViolation(
-                                    114,
-                                    f"Element to be added {new!r} has semantic_id "
-                                    f"{new.semantic_id!r}, while already contained element "
-                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                                    "aren't equal.",
-                                )
-
-                    # Re-assign id_short
-                    new.id_short = saved_id_short
-
-            class DeliveryDateList(aas.SubmodelElementList):
+            class DeliveryDateList(GeneratedSubmodelElementList):
 
                 class Deliverydatelist_item(aas.SubmodelElementCollection):
 
@@ -48404,8 +47260,8 @@ class PurchaseOrder(aas.Submodel):
                             scopeOfDelivery = self.ScopeOfDelivery(scopeOfDelivery)
 
                         # Add all passed/initialized submodel elements to a single list
-                        embedded_submodel_elements = []
-                        for se_arg in [
+
+                        embedded_submodel_elements = collect_submodel_elements(
                             deliveryStartDate,
                             deliveryEndDate,
                             fixedDeliveryDate,
@@ -48413,18 +47269,7 @@ class PurchaseOrder(aas.Submodel):
                             openingHoursEnd,
                             plannedDeliveryDurationInDays,
                             scopeOfDelivery,
-                        ]:
-                            if se_arg is None:
-                                continue
-                            elif isinstance(se_arg, aas.SubmodelElement):
-                                embedded_submodel_elements.append(se_arg)
-                            elif isinstance(se_arg, Iterable):
-                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n:02d}"
-                                    embedded_submodel_elements.append(element)
-                            else:
-                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                        )
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -48478,16 +47323,10 @@ class PurchaseOrder(aas.Submodel):
                         raise TypeError("deliverydatelist_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [deliverydatelist_items]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            embedded_submodel_elements.extend(se_arg)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(
+                        deliverydatelist_items, number_repeated=False
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -48506,69 +47345,7 @@ class PurchaseOrder(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-                def _check_constraints(self, new, existing) -> None:
-                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-                    saved_id_short = new.id_short
-                    new.id_short = None
-
-                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-                    if not isinstance(new, self.type_value_list_element):
-                        raise aas.AASConstraintViolation(
-                            108,
-                            "All first level elements must be of the type specified in "
-                            f"type_value_list_element={self.type_value_list_element.__name__}, "
-                            f"got {new!r}",
-                        )
-
-                    if (
-                        self.semantic_id_list_element is not None
-                        and new.semantic_id is not None
-                        and new.semantic_id != self.semantic_id_list_element
-                    ):
-                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                        # Not really a constraint...
-                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise aas.AASConstraintViolation(
-                            107,
-                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                            "is specified all first level children must have the same "
-                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                        )
-
-                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-                    # is either Property or Range. Thus, `new` must have the value_type property.
-                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-                    if (
-                        self.type_value_list_element in (aas.Property, aas.Range)
-                        and new.value_type is not self.value_type_list_element
-                    ):  # type: ignore
-                        raise aas.AASConstraintViolation(
-                            109,
-                            "All first level elements must have the value_type "  # type: ignore
-                            "specified by value_type_list_element="
-                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                            f"{new!r} with value_type={new.value_type.__name__}",
-                        )  # type: ignore
-
-                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if new.semantic_id is not None and self.semantic_id_list_element is None:
-                        for item in existing:
-                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                                raise aas.AASConstraintViolation(
-                                    114,
-                                    f"Element to be added {new!r} has semantic_id "
-                                    f"{new.semantic_id!r}, while already contained element "
-                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                                    "aren't equal.",
-                                )
-
-                    # Re-assign id_short
-                    new.id_short = saved_id_short
-
-            class ScanCodesList(aas.SubmodelElementList):
+            class ScanCodesList(GeneratedSubmodelElementList):
 
                 class Scancodeslist_item(aas.SubmodelElementCollection):
 
@@ -48712,19 +47489,8 @@ class PurchaseOrder(aas.Submodel):
                             code = self.Code(code)
 
                         # Add all passed/initialized submodel elements to a single list
-                        embedded_submodel_elements = []
-                        for se_arg in [codeType, code]:
-                            if se_arg is None:
-                                continue
-                            elif isinstance(se_arg, aas.SubmodelElement):
-                                embedded_submodel_elements.append(se_arg)
-                            elif isinstance(se_arg, Iterable):
-                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n:02d}"
-                                    embedded_submodel_elements.append(element)
-                            else:
-                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                        embedded_submodel_elements = collect_submodel_elements(codeType, code)
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -48778,16 +47544,8 @@ class PurchaseOrder(aas.Submodel):
                         raise TypeError("scancodeslist_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [scancodeslist_items]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            embedded_submodel_elements.extend(se_arg)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(scancodeslist_items, number_repeated=False)
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -48806,69 +47564,7 @@ class PurchaseOrder(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-                def _check_constraints(self, new, existing) -> None:
-                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-                    saved_id_short = new.id_short
-                    new.id_short = None
-
-                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-                    if not isinstance(new, self.type_value_list_element):
-                        raise aas.AASConstraintViolation(
-                            108,
-                            "All first level elements must be of the type specified in "
-                            f"type_value_list_element={self.type_value_list_element.__name__}, "
-                            f"got {new!r}",
-                        )
-
-                    if (
-                        self.semantic_id_list_element is not None
-                        and new.semantic_id is not None
-                        and new.semantic_id != self.semantic_id_list_element
-                    ):
-                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                        # Not really a constraint...
-                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise aas.AASConstraintViolation(
-                            107,
-                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                            "is specified all first level children must have the same "
-                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                        )
-
-                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-                    # is either Property or Range. Thus, `new` must have the value_type property.
-                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-                    if (
-                        self.type_value_list_element in (aas.Property, aas.Range)
-                        and new.value_type is not self.value_type_list_element
-                    ):  # type: ignore
-                        raise aas.AASConstraintViolation(
-                            109,
-                            "All first level elements must have the value_type "  # type: ignore
-                            "specified by value_type_list_element="
-                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                            f"{new!r} with value_type={new.value_type.__name__}",
-                        )  # type: ignore
-
-                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if new.semantic_id is not None and self.semantic_id_list_element is None:
-                        for item in existing:
-                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                                raise aas.AASConstraintViolation(
-                                    114,
-                                    f"Element to be added {new!r} has semantic_id "
-                                    f"{new.semantic_id!r}, while already contained element "
-                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                                    "aren't equal.",
-                                )
-
-                    # Re-assign id_short
-                    new.id_short = saved_id_short
-
-            class QualityRequirements(aas.SubmodelElementList):
+            class QualityRequirements(GeneratedSubmodelElementList):
 
                 class Qualityrequirements_item(aas.SubmodelElementCollection):
 
@@ -48955,19 +47651,8 @@ class PurchaseOrder(aas.Submodel):
                             ]
 
                         # Add all passed/initialized submodel elements to a single list
-                        embedded_submodel_elements = []
-                        for se_arg in [qualityRequirement]:
-                            if se_arg is None:
-                                continue
-                            elif isinstance(se_arg, aas.SubmodelElement):
-                                embedded_submodel_elements.append(se_arg)
-                            elif isinstance(se_arg, Iterable):
-                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n:02d}"
-                                    embedded_submodel_elements.append(element)
-                            else:
-                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                        embedded_submodel_elements = collect_submodel_elements(qualityRequirement)
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -49021,16 +47706,10 @@ class PurchaseOrder(aas.Submodel):
                         raise TypeError("qualityrequirements_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [qualityrequirements_items]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            embedded_submodel_elements.extend(se_arg)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(
+                        qualityrequirements_items, number_repeated=False
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -49049,69 +47728,7 @@ class PurchaseOrder(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-                def _check_constraints(self, new, existing) -> None:
-                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-                    saved_id_short = new.id_short
-                    new.id_short = None
-
-                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-                    if not isinstance(new, self.type_value_list_element):
-                        raise aas.AASConstraintViolation(
-                            108,
-                            "All first level elements must be of the type specified in "
-                            f"type_value_list_element={self.type_value_list_element.__name__}, "
-                            f"got {new!r}",
-                        )
-
-                    if (
-                        self.semantic_id_list_element is not None
-                        and new.semantic_id is not None
-                        and new.semantic_id != self.semantic_id_list_element
-                    ):
-                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                        # Not really a constraint...
-                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise aas.AASConstraintViolation(
-                            107,
-                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                            "is specified all first level children must have the same "
-                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                        )
-
-                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-                    # is either Property or Range. Thus, `new` must have the value_type property.
-                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-                    if (
-                        self.type_value_list_element in (aas.Property, aas.Range)
-                        and new.value_type is not self.value_type_list_element
-                    ):  # type: ignore
-                        raise aas.AASConstraintViolation(
-                            109,
-                            "All first level elements must have the value_type "  # type: ignore
-                            "specified by value_type_list_element="
-                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                            f"{new!r} with value_type={new.value_type.__name__}",
-                        )  # type: ignore
-
-                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if new.semantic_id is not None and self.semantic_id_list_element is None:
-                        for item in existing:
-                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                                raise aas.AASConstraintViolation(
-                                    114,
-                                    f"Element to be added {new!r} has semantic_id "
-                                    f"{new.semantic_id!r}, while already contained element "
-                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                                    "aren't equal.",
-                                )
-
-                    # Re-assign id_short
-                    new.id_short = saved_id_short
-
-            class ListProductIDsBusinessPartners(aas.SubmodelElementList):
+            class ListProductIDsBusinessPartners(GeneratedSubmodelElementList):
 
                 class Listproductidsbusinesspartners_item(aas.SubmodelElementCollection):
 
@@ -49310,19 +47927,10 @@ class PurchaseOrder(aas.Submodel):
                             productnamePartySpecific = self.ProductnamePartySpecific(productnamePartySpecific)
 
                         # Add all passed/initialized submodel elements to a single list
-                        embedded_submodel_elements = []
-                        for se_arg in [businessParty, productIDPartySpecific, productnamePartySpecific]:
-                            if se_arg is None:
-                                continue
-                            elif isinstance(se_arg, aas.SubmodelElement):
-                                embedded_submodel_elements.append(se_arg)
-                            elif isinstance(se_arg, Iterable):
-                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n:02d}"
-                                    embedded_submodel_elements.append(element)
-                            else:
-                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                        embedded_submodel_elements = collect_submodel_elements(
+                            businessParty, productIDPartySpecific, productnamePartySpecific
+                        )
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -49378,16 +47986,10 @@ class PurchaseOrder(aas.Submodel):
                         raise TypeError("listproductidsbusinesspartners_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [listproductidsbusinesspartners_items]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            embedded_submodel_elements.extend(se_arg)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(
+                        listproductidsbusinesspartners_items, number_repeated=False
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -49406,69 +48008,7 @@ class PurchaseOrder(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-                def _check_constraints(self, new, existing) -> None:
-                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-                    saved_id_short = new.id_short
-                    new.id_short = None
-
-                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-                    if not isinstance(new, self.type_value_list_element):
-                        raise aas.AASConstraintViolation(
-                            108,
-                            "All first level elements must be of the type specified in "
-                            f"type_value_list_element={self.type_value_list_element.__name__}, "
-                            f"got {new!r}",
-                        )
-
-                    if (
-                        self.semantic_id_list_element is not None
-                        and new.semantic_id is not None
-                        and new.semantic_id != self.semantic_id_list_element
-                    ):
-                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                        # Not really a constraint...
-                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise aas.AASConstraintViolation(
-                            107,
-                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                            "is specified all first level children must have the same "
-                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                        )
-
-                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-                    # is either Property or Range. Thus, `new` must have the value_type property.
-                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-                    if (
-                        self.type_value_list_element in (aas.Property, aas.Range)
-                        and new.value_type is not self.value_type_list_element
-                    ):  # type: ignore
-                        raise aas.AASConstraintViolation(
-                            109,
-                            "All first level elements must have the value_type "  # type: ignore
-                            "specified by value_type_list_element="
-                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                            f"{new!r} with value_type={new.value_type.__name__}",
-                        )  # type: ignore
-
-                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if new.semantic_id is not None and self.semantic_id_list_element is None:
-                        for item in existing:
-                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                                raise aas.AASConstraintViolation(
-                                    114,
-                                    f"Element to be added {new!r} has semantic_id "
-                                    f"{new.semantic_id!r}, while already contained element "
-                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                                    "aren't equal.",
-                                )
-
-                    # Re-assign id_short
-                    new.id_short = saved_id_short
-
-            class ExcludedIngredientsList(aas.SubmodelElementList):
+            class ExcludedIngredientsList(GeneratedSubmodelElementList):
 
                 class Excludedingredientslist_item(aas.SubmodelElementCollection):
 
@@ -49555,19 +48095,8 @@ class PurchaseOrder(aas.Submodel):
                             ]
 
                         # Add all passed/initialized submodel elements to a single list
-                        embedded_submodel_elements = []
-                        for se_arg in [excludedIngredient]:
-                            if se_arg is None:
-                                continue
-                            elif isinstance(se_arg, aas.SubmodelElement):
-                                embedded_submodel_elements.append(se_arg)
-                            elif isinstance(se_arg, Iterable):
-                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                                for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n:02d}"
-                                    embedded_submodel_elements.append(element)
-                            else:
-                                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                        embedded_submodel_elements = collect_submodel_elements(excludedIngredient)
 
                         super().__init__(
                             value=embedded_submodel_elements,
@@ -49621,16 +48150,10 @@ class PurchaseOrder(aas.Submodel):
                         raise TypeError("excludedingredientslist_items takes several elements, got a str")
 
                     # Add all passed/initialized submodel elements to a single list
-                    embedded_submodel_elements = []
-                    for se_arg in [excludedingredientslist_items]:
-                        if se_arg is None:
-                            continue
-                        elif isinstance(se_arg, aas.SubmodelElement):
-                            embedded_submodel_elements.append(se_arg)
-                        elif isinstance(se_arg, Iterable):
-                            embedded_submodel_elements.extend(se_arg)
-                        else:
-                            raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+                    embedded_submodel_elements = collect_submodel_elements(
+                        excludedingredientslist_items, number_repeated=False
+                    )
 
                     super().__init__(
                         value=embedded_submodel_elements,
@@ -49648,68 +48171,6 @@ class PurchaseOrder(aas.Submodel):
                         supplemental_semantic_id=supplemental_semantic_id,
                         embedded_data_specifications=embedded_data_specifications,
                     )
-
-                def _check_constraints(self, new, existing) -> None:
-                    # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-                    # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-                    saved_id_short = new.id_short
-                    new.id_short = None
-
-                    # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-                    if not isinstance(new, self.type_value_list_element):
-                        raise aas.AASConstraintViolation(
-                            108,
-                            "All first level elements must be of the type specified in "
-                            f"type_value_list_element={self.type_value_list_element.__name__}, "
-                            f"got {new!r}",
-                        )
-
-                    if (
-                        self.semantic_id_list_element is not None
-                        and new.semantic_id is not None
-                        and new.semantic_id != self.semantic_id_list_element
-                    ):
-                        # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                        # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                        # Not really a constraint...
-                        # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                        raise aas.AASConstraintViolation(
-                            107,
-                            f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                            "is specified all first level children must have the same "
-                            f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                        )
-
-                    # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-                    # is either Property or Range. Thus, `new` must have the value_type property.
-                    # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-                    if (
-                        self.type_value_list_element in (aas.Property, aas.Range)
-                        and new.value_type is not self.value_type_list_element
-                    ):  # type: ignore
-                        raise aas.AASConstraintViolation(
-                            109,
-                            "All first level elements must have the value_type "  # type: ignore
-                            "specified by value_type_list_element="
-                            f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                            f"{new!r} with value_type={new.value_type.__name__}",
-                        )  # type: ignore
-
-                    # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-                    # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-                    if new.semantic_id is not None and self.semantic_id_list_element is None:
-                        for item in existing:
-                            if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                                raise aas.AASConstraintViolation(
-                                    114,
-                                    f"Element to be added {new!r} has semantic_id "
-                                    f"{new.semantic_id!r}, while already contained element "
-                                    f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                                    "aren't equal.",
-                                )
-
-                    # Re-assign id_short
-                    new.id_short = saved_id_short
 
             def __init__(
                 self,
@@ -50137,8 +48598,8 @@ class PurchaseOrder(aas.Submodel):
                     excludedIngredientsList = self.ExcludedIngredientsList(excludedIngredientsList)
 
                 # Add all passed/initialized submodel elements to a single list
-                embedded_submodel_elements = []
-                for se_arg in [
+
+                embedded_submodel_elements = collect_submodel_elements(
                     refPurchaseRequestNotificationItem,
                     refQuotationItemID,
                     itemID,
@@ -50188,18 +48649,7 @@ class PurchaseOrder(aas.Submodel):
                     qualityRequirements,
                     listProductIDsBusinessPartners,
                     excludedIngredientsList,
-                ]:
-                    if se_arg is None:
-                        continue
-                    elif isinstance(se_arg, aas.SubmodelElement):
-                        embedded_submodel_elements.append(se_arg)
-                    elif isinstance(se_arg, Iterable):
-                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                        for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n:02d}"
-                            embedded_submodel_elements.append(element)
-                    else:
-                        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+                )
 
                 super().__init__(
                     value=embedded_submodel_elements,
@@ -50253,16 +48703,8 @@ class PurchaseOrder(aas.Submodel):
                 raise TypeError("itemlist_items takes several elements, got a str")
 
             # Add all passed/initialized submodel elements to a single list
-            embedded_submodel_elements = []
-            for se_arg in [itemlist_items]:
-                if se_arg is None:
-                    continue
-                elif isinstance(se_arg, aas.SubmodelElement):
-                    embedded_submodel_elements.append(se_arg)
-                elif isinstance(se_arg, Iterable):
-                    embedded_submodel_elements.extend(se_arg)
-                else:
-                    raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+
+            embedded_submodel_elements = collect_submodel_elements(itemlist_items, number_repeated=False)
 
             super().__init__(
                 value=embedded_submodel_elements,
@@ -50280,68 +48722,6 @@ class PurchaseOrder(aas.Submodel):
                 supplemental_semantic_id=supplemental_semantic_id,
                 embedded_data_specifications=embedded_data_specifications,
             )
-
-        def _check_constraints(self, new, existing) -> None:
-            # Since the id_short contains randomness, unset it temporarily for pretty and predictable error messages.
-            # This also prevents the random id_short from remaining set in case a constraint violation is encountered.
-            saved_id_short = new.id_short
-            new.id_short = None
-
-            # We relax constraint AASd-108here: It is allowed to add subclasses of the specified in type_value_list_element
-            if not isinstance(new, self.type_value_list_element):
-                raise aas.AASConstraintViolation(
-                    108,
-                    "All first level elements must be of the type specified in "
-                    f"type_value_list_element={self.type_value_list_element.__name__}, "
-                    f"got {new!r}",
-                )
-
-            if (
-                self.semantic_id_list_element is not None
-                and new.semantic_id is not None
-                and new.semantic_id != self.semantic_id_list_element
-            ):
-                # Constraint AASd-115 specifies that if the semantic_id of an item is not specified
-                # but semantic_id_list_element is, the semantic_id of the new is assumed to be identical.
-                # Not really a constraint...
-                # TODO: maybe set the semantic_id of new to semantic_id_list_element if it is None
-                raise aas.AASConstraintViolation(
-                    107,
-                    f"If semantic_id_list_element={self.semantic_id_list_element!r} "
-                    "is specified all first level children must have the same "
-                    f"semantic_id, got {new!r} with semantic_id={new.semantic_id!r}",
-                )
-
-            # If we got here we know that `new` is an instance of type_value_list_element and that type_value_list_element
-            # is either Property or Range. Thus, `new` must have the value_type property.
-            # Furthermore, value_type_list_element cannot be None, as this is already checked in __init__().
-            if (
-                self.type_value_list_element in (aas.Property, aas.Range)
-                and new.value_type is not self.value_type_list_element
-            ):  # type: ignore
-                raise aas.AASConstraintViolation(
-                    109,
-                    "All first level elements must have the value_type "  # type: ignore
-                    "specified by value_type_list_element="
-                    f"{self.value_type_list_element.__name__}, got "  # type: ignore
-                    f"{new!r} with value_type={new.value_type.__name__}",
-                )  # type: ignore
-
-            # If semantic_id_list_element is not None that would already enforce the semantic_id for all first level
-            # elements. Thus, we only need to perform this check if semantic_id_list_element is None.
-            if new.semantic_id is not None and self.semantic_id_list_element is None:
-                for item in existing:
-                    if item.semantic_id is not None and new.semantic_id != item.semantic_id:
-                        raise aas.AASConstraintViolation(
-                            114,
-                            f"Element to be added {new!r} has semantic_id "
-                            f"{new.semantic_id!r}, while already contained element "
-                            f"{item!r} has semantic_id {item.semantic_id!r}, which "
-                            "aren't equal.",
-                        )
-
-            # Re-assign id_short
-            new.id_short = saved_id_short
 
     def __init__(
         self,
@@ -50484,8 +48864,8 @@ class PurchaseOrder(aas.Submodel):
             itemList = self.ItemList(itemList)
 
         # Add all passed/initialized submodel elements to a single list
-        embedded_submodel_elements = []
-        for se_arg in [
+
+        embedded_submodel_elements = collect_submodel_elements(
             purchaseOrderInformation,
             catalogueReferenceList,
             modeOfPaymentList,
@@ -50497,18 +48877,7 @@ class PurchaseOrder(aas.Submodel):
             costCentersList,
             attachedMediaList,
             itemList,
-        ]:
-            if se_arg is None:
-                continue
-            elif isinstance(se_arg, aas.SubmodelElement):
-                embedded_submodel_elements.append(se_arg)
-            elif isinstance(se_arg, Iterable):
-                # Number with two digits at least, as the placeholders {00} and __00__ of templates
-                for n, element in enumerate(se_arg):
-                    element.id_short = f"{element.id_short}{n:02d}"
-                    embedded_submodel_elements.append(element)
-            else:
-                raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+        )
 
         super().__init__(
             submodel_element=embedded_submodel_elements,

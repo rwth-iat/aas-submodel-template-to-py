@@ -62,21 +62,8 @@ if {{ arg_for_se }} is not None and not isinstance({{ arg_for_se }}, aas.Submode
 {% endfor %}
 
 # Add all passed/initialized submodel elements to a single list
-embedded_submodel_elements = []
-for se_arg in [{% for se in args_for_submodel_elements -%} {{ se }}{% if not loop.last %},{% endif %}{%- endfor %}]:
-    if se_arg is None:
-        continue
-    elif isinstance(se_arg, aas.SubmodelElement):
-        embedded_submodel_elements.append(se_arg)
-    elif isinstance(se_arg, Iterable):
-{%- if index_id_shorts | default(true) %}
-        # Number with two digits at least, as the placeholders {00} and __00__ of templates
-        for n, element in enumerate(se_arg):
-            element.id_short = f"{element.id_short}{n:02d}"
-            embedded_submodel_elements.append(element)
-{%- else %}
-        embedded_submodel_elements.extend(se_arg)
-{%- endif %}
-    else:
-        raise TypeError(f"Unknown type of value in submodel_element_args: {se_arg.__class__}")
+{# Without trailing comma, which would make Black put each argument on its own line #}
+{% set collect_args = args_for_submodel_elements | list %}
+{% if not index_id_shorts | default(true) %}{% set collect_args = collect_args + ["number_repeated=False"] %}{% endif %}
+embedded_submodel_elements = collect_submodel_elements({{ collect_args | join(", ") }})
 {% endblock %}
